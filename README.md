@@ -13,7 +13,7 @@ GitHub Pages deploys automatically from `.github/workflows/pages.yml` whenever `
 - Dark responsive desktop/mobile shell
 - Home quick search
 - Survivor Perks, Killer Perks, Killer Guides, Survivor Guide, and Glossary
-- Survivor perks ranked through #10
+- Survivor perks ranked through #15
 - Live-as-you-type perk search
 - Tier and role filters
 - Independent Important Details and Full Analysis panels
@@ -22,9 +22,9 @@ GitHub Pages deploys automatically from `.github/workflows/pages.yml` whenever `
 
 ## Survivor data workflow
 
-The source of truth for ranked Survivor perks is now JSON under `content/survivor/perks/`, grouped in five-rank folders such as `001-005` and `006-010`. Each perk file keeps verified factual mechanics separate from editorial ranking, roles, synergies, counters, analysis, and verdict.
+The source of truth for ranked Survivor perks is JSON under `content/survivor/perks/`, grouped in five-rank folders such as `001-005`, `006-010`, and `011-015`. Each perk file keeps verified factual mechanics separate from editorial ranking, roles, synergies, counters, analysis, and verdict.
 
-`scripts/build-survivor-data.mjs` validates the JSON, enforces unique contiguous ranks, and generates the five browser data modules used by the site. That means future batches such as #11-15 are data additions rather than hand-edits to perk-card JavaScript.
+`scripts/build-survivor-data.mjs` validates the JSON, enforces unique contiguous ranks, and generates the five browser data modules used by the site. That means future batches such as #16-20 are data additions rather than hand-edits to perk-card JavaScript.
 
 See `content/survivor/README.md` for the file layout and batch workflow.
 
