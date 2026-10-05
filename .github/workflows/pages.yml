@@ -37,3 +37,29 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Smoke test live site
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          check() {
+            url="${SITE_URL}$1"
+            echo "Checking ${url}"
+            curl --fail --silent --show-error --location \
+              --retry 5 --retry-all-errors --retry-delay 2 \
+              "${url}" -o /tmp/dbd-smoke
+            test -s /tmp/dbd-smoke
+          }
+
+          check ""
+          grep -q "Find what matters before the fog closes in" /tmp/dbd-smoke
+
+          check "survivor/perks/"
+          grep -q "Survivor Perks" /tmp/dbd-smoke
+
+          check "assets/app-core.js"
+          check "assets/data-perks-01.js"
+          check "manifest.webmanifest"
+          python3 -m json.tool /tmp/dbd-smoke >/dev/null
+          check "sw.js"
