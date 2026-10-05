@@ -42,11 +42,11 @@ test('survivor ranking source is stored as one JSON file per perk in five-perk f
     .filter(entry => entry.isDirectory())
     .map(entry => entry.name)
     .sort();
-  assert.deepEqual(folders, ['001-005', '006-010']);
+  assert.deepEqual(folders, ['001-005', '006-010', '011-015']);
 
   const records = sourceRecords();
-  assert.equal(records.length, 10);
-  assert.deepEqual(records.map(perk => perk.editorial.rank), [1,2,3,4,5,6,7,8,9,10]);
+  assert.equal(records.length, 15);
+  assert.deepEqual(records.map(perk => perk.editorial.rank), [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
   for (const perk of records) {
     assert.equal(typeof perk.id, 'string');
     assert.equal(typeof perk.mechanics.currentEffect, 'string');
@@ -61,11 +61,12 @@ test('generator keeps ranks contiguous and writes five browser modules', async (
   assert.equal(fs.existsSync(generatorPath), true, 'scripts/build-survivor-data.mjs should exist');
   const mod = await import(pathToFileURL(generatorPath));
   const generated = mod.loadAndFlattenSurvivorPerks({ rootDir: root });
-  assert.equal(generated.length, 10);
-  assert.deepEqual(generated.map(perk => perk.rank), [1,2,3,4,5,6,7,8,9,10]);
+  assert.equal(generated.length, 15);
+  assert.deepEqual(generated.map(perk => perk.rank), [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
   assert.deepEqual(generated.map(perk => perk.name), [
     'Will to Live','Resurgence','Unbreakable','Sprint Burst','Adrenaline',
-    'Shoulder the Burden','Deliverance','Windows of Opportunity','Kindred','Déjà Vu'
+    'Shoulder the Burden','Deliverance','Windows of Opportunity','Kindred','Déjà Vu',
+    'Five Moves Ahead','Dead Hard','Lithe','Plot Twist',"We're Gonna Live Forever"
   ]);
 
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'dbd-survivor-data-'));
@@ -80,10 +81,10 @@ test('generator keeps ranks contiguous and writes five browser modules', async (
   }
 });
 
-test('local migration recreates the pre-refactor top-ten records exactly', async t => {
+test('local migration preserves the original top-ten records exactly', async t => {
   if (!fs.existsSync(legacyDataPath)) return t.skip('legacy monolith is not stored in the lean GitHub repository');
   const mod = await import(pathToFileURL(generatorPath));
-  assert.deepEqual(mod.loadAndFlattenSurvivorPerks({ rootDir: root }), loadLegacyPerks());
+  assert.deepEqual(mod.loadAndFlattenSurvivorPerks({ rootDir: root }).slice(0, 10), loadLegacyPerks());
 });
 
 test('local mechanics remain identical to the audited canonical dataset', t => {
