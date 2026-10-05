@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "batch": "011-015",
+  "verifiedLivePatch": "10.1.2a",
+  "verifiedDate": "2026-10-05",
+  "id": "plot-twist",
+  "mechanics": {
+    "name": "Plot Twist",
+    "alternateName": null,
+    "source": "Nicolas Cage",
+    "status": "Live 10.1.2a",
+    "currentEffect": "Whenever you are Injured, Plot Twist is available. While crouching and stationary, press Active Ability to silently enter the Dying State, suppressing your Grunts of Pain and Pools of Blood and unlocking full self-recovery at 25% faster Recovery speed. After you fully recover from the Dying State using Plot Twist, you instantly become Healthy and gain 50% Haste for 2/3/4 seconds by tier. After recovering from the Dying State by any means, the perk is disabled until the Exit Gates are powered, when it can reactivate one more time.",
+    "activation": ["Be in the Injured State.", "Crouch and remain stationary, then press Active Ability."],
+    "patchNote": "9.2.0 added 25% faster Recovery while using Plot Twist. The perk can reactivate once the Exit Gates are powered after its earlier use is consumed."
+  },
+  "editorial": {
+    "rank": 14,
+    "tier": "A",
+    "roles": ["Healing", "Anti-Slug", "Utility"],
+    "summary": "While injured, down yourself silently and recover 25% faster to stand up Healthy with a brief Haste burst; it can return once in endgame.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": ["dying-state", "anti-slug", "haste", "health-state", "snowball"],
+    "useCases": ["Convert an injury into a full self-heal without a teammate or Med-Kit.", "Force the Killer into an awkward pickup-or-leave decision when they need to pressure elsewhere.", "Use a controlled down to position beneath a pallet or manipulate endgame timing."],
+    "counters": ["Using it where the Killer can immediately reach you turns the perk into a free pickup.", "The self-recovery takes long enough that aura reading or good Killer awareness can interrupt it.", "After recovering from the Dying State by any means, it is disabled until the Exit Gates are powered."],
+    "synergies": ["Will to Live", "Tenacity", "Flip-Flop", "Power Struggle"],
+    "pros": ["Provides a self-heal that ignores ordinary healing-speed penalties.", "Can create deliberate anti-slug and pickup dilemmas.", "Offers a second activation once the Exit Gates are powered."],
+    "cons": ["Requires safe timing and positioning.", "Temporarily puts you in the Dying State by choice.", "Licensed unlock and less plug-and-play than Lithe."],
+    "analysis": ["Plot Twist is one of the strangest strong perks in the game because voluntarily entering the Dying State sounds like a drawback until you look at the decisions it creates. Used safely, it is a full self-heal with 25% faster recovery and a Haste burst at the end.", "The more advanced value is strategic. If the Killer needs to leave you to stop a generator or chase another Survivor, Plot Twist threatens to return you to Healthy without consuming a teammate's time. If they pick you up instead, anti-tunnel or pickup-denial tools can punish that choice. The perk can therefore manufacture lose-lose decisions rather than simply save healing time.", "It also has unusual endgame utility because the ability can return when the Exit Gates are powered. Controlled downs can slow the Endgame Collapse, position you for pallet interactions, or let you recover safely while the Killer is forced to defend another objective.", "The downside is that bad Plot Twist use is genuinely bad. Dropping in line of sight, under active aura reading, or without enough distance simply hands the Killer a down. Its ceiling is high, but Lithe ranks above it because Lithe's value is dramatically easier to realize in ordinary matches."],
+    "verdict": "A-tier utility with a surprisingly high ceiling. Plot Twist is both a self-heal and a decision-making weapon, but it rewards game sense far more than autopilot use.",
+    "editorialStatus": "complete"
+  }
+}
