@@ -24,16 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Extract verified source snapshot
-        run: unzip -q source/dbd-helper-full-source.zip -d build
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/site
+          path: site
 
       - name: Deploy
         id: deployment

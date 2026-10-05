@@ -1,0 +1,44 @@
+const CACHE = 'dbd-field-guide-v2';
+const SCOPE = new URL(self.registration.scope);
+const scoped = (path = '') => new URL(path, SCOPE).href;
+const SHELL_PATHS = ['', 'assets/app.css', 'assets/data-meta.js', 'assets/data-perks-01.js', 'assets/data-perks-02.js', 'assets/data-perks-03.js', 'assets/data-perks-04.js', 'assets/data-perks-05.js', 'assets/app-core.js', 'assets/app-pages.js', 'manifest.webmanifest', 'icons/icon.svg', 'survivor/perks/', 'survivor/guide/', 'killer/perks/', 'killer/guides/', 'glossary/'];
+const SHELL = SHELL_PATHS.map(scoped);
+
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+});
+
+self.addEventListener('fetch', event => {
+  const req = event.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== SCOPE.origin || !url.pathname.startsWith(SCOPE.pathname)) return;
+
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req)
+        .then(res => {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req).then(r => r || caches.match(scoped(''))))
+    );
+    return;
+  }
+
+  const relativePath = url.pathname.slice(SCOPE.pathname.length);
+  if (relativePath.startsWith('assets/') || relativePath.startsWith('icons/')) {
+    event.respondWith(
+      caches.match(req).then(cached => cached || fetch(req).then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(c => c.put(req, copy));
+        return res;
+      }))
+    );
+  }
+});
