@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "batch": "001-005",
+  "verifiedLivePatch": "10.1.2a",
+  "verifiedDate": "2026-10-05",
+  "id": "resurgence",
+  "mechanics": {
+    "name": "Resurgence",
+    "alternateName": null,
+    "source": "Jill Valentine",
+    "status": "Live 10.1.2a",
+    "currentEffect": "After you are unhooked by any means, Resurgence instantly grants you healing progression equal to 50/60/70% of a full health state, according to perk tier.",
+    "activation": ["Be unhooked by any means, including self-unhooking.","The healing progress is granted immediately with no cooldown."],
+    "patchNote": "Tier values 50/60/70% were established in 8.1.0 and remain live in 10.1.2a."
+  },
+  "editorial": {
+    "rank": 2,
+    "tier": "S+",
+    "roles": ["Healing","Reset"],
+    "summary": "Every unhook instantly gives you 50/60/70% of a full heal worth of progress.",
+    "metaStatus": "Elite",
+    "skillLevel": "Low",
+    "soloQ": 5,
+    "swf": 5,
+    "unlockPriority": "Very High",
+    "glossaryKeys": ["reset","hook-state","health-state"],
+    "useCases": ["Rapid post-unhook resets.","Punish Killers who leave hook after securing pressure elsewhere.","Reduce the time two Survivors spend healing instead of repairing generators."],
+    "counters": ["Haemorrhage can erase stored healing progress if you are not healed quickly.","A Killer who immediately tunnels may deny the reset window.","Broken prevents completing the heal until it ends."],
+    "synergies": ["Will to Live","We'll Make It","Botany Knowledge","Med-Kits"],
+    "pros": ["Extremely consistent on normal unhooks.","Saves both your time and the healer’s time.","Requires almost no mechanical execution."],
+    "cons": ["Does nothing before your first unhook.","Healing progress can be lost to Haemorrhage.","Less valuable if you intentionally stay injured."],
+    "analysis": ["Resurgence looks simple because it is simple, and that is exactly why it ranks so highly. A Tier III proc begins the post-unhook heal at 70%, turning what would normally be a substantial two-player reset into a very short interaction. That time saving compounds because two Survivors are freed to repair, rescue, or reposition earlier.","Unlike many strong perks, Resurgence does not ask for a difficult trigger, map condition, or teammate communication. Getting unhooked is a normal match event. The perk converts that unavoidable event into reliable tempo, making it one of the cleanest examples of a high-floor perk with genuine top-end strength.","The biggest practical counter is Haemorrhage. If the team hesitates after the unhook, the stored progress can bleed away. The second is direct tunneling, where there may be no safe opportunity to finish the heal. That is why Resurgence pairs so naturally with anti-tunnel perks: one protects your reset window while the other makes the reset almost instantaneous.","In Solo Q, its predictability is gold because random teammates only need to recognize that you are nearly healed. In SWF, the team can deliberately plan short resets around it. For players choosing unlocks, Jill offers one of the most universally useful perks in the game."],
+    "verdict": "An elite time-efficiency perk. If you are normally healed after unhooks, Resurgence turns one of the match’s most common downtime moments into a tiny speed bump.",
+    "editorialStatus": "complete"
+  }
+}
