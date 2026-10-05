@@ -24,6 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build Survivor perk data
+        run: node scripts/build-survivor-data.mjs
+
+      - name: Verify Survivor perk data
+        run: node --test site/tests/*.test.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
