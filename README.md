@@ -4,9 +4,9 @@ A fast Dead by Daylight companion designed for a second monitor or phone while p
 
 ## Live site
 
-Expected URL: https://masterzoidberg.github.io/dbd-helper/
+https://masterzoidberg.github.io/dbd-helper/
 
-GitHub Pages deploys automatically from `.github/workflows/pages.yml` whenever `main` changes. The workflow extracts the verified repository snapshot in `source/dbd-helper-full-source.zip` and publishes its `site/` directory.
+GitHub Pages deploys automatically from `.github/workflows/pages.yml` whenever `main` changes. The workflow publishes the static `site/` directory directly.
 
 ## Current content
 
@@ -18,10 +18,14 @@ GitHub Pages deploys automatically from `.github/workflows/pages.yml` whenever `
 - Tier and role filters
 - Independent Important Details and Full Analysis panels
 - PWA manifest and service worker
-- Canonical audited live 10.1.2a mechanics data: 176 Survivor perks and 151 Killer perks
+- Mechanics baseline verified against live 10.1.2a on 2026-10-05
 
-## Source
+## Data model
 
-`source/dbd-helper-full-source.zip` is the complete verified project snapshot, including site source, tests, build/verification scripts, design/implementation docs, canonical perk JSON, audit reports, and PWA assets.
+The public runtime keeps factual mechanics separate from editorial ranking and analysis. The current ranked top ten are derived from the audited mechanics datasets covering 176 Survivor perks and 151 Killer perks.
 
-The site is base-path aware, so the same snapshot works locally at `/` and on GitHub Pages under `/dbd-helper/`.
+The full canonical audit JSON files are maintained separately from the lean GitHub Pages runtime so large archival datasets do not block deployment. They can be synced into the repository independently without changing the live site.
+
+## Hosting
+
+The site is base-path aware, so the same static source works locally at `/` and on GitHub Pages under `/dbd-helper/`.
