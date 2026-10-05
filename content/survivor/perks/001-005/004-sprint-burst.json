@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "batch": "001-005",
+  "verifiedLivePatch": "10.1.2a",
+  "verifiedDate": "2026-10-05",
+  "id": "sprint-burst",
+  "mechanics": {
+    "name": "Sprint Burst",
+    "alternateName": null,
+    "source": "Meg Thomas",
+    "status": "Live 10.1.2a",
+    "currentEffect": "Starting to run triggers Sprint Burst and grants 50% Haste for 2 seconds. It cannot be used while Exhausted and applies Exhausted for 60/50/40 seconds.",
+    "activation": ["Start running while not Exhausted.","The Haste lasts 2 seconds.","Another activation is unavailable until Exhausted is recovered."],
+    "patchNote": "10.1.0 reduced Haste duration from 3 seconds to 2 seconds. Exhausted remains 60/50/40 seconds by tier."
+  },
+  "editorial": {
+    "rank": 4,
+    "tier": "S",
+    "roles": ["Chase","Exhaustion"],
+    "summary": "Starting to run gives 50% Haste for 2 seconds, then applies Exhausted.",
+    "metaStatus": "Elite",
+    "skillLevel": "Medium",
+    "soloQ": 5,
+    "swf": 5,
+    "unlockPriority": "Very High",
+    "glossaryKeys": ["haste","exhausted","looping","pressure"],
+    "useCases": ["Reach a safe tile before the Killer can begin a clean chase.","Work on otherwise dangerous generators and escape when approached.","Create enough opening distance to force the Killer to abandon pressure."],
+    "counters": ["Poor timing can trigger it when you did not need it.","Walking everywhere to preserve it can cost more time than the perk saves.","Exhaustion management limits repeated use."],
+    "synergies": ["Vigil","Fixated","Bond","Adrenaline"],
+    "pros": ["Works on every map and against every Killer.","Creates distance before the chase becomes dangerous.","No vault, fall, or pallet requirement."],
+    "cons": ["Requires discipline to manage without becoming overly passive.","The 10.1.0 duration nerf reduced total distance.","Shares Exhausted with other major chase perks."],
+    "analysis": ["Sprint Burst remains the most flexible Exhaustion perk even after its 10.1.0 nerf from three seconds to two. Its advantage is not simply raw distance. It lets you decide where the chase begins. That is a huge strategic benefit because the safest Survivor is often the one who never allows the Killer a free first hit near a dead zone.","The common beginner mistake is treating Sprint Burst as a precious consumable and walking across the map to preserve it. That often loses more generator and rotation time than the perk can repay. Strong Sprint Burst play accepts ordinary activations, recovers Exhausted naturally, and saves deliberate 99% Exhaustion management for moments where it actually matters.","Compared with Lithe or Balanced Landing, Sprint Burst has no environmental trigger requirement. That universal availability is why it stays near the top even with less Haste duration. Experienced players can also use it proactively to repair unsafe generators, greed positioning, or bait the Killer into approaching before launching toward a stronger tile.","Solo Q gets reliable self-sufficiency from it, while SWF can use comms to coordinate dangerous generators and chase rotations. The perk has a medium skill floor only because misuse can create bad habits; its mechanical activation itself is effortless."],
+    "verdict": "Still an elite chase and positioning perk after the 10.1 nerf. Use it freely enough that it creates tempo instead of turning you into a full-time walker.",
+    "editorialStatus": "complete"
+  }
+}
