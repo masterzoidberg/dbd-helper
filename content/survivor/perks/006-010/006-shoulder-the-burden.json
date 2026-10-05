@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "batch": "006-010",
+  "verifiedLivePatch": "10.1.2a",
+  "verifiedDate": "2026-10-05",
+  "id": "shoulder-the-burden",
+  "mechanics": {
+    "name": "Shoulder the Burden",
+    "alternateName": null,
+    "source": "Taurie Cain",
+    "status": "Live 10.1.2a",
+    "currentEffect": "Once per Trial, while you are not on Death Hook, use Active Ability while standing in front of a Hooked Survivor to unhook them and trade 1 Hook Stage with them to their benefit. You scream and become Exposed for 60/50/40 seconds.",
+    "activation": ["Be next to a hooked Survivor while you are not on Death Hook.","Use the Active Ability to unhook them.","The teammate loses one Hook Stage and you gain that Hook Stage.","The perk can be used only once per Trial."],
+    "patchNote": "Live: Exposed lasts 60/50/40 seconds after use. 10.2 PTB would instead make the user Injured and Broken for 160/140/120 seconds and deactivate Shoulder the Burden for all Survivors after one use. Those PTB changes are not live."
+  },
+  "editorial": {
+    "rank": 6,
+    "tier": "S",
+    "roles": ["Anti-Tunnel","Unhooking","Teamplay"],
+    "summary": "Once per Trial, trade one of your Hook Stages to pull a teammate back from Death Hook pressure.",
+    "metaStatus": "Elite",
+    "skillLevel": "Medium–High",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": ["tunneling","anti-tunnel","hook-state","trade","swf","solo-q"],
+    "useCases": ["Pull a tunneled teammate away from immediate elimination.","Spread Hook States across the team so the Killer needs more total hooks to secure a kill.","Protect a weaker teammate or a teammate carrying key endgame value."],
+    "counters": ["Using it at the wrong time can simply make you the new tunnel target.","The current live Exposed penalty can punish a healthy rescue if the Killer is close enough to capitalize.","It gives little value when the Killer is already spreading hooks evenly.","One poorly timed use consumes the perk for the rest of the Trial."],
+    "synergies": ["Will to Live","Deliverance","Dead Hard","Reassurance"],
+    "pros": ["Directly manipulates Hook State economy, something very few perks can do.","Can erase a large portion of a tunneling strategy with one rescue.","Becomes especially difficult for the Killer to plan around in coordinated teams."],
+    "cons": ["Requires strong timing and an accurate read of who actually needs the Hook State transfer.","Transfers danger rather than deleting it, so the user must be ready to survive the next chase.","Its current-live power is explicitly targeted by the 10.2 PTB."],
+    "analysis": ["Shoulder the Burden is one of the few Survivor perks that changes the Killer’s hook economy instead of merely making a chase, heal, or repair faster. If a teammate is about to be eliminated, moving one Hook Stage onto a safer teammate can force the Killer to earn an additional chase and hook before securing the first kill. That can be match-defining when generators are already close to completion.","Its ceiling is much higher in SWF than in Solo Q. A coordinated team can decide who should avoid the first chase, who has a spare Hook State, and exactly when the transfer prevents a tunnel from converting into an elimination. In Solo Q, the same effect is still powerful, but you have less control over whether another teammate reaches the hook first or whether the person you save can actually use the extra life you bought them.","The live Exposed penalty is meaningful but does not erase the perk’s upside. If you rescue while injured it changes little, and if the Killer has already been forced away from the hook the timer may expire without consequence. The real danger is using it automatically. Transferring a Hook State when the teammate was not actually in danger can convert a healthy hook distribution into a worse one for your team.","This is also the most patch-sensitive perk in our current top ten. The 10.2 PTB proposes replacing Exposed with an Injured plus long Broken penalty and, more importantly, deactivating Shoulder the Burden for every Survivor after one team use. Our #6 ranking is therefore for live 10.1.2a only. If that PTB version ships unchanged, this perk needs an immediate rerank."],
+    "verdict": "S tier on the current live patch because a well-timed Hook State transfer can directly stop a tunnel from becoming an early kill. Excellent in coordinated teams, powerful but less reliable in Solo Q, and on serious 10.2 patch watch.",
+    "editorialStatus": "patch-watch"
+  }
+}
