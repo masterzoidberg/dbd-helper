@@ -1,0 +1,10 @@
+.glossary-term {
+  border-bottom-color: #6fbd91;
+  color: #d9f0e1;
+}
+
+.glossary-term:hover,
+.glossary-term:focus-visible {
+  border-bottom-color: #8ed7aa;
+  color: #eef9f2;
+}
