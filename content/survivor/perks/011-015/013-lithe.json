@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "batch": "011-015",
+  "verifiedLivePatch": "10.1.2a",
+  "verifiedDate": "2026-10-05",
+  "id": "lithe",
+  "mechanics": {
+    "name": "Lithe",
+    "alternateName": null,
+    "source": "Feng Min",
+    "status": "Live 10.1.2a",
+    "currentEffect": "Whenever you perform a Rushed Vault action while not Exhausted, gain 50% Haste for 3 seconds. Lithe cannot be used while Exhausted and causes Exhausted for 60/50/40 seconds by tier.",
+    "activation": ["Perform a Rushed Vault action.", "Not be suffering from Exhausted."],
+    "patchNote": "Lithe remains unchanged on live 10.1.2a: a Rushed Vault grants 50% Haste for 3 seconds and causes Exhausted for 60/50/40 seconds."
+  },
+  "editorial": {
+    "rank": 13,
+    "tier": "A",
+    "roles": ["Chase", "Exhaustion", "Positioning"],
+    "summary": "A Rushed Vault gives 50% Haste for 3 seconds, letting you turn a window or pallet vault into a major burst of distance.",
+    "metaStatus": "Meta",
+    "skillLevel": "Low–Medium",
+    "soloQ": 5,
+    "swf": 5,
+    "unlockPriority": "Very High",
+    "glossaryKeys": ["haste", "exhausted", "looping"],
+    "useCases": ["Break line of sight after reaching a strong window.", "Use a mediocre vault as a launch point toward a safer tile.", "Escape zoning by vaulting back through a stunned pallet when the path is available."],
+    "counters": ["You need a usable vault before the perk can trigger.", "Poor vault timing can spend Lithe without creating meaningful distance.", "Exhausted blocks another activation until it recovers."],
+    "synergies": ["Windows of Opportunity", "Five Moves Ahead", "Dance With Me", "Quick & Quiet"],
+    "pros": ["Simple, reliable, and fully under your control in most chases.", "Still grants 3 seconds of Haste while Sprint Burst was reduced to 2 seconds in 10.1.", "Excellent for newer, returning, and experienced players."],
+    "cons": ["Requires a Rushed Vault, so dead zones can deny it.", "Can accidentally trigger on a vault you would rather loop normally.", "Does not help before you reach a vaultable resource."],
+    "analysis": ["Lithe is the reliability pick of this batch. It lacks Dead Hard's spectacular extra-hit ceiling and Five Moves Ahead's resource intelligence, but it asks very little from the player: reach a vault, use it at the right time, and receive three seconds of 50% Haste.", "That three-second duration matters more after Sprint Burst's 10.1 nerf to two seconds. Sprint Burst remains higher because it can protect unsafe generators and prevent a chase from starting badly, but once a chase is established Lithe offers a very controllable way to relocate across the map.", "The main skill is not pressing the button. It is choosing which vault deserves the activation. Using Lithe on a strong loop too early may throw away both the loop and the perk. Using a weak or isolated window as a launch point can instead convert a bad area into access to a much stronger tile.", "Current usage data places Lithe among the most commonly equipped Survivor perks on 10.1, which fits its broad appeal. It is easy to understand, rarely completely dead, and useful at nearly every experience level."],
+    "verdict": "A-tier and probably the safest recommendation in this batch for a rusty or newer Survivor. It is less explosive than Dead Hard, but far easier to convert into value every match.",
+    "editorialStatus": "complete"
+  }
+}
