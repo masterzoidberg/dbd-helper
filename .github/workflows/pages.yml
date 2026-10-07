@@ -63,6 +63,8 @@ jobs:
 
           check "survivor/perks/"
           grep -q "Survivor Perks" /tmp/dbd-smoke
+          grep -q "10 published" /tmp/dbd-smoke
+          grep -q "10.2.0" /tmp/dbd-smoke
 
           check "assets/app-core.js"
           check "assets/data-perks-01.js"

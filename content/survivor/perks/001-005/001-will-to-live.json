@@ -1,36 +1,118 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "batch": "001-005",
-  "verifiedLivePatch": "10.1.2a",
-  "verifiedDate": "2026-10-05",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
   "id": "will-to-live",
   "mechanics": {
     "name": "Will to Live",
     "alternateName": "Decisive Strike",
     "source": "General perk / Laurie Strode licensed display",
-    "status": "Live 10.1.2a",
+    "status": "Live 10.2.0",
     "currentEffect": "After you are unhooked or unhook yourself, the perk activates for 40/50/60 seconds. If the Killer grabs or picks you up during that window, succeed at the Skill Check to escape their grasp and stun the Killer for 4 seconds. Using the perk makes you the next Obsession and disables the perk for the rest of the Trial. It deactivates when the Exit Gates are powered or when you perform a Conspicuous Action. It also increases your chance of being the initial Obsession by 100% of the default value.",
-    "activation": ["Be unhooked or unhook yourself.","Be grabbed or picked up during the 40/50/60 second window.","Succeed at the Skill Check.","Do not perform a Conspicuous Action before the pickup."],
-    "patchNote": "Current general-perk version verified for 10.1.2a. Players with the HALLOWEEN license may still see the same underlying perk as Decisive Strike."
+    "activation": [
+      "Be unhooked or unhook yourself.",
+      "Be grabbed or picked up by the Killer during the 40/50/60-second activation window and succeed at the Skill Check.",
+      "Ends/deactivates when: Deactivates when Exit Gates are powered.",
+      "Ends/deactivates when: Deactivates if you perform a Conspicuous Action.",
+      "Ends/deactivates when: After use, disabled for the remainder of the Trial."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified for the current general-perk version from available patch history.",
+    "plainEnglishSummary": "After an unhook, a successful Skill Check when grabbed or picked up can stun the Killer and let you escape once.",
+    "cooldown": null,
+    "duration": [
+      "Activation window after unhook: 40/50/60 seconds.",
+      "Killer stun: 4 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Can be used once per Trial; after use it is disabled for the remainder of the Trial.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Successful use makes you the next Obsession.",
+      "The Killer can have only one Obsession at a time."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
   },
   "editorial": {
     "rank": 1,
     "tier": "S+",
-    "roles": ["Anti-Tunnel","Chase"],
+    "roles": [
+      "Anti-Tunnel",
+      "Chase"
+    ],
     "summary": "After an unhook, a successful Skill Check when the Killer picks you up can free you and stun them once.",
     "metaStatus": "Elite",
     "skillLevel": "Low–Medium",
     "soloQ": 5,
     "swf": 5,
     "unlockPriority": "Immediate",
-    "glossaryKeys": ["tunneling","anti-tunnel","conspicuous-action","hook-state"],
-    "useCases": ["Punish direct tunneling after an unhook.","Buy a fresh chase after the Killer commits to a pickup.","Force the Killer to consider slugging or switching targets."],
-    "counters": ["The Killer can leave you slugged until the timer expires.","Conspicuous Actions disable it.","It is disabled once the Exit Gates are powered.","A missed Skill Check wastes the opportunity."],
-    "synergies": ["Resurgence","Off the Record","Unbreakable","Sprint Burst"],
-    "pros": ["Directly attacks one of the strongest Killer win conditions.","Changes Killer decision-making even before it actually triggers.","Works in Solo Q without teammate setup."],
-    "cons": ["Can provide zero direct value if the Killer does not tunnel.","Once-per-Trial successful use.","Good Killers may play around the pickup window."],
-    "analysis": ["Will to Live earns the top slot because tunneling is not merely annoying behavior; it is one of the fastest ways a Killer can convert an even match into a 3v1. A perk that makes that conversion less reliable changes the strategic shape of the match even when it never fires.","Its hidden strength is threat value. Once a Killer respects the possibility of Will to Live, they may leave a recently unhooked Survivor on the ground, delay the pickup, or chase someone else. Every one of those responses can buy the Survivor team time. That is why its impact is larger than the four-second stun written on the perk.","For newer players, the only mechanical demand is landing the Skill Check. For experienced players, the skill is in managing the active window: route toward safer tiles, avoid unnecessary Conspicuous Actions, understand when the Killer is likely to slug, and use the threat to create distance rather than merely chase a dramatic stun.","Solo Q benefits enormously because the perk does not require communication. SWF can extract even more value by coordinating bodyblocks, resets, and generator pressure around a tunneled teammate. The main caveat is that a Killer who spreads pressure may never trigger it, but forcing healthy Killer behavior is itself meaningful value."],
+    "glossaryKeys": [
+      "tunneling",
+      "anti-tunnel",
+      "conspicuous-action",
+      "hook-state"
+    ],
+    "useCases": [
+      "Punish direct tunneling after an unhook.",
+      "Buy a fresh chase after the Killer commits to a pickup.",
+      "Force the Killer to consider slugging or switching targets."
+    ],
+    "counters": [
+      "The Killer can leave you slugged until the timer expires.",
+      "Conspicuous Actions disable it.",
+      "It is disabled once the Exit Gates are powered.",
+      "A missed Skill Check wastes the opportunity."
+    ],
+    "synergies": [
+      "Resurgence",
+      "Off the Record",
+      "Unbreakable",
+      "Sprint Burst"
+    ],
+    "pros": [
+      "Directly attacks one of the strongest Killer win conditions.",
+      "Changes Killer decision-making even before it actually triggers.",
+      "Works in Solo Q without teammate setup."
+    ],
+    "cons": [
+      "Can provide zero direct value if the Killer does not tunnel.",
+      "Once-per-Trial successful use.",
+      "Good Killers may play around the pickup window."
+    ],
+    "analysis": [
+      "Will to Live earns the top slot because tunneling is not merely annoying behavior; it is one of the fastest ways a Killer can convert an even match into a 3v1. A perk that makes that conversion less reliable changes the strategic shape of the match even when it never fires.",
+      "Its hidden strength is threat value. Once a Killer respects the possibility of Will to Live, they may leave a recently unhooked Survivor on the ground, delay the pickup, or chase someone else. Every one of those responses can buy the Survivor team time. That is why its impact is larger than the four-second stun written on the perk.",
+      "For newer players, the only mechanical demand is landing the Skill Check. For experienced players, the skill is in managing the active window: route toward safer tiles, avoid unnecessary Conspicuous Actions, understand when the Killer is likely to slug, and use the threat to create distance rather than merely chase a dramatic stun.",
+      "Solo Q benefits enormously because the perk does not require communication. SWF can extract even more value by coordinating bodyblocks, resets, and generator pressure around a tunneled teammate. The main caveat is that a Killer who spreads pressure may never trigger it, but forcing healthy Killer behavior is itself meaningful value."
+    ],
     "verdict": "The best general anti-tunnel insurance in the current live game. If you expect to be chased off hook, it is one of the safest high-impact slots you can equip.",
-    "editorialStatus": "complete"
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "resurgence",
+      "off-the-record",
+      "unbreakable",
+      "sprint-burst"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "antiSynergies": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ]
   }
 }

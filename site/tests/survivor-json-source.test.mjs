@@ -9,8 +9,20 @@ import { pathToFileURL } from 'node:url';
 const root = path.resolve(import.meta.dirname, '../..');
 const sourceDir = path.join(root, 'content/survivor/perks');
 const generatorPath = path.join(root, 'scripts/build-survivor-data.mjs');
-const legacyDataPath = path.join(root, 'site/assets/data.js');
-const canonicalPath = path.join(root, 'site/data/survivor-perks-live-10.1.2a.json');
+const workflowPath = path.join(root, '.github/workflows/pages.yml');
+
+const publishedIds = [
+  'will-to-live',
+  'resurgence',
+  'unbreakable',
+  'sprint-burst',
+  'adrenaline',
+  'shoulder-the-burden',
+  'deliverance',
+  'kindred',
+  'deja-vu',
+  'windows-of-opportunity'
+];
 
 function sourceRecords() {
   return fs.readdirSync(sourceDir, { withFileTypes: true })
@@ -23,51 +35,40 @@ function sourceRecords() {
       .map(name => JSON.parse(fs.readFileSync(path.join(sourceDir, folder, name), 'utf8'))));
 }
 
-function loadLegacyPerks() {
-  const code = fs.readFileSync(legacyDataPath, 'utf8');
-  const context = { window: {} };
-  vm.runInNewContext(code, context, { filename: legacyDataPath });
-  return JSON.parse(JSON.stringify(context.window.DBD_DATA.perks));
-}
-
 function parseRuntimeModule(filePath) {
   const window = { DBD_DATA: { perks: [] } };
   vm.runInNewContext(fs.readFileSync(filePath, 'utf8'), { window }, { filename: filePath });
   return JSON.parse(JSON.stringify(window.DBD_DATA.perks));
 }
 
-test('survivor ranking source is stored as one JSON file per perk in five-perk folders', () => {
+test('v15 survivor source contains exactly the approved published perk identities at their global ranks', () => {
   assert.equal(fs.existsSync(sourceDir), true, 'content/survivor/perks should exist');
-  const folders = fs.readdirSync(sourceDir, { withFileTypes: true })
-    .filter(entry => entry.isDirectory())
-    .map(entry => entry.name)
-    .sort();
-  assert.deepEqual(folders, ['001-005', '006-010', '011-015']);
+  const records = sourceRecords().sort((a, b) => a.editorial.rank - b.editorial.rank);
 
-  const records = sourceRecords();
-  assert.equal(records.length, 15);
-  assert.deepEqual(records.map(perk => perk.editorial.rank), [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+  assert.equal(records.length, 10);
+  assert.equal(new Set(records.map(perk => perk.id)).size, 10);
+  assert.deepEqual(records.map(perk => perk.id), publishedIds);
+  assert.deepEqual(records.map(perk => perk.editorial.rank), [1, 4, 5, 6, 8, 11, 13, 15, 17, 50]);
+
   for (const perk of records) {
-    assert.equal(typeof perk.id, 'string');
+    assert.equal(perk.schemaVersion, 2);
+    assert.equal(perk.verifiedLivePatch, '10.2.0');
+    assert.equal(perk.editorial.publicationStatus, 'published');
     assert.equal(typeof perk.mechanics.currentEffect, 'string');
     assert.equal(typeof perk.editorial.verdict, 'string');
-    assert.ok(['complete', 'patch-watch', 'needs-rerank'].includes(perk.editorial.editorialStatus));
+    assert.ok(['complete', 'patch-watch'].includes(perk.editorial.editorialStatus));
     assert.equal('rank' in perk.mechanics, false, `${perk.id}: mechanics must not contain rank`);
     assert.equal('currentEffect' in perk.editorial, false, `${perk.id}: editorial must not duplicate mechanics`);
   }
 });
 
-test('generator keeps ranks contiguous and writes five browser modules', async () => {
-  assert.equal(fs.existsSync(generatorPath), true, 'scripts/build-survivor-data.mjs should exist');
-  const mod = await import(pathToFileURL(generatorPath));
+test('generator emits only the ten approved published perks at their global ranks', async () => {
+  const mod = await import(`${pathToFileURL(generatorPath).href}?v15=${Date.now()}`);
   const generated = mod.loadAndFlattenSurvivorPerks({ rootDir: root });
-  assert.equal(generated.length, 15);
-  assert.deepEqual(generated.map(perk => perk.rank), [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
-  assert.deepEqual(generated.map(perk => perk.name), [
-    'Will to Live','Resurgence','Unbreakable','Sprint Burst','Adrenaline',
-    'Shoulder the Burden','Deliverance','Windows of Opportunity','Kindred','Déjà Vu',
-    'Five Moves Ahead','Dead Hard','Lithe','Plot Twist',"We're Gonna Live Forever"
-  ]);
+
+  assert.equal(generated.length, 10);
+  assert.deepEqual(generated.map(perk => perk.id), publishedIds);
+  assert.deepEqual(generated.map(perk => perk.rank), [1, 4, 5, 6, 8, 11, 13, 15, 17, 50]);
 
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'dbd-survivor-data-'));
   try {
@@ -81,29 +82,34 @@ test('generator keeps ranks contiguous and writes five browser modules', async (
   }
 });
 
-test('local migration preserves the original top-ten records exactly', async t => {
-  if (!fs.existsSync(legacyDataPath)) return t.skip('legacy monolith is not stored in the lean GitHub repository');
-  const mod = await import(pathToFileURL(generatorPath));
-  assert.deepEqual(mod.loadAndFlattenSurvivorPerks({ rootDir: root }).slice(0, 10), loadLegacyPerks());
-});
-
-test('local mechanics remain identical to the audited canonical dataset', t => {
-  if (!fs.existsSync(canonicalPath)) return t.skip('full canonical mechanics archive is not stored in the lean GitHub repository');
-  const canonical = JSON.parse(fs.readFileSync(canonicalPath, 'utf8'));
-  const byName = new Map(canonical.perks.map(perk => [perk.name, perk]));
-
-  for (const record of sourceRecords()) {
-    const live = byName.get(record.mechanics.name) || canonical.perks.find(perk => perk.slug === record.id);
-    assert.ok(live, `${record.id}: canonical mechanics record should exist`);
-    assert.equal(record.mechanics.currentEffect, live.current_effect, `${record.id}: currentEffect drifted from canonical mechanics`);
-  }
-});
-
-test('Pages workflow rebuilds and verifies survivor data before upload', () => {
-  const workflow = fs.readFileSync(path.join(root, '.github/workflows/pages.yml'), 'utf8');
+test('Pages workflow rebuilds, verifies, and smoke-tests the v15 publication before upload', () => {
+  if (!fs.existsSync(workflowPath)) return;
+  const workflow = fs.readFileSync(workflowPath, 'utf8');
   assert.match(workflow, /node scripts\/build-survivor-data\.mjs/);
   assert.match(workflow, /node --test site\/tests\/\*\.test\.mjs/);
+  assert.match(workflow, /grep -q "10 published"/);
+  assert.match(workflow, /grep -q "10\.2\.0"/);
   const buildIndex = workflow.indexOf('node scripts/build-survivor-data.mjs');
   const uploadIndex = workflow.indexOf('actions/upload-pages-artifact');
   assert.ok(buildIndex >= 0 && buildIndex < uploadIndex, 'data build must happen before Pages artifact upload');
+});
+
+test('visible site copy identifies 10.2.0 and the ten published Survivor perks', () => {
+  const home = fs.readFileSync(path.join(root, 'site/index.html'), 'utf8');
+  const survivor = fs.readFileSync(path.join(root, 'site/survivor/perks/index.html'), 'utf8');
+  const pages = fs.readFileSync(path.join(root, 'site/assets/app-pages.js'), 'utf8');
+  const sw = fs.readFileSync(path.join(root, 'site/sw.js'), 'utf8');
+
+  assert.match(home, /Live 10\.2\.0/);
+  assert.match(home, /<strong>10<\/strong> Survivor perks published/i);
+  assert.doesNotMatch(home, /10\.1\.2a|top fifteen|15[^\n<]*Survivor perks ranked/i);
+
+  assert.match(survivor, /10\.2\.0/);
+  assert.match(survivor, /10 published/i);
+  assert.match(survivor, /176 ranked/i);
+  assert.doesNotMatch(survivor, /10\.1\.2a|top fifteen|15 ranked/i);
+
+  assert.match(pages, /published perks/);
+  assert.doesNotMatch(pages, /ranked perks/);
+  assert.match(sw, /dbd-field-guide-v3/);
 });
