@@ -62,15 +62,12 @@ test('v15 survivor source contains exactly the approved published perk identitie
   }
 });
 
-test('generator validates the full ranking but emits only the ten approved published perks at their global ranks', async () => {
+test('generator emits only the ten approved published perks at their global ranks', async () => {
   const mod = await import(`${pathToFileURL(generatorPath).href}?v15=${Date.now()}`);
   const generated = mod.loadAndFlattenSurvivorPerks({ rootDir: root });
 
   assert.equal(generated.length, 10);
-  assert.deepEqual(generated.map(perk => perk.id), [
-    'will-to-live', 'resurgence', 'unbreakable', 'sprint-burst', 'adrenaline',
-    'shoulder-the-burden', 'deliverance', 'kindred', 'deja-vu', 'windows-of-opportunity'
-  ]);
+  assert.deepEqual(generated.map(perk => perk.id), publishedIds);
   assert.deepEqual(generated.map(perk => perk.rank), [1, 4, 5, 6, 8, 11, 13, 15, 17, 50]);
 
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'dbd-survivor-data-'));
@@ -85,11 +82,13 @@ test('generator validates the full ranking but emits only the ten approved publi
   }
 });
 
-test('Pages workflow rebuilds and verifies survivor data before upload', () => {
+test('Pages workflow rebuilds, verifies, and smoke-tests the v15 publication before upload', () => {
   if (!fs.existsSync(workflowPath)) return;
   const workflow = fs.readFileSync(workflowPath, 'utf8');
   assert.match(workflow, /node scripts\/build-survivor-data\.mjs/);
   assert.match(workflow, /node --test site\/tests\/\*\.test\.mjs/);
+  assert.match(workflow, /grep -q "10 published"/);
+  assert.match(workflow, /grep -q "10\.2\.0"/);
   const buildIndex = workflow.indexOf('node scripts/build-survivor-data.mjs');
   const uploadIndex = workflow.indexOf('actions/upload-pages-artifact');
   assert.ok(buildIndex >= 0 && buildIndex < uploadIndex, 'data build must happen before Pages artifact upload');
@@ -98,6 +97,7 @@ test('Pages workflow rebuilds and verifies survivor data before upload', () => {
 test('visible site copy identifies 10.2.0 and the ten published Survivor perks', () => {
   const home = fs.readFileSync(path.join(root, 'site/index.html'), 'utf8');
   const survivor = fs.readFileSync(path.join(root, 'site/survivor/perks/index.html'), 'utf8');
+  const pages = fs.readFileSync(path.join(root, 'site/assets/app-pages.js'), 'utf8');
   const sw = fs.readFileSync(path.join(root, 'site/sw.js'), 'utf8');
 
   assert.match(home, /Live 10\.2\.0/);
@@ -109,5 +109,7 @@ test('visible site copy identifies 10.2.0 and the ten published Survivor perks',
   assert.match(survivor, /176 ranked/i);
   assert.doesNotMatch(survivor, /10\.1\.2a|top fifteen|15 ranked/i);
 
+  assert.match(pages, /published perks/);
+  assert.doesNotMatch(pages, /ranked perks/);
   assert.match(sw, /dbd-field-guide-v3/);
 });
