@@ -41,7 +41,7 @@ function render() {
 const filtered = filterPerks(allPerks, state.query, state.tiers, state.roles);
 const filtering = !!normalize(state.query) || state.tiers.length || state.roles.length;
 clear.hidden = !filtering;
-count.textContent = `${filtered.length} of ${allPerks.length} ranked perks`;
+count.textContent = `${filtered.length} of ${allPerks.length} published perks`;
 results.innerHTML = tiers.map((tier) => {
 const group = filtered.filter((p) => p.tier===tier);
 if (!group.length) return '';
