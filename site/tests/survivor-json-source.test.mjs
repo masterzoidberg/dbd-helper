@@ -111,5 +111,7 @@ test('visible site copy identifies 10.2.0 and the ten published Survivor perks',
 
   assert.match(pages, /published perks/);
   assert.doesNotMatch(pages, /ranked perks/);
-  assert.match(sw, /dbd-field-guide-v3/);
+  assert.match(sw, /dbd-field-guide-v4/);
+  assert.match(sw, /assets\/mobile-filter\.css/);
+  assert.match(sw, /assets\/mobile-filter\.js/);
 });
