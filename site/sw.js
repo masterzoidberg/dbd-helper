@@ -1,4 +1,4 @@
-const CACHE = 'dbd-field-guide-v4';
+const CACHE = 'dbd-field-guide-v5';
 const SCOPE = new URL(self.registration.scope);
 const scoped = (path = '') => new URL(path, SCOPE).href;
 const SHELL_PATHS = ['', 'assets/app.css', 'assets/mobile-filter.css', 'assets/data-meta.js', 'assets/data-perks-01.js', 'assets/data-perks-02.js', 'assets/data-perks-03.js', 'assets/data-perks-04.js', 'assets/data-perks-05.js', 'assets/app-core.js', 'assets/app-pages.js', 'assets/mobile-filter.js', 'manifest.webmanifest', 'icons/icon.svg', 'survivor/perks/', 'survivor/guide/', 'killer/perks/', 'killer/guides/', 'glossary/'];
