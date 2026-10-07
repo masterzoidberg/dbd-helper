@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Import canonical Survivor v15 JSON
+        run: python3 scripts/import-survivor-v15.py --archive dbd-local-data-v15-release-candidate.zip --output content/survivor/perks
+
       - name: Build Survivor perk data
         run: node scripts/build-survivor-data.mjs
 
@@ -60,16 +63,22 @@ jobs:
 
           check ""
           grep -q "Find what matters before the fog closes in" /tmp/dbd-smoke
+          grep -q "176</strong> Survivor perks published" /tmp/dbd-smoke
 
           check "survivor/perks/"
           grep -q "Survivor Perks" /tmp/dbd-smoke
-          grep -q "10 published" /tmp/dbd-smoke
+          grep -q "176 published" /tmp/dbd-smoke
           grep -q "10.2.0" /tmp/dbd-smoke
 
           check "assets/app-core.js"
           check "assets/mobile-filter.css"
           check "assets/mobile-filter.js"
           check "assets/data-perks-01.js"
+          grep -q '"rank":1' /tmp/dbd-smoke
+          grep -q '"id":"will-to-live"' /tmp/dbd-smoke
+          check "assets/data-perks-05.js"
+          grep -q '"rank":176' /tmp/dbd-smoke
+          grep -q '"id":"invocation-treacherous-crows"' /tmp/dbd-smoke
           check "manifest.webmanifest"
           python3 -m json.tool /tmp/dbd-smoke >/dev/null
           check "sw.js"
