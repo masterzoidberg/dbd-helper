@@ -1,49 +1,45 @@
 # Survivor perk content model
 
-Survivor perk site data is authored as JSON. Each file represents one publicly approved perk and preserves its rank from the complete v15 global ranking.
+Survivor perk site data is JSON-first. The canonical source is `dbd-local-data-v15-release-candidate.zip`, which contains the frozen live mechanics dataset and the v15 editorial ranking.
 
-## Layout
+## Generated layout
 
-Published records are grouped into five-rank folders based on their global rank. Because publication follows perk identity, folders and ranks may have gaps.
+Run:
+
+```bash
+python3 scripts/import-survivor-v15.py
+```
+
+The importer joins mechanics and editorial by perk ID, validates the complete 1–176 ranking, publishes all 176 records, and regenerates one site JSON file per perk under five-rank folders:
 
 ```text
 content/survivor/perks/
   001-005/
     001-will-to-live.json
+    002-lithe.json
+    003-dead-hard.json
     004-resurgence.json
     005-unbreakable.json
   ...
-  046-050/
-    050-windows-of-opportunity.json
+  176-180/
+    176-invocation-treacherous-crows.json
 ```
 
-Each perk file keeps factual mechanics separate from editorial judgment:
+Each record keeps factual mechanics separate from editorial judgment:
 
-- `mechanics`: live name/source/effect/activation/patch context verified against the canonical mechanics dataset.
-- `editorial`: global rank, tier, roles, ratings, use cases, counters, synergies, pros/cons, long analysis, verdict, review metadata, and publication status.
+- `mechanics`: live name/source/effect/activation/patch context derived from `survivor-mechanics.json`.
+- `editorial`: global rank, tier, roles, ratings, use cases, counters, synergies, pros/cons, long analysis, verdict, and review metadata derived from `survivor-editorial.json`.
 
-`editorialStatus` is review metadata and is not emitted into the browser record. `publicationStatus` controls whether a record is emitted. The public value is `published`.
+The importer also reconstructs display-friendly synergy names from the ID-based relationship fields. The canonical source files are not modified.
 
-## Build
+## Browser build
 
-Run:
+After importing, run:
 
 ```bash
 node scripts/build-survivor-data.mjs
 ```
 
-The generator validates unique IDs and unique positive global ranks, emits only `publicationStatus: "published"` records, keeps their global rank numbers unchanged, synchronizes the visible live patch metadata, and writes five browser modules under `site/assets/data-perks-01.js` through `data-perks-05.js`.
+The generator validates the records, preserves global rank numbers, synchronizes the visible live patch metadata, and writes five browser modules under `site/assets/data-perks-01.js` through `data-perks-05.js`.
 
-GitHub Pages runs the generator and the data tests before uploading the site artifact, so JSON is the source of truth and the browser modules are generated delivery artifacts.
-
-## Publishing another perk
-
-Publication is a deliberate identity-based action. To publish a prepared perk from the canonical v15 master:
-
-1. Export that perk's mechanics/editorial record into its global-rank folder.
-2. Set `editorial.publicationStatus` to `published`.
-3. Keep the global rank unchanged. Do not renumber the public subset.
-4. Run the generator and all data tests.
-5. Push only after verification passes.
-
-Reranking alone must never publish or unpublish a perk.
+GitHub Pages runs the canonical import, generator, and full data tests before uploading the site artifact. The live site therefore comes from the checked-in v15 archive rather than hand-edited browser data.
