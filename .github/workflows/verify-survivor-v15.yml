@@ -1,0 +1,33 @@
+name: Verify full Survivor v15 publication
+
+on:
+  push:
+    branches: [publish-all-survivor-v15-canonical]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Import canonical Survivor v15 JSON
+        run: python3 scripts/import-survivor-v15.py --archive dbd-local-data-v15-release-candidate.zip --output content/survivor/perks
+
+      - name: Build Survivor perk data
+        run: node scripts/build-survivor-data.mjs
+
+      - name: Run repository tests
+        run: node --test site/tests/*.test.mjs
+
+      - name: Verify runtime endpoints
+        run: |
+          set -euo pipefail
+          test "$(find content/survivor/perks -name '*.json' | wc -l)" -eq 176
+          grep -q '"id":"will-to-live"' site/assets/data-perks-01.js
+          grep -q '"rank":1' site/assets/data-perks-01.js
+          grep -q '"id":"invocation-treacherous-crows"' site/assets/data-perks-05.js
+          grep -q '"rank":176' site/assets/data-perks-05.js
