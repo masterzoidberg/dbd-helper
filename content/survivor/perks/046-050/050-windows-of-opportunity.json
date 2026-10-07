@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "batch": "046-050",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "windows-of-opportunity",
+  "mechanics": {
+    "name": "Windows of Opportunity",
+    "alternateName": null,
+    "source": "Kate Denson",
+    "status": "Live 10.2.0",
+    "currentEffect": "Within 24 metres, you see the Auras of Windows. You vault Windows 10% faster. Whenever you vault a Window, the perk goes on cooldown for 40/35/30 seconds.",
+    "activation": [
+      "A Window is within 24 metres for its Aura to be revealed.",
+      "Vault a Window to receive the 10% faster Window-vault effect while the perk is available.",
+      "Ends/deactivates when: After vaulting a Window, the perk is on cooldown for 40/35/30 seconds."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: now reveals only Window Auras within 24 metres, grants 10% faster Window vaults, and enters a 40/35/30-second cooldown after vaulting a Window.",
+    "plainEnglishSummary": "See nearby Windows and vault them faster, with a tiered cooldown after each Window vault.",
+    "cooldown": "40/35/30 seconds after vaulting a Window.",
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 10.2.0 rework removes Pallet and Breakable Wall Aura reading; only Windows are revealed."
+    ],
+    "sourceCharacter": "Kate Denson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "rank": 50,
+    "tier": "B",
+    "roles": ["Chase","Information"],
+    "summary": "See nearby Window Auras and vault Windows 10% faster, with a cooldown after each Window vault.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": ["aura-reading","looping","pre-drop","greed","solo-q"],
+    "useCases": [
+      "Identify nearby Windows quickly in unfamiliar structures.",
+      "Turn close Window timings into safer escapes with 10% faster vaults.",
+      "Use the Aura layer to plan a Window-heavy chase route before committing."
+    ],
+    "counters": [
+      "Vaulting a Window puts the entire perk on cooldown for 40/35/30 seconds.",
+      "It no longer reveals Pallets or Breakable Walls.",
+      "Twenty-four metres is much less map coverage than the old Tier III range."
+    ],
+    "synergies": ["Finesse","Lithe","Resilience","Quick & Quiet"],
+    "pros": [
+      "10% faster Window vaulting is direct chase power.",
+      "Window Auras still help unfamiliar-map routing.",
+      "Works at every health state."
+    ],
+    "cons": [
+      "Lost Pallet and Breakable Wall information in 10.2.",
+      "Cooldown means the Aura and speed package is not permanent.",
+      "Much less beginner macro coverage than the pre-10.2 version."
+    ],
+    "analysis": [
+      "Windows of Opportunity changed identity in 10.2. It is no longer the always-on all-resource map overlay that justified an elite information ranking; it now specializes in Windows and directly accelerates vaults by 10%.",
+      "The faster vault is meaningful. Tight Window timings decide many hits, and a ten-percent modifier can turn a marginal connection into a clean escape. The nearby Window Auras also remain useful when a structure is unfamiliar or visually cluttered.",
+      "The cost is information breadth and uptime. Pallets and Breakable Walls disappeared from the perk, the Aura range is fixed at 24 metres, and every Window vault starts a 40/35/30-second cooldown.",
+      "That makes modern Windows more of a chase-tech perk than a universal teaching tool. It can still be strong, but the old top-ten logic based on permanent Pallet-and-Window knowledge no longer applies and must be re-audited."
+    ],
+    "verdict": "Still a legitimate chase perk, but no longer the universal resource radar it used to be. The 10% vault bonus keeps it relevant while the cooldown and loss of Pallet information demand a lower fresh ranking.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "tags": ["Vault"],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [42,60],
+    "rankConfidence": "Medium",
+    "rankStatus": "provisional",
+    "evidenceStatus": "provisional-direction-stable",
+    "acquisition": {"type":"character","sourceCharacter":"Kate Denson"},
+    "synergyPerkIds": ["finesse","lithe","resilience","quick-quiet"],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "antiSynergies": [],
+    "archetypeRatings": [],
+    "reviewFlags": ["10.2-live-change","v15-schema-migrated","rank-review-applied","queue-rating:audit-explicit"]
+  }
+}
