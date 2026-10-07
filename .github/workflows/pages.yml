@@ -67,6 +67,8 @@ jobs:
           grep -q "10.2.0" /tmp/dbd-smoke
 
           check "assets/app-core.js"
+          check "assets/mobile-filter.css"
+          check "assets/mobile-filter.js"
           check "assets/data-perks-01.js"
           check "manifest.webmanifest"
           python3 -m json.tool /tmp/dbd-smoke >/dev/null
