@@ -59,10 +59,20 @@ export function loadAndFlattenSurvivorPerks(options = {}) {
   }
 
   flattened.sort((a,b) => a.rank - b.rank);
-  flattened.forEach((perk, index) => {
-    if (perk.rank !== index + 1) throw new Error(`Survivor ranks must be contiguous: expected ${index + 1}, found ${perk.rank}`);
-  });
-  return flattened;
+  return flattened.filter(perk => perk.publicationStatus === 'published');
+}
+
+export function syncRuntimeMeta({ rootDir = defaultRoot(), metaPath = path.join(rootDir, 'site/assets/data-meta.js') } = {}) {
+  const records = loadSurvivorRecords({ rootDir });
+  const patches = [...new Set(records.map(record => record.verifiedLivePatch))];
+  const dates = [...new Set(records.map(record => record.verifiedDate))];
+  if (patches.length !== 1 || !patches[0]) throw new Error(`Survivor source must have one verifiedLivePatch; found ${patches.join(', ')}`);
+  if (dates.length !== 1 || !dates[0]) throw new Error(`Survivor source must have one verifiedDate; found ${dates.join(', ')}`);
+  let code = fs.readFileSync(metaPath, 'utf8');
+  code = code.replace(/"livePatch":"[^"]*"/, `"livePatch":"${patches[0]}"`);
+  code = code.replace(/"verifiedDate":"[^"]*"/, `"verifiedDate":"${dates[0]}"`);
+  fs.writeFileSync(metaPath, code);
+  return { livePatch: patches[0], verifiedDate: dates[0] };
 }
 
 export function writeRuntimeModules({ rootDir = defaultRoot(), outputDir = path.join(rootDir, 'site/assets') } = {}) {
@@ -80,4 +90,5 @@ export function writeRuntimeModules({ rootDir = defaultRoot(), outputDir = path.
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   writeRuntimeModules();
+  syncRuntimeMeta();
 }
