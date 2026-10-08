@@ -94,6 +94,23 @@ test('tier sorting uses power then stability then name', () => {
   assert.deepEqual(Array.from(api.sortCurrentTier(items, 'SURVIVOR_SOLO_Q'), x=>x.id), ['C','A','B']);
 });
 
+test('parent-family cards link to their child strategy routes', () => {
+  const api = loadBrowser();
+  const childA = strategy({ id:'A01', name:'Hook Rescue', articlePath:'survivor-meta/hook-rescue/' });
+  const childP = strategy({ id:'P01', name:'Flashlight Save', articlePath:'survivor-meta/flashlight-save/' });
+  const parent = strategy({
+    id:'A00',
+    name:'Rescue Family',
+    structuralClassification:'PARENT STRATEGY FAMILY',
+    subtypeIds:['A01','P01'],
+    environmentEvaluations:[solo('NOT_APPLICABLE'), swf('NOT_APPLICABLE')],
+    articlePath:'survivor-meta/rescue-family/'
+  });
+  const html = api.renderStrategyCard(parent, 'SURVIVOR_SOLO_Q', [parent, childA, childP]);
+  assert.match(html, /href="survivor-meta\/hook-rescue\/"/);
+  assert.match(html, /href="survivor-meta\/flashlight-save\/"/);
+});
+
 test('Survivor Meta is wired into navigation home search and presentation assets', () => {
   const core = fs.readFileSync(path.join(root, 'site/assets/app-core.js'), 'utf8');
   const pages = fs.readFileSync(path.join(root, 'site/assets/app-pages.js'), 'utf8');
