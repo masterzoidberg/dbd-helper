@@ -7,7 +7,7 @@ if (typeof document === 'undefined' || typeof URL === 'undefined') return clean;
 return new URL(clean, document.baseURI).href;
 }
 function escapeHtml(value) {
-return String(value ?? '').replace(/[&<>"]/g, function (char) {
+return String(value ?? '').replace(/[&<>\"]/g, function (char) {
 return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' })[char];
 });
 }
@@ -39,6 +39,7 @@ function navHtml(current) {
 const links = [
 ['home','','⌂','Home'],
 ['survivor-perks','survivor/perks/','◈','Survivor Perks'],
+['survivor-meta','survivor-meta/','◎','Survivor Meta'],
 ['survivor-guide','survivor/guide/','◇','How to Play Survivor'],
 ['killer-perks','killer/perks/','◆','Killer Perks'],
 ['killer-guides','killer/guides/','◉','Killer Guides'],
@@ -48,14 +49,14 @@ const searchLink = ['search','#search','⌕','Search'];
 const desktop = `<nav class="desktop-nav" aria-label="Desktop navigation">
 <a class="brand" href="${siteHref('')}"><span class="brand-mark">DBD</span><span>Field Guide</span></a>
 <div class="nav-group"><div class="nav-label">Quick Access</div>${[links[0], searchLink].map(link).join('')}</div>
-<div class="nav-group"><div class="nav-label">Survivor</div>${links.slice(1,3).map(link).join('')}</div>
-<div class="nav-group"><div class="nav-label">Killer</div>${links.slice(3,5).map(link).join('')}</div>
-<div class="nav-group"><div class="nav-label">Reference</div>${links.slice(5).map(link).join('')}</div>
+<div class="nav-group"><div class="nav-label">Survivor</div>${links.slice(1,4).map(link).join('')}</div>
+<div class="nav-group"><div class="nav-label">Killer</div>${links.slice(4,6).map(link).join('')}</div>
+<div class="nav-group"><div class="nav-label">Reference</div>${links.slice(6).map(link).join('')}</div>
 <div class="nav-spacer"></div>
 <div class="patch-pill"><strong>Live ${escapeHtml(data.livePatch)}</strong><br>Verified ${escapeHtml(data.verifiedDate)}</div>
 </nav>`;
 const mobileTop = `<header class="mobile-top"><a class="brand" href="${siteHref('')}"><span class="brand-mark">DBD</span><span>Field Guide</span></a><span class="tag live">${escapeHtml(data.livePatch)}</span></header>`;
-const mobileLinks = [links[0], links[1], links[3], searchLink];
+const mobileLinks = [links[0], links[1], links[4], searchLink];
 const mobile = `<nav class="mobile-nav" aria-label="Mobile navigation">${mobileLinks.map(([id,href,icon,label]) => `<a href="${siteHref(href)}" ${current===id?'aria-current="page"':''}><span>${icon}</span><span>${label.replace(' Perks','')}</span></a>`).join('')}</nav>`;
 return desktop + mobileTop + mobile;
 function link([id, href, icon, label]) {

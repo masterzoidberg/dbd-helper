@@ -93,3 +93,19 @@ test('tier sorting uses power then stability then name', () => {
   ];
   assert.deepEqual(Array.from(api.sortCurrentTier(items, 'SURVIVOR_SOLO_Q'), x=>x.id), ['C','A','B']);
 });
+
+test('Survivor Meta is wired into navigation home search and presentation assets', () => {
+  const core = fs.readFileSync(path.join(root, 'site/assets/app-core.js'), 'utf8');
+  const pages = fs.readFileSync(path.join(root, 'site/assets/app-pages.js'), 'utf8');
+  const css = fs.readFileSync(path.join(root, 'site/assets/app.css'), 'utf8');
+  const home = fs.readFileSync(path.join(root, 'site/index.html'), 'utf8');
+  assert.match(core, /survivor-meta/);
+  assert.match(core, /Survivor Meta/);
+  assert.match(pages, /data\.survivorStrategies/);
+  assert.match(pages, /articlePath/);
+  assert.match(home, /assets\/data-survivor-meta\.js/);
+  assert.match(home, /Survivor Meta/);
+  assert.match(css, /\.strategy-card/);
+  assert.match(css, /\.environment-switch/);
+  assert.match(css, /\.meta-summary-grid/);
+});

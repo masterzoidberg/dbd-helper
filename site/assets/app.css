@@ -156,3 +156,57 @@ ul.compact li + li { margin-top:5px; }
 .killer-guide-stub h2 { font-size:17px; }
 @media (max-width: 1100px) { .killer-guide-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width: 620px) { .killer-guide-grid { grid-template-columns:1fr; } }
+
+/* Survivor Meta */
+.meta-browser-toolbar { margin-bottom:20px; }
+.environment-switch { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 10px; }
+.environment-switch .chip { min-width:140px; }
+.strategy-list { display:grid; gap:12px; }
+.strategy-card { border:1px solid var(--border); background:linear-gradient(180deg,var(--surface-2),var(--surface)); border-radius:var(--radius); padding:17px 18px; box-shadow:0 6px 22px rgba(0,0,0,.2); }
+.strategy-card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+.strategy-card-head h3 { margin:0; font-size:20px; letter-spacing:-.02em; }
+.strategy-card-head .eyebrow { margin-bottom:3px; }
+.strategy-power { flex:0 0 auto; text-align:right; border:1px solid var(--border); background:#0d0f12; border-radius:10px; padding:8px 10px; min-width:112px; }
+.strategy-power strong { display:block; font-size:16px; }
+.strategy-power small { display:block; color:var(--muted); margin-top:2px; font-size:10px; text-transform:uppercase; letter-spacing:.07em; }
+.strategy-card .perk-title-row { margin-top:10px; }
+.strategy-card-footer { display:flex; justify-content:space-between; gap:12px; align-items:center; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; }
+.strategy-link { color:#f0d4d6; font-weight:800; }
+.strategy-link:hover { color:#fff; }
+.tag.meta-provisional { color:#f0d58a; border-color:#6c5a2e; background:#211c0e; }
+.meta-special-section { margin:30px 0; padding-top:4px; }
+.meta-special-section + .meta-special-section { border-top:1px solid var(--border); padding-top:24px; }
+.meta-summary-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:0 0 20px; }
+.meta-evaluation { border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:13px 14px; }
+.meta-evaluation strong { display:block; margin-top:4px; font-size:20px; }
+.meta-evaluation small { display:block; margin-top:3px; color:var(--muted); }
+.meta-builds { border:1px solid var(--border); background:var(--surface); border-radius:14px; padding:16px 18px; margin:0 0 22px; }
+.meta-builds h2 { margin:0 0 12px; }
+.meta-build { border-top:1px solid var(--border); padding-top:12px; margin-top:12px; }
+.meta-build:first-of-type { border-top:0; padding-top:0; }
+.meta-build h3 { margin:0 0 6px; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:#d8b2b5; }
+.meta-build p { margin:6px 0 0; color:#d4d5d8; }
+.meta-build code, .meta-article-body code { border:1px solid #353a43; background:#111318; border-radius:6px; padding:1px 5px; font-size:.92em; }
+.meta-article-page { max-width:1040px; }
+.meta-detail-head { margin-bottom:18px; }
+.meta-article-body { max-width:84ch; border-top:1px solid var(--border); padding-top:10px; color:#d7d7da; }
+.meta-article-body h1 { font-size:30px; margin:24px 0 14px; }
+.meta-article-body h3 { margin:28px 0 9px; color:#f1eded; }
+.meta-article-body h4 { margin:20px 0 7px; color:#d8b2b5; }
+.meta-article-body p { margin:0 0 13px; }
+.meta-article-body ul { padding-left:22px; }
+.meta-article-body li + li { margin-top:4px; }
+.meta-article-body table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13px; }
+.meta-article-body th, .meta-article-body td { border:1px solid var(--border); padding:8px 9px; text-align:left; vertical-align:top; }
+.meta-article-body th { background:var(--surface-2); }
+@media (max-width: 920px) {
+  .meta-summary-grid { grid-template-columns:1fr; }
+  .environment-switch { padding:0 4px; }
+}
+@media (max-width: 620px) {
+  .strategy-card { padding:14px 13px; }
+  .strategy-card-head { display:block; }
+  .strategy-power { display:inline-block; text-align:left; margin-top:10px; min-width:0; }
+  .strategy-card-footer { align-items:flex-start; flex-direction:column; }
+  .environment-switch .chip { flex:1 1 130px; }
+}
