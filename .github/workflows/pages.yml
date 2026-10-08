@@ -1,84 +1,37 @@
-name: Deploy DBD Helper to GitHub Pages
+name: Bootstrap Survivor Meta Artifacts
 
 on:
   push:
-    branches: [main]
+    branches: [feature/survivor-meta-foundation]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout feature branch
         uses: actions/checkout@v4
-
-      - name: Import canonical Survivor v15 JSON
-        run: python3 scripts/import-survivor-v15.py --archive dbd-local-data-v15-release-candidate.zip --output content/survivor/perks
-
-      - name: Build Survivor perk data
-        run: node scripts/build-survivor-data.mjs
-
-      - name: Verify Survivor perk data
-        run: node --test site/tests/*.test.mjs
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
         with:
-          enablement: true
+          ref: feature/survivor-meta-foundation
 
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
+      - name: Import frozen Survivor Meta research
+        run: python3 scripts/import-survivor-meta.py --archive survivor-meta.zip --output content/survivor/meta/10.2.0-r1 --release 10.2.0-r1
 
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build deterministic Survivor Meta artifacts
+        run: node scripts/build-survivor-meta.mjs
 
-      - name: Smoke test live site
-        env:
-          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+      - name: Commit generated artifacts
         run: |
           set -euo pipefail
-          check() {
-            url="${SITE_URL}$1"
-            echo "Checking ${url}"
-            curl --fail --silent --show-error --location \
-              --retry 5 --retry-all-errors --retry-delay 2 \
-              "${url}" -o /tmp/dbd-smoke
-            test -s /tmp/dbd-smoke
-          }
-
-          check ""
-          grep -q "Find what matters before the fog closes in" /tmp/dbd-smoke
-          grep -q "176</strong> Survivor perks published" /tmp/dbd-smoke
-
-          check "survivor/perks/"
-          grep -q "Survivor Perks" /tmp/dbd-smoke
-          grep -q "176 published" /tmp/dbd-smoke
-          grep -q "10.2.0" /tmp/dbd-smoke
-
-          check "assets/app-core.js"
-          check "assets/mobile-filter.css"
-          check "assets/mobile-filter.js"
-          check "assets/data-perks-01.js"
-          grep -q '"rank":1' /tmp/dbd-smoke
-          grep -q '"id":"will-to-live"' /tmp/dbd-smoke
-          check "assets/data-perks-05.js"
-          grep -q '"rank":176' /tmp/dbd-smoke
-          grep -q '"id":"invocation-treacherous-crows"' /tmp/dbd-smoke
-          check "manifest.webmanifest"
-          python3 -m json.tool /tmp/dbd-smoke >/dev/null
-          check "sw.js"
+          git add content/survivor/meta/10.2.0-r1 site/assets/data-survivor-meta.js site/survivor-meta
+          if git diff --cached --quiet; then
+            echo "Generated artifacts already match the branch."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: generate survivor meta artifacts [skip ci]"
+          git push origin HEAD:feature/survivor-meta-foundation
