@@ -17,6 +17,9 @@ jobs:
         with:
           ref: feature/survivor-meta-foundation
 
+      - name: Import canonical Survivor v15 source
+        run: python3 scripts/import-survivor-v15.py --archive dbd-local-data-v15-release-candidate.zip --output content/survivor/perks
+
       - name: Import frozen Survivor Meta research
         run: python3 scripts/import-survivor-meta.py --archive survivor-meta.zip --output content/survivor/meta/10.2.0-r1 --release 10.2.0-r1
 
