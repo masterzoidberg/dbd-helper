@@ -51,13 +51,30 @@ scripts/import-survivor-meta.py
 scripts/build-survivor-meta.mjs
         |
         +--> site/assets/data-survivor-meta.js
-        +--> site/survivor-meta/index.html
         +--> site/survivor-meta/<slug>/index.html (57 routes)
+
+hand-authored browser shell
+site/survivor-meta/index.html
+        |
+        +--> site/assets/survivor-meta.js
+        +--> site/assets/data-survivor-meta.js
 ```
 
-The import step validates and extracts the frozen package. The build step joins Strategy identity, the current StrategyPatchSnapshot, and the matching Stage 3B article into generated site artifacts.
+The import step validates and extracts the frozen package. The build step joins Strategy identity, the current StrategyPatchSnapshot, and the matching Stage 3B article into generated site artifacts. The index page is a small hand-authored shell, matching the existing Survivor Perks page pattern, and uses generated runtime data in the browser.
 
 No runtime network calls are required by the browser.
+
+## Repository Policy for Generated Files
+
+Match the existing Survivor Perk convention: imported canonical content and generated site artifacts are committed to the repository **and** rebuilt in CI from their frozen ZIP sources.
+
+Commit:
+
+- `content/survivor/meta/10.2.0-r1/**`;
+- `site/assets/data-survivor-meta.js`;
+- all 57 generated `site/survivor-meta/<slug>/index.html` pages.
+
+The build must be deterministic and must not include generation timestamps or machine-specific paths. CI will rebuild these artifacts and run a scoped `git diff --exit-code` check so committed output cannot drift from `survivor-meta.zip`.
 
 ## Importer Responsibilities
 
@@ -80,13 +97,26 @@ The importer must:
 - verify every Stage 3B article front matter references the expected `strategyId` and `snapshotId`;
 - copy no unrelated archive material into the generated content tree.
 
-The importer should fail loudly with a non-zero exit code and a human-readable message when an invariant is violated.
+The importer fails with a non-zero exit code and a human-readable message when an invariant is violated.
+
+## Importer Tests
+
+Add Python standard-library unit tests under `scripts/tests/` and run them with `python3 -m unittest discover -s scripts/tests -p 'test_*.py'`.
+
+At minimum test:
+
+- a valid archive imports successfully;
+- a ZIP member containing `../` is rejected;
+- a manifest/snapshot mismatch is rejected;
+- a failed Stage 3A or Stage 3B QC flag is rejected.
+
+Tests may build tiny temporary fixture archives rather than copying the full research package.
 
 ## Runtime Data Model
 
-`site/assets/data-survivor-meta.js` should register a compact array on the existing `window.DBD_DATA` object. It is generated, not hand-edited.
+`site/assets/data-survivor-meta.js` registers a compact `survivorStrategies` array on the existing `window.DBD_DATA` object. It is generated, not hand-edited.
 
-Each runtime Strategy record should include only fields needed for browser/search/navigation behavior:
+Each runtime Strategy record contains:
 
 - `id`
 - `name`
@@ -109,13 +139,35 @@ Each runtime Strategy record should include only fields needed for browser/searc
 - `stabilityLabel`
 - `dependencyTypes`
 - `strategicDiagnostics`
-- `solo`
-- `swf`
+- `environmentEvaluations`
 - `articlePath`
 
-The source Stage 3A fields `solo` and `swf` remain untouched in frozen research. The generated runtime object may additionally expose an `environmentEvaluations` array for future shared Survivor/Killer UI work, but the first implementation must not delete or reinterpret canonical values.
+`environmentEvaluations` always contains two entries in this order:
 
-The runtime layer may rename `roleCommitment` to `strategicCommitment` only as an adapter alias. The source snapshot remains unchanged.
+```json
+[
+  {
+    "environmentId": "SURVIVOR_SOLO_Q",
+    "rankingStatus": "RANKED",
+    "power": 79,
+    "tier": "A",
+    "rankingIndex": 81.2,
+    "confidence": "MEDIUM"
+  },
+  {
+    "environmentId": "SURVIVOR_COORDINATED_SWF",
+    "rankingStatus": "RANKED",
+    "power": 86,
+    "tier": "A",
+    "rankingIndex": 86.8,
+    "confidence": "MEDIUM"
+  }
+]
+```
+
+Values come directly from Stage 3A `solo` and `swf`; the frozen source remains unchanged.
+
+Runtime `strategicDiagnostics` exposes `strategicCommitment`, mapped directly from Stage 3A `roleCommitment`. It does not reinterpret or rescore the value.
 
 ## Ranking Semantics
 
@@ -149,9 +201,9 @@ Within a tier, sort by:
 
 ## Survivor Meta Browser
 
-Generate `site/survivor-meta/index.html` using the existing site shell and visual language.
+Create the hand-authored `site/survivor-meta/index.html` using the existing site shell and visual language. Put Survivor-Meta-specific browser logic in the new focused file `site/assets/survivor-meta.js` instead of further enlarging `app-pages.js`.
 
-The browser must provide:
+The browser provides:
 
 - a prominent `Solo Q` / `Coordinated SWF` environment switch;
 - text search across Strategy name, alternate names, definition, classification, roles, mechanics, and tags;
@@ -169,7 +221,7 @@ PR 1 also does not invent Skill Floor, Skill Ceiling, Execution Reliability, Map
 
 ## Strategy Cards
 
-Each strategy card should show enough information to understand the ranking without opening the article:
+Each strategy card shows enough information to understand the ranking without opening the article:
 
 - Strategy name and ID;
 - structural classification;
@@ -200,19 +252,28 @@ Each page has two layers:
    - patch baseline and research revision.
 2. **Stage 3B article body** rendered from the matching Markdown source.
 
-The renderer is build-time only and should support the exact Markdown constructs present in the frozen Stage 3B corpus: headings, paragraphs, emphasis/strong text, inline code, unordered lists, blockquotes, thematic breaks, links, and simple tables. It must HTML-escape source text before applying supported markup and must not allow arbitrary raw HTML from Markdown.
+The renderer is build-time only and supports the exact structural Markdown used by the frozen Stage 3B corpus:
 
-The build should include a corpus test that renders all 57 pages and fails if unsupported structural Markdown remains in generated article HTML.
+- ATX headings (`#` through `####`);
+- paragraphs;
+- strong/emphasis text;
+- inline code;
+- unordered lists;
+- Markdown hard line breaks using two trailing spaces.
+
+The renderer removes YAML-style front matter before rendering. It HTML-escapes source text before applying supported inline markup and does not permit arbitrary raw HTML. The frozen corpus does not require fenced code blocks, blockquotes, ordered lists, Markdown links, or Markdown tables, so PR 1 does not implement them.
+
+The build includes a corpus test that renders all 57 pages and fails if unsupported structural Markdown remains in generated article HTML.
 
 ## Build Implementations and Perk References
 
-Canonical `buildImplementations[].perkIds` are trusted as structured identifiers because Stage 3A validation already audits them against the Survivor perk dataset.
+Canonical `buildImplementations[].perkIds` are trusted as structured identifiers because Stage 3A validation audits them against the Survivor perk dataset.
 
-When a BuildImplementation exists, the generated page may link those canonical perk IDs to the Survivor Perks browser.
+When a BuildImplementation exists, generated detail-page canonical summary content may link those perk IDs to `survivor/perks/?q=<perk-id>`.
 
-`perkEcosystem.typicalDefiningPerks` is descriptive research text and must not be silently converted into canonical IDs. It may be displayed as article text, but automatic linking requires a deterministic exact match to the perk dataset.
+`perkEcosystem.typicalDefiningPerks` is descriptive research text and must not be silently converted into canonical IDs. It remains article text in PR 1.
 
-PR 1 should keep cross-linking minimal. A complete reverse Strategy ↔ Perk index belongs to PR 2.
+A complete reverse Strategy ↔ Perk index belongs to PR 2.
 
 ## Navigation and Global Search
 
@@ -224,9 +285,9 @@ Desktop Survivor navigation becomes:
 - Survivor Meta
 - How to Play Survivor
 
-The mobile navigation remains compact. PR 1 may keep the existing four primary mobile destinations, but the Survivor landing/search path must make Survivor Meta discoverable.
+The mobile navigation remains the existing compact Home / Survivor / Killer / Search layout. No additional fifth mobile icon is added in PR 1.
 
-Modify `site/assets/app-pages.js` so home search indexes Survivor Meta Strategy names, alternate names, classification, and short description. Results link directly to strategy detail routes.
+Modify `site/assets/app-pages.js` only for global/home search integration. Home search indexes Survivor Meta Strategy names, alternate names, classification, and short description and links directly to strategy detail routes.
 
 ## Styling
 
@@ -240,10 +301,10 @@ Add focused styles for:
 - Stability presentation;
 - family/unranked/legacy groups;
 - article layout;
-- rendered Stage 3B tables and inline code;
+- rendered inline code;
 - responsive behavior.
 
-The design should remain readable on the existing mobile breakpoint and should reuse existing chips, tags, tier headings, cards, spacing, and typography wherever practical.
+The design remains readable on the existing mobile breakpoint and reuses existing chips, tags, tier headings, cards, spacing, and typography wherever practical.
 
 ## Service Worker / Offline Behavior
 
@@ -251,11 +312,11 @@ Bump the service-worker cache version.
 
 Precache:
 
-- `/survivor-meta/`;
+- `survivor-meta/`;
 - `assets/data-survivor-meta.js`;
-- any new shared JS/CSS asset required by the browser.
+- `assets/survivor-meta.js`.
 
-Do **not** precache all 57 encyclopedia pages. Detail pages should continue to use navigation network-first behavior and become cached opportunistically after visits.
+Do **not** precache all 57 encyclopedia pages. Detail pages continue to use navigation network-first behavior and become cached opportunistically after visits.
 
 ## Build and Deployment Workflow
 
@@ -266,17 +327,19 @@ Extend `.github/workflows/pages.yml` in this order:
 3. build Survivor Perk data;
 4. import Survivor Meta 10.2.0-r1 from `survivor-meta.zip`;
 5. build Survivor Meta runtime/detail pages;
-6. run all site tests;
-7. configure/deploy Pages;
-8. live smoke test.
+6. run Python importer unit tests;
+7. run all Node site tests;
+8. run a scoped `git diff --exit-code` against committed Survivor Meta generated/imported outputs;
+9. configure/deploy Pages;
+10. live smoke test.
 
-No deployment should occur if Survivor Meta import, build, or tests fail.
+No deployment occurs if Survivor Meta import, build, tests, or drift detection fails.
 
-## Automated Tests
+## Automated Site Tests
 
 Add dedicated Node tests under `site/tests/` for generated Survivor Meta output.
 
-The suite must verify at minimum:
+The suite verifies at minimum:
 
 - 57 runtime Strategy records;
 - 57 generated detail routes;
@@ -291,10 +354,10 @@ The suite must verify at minimum:
 - Stage 3B manifest/article/snapshot relationships remain consistent;
 - generated routes are unique;
 - representative build canonical perk IDs resolve against generated Survivor perk data;
-- the index page and representative META, Parent Family, and Legacy detail pages are generated;
+- the index page and representative META, Parent Family, and Legacy detail pages exist;
 - all 57 Markdown articles render without unsupported structural syntax leaking into article HTML.
 
-Existing Survivor Perk tests must continue to pass unchanged unless a shared navigation assertion legitimately needs updating.
+Existing Survivor Perk tests continue to pass unchanged unless a shared navigation assertion legitimately needs updating.
 
 ## Live Smoke Tests
 
@@ -302,16 +365,17 @@ Extend the Pages workflow smoke test to verify:
 
 - `survivor-meta/` loads and contains `Survivor Meta` plus patch `10.2.0`;
 - `assets/data-survivor-meta.js` exists and contains Strategy `C01` and `X02`;
-- one major META page loads, e.g. `/survivor-meta/general-chase-looping/`;
+- `assets/survivor-meta.js` exists;
+- `/survivor-meta/general-chase-looping/` loads;
 - one Parent Strategy Family page loads;
 - one Legacy page loads;
-- generated pages contain the expected Strategy ID/name and no empty body.
+- generated pages contain the expected Strategy ID/name and a non-empty article body.
 
 ## Error Handling
 
 Import/build failures are build failures, not runtime warnings.
 
-Examples that must stop deployment:
+Examples that stop deployment:
 
 - corrupt `survivor-meta.zip`;
 - missing 10.2.0-r1 source subtree;
@@ -323,7 +387,7 @@ Examples that must stop deployment:
 - unresolved canonical BuildImplementation perk ID;
 - invalid parent/subtype relationship.
 
-The browser should not be responsible for repairing or guessing malformed canonical data.
+The browser is not responsible for repairing or guessing malformed canonical data.
 
 ## Files Expected to Change
 
@@ -332,9 +396,12 @@ The browser should not be responsible for repairing or guessing malformed canoni
 - `docs/superpowers/specs/2026-10-07-survivor-meta-foundation-design.md`
 - `scripts/import-survivor-meta.py`
 - `scripts/build-survivor-meta.mjs`
-- `site/assets/data-survivor-meta.js` (generated)
-- `site/survivor-meta/index.html` (generated or template-driven)
-- `site/survivor-meta/<slug>/index.html` for 57 generated routes
+- `scripts/tests/test_import_survivor_meta.py`
+- `content/survivor/meta/10.2.0-r1/**` (committed imported output)
+- `site/assets/data-survivor-meta.js` (committed generated output)
+- `site/assets/survivor-meta.js`
+- `site/survivor-meta/index.html`
+- `site/survivor-meta/<slug>/index.html` for 57 committed generated routes
 - `site/tests/survivor-meta.test.mjs`
 
 ### Modified
@@ -344,9 +411,8 @@ The browser should not be responsible for repairing or guessing malformed canoni
 - `site/assets/app-pages.js`
 - `site/assets/app.css`
 - `site/sw.js`
-- potentially `site/manifest.webmanifest` only if navigation shortcuts need updating
 
-Generated `content/survivor/meta/10.2.0-r1/` files are build/import outputs and should follow the same repository policy as the existing generated Survivor Perk content. The implementation plan will decide whether they are committed or produced only in CI based on the existing repository convention.
+`site/manifest.webmanifest` is unchanged in PR 1.
 
 ## Explicit Non-Goals for PR 1
 
@@ -372,7 +438,8 @@ PR 1 is complete when:
 4. Parent Family, Unranked, Not Applicable, Provisional, and Legacy semantics match Stage 3A without fabricated values;
 5. all 57 Stage 3B articles render as static HTML beneath their canonical route family;
 6. Survivor Meta is discoverable through site navigation and global search;
-7. automated tests pass;
-8. GitHub Pages deployment succeeds;
-9. live smoke tests pass for the Meta index, runtime asset, and representative detail routes;
-10. existing Survivor Perk functionality remains intact.
+7. Python importer tests and Node site tests pass;
+8. CI drift detection confirms committed generated output matches the frozen source;
+9. GitHub Pages deployment succeeds;
+10. live smoke tests pass for the Meta index, runtime assets, and representative detail routes;
+11. existing Survivor Perk functionality remains intact.
