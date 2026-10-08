@@ -1,40 +1,122 @@
-name: Bootstrap Survivor Meta Artifacts
+name: Verify and Deploy DBD Helper to GitHub Pages
 
 on:
   push:
-    branches: [feature/survivor-meta-foundation]
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  generate:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout feature branch
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: feature/survivor-meta-foundation
 
-      - name: Import canonical Survivor v15 source
+      - name: Import canonical Survivor v15 JSON
         run: python3 scripts/import-survivor-v15.py --archive dbd-local-data-v15-release-candidate.zip --output content/survivor/perks
+
+      - name: Build Survivor perk data
+        run: node scripts/build-survivor-data.mjs
 
       - name: Import frozen Survivor Meta research
         run: python3 scripts/import-survivor-meta.py --archive survivor-meta.zip --output content/survivor/meta/10.2.0-r1 --release 10.2.0-r1
 
-      - name: Build deterministic Survivor Meta artifacts
+      - name: Build Survivor Meta site
         run: node scripts/build-survivor-meta.mjs
 
-      - name: Commit generated artifacts
+      - name: Test Survivor Meta importer
+        run: python3 -m unittest discover -s scripts/tests -p 'test_*.py' -v
+
+      - name: Test site
+        run: node --test site/tests/*.test.mjs
+
+      - name: Verify committed Survivor Meta artifacts are deterministic
+        run: git diff --exit-code -- content/survivor/meta/10.2.0-r1 site/assets/data-survivor-meta.js site/survivor-meta
+
+      - name: Upload site
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: verify
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Smoke test live site
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           set -euo pipefail
-          git add content/survivor/meta/10.2.0-r1 site/assets/data-survivor-meta.js site/survivor-meta
-          if git diff --cached --quiet; then
-            echo "Generated artifacts already match the branch."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: generate survivor meta artifacts [skip ci]"
-          git push origin HEAD:feature/survivor-meta-foundation
+          check() {
+            url="${SITE_URL}$1"
+            echo "Checking ${url}"
+            curl --fail --silent --show-error --location \
+              --retry 5 --retry-all-errors --retry-delay 2 \
+              "${url}" -o /tmp/dbd-smoke
+            test -s /tmp/dbd-smoke
+          }
+
+          check ""
+          grep -q "Find what matters before the fog closes in" /tmp/dbd-smoke
+          grep -q "176</strong> Survivor perks published" /tmp/dbd-smoke
+          grep -q "57</strong> Survivor strategies published" /tmp/dbd-smoke
+
+          check "survivor/perks/"
+          grep -q "Survivor Perks" /tmp/dbd-smoke
+          grep -q "176 published" /tmp/dbd-smoke
+          grep -q "10.2.0" /tmp/dbd-smoke
+
+          check "survivor-meta/"
+          grep -q "Survivor Meta" /tmp/dbd-smoke
+          grep -q "57 strategies" /tmp/dbd-smoke
+          grep -q "10.2.0" /tmp/dbd-smoke
+
+          check "assets/data-survivor-meta.js"
+          grep -q '"id":"C01"' /tmp/dbd-smoke
+          grep -q '"id":"X02"' /tmp/dbd-smoke
+          check "assets/survivor-meta.js"
+
+          check "survivor-meta/general-chase-looping/"
+          grep -q "General Chase / Looping" /tmp/dbd-smoke
+          grep -q "meta-article-body" /tmp/dbd-smoke
+          check "survivor-meta/rescue-and-reset-support-family/"
+          grep -q "PARENT STRATEGY FAMILY" /tmp/dbd-smoke
+          check "survivor-meta/luck-based-self-unhook/"
+          grep -q "LEGACY" /tmp/dbd-smoke
+
+          check "assets/app-core.js"
+          check "assets/mobile-filter.css"
+          check "assets/mobile-filter.js"
+          check "assets/data-perks-01.js"
+          grep -q '"rank":1' /tmp/dbd-smoke
+          grep -q '"id":"will-to-live"' /tmp/dbd-smoke
+          check "assets/data-perks-05.js"
+          grep -q '"rank":176' /tmp/dbd-smoke
+          grep -q '"id":"invocation-treacherous-crows"' /tmp/dbd-smoke
+          check "manifest.webmanifest"
+          python3 -m json.tool /tmp/dbd-smoke >/dev/null
+          check "sw.js"
