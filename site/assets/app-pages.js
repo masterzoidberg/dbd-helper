@@ -56,8 +56,10 @@ const results = document.querySelector('[data-home-results]');
 if (!input || !results) return;
 const staticItems = [
 ...data.perks.map((p)=>({title:p.name, subtitle:`#${p.rank} ${p.tier} Survivor perk · ${p.source}`, href:siteHref('survivor/perks/?q='+encodeURIComponent(p.name))})),
+...(data.survivorStrategies || []).map((s)=>({title:s.name, subtitle:`Survivor Meta · ${s.structuralClassification} · ${(s.alternateNames || []).join(' · ')} · ${s.generalStrategicDefinition}`, href:siteHref(s.articlePath)})),
 ...data.glossary.map((g)=>({title:g.term, subtitle:g.short, href:siteHref('glossary/?q='+encodeURIComponent(g.term))})),
 ...(data.killerGuides || []).map((g)=>({title:g.name, subtitle:'Killer how-to guide shell · deep guide in Phase 4', href:siteHref('killer/guides/?q='+encodeURIComponent(g.name))})),
+{title:'Survivor Meta',subtitle:'57-strategy Solo Q and coordinated SWF ranking encyclopedia',href:siteHref('survivor-meta/')},
 {title:'How to Play Survivor',subtitle:'General Survivor fundamentals and quick-match advice',href:siteHref('survivor/guide/')},
 {title:'Killer Guides',subtitle:'Killer-specific how-to pages are staged for Phase 4',href:siteHref('killer/guides/')},
 {title:'Killer Perks',subtitle:`${data.killerPerkCount} live mechanics verified and ready for ranking`,href:siteHref('killer/perks/')}

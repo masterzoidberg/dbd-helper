@@ -1,0 +1,1737 @@
+[
+  {
+    "id": "C01",
+    "side": "SURVIVOR",
+    "name": "General Chase / Looping",
+    "alternateNames": [
+      "Chase build",
+      "looper",
+      "runner"
+    ],
+    "structuralClassification": "META",
+    "parentId": null,
+    "subtypeIds": [
+      "C02",
+      "C03",
+      "C04",
+      "C06",
+      "C08",
+      "C15"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Intentionally maximize time before down. Match plan is explicitly built around taking/lasting in chase",
+    "primaryRoles": [
+      "Chase"
+    ],
+    "secondaryRoles": [
+      "Time-buying",
+      "aggro"
+    ],
+    "conceptualMechanics": [
+      "Mobility",
+      "vaults",
+      "tile/resource use"
+    ],
+    "generalTags": [
+      "meta",
+      "chase"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C02",
+    "side": "SURVIVOR",
+    "name": "Exhaustion Mobility Chase",
+    "alternateNames": [
+      "Exhaustion build",
+      "distance build"
+    ],
+    "structuralClassification": "META SUBTYPE",
+    "parentId": "C01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Convert a trigger into distance or another loop. Mobility trigger defines routing decisions",
+    "primaryRoles": [
+      "Chase"
+    ],
+    "secondaryRoles": [
+      "Escape",
+      "positioning"
+    ],
+    "conceptualMechanics": [
+      "One large burst of mobility per Exhaustion cycle"
+    ],
+    "generalTags": [
+      "meta-subtype",
+      "chase"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C03",
+    "side": "SURVIVOR",
+    "name": "Vault / Window Specialist",
+    "alternateNames": [
+      "Window build",
+      "vault build"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "C01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Route toward reusable windows and win marginal vault timings. Current Windows is a window/vault perk, not the old pallet map perk.",
+    "primaryRoles": [
+      "Chase"
+    ],
+    "secondaryRoles": [
+      "Routing"
+    ],
+    "conceptualMechanics": [
+      "Windows",
+      "fast vaults",
+      "vault-speed modifiers"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "chase"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C04",
+    "side": "SURVIVOR",
+    "name": "Pallet / Resource Specialist",
+    "alternateNames": [
+      "Pallet build",
+      "resource build"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "C01",
+    "subtypeIds": [
+      "C05"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Preserve, identify or maximize pallet resources. Pallet economy rather than generic looping",
+    "primaryRoles": [
+      "Chase"
+    ],
+    "secondaryRoles": [
+      "Team resource management"
+    ],
+    "conceptualMechanics": [
+      "Pallet location/state",
+      "resetting/reuse"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "chase"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C05",
+    "side": "SURVIVOR",
+    "name": "Fragile-Pallet Restoration",
+    "alternateNames": [
+      "Rebuild build",
+      "Apocalyptic pallet build"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "C04",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Convert chest investment into a new tactical pallet. Creates a new pallet rather than conserving an existing one; 10.1 reduced setup to one chest.",
+    "primaryRoles": [
+      "Chase utility"
+    ],
+    "secondaryRoles": [
+      "Loot"
+    ],
+    "conceptualMechanics": [
+      "Open/rummage chest",
+      "rebuild broken pallet"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "chase-utility"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C06",
+    "side": "SURVIVOR",
+    "name": "Chase Information / Routing",
+    "alternateNames": [
+      "Chase aura",
+      "tile-reading"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": "C01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Pre-plan routes rather than react blind. Information changes route selection rather than raw speed",
+    "primaryRoles": [
+      "Chase"
+    ],
+    "secondaryRoles": [
+      "Info"
+    ],
+    "conceptualMechanics": [
+      "Killer/resource/window/pallet information"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "chase"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C07",
+    "side": "SURVIVOR",
+    "name": "Stealth / Chase Avoidance",
+    "alternateNames": [
+      "Immersion",
+      "stealth build"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Prevent chase from starting. Goal is not entering chase, unlike C08",
+    "primaryRoles": [
+      "Avoidance"
+    ],
+    "secondaryRoles": [
+      "Objectives",
+      "hatch/endgame"
+    ],
+    "conceptualMechanics": [
+      "Aura denial",
+      "noise suppression",
+      "low visibility"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "avoidance"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C08",
+    "side": "SURVIVOR",
+    "name": "Chase Reset / Disappearance",
+    "alternateNames": [
+      "Lose-the-Killer",
+      "vanishing build"
+    ],
+    "structuralClassification": "META SUBTYPE",
+    "parentId": "C01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Take a hit or break LOS and disappear. Starts with accepted chase, then tries to terminate it abruptly",
+    "primaryRoles": [
+      "Escape chase"
+    ],
+    "secondaryRoles": [
+      "Healing/reset"
+    ],
+    "conceptualMechanics": [
+      "Hide scratch marks/blood/noise after contact"
+    ],
+    "generalTags": [
+      "meta-subtype",
+      "escape-chase"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C09",
+    "side": "SURVIVOR",
+    "name": "Anti-Tunnel Package",
+    "alternateNames": [
+      "Tunnel protection",
+      "second chance"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Make immediate re-targeting expensive. Attaches cleanly to almost any main build. NightLight shows DS embedded with chase/generalist perks.",
+    "primaryRoles": [
+      "Personal survival"
+    ],
+    "secondaryRoles": [
+      "Chase",
+      "team tempo"
+    ],
+    "conceptualMechanics": [
+      "Post-unhook protection and pickup punishment"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "personal-survival"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C10",
+    "side": "SURVIVOR",
+    "name": "Anti-Slug / Self-Recovery Package",
+    "alternateNames": [
+      "Slug counter",
+      "recovery build"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "A00"
+    ],
+    "generalStrategicDefinition": "Deny pressure from leaving Survivors down. Activated specifically by Dying-state macro; community databases independently tag Anti-Slug builds.",
+    "primaryRoles": [
+      "Recovery"
+    ],
+    "secondaryRoles": [
+      "Pickup rescue",
+      "chase"
+    ],
+    "conceptualMechanics": [
+      "Recovering from Dying",
+      "self-pickup or fast teammate pickup"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "recovery"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C11",
+    "side": "SURVIVOR",
+    "name": "Hook-State Transfer",
+    "alternateNames": [
+      "Shoulder the Burden",
+      "hook-state redistribution"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": "A00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Keep a vulnerable teammate alive by redistributing hook economy. Directly moves hook-state risk between players.",
+    "primaryRoles": [
+      "Death prevention"
+    ],
+    "secondaryRoles": [
+      "Bodyblocking",
+      "anti-tunnel"
+    ],
+    "conceptualMechanics": [
+      "Remove target hook state and assume one yourself"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "death-prevention"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C12",
+    "side": "SURVIVOR",
+    "name": "Deterministic Self-Unhook",
+    "alternateNames": [
+      "Deliverance build"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "A00"
+    ],
+    "generalStrategicDefinition": "Bank independence before first hook. Requires a prior altruistic action rather than luck.",
+    "primaryRoles": [
+      "Self-rescue"
+    ],
+    "secondaryRoles": [
+      "Altruism"
+    ],
+    "conceptualMechanics": [
+      "Safely rescue another first",
+      "then self-unhook once"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "self-rescue"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C13",
+    "side": "SURVIVOR",
+    "name": "Luck-Based Self-Unhook",
+    "alternateNames": [
+      "Kobe build",
+      "luck build",
+      "old Slippery Meat"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Try to escape hook through probability. Retained because “luck/Kobe build” remains recognizable terminology",
+    "primaryRoles": [
+      "Self-rescue"
+    ],
+    "secondaryRoles": [
+      "Meme/high variance"
+    ],
+    "conceptualMechanics": [
+      "Old escape-attempt/luck stacking"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "self-rescue"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C14",
+    "side": "SURVIVOR",
+    "name": "Self-Sustain / Self-Heal",
+    "alternateNames": [
+      "Self-care build",
+      "independent healing"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Reset independently when team cannot or should not rotate. Primary beneficiary is the user, unlike healer builds",
+    "primaryRoles": [
+      "Healing self"
+    ],
+    "secondaryRoles": [
+      "Objective uptime"
+    ],
+    "conceptualMechanics": [
+      "Self-heal access without teammate"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "healing-self"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "C15",
+    "side": "SURVIVOR",
+    "name": "Haste / Movement Stack",
+    "alternateNames": [
+      "Speed build",
+      "zoomies"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "C01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Chain or overlap movement buffs to alter pathing. Built around the Haste mechanic rather than one Exhaustion burst",
+    "primaryRoles": [
+      "Mobility"
+    ],
+    "secondaryRoles": [
+      "Rescue",
+      "endgame"
+    ],
+    "conceptualMechanics": [
+      "Multiple conditional Haste sources"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "mobility"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G01",
+    "side": "SURVIVOR",
+    "name": "General Generator Pressure",
+    "alternateNames": [
+      "Gen build",
+      "gen rush"
+    ],
+    "structuralClassification": "META",
+    "parentId": null,
+    "subtypeIds": [
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G07",
+      "G08",
+      "G09",
+      "G10"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Maximize useful generator progress across match. Repair is the central match plan, not merely one perk.",
+    "primaryRoles": [
+      "Repair"
+    ],
+    "secondaryRoles": [
+      "Routing"
+    ],
+    "conceptualMechanics": [
+      "Repair bonuses",
+      "uptime",
+      "gen selection"
+    ],
+    "generalTags": [
+      "meta",
+      "repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G02",
+    "side": "SURVIVOR",
+    "name": "Toolbox Generator Specialist",
+    "alternateNames": [
+      "Toolbox gen",
+      "item gen build"
+    ],
+    "structuralClassification": "META SUBTYPE",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Spend item resources where immediate progress matters. Item resource is indispensable, unlike generic G01.",
+    "primaryRoles": [
+      "Repair burst"
+    ],
+    "secondaryRoles": [
+      "Critical gens"
+    ],
+    "conceptualMechanics": [
+      "Toolbox charges and add-ons",
+      "recharge/efficiency"
+    ],
+    "generalTags": [
+      "meta-subtype",
+      "repair-burst"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G03",
+    "side": "SURVIVOR",
+    "name": "Critical-Generator / Three-Gen Breaker",
+    "alternateNames": [
+      "3-gen breaker",
+      "gen prio"
+    ],
+    "structuralClassification": "META SUBTYPE",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Do the generators that matter, not simply the nearest ones. Generator selection is more important than raw speed",
+    "primaryRoles": [
+      "Strategic repair"
+    ],
+    "secondaryRoles": [
+      "Information"
+    ],
+    "conceptualMechanics": [
+      "Identify dangerous generator clusters",
+      "commit resources selectively"
+    ],
+    "generalTags": [
+      "meta-subtype",
+      "strategic-repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G04",
+    "side": "SURVIVOR",
+    "name": "Cooperative Repair / Gen Duo",
+    "alternateNames": [
+      "Prove gen",
+      "co-op gen"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Pair on selected generators for tempo/synergy. Requires another repairer as part of the engine",
+    "primaryRoles": [
+      "Cooperative repair"
+    ],
+    "secondaryRoles": [
+      "Team support"
+    ],
+    "conceptualMechanics": [
+      "Shared repair bonuses triggered by teammates"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "cooperative-repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G05",
+    "side": "SURVIVOR",
+    "name": "Manual Skill-Check Generator",
+    "alternateNames": [
+      "Hyperfocus build",
+      "skill-check gen"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "G01",
+    "subtypeIds": [
+      "G06"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Convert reliable manual Great checks into extra progress. The current version requires genuine compatible basic checks",
+    "primaryRoles": [
+      "Repair"
+    ],
+    "secondaryRoles": [
+      "Skill expression"
+    ],
+    "conceptualMechanics": [
+      "Repeated basic Great checks"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G06",
+    "side": "SURVIVOR",
+    "name": "Classic Stake Out–Hyperfocus Engine",
+    "alternateNames": [
+      "Stakefocus",
+      "auto-Hyperfocus"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "G05",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Historically made Hyperfocus much more consistent. A mechanically invalidated interaction, not merely a nerfed build; 10.1 databases were still recommending it.",
+    "primaryRoles": [
+      "Repair"
+    ],
+    "secondaryRoles": [],
+    "conceptualMechanics": [
+      "Stake Out converted checks feeding Hyperfocus"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G07",
+    "side": "SURVIVOR",
+    "name": "Boon: Steadfast Repair Zone",
+    "alternateNames": [
+      "Gen boon",
+      "Steadfast zone"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Establish a defended repair zone around selected gens. Generator strategy is spatially anchored to a Boon.",
+    "primaryRoles": [
+      "Local generator pressure"
+    ],
+    "secondaryRoles": [
+      "Totems",
+      "team support"
+    ],
+    "conceptualMechanics": [
+      "10% repair bonus and slower regression in Boon radius"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "local-generator-pressure"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G08",
+    "side": "SURVIVOR",
+    "name": "Road Life Repair-to-Self-Heal",
+    "alternateNames": [
+      "Road Life gen-heal"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "C14"
+    ],
+    "generalStrategicDefinition": "Stay on gens while building the next reset. Repair performance directly generates healing capability.",
+    "primaryRoles": [
+      "Repair"
+    ],
+    "secondaryRoles": [
+      "Self-heal"
+    ],
+    "conceptualMechanics": [
+      "Great checks while injured produce self-heal access"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G09",
+    "side": "SURVIVOR",
+    "name": "Fast Track Rescue-to-Repair Tempo",
+    "alternateNames": [
+      "Rescue-gen hybrid"
+    ],
+    "structuralClassification": "META SUBTYPE",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "A00"
+    ],
+    "generalStrategicDefinition": "Convert necessary altruism into later objective progress. Explicit altruism → generator conversion",
+    "primaryRoles": [
+      "Repair burst"
+    ],
+    "secondaryRoles": [
+      "Unhooking"
+    ],
+    "conceptualMechanics": [
+      "Safe rescues bank permanent-gen-progress tokens"
+    ],
+    "generalTags": [
+      "meta-subtype",
+      "repair-burst"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "G10",
+    "side": "SURVIVOR",
+    "name": "Fruits of Your Labor Objective-to-Reset Hybrid",
+    "alternateNames": [
+      "Fruits build",
+      "gen-to-heal"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "G01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Let objective completion accelerate next rotation/reset. Generator success feeds both movement and healing.",
+    "primaryRoles": [
+      "Repair"
+    ],
+    "secondaryRoles": [
+      "Healing",
+      "mobility"
+    ],
+    "conceptualMechanics": [
+      "Generator completions bank tokens",
+      "finishing repair grants short Haste and healing progress"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "repair"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A01",
+    "side": "SURVIVOR",
+    "name": "Hook Rescue / Post-Unhook Reset",
+    "alternateNames": [
+      "Rescuer",
+      "hook support"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "A00",
+    "subtypeIds": [
+      "A02",
+      "A06",
+      "A07"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Own the rescue-and-reset sequence. Unhook plus post-hook stabilization, not generic altruism",
+    "primaryRoles": [
+      "Unhooking"
+    ],
+    "secondaryRoles": [
+      "Healing",
+      "info"
+    ],
+    "conceptualMechanics": [
+      "Rescue access plus rapid follow-up heal/protection"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "unhooking"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A02",
+    "side": "SURVIVOR",
+    "name": "Anti-Camp / Hook-Timer Control",
+    "alternateNames": [
+      "Reassurance build",
+      "camp counter"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": "A01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Buy time instead of forcing bad immediate rescue. Manipulates rescue timing rather than rescue speed",
+    "primaryRoles": [
+      "Hook-state preservation"
+    ],
+    "secondaryRoles": [
+      "Rescue coordination"
+    ],
+    "conceptualMechanics": [
+      "Pause/extend hook-state pressure or coordinate delayed rescue"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "hook-state-preservation"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A03",
+    "side": "SURVIVOR",
+    "name": "Dedicated Healer / Triage",
+    "alternateNames": [
+      "Medic",
+      "healing build"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "A00",
+    "subtypeIds": [
+      "A04"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Rotate to damage and restore health states. Intentionally spends time seeking injured teammates",
+    "primaryRoles": [
+      "Healing others"
+    ],
+    "secondaryRoles": [
+      "Tracking",
+      "recovery"
+    ],
+    "conceptualMechanics": [
+      "Find injured players and heal quickly"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "healing-others"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A04",
+    "side": "SURVIVOR",
+    "name": "Hook-State-Scaled Fast Healing",
+    "alternateNames": [
+      "Do No Harm build",
+      "crisis healer"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": "A03",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Prioritize endangered teammates for faster resets. Healing priority is explicitly based on hook-state danger.",
+    "primaryRoles": [
+      "Healing others"
+    ],
+    "secondaryRoles": [
+      "Skill checks"
+    ],
+    "conceptualMechanics": [
+      "Heal speed and skill-check benefits scale with target hook states"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "healing-others"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A05",
+    "side": "SURVIVOR",
+    "name": "Protection-Hit / Tank",
+    "alternateNames": [
+      "Tank build",
+      "Mettle build"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "A00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Trade personal health for teammate escape/progress. Taking a hit is the planned value, not an accident",
+    "primaryRoles": [
+      "Protection"
+    ],
+    "secondaryRoles": [
+      "Chase",
+      "rescue"
+    ],
+    "conceptualMechanics": [
+      "Deliberately absorb hits for teammates"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "protection"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A06",
+    "side": "SURVIVOR",
+    "name": "Hook-Trade / Carry Bodyblock Protector",
+    "alternateNames": [
+      "Trade build",
+      "bodyblock role"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "A01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "P00"
+    ],
+    "generalStrategicDefinition": "Interpose between Killer and hook/rescued player. Physical pathing/body presence is the resource",
+    "primaryRoles": [
+      "Rescue denial"
+    ],
+    "secondaryRoles": [
+      "Protection hits"
+    ],
+    "conceptualMechanics": [
+      "Occupy path",
+      "take hits",
+      "force awkward carries/trades"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "rescue-denial"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A07",
+    "side": "SURVIVOR",
+    "name": "Endgame Rescue",
+    "alternateNames": [
+      "Endgame save",
+      "NOED-rescue shell"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": "A01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Turn a late hook into multi-Survivor escape. Rescue value is concentrated after generators complete",
+    "primaryRoles": [
+      "Rescue"
+    ],
+    "secondaryRoles": [
+      "Gate",
+      "healing"
+    ],
+    "conceptualMechanics": [
+      "Post-generator rescue/heal/Haste bonuses"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "rescue"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P01",
+    "side": "SURVIVOR",
+    "name": "Flashlight Save",
+    "alternateNames": [
+      "Beam save",
+      "flashlight saver"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "P00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Shadow chase, predict pickup, blind for drop. Requires a carried item and line-of-sight blind timing",
+    "primaryRoles": [
+      "Pickup denial"
+    ],
+    "secondaryRoles": [
+      "Chase distraction"
+    ],
+    "conceptualMechanics": [
+      "Blind during pickup/carry window"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "pickup-denial"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P02",
+    "side": "SURVIVOR",
+    "name": "Flashbang Save",
+    "alternateNames": [
+      "Flashbang saver",
+      "grenade save"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "P00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Earn grenade from objectives then stage close-range save. Save resource is generated rather than brought into Trial. Background Player users recurrently pair it with Flashbang.",
+    "primaryRoles": [
+      "Pickup denial"
+    ],
+    "secondaryRoles": [
+      "Objective hybrid"
+    ],
+    "conceptualMechanics": [
+      "Crafted Flashbang",
+      "dropped/blast-timed pickup save"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "pickup-denial"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P03",
+    "side": "SURVIVOR",
+    "name": "Sabotage / Hook Denial",
+    "alternateNames": [
+      "Sabo build",
+      "hook breaker"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "P00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Read pickup route and break the hook before arrival. Attacks hook availability, not pickup itself.",
+    "primaryRoles": [
+      "Hook denial"
+    ],
+    "secondaryRoles": [
+      "Information",
+      "protection"
+    ],
+    "conceptualMechanics": [
+      "Remove intended hooks during carry"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "hook-denial"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P04",
+    "side": "SURVIVOR",
+    "name": "Breakout / Carry Interference",
+    "alternateNames": [
+      "Escort build",
+      "breakout build"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "P00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Escort carry, bodyblock and force extended route. Works during the carry, rather than before pickup",
+    "primaryRoles": [
+      "Carry denial"
+    ],
+    "secondaryRoles": [
+      "Bodyblock",
+      "sabotage"
+    ],
+    "conceptualMechanics": [
+      "Stay near carried teammate and accelerate escape pressure"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "carry-denial"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P05",
+    "side": "SURVIVOR",
+    "name": "Teammate Pallet Save",
+    "alternateNames": [
+      "Pallet save",
+      "stun save"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": "P00",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Pre-position near usable pallet and force/drop carried Survivor. Distinct resource and positioning from light/sabo saves",
+    "primaryRoles": [
+      "Pickup denial"
+    ],
+    "secondaryRoles": [
+      "Chase/resource use"
+    ],
+    "conceptualMechanics": [
+      "Time Killer carry through a standing pallet and stun"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "pickup-denial"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P06",
+    "side": "SURVIVOR",
+    "name": "Carry-Escape / Wiggle Denial",
+    "alternateNames": [
+      "Boil Over build",
+      "Flip-Flop/Power Struggle"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Make hooking you locally difficult or unsafe. Self-oriented carry denial rather than saving a teammate.",
+    "primaryRoles": [
+      "Self-preservation"
+    ],
+    "secondaryRoles": [
+      "Anti-slug"
+    ],
+    "conceptualMechanics": [
+      "Wiggle pressure",
+      "recovery conversion",
+      "pallet self-save"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "self-preservation"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "I01",
+    "side": "SURVIVOR",
+    "name": "Solo-Q Information Shell",
+    "alternateNames": [
+      "Solo info",
+      "aura generalist"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Replace missing voice information with passive game-state visibility. Explicitly compensates for uncertainty in Solo Q; community builds label this directly.",
+    "primaryRoles": [
+      "Decision support"
+    ],
+    "secondaryRoles": [
+      "Rescue",
+      "objectives"
+    ],
+    "conceptualMechanics": [
+      "Teammate/Killer/hook/gen auras"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "decision-support"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "I02",
+    "side": "SURVIVOR",
+    "name": "Killer Tracking / Aura Seer",
+    "alternateNames": [
+      "Aura build",
+      "Killer reader"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Keep track of Killer before committing to objectives/routes. Tracks Killer, not merely team or objectives",
+    "primaryRoles": [
+      "Killer tracking"
+    ],
+    "secondaryRoles": [
+      "Chase",
+      "stealth"
+    ],
+    "conceptualMechanics": [
+      "Recurrent Killer aura/heading information"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "killer-tracking"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "I03",
+    "side": "SURVIVOR",
+    "name": "Teammate Tracking / Support Information",
+    "alternateNames": [
+      "Bond build",
+      "Empathy info"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Find teammates for heals, co-op objectives or avoidance. Team-location layer specifically",
+    "primaryRoles": [
+      "Team tracking"
+    ],
+    "secondaryRoles": [
+      "Healing",
+      "rescue"
+    ],
+    "conceptualMechanics": [
+      "Aura locations of teammates/injured players"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "team-tracking"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "I04",
+    "side": "SURVIVOR",
+    "name": "Objective / Resource Routing",
+    "alternateNames": [
+      "Gen info",
+      "map-awareness shell"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "G01"
+    ],
+    "generalStrategicDefinition": "Minimize search time and choose higher-value objectives. Information targets where to work next",
+    "primaryRoles": [
+      "Routing"
+    ],
+    "secondaryRoles": [
+      "Totems",
+      "chase"
+    ],
+    "conceptualMechanics": [
+      "Generator/totem/resource aura information"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "routing"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "I05",
+    "side": "SURVIVOR",
+    "name": "Chase Broadcast / Salvation's Cry",
+    "alternateNames": [
+      "Chase comms build"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "C01"
+    ],
+    "generalStrategicDefinition": "Turn being chased into automatic teamwide information. Information is broadcast because a chase starts.",
+    "primaryRoles": [
+      "Team coordination"
+    ],
+    "secondaryRoles": [
+      "Chase",
+      "repair"
+    ],
+    "conceptualMechanics": [
+      "Chase start reveals team to runner and runner/Killer to others"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "team-coordination"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R01",
+    "side": "SURVIVOR",
+    "name": "Chest / Loot Scavenger",
+    "alternateNames": [
+      "Loot goblin",
+      "chest build"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": null,
+    "subtypeIds": [
+      "R02"
+    ],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Convert secondary-objective time into multiple usable items. 10.2 substantially buffed the chest transaction itself.",
+    "primaryRoles": [
+      "Item acquisition"
+    ],
+    "secondaryRoles": [
+      "Flex support"
+    ],
+    "conceptualMechanics": [
+      "Global chest/item auras",
+      "very fast chest opens",
+      "rarity manipulation"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "item-acquisition"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R02",
+    "side": "SURVIVOR",
+    "name": "Pharmacy / Med-Kit Farming",
+    "alternateNames": [
+      "Chest medic",
+      "med-kit farmer"
+    ],
+    "structuralClassification": "ROLE SPECIALIZATION",
+    "parentId": "R01",
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Turn chests into predictable healing inventory. Loot has a specific guaranteed medical output.",
+    "primaryRoles": [
+      "Item supply"
+    ],
+    "secondaryRoles": [
+      "Healing",
+      "team resource"
+    ],
+    "conceptualMechanics": [
+      "Guaranteed rare Med-Kit plus rapid chest opening/rummage"
+    ],
+    "generalTags": [
+      "role-specialization",
+      "item-supply"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R03",
+    "side": "SURVIVOR",
+    "name": "Item Recharge / Recursion",
+    "alternateNames": [
+      "Infinite-item",
+      "recharge build"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "G02",
+      "P01"
+    ],
+    "generalStrategicDefinition": "Reuse a high-value item instead of replacing it. Optimizes one item's lifecycle rather than finding new items",
+    "primaryRoles": [
+      "Resource extension"
+    ],
+    "secondaryRoles": [
+      "Repair/healing/saves"
+    ],
+    "conceptualMechanics": [
+      "Restore or conserve item charges"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "resource-extension"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R04",
+    "side": "SURVIVOR",
+    "name": "Boon Support Network",
+    "alternateNames": [
+      "Boon build",
+      "Booner"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Establish one or several team-benefit zones. The Boon infrastructure itself is the build; 10.2 Illumination also accelerates blessing while a Boon is active.",
+    "primaryRoles": [
+      "Zone support"
+    ],
+    "secondaryRoles": [
+      "Healing",
+      "stealth",
+      "recovery",
+      "objectives"
+    ],
+    "conceptualMechanics": [
+      "Bless Totems to create shared area effects"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "zone-support"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R05",
+    "side": "SURVIVOR",
+    "name": "Totem Hunter / Cleanser",
+    "alternateNames": [
+      "Totem build",
+      "Hex hunter"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Deliberately spend time neutralizing/using Totems. Cleansing/searching, not blessing",
+    "primaryRoles": [
+      "Counter-Hex"
+    ],
+    "secondaryRoles": [
+      "Healing/objective bonuses"
+    ],
+    "conceptualMechanics": [
+      "Locate and cleanse Totems",
+      "convert cleanses into other value"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "counter-hex"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R06",
+    "side": "SURVIVOR",
+    "name": "Invocation Ritual",
+    "alternateNames": [
+      "Invocation build",
+      "basement ritual"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Sacrifice immediate labor and often personal safety for Invocation payoff. Basement ritual is a distinct action economy rather than normal perk activation",
+    "primaryRoles": [
+      "Teamwide ritual"
+    ],
+    "secondaryRoles": [
+      "Generator/info effects depending Invocation"
+    ],
+    "conceptualMechanics": [
+      "Spend prolonged ritual time in basement for global/large effect"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "teamwide-ritual"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R07",
+    "side": "SURVIVOR",
+    "name": "Locker Utility / Head On",
+    "alternateNames": [
+      "Locker build",
+      "Head On build"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Treat lockers as repeatable tactical stations. Multiple parts of the build deliberately depend on lockers",
+    "primaryRoles": [
+      "Chase utility"
+    ],
+    "secondaryRoles": [
+      "Stealth",
+      "item recharge",
+      "healing"
+    ],
+    "conceptualMechanics": [
+      "Enter/exit lockers for stun",
+      "concealment or perk activation"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "chase-utility"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R08",
+    "side": "SURVIVOR",
+    "name": "Distraction / Misdirection",
+    "alternateNames": [
+      "Meme stealth",
+      "deception build"
+    ],
+    "structuralClassification": "NICHE STRATEGY",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Make Killer investigate the wrong place. Wins through false information, not invisibility",
+    "primaryRoles": [
+      "Misdirection"
+    ],
+    "secondaryRoles": [
+      "Chase avoidance"
+    ],
+    "conceptualMechanics": [
+      "False notifications",
+      "decoys",
+      "fake locations"
+    ],
+    "generalTags": [
+      "niche-strategy",
+      "misdirection"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R09",
+    "side": "SURVIVOR",
+    "name": "Obsession / High-Risk Aggro-Info",
+    "alternateNames": [
+      "Object build",
+      "Obsession build",
+      "chase magnet"
+    ],
+    "structuralClassification": "MECHANIC-CENTERED BUILD",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "C01"
+    ],
+    "generalStrategicDefinition": "Accept information risk to attract or read Killer. Exposure to the Killer is deliberately part of the engine",
+    "primaryRoles": [
+      "Killer attention"
+    ],
+    "secondaryRoles": [
+      "Aura reading",
+      "speed/support"
+    ],
+    "conceptualMechanics": [
+      "Reciprocal aura exposure",
+      "Obsession swapping/link effects"
+    ],
+    "generalTags": [
+      "mechanic-centered-build",
+      "killer-attention"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "R10",
+    "side": "SURVIVOR",
+    "name": "Endgame Gate / Escape Shell",
+    "alternateNames": [
+      "Endgame build",
+      "gate build",
+      "Hope build"
+    ],
+    "structuralClassification": "STRATEGIC MODULE",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [
+      "A00"
+    ],
+    "generalStrategicDefinition": "Save perk value for last generator onward. Explicitly accepts early opportunity cost for late power",
+    "primaryRoles": [
+      "Exit"
+    ],
+    "secondaryRoles": [
+      "Rescue",
+      "chase"
+    ],
+    "conceptualMechanics": [
+      "Powered-gate triggers",
+      "gate speed",
+      "late Haste/heal effects"
+    ],
+    "generalTags": [
+      "strategic-module",
+      "exit"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "X01",
+    "side": "SURVIVOR",
+    "name": "Solo-Q Generalist",
+    "alternateNames": [
+      "Solo build",
+      "all-rounder",
+      "comfort build"
+    ],
+    "structuralClassification": "GENERALIST SHELL",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Stay useful without knowing teammates/builds/Killer. Diversification is intentional, not lack of build identity",
+    "primaryRoles": [
+      "Flex"
+    ],
+    "secondaryRoles": [
+      "Info",
+      "chase",
+      "objectives",
+      "rescue"
+    ],
+    "conceptualMechanics": [
+      "One answer to several independent failure modes"
+    ],
+    "generalTags": [
+      "generalist-shell",
+      "flex"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "X02",
+    "side": "SURVIVOR",
+    "name": "Coordinated SWF Flex Generalist",
+    "alternateNames": [
+      "SWF flex",
+      "team flex shell"
+    ],
+    "structuralClassification": "GENERALIST SHELL",
+    "parentId": null,
+    "subtypeIds": [],
+    "relatedStrategyIds": [],
+    "generalStrategicDefinition": "Cover essentials across four players while retaining personal chase value. Unit of optimization is partly the four-player team, not one Survivor",
+    "primaryRoles": [
+      "Flex"
+    ],
+    "secondaryRoles": [
+      "Any"
+    ],
+    "conceptualMechanics": [
+      "Build slots chosen relative to teammates rather than independently"
+    ],
+    "generalTags": [
+      "generalist-shell",
+      "flex"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "P00",
+    "side": "SURVIVOR",
+    "name": "Pickup Interception / Save Family",
+    "alternateNames": [
+      "Pickup Interception",
+      "Pickup Save Family",
+      "Hook-Denial Save Family"
+    ],
+    "structuralClassification": "PARENT STRATEGY FAMILY",
+    "parentId": null,
+    "subtypeIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05"
+    ],
+    "relatedStrategyIds": [
+      "A06"
+    ],
+    "generalStrategicDefinition": "Family of strategies that deliberately try to prevent a teammate's down from converting into a hook through pickup denial, hook denial, or carry interference. The children manipulate different resources and therefore are not one rankable archetype.",
+    "primaryRoles": [
+      "Pickup Denial"
+    ],
+    "secondaryRoles": [
+      "Protection",
+      "Hook Denial"
+    ],
+    "conceptualMechanics": [
+      "Blind/Stun Timing",
+      "Sabotage",
+      "Carry Interference",
+      "Pallet Saves"
+    ],
+    "generalTags": [
+      "parent-family",
+      "pickup-denial",
+      "save"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  },
+  {
+    "id": "A00",
+    "side": "SURVIVOR",
+    "name": "Rescue-and-Reset Support Family",
+    "alternateNames": [
+      "Rescue-and-Reset",
+      "Team Preservation Support"
+    ],
+    "structuralClassification": "PARENT STRATEGY FAMILY",
+    "parentId": null,
+    "subtypeIds": [
+      "A01",
+      "A03",
+      "A05",
+      "C11"
+    ],
+    "relatedStrategyIds": [
+      "C10",
+      "C12",
+      "G09",
+      "R10"
+    ],
+    "generalStrategicDefinition": "Family of strategies that preserve team hook-state economy and stabilize injured or hooked teammates through rescue, rapid resetting, protection, anti-camp timing, or hook-state redistribution. Its children are too strategically different for one aggregate Power score.",
+    "primaryRoles": [
+      "Rescue",
+      "Healing"
+    ],
+    "secondaryRoles": [
+      "Protection",
+      "Hook-State Management"
+    ],
+    "conceptualMechanics": [
+      "Unhooking",
+      "Healing",
+      "Hook-State Transfer",
+      "Protection"
+    ],
+    "generalTags": [
+      "parent-family",
+      "rescue",
+      "reset",
+      "support"
+    ],
+    "firstCatalogedPatch": "10.2.0"
+  }
+]
