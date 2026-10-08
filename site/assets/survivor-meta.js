@@ -93,23 +93,31 @@ function statusText(value) {
   return String(value || '').replaceAll('_', ' ');
 }
 
-function renderStrategyCard(strategy, environmentId) {
+function childStrategiesFor(strategy, strategies) {
+  const byId = new Map((strategies || []).map(item => [item.id, item]));
+  return (strategy.subtypeIds || []).map(id => byId.get(id)).filter(Boolean);
+}
+
+function renderStrategyCard(strategy, environmentId, allStrategies = data.survivorStrategies || []) {
   const e = evaluationFor(strategy, environmentId);
   const rankable = e && ['RANKED','PROVISIONAL'].includes(e.rankingStatus) && e.tier && e.power != null;
   const roles = (strategy.primaryRoles || []).map(role => `<span class="tag">${escapeHtml(role)}</span>`).join('');
   const provisional = e?.rankingStatus === 'PROVISIONAL' ? '<span class="tag meta-provisional">Provisional</span>' : '';
   const power = rankable ? `<strong>${escapeHtml(e.tier)} · ${escapeHtml(e.power)}</strong>` : `<strong>${escapeHtml(statusText(e?.rankingStatus || 'UNRANKED'))}</strong>`;
+  const children = strategy.structuralClassification === 'PARENT STRATEGY FAMILY' ? childStrategiesFor(strategy, allStrategies) : [];
+  const childLinks = children.length ? `<div class="perk-title-row strategy-child-links"><span class="source">Child strategies:</span>${children.map(child => `<a class="strategy-link" href="${siteHref(child.articlePath)}">${escapeHtml(child.id)} ${escapeHtml(child.name)} →</a>`).join('')}</div>` : '';
   return `<article class="strategy-card">
 <div class="strategy-card-head"><div><p class="eyebrow">${escapeHtml(strategy.id)}</p><h3>${escapeHtml(strategy.name)}</h3></div><div class="strategy-power">${power}<small>${escapeHtml(statusText(e?.rankingStatus || ''))}</small></div></div>
 <div class="perk-title-row"><span class="tag">${escapeHtml(strategy.structuralClassification)}</span><span class="tag live">${escapeHtml(strategy.currentStatus)}</span><span class="tag">${escapeHtml(strategy.stabilityLabel || 'No stability')}</span><span class="tag">${escapeHtml(statusText(strategy.trend))}</span>${provisional}${roles}</div>
 <p class="summary">${escapeHtml(strategy.generalStrategicDefinition)}</p>
+${childLinks}
 <div class="strategy-card-footer"><span>Meta Stability ${strategy.metaStability == null ? '—' : escapeHtml(strategy.metaStability)}</span><a class="strategy-link" href="${siteHref(strategy.articlePath)}">Open strategy →</a></div>
 </article>`;
 }
 
-function renderSpecialSection(title, items, environmentId, note) {
+function renderSpecialSection(title, items, environmentId, note, allStrategies = data.survivorStrategies || []) {
   if (!items.length) return '';
-  return `<section class="meta-special-section"><div class="tier-heading"><h2>${escapeHtml(title)}</h2><span class="tier-count">${items.length}</span></div>${note ? `<p class="source">${escapeHtml(note)}</p>` : ''}<div class="strategy-list">${items.map(item => renderStrategyCard(item, environmentId)).join('')}</div></section>`;
+  return `<section class="meta-special-section"><div class="tier-heading"><h2>${escapeHtml(title)}</h2><span class="tier-count">${items.length}</span></div>${note ? `<p class="source">${escapeHtml(note)}</p>` : ''}<div class="strategy-list">${items.map(item => renderStrategyCard(item, environmentId, allStrategies)).join('')}</div></section>`;
 }
 
 function initSurvivorMetaBrowser() {
@@ -179,13 +187,13 @@ function initSurvivorMetaBrowser() {
       const items = groups.tiers[tier];
       if (!items.length) return '';
       const collapsed = state.collapsed.has(tier);
-      return `<section class="tier-section"><div class="tier-heading"><div class="tier-badge" data-tier="${tier}">${tier}</div><h2>${tier} Tier</h2><span class="tier-count">${items.length} strateg${items.length===1?'y':'ies'}</span><button type="button" class="tier-toggle" data-meta-tier-toggle="${tier}" aria-expanded="${String(!collapsed)}">${collapsed?'Expand':'Collapse'}</button></div>${collapsed?'':`<div class="strategy-list">${items.map(item => renderStrategyCard(item, state.environmentId)).join('')}</div>`}</section>`;
+      return `<section class="tier-section"><div class="tier-heading"><div class="tier-badge" data-tier="${tier}">${tier}</div><h2>${tier} Tier</h2><span class="tier-count">${items.length} strateg${items.length===1?'y':'ies'}</span><button type="button" class="tier-toggle" data-meta-tier-toggle="${tier}" aria-expanded="${String(!collapsed)}">${collapsed?'Expand':'Collapse'}</button></div>${collapsed?'':`<div class="strategy-list">${items.map(item => renderStrategyCard(item, state.environmentId, all)).join('')}</div>`}</section>`;
     }).join('');
     const special = [
-      renderSpecialSection('Unranked', groups.unranked, state.environmentId, 'Current strategies without a responsible Power/Tier estimate in this environment.'),
-      renderSpecialSection('Not Applicable', groups.notApplicable, state.environmentId, 'Current strategies whose competitive score is not applicable in this environment.'),
-      renderSpecialSection('Strategy Families', groups.families, state.environmentId, 'Parent families organize child strategies and do not receive fabricated aggregate scores.'),
-      renderSpecialSection('Legacy', groups.legacy, state.environmentId, 'Historical strategies preserved for context; not part of the current tier list.')
+      renderSpecialSection('Unranked', groups.unranked, state.environmentId, 'Current strategies without a responsible Power/Tier estimate in this environment.', all),
+      renderSpecialSection('Not Applicable', groups.notApplicable, state.environmentId, 'Current strategies whose competitive score is not applicable in this environment.', all),
+      renderSpecialSection('Strategy Families', groups.families, state.environmentId, 'Parent families organize child strategies and do not receive fabricated aggregate scores.', all),
+      renderSpecialSection('Legacy', groups.legacy, state.environmentId, 'Historical strategies preserved for context; not part of the current tier list.', all)
     ].join('');
     results.innerHTML = tiersHtml + special || '<div class="empty-state"><strong>No strategy matches.</strong><br>Try clearing a filter or broadening the search.</div>';
   }
@@ -193,5 +201,5 @@ function initSurvivorMetaBrowser() {
   render();
 }
 
-window.DBD_SURVIVOR_META = { evaluationFor, filterStrategies, groupStrategies, sortCurrentTier, initSurvivorMetaBrowser };
+window.DBD_SURVIVOR_META = { evaluationFor, filterStrategies, groupStrategies, sortCurrentTier, childStrategiesFor, renderStrategyCard, initSurvivorMetaBrowser };
 })();
