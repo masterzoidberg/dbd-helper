@@ -1,0 +1,68 @@
+{
+  "patchBaseline": "10.2.0",
+  "researchDate": "2026-10-07",
+  "strategyCount": 57,
+  "snapshotCount": 57,
+  "checks": {
+    "uniqueStrategyIds": true,
+    "oneSnapshotPerStrategy": true,
+    "referentialIntegrity": true,
+    "rankingIntegrity": true,
+    "stabilityIntegrity": true,
+    "perkReferenceIntegrity": true,
+    "allSurvivorSide": true,
+    "stage15CatalogCoverage": true,
+    "passed": true
+  },
+  "normalizationsFromStage2": [
+    {
+      "strategyId": "C13",
+      "change": "Stage 2 historical D20/D20 presentation normalized to NOT_CURRENT with null current Power/Tier/Index.",
+      "reason": "Stage 3 legacy semantics explicitly prohibit putting Legacy strategies in current D tier."
+    },
+    {
+      "strategyId": "G06",
+      "change": "Stage 2 historical D18/D18 presentation normalized to NOT_CURRENT with null current Power/Tier/Index.",
+      "reason": "Stage 3 legacy semantics explicitly prohibit putting Legacy strategies in current D tier."
+    },
+    {
+      "strategyId": "X02",
+      "change": "Stage 2 Solo B68 outside-environment score normalized to NOT_APPLICABLE for Solo Q.",
+      "reason": "X02 is a coordinated four-player team architecture; a unified Solo competitive score is conceptually inapplicable under the Stage 3 ranking gate."
+    },
+    {
+      "strategyId": "C14",
+      "change": "SWF ranking set to UNRANKED with null Power/Tier/Index.",
+      "reason": "Stage 2 supplies a Solo score (69) but no independently established SWF score; Stage 3 prohibits inventing Power."
+    },
+    {
+      "strategyId": "X01",
+      "change": "SWF Power 77 retained/recovered in the canonical snapshot.",
+      "reason": "Stage 2 omitted X01 from one final SWF tier-list table but explicitly reported SWF 77 in its environment-comparison/high-priority analysis."
+    },
+    {
+      "strategyId": "P00",
+      "change": "New canonical parent-family navigation record; rankings NOT_APPLICABLE.",
+      "reason": "Stage 2 reclassified Pickup Interception / Save Specialist as a parent strategy family whose children require independent scoring."
+    },
+    {
+      "strategyId": "A00",
+      "change": "New canonical parent-family navigation record; rankings NOT_APPLICABLE.",
+      "reason": "Stage 2 reclassified Rescue-and-Reset Support as a parent strategy family whose children require independent scoring."
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "catalogCounts": {
+    "stage15OriginalEntries": 55,
+    "newParentFamilyRecords": 2,
+    "canonicalStrategies": 57,
+    "legacyStrategies": 2,
+    "parentFamilies": 2,
+    "soloRankedOrProvisional": 52,
+    "swfRankedOrProvisional": 52,
+    "soloNotApplicable": 3,
+    "swfNotApplicable": 2,
+    "swfUnranked": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "patchBaseline": "10.2.0",
+  "researchCutoff": "2026-10-07",
+  "researchRevision": "10.2.0-r1",
+  "strategyPagesGenerated": 57,
+  "uniqueStrategyIds": 57,
+  "canonicalStrategyCount": 57,
+  "parentFamilyPages": 2,
+  "legacyPages": 2,
+  "pagesWithCanonicalBuildImplementations": 4,
+  "projectSchemaFlags": 2,
+  "errors": [],
+  "warnings": [],
+  "passed": true
+}

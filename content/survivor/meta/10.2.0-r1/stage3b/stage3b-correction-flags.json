@@ -1,0 +1,22 @@
+[
+  {
+    "strategyId": null,
+    "scope": "PROJECT_SCHEMA",
+    "fieldOrClaim": "Skill Floor / Skill Ceiling / Execution Reliability",
+    "problem": "Stage 3B asks pages to use canonical skill-profile fields, but Stage 3A snapshots do not contain those fields.",
+    "whyItMatters": "Assigning numeric or categorical skill ratings during publication would create a second truth layer and violate the no-invention rule.",
+    "evidence": "strategy-snapshots.json schema contains strategicDiagnostics and dependencies but no canonical skillFloor, skillCeiling, or executionReliability fields.",
+    "recommendedAction": "Add explicit skill-profile fields in a future canonical augmentation if the website needs sortable skill ratings. Until then, keep skill discussion qualitative and derived from canonical roles, mechanics, and dependencies.",
+    "actionClass": "CANONICAL AUGMENTATION"
+  },
+  {
+    "strategyId": null,
+    "scope": "PROJECT_SCHEMA",
+    "fieldOrClaim": "Map Dependence / Matchup Coverage",
+    "problem": "Stage 3B asks pages to use canonical Map Dependence and Matchup Coverage, but Stage 3A snapshots do not contain those named fields and matchupNotes are empty across the current dataset.",
+    "whyItMatters": "Inventing ratings or exhaustive matchup claims would exceed the evidence and create uncited website metadata.",
+    "evidence": "strategy-snapshots.json contains dependencyTypes and counters; MAP can be a dependency, but there are no canonical mapDependence or matchupCoverage ratings.",
+    "recommendedAction": "Add these fields only after a targeted canonical research pass. Current pages discuss map dependence only when MAP is already a canonical dependency and avoid unsupported Killer-by-Killer claims.",
+    "actionClass": "RESEARCH REQUIRED"
+  }
+]

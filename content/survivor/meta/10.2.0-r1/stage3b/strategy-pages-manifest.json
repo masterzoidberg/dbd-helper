@@ -1,0 +1,515 @@
+[
+  {
+    "strategyId": "C01",
+    "canonicalName": "General Chase / Looping",
+    "slug": "/survivor-meta/general-chase-looping",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C01@10.2.0-r1",
+    "articleFilename": "strategy-pages/C01-general-chase-looping.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C02",
+    "canonicalName": "Exhaustion Mobility Chase",
+    "slug": "/survivor-meta/exhaustion-mobility-chase",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C02@10.2.0-r1",
+    "articleFilename": "strategy-pages/C02-exhaustion-mobility-chase.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C03",
+    "canonicalName": "Vault / Window Specialist",
+    "slug": "/survivor-meta/vault-window-specialist",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C03@10.2.0-r1",
+    "articleFilename": "strategy-pages/C03-vault-window-specialist.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C04",
+    "canonicalName": "Pallet / Resource Specialist",
+    "slug": "/survivor-meta/pallet-resource-specialist",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C04@10.2.0-r1",
+    "articleFilename": "strategy-pages/C04-pallet-resource-specialist.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C05",
+    "canonicalName": "Fragile-Pallet Restoration",
+    "slug": "/survivor-meta/fragile-pallet-restoration",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C05@10.2.0-r1",
+    "articleFilename": "strategy-pages/C05-fragile-pallet-restoration.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C06",
+    "canonicalName": "Chase Information / Routing",
+    "slug": "/survivor-meta/chase-information-routing",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C06@10.2.0-r1",
+    "articleFilename": "strategy-pages/C06-chase-information-routing.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C07",
+    "canonicalName": "Stealth / Chase Avoidance",
+    "slug": "/survivor-meta/stealth-chase-avoidance",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C07@10.2.0-r1",
+    "articleFilename": "strategy-pages/C07-stealth-chase-avoidance.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C08",
+    "canonicalName": "Chase Reset / Disappearance",
+    "slug": "/survivor-meta/chase-reset-disappearance",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C08@10.2.0-r1",
+    "articleFilename": "strategy-pages/C08-chase-reset-disappearance.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C09",
+    "canonicalName": "Anti-Tunnel Package",
+    "slug": "/survivor-meta/anti-tunnel-package",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C09@10.2.0-r1",
+    "articleFilename": "strategy-pages/C09-anti-tunnel-package.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C10",
+    "canonicalName": "Anti-Slug / Self-Recovery Package",
+    "slug": "/survivor-meta/anti-slug-self-recovery-package",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C10@10.2.0-r1",
+    "articleFilename": "strategy-pages/C10-anti-slug-self-recovery-package.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C11",
+    "canonicalName": "Hook-State Transfer",
+    "slug": "/survivor-meta/hook-state-transfer",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C11@10.2.0-r1",
+    "articleFilename": "strategy-pages/C11-hook-state-transfer.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C12",
+    "canonicalName": "Deterministic Self-Unhook",
+    "slug": "/survivor-meta/deterministic-self-unhook",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C12@10.2.0-r1",
+    "articleFilename": "strategy-pages/C12-deterministic-self-unhook.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C13",
+    "canonicalName": "Luck-Based Self-Unhook",
+    "slug": "/survivor-meta/luck-based-self-unhook",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C13@10.2.0-r1",
+    "articleFilename": "strategy-pages/C13-luck-based-self-unhook.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C14",
+    "canonicalName": "Self-Sustain / Self-Heal",
+    "slug": "/survivor-meta/self-sustain-self-heal",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C14@10.2.0-r1",
+    "articleFilename": "strategy-pages/C14-self-sustain-self-heal.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "C15",
+    "canonicalName": "Haste / Movement Stack",
+    "slug": "/survivor-meta/haste-movement-stack",
+    "pageGenerated": true,
+    "snapshotIdUsed": "C15@10.2.0-r1",
+    "articleFilename": "strategy-pages/C15-haste-movement-stack.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G01",
+    "canonicalName": "General Generator Pressure",
+    "slug": "/survivor-meta/general-generator-pressure",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G01@10.2.0-r1",
+    "articleFilename": "strategy-pages/G01-general-generator-pressure.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G02",
+    "canonicalName": "Toolbox Generator Specialist",
+    "slug": "/survivor-meta/toolbox-generator-specialist",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G02@10.2.0-r1",
+    "articleFilename": "strategy-pages/G02-toolbox-generator-specialist.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G03",
+    "canonicalName": "Critical-Generator / Three-Gen Breaker",
+    "slug": "/survivor-meta/critical-generator-three-gen-breaker",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G03@10.2.0-r1",
+    "articleFilename": "strategy-pages/G03-critical-generator-three-gen-breaker.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G04",
+    "canonicalName": "Cooperative Repair / Gen Duo",
+    "slug": "/survivor-meta/cooperative-repair-gen-duo",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G04@10.2.0-r1",
+    "articleFilename": "strategy-pages/G04-cooperative-repair-gen-duo.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G05",
+    "canonicalName": "Manual Skill-Check Generator",
+    "slug": "/survivor-meta/manual-skill-check-generator",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G05@10.2.0-r1",
+    "articleFilename": "strategy-pages/G05-manual-skill-check-generator.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G06",
+    "canonicalName": "Classic Stake Out–Hyperfocus Engine",
+    "slug": "/survivor-meta/classic-stake-outhyperfocus-engine",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G06@10.2.0-r1",
+    "articleFilename": "strategy-pages/G06-classic-stake-outhyperfocus-engine.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G07",
+    "canonicalName": "Boon: Steadfast Repair Zone",
+    "slug": "/survivor-meta/boon-steadfast-repair-zone",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G07@10.2.0-r1",
+    "articleFilename": "strategy-pages/G07-boon-steadfast-repair-zone.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G08",
+    "canonicalName": "Road Life Repair-to-Self-Heal",
+    "slug": "/survivor-meta/road-life-repair-to-self-heal",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G08@10.2.0-r1",
+    "articleFilename": "strategy-pages/G08-road-life-repair-to-self-heal.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G09",
+    "canonicalName": "Fast Track Rescue-to-Repair Tempo",
+    "slug": "/survivor-meta/fast-track-rescue-to-repair-tempo",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G09@10.2.0-r1",
+    "articleFilename": "strategy-pages/G09-fast-track-rescue-to-repair-tempo.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "G10",
+    "canonicalName": "Fruits of Your Labor Objective-to-Reset Hybrid",
+    "slug": "/survivor-meta/fruits-of-your-labor-objective-to-reset-hybrid",
+    "pageGenerated": true,
+    "snapshotIdUsed": "G10@10.2.0-r1",
+    "articleFilename": "strategy-pages/G10-fruits-of-your-labor-objective-to-reset-hybrid.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A01",
+    "canonicalName": "Hook Rescue / Post-Unhook Reset",
+    "slug": "/survivor-meta/hook-rescue-post-unhook-reset",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A01@10.2.0-r1",
+    "articleFilename": "strategy-pages/A01-hook-rescue-post-unhook-reset.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A02",
+    "canonicalName": "Anti-Camp / Hook-Timer Control",
+    "slug": "/survivor-meta/anti-camp-hook-timer-control",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A02@10.2.0-r1",
+    "articleFilename": "strategy-pages/A02-anti-camp-hook-timer-control.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A03",
+    "canonicalName": "Dedicated Healer / Triage",
+    "slug": "/survivor-meta/dedicated-healer-triage",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A03@10.2.0-r1",
+    "articleFilename": "strategy-pages/A03-dedicated-healer-triage.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A04",
+    "canonicalName": "Hook-State-Scaled Fast Healing",
+    "slug": "/survivor-meta/hook-state-scaled-fast-healing",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A04@10.2.0-r1",
+    "articleFilename": "strategy-pages/A04-hook-state-scaled-fast-healing.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A05",
+    "canonicalName": "Protection-Hit / Tank",
+    "slug": "/survivor-meta/protection-hit-tank",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A05@10.2.0-r1",
+    "articleFilename": "strategy-pages/A05-protection-hit-tank.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A06",
+    "canonicalName": "Hook-Trade / Carry Bodyblock Protector",
+    "slug": "/survivor-meta/hook-trade-carry-bodyblock-protector",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A06@10.2.0-r1",
+    "articleFilename": "strategy-pages/A06-hook-trade-carry-bodyblock-protector.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A07",
+    "canonicalName": "Endgame Rescue",
+    "slug": "/survivor-meta/endgame-rescue",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A07@10.2.0-r1",
+    "articleFilename": "strategy-pages/A07-endgame-rescue.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P01",
+    "canonicalName": "Flashlight Save",
+    "slug": "/survivor-meta/flashlight-save",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P01@10.2.0-r1",
+    "articleFilename": "strategy-pages/P01-flashlight-save.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P02",
+    "canonicalName": "Flashbang Save",
+    "slug": "/survivor-meta/flashbang-save",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P02@10.2.0-r1",
+    "articleFilename": "strategy-pages/P02-flashbang-save.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P03",
+    "canonicalName": "Sabotage / Hook Denial",
+    "slug": "/survivor-meta/sabotage-hook-denial",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P03@10.2.0-r1",
+    "articleFilename": "strategy-pages/P03-sabotage-hook-denial.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P04",
+    "canonicalName": "Breakout / Carry Interference",
+    "slug": "/survivor-meta/breakout-carry-interference",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P04@10.2.0-r1",
+    "articleFilename": "strategy-pages/P04-breakout-carry-interference.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P05",
+    "canonicalName": "Teammate Pallet Save",
+    "slug": "/survivor-meta/teammate-pallet-save",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P05@10.2.0-r1",
+    "articleFilename": "strategy-pages/P05-teammate-pallet-save.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P06",
+    "canonicalName": "Carry-Escape / Wiggle Denial",
+    "slug": "/survivor-meta/carry-escape-wiggle-denial",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P06@10.2.0-r1",
+    "articleFilename": "strategy-pages/P06-carry-escape-wiggle-denial.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "I01",
+    "canonicalName": "Solo-Q Information Shell",
+    "slug": "/survivor-meta/solo-q-information-shell",
+    "pageGenerated": true,
+    "snapshotIdUsed": "I01@10.2.0-r1",
+    "articleFilename": "strategy-pages/I01-solo-q-information-shell.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "I02",
+    "canonicalName": "Killer Tracking / Aura Seer",
+    "slug": "/survivor-meta/killer-tracking-aura-seer",
+    "pageGenerated": true,
+    "snapshotIdUsed": "I02@10.2.0-r1",
+    "articleFilename": "strategy-pages/I02-killer-tracking-aura-seer.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "I03",
+    "canonicalName": "Teammate Tracking / Support Information",
+    "slug": "/survivor-meta/teammate-tracking-support-information",
+    "pageGenerated": true,
+    "snapshotIdUsed": "I03@10.2.0-r1",
+    "articleFilename": "strategy-pages/I03-teammate-tracking-support-information.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "I04",
+    "canonicalName": "Objective / Resource Routing",
+    "slug": "/survivor-meta/objective-resource-routing",
+    "pageGenerated": true,
+    "snapshotIdUsed": "I04@10.2.0-r1",
+    "articleFilename": "strategy-pages/I04-objective-resource-routing.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "I05",
+    "canonicalName": "Chase Broadcast / Salvation's Cry",
+    "slug": "/survivor-meta/chase-broadcast-salvations-cry",
+    "pageGenerated": true,
+    "snapshotIdUsed": "I05@10.2.0-r1",
+    "articleFilename": "strategy-pages/I05-chase-broadcast-salvations-cry.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R01",
+    "canonicalName": "Chest / Loot Scavenger",
+    "slug": "/survivor-meta/chest-loot-scavenger",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R01@10.2.0-r1",
+    "articleFilename": "strategy-pages/R01-chest-loot-scavenger.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R02",
+    "canonicalName": "Pharmacy / Med-Kit Farming",
+    "slug": "/survivor-meta/pharmacy-med-kit-farming",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R02@10.2.0-r1",
+    "articleFilename": "strategy-pages/R02-pharmacy-med-kit-farming.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R03",
+    "canonicalName": "Item Recharge / Recursion",
+    "slug": "/survivor-meta/item-recharge-recursion",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R03@10.2.0-r1",
+    "articleFilename": "strategy-pages/R03-item-recharge-recursion.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R04",
+    "canonicalName": "Boon Support Network",
+    "slug": "/survivor-meta/boon-support-network",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R04@10.2.0-r1",
+    "articleFilename": "strategy-pages/R04-boon-support-network.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R05",
+    "canonicalName": "Totem Hunter / Cleanser",
+    "slug": "/survivor-meta/totem-hunter-cleanser",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R05@10.2.0-r1",
+    "articleFilename": "strategy-pages/R05-totem-hunter-cleanser.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R06",
+    "canonicalName": "Invocation Ritual",
+    "slug": "/survivor-meta/invocation-ritual",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R06@10.2.0-r1",
+    "articleFilename": "strategy-pages/R06-invocation-ritual.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R07",
+    "canonicalName": "Locker Utility / Head On",
+    "slug": "/survivor-meta/locker-utility-head-on",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R07@10.2.0-r1",
+    "articleFilename": "strategy-pages/R07-locker-utility-head-on.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R08",
+    "canonicalName": "Distraction / Misdirection",
+    "slug": "/survivor-meta/distraction-misdirection",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R08@10.2.0-r1",
+    "articleFilename": "strategy-pages/R08-distraction-misdirection.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R09",
+    "canonicalName": "Obsession / High-Risk Aggro-Info",
+    "slug": "/survivor-meta/obsession-high-risk-aggro-info",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R09@10.2.0-r1",
+    "articleFilename": "strategy-pages/R09-obsession-high-risk-aggro-info.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "R10",
+    "canonicalName": "Endgame Gate / Escape Shell",
+    "slug": "/survivor-meta/endgame-gate-escape-shell",
+    "pageGenerated": true,
+    "snapshotIdUsed": "R10@10.2.0-r1",
+    "articleFilename": "strategy-pages/R10-endgame-gate-escape-shell.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "X01",
+    "canonicalName": "Solo-Q Generalist",
+    "slug": "/survivor-meta/solo-q-generalist",
+    "pageGenerated": true,
+    "snapshotIdUsed": "X01@10.2.0-r1",
+    "articleFilename": "strategy-pages/X01-solo-q-generalist.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "X02",
+    "canonicalName": "Coordinated SWF Flex Generalist",
+    "slug": "/survivor-meta/coordinated-swf-flex-generalist",
+    "pageGenerated": true,
+    "snapshotIdUsed": "X02@10.2.0-r1",
+    "articleFilename": "strategy-pages/X02-coordinated-swf-flex-generalist.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "P00",
+    "canonicalName": "Pickup Interception / Save Family",
+    "slug": "/survivor-meta/pickup-interception-save-family",
+    "pageGenerated": true,
+    "snapshotIdUsed": "P00@10.2.0-r1",
+    "articleFilename": "strategy-pages/P00-pickup-interception-save-family.md",
+    "correctionAugmentationFlagCount": 0
+  },
+  {
+    "strategyId": "A00",
+    "canonicalName": "Rescue-and-Reset Support Family",
+    "slug": "/survivor-meta/rescue-and-reset-support-family",
+    "pageGenerated": true,
+    "snapshotIdUsed": "A00@10.2.0-r1",
+    "articleFilename": "strategy-pages/A00-rescue-and-reset-support-family.md",
+    "correctionAugmentationFlagCount": 0
+  }
+]
