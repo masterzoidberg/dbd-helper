@@ -262,6 +262,7 @@ export function validateGuide({ guide, context, schema }) {
         fail('OPTION_CONFLICT', `${optionPath}/perkId`, `Duplicate advisory option ${option.perkId} in this loadout`);
       }
       if (option.usage === 'ALTERNATIVE') {
+        selected.push({ perkId: option.perkId, path: `${optionPath}/perkId` });
         const slot = ownedPlans.get(option.replaces.planId)?.get(option.replaces.slot);
         if (!slot) fail('OPTION_CONFLICT', `${optionPath}/replaces`, 'ALTERNATIVE must target an actual slot owned by this loadout');
         else if (slot.usage === 'REQUIRED') fail('OPTION_CONFLICT', `${optionPath}/replaces`, 'Cannot replace a REQUIRED perk identity');

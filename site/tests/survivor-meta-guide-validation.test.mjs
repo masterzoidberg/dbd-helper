@@ -217,6 +217,30 @@ test('ALTERNATIVE replaces owned actual nonmandatory slot, traps are never selec
   rejects(substitute, '/page/loadout');
 });
 
+test('TEAM rejects selectable ALTERNATIVE declared OUTDATED_TRAP in another role regardless of role order', () => {
+  for (const [alternativeRole, trapRole] of [[0, 3], [3, 0]]) {
+    const input = fixture('X02');
+    input.guide.page.canonicalTeamBuildIds = ['X02@10.2.0-r1:swf-team-architecture'];
+    const plan = makePlan();
+    plan.environment = 'COORDINATED_SWF';
+    input.guide.page.roles[alternativeRole].loadout = {
+      plans: [plan],
+      options: [{ perkId: 'sprint-burst', usage: 'ALTERNATIVE', whyItsHere: 'Use another chase tool.', replaces: { planId: plan.id, slot: 1 } }]
+    };
+    assert.deepEqual(check(capture(input)), []);
+    input.guide.page.roles[trapRole].loadout = {
+      options: [{ perkId: 'sprint-burst', usage: 'OUTDATED_TRAP', whyItsHere: 'Avoid this choice in the declared plan.' }]
+    };
+    const before = structuredClone(input);
+    assert.deepEqual(check(input), [{
+      code: 'OPTION_CONFLICT', strategyId: 'X02',
+      path: `/page/roles/${alternativeRole}/loadout/options/0/perkId`,
+      message: 'sprint-burst is marked OUTDATED_TRAP and cannot be selectable'
+    }]);
+    assert.deepEqual(input, before);
+  }
+});
+
 test('review provenance validates without invented precision or global freshness', () => {
   for (const status of ['DRAFT', 'REVIEWED', 'PUBLISHED']) assert.deepEqual(check(fixture('X01', status)), []);
   const historical = fixture('X01', 'REVIEWED'); historical.guide.reviewedDate = '2020-02-29'; historical.guide.perkBaseline.verifiedDate = '2016-02-29';
