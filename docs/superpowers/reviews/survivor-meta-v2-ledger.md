@@ -191,3 +191,56 @@ Final review: author self-review, no agents per owner instruction. Checked all s
 ## Pending display evidence
 
 Task 8: standalone 320/390/768/1440 desktop/mobile review, exact displayed choices/perk links, source-versus-purpose separation, full article access, owner 10-second/two-minute comprehension and approval. Task 12: actual renderer preview. None was attempted. All existing guides are DRAFT with reviewedDate null.
+
+## Task 8 — standalone mockup/display gate (owner approval pending)
+
+Disposable mockup: `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-mockup/index.html`. It is outside `site/` and production `scripts/`; no production renderer, guide status, publication, deployment, or root ZIP changed.
+
+The mockup loads the seven real DRAFT guide JSON records, strategy names and article paths from the frozen Stage 3B manifest, all 15 exact canonical perk JSON records named by the prototype dependency set, and the seven matching frozen Stage 3B Markdown articles. The original article is behind a native closed disclosure and was opened in-browser for X01 to confirm the full source is present. The mockup uses page kind and gameplay type as display discriminants; it contains no strategy-ID-specific layout branch.
+
+### Shape and responsive evidence
+
+| ID | Shape exercised | Compact/exceptional first interaction |
+|---|---|---|
+| X01 | STANDARD / DECISIONS | Four slots; slot 4 visibly says Choose one. |
+| C01 | STANDARD / DECISIONS | Four slots; the SWF choice remains a choice, not union equipment. |
+| G02 | STANDARD / DECISIONS / MODULE | One authored Built to Last tool; required Toolbox item context; remaining slots stay open. |
+| P02 | STANDARD / SEQUENCE / MODULE | One authored Flashbang tool; preparation/position/abort sequence follows. |
+| P00 | FAMILY / COMPARISON | Five named child strategies with choose-when and trade-off. |
+| G06 | LEGACY / HISTORY | Historical identity, invalidation, and named G05 successor; no current historical build. |
+| X02 | TEAM / DECISIONS | Four roles, scoped exact perk options, and explicit Solo Q Not applicable. |
+
+Browser review was run at 1440×900, 768×900, 390×844, and 320×844. At every width all seven views loaded without an error or horizontal overflow. At 390px, action rows, long text, roles, comparisons, and history cards remained within their panels; native disclosures were closed by default. At 768px the rail collapsed to two readable columns; at 320px the rail collapsed to one column. Screenshots for every ID at 1440px and 390px are under `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-mockup/screenshots/`.
+
+### Comprehension self-test
+
+- Ten-second queue/build/choice test: X01 exposes the four-slot summary and the slot-four choice; G02 exposes the required Toolbox context and one defining recharge tool; P00 exposes all five named options; G06 exposes the current successor; X02 exposes four jobs rather than four individual builds.
+- Two-minute action/abort test: X01 presents action, reason, and leave cues in the same decision row; P02 presents repair → craft → position → attempt → disengage/reassess; X02 presents reassignment, cancellation, and handoff cues. These are controller checks of discoverability, not owner approval.
+
+### Issues found and resolved during Task 8
+
+1. The research disclosure initially contained placeholder copy. It now fetches and renders the matching frozen Stage 3B article for each prototype.
+2. The disposable mockup initially duplicated canonical perk names/mechanics and prototype names. It now derives perk names/summaries from exact canonical JSON and strategy/article names from the frozen manifest.
+3. P00/G06 related destinations initially displayed child IDs. They now display canonical child/successor names from the same manifest.
+
+No design-contract change is required at this gate. The evidence does clarify that the shared renderer must support an exceptional compact equivalent: one defining MODULE tool, five FAMILY comparisons, LEGACY history/successor, and four TEAM roles without inventing a four-slot loadout. All seven guides remain DRAFT with `reviewedDate: null`; Tasks 9–12 are blocked on explicit owner approval of this mockup direction.
+
+### Task 8 — fresh verification and scoped re-review
+
+Fresh verification after the latest mockup revision:
+
+- `node scripts/survivor-meta-guide-validation.mjs` → 7 DRAFT, 50 missing, 0 REVIEWED, 0 PUBLISHED, zero diagnostics.
+- Focused guide tests → 95/95; full Node suite → 128/128; Python suite → 4/4; generated artifact checker → clean; `git diff --check` → clean apart from Git's LF/CRLF warning.
+- Live browser checks at 1440×900, 768×900, 390×844, and 320×844 → all seven views loaded with no console errors or horizontal overflow; expected slot/comparison/history/role counts matched; native disclosures were closed by default and opened by keyboard, including the real frozen article.
+- Fresh screenshots: all seven IDs at 1440px and 390px under the disposable mockup screenshot directory. The 768px and 320px checks were live verification only, not saved captures.
+
+Scoped re-review report: `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-re-review-2.md` — **FIX_REQUIRED**. No Critical findings. Important blockers:
+
+1. `deja-vu` and `well-make-it` perk links do not return results in the current perk browser because the mockup queries by ID while the browser searches display names.
+2. Canonical/example provenance labels are reversed for canonical plans and MODULE examples.
+3. Canonical Solo Q/SWF tier and status facts are omitted from verdict presentation.
+4. `enabledBy` perk cues are plain text; C01's SWF slot cue and P02's authored mechanic explanation are omitted.
+5. Long verdicts precede exceptional content; required G02 Toolbox guidance is not adjacent to its defining slot on mobile.
+6. X01 hides the snapshot's explicit allowance for another context-appropriate Solo flex in the fourth-slot choice.
+
+Minor review notes: `mainWeakness` is omitted; frozen article front matter is exposed and P00 table formatting is flattened; 200% zoom/contrast and owner comprehension observations remain unrecorded. No owner approval was obtained. Tasks 9–12 remain blocked, all seven guides remain DRAFT, and no design-contract change or production implementation is authorized by this checkpoint.
