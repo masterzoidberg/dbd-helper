@@ -30,7 +30,7 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | G03 | Critical-Generator / Three-Gen Breaker | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G04 | Cooperative Repair / Gen Duo | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G05 | Manual Skill-Check Generator | STANDARD | NOT_STARTED | No record; review not started. | — |
-| G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | DRAFT | [Content/source review](#g06-content-review); Task 8 display pending. | Group 2 introducing commit; see below. |
+| G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | DRAFT | [Content/source review](#g06-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
 | G07 | Boon: Steadfast Repair Zone | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G08 | Road Life Repair-to-Self-Heal | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -43,7 +43,7 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A07 | Endgame Rescue | STANDARD | NOT_STARTED | No record; review not started. | — |
 | P01 | Flashlight Save | STANDARD | NOT_STARTED | No record; review not started. | — |
-| P02 | Flashbang Save | STANDARD | DRAFT | [Content/source review](#p02-content-review); Task 8 display pending. | Group 2 introducing commit; see below. |
+| P02 | Flashbang Save | STANDARD | DRAFT | [Content/source review](#p02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
 | P03 | Sabotage / Hook Denial | STANDARD | NOT_STARTED | No record; review not started. | — |
 | P04 | Breakout / Carry Interference | STANDARD | NOT_STARTED | No record; review not started. | — |
 | P05 | Teammate Pallet Save | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -64,8 +64,8 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | R09 | Obsession / High-Risk Aggro-Info | STANDARD | NOT_STARTED | No record; review not started. | — |
 | R10 | Endgame Gate / Escape Shell | STANDARD | NOT_STARTED | No record; review not started. | — |
 | X01 | Solo-Q Generalist | STANDARD | DRAFT | [Content/source review](#x01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
-| X02 | Coordinated SWF Flex Generalist | TEAM | DRAFT | [Content/source review](#x02-content-review); Task 8 display pending. | Group 2 introducing commit; see below. |
-| P00 | Pickup Interception / Save Family | FAMILY | DRAFT | [Content/source review](#p00-content-review); Task 8 display pending. | Group 2 introducing commit; see below. |
+| X02 | Coordinated SWF Flex Generalist | TEAM | DRAFT | [Content/source review](#x02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
+| P00 | Pickup Interception / Save Family | FAMILY | DRAFT | [Content/source review](#p00-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
 | A00 | Rescue-and-Reset Support Family | FAMILY | NOT_STARTED | No record; review not started. | — |
 
 ## Task 7 group 1 — X01/C01/G02
@@ -129,7 +129,7 @@ Fresh verification: catalog fixture suite 23/23; focused schema/source/review/va
 
 Reviewer: Codex, 2026-10-08. Each ID separately completed editorial cycle steps 1–9 and 13–14: complete canonical strategy/current snapshot (including evaluations, builds, dependencies and evidence), full frozen article, exact candidate perk mechanics review, authored meaning, receipts/revisions, optional-substitute decision, action/exit and enabledBy review, then the real validator. Steps 10–12 are intentionally incomplete: standalone display evidence is Task 8, renderer preview is Task 12, and no guide has been advanced to REVIEWED.
 
-Group 2 commit reference: the introducing commit of `P02.json/P00.json/G06.json/X02.json`, with parent `079b7b125b7db3c6f472f97241209567899b7fdb` and exact message `content: draft Survivor guide prototypes (P02/P00/G06/X02)`. Resolve with `git log --diff-filter=A --format=%H -- content/survivor/meta-guides/P02.json`. The implementer report records the resulting SHA; the ledger uses this immutable introduction reference to avoid a self-referential hash.
+Group 2 commit: `82e24dd4154574c436ec838eaf38640438bac280`, message `content: draft Survivor guide prototypes (P02/P00/G06/X02)`.
 
 ### P02 content review
 
@@ -191,4 +191,3 @@ Final review: author self-review, no agents per owner instruction. Checked all s
 ## Pending display evidence
 
 Task 8: standalone 320/390/768/1440 desktop/mobile review, exact displayed choices/perk links, source-versus-purpose separation, full article access, owner 10-second/two-minute comprehension and approval. Task 12: actual renderer preview. None was attempted. All existing guides are DRAFT with reviewedDate null.
-
