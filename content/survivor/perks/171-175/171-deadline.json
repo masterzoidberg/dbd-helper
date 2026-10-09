@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "171-175",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "deadline",
+  "mechanics": {
+    "name": "Deadline",
+    "alternateName": null,
+    "source": "Alan Wake",
+    "status": "Live 10.2.0",
+    "currentEffect": "While injured, the chance of Skill Checks increases by 6/8/10% while repairing or healing. Skill Checks appear at random positions, and missed-check progress loss is reduced by 50%.",
+    "activation": [
+      "Be injured.",
+      "Repair a Generator or heal while injured.",
+      "Ends/deactivates when: Effects are inactive when no longer injured or when not repairing/healing."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "When injured, you get more frequent, randomly positioned Skill Checks and lose less progress for missing one.",
+    "cooldown": null,
+    "duration": [
+      "While injured during repair or healing."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Skill Check positions are random."
+    ],
+    "sourceCharacter": "Alan Wake",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "deadline",
+    "rank": 171,
+    "tier": "D",
+    "roles": [
+      "Skill Check",
+      "Healing",
+      "Objective"
+    ],
+    "summary": "While injured, Skill Checks occur more often and at random screen positions during repair and healing; failed checks lose 50% less progress.",
+    "metaStatus": "Weak",
+    "skillLevel": "High",
+    "soloQ": 1,
+    "swf": 1,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "health-state",
+      "pressure"
+    ],
+    "useCases": [
+      "Generate more Skill Checks for Hyperfocus, Autodidact, or other check-based builds while injured.",
+      "Use the reduced miss penalty to make deliberately difficult Skill Check setups less punishing.",
+      "Increase Skill Check opportunities during both generator repair and healing."
+    ],
+    "counters": [
+      "Only active while Injured.",
+      "Random Skill Check positions make execution harder.",
+      "More Skill Checks can be a downside if the build gains nothing from them."
+    ],
+    "pros": [
+      "Unique way to increase Skill Check frequency.",
+      "Works on both repairing and healing.",
+      "Reduces punishment from failures."
+    ],
+    "cons": [
+      "Actively increases mechanical difficulty.",
+      "Requires staying injured.",
+      "Mostly a synergy engine rather than standalone power."
+    ],
+    "analysis": [
+      "Deadline closes this batch because increasing Skill Check frequency is valuable only when the build has a reason to want extra Skill Checks. Hyperfocus and Autodidact are the clearest examples, turning more checks into more opportunities for their own effects.",
+      "The perk deliberately makes those checks less comfortable by moving them to random positions. That raises the execution requirement and can cause more mistakes, though the fifty-percent reduction to missed-check progress loss softens the punishment.",
+      "Staying injured is another cost. The perk is inactive while Healthy, so a build that heals frequently may spend much of the Trial without its main effect.",
+      "Deadline is therefore a niche engine for people intentionally building around Skill Checks. In that context it can improve consistency through volume; outside that context it is mostly making the HUD more chaotic for no reward."
+    ],
+    "verdict": "A specialist Skill Check accelerator. Deadline is useful when your other perks profit from extra checks and unnecessary turbulence everywhere else.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Alan Wake"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "autodidact",
+      "this-is-not-happening"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "Autodidact",
+      "This Is Not Happening"
+    ],
+    "antiSynergies": []
+  }
+}

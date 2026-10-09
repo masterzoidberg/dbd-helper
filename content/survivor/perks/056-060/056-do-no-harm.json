@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "056-060",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "do-no-harm",
+  "mechanics": {
+    "name": "Do No Harm",
+    "alternateName": null,
+    "source": "Orela Rose",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healing another Survivor, for each Hook State they have: you heal 30/35/40% faster, Great basic Skill Checks grant 3% more progress, and the odds of triggering a Skill Check increase by 5%.",
+    "activation": [
+      "Heal another Survivor; all three bonuses scale with that Survivor's Hook States and do nothing at zero Hook States.",
+      "Ends/deactivates when: The bonuses apply only while healing another Survivor."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Adjusted healing speed to 30/35/40% per Hook State, tied the +3% Great basic Skill Check progress to Hook States, and added +5% Skill Check occurrence chance.",
+    "plainEnglishSummary": "Healing a teammate who has Hook States is faster, gives stronger Great basic Skill Check progress, and causes Skill Checks more often, all scaling with each Hook State.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Great basic Healing Skill Checks grant +3% progress per Hook State of the Survivor being healed.",
+      "Healing Skill Check occurrence chance is increased by 5% per Hook State of the Survivor being healed (maximum 10% at 2 Hook States)."
+    ],
+    "sourceCharacter": "Orela Rose",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "do-no-harm",
+    "rank": 56,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "Heal teammates faster for each Hook State they have, reaching up to 80% faster at two Hook States, with stronger and more frequent Great healing Skill Checks.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "hook-state",
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Reset a death-hook teammate extremely quickly.",
+      "Combine with healing builds to make late-game support very efficient.",
+      "Exploit Great Skill Checks for additional progress on already-hooked teammates."
+    ],
+    "counters": [
+      "Provides no bonus on teammates with zero Hook States.",
+      "Requires direct teammate healing.",
+      "The strongest bonus appears only on Survivors already close to elimination."
+    ],
+    "pros": [
+      "Very large healing ceiling on death-hook teammates.",
+      "Targets the teammates who most need safe resets.",
+      "Strong SWF triage value."
+    ],
+    "cons": [
+      "Conditional on Hook States.",
+      "No self-heal benefit.",
+      "Can be redundant if another perk already makes the heal nearly instant."
+    ],
+    "analysis": [
+      "Do No Harm remains a strong triage perk, but its 10.2 Tier III ceiling is now 40% faster healing per Hook State, or 80% on a teammate with two Hook States.",
+      "The Skill Check package adds more texture: Great basic healing checks grant 3% extra progress and Hook States also increase the chance that healing Skill Checks occur.",
+      "That makes the perk especially effective on the teammate the team most needs to protect, because death-hook Survivors receive both the largest speed bonus and more opportunities for bonus progress.",
+      "It is still conditional on the target having Hook States, so the opening of a Trial can remain quiet. The 10.2 adjustments reduce the raw ceiling slightly while making the Skill Check portion more reliable."
+    ],
+    "verdict": "Still a strong death-hook triage perk. The live ceiling is now 80% faster healing at two Hook States, with more Skill Check opportunities supporting the reset.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Support",
+      "Scaling"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      50,
+      66
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "provisional",
+    "evidenceStatus": "needs-controlled-testing",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Orela Rose"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "well-make-it",
+      "desperate-measures",
+      "empathy"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Botany Knowledge",
+      "We'll Make It",
+      "Desperate Measures",
+      "Empathy"
+    ],
+    "antiSynergies": []
+  }
+}

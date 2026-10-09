@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "106-110",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "tenacity",
+  "mechanics": {
+    "name": "Tenacity",
+    "alternateName": null,
+    "source": "David Tapp",
+    "status": "Live 10.2.0",
+    "currentEffect": "While in the Dying State, you can recover while crawling, gain 30/40/50% Haste, have your Grunts of Pain reduced by 75%, and your Aura cannot be read.",
+    "activation": [
+      "Be in the Dying State.",
+      "Ends/deactivates when: The effects end when you leave the Dying State."
+    ],
+    "patchNote": "Latest live balance change (9.3.0): Re-added recovery while crawling and restored Haste to 30/40/50% (was 15/20/25% from 9.2.0).",
+    "plainEnglishSummary": "While downed, lets you crawl and recover at once, move faster, make less pain noise, and hide your Aura.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "Allows recovery while crawling; blocks Aura reading while in the Dying State."
+    ],
+    "sourceCharacter": "David Tapp",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "tenacity",
+    "rank": 110,
+    "tier": "B",
+    "roles": [
+      "Anti-Slug",
+      "Recovery",
+      "Mobility"
+    ],
+    "summary": "While downed, recover while crawling, move up to 50% faster, reduce pain sounds, and block Aura reading.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "dying-state",
+      "anti-slug",
+      "aura-reading"
+    ],
+    "useCases": [
+      "Crawl toward pallets, teammates, or safer pickup locations without sacrificing recovery progress.",
+      "Make slugging harder to manage by moving much farther than the Killer expects.",
+      "Hide your downed Aura from Killer information effects while staying quieter."
+    ],
+    "counters": [
+      "Provides no ability to fully stand up by itself.",
+      "Immediate Killer pickups can deny nearly all value.",
+      "Open terrain may offer little useful destination even with faster crawling."
+    ],
+    "pros": [
+      "9.5 restored simultaneous crawl-and-recovery functionality.",
+      "50% Dying-State Haste is substantial.",
+      "Combines mobility, recovery, quieter audio, and Aura denial."
+    ],
+    "cons": [
+      "Entirely slugging-dependent.",
+      "Does not finish the self-recovery.",
+      "Can be irrelevant if the Killer hooks immediately."
+    ],
+    "analysis": [
+      "Tenacity ranks this position because its current version is much healthier than older memories of the perk. You can once again recover while crawling, and Tier III provides 50% Haste in the Dying State, letting you relocate without choosing between movement and recovery.",
+      "That matters around pallets and teammates. A downed Survivor can move into a position where a teammate has a realistic save while still building recovery progress, or crawl away from a dangerous hook area before the Killer returns.",
+      "The quieter pain sounds and Aura denial make the relocation harder to track. Those secondary effects are not enough to carry the perk alone, but they support its central anti-slug purpose cleanly.",
+      "Tenacity stays in B because it cannot create its own full recovery. It is excellent support for Unbreakable, Power Struggle, Flip-Flop, or teammate pickups, but a Killer who simply hooks you immediately bypasses the entire package."
+    ],
+    "verdict": "A much better anti-slug utility perk after its 9.5 restoration. Tenacity makes the ground phase productive, but still needs another effect or teammate to actually get you standing.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "David Tapp"
+    },
+    "synergyPerkIds": [
+      "unbreakable",
+      "flip-flop",
+      "power-struggle",
+      "soul-guard"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Unbreakable",
+      "Flip-Flop",
+      "Power Struggle",
+      "Soul Guard"
+    ],
+    "antiSynergies": []
+  }
+}

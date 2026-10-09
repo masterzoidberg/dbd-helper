@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "batch": "006-010",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "made-for-this",
+  "mechanics": {
+    "name": "Made for This",
+    "alternateName": null,
+    "source": "Gabriel Soma",
+    "status": "Live 10.2.0",
+    "currentEffect": "Activates while you are in the Injured State. While active, completing a Healing action on another Survivor grants Endurance for the tier duration; that Endurance ends early if you perform any Conspicuous Action. While active and suffering from Deep Wound, running grants the tier-specific Haste bonus.",
+    "activation": [
+      "Be in the Injured State.",
+      "Complete a Healing action on another Survivor to trigger Endurance.",
+      "Be suffering from Deep Wound and running to receive Haste.",
+      "Ends/deactivates when: The Endurance effect ends after its tier duration or early when you perform a Conspicuous Action.",
+      "Ends/deactivates when: The Haste effect applies only while running and suffering from Deep Wound; the perk otherwise remains available while injured."
+    ],
+    "patchNote": "Latest live balance change (7.4.0): Haste now requires Deep Wound and applies while running; Exhausted no longer disables the perk.",
+    "plainEnglishSummary": "While injured, healing a teammate grants temporary Endurance, and running while Deep Wounded grants tier-scaled Haste.",
+    "cooldown": null,
+    "duration": [
+      "Endurance: 6/8/10 seconds.",
+      "Haste: while running and suffering from Deep Wound; no separate duration is specified."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Endurance",
+      "Deep Wound",
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The Haste effect applies only to running, not other movement modes."
+    ],
+    "sourceCharacter": "Gabriel Soma",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "made-for-this",
+    "rank": 9,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Healing"
+    ],
+    "summary": "While injured, healing another Survivor can grant Endurance, and Deep Wound lets you run slightly faster.",
+    "metaStatus": "Strong",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "endurance",
+      "deep-wound",
+      "haste",
+      "health-state"
+    ],
+    "useCases": [
+      "Heal a teammate while injured and use the resulting Endurance to survive a dangerous follow-up interaction.",
+      "Convert Deep Wound from an anti-tunnel or protection-hit event into a 3% chase-speed advantage.",
+      "Stack several connected team actions into a powerful mid-match rescue or anti-slug sequence."
+    ],
+    "counters": [
+      "Its Haste requires both being Injured and suffering from Deep Wound.",
+      "The Endurance portion requires you to finish healing another Survivor while injured.",
+      "Conspicuous Actions can remove the granted Endurance early, limiting offensive abuse."
+    ],
+    "pros": [
+      "Can provide both chase speed and an extra protected hit from one perk slot.",
+      "Scales dramatically inside coordinated rescue and anti-slug sequences.",
+      "The 3% Haste is small numerically but meaningful in a prolonged chase."
+    ],
+    "cons": [
+      "Much more conditional than its historical versions.",
+      "Solo Q cannot reliably manufacture the exact healing and Deep Wound situations it wants.",
+      "Often needs other perks or teammate behavior to reach its ceiling."
+    ],
+    "analysis": [
+      "Made for This earns this position because its modern strength is not passive speed. It is a conditional combination of two effects that become dangerous when a build is designed around them: Endurance after healing another Survivor while injured, and 3% Haste while the user is in Deep Wound.",
+      "The Haste component matters because movement-speed differences compound around loops. Three percent does not look dramatic on the loadout screen, but over repeated rotations it can change whether the Killer closes distance before the next pallet or window. The catch is that the Survivor first needs Deep Wound, so the perk cannot be treated as permanent chase speed.",
+      "The Endurance component is where coordinated teams can become creative. WGLF pickups, For the People plays, protection-hit chains, and post-unhook sequences can put the user into the exact health states Made for This wants while also creating a reason to heal another Survivor. Those combinations can turn one rescue into several layers of protection.",
+      "That setup dependency is why it lands below simpler perks. In Solo Q, the correct injured teammate, heal opportunity, and timing may never line up. In SWF, those conditions can be planned, making the perk considerably more dangerous. Made for This is therefore a high-ceiling build piece rather than a universally reliable standalone slot."
+    ],
+    "verdict": "Still genuinely strong, but now as a synergy perk rather than a plug-and-play movement perk. It belongs in coordinated Endurance and Deep Wound setups more than in generic Solo Q builds.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Endurance"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Gabriel Soma"
+    },
+    "synergyPerkIds": [
+      "dead-hard",
+      "were-gonna-live-forever",
+      "for-the-people",
+      "resilience"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Dead Hard",
+      "We're Gonna Live Forever",
+      "For the People",
+      "Resilience"
+    ],
+    "antiSynergies": []
+  }
+}

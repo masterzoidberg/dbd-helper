@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "146-150",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boon-dark-theory",
+  "mechanics": {
+    "name": "Boon: Dark Theory",
+    "alternateName": null,
+    "source": "Yoichi Asakawa",
+    "status": "Live 10.2.0",
+    "currentEffect": "Bless a Dull or Hex Totem. Survivors within 24 metres gain 3% Haste; the effect lingers for 2/3/4 seconds after leaving its range.",
+    "activation": [
+      "Bless a Dull or Hex Totem.",
+      "Be within 24 metres for the main Haste effect.",
+      "Ends/deactivates when: Effect ends after leaving range and the tiered linger time, or when the totem is snuffed."
+    ],
+    "patchNote": "Latest live balance change (8.7.0): Increased Haste from 2% to 3%.",
+    "plainEnglishSummary": "A Boon Totem grants nearby Survivors 3% Haste that briefly persists after leaving its radius.",
+    "cooldown": null,
+    "duration": [
+      "Haste lingers 2/3/4 seconds outside the Boon range."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One active Boon Totem per Survivor; equipped Boons apply to that totem.",
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "Yoichi Asakawa",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boon-dark-theory",
+    "rank": 148,
+    "tier": "C",
+    "roles": [
+      "Boon",
+      "Chase",
+      "Mobility"
+    ],
+    "summary": "Create a 24-metre Boon zone that grants Survivors 3% Haste, lingering briefly after they leave the area.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "looping"
+    ],
+    "useCases": [
+      "Place the Boon near a strong connected chase area so multiple loops benefit from 3% Haste.",
+      "Stack the effect with other Boons on one Totem to lower the setup cost.",
+      "Use the short linger to carry the movement bonus into a transition out of the Boon radius."
+    ],
+    "counters": [
+      "The Killer can snuff the Totem.",
+      "Three percent Haste is powerful only if the chase actually remains inside useful geometry.",
+      "Bad Totem placement can put the effect far away from every important chase."
+    ],
+    "pros": [
+      "Teamwide Haste rather than owner-only value.",
+      "Three percent is enough to change some loop timings.",
+      "9.5/8.7-era version is stronger than its old 2% form."
+    ],
+    "cons": [
+      "Map and Totem geometry determine most of the value.",
+      "Requires blessing time.",
+      "Snuffing erases the whole investment."
+    ],
+    "analysis": [
+      "Boon: Dark Theory is useful only conditionally because 3% Haste is a real chase modifier, but the effect is trapped inside a twenty-four-metre circle. When that circle covers a strong building or several connected tiles, the Killer can feel the difference immediately.",
+      "The perk becomes more efficient in a multi-Boon loadout. Shadow Step, Circle of Healing, Steadfast, and Dark Theory can all share one Totem, so the blessing action buys several effects rather than paying a full setup tax for 3% movement alone.",
+      "The problem is geography. A Boon behind a dead-zone corner might be safe from snuffing and still accomplish nothing. A perfect central Boon may influence multiple chases but also be obvious enough for the Killer to remove.",
+      "Dark Theory therefore has a higher ceiling than many similarly ranked niche perks but a lower floor than general chase tools. It is a zone-control perk, and the zone has to matter."
+    ],
+    "verdict": "A real team chase buff with a map-shaped reliability problem. Dark Theory can make a strong area stronger, but cannot guarantee the match happens inside its circle.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Haste"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Yoichi Asakawa"
+    },
+    "synergyPerkIds": [
+      "boon-shadow-step",
+      "boon-circle-of-healing",
+      "boon-steadfast",
+      "hope"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Boon: Shadow Step",
+      "Boon: Circle of Healing",
+      "Boon: Steadfast",
+      "Hope"
+    ],
+    "antiSynergies": []
+  }
+}

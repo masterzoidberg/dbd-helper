@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "131-135",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "light-footed",
+  "mechanics": {
+    "name": "Light-Footed",
+    "alternateName": null,
+    "source": "Ellen Ripley",
+    "status": "Live 10.2.0",
+    "currentEffect": "While Healthy, suppresses the sound of your footsteps while running. After you perform a Rushed Vault, the perk has a 14/12/10-second cooldown.",
+    "activation": [
+      "Be Healthy.",
+      "Not be in the cooldown following a Rushed Vault.",
+      "Ends/deactivates when: Becoming Injured ends the effect; performing a Rushed Vault starts the tier-specific cooldown."
+    ],
+    "patchNote": "Latest live balance change (9.0.0): Reduced cooldown after a Rushed Vault from 28/24/20 to 14/12/10 seconds.",
+    "plainEnglishSummary": "While Healthy and off cooldown, it silences your running footsteps.",
+    "cooldown": "14/12/10 seconds after a Rushed Vault (Tier I/II/III).",
+    "duration": [
+      "No fixed active duration; effect applies while Healthy and off cooldown."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Ellen Ripley",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "light-footed",
+    "rank": 134,
+    "tier": "C",
+    "roles": [
+      "Stealth",
+      "Chase"
+    ],
+    "summary": "While Healthy and off cooldown, your running footsteps are silent; a Rushed Vault disables the effect for 10 seconds at Tier III.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "looping",
+      "health-state"
+    ],
+    "useCases": [
+      "Make line-of-sight breaks harder to solve through footstep audio.",
+      "Approach or leave areas while Healthy without broadcasting normal running sounds.",
+      "Pair sound denial with hidden Scratch Marks or quiet pain sounds for stronger stealth."
+    ],
+    "counters": [
+      "Becoming Injured ends the active effect.",
+      "Rushed Vaults disable it temporarily.",
+      "Visual tracking and other sound cues still exist."
+    ],
+    "pros": [
+      "Passive while Healthy.",
+      "Removes a real Killer tracking cue.",
+      "No activation button."
+    ],
+    "cons": [
+      "Health-state dependent.",
+      "Rushed-vault cooldown is awkward in chase.",
+      "Footsteps are only one information channel."
+    ],
+    "analysis": [
+      "Light-Footed ranks this position because footstep audio matters more than perk descriptions usually communicate. Good Killers use running sounds to track Survivors around walls, especially when Scratch Marks are messy or visual contact is broken.",
+      "Silencing those footsteps while Healthy can create genuine uncertainty. The effect is strongest in indoor maps and dense structures where the Killer often hears a Survivor before seeing them.",
+      "The conditions keep it modest. Injury turns the value off, and a Rushed Vault starts a ten-second cooldown at Tier III, which means the perk is least reliable during exactly the kind of frantic chase sequence where silent movement sounds most attractive.",
+      "Light-Footed therefore works best as one layer in a broader stealth package. Alone, it is useful but too narrow for a higher ranking."
+    ],
+    "verdict": "A subtle sound-denial perk that good stealth players can exploit. Light-Footed matters around walls, but its Healthy requirement and vault cooldown limit the ceiling.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Sound Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ellen Ripley"
+    },
+    "synergyPerkIds": [
+      "lightweight",
+      "boon-shadow-step",
+      "quick-quiet",
+      "iron-will"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Lightweight",
+      "Boon: Shadow Step",
+      "Quick & Quiet",
+      "Iron Will"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "batch": "031-035",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "head-on",
+  "mechanics": {
+    "name": "Head On",
+    "alternateName": null,
+    "source": "Jane Romero",
+    "status": "Live 10.2.0",
+    "currentEffect": "After hiding in a Locker for 3 seconds, Head On becomes ready. While not Exhausted and not disabled by Idle Crows, hold Sprint as you exit. If the Killer is within 2.5 metres at the time, they are stunned for 3 seconds. A successful stun makes you Exhausted for 60/50/40 seconds. Missing causes a Loud Noise Notification for the Killer.",
+    "activation": [
+      "Hide in a Locker for 3 seconds to ready the perk.",
+      "Hold Sprint while exiting the Locker.",
+      "The Killer must be within 2.5 metres for the stun to connect.",
+      "You must not be Exhausted or disabled by Idle Crows.",
+      "Ends/deactivates when: A successful stun applies Exhausted, during which Head On cannot be used.",
+      "Ends/deactivates when: The ready state does not provide a stun if the Killer is outside the 2.5-metre range."
+    ],
+    "patchNote": "Latest live balance change (3.1.0): Added the restriction that Head On cannot be used while the Survivor has accrued Idle Crows; also clarified the Locker rush and stun-zone behavior.",
+    "plainEnglishSummary": "After preparing in a Locker, you can stun a nearby Killer by rushing out, then become Exhausted.",
+    "cooldown": null,
+    "duration": [
+      "Locker preparation: 3 seconds.",
+      "Killer stun: 3 seconds.",
+      "Exhausted after successful stun: 60/50/40 seconds (Tier I/II/III)."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "No once-per-Trial limit; Exhausted prevents reuse until it expires. Cannot be used while affected by Idle Crows.",
+    "statusEffectsInvolved": [
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "A missed attempt causes a Loud Noise Notification and does not apply Exhausted; Exhausted is applied only on a successful stun (official 3.1.0). Patch 10.2.0 fixed a bug where a failed stun on The Nurse still applied Exhausted and awarded the stun score event.",
+      "The restriction against use while affected by Idle Crows is present in the official 3.1.0 live notes."
+    ],
+    "sourceCharacter": "Jane Romero",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "head-on",
+    "rank": 31,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Rescue"
+    ],
+    "summary": "After preparing in a Locker for 3 seconds, rush out to stun a nearby Killer for 3 seconds, then become Exhausted.",
+    "metaStatus": "Strong",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "exhausted",
+      "looping",
+      "bodyblock"
+    ],
+    "useCases": [
+      "Punish a Killer who checks or passes a prepared Locker during chase.",
+      "Coordinate Locker stuns to rescue or protect a teammate moving through the area.",
+      "Create mindgames around tiles where the Killer knows a prepared Locker may be occupied."
+    ],
+    "counters": [
+      "Requires 3 seconds of Locker preparation and cannot be used while Exhausted.",
+      "The Killer can bait the rush, approach outside the 2.5-metre stun zone, or simply avoid the Locker.",
+      "Idle Crows disable the perk, preventing indefinite passive waiting."
+    ],
+    "pros": [
+      "A successful 3-second Killer stun is a major chase swing.",
+      "Can generate unique rescue and team-play opportunities that ordinary Exhaustion perks cannot.",
+      "Threat value can alter how the Killer approaches Locker-heavy structures."
+    ],
+    "cons": [
+      "Requires preparation and a usable Locker position.",
+      "Much less consistent without communication or a deliberate Locker build.",
+      "A missed rush can waste the setup and reveal your location."
+    ],
+    "analysis": [
+      "Head On ranks this position because its ceiling is enormous even though its average activation is far less reliable than conventional Exhaustion perks. A three-second Killer stun can reset a chase, protect another Survivor, interrupt pressure, or create a coordinated save that no simple movement-speed perk could reproduce.",
+      "The cost is setup. The Survivor must spend three seconds inside a Locker before the perk is ready, remain free of Exhaustion, and then catch the Killer within a relatively small stun zone. Strong Killers know the perk exists and can bait the rush or approach the Locker from an angle that makes the timing difficult.",
+      "SWF raises the perk substantially because teammates can deliberately route a chase toward a prepared Locker. Solo Q cannot guarantee that setup, so Head On often becomes a more personal escape tool or a surprise play. Pairing it with Quick & Quiet also creates much stronger Locker mindgames because the Killer may not know exactly when you entered.",
+      "Current usage is unusually high for such a specialized perk, which speaks to both its strength and its appeal. We still rank it below broader perks because a perk slot that requires a specific tile and several seconds of preparation can disappear for long stretches of a match. When it works, however, its impact is unmistakable."
+    ],
+    "verdict": "A high-ceiling stun perk that rewards planning and communication. Head On is not reliable enough to rival universal Exhaustion perks, but a successful activation can completely flip a chase or rescue.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Stun"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jane Romero"
+    },
+    "synergyPerkIds": [
+      "quick-quiet",
+      "deception",
+      "flashbang",
+      "parental-guidance"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Quick & Quiet",
+      "Deception",
+      "Flashbang",
+      "Parental Guidance"
+    ],
+    "antiSynergies": []
+  }
+}

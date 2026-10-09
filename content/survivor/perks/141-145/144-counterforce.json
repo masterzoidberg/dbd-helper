@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "141-145",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "counterforce",
+  "mechanics": {
+    "name": "Counterforce",
+    "alternateName": null,
+    "source": "Jill Valentine",
+    "status": "Live 10.2.0",
+    "currentEffect": "Your Totem cleansing speed is set to 125%. Each Totem you cleanse adds a stackable 25% cleansing-speed bonus. After each cleanse, the Aura of the Totem farthest from your current location is revealed to you for 10/12/14 seconds.",
+    "activation": [
+      "Cleansing speed bonus is always active.",
+      "Cleanse a Totem to gain another stack and reveal the farthest Totem.",
+      "Ends/deactivates when: Farthest Totem Aura reveal ends after 10/12/14 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.0.0): Increased the bonus Totem cleansing speed to 25% and the farthest-Totem Aura reveal to 10/12/14 seconds.",
+    "plainEnglishSummary": "You cleanse Totems faster, gain additional cleansing speed per Totem cleansed, and see the farthest Totem after each cleanse.",
+    "cooldown": null,
+    "duration": [
+      "Farthest Totem Aura reveal: 10/12/14 seconds by tier."
+    ],
+    "tokenOrStackBehavior": "Permanent base cleansing speed is 125%; each cleansed Totem adds +25% stackable speed.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Jill Valentine",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "counterforce",
+    "rank": 144,
+    "tier": "C",
+    "roles": [
+      "Totem",
+      "Information"
+    ],
+    "summary": "Cleanse Totems at 125% base speed, gain another stacking 25% cleanse-speed bonus per Totem, and reveal the farthest Totem after each cleanse.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Rapidly clear a multi-Hex setup.",
+      "Chain Totem locations across the map using the farthest-Totem Aura reveal.",
+      "Support Overzealous or anti-Hex strategies with much faster cleansing."
+    ],
+    "counters": [
+      "Provides little value when Totems are strategically irrelevant.",
+      "Travel time between far-apart Totems can dominate the saved cleanse time.",
+      "Cleansing every Dull Totem can interfere with Boon builds."
+    ],
+    "pros": [
+      "Very fast cleansing after stacks build.",
+      "Self-guiding next-Totem information.",
+      "Excellent against heavy Hex builds."
+    ],
+    "cons": [
+      "Extremely Totem-specific.",
+      "Can waste objective time if used without a reason to cleanse.",
+      "No benefit to blessing speed."
+    ],
+    "analysis": [
+      "Counterforce ranks this position because it is superb at exactly one job: deleting Totems. The permanent 125% cleansing baseline already improves the interaction, and every completed cleanse adds another twenty-five-percent stack.",
+      "The farthest-Totem Aura reveal lets the perk chain its own objective. Instead of wandering after each cleanse, the player receives a clear next destination, making a deliberate Totem sweep much more practical.",
+      "The problem is whether a Totem sweep was worth doing in the first place. Against a dangerous Hex build, absolutely. Against five harmless Dull Totems, spending the match cleansing them can be worse than ignoring the perk entirely.",
+      "Counterforce therefore deserves a lower-B specialist ranking. It is an excellent answer to the right Killer build and unnecessary labor against the wrong one."
+    ],
+    "verdict": "A premier anti-Totem specialist. Counterforce is fantastic when Hexes matter and actively harmful if it convinces you every Dull Totem must die.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Cleansing"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jill Valentine"
+    },
+    "synergyPerkIds": [
+      "overzealous",
+      "inner-strength",
+      "detective-s-hunch",
+      "small-game"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Overzealous",
+      "Inner Strength",
+      "Detective's Hunch",
+      "Small Game"
+    ],
+    "antiSynergies": []
+  }
+}

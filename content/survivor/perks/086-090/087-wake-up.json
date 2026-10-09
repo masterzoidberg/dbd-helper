@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "086-090",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "wake-up",
+  "mechanics": {
+    "name": "Wake Up!",
+    "alternateName": null,
+    "source": "Quentin Smith",
+    "status": "Live 10.2.0",
+    "currentEffect": "When all Generators are completed, you see the Auras of Exit Gate Switches. While opening an Exit Gate, other Survivors see your Aura. You open Exit Gates 8/9/10% faster, plus an additional 20% faster for each other Survivor alive.",
+    "activation": [
+      "All Generators must be completed.",
+      "The self-Aura sharing and speed bonus apply while you are opening an Exit Gate.",
+      "Ends/deactivates when: Exit Gate Switch Aura reading remains available after all Generators are completed.",
+      "Ends/deactivates when: Your Aura is shared only while opening an Exit Gate."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Changed Exit Gate opening speed to 8/9/10% plus 20% for each other Survivor alive (was 8/10/12.5% per any Survivor alive); Exit Gate Switch and self-Aura information retained.",
+    "plainEnglishSummary": "After all Generators are done, Exit Gate Switches are revealed, teammates can see you opening a Gate, and your Gate-opening speed scales with other living Survivors.",
+    "cooldown": null,
+    "duration": [
+      "Exit Gate Switch Aura reveal persists after all Generators are completed.",
+      "Your Aura is shared while opening an Exit Gate."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Gate-opening speed is 8/9/10% plus 20% for each other Survivor alive."
+    ],
+    "sourceCharacter": "Quentin Smith",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "wake-up",
+    "rank": 87,
+    "tier": "B",
+    "roles": [
+      "Endgame",
+      "Information"
+    ],
+    "summary": "After all generators are completed, reveal Exit Gates, show teammates your Aura while opening one, and open it up to 70% faster with all four Survivors alive.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Locate either Exit Gate immediately on indoor or visually confusing maps.",
+      "Open a gate much faster while several Survivors remain alive.",
+      "Broadcast which gate you are opening so teammates can route toward it."
+    ],
+    "counters": [
+      "Provides absolutely no value before all generators are completed.",
+      "The speed bonus shrinks as Survivors die.",
+      "A match that never reaches powered gates leaves the perk completely unused."
+    ],
+    "pros": [
+      "Up to 70% faster gate opening is a major endgame time save.",
+      "Global gate information removes navigation uncertainty.",
+      "Built-in teammate Aura communication helps Solo Q."
+    ],
+    "cons": [
+      "Dead for the entire pre-endgame phase.",
+      "Cannot help the team reach the point where it activates.",
+      "Less powerful when few Survivors remain alive."
+    ],
+    "analysis": [
+      "Wake Up! became even more explosive at a healthy-team endgame. Tier III now gives 10% base gate speed plus another 20% for each other Survivor alive, reaching 70% faster opening with all four Survivors still in the Trial.",
+      "That is enough to materially change Killer rotation math. A gate that would normally remain contestable can become nearly finished before the Killer completes a cross-map check.",
+      "The information package remains helpful as well: you see Gate Switches and teammates see your Aura while you are opening one, reducing endgame confusion in Solo Q.",
+      "The same structural weakness remains absolute. Wake Up! does nothing before all generators are completed. Its live numbers warrant a higher review, but its dead early game still prevents a universal recommendation."
+    ],
+    "verdict": "A monstrous gate opener in a four-Survivor endgame, now reaching 70% faster. Wake Up! is still dead before the generators finish, but its active payoff is no joke.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "tags": [
+      "Exit Gate"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Quentin Smith"
+    },
+    "synergyPerkIds": [
+      "hope",
+      "adrenaline",
+      "no-one-left-behind",
+      "down-to-the-last"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Hope",
+      "Adrenaline",
+      "No One Left Behind",
+      "Down to the Last"
+    ],
+    "antiSynergies": []
+  }
+}

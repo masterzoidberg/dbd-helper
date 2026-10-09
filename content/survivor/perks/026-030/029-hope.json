@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "026-030",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "hope",
+  "mechanics": {
+    "name": "Hope",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Once the Exit Gates are powered, Hope activates and grants you 3/4/5% Haste for the remainder of the Trial.",
+    "activation": [
+      "The Exit Gates must be powered.",
+      "Ends/deactivates when: The effect ends when the Trial ends."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Reduced Haste from 5/6/7% to 3/4/5%; current duration remains the remainder of the Trial.",
+    "plainEnglishSummary": "When the Exit Gates are powered, you move faster until the Trial ends.",
+    "cooldown": null,
+    "duration": [
+      "Remainder of the Trial after the Exit Gates are powered."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Activates once when the Exit Gates are powered and remains active for the rest of the Trial.",
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "hope",
+    "rank": 29,
+    "tier": "A",
+    "roles": [
+      "Endgame",
+      "Chase",
+      "Mobility"
+    ],
+    "summary": "Once the Exit Gates are powered, gain permanent 5% Haste for the rest of the Trial.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "looping"
+    ],
+    "useCases": [
+      "Turn an endgame chase into a much harder catch for standard-speed Killers.",
+      "Reach gates, teammates, and rescue positions faster after the generators are completed.",
+      "Stack with strong chase fundamentals to convert a narrow endgame lead into an escape."
+    ],
+    "counters": [
+      "Provides absolutely no value before the Exit Gates are powered.",
+      "A match that collapses before endgame leaves the perk completely dead.",
+      "Some Killer powers can still ignore or overwhelm the 5% movement advantage.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "Permanent endgame Haste with no cooldown once activated.",
+      "Affects every movement decision after generators are complete, not just one chase.",
+      "Can be extremely difficult for basic-attack Killers to overcome in good Survivor hands."
+    ],
+    "cons": [
+      "Dead perk slot for most of the Trial.",
+      "Requires the team to reach powered gates before any value appears.",
+      "Weaker than its historical 7% version."
+    ],
+    "analysis": [
+      "Hope takes this position because 5% permanent Haste is a genuinely powerful effect attached to one of the harshest activation conditions in the game: the team must already have powered the Exit Gates. Before that moment, Hope is not conditional value or reduced value; it is no value at all.",
+      "Once active, however, the effect is extremely clean. Movement speed affects every loop, transition, gate rotation, rescue approach, and attempt to reach safety. Against ordinary 115% movement-speed Killers, a strong looper can convert a 5% increase into significantly longer endgame chases because the Killer gains distance more slowly around every structure.",
+      "The perk also pairs naturally with Adrenaline. One provides the immediate health-state and burst transition when generators finish; the other stays active for the entire endgame afterward. Coordinated teams can exploit that combination to turn the final generator into a major tempo swing.",
+      "Hope has an important consistency limitation because Survivor loadouts need to help the team reach endgame in the first place. A slot that is dead during a losing match can contribute to the reason that match never stabilizes. Hope is therefore a powerful closer rather than a universally strong opener or midgame tool."
+    ],
+    "verdict": "An elite endgame closer held back by doing nothing before the gates are powered. If your team reaches the final phase, permanent 5% Haste can make the Killer's last chase dramatically harder.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Haste"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "adrenaline",
+      "resilience",
+      "finesse",
+      "five-moves-ahead"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Adrenaline",
+      "Resilience",
+      "Finesse",
+      "Five Moves Ahead"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "161-165",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "low-profile",
+  "mechanics": {
+    "name": "Low Profile",
+    "alternateName": null,
+    "source": "Ada Wong",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you are the only Survivor in the Trial not currently incapacitated by being downed, carried, or hooked, Low Profile activates. For 70/80/90 seconds it suppresses your Grunts of Pain and the creation of Pools of Blood and Scratch Marks. It deactivates after use, counts only Survivors still participating in the Trial, and can activate multiple times if its condition is met again.",
+    "activation": [
+      "Be the only Survivor still participating in the Trial who is not downed, carried, or hooked.",
+      "Ends/deactivates when: The activation ends after 70/80/90 seconds; the perk may activate again if its condition is met later in the Trial."
+    ],
+    "patchNote": "Latest live balance change (6.2.0): The live activation condition was broadened from last Survivor standing to being the only Survivor not incapacitated, enabling multiple activations in a Trial.",
+    "plainEnglishSummary": "When you are the only active Survivor still in the Trial, it hides your pain sounds and tracking traces for a tier-based duration.",
+    "cooldown": null,
+    "duration": [
+      "Suppression effect: 70/80/90 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Not limited to one use per Trial; it can activate more than once when the condition is met again.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Survivors who have left the Trial are not counted toward its activation condition."
+    ],
+    "sourceCharacter": "Ada Wong",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "low-profile",
+    "rank": 163,
+    "tier": "D",
+    "roles": [
+      "Stealth",
+      "Utility"
+    ],
+    "summary": "When you are the only active Survivor not downed, carried, or hooked, suppress your pain sounds, Blood, and Scratch Marks for up to 90 seconds.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 1,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "dying-state",
+      "hook-state",
+      "looping"
+    ],
+    "useCases": [
+      "Disappear while the rest of the team is simultaneously incapacitated.",
+      "Use the long stealth window to attempt pickups, rescues, or a reset without leaving normal tracking cues.",
+      "Benefit again if the condition later becomes true another time."
+    ],
+    "counters": [
+      "The team must already be in an extremely bad state.",
+      "The perk does nothing during normal four-player pressure.",
+      "Direct sight, Aura reading, and Killer-specific tracking can still find you."
+    ],
+    "pros": [
+      "Ninety seconds is an enormous suppression window.",
+      "Can activate multiple times.",
+      "Suppresses three important tracking channels."
+    ],
+    "cons": [
+      "Pure comeback condition.",
+      "Often activates when the match is already close to lost.",
+      "No speed, health-state, or rescue bonus."
+    ],
+    "analysis": [
+      "Low Profile ranks this position because its active effect is genuinely strong and its trigger is genuinely awful. Ninety seconds without Scratch Marks, Blood, or Grunts can make one remaining active Survivor remarkably hard to track while everyone else is incapacitated.",
+      "That creates real comeback opportunities. The user may be able to reach a slugged teammate, approach a hook, or force the Killer to search instead of immediately completing a snowball.",
+      "The problem is that the perk asks the team to be collapsing before it turns on. A slot that contributes nothing to preventing the snowball cannot be ranked as though the ninety-second stealth were available in normal game states.",
+      "Low Profile is therefore a respectable emergency perk and poor general prevention. It helps when the fire is already roaring rather than stopping anyone from dropping the matchbox."
+    ],
+    "verdict": "A massive stealth window triggered by a terrible situation. Low Profile can help salvage a snowball, but it spends most healthy matches waiting for disaster.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Comeback",
+      "Tracking Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ada Wong"
+    },
+    "synergyPerkIds": [
+      "self-preservation",
+      "lucky-break",
+      "iron-will",
+      "unbreakable"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Self-Preservation",
+      "Lucky Break",
+      "Iron Will",
+      "Unbreakable"
+    ],
+    "antiSynergies": []
+  }
+}

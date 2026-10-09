@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "041-045",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boon-steadfast",
+  "mechanics": {
+    "name": "Boon: Steadfast",
+    "alternateName": null,
+    "source": "Aurora Stardotter",
+    "status": "Live 10.2.0",
+    "currentEffect": "Bless a Dull or Hex Totem. Survivors within 24 metres hear its chimes. Generators within the radius regress 50% more slowly; Survivors repair 8/9/10% faster. Generator Auras in the radius are revealed to Survivors there.",
+    "activation": [
+      "Bless a Dull or Hex Totem.",
+      "The Generator or Survivor must be within 24 metres for its relevant effect.",
+      "Ends/deactivates when: Effects end outside the radius or when the totem is snuffed."
+    ],
+    "patchNote": "Latest live balance change (10.1.0): Introduced with 50% slower Generator regression and 8/9/10% faster repair.",
+    "plainEnglishSummary": "A Boon Totem reveals nearby Generators, slows their regression, and speeds nearby repairs.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One active Boon Totem per Survivor; equipped Boons apply to that totem.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Generator Auras are revealed to Survivors in the Boon radius."
+    ],
+    "sourceCharacter": "Aurora Stardotter",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boon-steadfast",
+    "rank": 44,
+    "tier": "B",
+    "roles": [
+      "Boon",
+      "Objective"
+    ],
+    "summary": "Create a 24-metre zone where generators repair faster, regress more slowly, and are revealed to Survivors in the area.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium–High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "pressure",
+      "aura-reading"
+    ],
+    "useCases": [
+      "Anchor a contested generator cluster with a 10% repair-speed bonus at Tier III.",
+      "Reduce passive regression on generators the Killer repeatedly pushes Survivors away from.",
+      "Stack objective value with other Boon effects on one well-positioned Totem."
+    ],
+    "counters": [
+      "Only generators inside the Boon radius receive the effects.",
+      "The Killer can snuff the Totem and erase the setup.",
+      "Bad Totem placement can leave the perk with no meaningful generator coverage."
+    ],
+    "pros": [
+      "Teamwide 10% repair-speed increase inside the zone is substantial.",
+      "Also halves regression speed, helping contested objectives retain progress.",
+      "Generator Aura visibility helps teammates understand which objectives the Boon supports."
+    ],
+    "cons": [
+      "Very dependent on Totem and generator geometry.",
+      "Requires setup before generating any objective value.",
+      "A Killer who notices the protected cluster can prioritize snuffing the Boon."
+    ],
+    "analysis": [
+      "Boon: Steadfast takes this position because its effect is legitimately strong when the map gives it the right geometry. A generator inside the radius repairs 10% faster at Tier III and regresses 50% more slowly, while its Aura is visible to Survivors in the zone. That combines acceleration, retention, and information.",
+      "The 10% repair bonus is especially meaningful on a generator the team already wants to prioritize, such as a central objective or a dangerous cluster identified by Déjà Vu. Unlike Prove Thyself, the Boon can support different Survivors working at different times as long as the generator remains inside the area.",
+      "Its placement requirement is the entire ranking problem. A powerful Boon beside the wrong edge generator is not powerful in practice. The Survivor may also spend time searching for the ideal Totem only to have the Killer snuff it shortly afterward.",
+      "As a newly introduced 10.1 perk, Steadfast deserves caution rather than immediate top-tier enthusiasm. Early usage is meaningful and the effect is numerically strong, but map variance is unavoidable. In a good setup it can look better than this position; in a bad one it can struggle to justify the blessing time."
+    ],
+    "verdict": "A strong objective Boon with a geometry tax. Steadfast can make a contested generator cluster much harder for the Killer to control, but only when a useful Totem actually covers it.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Regression"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Aurora Stardotter"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "boon-shadow-step",
+      "boon-circle-of-healing",
+      "prove-thyself"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Boon: Shadow Step",
+      "Boon: Circle of Healing",
+      "Prove Thyself"
+    ],
+    "antiSynergies": []
+  }
+}

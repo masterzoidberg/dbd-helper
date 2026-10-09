@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "136-140",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "repressed-alliance",
+  "mechanics": {
+    "name": "Repressed Alliance",
+    "alternateName": null,
+    "source": "Cheryl Mason",
+    "status": "Live 10.2.0",
+    "currentEffect": "After repairing Generators for a total of 40/35/30 seconds, the perk activates. While repairing a Generator alone, press Active Ability to call the Entity to block the Generator you are repairing for 15 seconds. Its Aura is shown in white to all Survivors. You can trigger it only when no other Survivor is repairing that Generator; after activation the perk deactivates.",
+    "activation": [
+      "Accumulate 40/35/30 seconds of Generator repair time.",
+      "Be repairing a Generator with no other Survivor repairing it and press Active Ability.",
+      "Ends/deactivates when: The Generator remains blocked for 15 seconds.",
+      "Ends/deactivates when: The perk deactivates after activation."
+    ],
+    "patchNote": "Latest live balance change (10.1.1): Reduced activation repair-time requirement from 55/50/45 seconds to 40/35/30 seconds.",
+    "plainEnglishSummary": "After enough total repair time, you can block the Generator you are repairing alone for 15 seconds and show its Aura to the team.",
+    "cooldown": null,
+    "duration": [
+      "Entity block: 15 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Deactivates after its single activation in a Trial.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The blocked Generator's Aura is white to all Survivors."
+    ],
+    "sourceCharacter": "Cheryl Mason",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "repressed-alliance",
+    "rank": 136,
+    "tier": "C",
+    "roles": [
+      "Objective"
+    ],
+    "summary": "After enough repair time, block a generator you are repairing alone for 15 seconds, preventing anyone from interacting with it during the block.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Protect stored generator progress from an imminent Killer kick or regression interaction.",
+      "Freeze a dangerous generator while the team handles immediate pressure elsewhere.",
+      "Use the white Aura to communicate the protected generator to teammates."
+    ],
+    "counters": [
+      "The Entity block also prevents Survivors from repairing the generator.",
+      "Activation requires prior repair time and solo interaction.",
+      "Poor timing can protect the generator from your own team more than from the Killer."
+    ],
+    "pros": [
+      "Player-controlled anti-regression window.",
+      "Can deny a Killer's intended generator interaction.",
+      "Useful communication Aura."
+    ],
+    "cons": [
+      "Only fifteen seconds.",
+      "High timing requirement.",
+      "Can actively hurt the team when misused."
+    ],
+    "analysis": [
+      "Repressed Alliance ranks here because generator blocking is one of the rare Survivor effects that can directly deny the Killer access to an objective interaction. If a Killer arrives intending to kick a highly progressed generator, a well-timed block can preserve that progress through the immediate pressure window.",
+      "The same block also locks Survivors out, which is why the perk demands judgment. Fifteen seconds can be perfect when everyone needs to flee, or disastrous when a teammate was about to finish the generator.",
+      "Activation requires enough prior repair time and only works while repairing alone, so it is not an emergency button available from the start of the match. The user has to prepare the tool before the relevant regression threat appears.",
+      "That makes Repressed Alliance a specialist B/C perk for players who understand generator timing. The effect is genuinely unique, but mistakes are unusually capable of helping the Killer."
+    ],
+    "verdict": "A rare Survivor-controlled generator lock. Repressed Alliance can deny regression at the perfect moment, but bad timing literally blocks your own objective.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Regression",
+      "Generator Control"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Cheryl Mason"
+    },
+    "synergyPerkIds": [
+      "wiretap",
+      "deja-vu",
+      "blast-mine",
+      "potential-energy"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Wiretap",
+      "Déjà Vu",
+      "Blast Mine",
+      "Potential Energy"
+    ],
+    "antiSynergies": []
+  }
+}

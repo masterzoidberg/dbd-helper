@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "101-105",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "aftercare",
+  "mechanics": {
+    "name": "Aftercare",
+    "alternateName": null,
+    "source": "Jeff Johansen",
+    "status": "Live 10.2.0",
+    "currentEffect": "You see the Auras of up to 1/2/3 most recent Survivors who unhooked or healed you, or whom you unhooked or healed. Each linked Survivor also sees your Aura. All Aura links reset when the Killer hooks you.",
+    "activation": [
+      "You or another Survivor heals or unhooks the other.",
+      "Ends/deactivates when: All Aura links reset when the Killer hooks you."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Healing and unhooking creates mutual Aura links with up to three of your most recent qualifying teammates; all links reset when you are hooked.",
+    "cooldown": null,
+    "duration": [
+      "Aura links persist until the Killer hooks you."
+    ],
+    "tokenOrStackBehavior": "Links update to the most recent qualifying Survivors, up to 1/2/3 by tier.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Each link is mutual: both linked Survivors see the other's Aura."
+    ],
+    "sourceCharacter": "Jeff Johansen",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "aftercare",
+    "rank": 105,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Team Support"
+    ],
+    "summary": "Create mutual Aura links with Survivors you heal, unhook, or receive healing/unhooks from, up to three teammates; all links disappear when you are hooked.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "hook-state"
+    ],
+    "useCases": [
+      "Build near-global teammate information through normal altruistic interactions.",
+      "Maintain awareness of linked teammates without requiring proximity.",
+      "Coordinate rescues and healing in Solo Q through persistent Aura links."
+    ],
+    "counters": [
+      "Being hooked erases every link.",
+      "You must interact with teammates before information exists.",
+      "Early-game value can be zero before links are established."
+    ],
+    "pros": [
+      "Mutual information can cover multiple teammates.",
+      "Links can last a long time if you avoid hook.",
+      "Excellent information density once fully built."
+    ],
+    "cons": [
+      "Hook reset is severe.",
+      "Needs setup interactions.",
+      "Bond offers simpler immediate information."
+    ],
+    "analysis": [
+      "Aftercare takes this position because its fully built state is genuinely strong. Three mutual Aura links can create something close to permanent team awareness, letting linked Survivors find each other for heals, rescues, and rotations.",
+      "The setup is natural enough: heal someone, unhook them, or receive those actions. The issue is not building links once, but preserving them. A single hook on the perk owner wipes the entire network.",
+      "That reset makes the perk feast-or-famine. A Survivor who avoids hook for a long stretch can enjoy excellent information, while someone found early may spend most of the match rebuilding.",
+      "Aftercare is therefore a good but fragile Solo Q information perk. Bond is less ambitious but much more reliable, which explains the large ranking gap between them."
+    ],
+    "verdict": "Excellent once established, painfully fragile once you are hooked. Aftercare can create a beautiful information network that the Killer resets with one successful chase.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team",
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jeff Johansen"
+    },
+    "synergyPerkIds": [
+      "bond",
+      "kindred",
+      "well-make-it",
+      "empathic-connection"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Bond",
+      "Kindred",
+      "We'll Make It",
+      "Empathic Connection"
+    ],
+    "antiSynergies": []
+  }
+}

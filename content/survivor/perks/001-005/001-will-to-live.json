@@ -36,6 +36,7 @@
     "currentLivePatchVerified": "10.2.0"
   },
   "editorial": {
+    "id": "will-to-live",
     "rank": 1,
     "tier": "S+",
     "roles": [
@@ -64,12 +65,6 @@
       "Conspicuous Actions disable it.",
       "It is disabled once the Exit Gates are powered.",
       "A missed Skill Check wastes the opportunity."
-    ],
-    "synergies": [
-      "Resurgence",
-      "Off the Record",
-      "Unbreakable",
-      "Sprint Burst"
     ],
     "pros": [
       "Directly attacks one of the strongest Killer win conditions.",
@@ -108,11 +103,17 @@
     ],
     "synergyOther": [],
     "antiSynergyPerkIds": [],
-    "antiSynergies": [],
     "archetypeRatings": [],
     "reviewFlags": [
       "v15-schema-migrated",
       "queue-rating:normalized-tier-plus-v14-specialization-signal"
-    ]
+    ],
+    "synergies": [
+      "Resurgence",
+      "Off the Record",
+      "Unbreakable",
+      "Sprint Burst"
+    ],
+    "antiSynergies": []
   }
 }

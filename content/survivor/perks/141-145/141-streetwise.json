@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "141-145",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "streetwise",
+  "mechanics": {
+    "name": "Streetwise",
+    "alternateName": null,
+    "source": "Nea Karlsson",
+    "status": "Live 10.2.0",
+    "currentEffect": "Items with Charges retrieved from Chests permanently receive 60/70/80% more Charges. The first time your currently equipped Item is depleted, the Killer's Aura is revealed to you for 8 seconds.",
+    "activation": [
+      "The increased charges apply to an Item with Charges retrieved from a Chest.",
+      "The Aura reveal triggers the first time your currently equipped Item is depleted.",
+      "Ends/deactivates when: The Killer Aura reveal ends after 8 seconds and does not repeat after its first trigger."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Reworked the perk to give chest-found charged items 60/70/80% more Charges and reveal the Killer Aura for 8 seconds the first time the equipped Item is depleted.",
+    "plainEnglishSummary": "Chest-found charged items hold more charges, and the first time your equipped item runs out you briefly see the Killer.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 8 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "The Killer Aura reveal triggers only the first time your currently equipped Item is depleted.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The bonus charges apply only to charge-using Items retrieved from Chests."
+    ],
+    "sourceCharacter": "Nea Karlsson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "streetwise",
+    "rank": 141,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Objective"
+    ],
+    "summary": "Items retrieved from chests gain up to 80% more charges, and the first time your held Item is depleted you see the Killer's Aura for 8 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Turn a good chest find into a much deeper pool of Toolbox, Med-Kit, or Flashlight charges.",
+      "Combine with chest-search perks to increase the chance the bonus lands on a useful Item.",
+      "Use the depletion Aura read to understand Killer location after consuming the Item."
+    ],
+    "counters": [
+      "The charge bonus only affects Items retrieved from chests.",
+      "Random chest loot may not be worth amplifying.",
+      "Bringing a premium Item from the lobby receives no charge bonus."
+    ],
+    "pros": [
+      "80% extra charges is a large multiplier.",
+      "Works across multiple charged Item types.",
+      "Includes an 8-second Killer Aura read."
+    ],
+    "cons": [
+      "Chest-dependent and loot-dependent.",
+      "Reworked version no longer supports carried lobby Items the old way.",
+      "Requires an Item to be depleted for the information payoff."
+    ],
+    "analysis": [
+      "Streetwise ranks here because the current perk is fundamentally different from the old nearby-item-efficiency aura. It now rewards chest loot specifically, adding up to 80% more charges to charged Items found during the Trial.",
+      "That multiplier is substantial when the chest produces a useful Toolbox or Med-Kit. The problem is that the perk does not control what the chest contains, so a large bonus on an Item you did not need is still poor value.",
+      "The eight-second Killer Aura read on first depletion adds a little independent utility and can help decide what to do immediately after consuming the resource.",
+      "Streetwise therefore belongs in chest-focused builds rather than normal Item builds. Plunderer's Instinct and Appraisal can improve the loot pipeline, but the perk is too dependent on random map resources for a higher rank."
+    ],
+    "verdict": "A huge charge multiplier attached to random chest loot. Modern Streetwise can make a great find much better, but it cannot guarantee the find is great.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chest",
+      "Resource"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nea Karlsson"
+    },
+    "synergyPerkIds": [
+      "plunderers-instinct",
+      "appraisal",
+      "pharmacy",
+      "built-to-last"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Plunderer's Instinct",
+      "Appraisal",
+      "Pharmacy",
+      "Built to Last"
+    ],
+    "antiSynergies": []
+  }
+}

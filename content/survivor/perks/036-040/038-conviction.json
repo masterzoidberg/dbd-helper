@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "036-040",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "conviction",
+  "mechanics": {
+    "name": "Conviction",
+    "alternateName": null,
+    "source": "Michonne Grimes",
+    "status": "Live 10.2.0",
+    "currentEffect": "After completing a healing action on another Survivor, while in the Dying State and after recovering at least 25%, use the Active Ability button to recover fully. You then suffer Broken and return to the Dying State after 20/25/30 seconds.",
+    "activation": [
+      "Complete a healing action on another Survivor.",
+      "Be in Dying State with at least 25% recovery progress.",
+      "Use Active Ability.",
+      "Ends/deactivates when: Returns you to Dying after 20/25/30 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.3.0): Changed the prerequisite to healing another Survivor to prevent an interaction with Plot Twist.",
+    "plainEnglishSummary": "Completing a heal lets you stand up once from the Dying State before becoming Broken and going back down after a delay.",
+    "cooldown": null,
+    "duration": [
+      "Delayed return to Dying: 20/25/30 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "Requires completed healing of another Survivor; incomplete healing does not qualify."
+    ],
+    "sourceCharacter": "Michonne Grimes",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "conviction",
+    "rank": 38,
+    "tier": "A",
+    "roles": [
+      "Anti-Slug",
+      "Recovery",
+      "Chase"
+    ],
+    "summary": "After fully healing another Survivor, a future down can become a temporary self-pick once you reach 25% recovery, giving you up to 30 seconds before you collapse again.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium–High",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "dying-state",
+      "anti-slug",
+      "broken"
+    ],
+    "useCases": [
+      "Punish a Killer who leaves you slugged after you have already activated the perk by healing a teammate.",
+      "Stand yourself up long enough to reach safety, a pallet, a teammate, or a critical objective before the delayed collapse.",
+      "Force the Killer to decide whether to recommit to you instead of continuing a snowball."
+    ],
+    "counters": [
+      "You must first complete a healing action on another Survivor.",
+      "You need at least 25% recovery while downed before the self-pick is available.",
+      "The recovery is temporary: you become Broken and automatically return to the Dying State after the duration."
+    ],
+    "pros": [
+      "Can independently break a slugging sequence after a normal team-support action.",
+      "Creates a long temporary action window rather than merely adding recovery speed.",
+      "Strong SWF teams can plan around the delayed collapse and reposition you before it happens."
+    ],
+    "cons": [
+      "Requires a prior teammate heal and a later slugging opportunity.",
+      "Does not permanently restore your health state by itself.",
+      "Can accomplish very little if the Killer immediately picks you up instead of leaving you down."
+    ],
+    "analysis": [
+      "Conviction opens the this band band because it can create an enormous anti-slug swing, but only after several conditions line up. Completing a heal on another Survivor arms the perk. If you are later downed and left long enough to recover 25%, you can stand yourself back up and act for a substantial window before automatically collapsing again.",
+      "That temporary recovery should not be dismissed as fake value. Thirty seconds at Tier III can be enough to reach a distant pallet, crawl the strategic equivalent of an entire tile while standing, finish a rescue, reposition where a teammate can safely help, or simply force the Killer to abandon another target and deal with you. Any of those outcomes can disrupt a planned snowball.",
+      "The perk becomes much stronger in coordinated teams because the delayed collapse is predictable. Teammates can meet you at the end of the timer, create a protection route, or use Soul Guard and other recovery tools to complicate the Killer's response. Solo Q still gets meaningful independence, but random teammates are less likely to understand the timing.",
+      "Conviction remains outside the top forty because it is conditional in three separate ways: heal someone first, get downed later, and actually be slugged long enough to recover. Community ratings are extremely positive, but our ranking weights consistency as heavily as ceiling. When it activates in the right match, it can look far stronger than this position."
+    ],
+    "verdict": "A high-ceiling anti-slug perk with real match-flipping potential. Conviction is held back by setup and opportunity frequency, not by the strength of a successful activation.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Michonne Grimes"
+    },
+    "synergyPerkIds": [
+      "soul-guard",
+      "unbreakable",
+      "plot-twist",
+      "were-gonna-live-forever"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Soul Guard",
+      "Unbreakable",
+      "Plot Twist",
+      "We're Gonna Live Forever"
+    ],
+    "antiSynergies": []
+  }
+}

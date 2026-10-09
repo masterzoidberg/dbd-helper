@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "161-165",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "teamwork-collective-stealth",
+  "mechanics": {
+    "name": "Teamwork: Collective Stealth",
+    "alternateName": null,
+    "source": "Renato Lyra",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever another Survivor finishes healing you, both you and that Survivor who healed you suppress Scratch Marks while within 8/12/16 m of one another. The effect lingers for 4 seconds after leaving range and resumes if you re-enter range before the linger ends. Survivors can only be affected by one instance of Teamwork: Collective Stealth at a time.",
+    "activation": [
+      "Another Survivor must finish healing you.",
+      "Both Survivors must remain within 8/12/16 m to keep the shared effect active.",
+      "Ends/deactivates when: The effect ends 4 seconds after leaving range unless you re-enter before the timer ends."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "After another Survivor heals you, both of you hide Scratch Marks while staying close together.",
+    "cooldown": null,
+    "duration": [
+      "Continues while within range; lingers for 4 seconds after leaving range."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "A Survivor can be affected by only one instance of this perk at a time.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The effect applies to both the healed Survivor and the Survivor who healed them."
+    ],
+    "sourceCharacter": "Renato Lyra",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "teamwork-collective-stealth",
+    "rank": 164,
+    "tier": "D",
+    "roles": [
+      "Stealth",
+      "Team Support",
+      "Healing"
+    ],
+    "summary": "After another Survivor finishes healing you, both of you suppress Scratch Marks while you remain within up to 16 metres of each other.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low–Medium",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "swf",
+      "reset"
+    ],
+    "useCases": [
+      "Leave a healing area together without advertising either Survivor's sprint trail.",
+      "Use the linger to split briefly before deciding whether to re-enter the tether.",
+      "Pair with Blood Pact or other two-person movement builds."
+    ],
+    "counters": [
+      "Requires another Survivor to heal you fully.",
+      "The effect demands close proximity after the heal.",
+      "Grouping two Survivors can reduce generator spread and invite multi-target pressure."
+    ],
+    "pros": [
+      "Applies to both players.",
+      "No fixed duration while the tether remains active.",
+      "Useful immediately after a vulnerable healing interaction."
+    ],
+    "cons": [
+      "Tether is strategically awkward.",
+      "Scratch Marks are only one tracking channel.",
+      "Solo Q teammates rarely cooperate with the proximity requirement."
+    ],
+    "analysis": [
+      "Teamwork: Collective Stealth ranks this position because suppressing two Survivors' Scratch Marks can create a clean rotation after a heal, but the perk asks them to remain close enough that the Killer may pressure both at once.",
+      "The no-duration design is interesting. As long as the pair respects the range, the stealth continues, and the brief linger allows momentary separation. A coordinated duo can deliberately move through indoor structures without leaving the normal trail.",
+      "Macro pressure is the problem. Survivors usually want to heal and then split toward different objectives. Collective Stealth rewards the opposite behavior, making its strongest state inherently expensive.",
+      "This is another Teamwork perk whose ceiling belongs to premades. In Solo Q, the other player usually runs away with their own plan before you have a chance to exploit the effect."
+    ],
+    "verdict": "A functional two-person stealth tether with an awkward macro cost. Collective Stealth works when staying together is already the plan, and fights the game when it is not.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Renato Lyra"
+    },
+    "synergyPerkIds": [
+      "blood-pact",
+      "teamwork-power-of-two",
+      "boon-shadow-step",
+      "empathic-connection"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Blood Pact",
+      "Teamwork: Power of Two",
+      "Boon: Shadow Step",
+      "Empathic Connection"
+    ],
+    "antiSynergies": []
+  }
+}

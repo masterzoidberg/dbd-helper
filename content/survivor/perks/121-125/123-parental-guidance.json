@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "121-125",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "parental-guidance",
+  "mechanics": {
+    "name": "Parental Guidance",
+    "alternateName": null,
+    "source": "Yoichi Asakawa",
+    "status": "Live 10.2.0",
+    "currentEffect": "After stunning the Killer by any means, suppresses your Grunts of Pain, Scratch Marks, and Pools of Blood for 5/6/7 seconds.",
+    "activation": [
+      "Stun the Killer by any means.",
+      "Ends/deactivates when: The suppression ends after 5/6/7 seconds."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Stunning the Killer briefly hides your pain sounds and tracking traces.",
+    "cooldown": null,
+    "duration": [
+      "Grunts of Pain, Scratch Marks, and Pools of Blood suppression: 5/6/7 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Yoichi Asakawa",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "parental-guidance",
+    "rank": 123,
+    "tier": "C",
+    "roles": [
+      "Chase",
+      "Stealth"
+    ],
+    "summary": "After stunning the Killer by any means, hide your Grunts of Pain, Scratch Marks, and Blood for 7 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Turn a pallet or Head On stun into a complete tracking break.",
+      "Use the seven-second suppression window to change direction after line of sight is lost.",
+      "Pair repeated stun tools with stealth-focused chase builds."
+    ],
+    "counters": [
+      "Requires successfully stunning the Killer.",
+      "Direct vision and Aura reading still reveal you.",
+      "Seven seconds disappears quickly if the tile has no branching routes."
+    ],
+    "pros": [
+      "Suppresses three important tracking channels simultaneously.",
+      "Works after any Killer stun, not just pallets.",
+      "Can convert a successful stun into an actual chase escape."
+    ],
+    "cons": [
+      "Stun-dependent.",
+      "No raw Haste or health-state protection.",
+      "Needs good pathing to capitalize."
+    ],
+    "analysis": [
+      "Parental Guidance ranks this position because seven seconds without pain sounds, Scratch Marks, or Blood is enough to create a serious tracking problem after a stun. The Killer is already losing time to the stun animation, which gives the Survivor a natural window to break line of sight.",
+      "The perk is especially effective with Head On and Smash Hit. One creates a reliable Locker stun opportunity, while the other can add immediate distance after a pallet stun. Parental Guidance then removes the trail that would normally tell the Killer where that distance went.",
+      "The ceiling depends on geometry. A Survivor who runs straight down an open lane remains visible regardless of the hidden tracking cues. Dense structures and branching paths are where the suppression actually becomes threatening.",
+      "That makes the perk a useful high-skill chase tool. It can turn one won interaction into a complete escape, but it cannot guarantee the stun or the route afterward."
+    ],
+    "verdict": "A strong stun-to-stealth converter. Parental Guidance is excellent when you can break line of sight immediately after the Killer loses control of the chase.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Tracking Denial",
+      "Stun"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Yoichi Asakawa"
+    },
+    "synergyPerkIds": [
+      "head-on",
+      "smash-hit",
+      "quick-quiet",
+      "lucky-break"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Head On",
+      "Smash Hit",
+      "Quick & Quiet",
+      "Lucky Break"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "106-110",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "bite-the-bullet",
+  "mechanics": {
+    "name": "Bite the Bullet",
+    "alternateName": null,
+    "source": "Leon S. Kennedy",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healing yourself or another Survivor, suppress your Grunts of Pain and the sounds of the Healing action. Missing a Healing Skill Check creates no Loud Noise notification; instead it loses an additional 3/2/1% of total Healing progress.",
+    "activation": [
+      "Begin a Healing action on yourself or another Survivor.",
+      "Ends/deactivates when: Sound suppression ends when the Healing action ends."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Healing becomes silent, and a missed Healing Skill Check costs extra progress instead of notifying the Killer.",
+    "cooldown": null,
+    "duration": [
+      "While healing."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "A missed Healing Skill Check has no Loud Noise notification; extra progress loss depends on tier."
+    ],
+    "sourceCharacter": "Leon S. Kennedy",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "bite-the-bullet",
+    "rank": 107,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Stealth",
+      "Skill Check"
+    ],
+    "summary": "While healing yourself or someone else, suppress healing sounds and your Grunts of Pain; failed healing Skill Checks no longer alert the Killer and lose very little progress.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Hide a heal behind nearby cover while the Killer searches using sound.",
+      "Pair with Self-Care or other independent healing to create silent resets.",
+      "Reduce the punishment from missed healing Skill Checks."
+    ],
+    "counters": [
+      "A Killer with direct vision or Aura reading can still find the heal.",
+      "Silent healing does not make the interaction faster.",
+      "Strong players rarely plan around missed Skill Checks."
+    ],
+    "pros": [
+      "Completely removes important healing audio cues.",
+      "Works on self-heals and teammate heals.",
+      "Failed Skill Checks become much safer."
+    ],
+    "cons": [
+      "No speed bonus.",
+      "Requires a situation where sound actually matters.",
+      "Can encourage slow hidden healing instead of productive objective play."
+    ],
+    "analysis": [
+      "Bite the Bullet closes the top one hundred because silent healing can create clever escapes and resets, but it solves a narrower problem than the perks above it. Removing healing sounds and Grunts of Pain can make nearby searches surprisingly difficult when line of sight is already broken.",
+      "The perk pairs naturally with Self-Care and tracking-denial builds. A Killer may follow a trail into an area and expect to hear an injured Survivor healing, only to receive no useful sound cue.",
+      "The Skill Check protection is mostly insurance. Experienced players should not miss many standard healing checks, so the reduced progress loss and lack of a Loud Noise notification are helpful but not central to the ranking.",
+      "Bite the Bullet remains B because stealth healing can also become a tempo trap. Spending a long time hiding and healing silently is not automatically good play. The perk is best when silence changes a real Killer search, not when it merely makes a slow heal quieter."
+    ],
+    "verdict": "A clever stealth-healing tool that can hide a reset under the Killer's nose. Bite the Bullet is useful, but silence alone does not make an inefficient heal efficient.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Leon S. Kennedy"
+    },
+    "synergyPerkIds": [
+      "self-care",
+      "lucky-break",
+      "iron-will",
+      "botany-knowledge"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Self-Care",
+      "Lucky Break",
+      "Iron Will",
+      "Botany Knowledge"
+    ],
+    "antiSynergies": []
+  }
+}

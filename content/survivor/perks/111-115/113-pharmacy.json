@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "111-115",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "pharmacy",
+  "mechanics": {
+    "name": "Pharmacy",
+    "alternateName": null,
+    "source": "Quentin Smith",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you unlock a Chest, it contains a Rare Med-Kit. You unlock and rummage Chests 75/100/125% faster, you can rummage each Chest once, and the range at which the Killer hears you unlocking Chests is reduced by 12 metres.",
+    "activation": [
+      "Unlock a Chest for the guaranteed Rare Med-Kit.",
+      "Unlock or rummage a Chest for the tiered interaction-speed bonus.",
+      "Ends/deactivates when: The interaction-speed bonus applies only during Chest unlocking or rummaging."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Expanded the 75/100/125% speed bonus to rummaging and added one rummage per Chest; the Rare Med-Kit guarantee and the 12-metre sound reduction remain.",
+    "plainEnglishSummary": "Chests provide a Rare Med-Kit, can be opened and rummaged much faster, and can each be rummaged once while your unlocking noises carry less far.",
+    "cooldown": null,
+    "duration": [
+      "Applies during each qualifying Chest interaction."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Each Chest can be rummaged once.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The authoritative 10.2.0 notes specify 'a Rare Med-Kit'; the record does not assume a more specific Med-Kit identity."
+    ],
+    "sourceCharacter": "Quentin Smith",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "pharmacy",
+    "rank": 113,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Healing"
+    ],
+    "summary": "Unlock chests much faster and quieter, and every completed unlock guarantees an Emergency Med-Kit.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "reset"
+    ],
+    "useCases": [
+      "Guarantee access to a healing Item without bringing one into the Trial.",
+      "Open chests quickly enough that the looting detour is less expensive.",
+      "Use multiple unopened chests to create additional Emergency Med-Kits for the team."
+    ],
+    "counters": [
+      "Requires finding unopened chests.",
+      "A brought Med-Kit avoids the entire search-and-unlock detour.",
+      "Chest time is still time not spent repairing generators."
+    ],
+    "pros": [
+      "Guaranteed useful item rather than random loot.",
+      "125% faster Tier III chest unlocks are quick.",
+      "Noise reduction makes looting safer."
+    ],
+    "cons": [
+      "Chest-dependent.",
+      "Uses time to acquire a resource that can simply be brought from the lobby.",
+      "Lower value when the team already has healing Items."
+    ],
+    "analysis": [
+      "Pharmacy ranks in C/B boundary because the perk guarantees something useful rather than gambling on chest RNG. An Emergency Med-Kit has clear practical value, and the large chest-opening speed bonus significantly reduces the normal looting tax.",
+      "The perk is most attractive when the Survivor intentionally enters without a Med-Kit or wants to generate additional team healing resources from the map. Plunderer's Instinct and Appraisal can turn that into a broader chest-economy build.",
+      "The obvious comparison is the pregame loadout. If you already own a strong Med-Kit, bringing it directly is faster and costs no perk slot. Pharmacy must justify both the slot and the travel to an unopened chest.",
+      "That makes it useful resource generation rather than competitive general value. It does its job reliably, but the job itself is optional.",
+      "The 10.2 version also supports rummaging, which strengthens its role inside chest and item-economy builds."
+    ],
+    "verdict": "A reliable way to turn a chest into a Med-Kit quickly. Pharmacy is good at solving an Item problem that many players can solve before the Trial even begins.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Chest"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Quentin Smith"
+    },
+    "synergyPerkIds": [
+      "plunderers-instinct",
+      "streetwise",
+      "appraisal",
+      "moment-of-glory"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Plunderer's Instinct",
+      "Streetwise",
+      "Appraisal",
+      "Moment of Glory"
+    ],
+    "antiSynergies": []
+  }
+}

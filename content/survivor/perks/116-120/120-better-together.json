@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "116-120",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "better-together",
+  "mechanics": {
+    "name": "Better Together",
+    "alternateName": null,
+    "source": "Nancy Wheeler",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you repair a Generator, its Aura is revealed to all other Survivors. If the Killer downs another Survivor while you repair a Generator, the Auras of all other Survivors are revealed to you for 20/25/30 seconds.",
+    "activation": [
+      "Repair a Generator to reveal its Aura to others.",
+      "Killer downs another Survivor while you are repairing for the tiered Aura reveal.",
+      "Ends/deactivates when: The post-down Aura reveal ends after 20/25/30 seconds.",
+      "Ends/deactivates when: Generator Aura is shown while you repair it."
+    ],
+    "patchNote": "Latest live balance change (9.5.0): Clarified that Plot Twist cannot trigger the down effect; 9.1.0 had previously removed the Generator Aura range limit and set the tiered duration.",
+    "plainEnglishSummary": "Teammates see the Generator you repair, and a Killer down while you repair reveals teammates to you.",
+    "cooldown": null,
+    "duration": [
+      "Other Survivor Aura reveal: 20/25/30 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Plot Twist cannot trigger the down effect."
+    ],
+    "sourceCharacter": "Nancy Wheeler",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "better-together",
+    "rank": 120,
+    "tier": "C",
+    "roles": [
+      "Objective",
+      "Information"
+    ],
+    "summary": "While you repair a generator, teammates see its Aura; if the Killer downs another Survivor during that repair, you see every teammate for up to 30 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 1,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "pressure"
+    ],
+    "useCases": [
+      "Tell Solo Q teammates exactly which generator you are working on.",
+      "Use the post-down team Aura read to decide whether you should rescue, stay on the generator, or rotate.",
+      "Reduce accidental generator duplication and improve rescue responsibility."
+    ],
+    "counters": [
+      "The generator Aura provides information rather than a speed bonus.",
+      "The teamwide Aura read only triggers if another Survivor is downed while you are repairing.",
+      "Voice-coordinated groups can communicate much of the same information."
+    ],
+    "pros": [
+      "Very clean Solo Q communication.",
+      "Thirty-second teammate Aura read is long.",
+      "Activates through normal generator play."
+    ],
+    "cons": [
+      "Little direct mechanical power.",
+      "Lower value in SWF.",
+      "Does not show the Killer."
+    ],
+    "analysis": [
+      "Better Together earns a surprisingly healthy position because it solves two common Solo Q information problems through the action Survivors should already be doing. Teammates know which generator you are repairing, helping them decide whether to join, spread out, or avoid dragging a chase into that area.",
+      "When another Survivor is downed during your repair, the second effect reveals every teammate for up to thirty seconds. That can immediately identify whether someone is already moving for the pickup or hook, allowing you to remain productive instead of duplicating the rescue.",
+      "The perk is much less exciting in coordinated voice chat. A SWF can announce the generator and rescue rotation without paying a perk slot, which makes Better Together primarily a Solo Q quality-of-life tool.",
+      "It stays in B because information improves decisions but does not directly speed generators or extend chases. Still, the information is practical, repeatable, and attached to productive play rather than a side quest."
+    ],
+    "verdict": "A simple but useful Solo Q communication perk. Better Together makes your generator visible and helps prevent the classic three-people-left-their-gens-for-one-down problem.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Solo Q"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nancy Wheeler"
+    },
+    "synergyPerkIds": [
+      "prove-thyself",
+      "deja-vu",
+      "kindred",
+      "teamwork-full-circuit"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Prove Thyself",
+      "Déjà Vu",
+      "Kindred",
+      "Teamwork: Full Circuit"
+    ],
+    "antiSynergies": []
+  }
+}

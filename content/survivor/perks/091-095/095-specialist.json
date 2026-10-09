@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "091-095",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "specialist",
+  "mechanics": {
+    "name": "Specialist",
+    "alternateName": null,
+    "source": "Lara Croft",
+    "status": "Live 10.2.0",
+    "currentEffect": "Unlocking or rummaging through a Chest grants 1 Token, up to 6. A successful Great Repair Skill Check while repairing a Generator consumes all tokens and permanently reduces that Generator's required Repair Charges by 2/3/4 per token, up to 12/18/24 charges.",
+    "activation": [
+      "Unlock or rummage through a Chest to gain tokens.",
+      "Hit a Great Repair Skill Check while repairing a Generator to spend them.",
+      "Ends/deactivates when: Tokens are consumed when a Great Repair Skill Check triggers the effect."
+    ],
+    "patchNote": "Latest live balance change (8.1.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "Chest interactions bank tokens that a Great repair check spends to permanently reduce that Generator's repair requirement.",
+    "cooldown": null,
+    "duration": [
+      "The Generator charge reduction is permanent for that Generator for the Trial."
+    ],
+    "tokenOrStackBehavior": "Gain 1 token per Chest unlocked or rummaged, capped at 6. A qualifying Great Repair Skill Check consumes all tokens.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The consumed tokens reduce the charge requirement of the Generator being repaired when the Great check succeeds."
+    ],
+    "sourceCharacter": "Lara Croft",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "specialist",
+    "rank": 95,
+    "tier": "B",
+    "roles": [
+      "Objective",
+      "Item"
+    ],
+    "summary": "Chest interactions grant Tokens that can be cashed on a Great generator Skill Check to permanently reduce that generator's required repair charges.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Convert chest time into permanent generator requirement reduction.",
+      "Use several Tokens at once on a difficult generator that the Killer keeps regressing.",
+      "Pair chest builds with objective pressure rather than treating looting as pure side activity."
+    ],
+    "counters": [
+      "Requires unlocking or rummaging through Chests.",
+      "Needs a Great Skill Check to cash Tokens.",
+      "Chest-search time can outweigh the generator value if done inefficiently."
+    ],
+    "pros": [
+      "Permanent objective reduction is difficult for the Killer to undo.",
+      "Can bank multiple Tokens.",
+      "Adds objective purpose to chest builds."
+    ],
+    "cons": [
+      "Heavy setup.",
+      "Chest availability is finite.",
+      "Great Skill Check requirement adds another failure point."
+    ],
+    "analysis": [
+      "Specialist sits at this position because permanent repair-charge reduction is a meaningful reward attached to a costly economy. Each chest interaction can create Tokens, and a later Great Skill Check converts those Tokens into progress the Killer cannot simply regress away in the usual manner.",
+      "The perk is strongest when chest interactions already serve another purpose. Appraisal, Plunderer's Instinct, or a resource-focused build can make the setup less wasteful because the player receives items and Specialist Tokens from the same activity.",
+      "The danger is opportunity cost. Opening several chests to create objective progress can be slower than repairing a generator directly, especially if the chests are far apart or yield little item value.",
+      "That makes Specialist a niche but respectable objective perk. It can produce surprising permanent progress, but it asks the Survivor to build and route around it."
+    ],
+    "verdict": "A permanent-progress perk with a chest tax. Specialist is strongest when looting is already part of the plan, not when you detour across the map just to manufacture Tokens.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chest",
+      "Permanent Progress"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Lara Croft"
+    },
+    "synergyPerkIds": [
+      "appraisal",
+      "plunderers-instinct",
+      "fogwise"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "stake-out"
+    ],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Appraisal",
+      "Plunderer's Instinct",
+      "Fogwise"
+    ],
+    "antiSynergies": [
+      "Stake Out"
+    ]
+  }
+}

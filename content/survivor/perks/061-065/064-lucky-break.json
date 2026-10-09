@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "061-065",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "lucky-break",
+  "mechanics": {
+    "name": "Lucky Break",
+    "alternateName": null,
+    "source": "Yui Kimura",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you are Injured, Lucky Break activates and suppresses the creation of Pools of Blood and Scratch Marks for up to 40/50/60 seconds. While healing another Survivor, it recharges by the time spent healing, up to its initial maximum. It deactivates when its timer runs out or when your Health State changes to anything other than Injured.",
+    "activation": [
+      "Be in the Injured State.",
+      "Ends/deactivates when: The effect ends when its timer runs out or when your Health State changes to anything other than Injured."
+    ],
+    "patchNote": "Latest live balance change (6.1.0): Added one second of timer recharge for every second spent healing another Survivor, up to the initial duration.",
+    "plainEnglishSummary": "While Injured, it hides Blood Pools and Scratch Marks for a limited timer that you can refill by healing someone else.",
+    "cooldown": null,
+    "duration": [
+      "Suppression timer: up to 40/50/60 seconds by tier; time spent healing another Survivor restores the timer one-for-one up to its initial maximum."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Healing another Survivor recharges the timer by the same amount of time spent healing, capped at the perk's initial duration."
+    ],
+    "sourceCharacter": "Yui Kimura",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "lucky-break",
+    "rank": 64,
+    "tier": "B",
+    "roles": [
+      "Stealth",
+      "Chase"
+    ],
+    "summary": "While Injured, suppress Scratch Marks and Blood for up to 60 seconds, and recharge the timer by healing teammates.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium–High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping",
+      "reset"
+    ],
+    "useCases": [
+      "Break line of sight after taking a hit and deny the Killer the normal Blood and Scratch-Mark trail.",
+      "Recharge the timer through productive teammate healing instead of waiting for a cooldown.",
+      "Pair with quiet Grunts or silent vaults to make complete chase disappearances more realistic."
+    ],
+    "counters": [
+      "The timer only runs while you remain Injured and ends when your Health State changes.",
+      "A Killer who maintains visual contact does not need Scratch Marks or Blood to follow you.",
+      "Aura reading, Killer Instinct, sound, and other tracking methods can bypass the hidden trail."
+    ],
+    "pros": [
+      "Suppresses two major tracking channels simultaneously.",
+      "Long maximum duration at Tier III.",
+      "Recharge condition encourages useful teammate healing."
+    ],
+    "cons": [
+      "Requires an Injured-state chase and a line-of-sight break to realize the strongest value.",
+      "Does not hide Grunts of Pain or Aura reads by itself.",
+      "Timer can be wasted while running in situations where the Killer already sees you."
+    ],
+    "analysis": [
+      "Lucky Break rounds out the top fifty because it can make a post-hit chase extraordinarily difficult to track once line of sight is broken. For up to 60 seconds while Injured, both Scratch Marks and Pools of Blood disappear, removing the two trails Killers most commonly use after losing visual contact.",
+      "The effect is not automatic chase escape. If you continue running in a straight visible line, the Killer needs no trail. The perk rewards deliberate pathing around walls, elevation, vegetation, and branching routes where the Killer must choose a direction after sight is lost.",
+      "Its recharge mechanic is also well designed. Healing another Survivor restores the timer second-for-second, so the player can earn another chase escape window through normal team support. Pairing with Iron Will or Quick & Quiet covers additional tracking channels and makes the stealth package much harder to solve.",
+      "Lucky Break stays in B because several Killers have powers or information tools that bypass trail tracking entirely. It also demands that the player recognize and exploit line-of-sight opportunities. In the right chase it can feel oppressive; in a straightforward open pursuit it may accomplish almost nothing."
+    ],
+    "verdict": "A strong chase-escape perk for players who know how to vanish after a hit. Lucky Break removes the trail, but you still have to create the moment where the Killer loses sight of you.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chase Escape",
+      "Tracking Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Yui Kimura"
+    },
+    "synergyPerkIds": [
+      "iron-will",
+      "quick-quiet",
+      "overcome",
+      "botany-knowledge"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Iron Will",
+      "Quick & Quiet",
+      "Overcome",
+      "Botany Knowledge"
+    ],
+    "antiSynergies": []
+  }
+}

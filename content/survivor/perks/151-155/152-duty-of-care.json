@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "151-155",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "duty-of-care",
+  "mechanics": {
+    "name": "Duty of Care",
+    "alternateName": null,
+    "source": "Orela Rose",
+    "status": "Live 10.2.0",
+    "currentEffect": "While Healthy, taking a Protection Hit grants all other Survivors within 12 metres of you 25% Haste for 4/5/6 seconds.",
+    "activation": [
+      "Be Healthy when you take a Protection Hit.",
+      "Other Survivors must be within 12 metres of you.",
+      "Ends/deactivates when: Haste ends after 4/5/6 seconds."
+    ],
+    "patchNote": "Latest live balance change (8.7.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "Taking a Protection Hit while Healthy gives nearby teammates a short Haste effect.",
+    "cooldown": null,
+    "duration": [
+      "Haste: 4/5/6 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The perk owner is not included in the Haste effect; it applies to other Survivors within range."
+    ],
+    "sourceCharacter": "Orela Rose",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "duty-of-care",
+    "rank": 152,
+    "tier": "C",
+    "roles": [
+      "Team Support",
+      "Mobility"
+    ],
+    "summary": "While Healthy, taking a Protection Hit gives every other Survivor within 12 metres 25% Haste for up to 6 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 1,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "protection-hit",
+      "bodyblock",
+      "swf"
+    ],
+    "useCases": [
+      "Bodyblock for an injured teammate and give them a major escape burst at the same time.",
+      "Use near hooks or carry saves where several Survivors are clustered.",
+      "Coordinate the trigger so the protected teammate reaches a safe tile immediately."
+    ],
+    "counters": [
+      "You must be Healthy and take a Protection Hit.",
+      "Only other Survivors receive the Haste.",
+      "The twelve-metre radius is tight, so teammates may be outside the effect when the hit lands."
+    ],
+    "pros": [
+      "25% Haste is a very large burst.",
+      "Can affect several teammates simultaneously.",
+      "Naturally supports protection-hit strategies."
+    ],
+    "cons": [
+      "Requires deliberate risk to activate.",
+      "Short duration and small radius.",
+      "Can feed the Killer pressure if the bodyblock was unnecessary."
+    ],
+    "analysis": [
+      "Duty of Care earns this position because twenty-five percent Haste for six seconds is not a small support effect. A successful protection hit can send an injured teammate flying toward safety while the perk owner absorbs the Killer's attack.",
+      "The challenge is arranging the geometry. The protected teammates must be within twelve metres at the moment the hit registers, and the perk owner must still be Healthy. A mistimed bodyblock can create two injured Survivors without producing a meaningful escape.",
+      "SWF gets much more from the perk because the team can call exactly when the protected Survivor needs the burst. Carry saves, hook trades, and coordinated bodyblocks all create predictable activation moments.",
+      "Duty of Care remains C because it requires the team to be clustered around danger, which is not always where Survivors should be. Its numerical ceiling is excellent; its opportunities are scarce."
+    ],
+    "verdict": "A huge six-second movement gift attached to a risky Protection Hit. Duty of Care can rescue a teammate's chase, but only when the bodyblock is already the right play.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Protection Hit",
+      "Haste",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Orela Rose"
+    },
+    "synergyPerkIds": [
+      "mettle-of-man",
+      "breakout",
+      "were-gonna-live-forever",
+      "background-player"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Mettle of Man",
+      "Breakout",
+      "We're Gonna Live Forever",
+      "Background Player"
+    ],
+    "antiSynergies": []
+  }
+}

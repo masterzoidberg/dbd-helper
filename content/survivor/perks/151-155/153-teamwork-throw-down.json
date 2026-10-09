@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "151-155",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "teamwork-throw-down",
+  "mechanics": {
+    "name": "Teamwork: Throw Down",
+    "alternateName": null,
+    "source": "Michonne Grimes",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you blind the Killer by any means or stun them with a Pallet, all other Injured Survivors within 24 m gain Endurance for 6/8/10 seconds.",
+    "activation": [
+      "Blind the Killer by any means or stun the Killer with a Pallet.",
+      "Other Survivors must be injured and within 24 m.",
+      "Ends/deactivates when: Endurance lasts 6/8/10 seconds, subject to Endurance rules."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Blinding or Pallet-stunning the Killer grants nearby injured teammates Endurance.",
+    "cooldown": null,
+    "duration": [
+      "Endurance: 6/8/10 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Endurance"
+    ],
+    "specialInteractions": [
+      "The perk affects other injured Survivors in range, not the perk user."
+    ],
+    "sourceCharacter": "Michonne Grimes",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "teamwork-throw-down",
+    "rank": 153,
+    "tier": "C",
+    "roles": [
+      "Team Support",
+      "Chase"
+    ],
+    "summary": "Whenever you blind or pallet-stun the Killer, nearby injured teammates gain Endurance and see the Killer's Aura for up to 10 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 1,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "endurance",
+      "aura-reading",
+      "swf"
+    ],
+    "useCases": [
+      "Protect an injured teammate during a coordinated pallet or blind save.",
+      "Turn a successful Killer stun into ten seconds where nearby teammates can absorb a hit without going down.",
+      "Use the Aura read to help the protected teammate choose an escape route."
+    ],
+    "counters": [
+      "The perk does not protect the user.",
+      "Other Survivors must be injured and within 24 metres.",
+      "You must first successfully blind or pallet-stun the Killer."
+    ],
+    "pros": [
+      "Ten seconds of Endurance can be decisive.",
+      "Includes Killer Aura information.",
+      "Excellent coordinated-save ceiling."
+    ],
+    "cons": [
+      "Multiple conditions must overlap.",
+      "No value in ordinary solo chases with no teammate nearby.",
+      "High execution requirement."
+    ],
+    "analysis": [
+      "Teamwork: Throw Down ranks this position because granting Endurance to another injured Survivor can completely change a save sequence. If a blind or pallet stun already bought the team time, ten protected seconds can prevent the Killer from immediately converting that teammate into another down.",
+      "The Killer Aura read helps the recipient use the protection intelligently rather than simply running blind. That is particularly valuable in cluttered rescue situations where several players are moving around the same structure.",
+      "The perk's floor is brutal. You need a successful blind or pallet stun, an injured teammate within twenty-four metres, and a game state where that teammate actually benefits from Endurance. Most ordinary chases will never satisfy all three.",
+      "This is therefore a SWF specialist with a high ceiling and low opportunity rate. In coordinated save squads it performs far above C; in standard matchmaking it can remain dormant for an entire Trial."
+    ],
+    "verdict": "A powerful rescue-team effect hidden behind three simultaneous conditions. Throw Down is excellent when the whole play is coordinated and nearly blank when it is not.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Protection",
+      "Stun",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Michonne Grimes"
+    },
+    "synergyPerkIds": [
+      "background-player",
+      "flashbang",
+      "head-on",
+      "champion-of-light"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Background Player",
+      "Flashbang",
+      "Head On",
+      "Champion of Light"
+    ],
+    "antiSynergies": []
+  }
+}

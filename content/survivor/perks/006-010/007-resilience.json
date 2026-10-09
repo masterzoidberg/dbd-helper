@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "006-010",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "resilience",
+  "mechanics": {
+    "name": "Resilience",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "While Injured, you Bless and Cleanse Totems, heal, open Exit Gates, repair Generators, sabotage Hooks, unhook Survivors, unlock Chests, and vault 7/8/9% faster.",
+    "activation": [
+      "Be in the Injured State while performing one of the listed actions.",
+      "Ends/deactivates when: The speed bonus ends when you are no longer in the Injured State or stop performing an affected action."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Raised all listed Injured-state action-speed bonuses from 3/6/9% to 7/8/9%.",
+    "plainEnglishSummary": "While injured, perform a broad set of interactions and vaults 7/8/9% faster.",
+    "cooldown": null,
+    "duration": [
+      "While Injured and performing an affected action."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "resilience",
+    "rank": 7,
+    "tier": "A",
+    "roles": [
+      "Objective",
+      "Chase"
+    ],
+    "summary": "While injured, gain a broad 9% speed boost to important actions, including repairs and vaults.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Immediate",
+    "glossaryKeys": [
+      "health-state",
+      "looping",
+      "pressure"
+    ],
+    "useCases": [
+      "Convert time spent injured into faster generator progress instead of immediately abandoning the objective to heal.",
+      "Use the vault-speed bonus to tighten chase timings at windows and pallets.",
+      "Accelerate late-game interactions such as opening gates or rescuing when every second matters."
+    ],
+    "counters": [
+      "The perk provides no value while Healthy, so players who heal immediately after every injury may waste the slot.",
+      "Staying injured to preserve the bonus makes one-hit downs and stealth approaches more dangerous.",
+      "Killers or powers that punish injured Survivors can make intentionally holding the Injured State a poor trade."
+    ],
+    "pros": [
+      "Affects many of the actions that decide matches instead of only one narrow interaction.",
+      "The vault-speed bonus has direct chase value while the repair bonus creates macro value at the same time.",
+      "It is a General perk, so the unlock cost is effectively zero."
+    ],
+    "cons": [
+      "Requires being Injured.",
+      "Encourages a riskier playstyle that is less forgiving for newer players.",
+      "The individual 9% bonuses are strong through accumulation rather than one dramatic activation."
+    ],
+    "analysis": [
+      "Resilience earns this position because very few Survivor perks turn one ordinary match state into value across so many different parts of the game. Being injured is unavoidable in most Trials, and Resilience converts that state into faster repairs, vaults, heals, unhooks, gates, and several secondary interactions. That breadth makes it useful whether the match is currently about generators, chase, rescue, or endgame.",
+      "Its chase value is easy to underrate. Nine percent faster vaulting can change whether a window is barely safe or barely a hit, especially at strong tiles where both players are contesting a very small timing margin. It is not as explosive as an Exhaustion perk or Finesse, but it is always present while injured and asks for no cooldown management.",
+      "The macro value is just as important. Survivors often spend long stretches injured while repairing, particularly against Killers where stopping for every heal loses too much tempo. In those matches, Resilience quietly adds generator progress while still improving the user's next chase. That dual-purpose value is why it remains stronger than perks that only help one job.",
+      "The drawback is real: the perk tempts players to stay one hit from the Dying State. Experienced players can judge when that risk is acceptable; newer players may give away more downs than the speed bonus ever repays. Resilience is strongest when the user already understands when to heal and when to deliberately keep working injured."
+    ],
+    "verdict": "One of the best all-purpose injured-state perks in the game. Resilience rewards confident players with chase and objective value from the same slot, but its ceiling depends on knowing when staying injured is actually safe.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Efficiency"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      6,
+      12
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "dead-hard",
+      "iron-will",
+      "finesse",
+      "deja-vu"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Dead Hard",
+      "Iron Will",
+      "Finesse",
+      "Déjà Vu"
+    ],
+    "antiSynergies": []
+  }
+}

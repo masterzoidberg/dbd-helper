@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "091-095",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "deception",
+  "mechanics": {
+    "name": "Deception",
+    "alternateName": null,
+    "source": "Élodie Rakoto",
+    "status": "Live 10.2.0",
+    "currentEffect": "While running, interact with a Locker to fake entering it: you run past instead, the Locker door opens and closes, and a Loud Noise notification is created at that Locker. Your Scratch Marks and Pools of Blood are suppressed for 5 seconds. Cooldown: 25/20/15 seconds.",
+    "activation": [
+      "Be running near a Locker and use the interaction input.",
+      "Ends/deactivates when: Scratch Mark and Pool of Blood suppression ends after 5 seconds."
+    ],
+    "patchNote": "Latest live balance change (8.6.0): Reduced the cooldown to 25/20/15 seconds.",
+    "plainEnglishSummary": "A fake Locker entry creates a decoy noise while briefly hiding your trail.",
+    "cooldown": "25/20/15 seconds by tier",
+    "duration": [
+      "Scratch Marks and Pools of Blood suppressed for 5 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The fake Locker interaction creates a Loud Noise notification at the Locker."
+    ],
+    "sourceCharacter": "Élodie Rakoto",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "deception",
+    "rank": 91,
+    "tier": "B",
+    "roles": [
+      "Stealth",
+      "Chase"
+    ],
+    "summary": "Fake a fast Locker entry while running, create a noise notification there, and hide Scratch Marks and Blood for 5 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Break line of sight near a Locker and sell the fake entry.",
+      "Use the 5-second trail suppression to continue past the Locker without leaving the expected path.",
+      "Pair repeated 15-second cooldown mindgames with Locker-oriented builds."
+    ],
+    "counters": [
+      "Experienced Killers can ignore obvious fake Locker attempts.",
+      "Direct sight, Aura reading, and sound can reveal the continued route.",
+      "The trick is weaker when the map has no useful nearby Locker."
+    ],
+    "pros": [
+      "Very short cooldown.",
+      "Combines false information with trail suppression.",
+      "Can create real chase mistakes against a conditioned Killer."
+    ],
+    "cons": [
+      "Mindgame-dependent.",
+      "No direct distance or health-state protection.",
+      "Can become predictable if overused."
+    ],
+    "analysis": [
+      "Deception ranks this position because its modern 15-second cooldown and five-second trail suppression make it more than a comedy perk. The Locker notification presents one story while hidden Scratch Marks and Blood allow the Survivor to tell another.",
+      "The perk gets stronger over multiple encounters. Once a Killer has seen you use Deception, they may start second-guessing real Locker entries as well, especially in builds that also contain Head On or Quick & Quiet.",
+      "The skill is selling the fake. Triggering Deception in full view accomplishes little. Breaking line of sight first and choosing a Locker positioned near multiple possible routes is what converts the perk into chase value.",
+      "It stays in B because it never guarantees a mistake. Strong Killers can keep visual contact or simply refuse to check the Locker. Deception rewards creativity, not certainty."
+    ],
+    "verdict": "A genuinely useful misdirection perk in practiced hands. Deception creates false information, but the Survivor still has to make the lie believable.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Misdirection"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Élodie Rakoto"
+    },
+    "synergyPerkIds": [
+      "head-on",
+      "quick-quiet",
+      "iron-will",
+      "parental-guidance"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Head On",
+      "Quick & Quiet",
+      "Iron Will",
+      "Parental Guidance"
+    ],
+    "antiSynergies": []
+  }
+}

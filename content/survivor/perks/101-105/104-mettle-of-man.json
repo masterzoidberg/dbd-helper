@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "101-105",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "mettle-of-man",
+  "mechanics": {
+    "name": "Mettle of Man",
+    "alternateName": null,
+    "source": "Ash Williams",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you trigger a third Protection Hit by any means, the perk activates. While Injured, it shields you from the next attack that would put you into the Dying State. After you heal to full health by any means, the Killer sees your Aura whenever you are farther than the tier-specific distance from them. The perk deactivates when you enter the Dying State by any means. It increases your chance to be the initial Obsession by +100%; a Killer can have only one Obsession at a time.",
+    "activation": [
+      "Trigger a third Protection Hit by any means.",
+      "Be Injured for the protective shield to apply.",
+      "Heal to full health for the Killer-aura reveal component to apply.",
+      "Ends/deactivates when: Deactivates when you enter the Dying State by any means.",
+      "Ends/deactivates when: The Killer-aura reveal applies only while you are farther than 12/14/16 metres from the Killer."
+    ],
+    "patchNote": "Latest live balance change (6.2.0): Restored its pre-6.1.2 behavior and allowed it to activate and trigger more than once.",
+    "plainEnglishSummary": "After three Protection Hits, it can prevent one hit from downing you and later reveals your Aura to the Killer at long range.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "No visible token counter is specified. Each activation requires three Protection Hits; following deactivation, it can activate again after another three Protection Hits.",
+    "oncePerTrialOrOtherLimits": "Can activate more than once in a Trial after earning another three Protection Hits. The Killer can be Obsession with only one Survivor at a time.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The protective effect shields against the next attack that would put you into the Dying State; it is not the Endurance Status Effect."
+    ],
+    "sourceCharacter": "Ash Williams",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "mettle-of-man",
+    "rank": 104,
+    "tier": "B",
+    "roles": [
+      "Team Support",
+      "Chase"
+    ],
+    "summary": "After three Protection Hits, gain a one-time shield against the next attack that would put you into the Dying State while Injured.",
+    "metaStatus": "Good",
+    "skillLevel": "Very High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "protection-hit",
+      "bodyblock",
+      "health-state"
+    ],
+    "useCases": [
+      "Build toward an extra health-state-style protection through deliberate bodyblocks.",
+      "Use coordinated protection hits around hooks and carries.",
+      "Create a late-match chase where the Killer must land an additional attack."
+    ],
+    "counters": [
+      "Three Protection Hits are difficult and dangerous to earn.",
+      "Poor bodyblocks can feed the Killer free pressure before the perk activates.",
+      "After later healing to full, the perk has a significant Aura-related drawback until it deactivates."
+    ],
+    "pros": [
+      "Successful activation is extremely powerful.",
+      "Rewards coordinated team protection.",
+      "Can completely alter a critical late chase."
+    ],
+    "cons": [
+      "Very high setup cost.",
+      "Encourages risky play.",
+      "Often fails to activate before the match is decided."
+    ],
+    "analysis": [
+      "Mettle of Man ranks this position because the reward is enormous and the setup is punishing. Three Protection Hits can eventually buy a shield against a downing attack, essentially creating an additional chase resource that most Killers cannot ignore.",
+      "The problem is earning those Protection Hits without donating the match. Running in front of the Killer at bad moments creates injuries and healing debt, and some Killers or powers make clean protection hits difficult to register safely.",
+      "SWF improves the perk substantially because the team can coordinate carry escorts and hook-defense bodyblocks. In Solo Q, trying to manufacture three hits can easily become selfish or chaotic.",
+      "Mettle of Man is therefore powerful in theory and inconsistent in practice. We rank the actual cost of reaching activation, not just the impressive payoff once it is ready."
+    ],
+    "verdict": "A huge reward hidden behind one of the most dangerous setup requirements in the game. Mettle of Man can win a chase after activation, but earning it cleanly is the real challenge.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Protection Hit",
+      "Extra Health State"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ash Williams"
+    },
+    "synergyPerkIds": [
+      "breakout",
+      "saboteur",
+      "background-player",
+      "were-gonna-live-forever"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "synergies": [
+      "Breakout",
+      "Saboteur",
+      "Background Player",
+      "We're Gonna Live Forever"
+    ],
+    "antiSynergies": []
+  }
+}

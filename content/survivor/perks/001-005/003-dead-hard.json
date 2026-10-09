@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "batch": "001-005",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "dead-hard",
+  "mechanics": {
+    "name": "Dead Hard",
+    "alternateName": null,
+    "source": "David King",
+    "status": "Live 10.2.0",
+    "currentEffect": "After being unhooked by any means, while injured and running press the Active Ability button to gain Endurance for 0.5 seconds. Cannot be used while Exhausted and causes Exhausted for 60/50/40 seconds.",
+    "activation": [
+      "Be unhooked by any means.",
+      "Be injured and running when using Active Ability.",
+      "You must not be Exhausted.",
+      "Ends/deactivates when: The Endurance effect ends after 0.5 seconds.",
+      "Ends/deactivates when: The activation is consumed when used; a later unhook can reactivate the perk if its conditions are met."
+    ],
+    "patchNote": "Latest live balance change (6.7.0): Restricted activation to after being unhooked.",
+    "plainEnglishSummary": "After an unhook, an injured running Survivor can activate a brief Endurance window.",
+    "cooldown": null,
+    "duration": [
+      "Endurance: 0.5 seconds.",
+      "Exhausted: 60/50/40 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Endurance",
+      "Exhausted"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "David King",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "dead-hard",
+    "rank": 3,
+    "tier": "S",
+    "roles": [
+      "Chase",
+      "Exhaustion"
+    ],
+    "summary": "After an unhook, time a 0.5-second Endurance window while injured and running to survive an otherwise downing hit.",
+    "metaStatus": "Elite",
+    "skillLevel": "High",
+    "soloQ": 5,
+    "swf": 5,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "endurance",
+      "exhausted",
+      "deep-wound",
+      "looping",
+      "hook-state"
+    ],
+    "useCases": [
+      "Turn a committed Killer attack into another full chase segment.",
+      "Force difficult swing-or-wait decisions at pallets and tight loops.",
+      "Punish powers with narrow attack windows when your timing is sharp."
+    ],
+    "counters": [
+      "The 0.5-second timing window is unforgiving.",
+      "It cannot be used while Exhausted.",
+      "If you are already in Deep Wound, Endurance cannot save you from another damaging hit in the usual way.",
+      "It is unavailable until you have been unhooked."
+    ],
+    "pros": [
+      "Can effectively create an extra health state when timed correctly.",
+      "Remains available after normal objectives once armed until you use it.",
+      "Gets stronger with player skill and matchup knowledge."
+    ],
+    "cons": [
+      "High execution requirement and vulnerable to Killer baiting.",
+      "Not available before your first unhook.",
+      "Competes with other Exhaustion perks."
+    ],
+    "analysis": [
+      "Dead Hard remains one of the highest-ceiling Survivor perks because a successful activation is not merely movement speed. It can erase an attack that should have ended the chase and convert that moment into another pallet, window, or rotation.",
+      "Against certain powers, however, the timing becomes much more favorable. Killers who commit to a narrow attack window give experienced Survivors a clearer reaction point, which is why Dead Hard can feel more oppressive against some top-end Killers than it does against a patient basic attacker.",
+      "It also pairs extremely well with anti-tunnel tools. Will to Live can force the Killer to pick you up and restart the chase, while Dead Hard remains a later defensive layer once you are injured again. That combination makes a tunneled Survivor substantially harder to remove."
+    ],
+    "verdict": "An elite-ceiling chase perk for players with strong reactions and Killer matchup knowledge. Its activation and execution requirements keep the average value below the absolute easiest chase options.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Second Chance"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      2,
+      5
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "David King"
+    },
+    "synergyPerkIds": [
+      "will-to-live",
+      "five-moves-ahead",
+      "resilience",
+      "made-for-this"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "synergies": [
+      "Will to Live",
+      "Five Moves Ahead",
+      "Resilience",
+      "Made for This"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "batch": "141-145",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "appraisal",
+  "mechanics": {
+    "name": "Appraisal",
+    "alternateName": null,
+    "source": "Élodie Rakoto",
+    "status": "Live 10.2.0",
+    "currentEffect": "Start the Trial with 4 Tokens. Rummaging through an already opened Chest consumes 1 Token and retrieves an additional Item. Each Chest can be rummaged up to twice. You rummage 40/60/80% faster.",
+    "activation": [
+      "Have a Token and rummage through an already opened Chest.",
+      "Ends/deactivates when: Cannot be used after all Tokens are spent."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Updated Appraisal to allow two rummages per Chest and added tiered rummage-speed values.",
+    "plainEnglishSummary": "Spend up to four tokens to retrieve extra Items from already opened Chests.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Starts with 4 Tokens; each rummage consumes 1; maximum two rummages per Chest.",
+    "oncePerTrialOrOtherLimits": "Maximum four rummages per Trial.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "A Chest must already have been opened."
+    ],
+    "sourceCharacter": "Élodie Rakoto",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "appraisal",
+    "rank": 145,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Objective"
+    ],
+    "summary": "Start with four Tokens and rummage opened Chests for extra Items up to four times, at greatly increased rummage speed.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [],
+    "useCases": [
+      "Turn already-opened Chests into additional Items.",
+      "Feed chest-based perks that care about repeated searches or Item supply.",
+      "Create more team resources without bringing four Items from the lobby."
+    ],
+    "counters": [
+      "Chest routing costs objective time.",
+      "The extra Item is still random.",
+      "Four Tokens cap the total value."
+    ],
+    "pros": [
+      "Four extra Item rolls is substantial resource volume.",
+      "Up to 80% faster rummaging reduces the side-objective tax.",
+      "Each Chest can support two rummages."
+    ],
+    "cons": [
+      "Random loot quality.",
+      "Chest-dependent.",
+      "Often weaker than bringing the desired Item directly."
+    ],
+    "analysis": [
+      "Appraisal is a resource-generation perk rather than a direct match-speed perk. Four Tokens means four additional Item rolls from Chests that were already opened, which can create a surprising amount of total equipment.",
+      "The 80% rummage-speed bonus makes the interaction less painful, and modern chest builds can combine Appraisal with Plunderer’s Instinct, Pharmacy, Ace in the Hole, or Moment of Glory.",
+      "The opportunity cost remains travel and randomness. A Survivor who crosses the map to rummage for an Item they never needed may lose more generator time than the resource can repay.",
+      "Appraisal is therefore a legitimate chest-build engine and a poor blind general slot. Its ranking should be judged alongside the entire loot package rather than in isolation."
+    ],
+    "verdict": "The engine room of chest builds: lots of extra Items, little certainty that those Items were worth the detour.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chest",
+      "Resource"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Élodie Rakoto"
+    },
+    "synergyPerkIds": [
+      "plunderers-instinct",
+      "pharmacy",
+      "ace-in-the-hole",
+      "moment-of-glory"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Plunderer's Instinct",
+      "Pharmacy",
+      "Ace in the Hole",
+      "Moment of Glory"
+    ],
+    "antiSynergies": []
+  }
+}

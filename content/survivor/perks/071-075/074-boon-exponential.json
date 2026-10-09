@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "071-075",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boon-exponential",
+  "mechanics": {
+    "name": "Boon: Exponential",
+    "alternateName": null,
+    "source": "Jonah Vasquez",
+    "status": "Live 10.2.0",
+    "currentEffect": "Bless a Dull or Hex Totem. Survivors within 24 metres recover from the Dying State 90/95/100% faster and can recover themselves fully from the Dying State.",
+    "activation": [
+      "Bless a Dull or Hex Totem.",
+      "Be within 24 metres and in the Dying State for recovery effects.",
+      "Ends/deactivates when: Effects end outside Boon range or when the totem is snuffed."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "A Boon Totem speeds Dying recovery and enables nearby Survivors to pick themselves up.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One active Boon Totem per Survivor; equipped Boons apply to that totem.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Unlocks Self-Recovery from the Dying State while in range."
+    ],
+    "sourceCharacter": "Jonah Vasquez",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boon-exponential",
+    "rank": 74,
+    "tier": "B",
+    "roles": [
+      "Boon",
+      "Anti-Slug",
+      "Recovery"
+    ],
+    "summary": "Inside its 24-metre Boon radius, Survivors recover from the Dying State up to twice as fast and can fully self-recover.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "anti-slug",
+      "dying-state"
+    ],
+    "useCases": [
+      "Protect a high-traffic area from mass slugging.",
+      "Create a recovery zone where downed teammates can stand without another Survivor touching them.",
+      "Stack anti-slug value with other Boon effects on the same Totem."
+    ],
+    "counters": [
+      "Only downed Survivors inside the Boon radius receive the effect.",
+      "The Killer can snuff the Totem.",
+      "If the Killer hooks promptly instead of slugging, the perk may never matter."
+    ],
+    "pros": [
+      "100% faster recovery is substantial.",
+      "Unlocks full self-recovery for every Survivor in the zone.",
+      "Can punish multi-Survivor slugging extremely hard."
+    ],
+    "cons": [
+      "Very situational against Killers who hook normally.",
+      "Totem placement determines coverage.",
+      "Requires blessing time before the anti-slug insurance exists."
+    ],
+    "analysis": [
+      "Boon: Exponential ranks this position because its ceiling during a slugging snowball is enormous. Survivors in the zone recover up to 100% faster and can fully stand themselves up, which can make leaving multiple players on the ground strategically impossible for the Killer.",
+      "The teamwide nature is the most important distinction from perks like Unbreakable. One Totem can potentially protect several Survivors, and the benefit remains available as long as the Boon survives. On maps where the radius covers several connected tiles, that can alter the Killer's entire downing strategy.",
+      "The downside is opportunity frequency. A Killer who immediately hooks each downed Survivor may never give Exponential a meaningful trigger. The user can spend time finding and blessing a Totem only for the match to contain no slugging at all.",
+      "That makes it an excellent specialist rather than a general-purpose choice. In Boon builds the opportunity cost is lower because the same Totem also carries Circle of Healing, Shadow Step, or Steadfast, improving the overall investment."
+    ],
+    "verdict": "One of the strongest anti-slug zones in the game, but only when slugging actually happens inside it. Excellent Boon-stack value, inconsistent standalone value.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jonah Vasquez"
+    },
+    "synergyPerkIds": [
+      "boon-circle-of-healing",
+      "boon-shadow-step",
+      "conviction",
+      "soul-guard"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Boon: Circle of Healing",
+      "Boon: Shadow Step",
+      "Conviction",
+      "Soul Guard"
+    ],
+    "antiSynergies": []
+  }
+}

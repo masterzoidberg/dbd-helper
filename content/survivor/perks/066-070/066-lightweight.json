@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "batch": "066-070",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "lightweight",
+  "mechanics": {
+    "name": "Lightweight",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Reduces the lifetime of your Scratch Marks by 3/4/5 seconds. It also reduces the spawn chance of patches of Scratch Marks by 60%, making their spacing inconsistent.",
+    "activation": [],
+    "patchNote": "Latest live balance change (6.1.0): Increased Scratch Mark lifetime reduction from 1/2/3 to 3/4/5 seconds and added a 60% patch-spawn chance reduction effect.",
+    "plainEnglishSummary": "Your Scratch Marks disappear sooner and spawn in less consistent patches.",
+    "cooldown": null,
+    "duration": [
+      "Applies to Scratch Marks whenever they are created; lifetime reduction is 3/4/5 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "lightweight",
+    "rank": 66,
+    "tier": "B",
+    "roles": [
+      "Stealth",
+      "Chase"
+    ],
+    "summary": "Make Scratch Marks disappear 5 seconds sooner at Tier III and spawn in much less consistent patches.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Make ordinary chase pathing harder to read after line-of-sight breaks.",
+      "Reduce the reliability of Scratch Marks during indoor-map rotations and dense tiles.",
+      "Pair passive trail disruption with stronger sound or Aura-denial tools."
+    ],
+    "counters": [
+      "Killers who maintain direct visual contact do not need Scratch Marks.",
+      "Aura reading, Killer Instinct, Blood, and Grunts of Pain remain available tracking channels.",
+      "The effect is subtle and may not create a meaningful misread on open terrain."
+    ],
+    "pros": [
+      "Always active with no trigger or cooldown.",
+      "Reduces both duration and consistency of Scratch Marks.",
+      "Easy to equip without changing how the rest of the build functions."
+    ],
+    "cons": [
+      "Indirect value that depends on the Killer losing sight of you.",
+      "Does not hide other tracking information.",
+      "Hard to measure and less reliable than complete Scratch-Mark suppression."
+    ],
+    "analysis": [
+      "Lightweight opens the second fifty at this position because passive tracking disruption has real value without asking for any setup. Scratch Marks disappear five seconds sooner at Tier III and spawn in less consistent patches, so Killers receive a noisier trail whenever they lose direct visual contact.",
+      "The perk is especially useful on indoor maps and structures with frequent corners. A Killer who briefly loses sight may expect a full trail through the next doorway and instead find scattered or already-fading information. That hesitation can buy just enough time for a Survivor to change floors, double back, or reach another tile.",
+      "Lightweight also has a forgiving floor. Unlike Lucky Break or Quick & Quiet, the player does not need to be Injured, vault at the right moment, or watch a cooldown. It simply modifies every sprint trail in the Trial. That makes it useful for players who want stealth value without dedicating attention to an activation condition.",
+      "Its ceiling is limited because the perk never fully removes Scratch Marks and does nothing to Grunts, Blood, Auras, or powers that reveal Survivors directly. Strong Killers who keep visual contact may barely notice it. The perk is consistently present, but the size of its payoff is highly situational."
+    ],
+    "verdict": "A reliable passive tracking-disruption perk. Lightweight will not make you invisible, but it makes every line-of-sight break slightly harder for the Killer to solve.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chase Escape",
+      "Tracking Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "iron-will",
+      "fixated",
+      "quick-quiet",
+      "lucky-break"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Iron Will",
+      "Fixated",
+      "Quick & Quiet",
+      "Lucky Break"
+    ],
+    "antiSynergies": []
+  }
+}

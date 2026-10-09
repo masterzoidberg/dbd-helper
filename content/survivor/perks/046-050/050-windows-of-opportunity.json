@@ -30,16 +30,26 @@
     "currentLivePatchVerified": "10.2.0"
   },
   "editorial": {
+    "id": "windows-of-opportunity",
     "rank": 50,
     "tier": "B",
-    "roles": ["Chase","Information"],
+    "roles": [
+      "Chase",
+      "Information"
+    ],
     "summary": "See nearby Window Auras and vault Windows 10% faster, with a cooldown after each Window vault.",
     "metaStatus": "Good",
     "skillLevel": "Low",
     "soloQ": 3,
     "swf": 3,
     "unlockPriority": "Medium",
-    "glossaryKeys": ["aura-reading","looping","pre-drop","greed","solo-q"],
+    "glossaryKeys": [
+      "aura-reading",
+      "looping",
+      "pre-drop",
+      "greed",
+      "solo-q"
+    ],
     "useCases": [
       "Identify nearby Windows quickly in unfamiliar structures.",
       "Turn close Window timings into safer escapes with 10% faster vaults.",
@@ -50,7 +60,6 @@
       "It no longer reveals Pallets or Breakable Walls.",
       "Twenty-four metres is much less map coverage than the old Tier III range."
     ],
-    "synergies": ["Finesse","Lithe","Resilience","Quick & Quiet"],
     "pros": [
       "10% faster Window vaulting is direct chase power.",
       "Window Auras still help unfamiliar-map routing.",
@@ -70,18 +79,42 @@
     "verdict": "Still a legitimate chase perk, but no longer the universal resource radar it used to be. The 10% vault bonus keeps it relevant while the cooldown and loss of Pallet information demand a lower fresh ranking.",
     "editorialStatus": "patch-watch",
     "publicationStatus": "published",
-    "tags": ["Vault"],
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Vault"
+    ],
     "queueRatingStatus": "reviewed",
-    "rankRange": [42,60],
+    "rankRange": [
+      42,
+      60
+    ],
     "rankConfidence": "Medium",
     "rankStatus": "provisional",
     "evidenceStatus": "provisional-direction-stable",
-    "acquisition": {"type":"character","sourceCharacter":"Kate Denson"},
-    "synergyPerkIds": ["finesse","lithe","resilience","quick-quiet"],
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Kate Denson"
+    },
+    "synergyPerkIds": [
+      "finesse",
+      "lithe",
+      "resilience",
+      "quick-quiet"
+    ],
     "synergyOther": [],
     "antiSynergyPerkIds": [],
-    "antiSynergies": [],
     "archetypeRatings": [],
-    "reviewFlags": ["10.2-live-change","v15-schema-migrated","rank-review-applied","queue-rating:audit-explicit"]
+    "synergies": [
+      "Finesse",
+      "Lithe",
+      "Resilience",
+      "Quick & Quiet"
+    ],
+    "antiSynergies": []
   }
 }

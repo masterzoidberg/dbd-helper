@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "136-140",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "small-game",
+  "mechanics": {
+    "name": "Small Game",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Within 10/11/12 metres of a Totem, you see its Aura.",
+    "activation": [
+      "A Totem is within 10/11/12 metres.",
+      "Ends/deactivates when: The Totem's Aura is no longer revealed after it leaves the tiered range or no longer exists."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: now reveals a Totem's Aura within 10/11/12 metres and removes the former cone, cue, cooldown, and token mechanics.",
+    "plainEnglishSummary": "Nearby Totems reveal their Auras within a tiered radius.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "small-game",
+    "rank": 140,
+    "tier": "C",
+    "roles": [
+      "Totem",
+      "Information",
+      "Utility"
+    ],
+    "summary": "Simply see the Aura of any Totem within up to 12 metres.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 1,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Find a nearby Hex without sweeping every corner manually.",
+      "Support Inner Strength, Overzealous, Counterforce, or Boon builds.",
+      "Teach newer players common Totem spawn locations."
+    ],
+    "counters": [
+      "Twelve metres is a short detection radius.",
+      "Experienced players often know common Totem spawns already.",
+      "The perk gives no speed bonus or Killer information."
+    ],
+    "pros": [
+      "10.2 removed the clunky cone/cooldown/token system.",
+      "Extremely easy to understand.",
+      "Works on any Totem type."
+    ],
+    "cons": [
+      "Very narrow information category.",
+      "Low range.",
+      "Map knowledge replaces part of its value."
+    ],
+    "analysis": [
+      "Small Game became dramatically simpler in 10.2. The directional cone, audio cue, cooldown, and narrowing-token minigame are gone; a nearby Totem simply reveals its Aura.",
+      "That is better for the actual job. If a Hex, Boon setup, or Inner Strength charge matters, the player can search naturally and receive a clear confirmation inside twelve metres.",
+      "The range is still small enough that the perk does not solve Totem locations from across the map, and experienced players will often recognize spawn patterns without it.",
+      "Small Game is therefore clean beginner and build support rather than meta information. The rework raises usability more than power."
+    ],
+    "verdict": "Finally simple: walk near a Totem, see the Totem. Good support for Totem builds and new players, not a high-impact general slot.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Beginner"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "counterforce",
+      "inner-strength",
+      "overzealous"
+    ],
+    "synergyOther": [
+      "Boon perks"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Counterforce",
+      "Inner Strength",
+      "Overzealous",
+      "Boon perks"
+    ],
+    "antiSynergies": []
+  }
+}

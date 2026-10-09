@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "batch": "051-055",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "dance-with-me",
+  "mechanics": {
+    "name": "Dance With Me",
+    "alternateName": null,
+    "source": "Kate Denson",
+    "status": "Live 10.2.0",
+    "currentEffect": "Performing a Rushed action to vault a Window or exit a Locker suppresses your Scratch Marks for 5 seconds. Cooldown: 25/20/15 seconds by tier.",
+    "activation": [
+      "Perform a Rushed Window vault or exit a Locker with a Rushed action.",
+      "Ends/deactivates when: Scratch Mark suppression ends after 5 seconds."
+    ],
+    "patchNote": "Latest live balance change (8.6.0): Increased Scratch Mark suppression from 3 to 5 seconds and reduced cooldown from 30/25/20 to 25/20/15 seconds.",
+    "plainEnglishSummary": "A rushed Window vault or Locker exit hides your Scratch Marks briefly.",
+    "cooldown": "25/20/15 seconds by tier",
+    "duration": [
+      "Scratch Marks suppressed for 5 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Kate Denson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "dance-with-me",
+    "rank": 53,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Stealth"
+    ],
+    "summary": "After a fast or medium vault or fast Locker exit, leave no Scratch Marks for 5 seconds; cooldown is only 15 seconds at Tier III.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Break line of sight at a vault and immediately hide the route you took afterward.",
+      "Pair with Lithe or Quick & Quiet to convert vault distance into a complete tracking break.",
+      "Use frequent 15-second cycles during longer chases."
+    ],
+    "counters": [
+      "The Killer can still hear you, see Blood, read Auras, or maintain direct sight.",
+      "Five seconds is short if you do not immediately exploit a route split.",
+      "Open tiles provide fewer opportunities to create ambiguity."
+    ],
+    "pros": [
+      "Short cooldown.",
+      "Easy trigger through common chase actions.",
+      "Excellent synergy with Lithe."
+    ],
+    "cons": [
+      "Only hides Scratch Marks.",
+      "Brief duration.",
+      "Requires good pathing after the vault to create real confusion."
+    ],
+    "analysis": [
+      "Dance With Me ranks this position because the modern 15-second cooldown gives it enough frequency to become a real chase tool rather than an occasional stealth trick. Vaulting is already central to Survivor pathing, so the trigger is natural.",
+      "The best pairing remains Lithe. The speed burst creates distance while Dance With Me erases the trail, forcing the Killer to reacquire the Survivor through sight or sound instead of following a clean route.",
+      "The perk's weakness is coverage. Scratch Marks are only one tracking channel, and five seconds disappears quickly. A Survivor who vaults and then runs down an obvious corridor gains little.",
+      "That makes Dance With Me skill-sensitive chase utility. It is strong when the route after the vault contains real choices and merely decorative when it does not."
+    ],
+    "verdict": "A good chase-stealth perk with excellent Lithe synergy. Dance With Me rewards immediate route changes after a vault, not simply the absence of red marks.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Tracking Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Kate Denson"
+    },
+    "synergyPerkIds": [
+      "lithe",
+      "quick-quiet",
+      "lightweight",
+      "lucky-break"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Lithe",
+      "Quick & Quiet",
+      "Lightweight",
+      "Lucky Break"
+    ],
+    "antiSynergies": []
+  }
+}

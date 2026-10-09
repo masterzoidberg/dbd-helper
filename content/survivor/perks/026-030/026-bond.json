@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "026-030",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "bond",
+  "mechanics": {
+    "name": "Bond",
+    "alternateName": null,
+    "source": "Dwight Fairfield",
+    "status": "Live 10.2.0",
+    "currentEffect": "The Auras of other Survivors are revealed to you within 20/28/36 metres.",
+    "activation": [
+      "Ends/deactivates when: Auras are not shown outside the tier range."
+    ],
+    "patchNote": "Latest live balance change (2.3.0): Increased Aura ranges to 20/28/36 metres (was 12/24/36).",
+    "plainEnglishSummary": "You see the Auras of nearby teammates.",
+    "cooldown": null,
+    "duration": [
+      "Continuous while Survivors are within range."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Dwight Fairfield",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "bond",
+    "rank": 26,
+    "tier": "A",
+    "roles": [
+      "Information",
+      "Mobility"
+    ],
+    "summary": "Continuously see nearby teammates within 36 metres, giving constant information with no trigger, cooldown, or setup.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 5,
+    "swf": 3,
+    "unlockPriority": "Immediate",
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "pressure",
+      "looping"
+    ],
+    "useCases": [
+      "Identify who is going for a rescue so you can stay on a generator instead of duplicating effort.",
+      "Route chases away from teammates, active generators, and healing zones.",
+      "Locate nearby teammates for healing, cooperative repairs, bodyblocks, or coordinated endgame movement."
+    ],
+    "counters": [
+      "Bond only reveals teammates within range, so it does not provide full-map information.",
+      "It tells you where teammates are, not what the Killer is doing unless you infer it from their movement.",
+      "Voice-coordinated SWF teams can reproduce part of its information without spending a perk slot."
+    ],
+    "pros": [
+      "Always active and requires no mechanical execution.",
+      "Solves many common Solo Q coordination mistakes before they happen.",
+      "Useful for generators, rescues, healing, chase routing, and endgame rather than one narrow task."
+    ],
+    "cons": [
+      "Provides information rather than a direct speed, health-state, or chase effect.",
+      "Lower marginal value in highly coordinated SWF.",
+      "The 36-metre range can miss important events on large maps."
+    ],
+    "analysis": [
+      "Bond earns this position because information that is always available has a reliability advantage over perks that wait for a specific event. The 36-metre Tier III range is large enough to reveal a surprising amount of nearby team structure, and that information improves decisions in almost every phase of a normal match.",
+      "Its biggest Solo Q value is preventing duplicated work. Seeing a teammate already moving toward a hook lets you keep repairing. Seeing someone injured approaching your tile tells you a heal may be available. Seeing two teammates on the same side of the map can help you choose a different generator and spread pressure. None of those decisions are dramatic, but they accumulate across an entire Trial.",
+      "Bond also improves chase hygiene. A Survivor who can see teammates and active working areas has a much easier time avoiding the classic mistake of dragging the Killer directly onto the team's strongest generator. Experienced players can use the same information for bodyblock timing, protection-hit setups, and deciding whether a nearby teammate is safe to involve in a chase.",
+      "It ranks below Off the Record because Bond rarely wins a critical interaction by itself. It makes the user smarter rather than stronger. In SWF, voice communication also reproduces part of the effect. In Solo Q, however, its consistency is exceptional, which is why it remains one of the safest general information perks in the roster."
+    ],
+    "verdict": "One of the best pure Solo Q information perks. Bond rarely creates a highlight-reel moment, but it quietly prevents bad rotations, duplicate rescues, and chase-routing mistakes all match long.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Solo Q",
+      "Positioning"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Dwight Fairfield"
+    },
+    "synergyPerkIds": [
+      "kindred",
+      "background-player",
+      "well-make-it",
+      "resilience"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "synergies": [
+      "Kindred",
+      "Background Player",
+      "We'll Make It",
+      "Resilience"
+    ],
+    "antiSynergies": []
+  }
+}

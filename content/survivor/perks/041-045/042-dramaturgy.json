@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "batch": "041-045",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "dramaturgy",
+  "mechanics": {
+    "name": "Dramaturgy",
+    "alternateName": null,
+    "source": "Nicolas Cage",
+    "status": "Live 10.2.0",
+    "currentEffect": "At full Health, while running use the Active Ability button to perform a 0.5-second animation and gain 25% Haste for 2 seconds. It then triggers one secondary effect, never the same one twice consecutively: another 25% Haste instance for 2 seconds, Exposed for 12 seconds, a scream, or a random Rare Item with random Add-ons (dropping your held Item). Cannot be used while Exhausted and causes Exhausted for 60/50/40 seconds.",
+    "activation": [
+      "Be at full Health.",
+      "Be running and not Exhausted when activating.",
+      "Ends/deactivates when: Haste lasts 2 seconds; Exposed lasts 12 seconds; item is granted immediately."
+    ],
+    "patchNote": "Latest live balance change (7.1.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "At full Health, use the ability while running for a short Haste burst and a random secondary effect.",
+    "cooldown": null,
+    "duration": [
+      "Animation: 0.5 seconds.",
+      "Primary Haste: 2 seconds.",
+      "Possible Exposed: 12 seconds.",
+      "Exhausted: 60/50/40 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste",
+      "Exposed",
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "Secondary effect is random and cannot repeat the immediately preceding secondary effect.",
+      "If an Item is granted, the Item you held is dropped."
+    ],
+    "sourceCharacter": "Nicolas Cage",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "dramaturgy",
+    "rank": 42,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Exhaustion",
+      "Utility"
+    ],
+    "summary": "While healthy, trigger a short Haste burst and roll one of four follow-up effects, ranging from another burst to a free Rare Item or temporary Exposed.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "haste",
+      "exhausted"
+    ],
+    "useCases": [
+      "Create immediate distance during a chase without needing a vault, drop, or elevation trigger.",
+      "Fish for a second Haste burst when extra distance would break the Killer's pressure.",
+      "Generate additional Rare Items over the course of a Trial when the random roll cooperates."
+    ],
+    "counters": [
+      "It only activates while Healthy and cannot be used while Exhausted.",
+      "The Exposed result can turn an otherwise safe health state into a dangerous one for 12 seconds.",
+      "The random secondary effect makes the perk less predictable than conventional Exhaustion perks.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "Activation is player-controlled while running and Healthy.",
+      "The guaranteed first Haste burst always provides some chase value.",
+      "The free-item result can create substantial extra utility beyond movement."
+    ],
+    "cons": [
+      "Randomness can produce a scream or Exposed at a bad moment.",
+      "Cannot be activated while injured.",
+      "Less predictable than Sprint Burst, Lithe, or other deterministic chase perks."
+    ],
+    "analysis": [
+      "Dramaturgy takes this position because the guaranteed part of the perk is already useful before considering the chaos attached to it. While Healthy, the Survivor can deliberately activate a 25% Haste burst for two seconds without needing a window, pallet, or drop. That makes the trigger unusually flexible for an Exhaustion perk.",
+      "The secondary roll is what gives Dramaturgy its strange ceiling. A second Haste instance can produce excellent chase distance, while the Rare Item roll can create real resource value for the rest of the Trial. The scream is usually a manageable downside, and Exposed is the dangerous outcome because it temporarily removes the protection normally provided by being Healthy.",
+      "The skill is therefore not mechanical execution so much as risk management. Activating while the Killer is already close enough to capitalize on Exposed can backfire, while using the perk at a transition or when a little extra distance reaches a strong tile reduces the danger. Experienced users also know when the chance of an item is worth the Exhaustion commitment.",
+      "It ranks below the most reliable chase perks because randomness is still randomness. Lithe, Sprint Burst, and Balanced Landing tell you exactly what they will do. Dramaturgy can occasionally exceed them, but it can also give you the least useful secondary result at the worst possible time. Its ceiling can be excellent, but its randomness prevents top-end dependability."
+    ],
+    "verdict": "A strong, flexible Exhaustion perk with controlled activation and uncontrolled flavor. The guaranteed Haste is good; the random second effect determines whether the activation becomes merely useful or spectacular.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nicolas Cage"
+    },
+    "synergyPerkIds": [
+      "vigil",
+      "resilience",
+      "built-to-last",
+      "botany-knowledge"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Vigil",
+      "Resilience",
+      "Built to Last",
+      "Botany Knowledge"
+    ],
+    "antiSynergies": []
+  }
+}

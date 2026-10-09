@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "166-170",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "apocalyptic-ingenuity",
+  "mechanics": {
+    "name": "Apocalyptic Ingenuity",
+    "alternateName": null,
+    "source": "Rick Grimes",
+    "status": "Live 10.2.0",
+    "currentEffect": "You see the Auras of broken Pallets within 24/28/32 metres. After rummaging through or unlocking a Chest, hold the Active Ability button beside a broken Pallet for 3 seconds to rebuild it as a Fragile Pallet, which breaks immediately when dropped.",
+    "activation": [
+      "Rummage through or unlock a Chest.",
+      "Stand beside a broken Pallet and hold the Active Ability button for 3 seconds.",
+      "Ends/deactivates when: Fragile Pallet breaks immediately when dropped.",
+      "Ends/deactivates when: Rebuild interaction ends if interrupted."
+    ],
+    "patchNote": "Latest live balance change (10.1.0): Changed the prerequisite to one Chest interaction and reduced rebuild interaction to 3 seconds.",
+    "plainEnglishSummary": "After a Chest interaction, you can rebuild one broken Pallet as a Fragile Pallet.",
+    "cooldown": null,
+    "duration": [
+      "Pallet rebuild interaction: 3 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One Chest interaction enables one rebuild; another qualifying interaction is needed for another rebuild.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The rebuilt Fragile Pallet breaks immediately when dropped."
+    ],
+    "sourceCharacter": "Rick Grimes",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "apocalyptic-ingenuity",
+    "rank": 168,
+    "tier": "D",
+    "roles": [
+      "Pallet",
+      "Objective",
+      "Item"
+    ],
+    "summary": "After interacting with a chest, rebuild one broken pallet as a Fragile Pallet; the reconstructed pallet breaks immediately when dropped.",
+    "metaStatus": "Weak",
+    "skillLevel": "Medium",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Restore a pallet body at a previously exhausted tile.",
+      "Use broken-pallet Aura information to identify possible rebuild locations.",
+      "Create a temporary resource the Killer must still account for during pathing."
+    ],
+    "counters": [
+      "Requires a chest unlock or rummage first.",
+      "The Fragile Pallet breaks immediately when dropped.",
+      "Only one rebuilt pallet can be created from the perk's setup."
+    ],
+    "pros": [
+      "Can restore interaction geometry to an exhausted tile.",
+      "Shows nearby broken pallet Auras.",
+      "Unique resource-rebuilding effect."
+    ],
+    "cons": [
+      "Chest setup tax.",
+      "Rebuilt pallet is deliberately weak.",
+      "Often inferior to rotating to an untouched tile."
+    ],
+    "analysis": [
+      "Apocalyptic Ingenuity ranks this position because rebuilding a pallet sounds stronger than the actual Fragile Pallet mechanic. The reconstructed resource breaks immediately when dropped, so the Survivor is not recreating a full normal pallet loop.",
+      "The effect can still matter. Restoring the pallet body changes pathing, creates a possible stun interaction, and may force the Killer to respect a resource at a tile they thought was completely exhausted.",
+      "The chest setup is the bigger issue. A Survivor must spend time unlocking or rummaging before the rebuild is available, adding a side objective before a situational chase payoff.",
+      "That keeps the perk near the bottom of the global list. It is mechanically unique and occasionally clever, but normal rotation to an existing tile is usually cheaper than manufacturing a fragile one."
+    ],
+    "verdict": "A creative way to resurrect a dead tile, with emphasis on 'fragile.' Apocalyptic Ingenuity creates options, not a full pallet refund.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Resource",
+      "Chest"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Rick Grimes"
+    },
+    "synergyPerkIds": [
+      "appraisal",
+      "plunderers-instinct",
+      "any-means-necessary"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Appraisal",
+      "Plunderer's Instinct",
+      "Any Means Necessary"
+    ],
+    "antiSynergies": []
+  }
+}

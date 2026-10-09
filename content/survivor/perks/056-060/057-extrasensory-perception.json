@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "056-060",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "extrasensory-perception",
+  "mechanics": {
+    "name": "Extrasensory Perception",
+    "alternateName": null,
+    "source": "Eleven",
+    "status": "Live 10.2.0",
+    "currentEffect": "Crouch for 4 seconds to activate. While active, you see Auras of Survivors, the Killer, and Chests, Exit Gates, Generators, the Hatch, Items, Pallets, Totems, and Windows in an expanding radius up to 44 metres. You gain Elusive and Oblivious. The effect ends when you stop crouching or after 11 seconds, then the perk goes on a 60/50/40-second cooldown.",
+    "activation": [
+      "Crouch for 4 seconds.",
+      "Ends/deactivates when: All effects end when you stop crouching.",
+      "Ends/deactivates when: All effects end after 11 seconds even if you remain crouched."
+    ],
+    "patchNote": "Latest live balance change (9.4.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "After crouching to focus, you briefly reveal nearby people and objects while becoming Elusive and Oblivious.",
+    "cooldown": "60/50/40 seconds (Tier I/II/III), beginning when the effect ends.",
+    "duration": [
+      "Activation requires 4 seconds of crouching.",
+      "Maximum active duration: 11 seconds.",
+      "Aura radius expands up to 44 metres while active."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Elusive",
+      "Oblivious"
+    ],
+    "specialInteractions": [
+      "The listed Aura reveals include Survivors, the Killer, Chests, Exit Gates, Generators, the Hatch, Items, Pallets, Totems, and Windows."
+    ],
+    "sourceCharacter": "Eleven",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "extrasensory-perception",
+    "rank": 57,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Stealth"
+    ],
+    "summary": "After crouching for 4 seconds, reveal Survivors, the Killer, and many map objects in an expanding radius up to 44 metres while gaining Elusive and Oblivious.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Scout a dangerous area before committing to an objective or rescue.",
+      "Use Elusive during the scan to avoid Aura reads and trail tracking.",
+      "Identify nearby pallets, windows, totems, chests, objectives, and players at once."
+    ],
+    "counters": [
+      "Requires four seconds of crouching setup.",
+      "Oblivious removes Terror Radius information during the effect.",
+      "Forty-second Tier III cooldown limits repeated scans."
+    ],
+    "pros": [
+      "Extremely broad information payload.",
+      "Elusive protects several tracking channels during use.",
+      "Can solve unfamiliar indoor maps quickly."
+    ],
+    "cons": [
+      "Setup time is substantial.",
+      "Oblivious can create risk if used carelessly.",
+      "Information overload may not translate into actual tempo."
+    ],
+    "analysis": [
+      "Extrasensory Perception ranks this position because few perks show so much information at once. A completed scan can reveal players, the Killer, generators, pallets, windows, Totems, chests, gates, items, and more within the growing radius.",
+      "The built-in Elusive state is important because the user is otherwise vulnerable while crouching. Aura, Scratch-Mark, Blood, and pain-sound suppression make the scouting moment safer against information-heavy Killers.",
+      "The price is tempo and awareness. Four seconds of crouching is not free, and Oblivious means the Terror Radius disappears while the scan is active. A badly timed activation can make the user less aware of a Killer approaching from outside the revealed area.",
+      "That mixture of huge information and meaningful setup keeps it in B. Strong players can use it as a deliberate scouting tool, while casual use risks turning it into expensive sightseeing."
+    ],
+    "verdict": "A broad, powerful scouting perk with a real setup tax. Extrasensory Perception can answer almost every local information question at once, but only if you choose a safe moment to ask.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Scouting"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Eleven"
+    },
+    "synergyPerkIds": [
+      "urban-evasion",
+      "open-handed",
+      "inner-strength",
+      "boon-shadow-step"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Urban Evasion",
+      "Open-Handed",
+      "Inner Strength",
+      "Boon: Shadow Step"
+    ],
+    "antiSynergies": []
+  }
+}

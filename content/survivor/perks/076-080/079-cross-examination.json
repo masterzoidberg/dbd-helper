@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "076-080",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "cross-examination",
+  "mechanics": {
+    "name": "Cross-Examination",
+    "alternateName": null,
+    "source": "Shane Wiigwaas",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are in the Killer's Terror Radius and not being chased by the Killer, the Killer leaves Light Marks that last 10 seconds and that you can see. While on the Killer's Light Marks, you gain Elusive; this ends after 3/4/5 seconds.",
+    "activation": [
+      "Be inside the Killer's Terror Radius.",
+      "Not be chased by the Killer.",
+      "Stand on a visible Light Mark to gain Elusive.",
+      "Ends/deactivates when: Light Marks are not generated for you while you are being chased or outside the Terror Radius.",
+      "Ends/deactivates when: Light Marks expire after 10 seconds; Elusive ends 3/4/5 seconds after you leave the Light Marks."
+    ],
+    "patchNote": "Latest live balance change (10.0.3): Added the requirement that you are not being chased by the Killer (perk introduced in 10.0.1).",
+    "plainEnglishSummary": "While in the Killer's Terror Radius and not in chase, standing on the Killer's Light Marks grants you a brief Elusive effect.",
+    "cooldown": null,
+    "duration": [
+      "Light Marks: 10 seconds.",
+      "Elusive: 3/4/5 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Elusive"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "Shane Wiigwaas",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "cross-examination",
+    "rank": 79,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Stealth",
+      "Chase"
+    ],
+    "summary": "While in the Killer's Terror Radius and not being chased, follow their Light Marks to gain Elusive, which lingers for 3/4/5 seconds after leaving the marks.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium–High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "looping"
+    ],
+    "useCases": [
+      "Track the Killer's recent path around obstructed structures through persistent Light Marks.",
+      "Step across a Mark to gain short Elusive protection before changing route.",
+      "Use trail information on indoor maps where direct line of sight is frequently broken."
+    ],
+    "counters": [
+      "The Killer must satisfy the perk's proximity condition for Marks to be produced.",
+      "Marks last only 10 seconds.",
+      "The Elusive window is brief and still requires the Survivor to physically reach a Mark.",
+      "It does not generate its tracking value while you are being chased by the Killer."
+    ],
+    "pros": [
+      "Provides a unique trail-based way to track Killer movement.",
+      "Can turn the Killer's own path into a short stealth resource.",
+      "New information type can remain useful when ordinary Aura reading is blocked."
+    ],
+    "cons": [
+      "Less intuitive than standard Aura-reading perks.",
+      "Short Elusive duration.",
+      "Value is highly dependent on geometry and proximity."
+    ],
+    "analysis": [
+      "Cross-Examination lands at this position because its new Light Mark mechanic offers a distinctive kind of Killer tracking. Rather than simply revealing an Aura, it leaves a recent movement trail that can persist around corners and through complicated structures, giving the Survivor clues about where the Killer just traveled.",
+      "The second half creates the more interesting decision. Walking over a Light Mark grants a brief Elusive window, allowing the Survivor to suppress several tracking channels while repositioning. In the right indoor tile, that can turn the Killer's own movement history into a stealth route.",
+      "The perk is still young in 10.1.2a, so we are deliberately conservative. Its usefulness depends on learning how Marks spawn, reading them quickly, and having geometry where the information changes a decision. A simple Aura read is easier to interpret for most players.",
+      "That learning curve and the short Elusive duration keep it in B for now. There is enough utility and originality here to deserve a respectable position, but it should earn a higher ranking through sustained live performance rather than novelty."
+    ],
+    "verdict": "A promising tracking-and-stealth hybrid. Cross-Examination can be clever and powerful around complex geometry, but its young meta and short protection window justify caution.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Tracking"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Shane Wiigwaas"
+    },
+    "synergyPerkIds": [
+      "iron-will",
+      "lightweight",
+      "fixated",
+      "quick-quiet"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Iron Will",
+      "Lightweight",
+      "Fixated",
+      "Quick & Quiet"
+    ],
+    "antiSynergies": []
+  }
+}

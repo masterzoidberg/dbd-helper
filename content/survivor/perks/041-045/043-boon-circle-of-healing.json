@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "041-045",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boon-circle-of-healing",
+  "mechanics": {
+    "name": "Boon: Circle of Healing",
+    "alternateName": null,
+    "source": "Mikaela Reid",
+    "status": "Live 10.2.0",
+    "currentEffect": "Bless a Dull or Hex Totem to create a Boon Totem. Survivors within 24 metres hear its chimes, heal other Survivors 50/75/100% faster when not using a Med-Kit, and see injured Survivors' Auras.",
+    "activation": [
+      "Bless a Dull or Hex Totem.",
+      "Affected Survivors must be within 24 metres.",
+      "Healing bonus applies when healing another Survivor without a Med-Kit.",
+      "Ends/deactivates when: Effects end outside Boon range or when the totem is snuffed."
+    ],
+    "patchNote": "Latest live balance change (6.7.0): Reworked to altruistic healing only (50/75/100%, not with Med-Kits) and added injured-Survivor Aura reading.",
+    "plainEnglishSummary": "A Boon Totem speeds altruistic healing without Med-Kits and reveals injured teammates nearby.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "A Survivor can maintain only one active Boon Totem; all equipped Boon perks apply to it.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Healing-speed bonus does not apply to Med-Kit healing.",
+      "Injured Survivor Auras are revealed to others within range."
+    ],
+    "sourceCharacter": "Mikaela Reid",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boon-circle-of-healing",
+    "rank": 43,
+    "tier": "B",
+    "roles": [
+      "Boon",
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "Create a 24-metre healing zone where Survivors heal teammates dramatically faster and can see injured allies.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "reset",
+      "aura-reading",
+      "health-state"
+    ],
+    "useCases": [
+      "Create a team reset zone after several Survivors become injured.",
+      "Use injured-Survivor Aura reading inside the Boon area to coordinate heals without voice.",
+      "Stack the same blessed Totem with Shadow Step, Steadfast, or other Boon effects."
+    ],
+    "counters": [
+      "Requires time to find and bless a Totem.",
+      "The Killer can snuff the Boon and remove the healing zone.",
+      "Survivors cannot self-heal from Circle of Healing alone in its current design."
+    ],
+    "pros": [
+      "Can benefit the whole team rather than only the owner.",
+      "Up to 100% faster teammate healing is a major reset bonus.",
+      "Combines efficiently with other Boons on the same Totem."
+    ],
+    "cons": [
+      "Location-dependent and vulnerable to snuffing.",
+      "Does not independently solve self-healing.",
+      "Repeated re-blessing can consume too much objective time."
+    ],
+    "analysis": [
+      "Circle of Healing sits at this position because its modern identity is a team reset accelerator rather than the old self-healing powerhouse. Survivors inside the 24-metre zone heal other Survivors much faster and can see injured teammate Auras, making the Boon a clear rally point after pressure.",
+      "The strongest use is after multi-injury situations. Instead of several slow individual heals, the team can regroup in the zone and recover quickly. The Aura component also improves Solo Q usability because injured players become easy to locate once everyone reaches the area.",
+      "Boon stacking raises the ceiling considerably. Shadow Step can make the same zone harder for the Killer to track, while Steadfast can add generator value if the Totem covers a useful objective cluster. One setup action can therefore activate several team effects when the build is intentionally constructed around Boons.",
+      "The weaknesses are the usual Boon weaknesses: setup, geography, and snuffing. A poorly placed Totem may cover nothing useful, while an obvious one can be removed immediately. Circle of Healing is strong when the team uses the zone rather than treating the Boon itself as the objective."
+    ],
+    "verdict": "A strong team-reset Boon in its current support-focused form. Circle of Healing is best when several Survivors actually use the zone, especially as part of a multi-Boon setup.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Mikaela Reid"
+    },
+    "synergyPerkIds": [
+      "boon-shadow-step",
+      "boon-steadfast",
+      "botany-knowledge",
+      "flow-state"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Boon: Shadow Step",
+      "Boon: Steadfast",
+      "Botany Knowledge",
+      "Flow State"
+    ],
+    "antiSynergies": []
+  }
+}

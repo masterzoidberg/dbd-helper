@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "136-140",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "scavenger",
+  "mechanics": {
+    "name": "Scavenger",
+    "alternateName": null,
+    "source": "Gabriel Soma",
+    "status": "Live 10.2.0",
+    "currentEffect": "While holding a depleted Toolbox, each successful Great repairing Skill Check grants 1 Token, up to 5. Reaching 5 automatically consumes all 5 Tokens and fully recharges the Toolbox; this applies a 50% repair-speed penalty for 40/35/30 seconds. Once per Trial, you can rummage through an opened Chest, which guarantees a basic Toolbox.",
+    "activation": [
+      "Hold a depleted Toolbox to earn tokens from successful Great repairing Skill Checks.",
+      "Rummage through an opened Chest to use the chest effect.",
+      "Ends/deactivates when: The token-gain condition ends when no depleted Toolbox is held.",
+      "Ends/deactivates when: The repair-speed penalty ends after 40/35/30 seconds."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Great repair checks recharge a depleted Toolbox after five tokens, at the cost of temporarily slower repairs, and the perk also grants one Toolbox rummage.",
+    "cooldown": null,
+    "duration": [
+      "Repair-speed penalty: 40/35/30 seconds."
+    ],
+    "tokenOrStackBehavior": "Earn 1 token per successful Great repairing Skill Check while holding a depleted Toolbox; cap 5. At 5, all tokens are consumed and the Toolbox is fully recharged.",
+    "oncePerTrialOrOtherLimits": "The opened-Chest rummage is once per Trial and guarantees a basic Toolbox.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Toolbox recharge is automatic when the fifth token is earned."
+    ],
+    "sourceCharacter": "Gabriel Soma",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "scavenger",
+    "rank": 138,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Objective",
+      "Skill Check"
+    ],
+    "summary": "With a depleted Toolbox, land five Great repair Skill Checks to fully recharge it once; the recharge applies a severe temporary repair-speed penalty, and you can also rummage once for a basic Toolbox.",
+    "metaStatus": "Situational",
+    "skillLevel": "Very High",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Fully restore a powerful depleted Toolbox for another later burst of generator speed.",
+      "Earn the recharge while continuing normal generator work if you can hit Great Skill Checks.",
+      "Use the once-per-Trial rummage as a fallback source of a basic Toolbox."
+    ],
+    "counters": [
+      "Requires five Great repair Skill Checks after the Toolbox is depleted.",
+      "Recharging applies a 50% repair-speed penalty for 30 seconds at Tier III.",
+      "Average players may take too long to generate five qualifying Greats."
+    ],
+    "pros": [
+      "A full high-quality Toolbox recharge can be valuable.",
+      "Rewards strong Skill Check execution.",
+      "Includes a backup Toolbox source."
+    ],
+    "cons": [
+      "Severe temporary repair penalty.",
+      "Long and uncertain setup.",
+      "Built to Last often provides easier Item recycling."
+    ],
+    "analysis": [
+      "Scavenger can fully recharge a depleted Toolbox, but the route to that reward is deliberately awkward: the Toolbox must already be empty and the Survivor must then land five Great basic repair Skill Checks.",
+      "The 50% repair-speed penalty after the recharge complicates the timing of the perk's objective payoff. The user can spend that window rescuing, healing, or rotating, but doing so delays access to the refilled Toolbox.",
+      "Hyperfocus can share the same expert Great-check shell, while Built to Last offers a simpler item-recycling route. Stake Out is not support for Scavenger in live 10.2 because its special Skill Checks do not activate other Skill Check perks.",
+      "Scavenger therefore remains a high-execution resource perk with a real payoff and a much lower floor than Built to Last."
+    ],
+    "verdict": "A full Toolbox recharge with strings attached. Scavenger can be strong in an expert Skill Check build, but five Greats plus a temporary 50% repair penalty is a steep invoice.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Toolbox"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Gabriel Soma"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "built-to-last",
+      "deja-vu"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "stake-out"
+    ],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "Built to Last",
+      "Déjà Vu"
+    ],
+    "antiSynergies": [
+      "Stake Out"
+    ]
+  }
+}

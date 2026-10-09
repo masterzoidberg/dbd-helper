@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "batch": "141-145",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boon-illumination",
+  "mechanics": {
+    "name": "Boon: Illumination",
+    "alternateName": null,
+    "source": "Alan Wake",
+    "status": "Live 10.2.0",
+    "currentEffect": "While next to a Totem, use the Active Ability button to bless it, creating a unique Boon Totem that combines all of your equipped Boons. Survivors within its 24-metre range see the Auras of Chests and Generators. While you have a Boon Totem, you bless Totems 150/175/200% faster.",
+    "activation": [
+      "Bless a Totem to create your Boon Totem.",
+      "Aura reading applies to Survivors within the Boon's 24-metre range.",
+      "The blessing-speed bonus requires you to have an active Boon Totem.",
+      "Ends/deactivates when: Aura reading ends outside the Boon's range or when the Boon is snuffed.",
+      "Ends/deactivates when: The blessing-speed bonus ends when you no longer have an active Boon Totem."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Replaced the 6/8/10% Blessing/Cleansing bonus with 150/175/200% faster Blessing while the perk owner's Boon Totem is active; Aura effects remain.",
+    "plainEnglishSummary": "Your Boon reveals nearby Chests and Generators, and having an active Boon makes your future blessing actions dramatically faster.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One active Boon Totem per Survivor; all equipped Boon effects are combined on that Totem.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 10.2.0 speed bonus applies to Blessing only; the former separate Blessing/Cleansing speed bonus was removed."
+    ],
+    "sourceCharacter": "Alan Wake",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boon-illumination",
+    "rank": 142,
+    "tier": "C",
+    "roles": [
+      "Boon",
+      "Information",
+      "Utility"
+    ],
+    "summary": "Your Boon reveals nearby Chests and Generators, and while it stays lit you bless future Totems up to 200% faster.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Relocate an already-active Boon much faster when a dedicated Boon build needs to follow the active objective area.",
+      "Provide local Generator and Chest Aura information inside the Boon radius.",
+      "Support Steadfast-centered or multi-Boon packages where frequent relocation is actually part of the plan."
+    ],
+    "counters": [
+      "The Killer can snuff the Boon and remove the active infrastructure.",
+      "The speed bonus is worded around having a lit Boon Totem; post-snuff re-blessing remains a controlled-test question.",
+      "Relocating a Boon can cost more objective time than simply staying on a Generator."
+    ],
+    "pros": [
+      "Very large blessing-speed bonus for relocation while a Boon remains active.",
+      "Can be a strong infrastructure component in a dedicated Boon package.",
+      "Provides team-visible local objective information."
+    ],
+    "cons": [
+      "Low global value outside a dedicated Boon build.",
+      "Does not justify moving a Boon when the relocation itself loses more time than it saves.",
+      "Post-snuff rebuild behavior should not be claimed until controlled testing settles it."
+    ],
+    "analysis": [
+      "Boon: Illumination has a clear split between global value and archetype value. Its global rank stays low because the perk needs a meaningful Boon package before faster relocation matters.",
+      "Inside a Steadfast-centered or multi-Boon build, the relocation speed can be a real piece of infrastructure. Live gameplay showed that relocating the Boon can be extremely fast, but also showed the opportunity-cost problem: moving the Boon for modest Generator value can lose more time than simply repairing.",
+      "The current wording ties the blessing-speed bonus to already having a lit Boon Totem. The post-snuff case remains a mechanics test, so v15 does not describe fast rebuilding after a snuff as established behavior.",
+      "This is exactly why v15 separates global rank from archetype ratings: a low-global perk can still be a strong component of a specialized package."
+    ],
+    "verdict": "Low global priority, potentially strong Boon-package infrastructure. Judge it as a specialist component, not a standalone information perk.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Setup"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      135,
+      150
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "mechanics-flag",
+    "evidenceStatus": "needs-controlled-testing",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Alan Wake"
+    },
+    "synergyPerkIds": [
+      "boon-shadow-step",
+      "boon-circle-of-healing",
+      "boon-steadfast",
+      "boon-dark-theory"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [
+      {
+        "archetype": "Steadfast relocation",
+        "grade": "B+/A-",
+        "requires": [
+          "boon-steadfast"
+        ],
+        "note": "Strong infrastructure component when an active Boon must follow generator clusters; this does not assume fast post-snuff rebuilding.",
+        "confidence": "Medium"
+      }
+    ],
+    "synergies": [
+      "Boon: Shadow Step",
+      "Boon: Circle of Healing",
+      "Boon: Steadfast",
+      "Boon: Dark Theory"
+    ],
+    "antiSynergies": []
+  }
+}

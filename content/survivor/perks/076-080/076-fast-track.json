@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "076-080",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "fast-track",
+  "mechanics": {
+    "name": "Fast Track",
+    "alternateName": null,
+    "source": "Lee Yun-Jin",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you unhook another Survivor, you earn 1 Token, up to 1/2/3. While repairing a Generator, hitting a Great basic Skill Check spends all your Tokens; each Token spent grants that Generator 5% permanent progress.",
+    "activation": [
+      "You must unhook another Survivor to gain a Token.",
+      "You must be repairing a Generator and hit a Great basic Skill Check to spend Tokens.",
+      "Ends/deactivates when: Tokens are removed when spent on a Great basic repair Skill Check."
+    ],
+    "patchNote": "Latest live balance change (9.6.0): Changed the trigger to your unhooks, capped the perk at 1/2/3 Tokens, and set progress to 5% per Token (from the prior rework's 1% live value).",
+    "plainEnglishSummary": "Your unhooks bank tokens that add permanent Generator progress when you hit a Great repair Skill Check.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Gain 1 Token per Survivor you unhook, up to the tier cap of 1/2/3. A Great basic Skill Check while repairing spends all currently held Tokens; each spent Token grants 5% permanent Generator progress.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Lee Yun-Jin",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "fast-track",
+    "rank": 76,
+    "tier": "B",
+    "roles": [
+      "Objective",
+      "Rescue",
+      "Skill Check"
+    ],
+    "summary": "Each time you unhook another Survivor, gain one Token up to three; a Great generator Skill Check spends all Tokens for 5% permanent progress each.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium–High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure",
+      "hook-state"
+    ],
+    "useCases": [
+      "Turn successful rescue participation into permanent generator progress.",
+      "Bank multiple Tokens for a single 10–15% objective swing.",
+      "Pair with Skill Check support so the conversion is reliable."
+    ],
+    "counters": [
+      "You must personally unhook Survivors to earn Tokens.",
+      "Requires a Great basic Skill Check to cash out.",
+      "Maximum storage is only three Tokens."
+    ],
+    "pros": [
+      "Permanent generator progress is powerful.",
+      "Rescue activity naturally occurs in most matches.",
+      "Can create a 15% burst from a fully stocked trigger."
+    ],
+    "cons": [
+      "Much weaker than its older version for passive token gain.",
+      "Competes with rescue perks that help ensure the unhook itself is safe.",
+      "Great Skill Check requirement adds execution risk."
+    ],
+    "analysis": [
+      "Fast Track sits at this position because the live rework changed its identity from passive teammate-hook scaling into a personal rescue-to-objective converter. Each unhook grants one Token, and a later Great Skill Check turns those Tokens into permanent generator progress.",
+      "Fifteen percent permanent progress at three Tokens is a real swing. Permanent progress is especially valuable because regression cannot erase the charges that were removed from the generator's remaining requirement in the same way normal progress can be lost.",
+      "The catch is that you must personally generate the rescues and then land the Great Skill Check. A player who is chased often or loses rescue priority may struggle to build Tokens at all.",
+      "That lower consistency is why Fast Track no longer sits near its old ranking. The payoff is good, but the modern setup makes it a specialized objective perk instead of a broadly elite one."
+    ],
+    "verdict": "A respectable rescue-to-generator conversion perk after its rework. Fast Track can create real permanent progress, but only if you personally earn the unhooks and land the Great.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Lee Yun-Jin"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "deja-vu",
+      "well-make-it"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "stake-out"
+    ],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "Déjà Vu",
+      "We'll Make It"
+    ],
+    "antiSynergies": [
+      "Stake Out"
+    ]
+  }
+}

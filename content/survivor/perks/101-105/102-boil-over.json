@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "101-105",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boil-over",
+  "mechanics": {
+    "name": "Boil Over",
+    "alternateName": null,
+    "source": "Kate Denson",
+    "status": "Live 10.2.0",
+    "currentEffect": "While carried, your wiggle effects are 60/70/80% more effective and the Killer cannot read Hook Auras within 16 metres. If the Killer falls from a height while carrying you, gain 33% of your current wiggle progress.",
+    "activation": [
+      "Be carried by the Killer.",
+      "Killer must fall from a height while carrying you for the extra progress.",
+      "Ends/deactivates when: Effects end when the Killer stops carrying you."
+    ],
+    "patchNote": "Latest live balance change (5.7.0): Set struggle-effect strength to 60/70/80% (was 50/75/100%).",
+    "plainEnglishSummary": "While carried, you wiggle more effectively, hide nearby Hook Auras, and gain progress if the Killer falls.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 33% bonus is based on current wiggle progress."
+    ],
+    "sourceCharacter": "Kate Denson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boil-over",
+    "rank": 102,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Utility"
+    ],
+    "summary": "While carried, strengthen wiggle effects, hide nearby Hook Auras from the Killer, and gain a chunk of current wiggle progress if the Killer falls from sufficient height.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "dying-state"
+    ],
+    "useCases": [
+      "Make tight indoor or elevated carry routes harder to navigate.",
+      "Exploit drops where the Killer must descend while carrying you.",
+      "Combine with anti-carry teammates and hook denial."
+    ],
+    "counters": [
+      "Flat open maps may provide almost no meaningful terrain interaction.",
+      "Strong Killers can compensate for stronger wiggle movement.",
+      "Nearby hook availability can make the hidden Aura effect irrelevant."
+    ],
+    "pros": [
+      "Can be oppressive on specific maps and elevated zones.",
+      "Requires no active input after downing.",
+      "Synergizes naturally with carry-denial builds."
+    ],
+    "cons": [
+      "Highly map-dependent.",
+      "Often accomplishes nothing against short carry routes.",
+      "Can encourage unproductive attempts to die in awkward corners."
+    ],
+    "analysis": [
+      "Boil Over ranks this position because map geometry determines almost everything. On elevated structures and cramped indoor routes, stronger wiggle movement plus hidden nearby Hook Auras can make carrying genuinely uncomfortable.",
+      "The drop bonus is where the perk can become dangerous. If the Killer must fall far enough while carrying you, the extra wiggle progress can suddenly turn an ordinary route into an escape threat.",
+      "On many maps, none of that happens. The Killer sees a nearby hook, walks ten metres, and hooks normally. Skilled Killers also learn the hook layouts well enough that missing a nearby Aura is not always meaningful.",
+      "Boil Over is therefore a classic map-dependent carry-denial perk. Its notorious matches are real, but they are not representative enough to justify a high general ranking."
+    ],
+    "verdict": "Annoying and occasionally oppressive on the right terrain, ordinary everywhere else. Boil Over is a map specialist, not a universal anti-carry solution.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Carry",
+      "Wiggle",
+      "Map Dependent"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Kate Denson"
+    },
+    "synergyPerkIds": [
+      "flip-flop",
+      "breakout",
+      "saboteur",
+      "power-struggle"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Flip-Flop",
+      "Breakout",
+      "Saboteur",
+      "Power Struggle"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -10,51 +10,120 @@
     "source": "Taurie Cain",
     "status": "Live 10.2.0",
     "currentEffect": "Once per Trial, while you have fewer than 2 Hook States and are next to a hooked Survivor, use Active Ability Button 2 to unhook them. They lose 1 Hook State; you gain 1 Hook State, scream, become Injured, and become Broken for 160/140/120 seconds.",
-    "activation": ["Once per Trial, have fewer than 2 Hook States.","Stand next to a hooked Survivor and use Active Ability Button 2 to unhook them.","Ends/deactivates when: After use, the perk cannot be used again by that Survivor during the Trial.","Ends/deactivates when: Broken ends after 160/140/120 seconds."],
+    "activation": [
+      "Once per Trial, have fewer than 2 Hook States.",
+      "Stand next to a hooked Survivor and use Active Ability Button 2 to unhook them.",
+      "Ends/deactivates when: After use, the perk cannot be used again by that Survivor during the Trial.",
+      "Ends/deactivates when: Broken ends after 160/140/120 seconds."
+    ],
     "patchNote": "Latest live balance change (10.2.0): Replaced the Exposed (60/50/40 s) downside with becoming Injured and Broken for 160/140/120 seconds; the PTB's deactivation for all other Survivors did not ship.",
     "plainEnglishSummary": "Once per Trial, transfer one Hook State from a hooked teammate to yourself, becoming injured and temporarily Broken.",
     "cooldown": null,
-    "duration": ["Broken: 160/140/120 seconds by tier."],
+    "duration": [
+      "Broken: 160/140/120 seconds by tier."
+    ],
     "tokenOrStackBehavior": null,
     "oncePerTrialOrOtherLimits": "Once per Trial for the perk user; cannot be used if you already have 2 Hook States.",
-    "statusEffectsInvolved": ["Broken"],
-    "specialInteractions": ["The unhooked Survivor loses 1 Hook State and the perk user gains 1 Hook State.","The PTB-wide deactivation for all other Survivors was removed before the final live release."],
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "The unhooked Survivor loses 1 Hook State and the perk user gains 1 Hook State.",
+      "The PTB-wide deactivation for all other Survivors was removed before the final live release."
+    ],
     "sourceCharacter": "Taurie Cain",
     "isGeneralPerk": false,
     "currentLivePatchVerified": "10.2.0"
   },
   "editorial": {
+    "id": "shoulder-the-burden",
     "rank": 11,
     "tier": "A",
-    "roles": ["Anti-Tunnel","Rescue","Team Support"],
+    "roles": [
+      "Anti-Tunnel",
+      "Rescue",
+      "Team Support"
+    ],
     "summary": "Once per Trial, erase one Hook State from a teammate by taking it yourself; you become Injured and Broken, but other teammates can still use their own copy later.",
     "metaStatus": "Strong",
     "skillLevel": "Medium–High",
     "soloQ": 3,
     "swf": 5,
     "unlockPriority": "Medium–High",
-    "glossaryKeys": ["tunneling","anti-tunnel","hook-state","trade","swf","solo-q"],
-    "useCases": ["Pull a tunneled teammate away from immediate elimination.","Spread Hook States across the team so the Killer needs more total hooks to secure a kill.","Protect a weaker teammate or a teammate carrying key endgame value."],
-    "counters": ["Using it at the wrong time can simply make you the new tunnel target.","The live cost leaves you Injured and Broken for 160/140/120 seconds.","It gives little value when the Killer is already spreading hooks evenly.","One poorly timed use consumes the perk for the rest of the Trial."],
-    "synergies": ["Will to Live","Deliverance","Dead Hard","Reassurance"],
-    "pros": ["Directly manipulates Hook State economy, something very few perks can do.","Can erase a large portion of a tunneling strategy with one rescue.","Becomes especially difficult for the Killer to plan around in coordinated teams."],
-    "cons": ["Requires strong timing and an accurate read of who actually needs the Hook State transfer.","Transfers danger rather than deleting it, so the user must be ready to survive the next chase."],
-    "analysis": ["Shoulder the Burden remains one of the strongest ways to attack tunneling because it changes Hook State economy directly. One use can pull a teammate back from Death Hook and transfer that danger onto a Survivor with more room to spare.","The live 10.2 cost is severe: the user becomes Injured and Broken for 160/140/120 seconds. That creates real healing and chase consequences after the trade.","Each Survivor can still use their own copy once per Trial, preserving a very high coordinated-team ceiling even though an individual use is substantially more dangerous than before.","That split explains the queue ratings: hook-state redistribution remains exceptional in coordinated teams, while Solo Q has a harder time identifying the right target and timing the transfer safely."],
+    "glossaryKeys": [
+      "tunneling",
+      "anti-tunnel",
+      "hook-state",
+      "trade",
+      "swf",
+      "solo-q"
+    ],
+    "useCases": [
+      "Pull a tunneled teammate away from immediate elimination.",
+      "Spread Hook States across the team so the Killer needs more total hooks to secure a kill.",
+      "Protect a weaker teammate or a teammate carrying key endgame value."
+    ],
+    "counters": [
+      "Using it at the wrong time can simply make you the new tunnel target.",
+      "The live cost leaves you Injured and Broken for 160/140/120 seconds.",
+      "It gives little value when the Killer is already spreading hooks evenly.",
+      "One poorly timed use consumes the perk for the rest of the Trial."
+    ],
+    "pros": [
+      "Directly manipulates Hook State economy, something very few perks can do.",
+      "Can erase a large portion of a tunneling strategy with one rescue.",
+      "Becomes especially difficult for the Killer to plan around in coordinated teams."
+    ],
+    "cons": [
+      "Requires strong timing and an accurate read of who actually needs the Hook State transfer.",
+      "Transfers danger rather than deleting it, so the user must be ready to survive the next chase."
+    ],
+    "analysis": [
+      "Shoulder the Burden remains one of the strongest ways to attack tunneling because it changes Hook State economy directly. One use can pull a teammate back from Death Hook and transfer that danger onto a Survivor with more room to spare.",
+      "The live 10.2 cost is severe: the user becomes Injured and Broken for 160/140/120 seconds. That creates real healing and chase consequences after the trade.",
+      "Each Survivor can still use their own copy once per Trial, preserving a very high coordinated-team ceiling even though an individual use is substantially more dangerous than before.",
+      "That split explains the queue ratings: hook-state redistribution remains exceptional in coordinated teams, while Solo Q has a harder time identifying the right target and timing the transfer safely."
+    ],
     "verdict": "Still elite anti-tunnel utility, now with a much more painful personal cost. Crucially, 10.2 still allows multiple teammates to use their own copy during the Trial.",
     "editorialStatus": "complete",
     "publicationStatus": "published",
-    "tags": ["Hook Economy","Team"],
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Hook Economy",
+      "Team"
+    ],
     "queueRatingStatus": "reviewed",
-    "rankRange": [8,16],
+    "rankRange": [
+      8,
+      16
+    ],
     "rankConfidence": "Medium",
     "rankStatus": "stable",
     "evidenceStatus": "strong-inference",
-    "acquisition": {"type":"character","sourceCharacter":"Taurie Cain"},
-    "synergyPerkIds": ["will-to-live","deliverance","dead-hard","reassurance"],
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Taurie Cain"
+    },
+    "synergyPerkIds": [
+      "will-to-live",
+      "deliverance",
+      "dead-hard",
+      "reassurance"
+    ],
     "synergyOther": [],
     "antiSynergyPerkIds": [],
-    "antiSynergies": [],
     "archetypeRatings": [],
-    "reviewFlags": ["10.2-live-change","v15-schema-migrated","rank-review-applied","queue-rating:audit-explicit"]
+    "synergies": [
+      "Will to Live",
+      "Deliverance",
+      "Dead Hard",
+      "Reassurance"
+    ],
+    "antiSynergies": []
   }
 }

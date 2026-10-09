@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "026-030",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "fixated",
+  "mechanics": {
+    "name": "Fixated",
+    "alternateName": null,
+    "source": "Nancy Wheeler",
+    "status": "Live 10.2.0",
+    "currentEffect": "You walk 10/15/20% faster and can see your own Scratch Marks. The walking-speed bonus also applies while injured.",
+    "activation": [
+      "The walking-speed bonus applies while walking; seeing your own Scratch Marks is passive."
+    ],
+    "patchNote": "Latest live balance change (4.5.0): The walking-speed bonus began working while injured as well as while healthy.",
+    "plainEnglishSummary": "You walk faster and can see the Scratch Marks you leave, including while injured.",
+    "cooldown": null,
+    "duration": [
+      "Permanent while in the Trial."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The walking-speed bonus applies while injured following the 4.5.0 change."
+    ],
+    "sourceCharacter": "Nancy Wheeler",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "fixated",
+    "rank": 28,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Mobility",
+      "Stealth"
+    ],
+    "summary": "Walk 20% faster at Tier III and see your own Scratch Marks, giving unusually strong control over chase pathing and Sprint Burst management.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium–High",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "looping",
+      "exhausted",
+      "pressure"
+    ],
+    "useCases": [
+      "Walk quickly while preserving Sprint Burst instead of giving up enormous map tempo.",
+      "Use faster walking during line-of-sight breaks to change direction without broadcasting a full sprint trail.",
+      "Read your own Scratch Marks to understand exactly what tracking information the Killer is receiving."
+    ],
+    "counters": [
+      "Walking remains much slower than sprinting, so poor positioning cannot be rescued by the bonus.",
+      "Killers with strong direct tracking, Aura reading, or mobility may care less about subtle Scratch-Mark manipulation.",
+      "The perk provides no burst of distance on its own and asks the player to create value through movement decisions."
+    ],
+    "pros": [
+      "Permanent effect with no cooldown, token, or activation requirement.",
+      "One of the best quality-of-life partners for Sprint Burst.",
+      "Scales upward as players learn checkspots, pathing, and Scratch-Mark manipulation."
+    ],
+    "cons": [
+      "Its strongest value is subtle rather than immediately visible.",
+      "Less useful for players who sprint everywhere or do not exploit line-of-sight breaks.",
+      "Does not directly provide Haste while sprinting or protect a health state."
+    ],
+    "analysis": [
+      "Fixated rises to this position after the broader candidate review because a permanent 20% walking-speed increase changes more decisions than it first appears to. Walking is normally too slow to use aggressively, but Fixated makes it practical for preserving Sprint Burst, adjusting around checkspots, and repositioning without immediately painting a fresh trail of Scratch Marks.",
+      "The perk has an unusual skill curve. Newer players benefit from seeing their own Scratch Marks because it teaches what the Killer sees. Intermediate players may dismiss it once they stop getting lost. Advanced players often rediscover the value because faster walking can be woven into mindgames, corner checks, and Sprint Burst timing without surrendering as much distance.",
+      "Its best-known pairing is Sprint Burst. Normally, preserving Sprint Burst by walking everywhere is a serious tempo loss. Fixated reduces that tax and makes selective walking far more practical. The same movement bonus also works while injured, so it does not disappear in the part of the match where chase pathing becomes most important.",
+      "Fixated stays below Off the Record because it does not directly prevent a down or solve tunneling. Its value must be manufactured through movement discipline. But unlike many specialized perks, it is always available, and current usage plus community evaluation still reflect that experienced players can squeeze substantial chase and macro value from it."
+    ],
+    "verdict": "A deceptively powerful movement perk. Fixated is not about walking everywhere; it is about making selective walking fast enough to become a real chase and Sprint Burst management tool.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nancy Wheeler"
+    },
+    "synergyPerkIds": [
+      "sprint-burst",
+      "iron-will",
+      "resilience",
+      "finesse"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Sprint Burst",
+      "Iron Will",
+      "Resilience",
+      "Finesse"
+    ],
+    "antiSynergies": []
+  }
+}

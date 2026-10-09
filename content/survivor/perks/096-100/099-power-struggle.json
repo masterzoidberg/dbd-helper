@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "batch": "096-100",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "power-struggle",
+  "mechanics": {
+    "name": "Power Struggle",
+    "alternateName": null,
+    "source": "Élodie Rakoto",
+    "status": "Live 10.2.0",
+    "currentEffect": "While in the Dying State, reveals the Auras of upright Pallets. Once you reach 25/20/15% Wiggle progression while being carried by the Killer, you can drop a nearby Pallet; it stuns the Killer and makes them release you. The perk deactivates after use.",
+    "activation": [
+      "Be in the Dying State to see upright Pallet Auras.",
+      "While being carried, reach the tier-specific Wiggle progression threshold and have a nearby upright Pallet.",
+      "Ends/deactivates when: Deactivates after dropping a Pallet with the perk."
+    ],
+    "patchNote": "Latest live balance change (5.5.0): Lowered the Wiggle threshold from 35/30/25% to 25/20/15% and added Aura reading for upright Pallets while in the Dying State.",
+    "plainEnglishSummary": "While downed and carried, it shows upright Pallets and lets you drop one to stun the Killer after enough wiggle progress.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Deactivates after use; no separate per-Trial count is stated.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Flip-Flop can convert Recovery progression into Wiggle progression, which can contribute toward the threshold."
+    ],
+    "sourceCharacter": "Élodie Rakoto",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "power-struggle",
+    "rank": 99,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Pallet",
+      "Endgame"
+    ],
+    "summary": "Once your wiggle progress reaches the threshold while being carried, you can drop a nearby upright Pallet yourself and stun the Killer into releasing you.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "dying-state",
+      "looping"
+    ],
+    "useCases": [
+      "Create a self-save when the Killer carries you through an upright pallet.",
+      "Pair with Flip-Flop so ground recovery preloads the wiggle threshold.",
+      "Use pallet Aura information while downed to position for a possible escape."
+    ],
+    "counters": [
+      "Requires the Killer to carry you through a usable upright Pallet.",
+      "Threshold must be reached before passing the pallet.",
+      "After use, the perk deactivates."
+    ],
+    "pros": [
+      "Can directly free you from the Killer's grasp.",
+      "Excellent build synergy.",
+      "Pallet Aura information helps setup."
+    ],
+    "cons": [
+      "Extremely geometry-dependent.",
+      "Often needs another perk to become reliable.",
+      "One-use payoff."
+    ],
+    "analysis": [
+      "Power Struggle ranks this position because escaping the Killer's grasp is one of the biggest individual swings available from a perk, but the setup is demanding. You need sufficient wiggle progress and an upright pallet exactly where the carry path passes.",
+      "Flip-Flop is the classic partner because ground recovery can pre-convert into wiggle progress, allowing Power Struggle to activate much earlier after pickup. Tenacity and Unbreakable help create the same recovery-oriented shell.",
+      "Without that support, the Killer will often reach a hook before the threshold or simply avoid carrying through obvious pallets. Experienced Killers recognize the setup and can path around it.",
+      "The ceiling is excellent and the floor is very low. Power Struggle belongs in B as a build-defining anti-carry option, not a perk you can blindly equip for consistent value."
+    ],
+    "verdict": "A spectacular self-save perk trapped behind geometry and setup. Power Struggle is excellent in its dedicated build and unreliable everywhere else.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Carry",
+      "Escape"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Élodie Rakoto"
+    },
+    "synergyPerkIds": [
+      "flip-flop",
+      "unbreakable",
+      "tenacity",
+      "boil-over"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [
+      {
+        "archetype": "Flip-Flop pallet-save package",
+        "grade": "A-/B+",
+        "requires": [
+          "flip-flop"
+        ],
+        "note": "The combination creates a much higher coordinated ceiling than Power Struggle has as a generic standalone perk.",
+        "confidence": "Medium"
+      }
+    ],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "synergies": [
+      "Flip-Flop",
+      "Unbreakable",
+      "Tenacity",
+      "Boil Over"
+    ],
+    "antiSynergies": []
+  }
+}

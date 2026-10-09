@@ -10,51 +10,113 @@
     "source": "General perk",
     "status": "Live 10.2.0",
     "currentEffect": "While you are hooked, all Survivors see each other's Auras, and while the Killer is within 14/15/16 metres of your Hook, all Survivors see the Killer's Aura. While another Survivor is hooked, you see the Auras of the other Survivors, and while the Killer is within 14/15/16 metres of that hooked Survivor, you see the Killer's Aura.",
-    "activation": ["Any Survivor is hooked.","Ends/deactivates when: The effect ends when no Survivor remains hooked."],
+    "activation": [
+      "Any Survivor is hooked.",
+      "Ends/deactivates when: The effect ends when no Survivor remains hooked."
+    ],
     "patchNote": "Latest live balance change (10.2.0): Increased Killer Aura reveal radius around a Hook from 8/12/16 metres to 14/15/16 metres; Survivor Aura-sharing behavior is unchanged.",
     "plainEnglishSummary": "Hook events share teammate Auras and reveal the Killer near the Hook, with the Killer-reveal radius now 14/15/16 metres.",
     "cooldown": null,
-    "duration": ["While a Survivor is hooked."],
+    "duration": [
+      "While a Survivor is hooked."
+    ],
     "tokenOrStackBehavior": null,
     "oncePerTrialOrOtherLimits": null,
     "statusEffectsInvolved": [],
-    "specialInteractions": ["When the perk owner is hooked, the other Survivors see one another's Auras; when another Survivor is hooked, the perk owner sees all other Survivors' Auras."],
+    "specialInteractions": [
+      "When the perk owner is hooked, the other Survivors see one another's Auras; when another Survivor is hooked, the perk owner sees all other Survivors' Auras."
+    ],
     "sourceCharacter": "General",
     "isGeneralPerk": true,
     "currentLivePatchVerified": "10.2.0"
   },
   "editorial": {
+    "id": "kindred",
     "rank": 15,
     "tier": "A",
-    "roles": ["Information","Rescue"],
+    "roles": [
+      "Information",
+      "Rescue"
+    ],
     "summary": "Turns hook events into team-wide positioning information and shows the Killer near the hook.",
     "metaStatus": "Strong",
     "skillLevel": "Low",
     "soloQ": 5,
     "swf": 2,
     "unlockPriority": "High",
-    "glossaryKeys": ["aura-reading","solo-q","swf","terror-radius","hook-state"],
-    "useCases": ["Know whether somebody else is already rotating for the rescue so you can stay on your generator.","See whether the Killer is lingering near the hook before committing to a save.","Read teammate rotations when another Survivor is hooked in Solo Q."],
-    "counters": ["Voice comms can reproduce much of the teammate-position information in a coordinated SWF.","The perk provides information but cannot force random teammates to make the correct decision.","The Killer-aura portion is limited to the hook area."],
-    "synergies": ["Open-Handed","We'll Make It","Reassurance","Deliverance"],
-    "pros": ["Excellent Solo Q coordination without requiring any setup.","General perk, so there is no character unlock investment.","Useful whether you are the hooked Survivor or somebody deciding how to react to a hook."],
-    "cons": ["Much less unique in a four-person team with strong comms.","No direct chase or repair-speed benefit.","Value appears around hook events rather than continuously."],
-    "analysis": ["Kindred attacks one of Solo Q’s biggest sources of lost time: duplicated or absent rescue rotations. When a teammate is hooked, knowing that another Survivor is already moving toward the rescue lets you keep repairing instead of becoming the second or third person walking toward the same hook.","It is equally useful when you are the hooked Survivor because your teammates can see one another. That makes it easier for the team to identify who should stay on a generator, who is in chase, and who is positioned to rescue. The nearby Killer aura adds another layer by exposing obvious camping or immediate hook pressure.","Otz explicitly treated Kindred as somewhat artificially high in his 9.5 list because it fills knowledge gaps that newer and Solo Q players struggle with. We agree with that philosophy, but not because the perk is secretly weak. Match information has real tempo value when it prevents three people from abandoning generators for the same rescue."],
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "swf",
+      "terror-radius",
+      "hook-state"
+    ],
+    "useCases": [
+      "Know whether somebody else is already rotating for the rescue so you can stay on your generator.",
+      "See whether the Killer is lingering near the hook before committing to a save.",
+      "Read teammate rotations when another Survivor is hooked in Solo Q."
+    ],
+    "counters": [
+      "Voice comms can reproduce much of the teammate-position information in a coordinated SWF.",
+      "The perk provides information but cannot force random teammates to make the correct decision.",
+      "The Killer-aura portion is limited to the hook area."
+    ],
+    "pros": [
+      "Excellent Solo Q coordination without requiring any setup.",
+      "General perk, so there is no character unlock investment.",
+      "Useful whether you are the hooked Survivor or somebody deciding how to react to a hook."
+    ],
+    "cons": [
+      "Much less unique in a four-person team with strong comms.",
+      "No direct chase or repair-speed benefit.",
+      "Value appears around hook events rather than continuously."
+    ],
+    "analysis": [
+      "Kindred attacks one of Solo Q’s biggest sources of lost time: duplicated or absent rescue rotations. When a teammate is hooked, knowing that another Survivor is already moving toward the rescue lets you keep repairing instead of becoming the second or third person walking toward the same hook.",
+      "It is equally useful when you are the hooked Survivor because your teammates can see one another. That makes it easier for the team to identify who should stay on a generator, who is in chase, and who is positioned to rescue. The nearby Killer aura adds another layer by exposing obvious camping or immediate hook pressure.",
+      "Otz explicitly treated Kindred as somewhat artificially high in his 9.5 list because it fills knowledge gaps that newer and Solo Q players struggle with. We agree with that philosophy, but not because the perk is secretly weak. Match information has real tempo value when it prevents three people from abandoning generators for the same rescue."
+    ],
     "verdict": "Outstanding overall and exceptional comfort in Solo Q. It is simple, reliable, and one of the best ways to stop random-team hook rotations from turning into wasted minutes.",
     "editorialStatus": "complete",
     "publicationStatus": "published",
-    "tags": ["Info","Unhooking","Solo Q"],
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Info",
+      "Unhooking",
+      "Solo Q"
+    ],
     "queueRatingStatus": "reviewed",
-    "rankRange": [10,22],
+    "rankRange": [
+      10,
+      22
+    ],
     "rankConfidence": "Medium",
     "rankStatus": "stable",
     "evidenceStatus": "inherited",
-    "acquisition": {"type":"general","sourceCharacter":"General"},
-    "synergyPerkIds": ["open-handed","well-make-it","reassurance","deliverance"],
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "open-handed",
+      "well-make-it",
+      "reassurance",
+      "deliverance"
+    ],
     "synergyOther": [],
     "antiSynergyPerkIds": [],
-    "antiSynergies": [],
     "archetypeRatings": [],
-    "reviewFlags": ["10.2-live-change","v15-schema-migrated","rank-review-applied","queue-rating:audit-explicit"]
+    "synergies": [
+      "Open-Handed",
+      "We'll Make It",
+      "Reassurance",
+      "Deliverance"
+    ],
+    "antiSynergies": []
   }
 }

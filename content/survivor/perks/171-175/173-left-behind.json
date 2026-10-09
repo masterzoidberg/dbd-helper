@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "171-175",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "left-behind",
+  "mechanics": {
+    "name": "Left Behind",
+    "alternateName": null,
+    "source": "William \"Bill\" Overbeck",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you are the last Survivor remaining in the Trial, the Hatch's Aura is revealed to you within 24/28/32 m.",
+    "activation": [
+      "Be the last Survivor remaining in the Trial.",
+      "Ends/deactivates when: The effect ends when the Trial ends or you are no longer the last Survivor remaining."
+    ],
+    "patchNote": "Latest live balance change (3.2.0): Reworked the perk to reveal the Hatch's Aura within 24/28/32 m when you are the last Survivor alive.",
+    "plainEnglishSummary": "As the last Survivor remaining, you can see the Hatch's Aura within the tier's range.",
+    "cooldown": null,
+    "duration": [
+      "While you are the last Survivor remaining; Aura reveal is range-limited."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "William \"Bill\" Overbeck",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "left-behind",
+    "rank": 173,
+    "tier": "D",
+    "roles": [
+      "Endgame",
+      "Information"
+    ],
+    "summary": "When you are the last Survivor remaining, see the Hatch Aura within up to 32 metres.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 1,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Locate a nearby open Hatch quickly after becoming the last Survivor.",
+      "Reduce endgame wandering on indoor maps.",
+      "Pair with other last-Survivor tools for a dedicated escape fallback."
+    ],
+    "counters": [
+      "Does nothing until every teammate is dead or gone.",
+      "Only reveals the Hatch within 32 metres.",
+      "A perk that helps after team collapse cannot help prevent that collapse."
+    ],
+    "pros": [
+      "Simple Hatch information.",
+      "Can save a desperate final escape.",
+      "No setup once the condition is met."
+    ],
+    "cons": [
+      "Dead for almost the entire Trial.",
+      "Selfish endgame-only value.",
+      "Short enough range that the Hatch may still require searching."
+    ],
+    "analysis": [
+      "Left Behind is mechanically clear and strategically bleak: once you are alone, it helps find the Hatch. That can absolutely turn a final 1v1 search into an escape if the Hatch spawns nearby.",
+      "The issue is opportunity cost. One of four perk slots contributes nothing while the team is still alive, meaning it does not help create the circumstances in which several Survivors escape together.",
+      "The thirty-two-metre limit also means it is guidance rather than a global Hatch reveal. Indoor maps can still require substantial movement before the Aura appears.",
+      "Dedicated escape challenges may justify it, but general ranking must punish a perk that only matters after the team has already lost most of its structure."
+    ],
+    "verdict": "Good at finding Hatch, bad at everything required before Hatch matters. Left Behind is a last-person fallback, not a team survival perk.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Last Survivor",
+      "Hatch"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "William \"Bill\" Overbeck"
+    },
+    "synergyPerkIds": [
+      "down-to-the-last",
+      "clairvoyance",
+      "wake-up"
+    ],
+    "synergyOther": [
+      "Sole-survivor strategies"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Down to the Last",
+      "Clairvoyance",
+      "Wake Up!",
+      "Sole-survivor strategies"
+    ],
+    "antiSynergies": []
+  }
+}

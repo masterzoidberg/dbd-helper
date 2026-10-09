@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "batch": "021-025",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "background-player",
+  "mechanics": {
+    "name": "Background Player",
+    "alternateName": null,
+    "source": "Renato Lyra",
+    "status": "Live 10.2.0",
+    "currentEffect": "When the Killer picks up another Survivor from the Dying State, the perk activates for 10 seconds. Starting to run during that window grants 50% Haste for 5 seconds. It cannot be used while Exhausted and causes Exhausted for 30/25/20 seconds after use.",
+    "activation": [
+      "The Killer picks up another Survivor in the Dying State.",
+      "Start running within the 10-second window.",
+      "You must not be Exhausted.",
+      "Ends/deactivates when: Window ends after 10 seconds; Haste ends after 5 seconds."
+    ],
+    "patchNote": "Latest live balance change (8.0.0): Reduced the Exhausted duration to 30/25/20 seconds and the Haste bonus to 150% (50% bonus).",
+    "plainEnglishSummary": "A Killer pickup of a teammate opens a short window to sprint with a Haste burst.",
+    "cooldown": null,
+    "duration": [
+      "Activation window: 10 seconds.",
+      "Haste: 5 seconds.",
+      "Exhausted: 30/25/20 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste",
+      "Exhausted"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "Renato Lyra",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "background-player",
+    "rank": 25,
+    "tier": "A",
+    "roles": [
+      "Rescue",
+      "Mobility",
+      "Team Support"
+    ],
+    "summary": "When the Killer picks up a teammate, you can trigger a 50% Haste burst for 5 seconds to reach a save or bodyblock angle.",
+    "metaStatus": "Strong",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "haste",
+      "exhausted",
+      "dying-state",
+      "bodyblock",
+      "protection-hit"
+    ],
+    "useCases": [
+      "Reach a flashlight, Flashbang, pallet, sabotage, or bodyblock angle immediately after a Killer pickup.",
+      "Cover large distances quickly when a pickup happens outside your immediate area.",
+      "Create coordinated save chains where one Survivor's down becomes a rescue opportunity instead of a guaranteed hook."
+    ],
+    "counters": [
+      "It only activates when the Killer picks up another Survivor from the Dying State.",
+      "You must not already be Exhausted.",
+      "Running too early, from too far away, or with no realistic save angle can waste the activation and your positioning.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "One of the strongest mobility tools for pickup-save builds.",
+      "Tier III Exhaustion is only 20 seconds, allowing relatively frequent reuse.",
+      "Can completely overturn a down when combined with good timing and a valid save tool."
+    ],
+    "cons": [
+      "Provides little value if you are not actively playing around saves.",
+      "Requires strong positioning, timing, and knowledge of pickup routes.",
+      "Can lure players into abandoning generators for low-percentage hero plays."
+    ],
+    "analysis": [
+      "Background Player takes this position because it can convert a Killer pickup into an immediate threat from a Survivor who otherwise would have been too far away to participate. Five seconds of a 50% Haste bonus is enormous travel distance, and that distance is exactly what flashlight, Flashbang, sabotage, pallet, and bodyblock saves often need.",
+      "The perk has a much higher skill requirement than Bond or Off the Record. The user must already understand pickup timing, likely hook routes, save angles, and whether a rescue attempt is actually realistic. Activating the perk and sprinting across the map without a plan can cost more team tempo than the perk ever returns.",
+      "Its ceiling rises sharply in SWF. Teammates can call where the down happened, which direction the Killer is facing, whether a pallet is nearby, and whether a sabotage angle exists. That communication turns the Haste burst into a deliberate tool. Solo Q users can still make spectacular saves, but they have less reliable information and a much greater chance of arriving to a situation that cannot be rescued.",
+      "Background Player ranks this high because a successful activation can erase a down, which is one of the largest possible swings a Survivor perk can create. It stays outside the top twenty because that value is specialized. Players who are not committed to a save-oriented role will get more reliable value from broader perks."
+    ],
+    "verdict": "A specialized but explosive rescue perk. Background Player is mediocre if you merely run fast after pickups, and exceptional if you already know exactly what save angle that speed is supposed to create.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Save"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Renato Lyra"
+    },
+    "synergyPerkIds": [
+      "bond",
+      "flashbang",
+      "saboteur",
+      "breakout"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "synergies": [
+      "Bond",
+      "Flashbang",
+      "Saboteur",
+      "Breakout"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "091-095",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "second-wind",
+  "mechanics": {
+    "name": "Second Wind",
+    "alternateName": null,
+    "source": "Steve Harrington",
+    "status": "Live 10.2.0",
+    "currentEffect": "Healing another Survivor for the equivalent of 1 Health State activates the perk. The next time you are unhooked or unhook yourself, you become Broken until the perk deactivates and are automatically healed by 1 Health State after 28/24/20 seconds. It deactivates if the heal succeeds or you enter the Dying State before the timer elapses. It cannot activate while you are already Broken.",
+    "activation": [
+      "Heal another Survivor for the equivalent of 1 Health State.",
+      "After activation, be unhooked or unhook yourself.",
+      "Ends/deactivates when: The delayed heal succeeds.",
+      "Ends/deactivates when: You enter the Dying State before the timer elapses.",
+      "Ends/deactivates when: The perk cannot activate if you already have Broken."
+    ],
+    "patchNote": "Latest live balance change (4.5.0): Reduced the delayed-heal duration to 28/24/20 seconds.",
+    "plainEnglishSummary": "After healing a teammate, your next unhook starts a delayed self-heal, unless you are downed first.",
+    "cooldown": null,
+    "duration": [
+      "The automatic heal occurs after 28/24/20 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "Broken is applied after the unhook and remains until the perk deactivates."
+    ],
+    "sourceCharacter": "Steve Harrington",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "second-wind",
+    "rank": 93,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Anti-Tunnel",
+      "Self-Sustain"
+    ],
+    "summary": "After healing another Survivor for one full Health State, your next unhook starts a short Broken timer that automatically heals you if you avoid going down.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "health-state",
+      "broken",
+      "anti-tunnel",
+      "tunneling"
+    ],
+    "useCases": [
+      "Bank a future post-unhook heal through normal altruistic play.",
+      "Force a tunneling Killer to down you before the automatic heal finishes.",
+      "Skip the need to find a teammate for a post-unhook reset."
+    ],
+    "counters": [
+      "You must complete a full teammate heal first.",
+      "Going down before the timer finishes cancels the heal.",
+      "Broken prevents ordinary healing during the countdown."
+    ],
+    "pros": [
+      "Automatic health-state recovery after unhook.",
+      "Rewards useful team healing.",
+      "No teammate required for the eventual self-heal."
+    ],
+    "cons": [
+      "Requires setup before being hooked.",
+      "Tunnel pressure can cancel the payoff.",
+      "Broken timer can be awkward if a safe heal is already available."
+    ],
+    "analysis": [
+      "Second Wind ranks this position because its payoff is clean once armed: survive a short period after unhook and receive an automatic health state. That can save a full healing interaction and return the Survivor to Healthy without pulling another teammate off objectives.",
+      "The activation cost is reasonable but real. You must first heal another Survivor for the equivalent of one Health State, meaning the perk can fail to arm before your first hook if the match does not present the opportunity.",
+      "Against tunneling, the timer creates a small test. If the Killer cannot down you before it expires, you effectively gain another health state mid-chase. If they do down you, the perk provides nothing.",
+      "That makes Second Wind a respectable self-sustain perk. Its ceiling is useful and its setup encourages good team play, but the heal arrives on a schedule the Killer can actively interrupt."
+    ],
+    "verdict": "A solid banked post-unhook heal. Second Wind rewards altruism with future independence, but tunnel pressure can erase the entire payoff.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Steve Harrington"
+    },
+    "synergyPerkIds": [
+      "babysitter",
+      "off-the-record",
+      "resurgence",
+      "well-make-it"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Babysitter",
+      "Off the Record",
+      "Resurgence",
+      "We'll Make It"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "151-155",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "no-mither",
+  "mechanics": {
+    "name": "No Mither",
+    "alternateName": null,
+    "source": "David King",
+    "status": "Live 10.2.0",
+    "currentEffect": "You are permanently afflicted with Broken. You leave no Pools of Blood and your Grunts of Pain are fully suppressed while Injured or in the Dying State. You can fully recover from the Dying State, recovering 15/20/25% faster according to perk tier.",
+    "activation": [
+      "The perk is equipped; its Broken effect applies from the start of the Trial.",
+      "Enter the Dying State to use the unlocked full self-recovery ability.",
+      "Ends/deactivates when: Broken and the sound/blood suppression are permanent while the perk is equipped; self-recovery is available only while in the Dying State."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Increased Grunts of Pain volume reduction to 100% at all tiers from 25/50/75%.",
+    "plainEnglishSummary": "You remain Broken but make no blood pools or pain grunts and can fully recover from the Dying State faster.",
+    "cooldown": null,
+    "duration": [
+      "Broken: permanent for the Trial while equipped.",
+      "Self-recovery speed bonus: while recovering from the Dying State; no separate duration."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "No Mither allows a Survivor to complete self-recovery to full while in the Dying State; it does not remove the Broken status."
+    ],
+    "sourceCharacter": "David King",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "no-mither",
+    "rank": 154,
+    "tier": "C",
+    "roles": [
+      "Anti-Slug",
+      "Stealth",
+      "Utility"
+    ],
+    "summary": "Remain permanently Broken, but leave no Blood, make no Injured/Dying pain sounds, recover 25% faster, and fully self-recover from the ground.",
+    "metaStatus": "Situational",
+    "skillLevel": "Very High",
+    "soloQ": 1,
+    "swf": 3,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "broken",
+      "dying-state",
+      "anti-slug"
+    ],
+    "useCases": [
+      "Guarantee that slugging can never permanently keep you on the ground.",
+      "Run silent Injured-state builds with permanent Resilience access.",
+      "Use in coordinated challenge or recovery strategies that plan around permanent injury."
+    ],
+    "counters": [
+      "The Killer knows immediately that you can only take one normal hit before going down.",
+      "Permanent Broken removes ordinary healing and most healthy-state protection.",
+      "A Killer can simply pick you up instead of slugging."
+    ],
+    "pros": [
+      "Unlimited full self-recovery from the Dying State.",
+      "No Blood and completely silent pain sounds.",
+      "Permanent Injured state guarantees injured-only perk activation."
+    ],
+    "cons": [
+      "Permanent Broken is one of the largest self-imposed downsides in the game.",
+      "Telegraphs the perk and recovery threat immediately.",
+      "Can make ordinary chases dramatically less forgiving."
+    ],
+    "analysis": [
+      "No Mither contains several genuinely powerful effects and pays for them with one enormous drawback. Unlimited full ground recovery, faster recovery, no Blood, and complete pain-sound suppression would be excellent if the user were not permanently Broken.",
+      "Permanent injury means the Killer needs one normal damaging hit to down you throughout the Trial. The Killer also sees the Broken state immediately, so the anti-slug threat is never a surprise.",
+      "The perk becomes more coherent in a dedicated build. Resilience is always active, Dead Hard remains available while injured, and Tenacity or Soul Guard can strengthen the recovery plan.",
+      "Even then, No Mither is a deliberate handicap for most players. Its toolkit is real enough to avoid absolute last place, but the permanent health-state cost dominates the evaluation."
+    ],
+    "verdict": "Several good perks wearing a permanent-Broken trench coat. No Mither has real build tech, but the price of admission is being one hit from the ground all match.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Challenge"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "David King"
+    },
+    "synergyPerkIds": [
+      "resilience",
+      "dead-hard",
+      "tenacity",
+      "soul-guard"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Resilience",
+      "Dead Hard",
+      "Tenacity",
+      "Soul Guard"
+    ],
+    "antiSynergies": []
+  }
+}

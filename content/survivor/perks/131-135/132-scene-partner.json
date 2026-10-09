@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "131-135",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "scene-partner",
+  "mechanics": {
+    "name": "Scene Partner",
+    "alternateName": null,
+    "source": "Nicolas Cage",
+    "status": "Live 10.2.0",
+    "currentEffect": "While inside the Killer's Terror Radius, looking at the Killer makes you scream and reveals the Killer's Aura for 4/5/6 seconds. There is a 50% chance you scream a second time, extending the Aura reveal by 2 seconds. Cooldown: 40 seconds.",
+    "activation": [
+      "Be inside the Killer's Terror Radius and look at the Killer.",
+      "Ends/deactivates when: Aura reveal ends after its duration."
+    ],
+    "patchNote": "Latest live balance change (8.4.0): Increased Killer Aura reveal to 4/5/6 seconds and reduced cooldown to 40 seconds.",
+    "plainEnglishSummary": "Looking at the Killer from within their Terror Radius makes you scream and briefly reveals their Aura, with a chance to extend the reveal.",
+    "cooldown": "40 seconds",
+    "duration": [
+      "Killer Aura reveal: 4/5/6 seconds, with a possible additional 2 seconds after the second scream."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The second scream has a 50% chance to occur and adds 2 seconds to the Aura reveal."
+    ],
+    "sourceCharacter": "Nicolas Cage",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "scene-partner",
+    "rank": 132,
+    "tier": "C",
+    "roles": [
+      "Information",
+      "Chase"
+    ],
+    "summary": "While inside the Terror Radius, looking at the Killer makes you scream and reveal their Aura for up to 6 seconds, with a 50% chance for a second scream and 2 extra seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "terror-radius",
+      "looping"
+    ],
+    "useCases": [
+      "Force a Killer Aura read through walls when you know they are nearby.",
+      "Use the information at tall loops or indoor structures to remove a mindgame.",
+      "Pair with scream-related synergies or Eyes of Belmont for longer reads."
+    ],
+    "counters": [
+      "The scream reveals your position audibly.",
+      "Forty-second cooldown.",
+      "Requires being in the Terror Radius and looking toward the Killer."
+    ],
+    "pros": [
+      "Player-controlled information trigger.",
+      "Potential eight-second Killer Aura read.",
+      "Useful at structures where visual contact is normally poor."
+    ],
+    "cons": [
+      "Announces your location with a scream.",
+      "Long cooldown.",
+      "Stealth Killers can deny Terror Radius access."
+    ],
+    "analysis": [
+      "Scene Partner takes this position because its downside and upside are tied together. Looking at the Killer inside the Terror Radius deliberately makes you scream, but in exchange you receive a meaningful Aura read that can last even longer if the second scream triggers.",
+      "At a tall loop, the information can be worth the noise. Once the Killer already knows roughly where you are, revealing their precise side of the structure can remove the guess that would otherwise decide the chase.",
+      "The perk is worse as stealth information because the scream itself gives the Killer a cue. It also struggles against Undetectable Killers who may not provide the Terror Radius condition at all.",
+      "Scene Partner is therefore a fun, functional chase-information perk. It is best when you accept that subtlety has already left the building."
+    ],
+    "verdict": "A loud but legitimate information tool. Scene Partner trades stealth for wallhacks, which is often reasonable once the Killer already knows where you are.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nicolas Cage"
+    },
+    "synergyPerkIds": [
+      "eyes-of-belmont",
+      "troubleshooter",
+      "quick-quiet",
+      "still-sight"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Eyes of Belmont",
+      "Troubleshooter",
+      "Quick & Quiet",
+      "Still Sight"
+    ],
+    "antiSynergies": []
+  }
+}

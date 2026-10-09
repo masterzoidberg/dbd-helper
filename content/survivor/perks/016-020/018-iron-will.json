@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "016-020",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "iron-will",
+  "mechanics": {
+    "name": "Iron Will",
+    "alternateName": null,
+    "source": "Jake Park",
+    "status": "Live 10.2.0",
+    "currentEffect": "While Injured, reduce the volume of your Grunts of Pain by 80/90/100%. Iron Will does not function while you are Exhausted, but it does not itself inflict Exhausted.",
+    "activation": [
+      "Be in the Injured State.",
+      "Not be suffering from Exhausted.",
+      "Ends/deactivates when: The effect stops when you are no longer Injured or become Exhausted."
+    ],
+    "patchNote": "Latest live balance change (8.1.0): Increased Grunts of Pain volume reduction from 25/50/75% to 80/90/100%.",
+    "plainEnglishSummary": "While Injured and not Exhausted, it greatly reduces the volume of your Grunts of Pain.",
+    "cooldown": null,
+    "duration": [
+      "No fixed duration; applies while the activation conditions are met."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Exhausted (prevents effect; Iron Will does not inflict it)"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "Jake Park",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "iron-will",
+    "rank": 18,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Stealth"
+    ],
+    "summary": "While injured and not Exhausted, your Grunts of Pain are completely silent at Tier III.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium–High",
+    "soloQ": 5,
+    "swf": 4,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "exhausted",
+      "health-state",
+      "looping"
+    ],
+    "useCases": [
+      "Break line-of-sight during chase and deny the Killer the audio cue they use to track your next route.",
+      "Hide or reposition while injured without giving away your exact location through pain sounds.",
+      "Make indoor and high-wall tiles harder for the Killer to read when visual information is limited."
+    ],
+    "counters": [
+      "Iron Will does not function while you are Exhausted.",
+      "Scratch Marks, Pools of Blood, Aura reading, and direct sight can still reveal you.",
+      "Its value is lower against Killers or situations where audio tracking is not important."
+    ],
+    "pros": [
+      "Removes an important tracking channel without requiring a cooldown or manual activation.",
+      "Gets stronger on complex tiles where Killers rely heavily on sound through walls.",
+      "Excellent Solo Q value because it requires no teammate coordination."
+    ],
+    "cons": [
+      "Temporarily disabled by Exhaustion, creating awkward anti-synergy with several popular chase perks.",
+      "Provides little benefit while Healthy.",
+      "Does not hide the other tracking evidence an injured Survivor leaves behind."
+    ],
+    "analysis": [
+      "Iron Will sits at this position because information denial is strongest when it removes something the Killer normally receives for free. Injured Survivors are loud, and experienced Killers use those sounds constantly to resolve mindgames at walls, jungle gyms, indoor rooms, and other places where they briefly lose visual contact.",
+      "At Tier III, removing those Grunts of Pain can turn a predictable chase into a genuine guessing game. The Survivor can double back, hold a corner, leave a tile, or change elevation without announcing the decision through audio. The perk does not create distance directly, but it can force the Killer to spend extra seconds confirming where the Survivor went, which often matters just as much.",
+      "The major constraint is Exhaustion. Iron Will stops functioning while Exhausted, so Sprint Burst or Lithe users may lose the perk exactly during the early part of a chase. Dead Hard is a cleaner partner because the Survivor often remains non-Exhausted until the moment the perk is actually used. This interaction means Iron Will rewards deliberate build construction rather than fitting equally well everywhere.",
+      "Its value also rises with player experience. A Survivor who keeps running in a straight visible path gains little from silence. A Survivor who understands line-of-sight breaks, checkspots, and pathing can use the missing audio cue to manufacture mistakes from the Killer."
+    ],
+    "verdict": "Powerful chase stealth with a real skill ceiling. Iron Will is at its best when you deliberately exploit missing audio information, not when you simply expect silence to make you invisible.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Information Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jake Park"
+    },
+    "synergyPerkIds": [
+      "dead-hard",
+      "resilience",
+      "lucky-break",
+      "quick-quiet"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Dead Hard",
+      "Resilience",
+      "Lucky Break",
+      "Quick & Quiet"
+    ],
+    "antiSynergies": []
+  }
+}

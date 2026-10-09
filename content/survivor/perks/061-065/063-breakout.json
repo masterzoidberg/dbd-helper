@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "061-065",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "breakout",
+  "mechanics": {
+    "name": "Breakout",
+    "alternateName": null,
+    "source": "Yui Kimura",
+    "status": "Live 10.2.0",
+    "currentEffect": "While within 5 metres of the Killer carrying another Survivor, you gain 6/8/10% Haste and the carried Survivor wiggles 25% faster.",
+    "activation": [
+      "Killer carries another Survivor.",
+      "You are within 5 metres of the Killer.",
+      "Ends/deactivates when: Effects end when the carry ends or you leave the range."
+    ],
+    "patchNote": "Latest live balance change (8.7.0): Increased Haste to 6/8/10%.",
+    "plainEnglishSummary": "Staying near the Killer carrying a teammate speeds you up and helps the teammate escape.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Only one Breakout effect applies to a carried Survivor at a time.",
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "Yui Kimura",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "breakout",
+    "rank": 63,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Mobility",
+      "Team Support"
+    ],
+    "summary": "Near a Killer carrying a teammate, gain Haste while the carried Survivor wiggles 25% faster.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "bodyblock",
+      "protection-hit"
+    ],
+    "useCases": [
+      "Escort a carried teammate toward a difficult hook and accelerate their wiggle progress.",
+      "Combine bodyblocks and 10% Haste to lengthen the Killer's route enough for a natural escape.",
+      "Coordinate sabotage builds where every extra second of carry time matters."
+    ],
+    "counters": [
+      "You must remain within only 5 metres of the carrying Killer.",
+      "The Killer can hit you, change hook routes, or choose a closer hook.",
+      "Without bodyblocks, sabotage, or difficult hook geometry, the wiggle bonus may still be insufficient."
+    ],
+    "pros": [
+      "Can directly contribute to denying a hook.",
+      "Current Haste bonus reaches 10% at Tier III.",
+      "Excellent in coordinated carry-save teams."
+    ],
+    "cons": [
+      "Requires another Survivor to be carried.",
+      "Very risky positioning around the Killer.",
+      "Low-value in matches where hooks are plentiful and routes are short."
+    ],
+    "analysis": [
+      "Breakout takes this position because hook denial is one of the largest possible Survivor swings, and the perk contributes in two ways at once. The user moves faster near the carrying Killer while the carried Survivor wiggles 25% faster, improving both escort positioning and the underlying escape timer.",
+      "By itself, Breakout rarely guarantees a save. Its real strength appears when combined with bodyblocks, sabotage, awkward hook geometry, or Boil Over. Each delay compounds the accelerated wiggle progress, turning several small inconveniences into a potential escape.",
+      "SWF dramatically improves reliability because the team can call pickup locations, coordinate sabotage targets, and decide who is responsible for bodyblocking. Solo Q users often arrive late or discover that the Killer has a clean nearby hook, leaving the perk without enough time to matter.",
+      "That opportunity dependence keeps it conditional. Breakout can produce spectacular saves and its 2025 Haste buff improved the escort role, but a general-purpose Survivor build cannot count on the match presenting enough difficult carries to justify the slot."
+    ],
+    "verdict": "A strong carry-save specialist. Breakout can help erase a hook when the team builds around it, but it needs coordination and bad hook routes to reach its ceiling.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Carry Save",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Yui Kimura"
+    },
+    "synergyPerkIds": [
+      "saboteur",
+      "background-player",
+      "flashbang",
+      "boil-over"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Saboteur",
+      "Background Player",
+      "Flashbang",
+      "Boil Over"
+    ],
+    "antiSynergies": []
+  }
+}

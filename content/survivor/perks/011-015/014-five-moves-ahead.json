@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "011-015",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "five-moves-ahead",
+  "mechanics": {
+    "name": "Five Moves Ahead",
+    "alternateName": null,
+    "source": "Kwon Tae-Young",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are inside the Killer's Terror Radius or being chased by the Killer, you see the Auras of the 5 closest Pallets. After you drop a Pallet, you start moving 50% earlier. Dropping a Pallet puts the perk on a 40/35/30-second cooldown.",
+    "activation": [
+      "Be inside the Killer's Terror Radius or be chased by the Killer to see the 5 closest Pallets and receive the Pallet-drop movement benefit.",
+      "Ends/deactivates when: The Aura and movement effects are unavailable while the perk is on its 40/35/30-second cooldown.",
+      "Ends/deactivates when: Outside the Killer's Terror Radius and chase, the active effects are unavailable."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Specialized the perk to Pallets only and clarified the Pallet-drop benefit as starting movement 50% earlier; cooldown remains 40/35/30 seconds.",
+    "plainEnglishSummary": "In danger, see the five nearest Pallets; dropping one lets you resume movement earlier and then starts a tiered cooldown.",
+    "cooldown": "40/35/30 seconds after dropping a Pallet.",
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Aura effect now tracks only Pallets, not Windows.",
+      "The 50% value means you start moving earlier after the Pallet drop; it is not a generic 50% Pallet-drop interaction-speed bonus."
+    ],
+    "sourceCharacter": "Kwon Tae-Young",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "five-moves-ahead",
+    "rank": 14,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Pallet",
+      "Information"
+    ],
+    "summary": "During chase or Terror Radius pressure, see the five closest Pallets and begin moving 50% earlier after dropping one, with a cooldown after each drop.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "looping",
+      "terror-radius",
+      "aura-reading",
+      "pre-drop",
+      "greed"
+    ],
+    "useCases": [
+      "Route toward remaining resources once a chase starts.",
+      "Make pallet drops safer against ranged and zoning Killers.",
+      "Create extra distance after a stun or forced pallet break."
+    ],
+    "counters": [
+      "Dropping a pallet starts a 40/35/30-second cooldown.",
+      "The aura information is unavailable outside chase and the Killer's Terror Radius.",
+      "Killers such as The Nurse can reduce the value of pallet-focused routing."
+    ],
+    "pros": [
+      "Combines chase information with a real pallet-interaction advantage.",
+      "Particularly strong for experienced players who already know window locations.",
+      "Useful against a very wide range of Killers."
+    ],
+    "cons": [
+      "Less beginner-friendly than current Windows of Opportunity.",
+      "Cooldown can remove the information immediately after a pallet is used."
+    ],
+    "analysis": [
+      "Five Moves Ahead became the dedicated Pallet counterpart to the reworked Windows of Opportunity. It now shows only the five closest Pallets, but still provides the powerful 50% earlier movement after a Pallet drop.",
+      "That earlier movement can materially change whether the Killer catches you during the post-drop recovery window, especially against ranged or anti-loop powers where every fraction of a second matters.",
+      "Losing Window information narrows the perk considerably. It is excellent at answering the question “where is my next Pallet?” and no longer tries to solve the whole tile for you.",
+      "The result is a strong chase specialist rather than broad map information. Its old placement needs review because the 10.2 version has a clearer job and a smaller information footprint."
+    ],
+    "verdict": "A focused Pallet-routing and Pallet-recovery perk after 10.2. Stronger at its specific job, narrower as an all-purpose chase map.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      12,
+      20
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "strong-inference",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Kwon Tae-Young"
+    },
+    "synergyPerkIds": [
+      "lithe",
+      "finesse",
+      "resilience",
+      "dead-hard"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Lithe",
+      "Finesse",
+      "Resilience",
+      "Dead Hard"
+    ],
+    "antiSynergies": []
+  }
+}

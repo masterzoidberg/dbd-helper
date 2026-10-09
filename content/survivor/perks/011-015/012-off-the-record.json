@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "batch": "011-015",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "off-the-record",
+  "mechanics": {
+    "name": "Off the Record",
+    "alternateName": null,
+    "source": "Zarina Kassir",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you are unhooked or unhook yourself, Off the Record activates for 30/35/40 seconds. While active, it blocks your Aura from being revealed, suppresses your Grunts of Pain while Injured, prevents you from leaving Scratch Marks while sprinting, and grants Endurance. Endurance ends early if you perform a Conspicuous Action. Powering the Exit Gates alone does not deactivate the perk.",
+    "activation": [
+      "Be unhooked by another Survivor or unhook yourself.",
+      "Ends/deactivates when: The 30/35/40-second activation timer expires.",
+      "Ends/deactivates when: Endurance ends early if you perform a Conspicuous Action; the Aura protection, Grunt suppression, and Scratch Mark suppression otherwise follow the activation timer.",
+      "Ends/deactivates when: Powering the Exit Gates alone does not deactivate the perk in the current live version."
+    ],
+    "patchNote": "Latest live balance change (9.2.2): Re-added Endurance and shortened the duration to 30/35/40 seconds from 60/70/80 seconds.",
+    "plainEnglishSummary": "After you leave a hook, you gain 30/35/40 seconds of Aura protection, quieter pain grunts while injured, no Scratch Marks while sprinting, and Endurance; a Conspicuous Action ends Endurance early, while powering the Exit Gates alone does not end the perk.",
+    "cooldown": null,
+    "duration": [
+      "Off the Record: 30/35/40 seconds by tier.",
+      "Endurance: until its normal duration/effect ends, or earlier when you perform a Conspicuous Action."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Can activate on an unhook; no once-per-Trial limit is specified in the official effect history.",
+    "statusEffectsInvolved": [
+      "Endurance"
+    ],
+    "specialInteractions": [
+      "Performing a Conspicuous Action cancels Endurance early but does not end the other timed effects.",
+      "The Exit Gates being powered does not disable the perk in the current live version."
+    ],
+    "sourceCharacter": "Zarina Kassir",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "off-the-record",
+    "rank": 12,
+    "tier": "A",
+    "roles": [
+      "Anti-Tunnel",
+      "Stealth"
+    ],
+    "summary": "After an unhook, gain a 30/35/40-second anti-tunnel package: Aura protection, quieter Grunts of Pain, no Scratch Marks while sprinting, and Endurance.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low–Medium",
+    "soloQ": 5,
+    "swf": 4,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "anti-tunnel",
+      "tunneling",
+      "endurance",
+      "aura-reading",
+      "conspicuous-action"
+    ],
+    "useCases": [
+      "Survive the dangerous window immediately after an unhook when the Killer returns to pressure the rescue.",
+      "Break tracking by denying Aura reads, Grunts of Pain, and sprinting Scratch Marks during the active window.",
+      "Use the Endurance layer to reach a safer structure or force the Killer to spend extra time securing the next down."
+    ],
+    "counters": [
+      "The active window is only 30/35/40 seconds, so the Killer can delay a hard commitment.",
+      "Performing a Conspicuous Action ends the Endurance portion early.",
+      "The perk only matters after an unhook, so it contributes nothing before your first hook state.",
+      "Basekit post-unhook Elusive overlaps part of this perk's tracking-denial value during the first 10 seconds after rescue."
+    ],
+    "pros": [
+      "Combines several forms of post-unhook protection in one perk slot.",
+      "Works without communication and is therefore especially reliable in Solo Q.",
+      "Forces the Killer to solve both tracking and hit-protection problems if they immediately recommit."
+    ],
+    "cons": [
+      "Its value is concentrated in the post-unhook window.",
+      "A patient Killer can sometimes wait out the timer or change targets.",
+      "Some of its protection overlaps with other anti-tunnel perks, so stacking too many can reduce build flexibility."
+    ],
+    "analysis": [
+      "Off the Record takes this position because the moments immediately after an unhook are among the most strategically dangerous in Survivor. A Killer who converts that rescue into another fast down can accelerate the match toward a 3v1, and Off the Record attacks that conversion from several angles at once rather than relying on a single effect.",
+      "The tracking denial matters almost as much as the Endurance. Blocking Aura reads, suppressing Grunts of Pain, and removing sprinting Scratch Marks make it harder for the Killer to simply reacquire the rescued Survivor through information. On indoor maps or around line-of-sight breaks, that can turn what would have been a straightforward tunnel into a genuine search problem.",
+      "The Endurance layer then gives the perk a direct fail-safe if the Killer does find you. Unlike Will to Live, it does not require a pickup and Skill Check, but the protection is shorter-lived and can be cut down by a Conspicuous Action. That makes Off the Record less dominant than the very top anti-tunnel options, but also easier to benefit from in ordinary play.",
+      "Its best quality is self-sufficiency. Solo Q players do not need teammates to understand the plan, and SWF teams can deliberately route the protected Survivor toward safer areas while the rest of the team converts the Killer's lost time into generators. The perk is not universal because it does nothing before a hook, but once a match becomes tunnel-heavy it can be one of the highest-impact slots in the build."
+    ],
+    "verdict": "A premium post-unhook insurance perk. Off the Record is strongest when the Killer tries to immediately convert a rescue into another down, because it attacks tracking and hit protection at the same time.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "tags": [
+      "Information Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      12,
+      17
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "mechanics-flag",
+    "evidenceStatus": "mechanics-verified-later",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Zarina Kassir"
+    },
+    "synergyPerkIds": [
+      "resurgence",
+      "will-to-live",
+      "iron-will",
+      "made-for-this"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Resurgence",
+      "Will to Live",
+      "Iron Will",
+      "Made for This"
+    ],
+    "antiSynergies": []
+  }
+}

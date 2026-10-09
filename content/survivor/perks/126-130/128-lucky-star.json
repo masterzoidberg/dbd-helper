@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "126-130",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "lucky-star",
+  "mechanics": {
+    "name": "Lucky Star",
+    "alternateName": null,
+    "source": "Ellen Ripley",
+    "status": "Live 10.2.0",
+    "currentEffect": "While hiding inside a Locker, suppresses your Grunts of Pain for as long as you remain inside. After exiting the Locker, for 30 seconds it suppresses your Grunts of Pain and creation of Pools of Blood, reveals all other Survivors' Auras to you, and reveals the nearest Generator's Aura to you in yellow. It then has a 35/30/25-second cooldown.",
+    "activation": [
+      "Hide inside a Locker.",
+      "Ends/deactivates when: The inside-Locker effect ends when you exit.",
+      "Ends/deactivates when: The post-exit effects end after 30 seconds; cooldown prevents reactivation."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Reduced cooldown from 40/35/30 to 35/30/25 seconds.",
+    "plainEnglishSummary": "Hiding in a Locker silences your pain sounds, and exiting gives 30 seconds of stealth and Aura information before cooldown.",
+    "cooldown": "35/30/25 seconds after the post-exit effect (Tier I/II/III).",
+    "duration": [
+      "While in Locker: suppresses Grunts of Pain for the time you remain inside.",
+      "After exiting: suppression and Aura effects last 30 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "After exiting, the perk reveals every other Survivor and the nearest Generator; the Generator Aura is yellow."
+    ],
+    "sourceCharacter": "Ellen Ripley",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "lucky-star",
+    "rank": 128,
+    "tier": "C",
+    "roles": [
+      "Stealth",
+      "Locker",
+      "Information"
+    ],
+    "summary": "While in a Locker, suppress pain sounds; after exiting, spend 30 seconds suppressing pain sounds and Blood while seeing every teammate and the nearest generator.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "reset"
+    ],
+    "useCases": [
+      "Use a Locker to create a quiet thirty-second injured rotation.",
+      "Exit with full teammate information to choose a heal, rescue, or safer route.",
+      "Use the nearest generator Aura to rejoin productive play after hiding."
+    ],
+    "counters": [
+      "Requires entering a Locker to begin the post-exit package.",
+      "Scratch Marks are not suppressed by the perk.",
+      "Locker detours can waste more time than the information saves."
+    ],
+    "pros": [
+      "Thirty-second duration is generous.",
+      "Combines stealth and useful team/objective information.",
+      "Short Tier III cooldown allows repeated use."
+    ],
+    "cons": [
+      "Locker setup tax.",
+      "Does not hide Scratch Marks.",
+      "Can encourage unnecessary hiding."
+    ],
+    "analysis": [
+      "Lucky Star ranks around the B/C boundary because its thirty-second post-Locker package is broader than it first appears. Pain sounds and Pools of Blood disappear, every teammate becomes visible, and the nearest generator is highlighted at the same time.",
+      "That makes the perk more useful for rotations than for hiding in the Locker itself. An injured Survivor can emerge with enough information to choose whether to seek a heal, take a rescue route, or return to the nearest objective while leaving fewer tracking cues.",
+      "The setup remains a real cost. Running to a Locker simply to activate Lucky Star can waste more time than the perk returns, and Scratch Marks still reveal a sprinting route unless another effect covers them.",
+      "It is therefore best in builds already using Lockers for Head On, Inner Strength, Flashbang crafting, or Quick & Quiet. In those contexts the activation cost becomes much smaller."
+    ],
+    "verdict": "A surprisingly broad post-Locker utility package. Lucky Star is good when the Locker was already part of your plan and inefficient when you detour solely to turn it on.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ellen Ripley"
+    },
+    "synergyPerkIds": [
+      "quick-quiet",
+      "head-on",
+      "inner-strength",
+      "deception"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Quick & Quiet",
+      "Head On",
+      "Inner Strength",
+      "Deception"
+    ],
+    "antiSynergies": []
+  }
+}

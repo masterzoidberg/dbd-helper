@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "batch": "071-075",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "wicked",
+  "mechanics": {
+    "name": "Wicked",
+    "alternateName": null,
+    "source": "Sable Ward",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you are unhooked by any means, reveals the Killer's Aura to you for 16/18/20 seconds. While hooked in the Basement during the first Hook Stage, your chance to succeed at a Self-Unhook attempt is 100%. It does not apply during the second Hook Stage or when you are the last Survivor standing.",
+    "activation": [
+      "Be unhooked by any means to reveal the Killer's Aura.",
+      "For the Basement effect, be hooked in the Basement during the first Hook Stage and not be the last Survivor standing.",
+      "Ends/deactivates when: Killer Aura reveal ends after 16/18/20 seconds.",
+      "Ends/deactivates when: The Basement self-unhook effect does not apply in second Hook Stage or when last Survivor standing."
+    ],
+    "patchNote": "Latest live balance change (9.3.2): Reverted to the previous version (16/18/20 s Killer Aura after unhook; guaranteed Basement first-stage self-unhook) after the perk was disabled in 9.3.0.",
+    "plainEnglishSummary": "After an unhook, shows the Killer's Aura; if hooked in the Basement, it guarantees a first-stage self-unhook attempt can succeed.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal after unhook: 16/18/20 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Basement self-unhook effect only applies during the first Hook Stage and is excluded when last Survivor standing."
+    ],
+    "sourceCharacter": "Sable Ward",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "wicked",
+    "rank": 73,
+    "tier": "B",
+    "roles": [
+      "Anti-Tunnel",
+      "Information",
+      "Rescue"
+    ],
+    "summary": "After any unhook, see the Killer for up to 20 seconds; if your first hook is in the Basement, your self-unhook chance there becomes guaranteed.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "hook-state",
+      "anti-tunnel",
+      "tunneling"
+    ],
+    "useCases": [
+      "Use the long post-unhook Killer Aura read to route safely and avoid immediate reacquisition.",
+      "Guarantee escape from a first-stage Basement hook when the match gives you that rare but dangerous situation.",
+      "Pair the Aura read with anti-tunnel perks so you know exactly how the Killer is playing the rescue."
+    ],
+    "counters": [
+      "The guaranteed self-unhook only applies to first-stage Basement hooks.",
+      "Outside Basement, the perk's main value is information rather than direct protection.",
+      "A Killer can still tunnel you despite being visible."
+    ],
+    "pros": [
+      "Twenty seconds of post-unhook Killer Aura is excellent information.",
+      "Basement clause can completely erase an otherwise difficult rescue obligation.",
+      "Works in Solo Q without coordination."
+    ],
+    "cons": [
+      "Basement jackpot is inconsistent.",
+      "Does not create Endurance or direct distance.",
+      "Part of its power may never appear in many Trials."
+    ],
+    "analysis": [
+      "Wicked earns this position because its consistent half is already useful: a long Killer Aura read after every unhook. Twenty seconds is enough to understand whether the Killer is returning, rotating, proxying, or committing elsewhere, which helps the rescued Survivor make much better pathing decisions.",
+      "The Basement clause is the spectacular upside. A guaranteed first-stage self-unhook can free three teammates from having to enter one of the most dangerous rescue locations in the game. It can also completely surprise a Killer who assumes Basement pressure will force a rescue.",
+      "The problem is frequency. Many matches never put you on a first-stage Basement hook, so the perk must be judged primarily as post-unhook information rather than a guaranteed Deliverance substitute.",
+      "That consistent Aura read keeps Wicked comfortably in upper B. The rare Basement activation can make it look much stronger, but our ranking does not assume the map and hook placement will cooperate."
+    ],
+    "verdict": "Excellent post-unhook information with a rare Basement escape jackpot. Wicked is useful every time you are rescued and occasionally game-changing when Basement enters the equation.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Self-Unhook"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      65,
+      85
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Sable Ward"
+    },
+    "synergyPerkIds": [
+      "off-the-record",
+      "will-to-live",
+      "kindred",
+      "resurgence"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Off the Record",
+      "Will to Live",
+      "Kindred",
+      "Resurgence"
+    ],
+    "antiSynergies": []
+  }
+}

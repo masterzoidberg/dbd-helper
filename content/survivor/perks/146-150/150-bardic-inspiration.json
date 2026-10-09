@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "146-150",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "bardic-inspiration",
+  "mechanics": {
+    "name": "Bardic Inspiration",
+    "alternateName": null,
+    "source": "Aestri Yazar",
+    "status": "Live 10.2.0",
+    "currentEffect": "Stand still and use the Active Ability button to begin a Performance that lasts up to 15 seconds and affects Survivors within 16 metres. At its end, roll a d20: 1 makes you scream without a Killer notification; 2–10 gives Skill Checks +1% progress; 11–19 gives +2%; 20 gives +3%. The result lasts 90 seconds. Cooldown is 110/100/90 seconds after the Performance ends or is cancelled.",
+    "activation": [
+      "Stand still and use the Active Ability button.",
+      "Other Survivors must be within 16 metres to be affected.",
+      "Ends/deactivates when: Performance ends after at most 15 seconds or if cancelled; rolled effect lasts 90 seconds."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "A short Performance gives nearby teammates a random Skill Check bonus for 90 seconds.",
+    "cooldown": "110/100/90 seconds by tier",
+    "duration": [
+      "Performance: up to 15 seconds.",
+      "Rolled effect: 90 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Roll of 1 causes a scream without a Killer notification."
+    ],
+    "sourceCharacter": "Aestri Yazar",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "bardic-inspiration",
+    "rank": 150,
+    "tier": "C",
+    "roles": [
+      "Skill Check",
+      "Team Support",
+      "Objective"
+    ],
+    "summary": "Perform for up to 15 seconds, roll a d20, and give nearby Survivors 90 seconds of bonus progress on successful basic Skill Checks.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 1,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "swf",
+      "pressure"
+    ],
+    "useCases": [
+      "Buff a coordinated group before a generator push.",
+      "Pair with Hyperfocus or other Skill Check-heavy builds that create many chances to use the bonus.",
+      "Use the Aura shown during the performance to gather teammates intentionally."
+    ],
+    "counters": [
+      "The performance itself consumes up to 15 seconds of productive time.",
+      "The d20 result is random and can produce only a small bonus or even a scream with no benefit.",
+      "Long cooldown prevents frequent retrying."
+    ],
+    "pros": [
+      "Can affect multiple Survivors for 90 seconds.",
+      "Skill Check progress bonuses can add up in high-frequency builds.",
+      "Fun team utility with a real ceiling on high rolls."
+    ],
+    "cons": [
+      "Large setup cost.",
+      "Random outcome.",
+      "Much weaker when teammates do not generate many Skill Checks."
+    ],
+    "analysis": [
+      "Bardic Inspiration can create legitimate team objective value, but it begins by asking one Survivor to stop productive actions for as long as fifteen seconds before the d20 result is known.",
+      "A strong result lasts ninety seconds and can reward many basic Skill Checks across several Survivors. Hyperfocus and ONE-TWO-THREE-FOUR! are natural ways to build around frequent Skill Checks without relying on the obsolete Stake Out interaction.",
+      "The randomness is the ranking anchor. A poor roll produces too little payoff for the setup, while the worst result can turn the performance into a scream and no mechanical benefit.",
+      "Coordinated teams get the cleanest version because they can group briefly, receive the buff, then split. In normal queues, the perk remains much less dependable."
+    ],
+    "verdict": "A genuine team Skill Check buff wrapped in a fifteen-second dice roll. Bardic Inspiration can pay off handsomely, but the setup and RNG keep it comfortably out of the reliable tiers.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Aestri Yazar"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "one-two-three-four",
+      "prove-thyself"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "One-Two-Three-Four!",
+      "Prove Thyself"
+    ],
+    "antiSynergies": []
+  }
+}

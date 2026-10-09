@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "batch": "176-180",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "invocation-treacherous-crows",
+  "mechanics": {
+    "name": "Invocation: Treacherous Crows",
+    "alternateName": null,
+    "source": "Taurie Cain",
+    "status": "Live 10.2.0",
+    "currentEffect": "While in the Basement near the Invocation circle, press Activate Ability 2 to begin a 60-second ritual. Your Aura is revealed to all other Survivors during it. Other Survivors can join; each joining Survivor increases ritual speed by 100% if they have an Invocation perk equipped, or 50% otherwise. When completed, whenever the Killer scares a Crow while any Survivor is inside the Killer's Terror Radius, the Killer's Aura is revealed to all Survivors for 1/1.5/2 seconds. Completion puts you into the Injured State and applies Broken to you for the rest of the Trial, and disables other copies of this Invocation for all Survivors for the rest of the Trial.",
+    "activation": [
+      "Be in the Basement near the Invocation circle and press Activate Ability 2.",
+      "Complete the 60-second ritual; teammates may join to increase its speed.",
+      "For the post-ritual Aura reveal, the Killer must scare a Crow while at least one Survivor is inside the Killer's Terror Radius.",
+      "Ends/deactivates when: The invocation ability is disabled for all Survivors after one completion for the remainder of the Trial.",
+      "Ends/deactivates when: The Broken Status Effect on the invoker lasts for the remainder of the Trial."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Complete a Basement ritual to reveal the Killer when they scare a Crow near a Survivor, at the cost of becoming Injured and Broken for the Trial.",
+    "cooldown": null,
+    "duration": [
+      "Ritual: 60 seconds before helper speed modifiers.",
+      "Killer Aura reveal: 1/1.5/2 seconds per qualifying Crow event.",
+      "Broken: remainder of the Trial."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Each Invocation: Treacherous Crows can be completed once per Trial across all Survivors; completion disables other copies of this Invocation.",
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "During an Invocation, teammates can join and speed it up; those with any Invocation perk contribute +100% speed, while those without contribute +50%."
+    ],
+    "sourceCharacter": "Taurie Cain",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "invocation-treacherous-crows",
+    "rank": 176,
+    "tier": "D",
+    "roles": [
+      "Invocation",
+      "Information"
+    ],
+    "summary": "Spend a Basement Invocation to reveal the Killer for up to 2 seconds when they scare Crows near Survivors in their Terror Radius, then remain Broken for the rest of the Trial.",
+    "metaStatus": "Weak",
+    "skillLevel": "Medium",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "broken",
+      "aura-reading",
+      "terror-radius"
+    ],
+    "useCases": [
+      "Create global intermittent Killer Aura pings if the Killer frequently scares Crows near Survivors.",
+      "Combine with another Invocation user so the Basement ritual completes faster.",
+      "Run only in a dedicated challenge or experimental Invocation build."
+    ],
+    "counters": [
+      "The ritual costs up to 60 seconds in the Basement plus travel time.",
+      "The invoker becomes permanently Broken.",
+      "The Killer Aura read lasts only 1/1.5/2 seconds and requires a Crow trigger near a Survivor in the Terror Radius."
+    ],
+    "pros": [
+      "Potential teamwide Killer information.",
+      "Other Survivors can accelerate the ritual.",
+      "Effect persists after completion."
+    ],
+    "cons": [
+      "Permanent Broken cost.",
+      "Huge setup time.",
+      "Tiny, conditional Aura payoff."
+    ],
+    "analysis": [
+      "Invocation: Treacherous Crows remains the clearest candidate for the bottom of the Survivor list. It charges the same enormous Invocation price as stronger rituals: Basement travel, up to sixty seconds of setup, and permanent Broken afterward.",
+      "The reward is only a brief Killer Aura reveal when the Killer scares a Crow while a Survivor is inside the Killer’s Terror Radius. That condition is not fully controlled by the team, and the Tier III read lasts only two seconds.",
+      "The information can occasionally help everyone understand Killer location, but the effect is far too small to repay the invoker’s lost health state and objective time in ordinary matches.",
+      "Even Invocation synergy does not rescue the economy. The perk is usable for experimentation and challenge builds, but the opportunity cost is so extreme that almost any conventional information perk is healthier for the team."
+    ],
+    "verdict": "The cellar door. Treacherous Crows asks for Basement ritual time and permanent Broken in exchange for conditional two-second Aura pings. The math is cruel.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Global"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Taurie Cain"
+    },
+    "synergyPerkIds": [
+      "invocation-weaving-spiders",
+      "resilience",
+      "no-mither",
+      "eyes-of-belmont"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Invocation: Weaving Spiders",
+      "Resilience",
+      "No Mither",
+      "Eyes of Belmont"
+    ],
+    "antiSynergies": []
+  }
+}

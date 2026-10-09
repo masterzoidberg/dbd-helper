@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "066-070",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "soul-guard",
+  "mechanics": {
+    "name": "Soul Guard",
+    "alternateName": null,
+    "source": "Cheryl Mason",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you heal or recover from the Dying State, gain Endurance for 4/6/8 seconds. Endurance is cancelled early if you perform a Conspicuous Action. This effect has a 30-second cooldown. While Cursed, you can fully recover from the Dying State using Self-Recovery.",
+    "activation": [
+      "Heal or recover from the Dying State to trigger Endurance.",
+      "Be Cursed by a Hex effect to unlock Self-Recovery from the Dying State.",
+      "Ends/deactivates when: Endurance ends after 4/6/8 seconds or early after a Conspicuous Action.",
+      "Ends/deactivates when: Self-Recovery from Dying is available only while Cursed."
+    ],
+    "patchNote": "Latest live balance change (4.7.0): Added a 30-second cooldown between Endurance activations.",
+    "plainEnglishSummary": "Healing or recovering grants brief Endurance, and being affected by a Hex lets you fully recover from the Dying State.",
+    "cooldown": "30 seconds between Endurance activations",
+    "duration": [
+      "Endurance: 4/6/8 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Endurance",
+      "Cursed"
+    ],
+    "specialInteractions": [
+      "The self-recovery effect is conditional on being affected by a Hex; the Endurance trigger has a separate 30-second cooldown."
+    ],
+    "sourceCharacter": "Cheryl Mason",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "soul-guard",
+    "rank": 68,
+    "tier": "B",
+    "roles": [
+      "Anti-Slug",
+      "Recovery"
+    ],
+    "summary": "After being healed or recovering from the Dying State, gain brief Endurance; while Cursed, you can also fully self-recover from the ground.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "dying-state",
+      "endurance",
+      "anti-slug",
+      "conspicuous-action"
+    ],
+    "useCases": [
+      "Prevent an immediate re-down after a teammate or perk gets you off the ground.",
+      "Pair with Conviction or Unbreakable so a self-pick has a protected escape window.",
+      "Exploit the unlimited self-recovery clause in matches where you are Cursed."
+    ],
+    "counters": [
+      "Endurance only lasts up to 8 seconds and is cancelled by a Conspicuous Action.",
+      "The normal Endurance trigger requires first getting out of the Dying State.",
+      "The Cursed self-recovery clause depends on a Hex-related condition the Survivor does not fully control."
+    ],
+    "pros": [
+      "Protects the vulnerable moment immediately after a ground recovery.",
+      "Excellent synergy with several strong anti-slug perks.",
+      "Can become dramatically stronger in Cursed matches."
+    ],
+    "cons": [
+      "Provides no value before a Dying-State recovery occurs.",
+      "Short protection window.",
+      "Part of its ceiling depends on the Killer bringing a relevant Hex effect."
+    ],
+    "analysis": [
+      "Soul Guard ranks this position because getting off the ground is not always enough. A Killer can immediately hit a freshly recovered Survivor and erase the entire rescue. Soul Guard adds up to eight seconds of Endurance after the recovery, forcing the Killer to respect that brief protection window.",
+      "The perk has become especially relevant alongside Conviction. Conviction creates a temporary self-pick, while Soul Guard can protect the first hit after standing. Unbreakable and Boon: Exponential create similar combinations. In those builds, Soul Guard acts as the safety layer that turns recovery into actual movement rather than an instant re-down.",
+      "The Cursed clause can be extraordinary but should not dominate the ranking. When active, full self-recovery becomes available without the usual one-use restriction, but Survivors cannot rely on every Killer bringing a Hex that places them in the relevant state. We treat that as upside rather than baseline value.",
+      "Soul Guard remains B because its activation is reactive and specific. Matches without meaningful slugging can leave it nearly invisible. In slug-heavy matches, however, it is one of the best support pieces for a recovery-focused build."
+    ],
+    "verdict": "A strong anti-slug companion perk. Soul Guard is most valuable when another effect already gets you off the ground and you need protection long enough to actually escape.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Endurance"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Cheryl Mason"
+    },
+    "synergyPerkIds": [
+      "conviction",
+      "unbreakable",
+      "plot-twist",
+      "boon-exponential"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Conviction",
+      "Unbreakable",
+      "Plot Twist",
+      "Boon: Exponential"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "116-120",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "calm-spirit",
+  "mechanics": {
+    "name": "Calm Spirit",
+    "alternateName": null,
+    "source": "Jake Park",
+    "status": "Live 10.2.0",
+    "currentEffect": "You do not scare Crows or scream. You Bless and Cleanse Totems and unlock Chests silently and 8/9/10% faster.",
+    "activation": [],
+    "patchNote": "Latest live balance change (10.2.0): Replaced the 40/35/30% interaction slowdown with an 8/9/10% speed bonus for silent Blessing, Cleansing, and Chest Unlocking; Crow and scream suppression remain.",
+    "plainEnglishSummary": "Suppresses Crow alerts and screams, and makes Totem and Chest interactions silent and faster.",
+    "cooldown": null,
+    "duration": [
+      "The Crow and scream suppression is passive; the interaction bonus applies while Blessing, Cleansing, or unlocking a Chest."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Blessing, Cleansing, and Chest Unlocking are silent while affected by Calm Spirit."
+    ],
+    "sourceCharacter": "Jake Park",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "calm-spirit",
+    "rank": 117,
+    "tier": "C",
+    "roles": [
+      "Stealth",
+      "Totem"
+    ],
+    "summary": "Never scream or scare Crows, and perform silent Totem and Chest interactions up to 10% faster instead of slower.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Hard-counter Killer perks and powers that rely on Survivor screams for information.",
+      "Move near Crows with much lower risk of creating a visible disturbance.",
+      "Interact with chests or Totems silently when stealth matters more than speed."
+    ],
+    "counters": [
+      "Provides little value in matches without meaningful scream or Crow interactions.",
+      "The side-objective speed bonus is small and does not make Chests or Totems efficient by itself."
+    ],
+    "pros": [
+      "Complete scream suppression is a genuine hard counter.",
+      "Passive with no cooldown.",
+      "Also reduces environmental Crow information."
+    ],
+    "cons": [
+      "Matchup-dependent against Killers and perks that do not use screams or Crows.",
+      "Its 8/9/10% interaction-speed bonus is useful but modest."
+    ],
+    "analysis": [
+      "Calm Spirit received a simple but important repair in 10.2: the old interaction-speed penalty is gone. Totem blessing/cleansing and Chest unlocking are now silent and up to 10% faster instead of up to 30% slower.",
+      "That removes the worst feeling attached to the perk. Scream immunity is still matchup-dependent, but you no longer pay a universal side-objective tax just for bringing the counter.",
+      "Against scream-heavy Killers and information perks, complete scream suppression can deny valuable tracking. Crow immunity remains a smaller but occasionally useful environmental benefit.",
+      "The buff does not make Calm Spirit universal, but it raises the floor enough that its old near-bottom ranking is no longer appropriate without review."
+    ],
+    "verdict": "No longer punishes you for equipping it. Calm Spirit is still a matchup counter, but 10.2 turned its silent side interactions from a tax into a small bonus.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Scream Suppression"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      108,
+      130
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "stable",
+    "evidenceStatus": "strong-inference",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jake Park"
+    },
+    "synergyPerkIds": [
+      "distortion",
+      "iron-will",
+      "light-footed"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "hardened"
+    ],
+    "archetypeRatings": [],
+    "synergies": [
+      "Distortion",
+      "Iron Will",
+      "Light-Footed"
+    ],
+    "antiSynergies": [
+      "Hardened"
+    ]
+  }
+}

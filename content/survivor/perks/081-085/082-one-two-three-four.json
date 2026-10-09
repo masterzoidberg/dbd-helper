@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "081-085",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "one-two-three-four",
+  "mechanics": {
+    "name": "One-Two-Three-Four!",
+    "alternateName": null,
+    "source": "Vee Boonyasak",
+    "status": "Live 10.2.0",
+    "currentEffect": "While standing and idle, press Active Ability 2 to begin a Performance lasting up to 15 seconds. It empowers Survivors within 16 metres and generates continuous Skill Checks during the Performance. If you complete the Performance, empowered Survivors receive a 90-second effect while Healing or Repairing that increases Skill Check occurrence chance by 20%. Cancelling or completing the Performance starts a 110/100/90-second cooldown by tier.",
+    "activation": [
+      "Be standing and idle.",
+      "Press Active Ability 2 when the perk is off cooldown.",
+      "Ends/deactivates when: The Performance ends after at most 15 seconds or when cancelled.",
+      "Ends/deactivates when: The post-Performance benefit is granted only if the Performance is completed and lasts 90 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "A completed Performance gives nearby Survivors more frequent Healing and Repair Skill Checks for 90 seconds.",
+    "cooldown": "110/100/90 seconds after cancelling or completing the Performance.",
+    "duration": [
+      "Performance: up to 15 seconds.",
+      "Empowered area: 16 metres from your location during the Performance.",
+      "Skill Check chance bonus: 90 seconds after a completed Performance."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 9.2.0 live patch fixed an issue where the effect stacked with other Survivors using One-Two-Three-Four!, so duplicate copies do not stack."
+    ],
+    "sourceCharacter": "Vee Boonyasak",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "one-two-three-four",
+    "rank": 82,
+    "tier": "B",
+    "roles": [
+      "Team Support",
+      "Skill Check"
+    ],
+    "summary": "Perform while idle to empower nearby Survivors; the completed performance can increase basic Skill Check frequency for healing and repair for a long duration.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "swf",
+      "pressure"
+    ],
+    "useCases": [
+      "Support Hyperfocus or Autodidact-style builds that want more Skill Checks.",
+      "Set up a team buff before a long repair or healing phase.",
+      "Use the performance Aura to signal your support location to nearby teammates."
+    ],
+    "counters": [
+      "Requires stopping to perform.",
+      "The benefit is specialized around Skill Check frequency.",
+      "Poor team positioning can waste the nearby empowerment."
+    ],
+    "pros": [
+      "Unique team Skill Check support.",
+      "Can last well beyond the performance.",
+      "Synergizes with several high-ceiling perks."
+    ],
+    "cons": [
+      "Setup time.",
+      "Niche payoff.",
+      "Much weaker for teammates whose builds do not care about extra Skill Checks."
+    ],
+    "analysis": [
+      "One-Two-Three-Four! ranks this position because it supports a very specific but legitimate class of builds. Hyperfocus and Autodidact both become stronger when more Skill Checks appear, so a perk that manipulates frequency can amplify their ceilings.",
+      "The performance mechanic is the opportunity cost. The user must stop what they are doing and spend time setting up the buff rather than repairing, healing, or moving to a rescue.",
+      "The effect also depends on nearby team composition. A random teammate running ordinary perks may gain little from extra Skill Checks, while a coordinated Hyperfocus setup can deliberately exploit them.",
+      "That narrow synergy keeps the perk in mid-B. It can be valuable in an intentional build, but is not something most loadouts want by default."
+    ],
+    "verdict": "A specialized Skill Check support perk. One-Two-Three-Four! can make high-ceiling generator and healing builds better, but only after deliberate setup.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Support",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Vee Boonyasak"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "autodidact",
+      "prove-thyself"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "Autodidact",
+      "Prove Thyself"
+    ],
+    "antiSynergies": []
+  }
+}

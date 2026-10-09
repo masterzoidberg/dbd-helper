@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "batch": "096-100",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "exultation",
+  "mechanics": {
+    "name": "Exultation",
+    "alternateName": null,
+    "source": "Trevor Belmont",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are holding an Item, stunning the Killer by dropping a Pallet recharges the Item by 75% and upgrades its Rarity to the next available tier. Exultation then has a 30/25/20-second cooldown. An Item already at maximum rarity cannot be upgraded and therefore does not receive this recharge.",
+    "activation": [
+      "You must be holding an Item.",
+      "You must stun the Killer by dropping a Pallet.",
+      "Ends/deactivates when: The perk cannot trigger while on cooldown."
+    ],
+    "patchNote": "Latest live balance change (9.0.0): Increased Item recharge from 25% to 75% and reduced cooldown from 40/35/30 to 30/25/20 seconds.",
+    "plainEnglishSummary": "A Pallet stun while holding an Item improves and recharges it, then puts the perk on cooldown.",
+    "cooldown": "30/25/20 seconds (Tier I/II/III), after the trigger.",
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "An Item at maximum Rarity cannot advance to the next tier, so the recharge effect does not occur for that trigger."
+    ],
+    "sourceCharacter": "Trevor Belmont",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "exultation",
+    "rank": 96,
+    "tier": "B",
+    "roles": [
+      "Item",
+      "Pallet",
+      "Objective"
+    ],
+    "summary": "A pallet stun upgrades your held Item by one rarity and, when upgraded, restores a large portion of its Charges.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Upgrade a weaker Toolbox, Med-Kit, or Flashlight while simultaneously recharging it.",
+      "Turn successful pallet stuns into long-term resource value.",
+      "Pair with item-centered builds where extra Charges matter throughout the Trial."
+    ],
+    "counters": [
+      "Requires landing a pallet stun.",
+      "An already maximum-rarity Item cannot be upgraded and therefore does not receive the recharge.",
+      "You must still bring or find an Item worth improving."
+    ],
+    "pros": [
+      "Seventy-five percent recharge is substantial.",
+      "Can improve both rarity and remaining resource pool.",
+      "Short cooldown if repeated stuns are available."
+    ],
+    "cons": [
+      "Trigger is Killer-interaction dependent.",
+      "No value with a max-rarity Item.",
+      "Requires item planning."
+    ],
+    "analysis": [
+      "Exultation ranks this position because its modern 75% recharge can be a serious resource swing. A successful pallet stun can both upgrade the Item and return most of its charges, creating far more value than the perk's original version.",
+      "The best targets are Items whose additional charges translate directly into time or survival, such as Toolboxes and Med-Kits. The pallet stun becomes more than a chase win; it becomes a resource refresh that continues paying afterward.",
+      "The restriction around maximum rarity matters. Once the Item can no longer upgrade, the recharge component stops being available through the same interaction, limiting repeated use with already-premium gear.",
+      "Exultation is therefore a strong build-around perk rather than general utility. Players who plan around an upgradeable Item and land stuns can extract impressive value; everyone else should choose something more reliable."
+    ],
+    "verdict": "A strong item-economy reward for successful pallet play. Exultation can generate huge resource value, but only if your Item still has somewhere to upgrade.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Resource"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Trevor Belmont"
+    },
+    "synergyPerkIds": [
+      "built-to-last",
+      "any-means-necessary",
+      "smash-hit"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Built to Last",
+      "Any Means Necessary",
+      "Smash Hit"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "171-175",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "red-herring",
+  "mechanics": {
+    "name": "Red Herring",
+    "alternateName": null,
+    "source": "Zarina Kassir",
+    "status": "Live 10.2.0",
+    "currentEffect": "After repairing a Generator for at least 1 second, its Aura is highlighted yellow to you. The highlight ends if the Generator is completed, you start repairing another Generator, or you enter a Locker. Entering a Locker while a Generator is highlighted causes a Loud Noise Notification for the Killer at that Generator. Red Herring then has a 25/20/15-second cooldown by tier.",
+    "activation": [
+      "Repair a Generator for at least 1 second to highlight it.",
+      "Enter a Locker while the Generator is highlighted to trigger the Loud Noise Notification.",
+      "Ends/deactivates when: The Generator's Aura highlight ends if the Generator is completed, you begin repairing another Generator, or you enter a Locker.",
+      "Ends/deactivates when: The cooldown prevents another activation until it expires."
+    ],
+    "patchNote": "Latest live balance change (8.6.0): Reduced the repair requirement from 3 seconds to 1 second and reduced cooldown to 25/20/15 seconds from 30/25/20.",
+    "plainEnglishSummary": "Repair a Generator briefly to mark it, then entering a Locker sends the Killer a Loud Noise Notification at the marked Generator.",
+    "cooldown": "25/20/15 seconds.",
+    "duration": [
+      "Generator Aura highlight: until the Generator is completed, you start repairing a different Generator, or you enter a Locker."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Killer receives a Loud Noise Notification at the highlighted Generator when you enter a Locker; the notification does not reveal your Aura."
+    ],
+    "sourceCharacter": "Zarina Kassir",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "red-herring",
+    "rank": 174,
+    "tier": "D",
+    "roles": [
+      "Stealth",
+      "Locker",
+      "Utility"
+    ],
+    "summary": "Briefly repair a Generator to mark it, then enter a Locker to send the Killer a fake Loud Noise notification at that Generator.",
+    "metaStatus": "Weak",
+    "skillLevel": "High",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [],
+    "useCases": [
+      "Fake a missed Skill Check on a Generator far from the team’s real pressure.",
+      "Pair with a Locker perk so the activation is not a pure detour.",
+      "Try to pull a high-mobility Killer toward an irrelevant objective after they finish another task."
+    ],
+    "counters": [
+      "The Killer may ignore the notification or recognize the bait.",
+      "Activating requires leaving productive work and entering a Locker.",
+      "A fake notification on an important Generator may accidentally encourage the Killer to defend it."
+    ],
+    "pros": [
+      "Short 15-second Tier III cooldown.",
+      "Can create a remote notification at a chosen Generator.",
+      "Some synergy with Locker-focused builds."
+    ],
+    "cons": [
+      "Opponent-controlled payoff.",
+      "Activation costs objective tempo.",
+      "Can actively attract the Killer to a Generator you care about."
+    ],
+    "analysis": [
+      "Red Herring offers a remote fake notification, which sounds strategically flexible until the cost is counted. You must first mark a Generator, leave it, find a Locker, and trust the Killer to believe the resulting noise matters.",
+      "The best-case use is sending a mobile Killer toward a generator that is strategically irrelevant while the team pressures elsewhere. That requires timing, map awareness, and an opponent willing to react.",
+      "The downside is comical when the marked generator is actually important. A successful bait can bring the Killer directly to progress the team hoped to preserve.",
+      "Red Herring remains near the bottom because every layer of value depends on the Killer making the mistake you hoped for. It can be hilarious and still be bad."
+    ],
+    "verdict": "A remote decoy with too many chores and too much opponent agency. Red Herring is a fun lie that often costs more time to tell than the Killer loses believing it.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Misdirection"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Zarina Kassir"
+    },
+    "synergyPerkIds": [
+      "diversion",
+      "lucky-star",
+      "head-on",
+      "deception"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Diversion",
+      "Lucky Star",
+      "Head On",
+      "Deception"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "batch": "161-165",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "slippery-meat",
+  "mechanics": {
+    "name": "Slippery Meat",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Other Survivors unhook you 90/95/100% faster. Whenever you are unhooked, you gain 5% more Haste.",
+    "activation": [
+      "Another Survivor unhooks you for the unhook-speed effect.",
+      "Be unhooked to receive 5% more Haste.",
+      "Ends/deactivates when: The unhook-speed modifier applies only while another Survivor is unhooking you.",
+      "Ends/deactivates when: The additional Haste follows the post-unhook Haste effect's duration."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: removed self-unhook attempt/chance bonuses; other Survivors now unhook you 90/95/100% faster and you gain 5% more Haste when unhooked.",
+    "plainEnglishSummary": "Teammates unhook you much faster, and being unhooked increases your post-unhook Haste.",
+    "cooldown": null,
+    "duration": [
+      "The 5% additional Haste follows the duration of the post-unhook Haste effect."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The unhook-speed bonus applies when another Survivor unhooks you; the 5% Haste increase applies when you are unhooked."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "slippery-meat",
+    "rank": 161,
+    "tier": "D",
+    "roles": [
+      "Rescue",
+      "Anti-Tunnel",
+      "Mobility"
+    ],
+    "summary": "Teammates unhook you up to 100% faster, and every unhook gives you 5% additional Haste; it no longer improves self-unhook attempts.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "hook-state",
+      "swf"
+    ],
+    "useCases": [
+      "Reduce the rescue interaction window when teammates unhook you, especially under hook pressure.",
+      "Use the extra post-unhook Haste to create separation immediately after the rescue.",
+      "Explore coordinated endgame rescue packages with No One Left Behind and other post-unhook movement support."
+    ],
+    "counters": [
+      "It only helps while you are the hooked Survivor, so many matches provide little or no value.",
+      "Unhooking is already a short interaction, which limits the raw time saved by the speed bonus.",
+      "Hex: Under Your Thumb can cap running Haste while it remains lit."
+    ],
+    "pros": [
+      "No setup is required before you are hooked.",
+      "Faster rescues can matter in tight camping or endgame windows.",
+      "The additional Haste stacks conceptually with a broader rescue package, though exact stacking should not be assumed without testing."
+    ],
+    "cons": [
+      "Very narrow global use case.",
+      "Most of the high-end value depends on coordinated rescue situations.",
+      "Later live gameplay raised its package ceiling, but did not establish a global-rank promotion."
+    ],
+    "analysis": [
+      "Slippery Meat has a completely different identity in live 10.2: its former Luck-based self-rescue identity is gone. The perk now makes other Survivors unhook you faster and gives you additional Haste after the rescue.",
+      "Its generic value is still narrow because the perk only contributes while you are the hooked player, and the unhook interaction itself is short. That supports keeping its global rank low for now.",
+      "Later live gameplay evidence does reopen one question the earlier ranking defense treated as settled: coordinated endgame rescue packages can exploit the faster unhook plus post-rescue movement in ways that are more valuable than the generic ranking suggests.",
+      "For v15, global rank and specialized package value therefore stay separate. The global rank remains provisional while the endgame/SWF ceiling is explicitly marked for further review."
+    ],
+    "verdict": "Low generic value, but no longer safe to dismiss as simple bottom-tier filler. Its coordinated endgame-rescue ceiling is reopened for review.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Haste"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      155,
+      168
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "reopened",
+    "evidenceStatus": "reopened-live-evidence",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "no-one-left-behind",
+      "babysitter",
+      "borrowed-time",
+      "overcome",
+      "resurgence"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [
+      {
+        "archetype": "Coordinated endgame rescue package",
+        "grade": null,
+        "requiresPerkIds": [
+          "no-one-left-behind"
+        ],
+        "status": "needs-review",
+        "note": "Later live gameplay supports a materially higher package ceiling than the global rank, but did not establish a new global placement."
+      },
+      {
+        "archetype": "Coordinated endgame rescue",
+        "grade": "B (provisional)",
+        "requires": [
+          "no-one-left-behind"
+        ],
+        "note": "Later live gameplay materially raised the package ceiling, especially when faster unhooks and post-rescue movement are stacked. Global rank remains low pending broader evidence.",
+        "confidence": "Low"
+      }
+    ],
+    "synergies": [
+      "No One Left Behind",
+      "Babysitter",
+      "Borrowed Time",
+      "Overcome",
+      "Resurgence"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "096-100",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "moment-of-glory",
+  "mechanics": {
+    "name": "Moment of Glory",
+    "alternateName": null,
+    "source": "Trevor Belmont",
+    "status": "Live 10.2.0",
+    "currentEffect": "After completing an Unlocking or Rummaging action on a Chest once, the perk activates. If you are not already Broken, the next time you become Injured you immediately suffer Broken. If you do not enter the Dying State, you automatically heal one Health State after 80/70/60 seconds. The automatic-heal effect is cancelled early if you enter the Dying State. It does not activate if you already have Broken and deactivates after healing you.",
+    "activation": [
+      "Complete one Chest Unlocking or Rummaging action.",
+      "Not already suffer from Broken when the perk would activate.",
+      "Become Injured to start the delayed automatic heal.",
+      "Ends/deactivates when: The delayed heal is cancelled if you enter the Dying State.",
+      "Ends/deactivates when: The perk deactivates after healing you."
+    ],
+    "patchNote": "Latest live balance change (10.1.0): Reduced Chest Unlocking/Rummaging actions required to activate from two to one.",
+    "plainEnglishSummary": "After one chest interaction, becoming injured while not Broken makes you Broken and schedules a delayed self-heal unless you are downed first.",
+    "cooldown": null,
+    "duration": [
+      "Automatic heal delay: 80/70/60 seconds after becoming Injured."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Deactivates after its automatic heal; the current effect description does not separately state a per-Trial use count.",
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [],
+    "sourceCharacter": "Trevor Belmont",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "moment-of-glory",
+    "rank": 98,
+    "tier": "B",
+    "roles": [
+      "Self-Sustain",
+      "Item",
+      "Healing"
+    ],
+    "summary": "After one chest interaction, your next injury starts a delayed automatic heal if you avoid being downed for the full timer.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "broken",
+      "health-state"
+    ],
+    "useCases": [
+      "Pre-arm a future autonomous heal with a single chest.",
+      "Use strong chase pathing to survive the delay and recover without teammate help.",
+      "Pair chest builds with another form of self-sustain."
+    ],
+    "counters": [
+      "Requires a chest interaction first.",
+      "The heal takes a long time to arrive.",
+      "Entering the Dying State cancels the effect."
+    ],
+    "pros": [
+      "Only one chest is needed in the current version.",
+      "Future heal requires no teammate once armed.",
+      "Simple activation after setup."
+    ],
+    "cons": [
+      "Sixty-second Tier III delay is long.",
+      "Broken prevents ordinary healing during the countdown.",
+      "One down cancels the payoff."
+    ],
+    "analysis": [
+      "Moment of Glory takes this position because the 10.1 reduction to one chest makes the setup much more reasonable. Once armed, the perk can eventually return an injured Survivor to Healthy without requiring another player or Med-Kit.",
+      "The problem is survival time. Sixty seconds is an eternity if the Killer remains on you, and the automatic heal disappears entirely if you enter the Dying State before the timer completes.",
+      "That means Moment of Glory performs best for players who can take a hit, break chase, and remain productive while the delayed heal ticks. It is much worse as an anti-tunnel tool because tunnel pressure is precisely what cancels it.",
+      "The perk is usable and improved, but still more cumbersome than stronger self-sustain options. One chest is fair setup; a full minute of delayed vulnerability is still a significant cost."
+    ],
+    "verdict": "Much better after its one-chest buff, but still slow. Moment of Glory rewards surviving after injury rather than helping you survive the chase that follows it.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chest",
+      "Delayed Heal"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Trevor Belmont"
+    },
+    "synergyPerkIds": [
+      "plunderers-instinct",
+      "appraisal",
+      "resilience",
+      "lithe"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Plunderer's Instinct",
+      "Appraisal",
+      "Resilience",
+      "Lithe"
+    ],
+    "antiSynergies": []
+  }
+}

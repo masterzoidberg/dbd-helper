@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "batch": "041-045",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "any-means-necessary",
+  "mechanics": {
+    "name": "Any Means Necessary",
+    "alternateName": null,
+    "source": "Yui Kimura",
+    "status": "Live 10.2.0",
+    "currentEffect": "The Auras of dropped Pallets are revealed to you. While standing beside a dropped Pallet, hold the Active Ability button to reset it upright over 5/4/3 seconds.",
+    "activation": [
+      "Stand beside a dropped Pallet and hold the Active Ability button.",
+      "Ends/deactivates when: Reset interaction ends if interrupted."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Reduced the reset interaction to 5/4/3 seconds from 6/5/4 seconds.",
+    "plainEnglishSummary": "You can see dropped Pallets and restore one upright by holding the ability button beside it.",
+    "cooldown": null,
+    "duration": [
+      "Pallet reset interaction: 5/4/3 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Yui Kimura",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "any-means-necessary",
+    "rank": 45,
+    "tier": "B",
+    "roles": [
+      "Pallet",
+      "Information",
+      "Objective"
+    ],
+    "summary": "See dropped Pallets anywhere and restore one upright in 3 seconds at Tier III when the Killer leaves it unbroken.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Recover strong pallets the Killer left dropped but unbroken.",
+      "Use dropped-pallet Auras as global information about where chases and resource use are happening.",
+      "Restore a pallet after a teammate is forced to leave the area, preserving a future chase resource."
+    ],
+    "counters": [
+      "A Killer who breaks important pallets immediately denies the reset ability.",
+      "Resetting a weak pallet can waste time for little strategic gain.",
+      "Traveling across the map solely to recover a pallet can cost more objective time than the pallet is worth."
+    ],
+    "pros": [
+      "Combines pallet-state information with actual resource restoration.",
+      "Only three seconds are needed for the Tier III reset interaction.",
+      "Excellent Solo Q awareness even when no pallet is worth resetting."
+    ],
+    "cons": [
+      "Depends on the Killer leaving pallets intact.",
+      "Not all pallets are valuable enough to justify the detour.",
+      "Provides no direct benefit at untouched tiles."
+    ],
+    "analysis": [
+      "Any Means Necessary earns this position because it quietly does two useful jobs. The Aura-reading portion tells you where pallets have been dropped, which acts as a global map of recent chase activity and resource consumption. The active portion then lets you restore a dropped pallet when the Killer chooses not to break it.",
+      "The information has value even if you never reset anything. Seeing several pallets go down on one side of the map tells you where pressure has been concentrated and which routes may be weaker later. In Solo Q, that fills an information gap teammates normally cannot communicate.",
+      "The three-second Tier III reset is fast enough to make opportunistic recovery practical. Strong Killers will usually break premium pallets, but greedier or power-dependent Killers sometimes leave them down. Recovering even one strong pallet can meaningfully extend a later chase.",
+      "It ranks below broader information perks because the Killer controls much of the opportunity. If every important pallet is destroyed, the active half disappears. Still, the combination of map knowledge and occasional resource restoration makes Any Means Necessary much more than a novelty."
+    ],
+    "verdict": "A smart pallet-management perk with useful information even when no reset happens. Its ceiling depends on the Killer leaving resources behind, but one recovered strong pallet can matter a lot.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Resource"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Yui Kimura"
+    },
+    "synergyPerkIds": [
+      "chemical-trap",
+      "five-moves-ahead",
+      "lithe"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Chemical Trap",
+      "Five Moves Ahead",
+      "Lithe"
+    ],
+    "antiSynergies": []
+  }
+}

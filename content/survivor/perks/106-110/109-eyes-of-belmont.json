@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "106-110",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "eyes-of-belmont",
+  "mechanics": {
+    "name": "Eyes of Belmont",
+    "alternateName": null,
+    "source": "Trevor Belmont",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever a Generator is completed, the Killer's Aura is revealed to you for 1/2/3 seconds. Eyes of Belmont adds 2 seconds to every instance of Killer Aura reveal you receive, and it benefits from its own extension.",
+    "activation": [
+      "A Generator must be completed for the perk's direct reveal."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Generator completions reveal the Killer, and all Killer Aura reveals you receive last 2 seconds longer.",
+    "cooldown": null,
+    "duration": [
+      "Direct Killer Aura reveal: 1/2/3 seconds, extended by 2 seconds by this perk.",
+      "All other Killer Aura reveals received by you are extended by 2 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The +2-second extension applies to all instances of the Killer's Aura being revealed to you, and the perk's own Generator-completion reveal benefits from it."
+    ],
+    "sourceCharacter": "Trevor Belmont",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "eyes-of-belmont",
+    "rank": 109,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Team Support"
+    ],
+    "summary": "Generator completions reveal the Killer, and every Killer Aura reveal you receive lasts 2 seconds longer.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Extend short Killer Aura effects into windows long enough to read direction and commitment.",
+      "Gain a built-in Killer read whenever a generator completes.",
+      "Amplify information builds that already rely on repeated Killer Aura reveals."
+    ],
+    "counters": [
+      "Provides no benefit when the Killer cannot be read by Aura.",
+      "The generator-completion trigger is tied to team progress rather than your timing.",
+      "Needs other Aura perks to fully exploit the extension effect."
+    ],
+    "pros": [
+      "Permanent +2 seconds to every Killer Aura reveal is unusually broad synergy.",
+      "Built-in generator-completion Aura read means the perk is not completely dependent on another slot.",
+      "Very easy to use."
+    ],
+    "cons": [
+      "Pure information with no direct action-speed or chase bonus.",
+      "Much stronger in Aura-heavy builds than alone.",
+      "Undetectable and Aura denial can reduce value."
+    ],
+    "analysis": [
+      "Eyes of Belmont opens the this band band because the +2-second extension is stronger than a simple one-off Aura perk. Many Killer reads are brief enough that an extra two seconds materially improves your ability to understand direction, target choice, and whether the Killer is actually rotating toward you.",
+      "The perk also supplies its own trigger whenever a generator completes. At Tier III that read is three seconds before the perk extends its own effect, giving a useful snapshot without requiring a second perk to function.",
+      "Its ceiling rises sharply when paired with Alert, Fogwise, Kindred, Scene Partner, or other repeated Killer Aura sources. Instead of creating new information, Eyes of Belmont improves the quality of every compatible read across the match.",
+      "It remains B because information alone does not guarantee survival or objective progress. Aura denial can also shut down the core value. Still, among synergy perks, it has an unusually broad and practical target pool."
+    ],
+    "verdict": "An excellent Aura-build multiplier with a useful built-in trigger. Eyes of Belmont is not a standalone powerhouse, but two extra seconds can turn fleeting reads into genuinely actionable information.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Synergy"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Trevor Belmont"
+    },
+    "synergyPerkIds": [
+      "alert",
+      "fogwise",
+      "kindred",
+      "scene-partner"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Alert",
+      "Fogwise",
+      "Kindred",
+      "Scene Partner"
+    ],
+    "antiSynergies": []
+  }
+}

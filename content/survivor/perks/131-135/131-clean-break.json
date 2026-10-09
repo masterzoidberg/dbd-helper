@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "131-135",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "clean-break",
+  "mechanics": {
+    "name": "Clean Break",
+    "alternateName": null,
+    "source": "Taurie Cain",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you finish healing another Survivor, Clean Break activates. While another Survivor heals you, use the Active Ability button to become Broken; if you are not in the Dying State, you automatically heal one Health State after 75/60/45 seconds. Becoming Dying cancels the effect. It cannot activate while you are already Broken.",
+    "activation": [
+      "Complete a healing action on another Survivor.",
+      "While another Survivor heals you, use the Active Ability button.",
+      "You must not already be Broken.",
+      "Ends/deactivates when: Entering the Dying State cancels the delayed heal.",
+      "Ends/deactivates when: The effect ends after healing one Health State."
+    ],
+    "patchNote": "Latest live balance change (10.1.0): Changed the delay to 75/60/45 seconds.",
+    "plainEnglishSummary": "After healing someone, you can become Broken during a heal from another teammate and automatically heal later if you stay out of the Dying State.",
+    "cooldown": null,
+    "duration": [
+      "Delayed self-heal: 75/60/45 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "The perk requires another Survivor to heal you to activate the delayed-heal effect."
+    ],
+    "sourceCharacter": "Taurie Cain",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "clean-break",
+    "rank": 131,
+    "tier": "C",
+    "roles": [
+      "Healing",
+      "Self-Sustain"
+    ],
+    "summary": "After healing another Survivor, you can interrupt a heal on yourself to become Broken and automatically heal one Health State after 45 seconds if you avoid the Dying State.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "broken",
+      "health-state",
+      "reset"
+    ],
+    "useCases": [
+      "Release a teammate from finishing your heal and let them return to objectives.",
+      "Bank a delayed autonomous heal after first helping another Survivor.",
+      "Stay productive during the delay instead of occupying a teammate for the full reset."
+    ],
+    "counters": [
+      "You must first finish healing another Survivor and then begin receiving a heal yourself.",
+      "You are Broken during the delay.",
+      "Entering the Dying State cancels the effect."
+    ],
+    "pros": [
+      "Can free the healer to leave early.",
+      "10.1 reduced the Tier III delay to 45 seconds.",
+      "Automatic health-state recovery requires no teammate at completion."
+    ],
+    "cons": [
+      "Multiple setup steps.",
+      "Forty-five seconds is still a long vulnerable window.",
+      "A tunnel or ordinary down cancels the payoff."
+    ],
+    "analysis": [
+      "Clean Break ranks here because the 10.1 reduction to forty-five seconds made the delayed heal more practical, but the perk still asks for a surprisingly elaborate sequence. You must heal someone first, start receiving a heal, then deliberately convert that interaction into Broken and wait.",
+      "The intended tempo benefit is that your teammate can leave rather than spending the full healing interaction on you. During the delay you can repair, rotate, or perform another useful action while the automatic health state approaches.",
+      "The risk is obvious: forty-five seconds is plenty of time for the Killer to find and down an injured Survivor. Going Dying cancels the payoff entirely, so the perk is weakest in the exact high-pressure situations where a delayed heal sounds most attractive.",
+      "Clean Break is therefore legitimate but conditional self-sustain. The buff helped, yet simpler perks still create healthier and faster resets with less ceremony."
+    ],
+    "verdict": "A workable delayed heal after its 10.1 buff, but still a multi-step promise that the Killer can cancel with one down. Useful when you can stay productive and safe for the full timer.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Delayed Heal"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Taurie Cain"
+    },
+    "synergyPerkIds": [
+      "resilience",
+      "dead-hard",
+      "made-for-this",
+      "empathic-connection"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Resilience",
+      "Dead Hard",
+      "Made for This",
+      "Empathic Connection"
+    ],
+    "antiSynergies": []
+  }
+}

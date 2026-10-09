@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "101-105",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "flip-flop",
+  "mechanics": {
+    "name": "Flip-Flop",
+    "alternateName": null,
+    "source": "Ash Williams",
+    "status": "Live 10.2.0",
+    "currentEffect": "While in the Dying State, your Recovery progress also charges your Wiggle Meter at 50% of the Recovery rate, up to a cap of 40/45/50% Wiggle progression. The accumulated Wiggle progress remains available if the Killer picks you up.",
+    "activation": [
+      "You must be in the Dying State and perform the Recovery action.",
+      "Ends/deactivates when: Additional conversion stops at the tier's maximum Wiggle progression cap."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Recovering while downed banks part of your Wiggle progress before the Killer picks you up.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Recovery progress is converted to Wiggle progress at 50% of the Recovery rate until the tier-specific cap of 40/45/50% is reached; no tokens are used.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Wiggle progression accumulated while recovering remains when the Survivor is picked up."
+    ],
+    "sourceCharacter": "Ash Williams",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "flip-flop",
+    "rank": 101,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Recovery",
+      "Utility"
+    ],
+    "summary": "While downed, convert half of your recovery progress into stored wiggle progress for the moment the Killer picks you up.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "dying-state"
+    ],
+    "useCases": [
+      "Preload wiggle progress while the Killer leaves you on the ground.",
+      "Enable fast Power Struggle activation after pickup.",
+      "Make prolonged slugging increase the risk of a carry escape."
+    ],
+    "counters": [
+      "Provides little value if the Killer picks you up immediately.",
+      "Cannot by itself force the Killer to cross a pallet or miss a hook.",
+      "Maximum converted progress is capped."
+    ],
+    "pros": [
+      "Excellent synergy with anti-carry builds.",
+      "Punishes delayed pickups.",
+      "Passive while recovering."
+    ],
+    "cons": [
+      "Very weak standalone.",
+      "Requires slug time.",
+      "Usually needs another perk to cash the stored progress into something meaningful."
+    ],
+    "analysis": [
+      "Flip-Flop follows Power Struggle at this position because the two are almost a package. Ground recovery becomes future wiggle progress, which can move Power Struggle past its activation threshold almost immediately after pickup.",
+      "Even without Power Struggle, the stored progress makes long slugging more dangerous for the Killer. A Survivor who is left down for a substantial time begins the carry much closer to escaping.",
+      "The limitation is that the Killer can deny most of the perk simply by picking up quickly. Flip-Flop also does not control hook distance, carry route, or pallet geometry.",
+      "It therefore ranks as a strong synergy piece rather than independent power. In a dedicated recovery build it is foundational; in a general loadout it is difficult to justify."
+    ],
+    "verdict": "The engine behind several anti-carry builds. Flip-Flop turns slug time into wiggle pressure, but usually needs another perk or favorable geometry to convert that pressure into an escape.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Carry",
+      "Build Synergy"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ash Williams"
+    },
+    "synergyPerkIds": [
+      "power-struggle",
+      "unbreakable",
+      "tenacity",
+      "boil-over"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Power Struggle",
+      "Unbreakable",
+      "Tenacity",
+      "Boil Over"
+    ],
+    "antiSynergies": []
+  }
+}

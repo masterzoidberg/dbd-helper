@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "batch": "151-155",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "hardened",
+  "mechanics": {
+    "name": "Hardened",
+    "alternateName": null,
+    "source": "Lara Croft",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you unlock a Chest and cleanse or bless a Totem, Hardened activates for the rest of the Trial. Whenever you would scream for any reason, the scream is suppressed and the Killer's Aura is revealed to you instead for 3/4/5 seconds.",
+    "activation": [
+      "Unlock a Chest.",
+      "Cleanse or bless a Totem; both the Chest and Totem conditions must be completed.",
+      "Ends/deactivates when: The perk remains active for the rest of the Trial after both activation actions."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "After opening a Chest and interacting with a Totem, your screams are replaced by brief Killer Aura reveals.",
+    "cooldown": null,
+    "duration": [
+      "Perk activation persists for the rest of the Trial.",
+      "Each Killer Aura reveal lasts 3/4/5 seconds (Tier I/II/III)."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Any event that would make you scream can trigger the effect; the scream is suppressed and replaced with the Killer Aura reveal."
+    ],
+    "sourceCharacter": "Lara Croft",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "hardened",
+    "rank": 155,
+    "tier": "C",
+    "roles": [
+      "Information",
+      "Stealth",
+      "Utility"
+    ],
+    "summary": "After opening a chest and cleansing or blessing a Totem, all future screams are suppressed and replaced with a Killer Aura reveal for up to 5 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Turn Killer scream-information perks into reciprocal Killer Aura reads.",
+      "Suppress scream-based tracking for the remainder of the Trial once fully activated.",
+      "Use chest and Totem interactions from an existing build to reduce the setup tax."
+    ],
+    "counters": [
+      "Requires both a Chest unlock and a Totem cleanse or blessing before activation.",
+      "Some matches contain little or no scream-based Killer information.",
+      "Setup time can be substantial."
+    ],
+    "pros": [
+      "Permanent once activated.",
+      "Converts an enemy information trigger into your own information.",
+      "Can hard-counter certain scream-heavy builds."
+    ],
+    "cons": [
+      "Two separate setup tasks.",
+      "Matchup-dependent payoff.",
+      "Very weak if the Killer never makes you scream."
+    ],
+    "analysis": [
+      "Hardened closes this band because its active effect is clever but the startup cost is enormous. You must first unlock a chest and interact with a Totem before the perk begins functioning at all.",
+      "Once active, the effect can be excellent against scream-heavy information. Every would-be scream is suppressed and converted into a Killer Aura read, simultaneously denying the Killer a cue and giving you one.",
+      "The problem is that the player pays the setup cost before knowing how often the payoff will matter. A Killer with no relevant scream effects can leave Hardened functionally blank after you already spent time opening and cleansing.",
+      "That combination of expensive activation and matchup dependency places Hardened at the bottom of B. In the right counter-build it is satisfying and strong; as a blind queue perk it is too speculative."
+    ],
+    "verdict": "A clever hard counter buried under two setup chores. Hardened is excellent against the right scream build and difficult to justify before you know the matchup.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Scream Suppression",
+      "Setup"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Lara Croft"
+    },
+    "synergyPerkIds": [
+      "detective-s-hunch",
+      "inner-strength",
+      "plunderers-instinct",
+      "residual-manifest"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "calm-spirit"
+    ],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Detective's Hunch",
+      "Inner Strength",
+      "Plunderer's Instinct",
+      "Residual Manifest"
+    ],
+    "antiSynergies": [
+      "Calm Spirit"
+    ]
+  }
+}

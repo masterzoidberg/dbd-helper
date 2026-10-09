@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "086-090",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "fogwise",
+  "mechanics": {
+    "name": "Fogwise",
+    "alternateName": null,
+    "source": "Vittorio Toscano",
+    "status": "Live 10.2.0",
+    "currentEffect": "While repairing a Generator, succeeding a Great Skill Check reveals the Killer's Aura to you for 4/5/6 seconds.",
+    "activation": [
+      "You must be repairing a Generator and succeed a Great Skill Check.",
+      "Ends/deactivates when: The Aura reveal ends after the tier's duration."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "A Great Skill Check while repairing briefly reveals the Killer's Aura to you.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 4/5/6 seconds (Tier I/II/III)."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Vittorio Toscano",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "fogwise",
+    "rank": 89,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Objective"
+    ],
+    "summary": "While repairing, each Great Skill Check reveals the Killer's Aura for several seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Track the Killer while remaining productive on a generator.",
+      "Use repeated Great Skill Checks to decide whether to stay, hide, or rotate.",
+      "Pair with Skill Check support for more reliable Aura reads."
+    ],
+    "counters": [
+      "Requires Great Skill Checks.",
+      "Undetectable or Aura-blocking effects can deny reads.",
+      "No value while you are away from generators."
+    ],
+    "pros": [
+      "Turns objective skill into Killer information.",
+      "Can trigger repeatedly.",
+      "Excellent synergy with Great Skill Check builds."
+    ],
+    "cons": [
+      "Skill-dependent.",
+      "Generator-only trigger.",
+      "Information can be redundant if the Killer is already visible."
+    ],
+    "analysis": [
+      "Fogwise rewards accurate Great basic Skill Checks during Generator repair with repeated Killer Aura information, letting a productive Survivor decide whether to stay, hide, or rotate without leaving the objective.",
+      "The old Stake Out safety-net interaction no longer exists in live 10.2 because Stake Out special checks no longer activate other Skill Check perks. Hyperfocus can still share the same high-skill Generator shell, but it does not make Fogwise easier to trigger.",
+      "The main limitation is context. Fogwise does nothing during chase, rescue, or healing, and it is only as consistent as the user's ability to land Great basic Skill Checks.",
+      "That keeps it below universal information perks, while preserving a real niche for generator-focused players with strong Skill Check consistency."
+    ],
+    "verdict": "A strong generator-information perk for players who can hit Greats consistently. Fogwise keeps you productive while answering the most important question: where is the Killer?",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Vittorio Toscano"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "eyes-of-belmont",
+      "deja-vu"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "stake-out"
+    ],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "Eyes of Belmont",
+      "Déjà Vu"
+    ],
+    "antiSynergies": [
+      "Stake Out"
+    ]
+  }
+}

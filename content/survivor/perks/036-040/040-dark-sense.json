@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "036-040",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "dark-sense",
+  "mechanics": {
+    "name": "Dark Sense",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever a Generator is completed, Dark Sense activates. When the Killer comes within 20 metres of you, for 13/14/15 seconds you see the Killer's Aura, the Auras of other Survivors, and the Auras of Pallets and Windows within 32 metres. The perk then deactivates until another Generator is completed.",
+    "activation": [
+      "A Generator is completed.",
+      "While the perk is active, the Killer comes within 20 metres.",
+      "Ends/deactivates when: The Aura-reading window ends after 13/14/15 seconds and Dark Sense deactivates until another Generator is completed."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Reworked to trigger at 20 metres and reveal the Killer, other Survivors, and nearby Pallets/Windows for 13/14/15 seconds after a Generator completion arms the perk.",
+    "plainEnglishSummary": "Generator completion arms a multi-Aura information window that triggers when the Killer approaches within 20 metres.",
+    "cooldown": null,
+    "duration": [
+      "Aura-reading window: 13/14/15 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Reactivates on each subsequent Generator completion.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "During the active window, reveals the Killer and other Survivors, plus Pallets and Windows within 32 metres."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "dark-sense",
+    "rank": 40,
+    "tier": "A",
+    "roles": [
+      "Information",
+      "Chase",
+      "Utility"
+    ],
+    "summary": "Each Generator completion arms a 13–15 second information burst that reveals the Killer, teammates, Pallets, and Windows when the Killer comes within 20 metres.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Receive an early warning when the Killer approaches after a generator completion.",
+      "Use the long Aura read to understand their direction through walls.",
+      "Bank the trigger until the Killer actually enters a relevant local range."
+    ],
+    "counters": [
+      "Requires a generator to complete before each use.",
+      "Only triggers when the Killer comes within 20 metres.",
+      "Undetectable and Aura denial can suppress the key information."
+    ],
+    "pros": [
+      "13/14/15-second Killer Aura is long.",
+      "Trigger waits for the Killer to approach rather than firing immediately at generator completion.",
+      "Simple and passive."
+    ],
+    "cons": [
+      "One use per generator completion.",
+      "No benefit before the team makes objective progress.",
+      "Pure information."
+    ],
+    "analysis": [
+      "Dark Sense is effectively a new perk in 10.2. When armed by a Generator completion and triggered by the Killer approaching within 20 metres, it reveals the Killer, all other Survivors, and nearby Pallets and Windows for up to fifteen seconds.",
+      "That is a huge amount of information in one window. Newer players receive the map-learning utility that old Windows of Opportunity used to provide, while experienced players can use the Killer Aura and teammate positions to make precise chase and rotation decisions.",
+      "The activation is not permanent. A Generator must complete first, and the information waits until the Killer enters local range, so a quiet portion of the match can still pass without value.",
+      "The 10.1 ranking is no longer meaningful. Dark Sense moved from a narrow Killer-warning perk into a broad, free general information package and should be reviewed much higher."
+    ],
+    "verdict": "One of 10.2’s biggest Survivor information winners. Dark Sense now teaches resources, shows teammates, and tracks the Killer in the same long trigger window.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Beginner"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      32,
+      55
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "provisional",
+    "evidenceStatus": "needs-post-10.2-data",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "eyes-of-belmont",
+      "alert",
+      "poised",
+      "deja-vu"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Eyes of Belmont",
+      "Alert",
+      "Poised",
+      "Déjà Vu"
+    ],
+    "antiSynergies": []
+  }
+}

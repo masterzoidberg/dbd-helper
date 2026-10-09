@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "021-025",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "distortion",
+  "mechanics": {
+    "name": "Distortion",
+    "alternateName": null,
+    "source": "Jeff Johansen",
+    "status": "Live 10.2.0",
+    "currentEffect": "Start with 1 Token, up to 2. When the Killer attempts to read your Aura, automatically spend a Token to block the read and suppress your Scratch Marks for 8/10/12 seconds. Regain 1 Token for every 15 seconds spent in chase. Does not trigger while in the Dying State.",
+    "activation": [
+      "Have at least 1 Token when the Killer attempts to read your Aura.",
+      "Spend 15 seconds in chase to regain a Token.",
+      "Ends/deactivates when: Aura-block and Scratch Mark suppression end after 8/10/12 seconds."
+    ],
+    "patchNote": "Latest live balance change (8.3.2): Reduced the chase time to regain a Token to 15 seconds (was 30); 8.3.0 set 1 starting Token, maximum 2, and 8/10/12 s duration.",
+    "plainEnglishSummary": "It automatically blocks Killer Aura reads and hides your Scratch Marks, with tokens replenished during chase.",
+    "cooldown": null,
+    "duration": [
+      "Aura blocking and Scratch Mark suppression: 8/10/12 seconds by tier."
+    ],
+    "tokenOrStackBehavior": "Starts with 1 Token; maximum 2; spends 1 per blocked attempt; regain 1 for each 15 seconds in chase.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Does not trigger while in the Dying State."
+    ],
+    "sourceCharacter": "Jeff Johansen",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "distortion",
+    "rank": 24,
+    "tier": "A",
+    "roles": [
+      "Stealth",
+      "Chase"
+    ],
+    "summary": "Automatically block Killer Aura reads and hide Scratch Marks, then recharge tokens by spending time in chase.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "looping",
+      "pressure"
+    ],
+    "useCases": [
+      "Deny common Aura-reading perks and add-ons that would otherwise reveal your position.",
+      "Use the Scratch-Mark suppression window to reposition after an attempted Aura read.",
+      "Recharge tokens through normal chase participation rather than hiding passively all match."
+    ],
+    "counters": [
+      "It starts with only one Token and can hold only two.",
+      "Repeated Aura-reading effects can burn through tokens faster than you can recharge them.",
+      "It does not trigger while you are in the Dying State and does nothing against non-Aura tracking methods."
+    ],
+    "pros": [
+      "Automatically protects against a large family of Killer information tools.",
+      "The modern recharge condition rewards taking chase instead of hiding near the Killer.",
+      "The Scratch-Mark suppression can turn a blocked Aura read into actual repositioning value."
+    ],
+    "cons": [
+      "Match value depends heavily on whether the Killer brought Aura reading.",
+      "Limited tokens mean careless exposure to repeated reads can exhaust the perk quickly.",
+      "Can encourage overly passive play if the user values preserving tokens more than helping the team."
+    ],
+    "analysis": [
+      "Distortion earns this position because Killer Aura reading is common enough that denying it can materially change positioning, especially at the start of a match and after hooks, generator kicks, or other information triggers. The perk's automatic activation also means the user does not need to identify exactly which Aura effect is being used before receiving protection.",
+      "The 9.5 recharge model improved the perk's strategic health. Regaining a Token after 15 seconds in chase means strong users can sustain the perk by participating in the dangerous part of Survivor gameplay rather than hiding in the Terror Radius. That gives Distortion a more active rhythm: block information, take chase, recharge, and be ready for the next read.",
+      "The additional Scratch-Mark suppression matters because blocking an Aura without changing position can still leave the Killer with enough tracking information to find you. A 12-second Tier III window can support a real rotation, line-of-sight break, or deceptive path if the user understands why the Aura read likely happened.",
+      "Its floor is matchup-dependent. Against a Killer build with little or no Aura reading, the slot may accomplish almost nothing. Even against heavy Aura builds, two maximum Tokens can disappear quickly. Distortion therefore ranks below universally active information perks, but in the matches where the Killer relies on Aura reads it can dismantle a meaningful part of their tracking plan."
+    ],
+    "verdict": "A strong anti-information perk with a much healthier chase-based recharge loop. Distortion is not universal, but against Aura-heavy Killers it can erase some of their cleanest tracking windows.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Information Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jeff Johansen"
+    },
+    "synergyPerkIds": [
+      "iron-will",
+      "lucky-break",
+      "resilience",
+      "bond"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Iron Will",
+      "Lucky Break",
+      "Resilience",
+      "Bond"
+    ],
+    "antiSynergies": []
+  }
+}

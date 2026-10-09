@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "021-025",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "balanced-landing",
+  "mechanics": {
+    "name": "Balanced Landing",
+    "alternateName": null,
+    "source": "Nea Karlsson",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you fall from a height, suppress landing noise, reduce fall stagger duration by 75%, and gain 50% Haste for 3 seconds. Cannot be used while Exhausted and causes Exhausted for 60/50/40 seconds.",
+    "activation": [
+      "Fall from a height.",
+      "You must not be Exhausted.",
+      "Ends/deactivates when: Haste ends after 3 seconds."
+    ],
+    "patchNote": "Latest live balance change (3.4.0): No later material balance entry was found; 3.4.0 is the latest supportable material change in the available history.",
+    "plainEnglishSummary": "Falling from a height makes you land more quietly and grants a brief Haste burst.",
+    "cooldown": null,
+    "duration": [
+      "Haste: 3 seconds.",
+      "Exhausted: 60/50/40 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste",
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "Suppresses landing noise and reduces fall stagger duration."
+    ],
+    "sourceCharacter": "Nea Karlsson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "balanced-landing",
+    "rank": 23,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Exhaustion",
+      "Mobility"
+    ],
+    "summary": "Turn a fall into a 50% Haste burst, sharply reduce landing stagger, and silence landing noise.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "haste",
+      "exhausted",
+      "looping"
+    ],
+    "useCases": [
+      "Convert elevated windows, hills, balconies, and map drops into immediate chase distance.",
+      "Use reduced stagger to make otherwise dangerous drops safe enough to extend a loop.",
+      "Force Killers to respect vertical escape routes that would normally cost the Survivor too much momentum."
+    ],
+    "counters": [
+      "Requires usable elevation, making its value highly map- and tile-dependent.",
+      "Cannot activate while Exhausted and applies the normal Exhaustion timer after use.",
+      "Killers can sometimes zone Survivors away from the drop that would activate the perk.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "A full-strength Exhaustion burst with the added benefit of dramatically reduced landing stagger.",
+      "Can transform specific map structures into very strong chase resources.",
+      "Easy to understand mechanically once a valid drop is available."
+    ],
+    "cons": [
+      "Some maps offer far fewer reliable activation points than others.",
+      "The user may be forced to path toward elevation instead of the objectively strongest tile.",
+      "Competes directly with more universally activatable Exhaustion perks."
+    ],
+    "analysis": [
+      "Balanced Landing earns this position because its effect is powerful enough to reshape a chase whenever the map provides elevation. A 50% Haste burst for three seconds already matches the classic Exhaustion payoff, and the 75% reduction to landing stagger means the activation point itself preserves far more momentum than a normal drop.",
+      "That combination can make elevated structures disproportionately safe. A drop that would normally let the Killer recover the distance can instead become the moment the Survivor escapes the tile entirely. On maps with strong balconies, hills, stair structures, and drop windows, the Killer may need to route differently simply because Balanced Landing is possible.",
+      "The obvious weakness is map dependence. Sprint Burst works anywhere and Lithe only asks for a rushed vault; Balanced Landing needs geometry. Skilled players can memorize activation points and deliberately route toward them, but there will still be Trials where the relevant drops are awkward, unsafe, or nowhere near the chase.",
+      "That inconsistency keeps it below the most universal Exhaustion perks, but current usage shows it remains a serious option rather than a novelty. When the map cooperates, Balanced Landing can be one of the strongest chase perks in the entire loadout. When it does not, the slot can feel painfully quiet."
+    ],
+    "verdict": "A real Exhaustion perk with a map-shaped ceiling. Balanced Landing can make vertical tiles oppressive for the Killer, but it cannot promise a good activation point every Trial.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nea Karlsson"
+    },
+    "synergyPerkIds": [
+      "windows-of-opportunity",
+      "resilience",
+      "finesse",
+      "vigil"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Windows of Opportunity",
+      "Resilience",
+      "Finesse",
+      "Vigil"
+    ],
+    "antiSynergies": []
+  }
+}

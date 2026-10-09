@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "046-050",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "spine-chill",
+  "mechanics": {
+    "name": "Spine Chill",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever the Killer looks at you within 40 metres, you are notified, cannot scream for 12 seconds, and vault 10% faster for 12 seconds. Cooldown: 40/35/30 seconds.",
+    "activation": [
+      "The Killer looks at you while within 40 metres.",
+      "The perk is not on cooldown.",
+      "Ends/deactivates when: The scream-prevention and vault-speed effects end after 12 seconds.",
+      "Ends/deactivates when: The perk cannot trigger again during its 40/35/30-second cooldown."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: when the Killer looks at you within 40 metres, gain a notification, 12 seconds of scream prevention, and 10% faster vaulting, with a 40/35/30-second cooldown.",
+    "plainEnglishSummary": "A nearby Killer looking at you triggers a warning, temporary scream immunity, and faster vaulting.",
+    "cooldown": "40/35/30 seconds.",
+    "duration": [
+      "Cannot scream: 12 seconds.",
+      "Vault speed +10%: 12 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "spine-chill",
+    "rank": 47,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Information"
+    ],
+    "summary": "When the Killer looks at you within 40 metres, gain a warning plus 12 seconds of scream immunity and 10% faster vaults.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Get an early warning when the Killer is looking at you within range.",
+      "Convert the opening of a chase into a short window of faster vaults.",
+      "Suppress screams during the active window against scream-based effects."
+    ],
+    "counters": [
+      "The effect is temporary and then enters a cooldown, so it cannot cover every vault in a chase.",
+      "An early trigger can waste part of the 12-second window before a decisive vault occurs.",
+      "Its exact post-10.2 chase conversion still needs live data."
+    ],
+    "pros": [
+      "Combines warning, scream suppression, and chase-relevant vault speed.",
+      "Useful without teammate coordination.",
+      "Much more directly chase-oriented than its old action-speed identity."
+    ],
+    "cons": [
+      "Cooldown limits uptime.",
+      "Warning value overlaps normal Killer awareness in many matchups.",
+      "Exact rank remains provisional until post-10.2 play data exists."
+    ],
+    "analysis": [
+      "Spine Chill was rebuilt into a chase-warning perk in 10.2. The old broad action-speed package is gone; instead, a Killer looking at you within 40 metres triggers a notification, twelve seconds of scream immunity, and 10% faster vaulting.",
+      "The vault bonus is the important competitive piece. Ten percent can alter close Window timings, and the trigger naturally occurs as the Killer notices or approaches you rather than requiring a manual activation.",
+      "The effect has a 40/35/30-second cooldown, so it cannot be permanent chase insurance. It also no longer speeds generators, healing, gates, or the many other actions associated with historical Spine Chill.",
+      "Modern Spine Chill deserves a fresh chase-based evaluation. It is narrower than the old generalist version but more directly useful during the moment a Killer is committing attention to you."
+    ],
+    "verdict": "A cleaner 10.2 chase perk: warning, scream immunity, and 10% faster vaults when the Killer looks your way. The old action-speed identity is gone.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Awareness",
+      "Vault"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      40,
+      65
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "provisional",
+    "evidenceStatus": "needs-post-10.2-data",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "resilience",
+      "premonition",
+      "alert",
+      "wake-up"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Resilience",
+      "Premonition",
+      "Alert",
+      "Wake Up!"
+    ],
+    "antiSynergies": []
+  }
+}

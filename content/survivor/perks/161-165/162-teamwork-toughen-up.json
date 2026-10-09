@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "161-165",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "teamwork-toughen-up",
+  "mechanics": {
+    "name": "Teamwork: Toughen Up",
+    "alternateName": null,
+    "source": "Rick Grimes",
+    "status": "Live 10.2.0",
+    "currentEffect": "While injured, whenever another Survivor within 24 m blinds the Killer by any means or stuns them using a Pallet, suppresses your Grunts of Pain, Pools of Blood, and Scratch Marks for 20/25/30 seconds.",
+    "activation": [
+      "You must be injured.",
+      "Another Survivor within 24 m must blind or Pallet-stun the Killer.",
+      "Ends/deactivates when: Suppression ends after 20/25/30 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "When a nearby teammate blinds or Pallet-stuns the Killer, your tracking traces are suppressed for a short time while injured.",
+    "cooldown": null,
+    "duration": [
+      "Grunts of Pain, Pools of Blood, and Scratch Marks are suppressed for 20/25/30 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The perk suppresses Grunts of Pain, Pools of Blood, and Scratch Marks; it does not name an Elusive status effect."
+    ],
+    "sourceCharacter": "Rick Grimes",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "teamwork-toughen-up",
+    "rank": 162,
+    "tier": "D",
+    "roles": [
+      "Stealth",
+      "Team Support",
+      "Chase"
+    ],
+    "summary": "While injured, a nearby teammate blinding or pallet-stunning the Killer suppresses your pain sounds, Blood, and Scratch Marks for up to 30 seconds.",
+    "metaStatus": "Weak",
+    "skillLevel": "Medium–High",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "looping",
+      "swf"
+    ],
+    "useCases": [
+      "Use a teammate's stun or blind to disappear during a group chase or rescue.",
+      "Break line of sight during the thirty-second suppression window and change routes completely.",
+      "Pair with coordinated save builds where nearby teammate stuns are planned rather than accidental."
+    ],
+    "counters": [
+      "You must be injured and within 24 metres of the teammate's blind or pallet stun.",
+      "The perk relies on someone else successfully performing the interaction.",
+      "Direct sight and Aura reading can still reveal you."
+    ],
+    "pros": [
+      "Thirty seconds is a long tracking-denial window.",
+      "Suppresses three major chase cues.",
+      "Excellent coordinated rescue synergy."
+    ],
+    "cons": [
+      "Zero solo activation control.",
+      "Highly event-dependent.",
+      "Requires the team to cluster around Killer interactions."
+    ],
+    "analysis": [
+      "Teamwork: Toughen Up follows Throw Down because thirty seconds without pain sounds, Blood, or Scratch Marks is a substantial escape window. The difference is that another Survivor must create the blind or pallet stun while you are injured nearby.",
+      "That can be devastating in a planned rescue. A teammate stuns the Killer, the perk activates, and the injured Survivor suddenly loses most conventional tracking cues while everyone scatters.",
+      "Normal matchmaking is much less cooperative. Teammates may never land the relevant interaction within twenty-four metres, and the user has no button that can force the perk to happen.",
+      "The effect is strong enough to respect but too externally controlled for a higher slot. Toughen Up belongs to the family of SWF perks that can look absurd in a montage and invisible in ordinary queues."
+    ],
+    "verdict": "Thirty seconds of near-total trail suppression is excellent, but somebody else has to win the interaction for you. Toughen Up is coordinated-stealth tech, not general reliability.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team",
+      "Chase Escape"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Rick Grimes"
+    },
+    "synergyPerkIds": [
+      "teamwork-throw-down",
+      "background-player",
+      "flashbang",
+      "lucky-break"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Teamwork: Throw Down",
+      "Background Player",
+      "Flashbang",
+      "Lucky Break"
+    ],
+    "antiSynergies": []
+  }
+}

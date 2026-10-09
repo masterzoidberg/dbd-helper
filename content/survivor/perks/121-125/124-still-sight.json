@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "121-125",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "still-sight",
+  "mechanics": {
+    "name": "Still Sight",
+    "alternateName": null,
+    "source": "Aestri Yazar",
+    "status": "Live 10.2.0",
+    "currentEffect": "After standing still for 4/3/2 seconds, reveals the Auras of the Killer, Chests, and Generators within 24 m. The effect deactivates when you start moving.",
+    "activation": [
+      "Stand still for 4/3/2 seconds.",
+      "Ends/deactivates when: Moving deactivates the Aura reading."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Reduced activation time to 4/3/2 seconds from 6/5/4 seconds.",
+    "plainEnglishSummary": "Standing still briefly reveals nearby Killer, Chest, and Generator Auras until you move.",
+    "cooldown": null,
+    "duration": [
+      "Aura reading continues while stationary and ends when movement begins."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Reveals Killer, Chest, and Generator Auras within 24 m."
+    ],
+    "sourceCharacter": "Aestri Yazar",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "still-sight",
+    "rank": 124,
+    "tier": "C",
+    "roles": [
+      "Information"
+    ],
+    "summary": "After standing still for 2 seconds at Tier III, see the Killer, nearby generators, and nearby chests within 24 metres until you move.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Pause briefly behind cover to check whether the Killer is approaching.",
+      "Use the Killer Aura at tall-wall structures where sightlines are poor.",
+      "Scout nearby generator and chest positions on unfamiliar maps."
+    ],
+    "counters": [
+      "You must stop moving to activate it.",
+      "The 24-metre radius is local rather than map-wide.",
+      "Aura-blocking or Undetectable effects can remove the most valuable information."
+    ],
+    "pros": [
+      "Only two seconds of stillness at Tier III.",
+      "Can show the Killer continuously while you remain stationary.",
+      "Also provides local objective information."
+    ],
+    "cons": [
+      "Standing still costs chase and objective tempo.",
+      "Short range.",
+      "Easy to misuse by waiting too long for information."
+    ],
+    "analysis": [
+      "Still Sight takes this position because the current two-second activation is fast enough to be practical in short scouting pauses. Behind a wall or before committing to an unsafe generator, briefly stopping can reveal exactly where the Killer is within the local area.",
+      "The perk is also interesting at tall-wall loops where direct sight is poor. If you can safely become stationary for the activation, the Killer Aura can remove a mindgame entirely until you move again.",
+      "The obvious problem is tempo. Dead by Daylight rewards movement and objective work, so a perk that asks you to stand still must answer a question worth the lost seconds. Holding the effect unnecessarily can turn useful information into self-inflicted inefficiency.",
+      "Still Sight therefore lands in B as a deliberate scouting tool. It is stronger than its low usage implies, but only when the player uses brief information checks rather than treating stillness as a playstyle."
+    ],
+    "verdict": "A useful local scouting perk after its faster activation buff. Still Sight rewards short, purposeful pauses, not standing around admiring the Aura colors.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Scouting"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Aestri Yazar"
+    },
+    "synergyPerkIds": [
+      "open-handed",
+      "eyes-of-belmont",
+      "urban-evasion",
+      "kindred"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Open-Handed",
+      "Eyes of Belmont",
+      "Urban Evasion",
+      "Kindred"
+    ],
+    "antiSynergies": []
+  }
+}

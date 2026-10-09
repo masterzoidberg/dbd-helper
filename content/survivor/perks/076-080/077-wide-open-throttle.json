@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "076-080",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "wide-open-throttle",
+  "mechanics": {
+    "name": "Wide Open Throttle",
+    "alternateName": null,
+    "source": "Shane Wiigwaas",
+    "status": "Live 10.2.0",
+    "currentEffect": "Fast-vaulting a Pallet grants 10/12.5/15% Haste for 3 seconds and immediately resets the Pallet upright; the Entity blocks it for 60 seconds, during which all Survivors see its Aura. Cooldown: 60 seconds.",
+    "activation": [
+      "Fast-vault a Pallet.",
+      "Ends/deactivates when: Haste ends after 3 seconds.",
+      "Ends/deactivates when: The Pallet block ends after 60 seconds.",
+      "Ends/deactivates when: Perk cannot be used again until the 60-second cooldown expires."
+    ],
+    "patchNote": "Latest live balance change (10.0.1): Introduced with 10/12.5/15% Haste for 3 seconds, a 60-second pallet block with Aura visibility to all Survivors, and 60-second cooldown.",
+    "plainEnglishSummary": "Fast-vaulting a Pallet resets it, briefly speeds you up, and blocks that Pallet for a minute.",
+    "cooldown": "60 seconds",
+    "duration": [
+      "Haste: 3 seconds.",
+      "Pallet is blocked and its Aura shown to all Survivors for 60 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The Pallet is reset upright and all Survivors see its Aura while it is blocked."
+    ],
+    "sourceCharacter": "Shane Wiigwaas",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "wide-open-throttle",
+    "rank": 77,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Pallet",
+      "Mobility"
+    ],
+    "summary": "Fast-vault a Pallet to gain 15% Haste for 3 seconds, reset the Pallet upright, and block it for 60 seconds; cooldown is 60 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "looping"
+    ],
+    "useCases": [
+      "Use a pallet vault as a short chase acceleration tool.",
+      "Reset a dropped pallet so the Killer cannot immediately interact with it normally during the blocked period.",
+      "Create a clearly marked temporary map state teammates can see."
+    ],
+    "counters": [
+      "Only triggers on a fast Pallet vault.",
+      "The pallet becomes blocked for everyone for a full minute.",
+      "Fifteen percent Haste is much smaller than classic Exhaustion bursts."
+    ],
+    "pros": [
+      "Can create chase distance without causing Exhaustion.",
+      "Unique pallet-state manipulation.",
+      "Visible blocked pallet helps team awareness."
+    ],
+    "cons": [
+      "Long cooldown.",
+      "Can temporarily deny your own team access to the pallet.",
+      "Very map and path dependent."
+    ],
+    "analysis": [
+      "Wide Open Throttle ranks this position because it offers a unique non-Exhaustion chase burst, but the pallet-reset mechanic is a double-edged sword. Fifteen percent Haste for three seconds is useful, yet far below the 50% burst provided by classic Exhaustion perks.",
+      "Resetting the pallet sounds powerful until the 60-second Entity block is considered. The resource exists again, but nobody can use it during the block, so the immediate value is mostly about changing the tile state and preventing a normal follow-up interaction.",
+      "Strong players can use the burst to leave the tile and potentially return after the block expires. The perk also avoids Exhaustion, allowing it to coexist with Lithe or another major chase perk.",
+      "The cooldown and awkward pallet lock keep it firmly mid-B. It is clever and sometimes strong, but not consistent enough to compete with straightforward chase tools."
+    ],
+    "verdict": "An interesting non-Exhaustion pallet perk with real movement value and real awkwardness. Wide Open Throttle rewards planned transitions more than ordinary looping.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Haste"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Shane Wiigwaas"
+    },
+    "synergyPerkIds": [
+      "lithe",
+      "finesse",
+      "five-moves-ahead"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Lithe",
+      "Finesse",
+      "Five Moves Ahead"
+    ],
+    "antiSynergies": []
+  }
+}

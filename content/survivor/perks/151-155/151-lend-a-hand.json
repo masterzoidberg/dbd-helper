@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "151-155",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "lend-a-hand",
+  "mechanics": {
+    "name": "Lend a Hand",
+    "alternateName": null,
+    "source": "Shane Wiigwaas",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you bless or cleanse 1 Totem, while healing another Survivor, press Activate Ability 2 to give that Survivor 2/3/4 permanent healing charges. The effect can be used multiple times in one Trial if you fulfill the Totem condition again, but only once per recipient.",
+    "activation": [
+      "Bless or cleanse 1 Totem to fulfill the activation condition.",
+      "While healing another Survivor, press Activate Ability 2.",
+      "Ends/deactivates when: The effect cannot be applied to the same recipient more than once by this perk user."
+    ],
+    "patchNote": "Latest live balance change (10.0.1): Changed from once per match to reusable multiple times when the Totem condition is fulfilled again, while retaining a once-per-recipient limit.",
+    "plainEnglishSummary": "After a Totem interaction, you can add permanent healing charges to a teammate while healing them.",
+    "cooldown": null,
+    "duration": [
+      "Healing charges given to the recipient are permanent."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Can be used multiple times per Trial after meeting the Totem condition again; only once per other Survivor.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Shane Wiigwaas",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "lend-a-hand",
+    "rank": 151,
+    "tier": "C",
+    "roles": [
+      "Healing",
+      "Totem",
+      "Objective"
+    ],
+    "summary": "After cleansing or blessing a Totem, add up to four permanent healing charges to a teammate while healing them, once per recipient.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "health-state",
+      "reset"
+    ],
+    "useCases": [
+      "Turn a useful Totem interaction into permanent healing progress for a teammate.",
+      "Pre-load a teammate's health bar so a later heal needs less time.",
+      "Repeat the effect on different teammates if you fulfill the Totem condition again."
+    ],
+    "counters": [
+      "Requires a Totem interaction before every new activation cycle.",
+      "Only four charges at Tier III, a fraction of one full heal.",
+      "Cannot repeatedly target the same recipient."
+    ],
+    "pros": [
+      "Permanent charges do not decay.",
+      "Can be used multiple times in one Trial after new Totem interactions.",
+      "Pairs naturally with builds already touching Totems."
+    ],
+    "cons": [
+      "Side-objective setup.",
+      "Modest individual payout.",
+      "Recipient restriction limits repeated optimization."
+    ],
+    "analysis": [
+      "Lend a Hand lands at this position because permanent healing charges are mechanically valuable, but the four-charge payout is not large enough to justify chasing Totems solely for the perk. Its best use is piggybacking on a cleanse or Boon you already wanted.",
+      "Permanent progress is the important word. Once granted, the teammate's health state effectively has less work remaining for a future heal, and normal interruptions do not erase that stored reduction.",
+      "The perk can activate again after another Totem interaction, which creates a route toward helping multiple teammates across the Trial. Counterforce or a Boon build can make those activations far less awkward.",
+      "It stays in C because the economy is modest. The Totem time, travel, and healing setup often cost more than four charges are worth unless those actions were already part of the plan."
+    ],
+    "verdict": "A nice bonus attached to Totem play, not a reason to become a Totem archaeologist. Lend a Hand is efficient when the setup was already useful.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Permanent Progress"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Shane Wiigwaas"
+    },
+    "synergyPerkIds": [
+      "counterforce",
+      "botany-knowledge",
+      "empathy"
+    ],
+    "synergyOther": [
+      "Boon perks"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Counterforce",
+      "Botany Knowledge",
+      "Empathy",
+      "Boon perks"
+    ],
+    "antiSynergies": []
+  }
+}

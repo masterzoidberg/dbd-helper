@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "116-120",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "inner-focus",
+  "mechanics": {
+    "name": "Inner Focus",
+    "alternateName": null,
+    "source": "Haddie Kaur",
+    "status": "Live 10.2.0",
+    "currentEffect": "You can always see other Survivors' Scratch Marks. Whenever another Survivor loses a Health State due to the Killer, the Killer's Aura is revealed to you for 6/8/10 seconds, depending on perk tier.",
+    "activation": [
+      "Scratch Mark visibility is continuously available during the Trial.",
+      "For the Killer Aura reveal, another Survivor must lose a Health State due to the Killer."
+    ],
+    "patchNote": "Latest live balance change (8.3.2): The Killer Aura reveal now triggers only from Health State loss caused by the Killer; 8.3.0 had increased the reveal duration to 6/8/10 seconds and removed its 32 m condition.",
+    "plainEnglishSummary": "It shows teammates' Scratch Marks and briefly reveals the Killer when the Killer causes a teammate to lose a Health State.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 6/8/10 seconds per qualifying event."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Haddie Kaur",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "inner-focus",
+    "rank": 116,
+    "tier": "C",
+    "roles": [
+      "Information"
+    ],
+    "summary": "Always see teammates' Scratch Marks; whenever the Killer makes another Survivor lose a Health State, see the Killer for up to 10 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 2,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "health-state"
+    ],
+    "useCases": [
+      "Track where teammate chases are moving through their Scratch Marks.",
+      "Gain a long Killer Aura read every time another Survivor loses a Health State.",
+      "Use the hit-triggered Aura to judge whether the Killer is continuing chase or rotating."
+    ],
+    "counters": [
+      "Provides no Aura trigger when you are the Survivor losing the Health State.",
+      "Team Scratch Marks can add visual clutter.",
+      "Stealth and Aura-blocking Killer effects can deny the read."
+    ],
+    "pros": [
+      "Ten-second Killer Aura reads are long.",
+      "Natural trigger occurs frequently in normal matches.",
+      "Excellent Solo Q chase-location information."
+    ],
+    "cons": [
+      "No direct action-speed benefit.",
+      "Does less while you are the primary chase target.",
+      "Can be visually noisy."
+    ],
+    "analysis": [
+      "Inner Focus earns this position because a ten-second Killer Aura reveal after a teammate loses a Health State is a substantial information window. Hits are among the most common events in the game, so the perk receives opportunities without demanding unusual setup.",
+      "The permanent teammate Scratch Marks add another layer. They can tell you where a teammate recently ran even after their Aura disappears, helping infer chase paths or avoid colliding with another Survivor's pressure.",
+      "Solo Q benefits more than SWF because the perk supplies information a coordinated team can often communicate verbally. Even in SWF, a ten-second Killer Aura is more precise than a callout.",
+      "It remains in B because the information is mostly reactive. You gain knowledge after the Killer has already created pressure, and the perk offers no direct way to stop the next hit."
+    ],
+    "verdict": "A strong reactive information perk. Inner Focus gives long Killer reads off normal match events and is especially useful when Solo Q lacks chase callouts.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Team Tracking"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Haddie Kaur"
+    },
+    "synergyPerkIds": [
+      "eyes-of-belmont",
+      "empathy",
+      "alert",
+      "bond"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Eyes of Belmont",
+      "Empathy",
+      "Alert",
+      "Bond"
+    ],
+    "antiSynergies": []
+  }
+}
