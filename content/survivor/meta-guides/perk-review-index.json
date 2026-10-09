@@ -44,6 +44,22 @@
     "built-to-last": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "4d6789c7cc48027ec3941ca6fe76fc794ad95bea5abdbc98a9d090d6bf93ae6c"
+    },
+    "flashbang": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "b42a41dc879ee180df2e53b24b9cc48a244084e27f6debea2be1802879e1bb4e"
+    },
+    "stake-out": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "0a02b68cf81959d420c13ba24438c419b568acaf1647ee5ff811ac14f119ca50"
+    },
+    "hyperfocus": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "63e5c35b27bac6ca27dabd7e5ccad5e3e9c79750c33f5ab01a3176c9e0db0d3f"
+    },
+    "shoulder-the-burden": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "d6ffb03f7a696f8365a6e6b9498409b0d41f4752db37a6ce26a350698325d899"
     }
   }
 }

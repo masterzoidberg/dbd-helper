@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "DRAFT",
+  "reviewedDate": null,
+  "strategyId": "X02",
+  "snapshotId": "X02@10.2.0-r1",
+  "perkReviews": [
+    {
+      "perkId": "deja-vu",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "shoulder-the-burden",
+      "mechanicsRevision": 1
+    }
+  ],
+  "page": {
+    "kind": "TEAM",
+    "summary": "Agree who handles chase, critical generators, recovery and flexible support, then reassign the work when pressure changes.",
+    "verdict": {
+      "recommendation": "Use this as a four-player plan with shared assignments and callouts.",
+      "soloQ": "Not applicable to Solo Q: this plan depends on the group distributing tools and responsibilities together.",
+      "coordinatedSwf": "Choose complementary jobs before the Trial, while keeping each player able to survive a chase. Update assignments when the original specialist is occupied.",
+      "mainWeakness": "The plan loses value when teammates cannot communicate changes or keep following an assignment that the Trial has made unusable."
+    },
+    "canonicalTeamBuildIds": [
+      "X02@10.2.0-r1:swf-team-architecture"
+    ],
+    "roles": [
+      {
+        "id": "runner",
+        "title": "Chase and pressure",
+        "assignment": "Take pressure away from the generators the team has chosen, and call your route and spent resources. If the Killer leaves, return to useful work rather than chasing them to preserve the runner title."
+      },
+      {
+        "id": "objectives",
+        "title": "Critical generators",
+        "assignment": "Identify the generator that matters to the team's next rotation and call the target. Agree any item investment with the group before committing; if you are chased, hand the objective to the flex player.",
+        "loadout": {
+          "options": [
+            {
+              "perkId": "deja-vu",
+              "usage": "CORE",
+              "whyItsHere": "Give the assigned objective player a concrete cluster to discuss and break up. Share the target with teammates so their work supports the same plan."
+            }
+          ]
+        }
+      },
+      {
+        "id": "reset",
+        "title": "Hook states and recovery",
+        "assignment": "Track who needs the rescue and who can safely take it. Discuss a hook-state transfer before committing, including who covers you afterward; otherwise take the ordinary rescue or recovery job that is available.",
+        "loadout": {
+          "options": [
+            {
+              "perkId": "shoulder-the-burden",
+              "usage": "SUPPORT",
+              "whyItsHere": "Offer a deliberate way to redistribute hook pressure when preserving the teammate matters more than the cost to you. Agree an exit and cover for the transfer instead of treating it as a free unhook."
+            }
+          ]
+        }
+      },
+      {
+        "id": "flex",
+        "title": "Save or second objective",
+        "assignment": "Keep a second objective moving unless a reachable save or uncovered rescue is worth leaving it. Call which gap you are filling and return to repair when the opportunity disappears."
+      }
+    ],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before the Trial, agree these four assignments, the tools each player is bringing and who covers a job when its owner is chased. Share item plans without assuming the role labels prescribe four fixed builds."
+      ],
+      "rows": [
+        {
+          "id": "choose-the-target",
+          "situation": "The objective player has identified the highlighted generator cluster and the team is free to act.",
+          "action": "Call a target and who will work it. Keep the runner's route away from that work, and let the flex player cover another useful objective or the needed rescue.",
+          "why": "Information becomes team value when it changes where people work, rather than sending everyone to the same place.",
+          "enabledBy": [
+            "role:objectives",
+            "perk:deja-vu"
+          ]
+        },
+        {
+          "id": "handoff-objective",
+          "situation": "The Killer starts chasing the critical-generator player.",
+          "action": "Call the chase and let the flex player take the abandoned objective if it remains workable. The former runner should cover another open job instead of demanding that the Killer switch back.",
+          "why": "Assignments preserve coverage only if the team replaces the player who is now occupied.",
+          "enabledBy": [
+            "role:objectives",
+            "role:flex",
+            "role:runner"
+          ]
+        },
+        {
+          "id": "consider-transfer",
+          "situation": "A teammate is hooked and the reset player is considering Shoulder the Burden.",
+          "action": "Check that the perk is available and you are eligible, then agree who covers your exit and the remaining work. Use the transfer unhook only if accepting its hook-state and injury cost helps the team; otherwise choose an ordinary rescue plan.",
+          "why": "Moving hook pressure can protect one teammate while making the rescuer more vulnerable. The follow-up belongs in the decision, before the transfer.",
+          "enabledBy": [
+            "role:reset",
+            "perk:shoulder-the-burden"
+          ]
+        },
+        {
+          "id": "cover-the-reset",
+          "situation": "The reset player has used the transfer and now needs space.",
+          "action": "Let the flex player cover the next exposed rescue or support job as needed. Do not gather for a heal that Broken currently prevents; use the available time on objectives or positioning instead.",
+          "why": "Keeping the same player responsible for every rescue ignores the cost the team just asked them to take.",
+          "enabledBy": [
+            "role:reset",
+            "role:flex",
+            "perk:shoulder-the-burden"
+          ]
+        },
+        {
+          "id": "cancel-save",
+          "situation": "The flex player has approached a save but the Killer denies the opening.",
+          "action": "Call the cancellation and return to the uncovered objective or plan the hook rescue. Keep the other players on their jobs instead of drawing the whole team into the failed attempt.",
+          "why": "Flexible support should fill a gap without multiplying the cost of a missed window.",
+          "enabledBy": [
+            "role:flex"
+          ]
+        },
+        {
+          "id": "endgame-assignments",
+          "situation": "The remaining work has changed from generator pressure to a rescue or escape.",
+          "action": "Name who handles the gate, who takes the rescue and who can absorb pressure. Reassign the former generator specialist rather than leaving them waiting for a job that no longer exists.",
+          "why": "The team's remaining win condition matters more than its opening role labels."
+        }
+      ],
+      "abortWhen": [
+        "If a player cannot perform the assigned job because of chase, hook state or unavailable tools, call the handoff immediately; do not leave the rest of the team waiting for the original plan.",
+        "If several players start answering the same save or rescue, confirm one approach and send the others back to the uncovered work."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Intent signals do not turn one uncoordinated Survivor into this four-player allocation plan. Use an individual strategy when you cannot agree responsibilities."
+      ],
+      "coordinatedSwf": [
+        "Keep callouts actionable: target generator, chase route, rescue owner and whether a save is still on. Agree a replacement whenever an assignment changes."
+      ]
+    },
+    "weaknesses": [
+      "The team spends attention on coordination, and a missed handoff can leave a critical generator or rescue uncovered."
+    ],
+    "commonMistakes": [
+      "Treating the four assignments as permanent even after their owners are chased or lose their tools.",
+      "Equipping redundant narrow tools without checking who already covers that job.",
+      "Sending everyone to help the designated saver instead of maintaining objective pressure."
+    ]
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "X02#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "X02@10.2.0-r1#/buildImplementations/0"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "X02@10.2.0-r1#/solo/rankingStatus"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "X02@10.2.0-r1#/dependencyTypes"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "X02#Team Setup"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "X02#Midgame Role Switching"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "X02#Endgame"
+    },
+    {
+      "kind": "PERK",
+      "ref": "deja-vu#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "shoulder-the-burden#/mechanics"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "DRAFT",
+  "reviewedDate": null,
+  "strategyId": "P02",
+  "snapshotId": "P02@10.2.0-r1",
+  "perkReviews": [
+    {
+      "perkId": "flashbang",
+      "mechanicsRevision": 1
+    }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Earn a grenade through repairs, prepare near a likely pickup, and attempt the save only while you can reach the right position.",
+    "verdict": {
+      "recommendation": "Use this as a repair-to-save option when a nearby pickup offers a real opening.",
+      "soloQ": "Take saves you can read from your own position. Crossing the map after a down usually abandons repair for a window you cannot reach.",
+      "coordinatedSwf": "Call that the grenade is ready and agree who approaches the pickup, so the rest of the team keeps working.",
+      "mainWeakness": "Preparation and close positioning cost time even when the Killer never offers a usable pickup."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EXAMPLE",
+          "id": "crafted-save",
+          "label": "Crafted save tool",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "This defines only the grenade tool. Choose the remaining slots for your wider game plan; the research does not establish a fixed four-perk build.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Create the save resource",
+              "usage": "REQUIRED",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "flashbang",
+                  "whyItsHere": "Make repair work prepare a later save, so you can contribute before the pickup opportunity instead of waiting beside every chase."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "mechanics": [
+      {
+        "id": "prepared-grenade",
+        "explanation": "A crafted grenade is the resource for the close-range save attempt. Having charged the perk is preparation; confirm that you have actually crafted the grenade before leaving to intercept."
+      }
+    ],
+    "gameplay": {
+      "type": "SEQUENCE",
+      "activationWhen": [
+        "You have a crafted grenade and can reach a useful drop position for a nearby pickup without simply handing the Killer another down."
+      ],
+      "steps": [
+        {
+          "id": "earn",
+          "label": "Repair before hunting a save",
+          "instructions": [
+            "Work on a useful generator until your own repair contribution readies Flashbang. Keep repairing if no worthwhile save is developing; do not wait idle for a teammate to go down."
+          ],
+          "enabledBy": [
+            "perk:flashbang"
+          ]
+        },
+        {
+          "id": "craft",
+          "label": "Prepare the grenade",
+          "instructions": [
+            "When the perk is ready and a locker detour is safe, enter the locker and use the crafting action. Confirm the grenade is ready to use before taking the saver position."
+          ],
+          "enabledBy": [
+            "perk:flashbang"
+          ]
+        },
+        {
+          "id": "position",
+          "label": "Read the down and approach",
+          "instructions": [
+            "Watch where the teammate falls and where the Killer would stand to pick them up. Approach only if that geometry gives you access to a close drop position and an exit; do not start a long chase behind the Killer just to prove the save can work.",
+            "With voice communication, call your approach and let other teammates keep their jobs. Without it, avoid duplicating a saver who is already in position."
+          ]
+        },
+        {
+          "id": "drop",
+          "label": "Commit to the pickup window",
+          "instructions": [
+            "Use the pickup commitment to judge the grenade drop so its blast meets the save window. Read the Killer's position and facing rather than dropping automatically when a teammate goes down.",
+            "If the Killer repositions or denies your approach, hold the resource and leave instead of throwing it at the old location."
+          ],
+          "enabledBy": [
+            "mechanic:prepared-grenade"
+          ]
+        },
+        {
+          "id": "leave",
+          "label": "Clear the area and reassess",
+          "instructions": [
+            "After the attempt, get out of the Killer's immediate pressure. If the teammate was freed, give them room to escape; if the save failed, reassess the hook rescue rather than chasing an expired pickup window."
+          ]
+        }
+      ],
+      "abortWhen": [
+        "The pickup is already beyond your reachable save window, the Killer changes position so the drop is no longer useful, or approaching would give up your own safe exit.",
+        "The Killer leaves the teammate down and threatens the waiting saver. Return to useful work or reassess recovery instead of hovering indefinitely."
+      ],
+      "afterSuccess": [
+        "Return to repair when the immediate danger is over. Further saves need fresh preparation; do not assume the spent grenade is still available."
+      ]
+    },
+    "weaknesses": [
+      "The grenade takes objective work and a crafting detour to prepare; a ready resource still needs a suitable pickup position and timing."
+    ],
+    "killerCounterplay": [
+      "The Killer can change facing or position, delay the pickup, or punish a Survivor waiting close to the down."
+    ],
+    "commonMistakes": [
+      "Leaving a generator to intercept with a charged perk but no crafted grenade.",
+      "Dropping at the down rather than reading the actual pickup and blast window.",
+      "Hovering through repeated denied pickups while nobody advances the generators."
+    ],
+    "environments": {
+      "soloQ": [
+        "Use nearby opportunities you can verify; an injured teammate's route is not a promise that they will fall in your save position."
+      ],
+      "coordinatedSwf": [
+        "Call readiness and intended approach, then cancel the attempt explicitly if the Killer denies it so another teammate can plan the rescue."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "P02#/generalStrategicDefinition"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "P02#/conceptualMechanics"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P02@10.2.0-r1#/itemEcosystem"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P02@10.2.0-r1#/counters"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "P02#How It Works"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "P02#Representative Builds"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "P02#Common Mistakes"
+    },
+    {
+      "kind": "PERK",
+      "ref": "flashbang#/mechanics"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "DRAFT",
+  "reviewedDate": null,
+  "strategyId": "P00",
+  "snapshotId": "P00@10.2.0-r1",
+  "perkReviews": [],
+  "page": {
+    "kind": "FAMILY",
+    "summary": "Choose how to stop a down becoming a hook: blind the pickup, deny a hook, interfere with the carry, or use a standing pallet. Pick the method whose resource and position you actually have; if its opening disappears, return to repair or plan the hook rescue.",
+    "comparisons": [
+      {
+        "strategyId": "P01",
+        "chooseWhen": "You have a flashlight and can reach a clear blind angle for the pickup without abandoning a distant objective.",
+        "tradeoff": "You spend item charges and positioning time. A wall-facing pickup, denied sightline or delayed pickup can remove the opening; leave when the angle is gone instead of shadowing indefinitely."
+      },
+      {
+        "strategyId": "P02",
+        "chooseWhen": "You have prepared a crafted grenade through repair work and can stage close to the expected pickup.",
+        "tradeoff": "Preparation contributes to objectives, but crafting and the close drop still cost time. If the Killer changes position or you arrive after the save window, keep the resource for a better opportunity."
+      },
+      {
+        "strategyId": "P03",
+        "chooseWhen": "You can read the carry route and remove the intended hook before the Killer arrives, with a sabotage tool ready.",
+        "tradeoff": "Removing one hook does not guarantee escape. The Killer can choose another route, hit the saboteur or drop the teammate; stop committing to the old hook when the route changes."
+      },
+      {
+        "strategyId": "P04",
+        "chooseWhen": "A carry is already underway and you can safely escort it to make a marginal route harder to finish.",
+        "tradeoff": "Staying close risks your own health and position. If the Killer drops the teammate or the hook is reached before your interference can matter, break off rather than donating another down."
+      },
+      {
+        "strategyId": "P05",
+        "chooseWhen": "The pickup or carry brings the Killer through a usable standing pallet and you are already positioned to time the stun.",
+        "tradeoff": "No carried item is required, but the geometry and timing must line up. If the Killer avoids the pallet or the resource is already spent, there is no save to force at that spot."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "P00#/subtypeIds"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "P00#Why the Children Are Not Interchangeable"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "P00#Shared Counterplay"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "P01#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P01@10.2.0-r1#/counters"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "P02#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P02@10.2.0-r1#/counters"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "P03#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P03@10.2.0-r1#/counters"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "P04#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P04@10.2.0-r1#/counters"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "P05#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "P05@10.2.0-r1#/counters"
+    }
+  ]
+}
