@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "DRAFT",
+  "reviewedDate": null,
+  "strategyId": "G02",
+  "snapshotId": "G02@10.2.0-r1",
+  "perkReviews": [
+    {
+      "perkId": "built-to-last",
+      "mechanicsRevision": 1
+    }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Spend a toolbox on the generator that needs progress now, then decide whether another recharge is worth leaving the job.",
+    "verdict": {
+      "recommendation": "Choose this when you can turn limited toolbox charges into meaningful generator progress, not merely faster work on the safest generator.",
+      "soloQ": "Pick a reachable important generator and watch for uncovered rescues before leaving to recharge.",
+      "coordinatedSwf": "Agree which generator gets the burst and who covers repair or rescue while you recharge.",
+      "mainWeakness": "Your item and recharge time are finite investments; losing the toolbox or repeatedly leaving objectives undermines the plan."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EXAMPLE",
+          "id": "toolbox-recharge",
+          "label": "Toolbox recharge tool",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "A single recharge tool for a toolbox-focused plan. The other slots depend on your wider build; this is not a fixed four-perk recipe.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Recover spent charges",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "built-to-last",
+                  "whyItsHere": "Make another toolbox repair window possible when the return is worth the locker detour. Recharge is a choice about tempo, not a job you must repeat whenever the item empties."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "item": {
+        "id": "repair-toolbox",
+        "status": "REQUIRED",
+        "name": "Toolbox",
+        "why": "The strategy spends toolbox charges to concentrate repair progress. Bring a toolbox for a reliable opening; without a usable one, continue ordinary repairs instead of playing as though the burst is still available."
+      }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Identify a generator whose completion would loosen the Killer's control of the remaining objectives. Check that you can work on it now before spending your item."
+      ],
+      "rows": [
+        {
+          "id": "spend-for-impact",
+          "situation": "You have charges and a useful repair window on an important generator.",
+          "action": "Use the toolbox on that target rather than automatically emptying it into the first safe generator you touch. If the Killer closes the window, leave before a short burst costs a down.",
+          "why": "The point is to buy progress where it changes the next rotation, not to maximize time holding the item button.",
+          "enabledBy": [
+            "item:repair-toolbox"
+          ]
+        },
+        {
+          "id": "recharge-or-stay",
+          "situation": "The toolbox is depleted and Built to Last still has a recharge available.",
+          "action": "Check for urgent rescues and whether staying on the generator could finish it. Take a safe locker detour with the depleted toolbox only when the next repair window can repay the interruption.",
+          "why": "Leaving useful work to recharge can lose more tempo than the recovered charges return.",
+          "enabledBy": [
+            "perk:built-to-last",
+            "item:repair-toolbox"
+          ]
+        },
+        {
+          "id": "smaller-next-window",
+          "situation": "You have already used the recharge tool and are considering another trip.",
+          "action": "Judge the remaining value again instead of repeating the opening routine. If travel or danger makes the return poor, keep repairing without the toolbox.",
+          "why": "Later recharges give less item value; the same detour becomes harder to justify as the Trial changes.",
+          "enabledBy": [
+            "perk:built-to-last"
+          ]
+        },
+        {
+          "id": "item-denied",
+          "situation": "Your toolbox is lost, unavailable or cannot be safely recovered.",
+          "action": "Switch to ordinary repairs or the needed rescue. Do not chase the item into pressure just to keep the build's original plan alive.",
+          "why": "The team still needs progress even when your specialized resource is gone."
+        }
+      ],
+      "abortWhen": [
+        "Skip the locker when a hook needs immediate attention, the Killer is pressuring the route or the current generator is better finished now.",
+        "Stop planning further item bursts when the toolbox or recharge opportunity is gone; use normal repair and rescue decisions."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Do not assume someone else will cover the hook during your recharge; check teammate activity before leaving."
+      ],
+      "coordinatedSwf": [
+        "Call your intended generator and recharge detour. Another player can keep the agreed objective moving or take the rescue without duplicating your travel."
+      ]
+    },
+    "weaknesses": [
+      "Charges run out, later recharges return less, and a locker detour spends time that could have gone into repair."
+    ],
+    "killerCounterplay": [
+      "Item denial or pressure that drives you off the intended generator can remove the repair window you saved charges for."
+    ],
+    "commonMistakes": [
+      "Spending all charges on an easy generator while the dangerous cluster remains untouched.",
+      "Making a recharge trip while still holding a partly used item instead of checking the depleted-item condition.",
+      "Treating every possible recharge as mandatory, even when a rescue or ordinary repair would matter more."
+    ]
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "G02#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "G02@10.2.0-r1#/perkEcosystem/typicalDefiningPerks"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "G02@10.2.0-r1#/itemEcosystem"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "G02@10.2.0-r1#/counters"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "G02#Representative Builds"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "G02#Common Mistakes"
+    },
+    {
+      "kind": "PERK",
+      "ref": "built-to-last#/mechanics"
+    }
+  ]
+}

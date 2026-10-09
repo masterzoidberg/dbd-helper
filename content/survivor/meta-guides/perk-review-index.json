@@ -1,4 +1,49 @@
 {
   "schemaVersion": 1,
-  "perks": {}
+  "perks": {
+    "lithe": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "6a31294a5020ce3842ec14abdf8fbefae58d279cfe7db8f54865201a63d3a9b9"
+    },
+    "deja-vu": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "d41c755d5cce0eb98c197cc18485169d638bf4081565e15a391b51d6e6d55c70"
+    },
+    "will-to-live": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "69df16202450a1213e579f2f65cd9c2c06595aefb5cd0ea64244f309dddb36c8"
+    },
+    "kindred": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "e3dffba6186a15798c6f62371002807f40645f879300c10857c58f37de6cf7ca"
+    },
+    "well-make-it": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "a27d97c6b25bfb944e12804f2bd41a00481daae913da50cfd51a9e14956e7770"
+    },
+    "resilience": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "43e520f3413a4ee61784746b9da357f169c079f93a76f2039a70c717590a0187"
+    },
+    "finesse": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "bea50a72eaa829ffabc6ccec6ec203dc413064bf8ea931526f34d1cfcea7a583"
+    },
+    "sprint-burst": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "b55475147f4f97ec3ee7b84eaf8a808b274b8ddabd5cf77973a61d6a64b359be"
+    },
+    "dead-hard": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "f7735b2a8f8231dce445314b5b4e54c6815fa55119a458f224905055222db500"
+    },
+    "five-moves-ahead": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c1a107e77fb09b65a419d94fe84f37bed2c0620b5111d8ce40fd2f659265a6cc"
+    },
+    "built-to-last": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "4d6789c7cc48027ec3941ca6fe76fc794ad95bea5abdbc98a9d090d6bf93ae6c"
+    }
+  }
 }
