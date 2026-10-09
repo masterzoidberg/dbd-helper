@@ -237,6 +237,35 @@ test('schema rejects trailing newlines in exact IDs and dates but permits RFC690
   valid(mutate(guide => { guide.sources = [{ kind: 'STRATEGY', ref: 'X01#/field_with_underscores' }]; }));
 });
 
+test('schema rejects Setext headings and reference-style Markdown in plain text', async t => {
+  for (const summary of [
+    'Rotate\n=====', 'Rotate\r\n-----',
+    '[Route][guide]\n\n[guide]: https://example.invalid',
+    '[Route][]\n\n[Route]: https://example.invalid',
+    '[Route]\n\n[Route]: https://example.invalid',
+    '[guide]: https://example.invalid'
+  ]) {
+    await t.test(JSON.stringify(summary), () => {
+      invalid(mutate(guide => { guide.page.summary = summary; }));
+    });
+  }
+  valid(mutate(guide => { guide.page.summary = 'Rotate when needed.\nKeep the next route open [if safe].'; }));
+});
+
+test('schema accepts RFC6901 whitespace and angle brackets in all pointer source branches', async t => {
+  for (const kind of ['STRATEGY', 'SNAPSHOT', 'PERK']) {
+    const prefix = makeSource(kind).ref.split('#')[0];
+    for (const pointer of ['/field with spaces', '/<field>', '/field\twith\nwhitespace', '/field with spaces/<field>/~0/~1/']) {
+      await t.test(`${kind} ${JSON.stringify(pointer)}`, () => {
+        valid(mutate(guide => { guide.sources = [{ kind, ref: `${prefix}#${pointer}` }]; }));
+      });
+    }
+    for (const ref of [` ${prefix}#/field`, `${prefix} #/field`, `${prefix}#not-a-pointer`, `${prefix}#/bad~2escape`, `${prefix}#/bad~`]) {
+      invalid(mutate(guide => { guide.sources = [{ kind, ref }]; }));
+    }
+  }
+});
+
 test('schema vocabulary enforces bounds, Unicode length, null, items, required and closed properties', () => {
   const samples = [
     [1, { type: 'integer', minimum: 1, maximum: 4 }, true],
