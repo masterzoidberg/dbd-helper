@@ -59,7 +59,7 @@
     "gameplay": {
       "type": "SEQUENCE",
       "activationWhen": [
-        "You have a crafted grenade and can reach a useful drop position for a nearby pickup without simply handing the Killer another down."
+        "You have Flashbang equipped and can contribute useful repair work to prepare a grenade for a later save opportunity."
       ],
       "steps": [
         {
