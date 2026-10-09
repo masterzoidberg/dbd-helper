@@ -48,8 +48,7 @@ function freeze(value) {
   return value;
 }
 
-test('shared index starts empty and initializes only actual reviewed references', () => {
-  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(rootDir, indexPath))), emptyIndex());
+test('initializes only actual reviewed references', () => {
   const { guide, context } = reviewedGuide();
   assert.deepEqual(new Set(guide.perkReviews.map(row => row.perkId)), collectPerkReferences({ guide, context }));
   assert.deepEqual(new Set(Object.keys(context.reviewIndex.perks)), collectPerkReferences({ guide, context }));

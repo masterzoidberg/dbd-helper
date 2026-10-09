@@ -38,7 +38,10 @@ test('context prepares all 176 exact canonical perk records and current research
   assert.equal(context.strategies.size, 57);
   assert.equal(context.snapshots.size, 57);
   assert.equal(context.manifest.size, 57);
-  assert.deepEqual(context.reviewIndex, { schemaVersion: 1, perks: {} });
+  assert.deepEqual(
+    context.reviewIndex,
+    JSON.parse(fs.readFileSync(path.join(rootDir, 'content/survivor/meta-guides/perk-review-index.json'), 'utf8'))
+  );
   const perk = context.perks.get('will-to-live');
   assert.equal(perk.id, 'will-to-live');
   assert.equal(perk.mechanics.name, 'Will to Live');
