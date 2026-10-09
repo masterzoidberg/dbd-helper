@@ -338,6 +338,11 @@ function catalogFixture(t) {
   t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
   fs.cpSync(path.join(rootDir, 'content/survivor'), path.join(directory, 'content/survivor'), { recursive: true });
   const guideDir = path.join(directory, 'content/survivor/meta-guides');
+  for (const entry of fs.readdirSync(guideDir, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith('.json') && !['schema.json', 'perk-review-index.json'].includes(entry.name)) {
+      fs.rmSync(path.join(guideDir, entry.name));
+    }
+  }
   const write = (name, value) => fs.writeFileSync(path.join(guideDir, `${name}.json`), typeof value === 'string' ? value : JSON.stringify(value));
   const run = args => spawnSync(process.execPath, [cli, ...(args || [])], { cwd: directory, encoding: 'utf8' });
   return { directory, guideDir, write, run, check: requirePublished => validateGuideCatalog({ rootDir: directory, requirePublished }) };
