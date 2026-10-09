@@ -1,0 +1,1381 @@
+{
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "strategyId",
+    "snapshotId",
+    "perkBaseline",
+    "perkReviews",
+    "reviewStatus",
+    "reviewedDate",
+    "page"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "strategyId": {
+      "$ref": "#/$defs/StrategyId"
+    },
+    "snapshotId": {
+      "$ref": "#/$defs/SnapshotId"
+    },
+    "perkBaseline": {
+      "$ref": "#/$defs/PerkBaseline"
+    },
+    "perkReviews": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PerkReview"
+      },
+      "minItems": 0
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "REVIEWED",
+        "PUBLISHED"
+      ]
+    },
+    "reviewedDate": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/Date"
+        }
+      ]
+    },
+    "page": {
+      "$ref": "#/$defs/Page"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "reviewStatus": {
+          "const": "DRAFT"
+        },
+        "reviewedDate": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "required": [
+        "sources"
+      ],
+      "properties": {
+        "reviewStatus": {
+          "type": "string",
+          "enum": [
+            "REVIEWED",
+            "PUBLISHED"
+          ]
+        },
+        "reviewedDate": {
+          "$ref": "#/$defs/Date"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?=[\\s\\S]*\\S)(?![\\s\\S]*<(?:/?[A-Za-z][^<>]*>|!|\\?))(?![\\s\\S]*(?:`|\\*\\*|__|!?\\[[^\\]\\r\\n]+\\]\\(|(?:^|\\n)\\s*(?:#{1,6}\\s|[-*+]\\s|[0-9]+\\.\\s|>\\s)|\\*[^*\\r\\n]+\\*|_[^_\\r\\n]+_))[\\s\\S]*$"
+    },
+    "Texts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Text"
+      },
+      "minItems": 1
+    },
+    "StrategyId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z][0-9]{2}$"
+    },
+    "SnapshotId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z][0-9]{2}@[0-9]+\\.[0-9]+\\.[0-9]+-r[1-9][0-9]*$"
+    },
+    "PerkId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "SemanticId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "BuildId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z][0-9]{2}@[0-9]+\\.[0-9]+\\.[0-9]+-r[1-9][0-9]*:[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "PlanId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[a-z0-9]+(?:-[a-z0-9]+)*|[A-Z][0-9]{2}@[0-9]+\\.[0-9]+\\.[0-9]+-r[1-9][0-9]*:[a-z0-9]+(?:-[a-z0-9]+)*)$"
+    },
+    "Date": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$"
+    },
+    "PerkBaseline": {
+      "type": "object",
+      "required": [
+        "patch",
+        "verifiedDate",
+        "archiveSha256"
+      ],
+      "properties": {
+        "patch": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "verifiedDate": {
+          "$ref": "#/$defs/Date"
+        },
+        "archiveSha256": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PerkReview": {
+      "type": "object",
+      "required": [
+        "perkId",
+        "mechanicsRevision"
+      ],
+      "properties": {
+        "perkId": {
+          "$ref": "#/$defs/PerkId"
+        },
+        "mechanicsRevision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "Source": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "const": "STRATEGY"
+            },
+            "ref": {
+              "type": "string",
+              "minLength": 1,
+            "pattern": "^[A-Z][0-9]{2}#(?:/(?:[^~\\s<>]|~[01])*)*$"
+            },
+            "note": {
+              "$ref": "#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "const": "SNAPSHOT"
+            },
+            "ref": {
+              "type": "string",
+              "minLength": 1,
+            "pattern": "^[A-Z][0-9]{2}@[0-9]+\\.[0-9]+\\.[0-9]+-r[1-9][0-9]*#(?:/(?:[^~\\s<>]|~[01])*)*$"
+            },
+            "note": {
+              "$ref": "#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "const": "PERK"
+            },
+            "ref": {
+              "type": "string",
+              "minLength": 1,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*#(?:/(?:[^~\\s<>]|~[01])*)*$"
+            },
+            "note": {
+              "$ref": "#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "ref"
+          ],
+          "properties": {
+            "kind": {
+              "const": "PUBLICATION"
+            },
+            "ref": {
+              "type": "string",
+              "minLength": 1,
+            "pattern": "^(?=[\\s\\S]*\\S)(?![\\s\\S]*<(?:/?[A-Za-z][^<>]*>|!|\\?))(?![\\s\\S]*(?:`|\\*\\*|__|!?\\[[^\\]\\r\\n]+\\]\\(|(?:^|\\n)\\s*(?:#{1,6}\\s|[-*+]\\s|[0-9]+\\.\\s|>\\s)|\\*[^*\\r\\n]+\\*|_[^_\\r\\n]+_))[A-Z][0-9]{2}#(?=\\S)(?:[^\\s<>]|[^\\s<>][\\s\\S]*[^\\s<>])$"
+            },
+            "note": {
+              "$ref": "#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Verdict": {
+      "type": "object",
+      "required": [
+        "recommendation"
+      ],
+      "properties": {
+        "recommendation": {
+          "$ref": "#/$defs/Text"
+        },
+        "soloQ": {
+          "$ref": "#/$defs/Text"
+        },
+        "coordinatedSwf": {
+          "$ref": "#/$defs/Text"
+        },
+        "bestFor": {
+          "$ref": "#/$defs/Texts"
+        },
+        "notIdealFor": {
+          "$ref": "#/$defs/Texts"
+        },
+        "mainWeakness": {
+          "$ref": "#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Related": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "strategyId",
+          "relationship",
+          "why"
+        ],
+        "properties": {
+          "strategyId": {
+            "$ref": "#/$defs/StrategyId"
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "ALTERNATIVE",
+              "SIMILAR",
+              "COMBINE_WITH",
+              "SUCCESSOR"
+            ]
+          },
+          "why": {
+            "$ref": "#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "DifficultyEntry": {
+      "type": "object",
+      "required": [
+        "label",
+        "why"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MODERATE",
+            "HIGH",
+            "VERY_HIGH"
+          ]
+        },
+        "why": {
+          "$ref": "#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Mechanics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "explanation"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/SemanticId"
+          },
+          "explanation": {
+            "$ref": "#/$defs/Text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "Choice": {
+      "type": "object",
+      "required": [
+        "perkId",
+        "whyItsHere"
+      ],
+      "properties": {
+        "perkId": {
+          "$ref": "#/$defs/PerkId"
+        },
+        "whyItsHere": {
+          "$ref": "#/$defs/Text"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Substitute": {
+      "type": "object",
+      "required": [
+        "perkId",
+        "provenance",
+        "why",
+        "source",
+        "reviewedDate"
+      ],
+      "properties": {
+        "perkId": {
+          "$ref": "#/$defs/PerkId"
+        },
+        "provenance": {
+          "const": "EDITORIAL"
+        },
+        "why": {
+          "$ref": "#/$defs/Text"
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "reviewedDate": {
+          "$ref": "#/$defs/Date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EnabledBy": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?:perk:[a-z0-9]+(?:-[a-z0-9]+)*|slot:(?:[a-z0-9]+(?:-[a-z0-9]+)*|[A-Z][0-9]{2}@[0-9]+\\.[0-9]+\\.[0-9]+-r[1-9][0-9]*:[a-z0-9]+(?:-[a-z0-9]+)*)#[1-4]|(?:item|mechanic|role):[a-z0-9]+(?:-[a-z0-9]+)*)$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "Replaces": {
+      "type": "object",
+      "required": [
+        "planId",
+        "slot"
+      ],
+      "properties": {
+        "planId": {
+          "$ref": "#/$defs/PlanId"
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      },
+      "additionalProperties": false
+    },
+    "Environments": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "soloQ"
+          ],
+          "properties": {
+            "soloQ": {
+              "$ref": "#/$defs/Texts"
+            },
+            "coordinatedSwf": {
+              "$ref": "#/$defs/Texts"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "coordinatedSwf"
+          ],
+          "properties": {
+            "coordinatedSwf": {
+              "$ref": "#/$defs/Texts"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Difficulty": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "learning"
+          ],
+          "properties": {
+            "learning": {
+              "$ref": "#/$defs/DifficultyEntry"
+            },
+            "execution": {
+              "$ref": "#/$defs/DifficultyEntry"
+            },
+            "gameSense": {
+              "$ref": "#/$defs/DifficultyEntry"
+            },
+            "coordination": {
+              "$ref": "#/$defs/DifficultyEntry"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "execution"
+          ],
+          "properties": {
+            "execution": {
+              "$ref": "#/$defs/DifficultyEntry"
+            },
+            "gameSense": {
+              "$ref": "#/$defs/DifficultyEntry"
+            },
+            "coordination": {
+              "$ref": "#/$defs/DifficultyEntry"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "gameSense"
+          ],
+          "properties": {
+            "gameSense": {
+              "$ref": "#/$defs/DifficultyEntry"
+            },
+            "coordination": {
+              "$ref": "#/$defs/DifficultyEntry"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "coordination"
+          ],
+          "properties": {
+            "coordination": {
+              "$ref": "#/$defs/DifficultyEntry"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Slot": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "slot",
+            "role",
+            "usage",
+            "choiceCount",
+            "choices"
+          ],
+          "properties": {
+            "slot": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "role": {
+              "$ref": "#/$defs/Text"
+            },
+            "usage": {
+              "const": "REQUIRED"
+            },
+            "choiceCount": {
+              "type": "integer",
+              "const": 1
+            },
+            "choices": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Choice"
+              },
+              "minItems": 1,
+              "maxItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "slot",
+            "role",
+            "usage",
+            "choiceCount",
+            "choices"
+          ],
+          "properties": {
+            "slot": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "role": {
+              "$ref": "#/$defs/Text"
+            },
+            "usage": {
+              "type": "string",
+              "enum": [
+                "CORE",
+                "SUPPORT",
+                "FLEX"
+              ]
+            },
+            "choiceCount": {
+              "type": "integer",
+              "const": 1
+            },
+            "choices": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Choice"
+              },
+              "minItems": 1
+            },
+            "substitutes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Substitute"
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CanonicalNote": {
+      "type": "object",
+      "required": [
+        "slot",
+        "role",
+        "usage",
+        "whyItsHere"
+      ],
+      "properties": {
+        "slot": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "role": {
+          "$ref": "#/$defs/Text"
+        },
+        "usage": {
+          "type": "string",
+          "enum": [
+            "REQUIRED",
+            "CORE",
+            "SUPPORT",
+            "FLEX"
+          ]
+        },
+        "whyItsHere": {
+          "$ref": "#/$defs/Text"
+        },
+        "optionReasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Choice"
+          },
+          "minItems": 1
+        },
+        "substitutes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Substitute"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "Plan": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "provenance",
+            "buildId"
+          ],
+          "properties": {
+            "provenance": {
+              "const": "CANONICAL"
+            },
+            "buildId": {
+              "$ref": "#/$defs/BuildId"
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CanonicalNote"
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "provenance",
+            "id",
+            "label",
+            "environment",
+            "completeness",
+            "why",
+            "slots"
+          ],
+          "properties": {
+            "provenance": {
+              "type": "string",
+              "enum": [
+                "EDITORIAL",
+                "EXAMPLE"
+              ]
+            },
+            "id": {
+              "$ref": "#/$defs/SemanticId"
+            },
+            "label": {
+              "$ref": "#/$defs/Text"
+            },
+            "environment": {
+              "type": "string",
+              "enum": [
+                "SOLO_Q",
+                "COORDINATED_SWF",
+                "BOTH"
+              ]
+            },
+            "completeness": {
+              "const": "COMPLETE"
+            },
+            "why": {
+              "$ref": "#/$defs/Text"
+            },
+            "slots": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Slot"
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "provenance",
+            "id",
+            "label",
+            "environment",
+            "completeness",
+            "why",
+            "slots"
+          ],
+          "properties": {
+            "provenance": {
+              "type": "string",
+              "enum": [
+                "EDITORIAL",
+                "EXAMPLE"
+              ]
+            },
+            "id": {
+              "$ref": "#/$defs/SemanticId"
+            },
+            "label": {
+              "$ref": "#/$defs/Text"
+            },
+            "environment": {
+              "type": "string",
+              "enum": [
+                "SOLO_Q",
+                "COORDINATED_SWF",
+                "BOTH"
+              ]
+            },
+            "completeness": {
+              "const": "MODULE"
+            },
+            "why": {
+              "$ref": "#/$defs/Text"
+            },
+            "slots": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Slot"
+              },
+              "minItems": 1,
+              "maxItems": 4
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "LoadoutOption": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "perkId",
+            "usage",
+            "whyItsHere"
+          ],
+          "properties": {
+            "perkId": {
+              "$ref": "#/$defs/PerkId"
+            },
+            "usage": {
+              "type": "string",
+              "enum": [
+                "CORE",
+                "SUPPORT",
+                "FLEX",
+                "OUTDATED_TRAP"
+              ]
+            },
+            "whyItsHere": {
+              "$ref": "#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "perkId",
+            "usage",
+            "whyItsHere",
+            "replaces"
+          ],
+          "properties": {
+            "perkId": {
+              "$ref": "#/$defs/PerkId"
+            },
+            "usage": {
+              "const": "ALTERNATIVE"
+            },
+            "whyItsHere": {
+              "$ref": "#/$defs/Text"
+            },
+            "replaces": {
+              "$ref": "#/$defs/Replaces"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Item": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "status"
+          ],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/SemanticId"
+            },
+            "status": {
+              "const": "NONE"
+            },
+            "why": {
+              "$ref": "#/$defs/Text"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "status",
+            "name",
+            "why"
+          ],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/SemanticId"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "REQUIRED",
+                "RECOMMENDED",
+                "OPTIONAL"
+              ]
+            },
+            "name": {
+              "$ref": "#/$defs/Text"
+            },
+            "why": {
+              "$ref": "#/$defs/Text"
+            },
+            "addOns": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "why"
+                ],
+                "properties": {
+                  "name": {
+                    "$ref": "#/$defs/Text"
+                  },
+                  "why": {
+                    "$ref": "#/$defs/Text"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Loadout": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "plans"
+          ],
+          "properties": {
+            "plans": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Plan"
+              },
+              "minItems": 1
+            },
+            "options": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/LoadoutOption"
+              },
+              "minItems": 1
+            },
+            "item": {
+              "$ref": "#/$defs/Item"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "options"
+          ],
+          "properties": {
+            "options": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/LoadoutOption"
+              },
+              "minItems": 1
+            },
+            "item": {
+              "$ref": "#/$defs/Item"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "item"
+          ],
+          "properties": {
+            "item": {
+              "$ref": "#/$defs/Item"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Decision": {
+      "type": "object",
+      "required": [
+        "id",
+        "situation",
+        "action",
+        "why"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Text"
+        },
+        "situation": {
+          "$ref": "#/$defs/Text"
+        },
+        "action": {
+          "$ref": "#/$defs/Text"
+        },
+        "why": {
+          "$ref": "#/$defs/Text"
+        },
+        "enabledBy": {
+          "$ref": "#/$defs/EnabledBy"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Step": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "instructions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Text"
+        },
+        "label": {
+          "$ref": "#/$defs/Text"
+        },
+        "instructions": {
+          "$ref": "#/$defs/Texts"
+        },
+        "enabledBy": {
+          "$ref": "#/$defs/EnabledBy"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Gameplay": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "rows"
+          ],
+          "properties": {
+            "type": {
+              "const": "DECISIONS"
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Decision"
+              },
+              "minItems": 1
+            },
+            "opening": {
+              "$ref": "#/$defs/Texts"
+            },
+            "abortWhen": {
+              "$ref": "#/$defs/Texts"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "steps"
+          ],
+          "properties": {
+            "type": {
+              "const": "SEQUENCE"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Step"
+              },
+              "minItems": 1
+            },
+            "activationWhen": {
+              "$ref": "#/$defs/Texts"
+            },
+            "abortWhen": {
+              "$ref": "#/$defs/Texts"
+            },
+            "afterSuccess": {
+              "$ref": "#/$defs/Texts"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "assignment",
+            "priorities"
+          ],
+          "properties": {
+            "type": {
+              "const": "ROLE_GUIDE"
+            },
+            "assignment": {
+              "$ref": "#/$defs/Text"
+            },
+            "priorities": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Decision"
+              },
+              "minItems": 1
+            },
+            "handoffWhen": {
+              "$ref": "#/$defs/Texts"
+            },
+            "abortWhen": {
+              "$ref": "#/$defs/Texts"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Page": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "summary",
+            "verdict",
+            "gameplay"
+          ],
+          "properties": {
+            "kind": {
+              "const": "STANDARD"
+            },
+            "summary": {
+              "$ref": "#/$defs/Text"
+            },
+            "verdict": {
+              "$ref": "#/$defs/Verdict"
+            },
+            "gameplay": {
+              "$ref": "#/$defs/Gameplay"
+            },
+            "environments": {
+              "$ref": "#/$defs/Environments"
+            },
+            "strengths": {
+              "$ref": "#/$defs/Texts"
+            },
+            "weaknesses": {
+              "$ref": "#/$defs/Texts"
+            },
+            "killerCounterplay": {
+              "$ref": "#/$defs/Texts"
+            },
+            "commonMistakes": {
+              "$ref": "#/$defs/Texts"
+            },
+            "related": {
+              "$ref": "#/$defs/Related"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/Difficulty"
+            },
+            "mechanics": {
+              "$ref": "#/$defs/Mechanics"
+            },
+            "loadout": {
+              "$ref": "#/$defs/Loadout"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "summary",
+            "comparisons"
+          ],
+          "properties": {
+            "kind": {
+              "const": "FAMILY"
+            },
+            "summary": {
+              "$ref": "#/$defs/Text"
+            },
+            "comparisons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "strategyId",
+                  "chooseWhen",
+                  "tradeoff"
+                ],
+                "properties": {
+                  "strategyId": {
+                    "$ref": "#/$defs/StrategyId"
+                  },
+                  "chooseWhen": {
+                    "$ref": "#/$defs/Text"
+                  },
+                  "tradeoff": {
+                    "$ref": "#/$defs/Text"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "related": {
+              "$ref": "#/$defs/Related"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "summary",
+            "whatItWas",
+            "whyNotCurrent",
+            "successors"
+          ],
+          "properties": {
+            "kind": {
+              "const": "LEGACY"
+            },
+            "summary": {
+              "$ref": "#/$defs/Text"
+            },
+            "whatItWas": {
+              "$ref": "#/$defs/Texts"
+            },
+            "whyNotCurrent": {
+              "$ref": "#/$defs/Texts"
+            },
+            "successors": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "strategyId",
+                  "why"
+                ],
+                "properties": {
+                  "strategyId": {
+                    "$ref": "#/$defs/StrategyId"
+                  },
+                  "why": {
+                    "$ref": "#/$defs/Text"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "historicalPerks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "perkId",
+                  "historicalUse"
+                ],
+                "properties": {
+                  "perkId": {
+                    "$ref": "#/$defs/PerkId"
+                  },
+                  "historicalUse": {
+                    "$ref": "#/$defs/Text"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "related": {
+              "$ref": "#/$defs/Related"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "summary",
+            "verdict",
+            "gameplay",
+            "roles"
+          ],
+          "properties": {
+            "kind": {
+              "const": "TEAM"
+            },
+            "summary": {
+              "$ref": "#/$defs/Text"
+            },
+            "verdict": {
+              "$ref": "#/$defs/Verdict"
+            },
+            "gameplay": {
+              "$ref": "#/$defs/Gameplay"
+            },
+            "environments": {
+              "$ref": "#/$defs/Environments"
+            },
+            "strengths": {
+              "$ref": "#/$defs/Texts"
+            },
+            "weaknesses": {
+              "$ref": "#/$defs/Texts"
+            },
+            "killerCounterplay": {
+              "$ref": "#/$defs/Texts"
+            },
+            "commonMistakes": {
+              "$ref": "#/$defs/Texts"
+            },
+            "related": {
+              "$ref": "#/$defs/Related"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/Difficulty"
+            },
+            "mechanics": {
+              "$ref": "#/$defs/Mechanics"
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "title",
+                  "assignment"
+                ],
+                "properties": {
+                  "id": {
+                    "$ref": "#/$defs/SemanticId"
+                  },
+                  "title": {
+                    "$ref": "#/$defs/Text"
+                  },
+                  "assignment": {
+                    "$ref": "#/$defs/Text"
+                  },
+                  "loadout": {
+                    "$ref": "#/$defs/Loadout"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "canonicalTeamBuildIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/BuildId"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}
