@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A04",
+  "snapshotId": "A04@10.2.0-r1",
+  "perkReviews": [{ "perkId": "do-no-harm", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Prioritize a safe heal on a teammate with hook-state danger; Do No Harm scales only with the target's Hook States while you heal them.",
+    "verdict": {
+      "recommendation": "Treat the new 10.2.0 healing values as an experimental triage option, not proof that every injured teammate should be chased down.",
+      "soloQ": "Confirm the target is reachable and has a Hook State before leaving an urgent objective or rescue.",
+      "coordinatedSwf": "Assign one healer to the endangered player and keep the other jobs covered; call when pressure makes the reset unsafe.",
+      "mainWeakness": "The perk adds nothing for a zero-Hook-State target and cannot repay a long, unsafe trip to heal."
+    },
+    "loadout": {
+      "options": [{ "perkId": "do-no-harm", "usage": "CORE", "whyItsHere": "While healing another Survivor, each of their Hook States adds 30/35/40% heal speed, 3% progress on Great basic healing checks and 5% check occurrence chance." }],
+      "item": { "id": "med-kit", "status": "OPTIONAL", "name": "Med-Kit", "why": "Optional finite healing resource; the hook-state scaling comes from Do No Harm, not the item." }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Check the injured player's hook-state danger, travel cost and whether the Killer has left a safe reset window."],
+      "rows": [
+        { "id": "triage-target", "situation": "An injured teammate with one or two Hook States is reachable and a heal can protect their next chase.", "action": "Move to a safe reset location and heal that teammate. Use Great basic healing checks when they occur; do not assume a special check earns the same bonus.", "why": "Do No Harm scales all three bonuses with the target's Hook States and only applies while healing another Survivor.", "enabledBy": ["perk:do-no-harm"] },
+        { "id": "skip-low-value-heal", "situation": "The injured target has no Hook States, the Killer contests the heal, or an urgent hook or generator needs coverage.", "action": "Hand off the heal or return to the higher-value team job instead of chasing a perk activation.", "why": "At zero target Hook States the perk has no bonus, and a denied heal consumes team tempo." },
+        { "id": "finish-and-handoff", "situation": "The heal is complete and the endangered teammate can take the next route.", "action": "Separate into useful assignments; do not keep both players idle looking for another heal.", "why": "The benefit is a restored teammate, not a standing team-wide buff." }
+      ],
+      "abortWhen": ["Stop if Killer pressure makes the reset likely to cost a down.", "Release the healer role when the target is no longer reachable or another teammate has the safe heal."]
+    },
+    "strengths": ["More healing value is concentrated on teammates closest to elimination."],
+    "weaknesses": ["Fresh-patch effectiveness remains provisional; low-hook-state targets and unsafe routes provide little return."],
+    "commonMistakes": ["Counting the healer's Hook States instead of the target's.", "Assuming the Great-check bonus applies to non-basic checks or to self-healing."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A04#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A04@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "A04@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "A04@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "A04#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A04#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "A04#Common Mistakes" },
+    { "kind": "PERK", "ref": "do-no-harm#/mechanics" }
+  ]
+}

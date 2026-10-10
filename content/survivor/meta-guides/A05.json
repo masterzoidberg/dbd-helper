@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A05",
+  "snapshotId": "A05@10.2.0-r1",
+  "perkReviews": [{ "perkId": "mettle-of-man", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Spend a healthy state on a protection hit only when it changes a teammate's escape or rescue outcome; Mettle of Man is a conditional later payoff, not the reason to feed hits.",
+    "verdict": {
+      "recommendation": "Pre-position for a useful intercept, then leave once the teammate has a route. Decline hits that only create a second down.",
+      "soloQ": "Commit only when the teammate's route is visible and your hit clearly buys distance; do not assume they understand a prolonged tank plan.",
+      "coordinatedSwf": "Call the protector, target and exit path so one health state changes the chase without pulling the whole team off objectives.",
+      "mainWeakness": "Poor timing can waste a healthy state, feed a down or leave the protector exposed after a conditional perk payoff."
+    },
+    "loadout": { "options": [{ "perkId": "mettle-of-man", "usage": "SUPPORT", "whyItsHere": "After a third Protection Hit, it can shield the next attack that would down you while injured; after a full heal it reveals your aura to the Killer beyond 12/14/16 metres until deactivation on entering Dying." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before stepping into the Killer's path, verify the teammate has an escape route and you have a route after the hit."],
+      "rows": [
+        { "id": "take-effective-hit", "situation": "A healthy protector can intercept an attack that would otherwise end a teammate's escape or rescue.", "action": "Take one purposeful hit, then use the resulting separation to leave; do not stand for a second hit without a new payoff.", "why": "The strategy converts a health state into teammate tempo only if the protected player gets a usable route." },
+        { "id": "check-mettle-payoff", "situation": "You have earned three Protection Hits and are injured.", "action": "Account for Mettle of Man shielding the next attack that would put you in Dying, but still plan an exit. After a full heal, account for the Killer seeing your aura at the perk's tiered long range.", "why": "The protection is conditional, is not Endurance, and the later aura reveal is a real cost.", "enabledBy": ["perk:mettle-of-man"] },
+        { "id": "decline-empty-trade", "situation": "The teammate is already safe, the Killer can switch to you, or no route survives the hit.", "action": "Stay on your current job or hand off protection to a better-positioned player.", "why": "A hit without changed teammate outcome merely donates health and possible hook tempo." }
+      ],
+      "abortWhen": ["Leave the protection line once the teammate has escaped it.", "Do not chase a third Protection Hit when the likely result is your own down."]
+    },
+    "strengths": ["A correctly timed intercept can preserve a vulnerable teammate's route."],
+    "weaknesses": ["Consumes health and positioning; a Killer can switch targets or punish overcommitment."],
+    "commonMistakes": ["Taking arbitrary hits to count toward Mettle of Man.", "Mistaking its shield for Endurance or ignoring the post-heal aura reveal."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A05#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A05@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "A05@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "A05#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A05#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "A05#Common Mistakes" },
+    { "kind": "PERK", "ref": "mettle-of-man#/mechanics" }
+  ]
+}

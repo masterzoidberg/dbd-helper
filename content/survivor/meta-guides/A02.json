@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A02",
+  "snapshotId": "A02@10.2.0-r1",
+  "perkReviews": [{ "perkId": "reassurance", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Buy a short hook-timer pause when immediate rescue is unsafe, then use that time to arrange a real save.",
+    "verdict": {
+      "recommendation": "Use Reassurance only when a hooked teammate is under sustained pressure and the pause creates an actionable rescue window; it is not a substitute for unhooking.",
+      "soloQ": "Check whether another rescuer can use the extra time before spending your own travel on a six-metre approach.",
+      "coordinatedSwf": "Call the pause and designate the next rescuer so the team does not wait through the timer without a plan.",
+      "mainWeakness": "A six-metre activation route can be dangerous, and a pause is wasted if the Killer leaves or no teammate converts it into a rescue."
+    },
+    "loadout": { "options": [{ "perkId": "reassurance", "usage": "CORE", "whyItsHere": "Within six metres of a hooked Survivor, Active Ability pauses their Sacrifice Process for 20/25/30 seconds, once per Survivor per Hook Instance." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Read hook stage, Killer pressure, your approach route and who will perform the eventual save."],
+      "rows": [
+        { "id": "pause-contested-hook", "situation": "The Killer controls the hook, immediate rescue risks a down, and you can safely reach six metres.", "action": "Activate Reassurance and tell the next rescuer the pause is active. Use the extra 20/25/30 seconds to reposition or continue useful work, then take a real rescue window.", "why": "The perk pauses the Sacrifice Process and, in Struggle Phase, Struggle Skill Checks; it does not free the hooked Survivor.", "enabledBy": ["perk:reassurance"] },
+        { "id": "skip-unneeded-pause", "situation": "The Killer has left or a safe unhook is already available.", "action": "Take or hand off the rescue now instead of detouring into Reassurance range.", "why": "The module changes timing only when hook pressure makes immediate rescue worse." },
+        { "id": "handoff-before-expiry", "situation": "The pause is running but the planned rescuer cannot reach or the Killer changes position.", "action": "Reassign the save immediately; if no safe conversion exists, return to an objective and reassess before the hook stage advances.", "why": "One use per Survivor per Hook Instance means the same user cannot simply repeat the pause on that hook.", "enabledBy": ["perk:reassurance"] }
+      ],
+      "abortWhen": ["Do not force a six-metre approach that exposes you to a down.", "Stop waiting once the Killer leaves and a safe unhook is available."]
+    },
+    "strengths": ["Can preserve a hook stage long enough to coordinate a safer rescue."],
+    "weaknesses": ["Range, one-use-per-hook-instance limit and dependence on a subsequent rescue restrict value."],
+    "commonMistakes": ["Treating the timer pause as a rescue or as repeatable on the same Hook Instance.", "Approaching a hook after the Killer has already left just to trigger the perk."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A02#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A02@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "A02@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "A02@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "A02#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A02#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "A02#Common Mistakes" },
+    { "kind": "PERK", "ref": "reassurance#/mechanics" }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A01",
+  "snapshotId": "A01@10.2.0-r1",
+  "perkReviews": [{ "perkId": "kindred", "mechanicsRevision": 1 }, { "perkId": "well-make-it", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Own a reachable unhook and the safe reset after it; do not turn the rescue role into automatic hook-side healing.",
+    "verdict": {
+      "recommendation": "Take the rescue when your route and timing are sound, then heal only if the Killer has left enough space. Return to an objective when another player already owns the save.",
+      "soloQ": "Use hook information to avoid duplicating a teammate's rescue trip, and read the area before starting the post-unhook heal.",
+      "coordinatedSwf": "Assign one rescuer and a separate objective holder; call whether the saved player can reset safely or should leave the hook area.",
+      "mainWeakness": "Travel, a contested hook, or an unsafe heal can consume more team time than the reset returns."
+    },
+    "loadout": {
+      "options": [
+        { "perkId": "kindred", "usage": "SUPPORT", "whyItsHere": "Hook auras help identify who can cover the save and whether the Killer remains near the hook; the viewer depends on who is hooked." },
+        { "perkId": "well-make-it", "usage": "CORE", "whyItsHere": "After your unhook, altruistic healing is 100% faster for 70/80/90 seconds; it does not speed your own heal or make an exposed hook safe." }
+      ],
+      "item": { "id": "med-kit", "status": "OPTIONAL", "name": "Med-Kit", "why": "Optional finite healing resource for a safe reset, not a reason to spend extra time near a contested hook." }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Check hook time, Killer position, teammate routes and the remaining objective before leaving your task."],
+      "rows": [
+        { "id": "assign-rescue", "situation": "A teammate is hooked and multiple Survivors might leave their tasks.", "action": "Use the visible hook and teammate positions to decide whether you are the closest safe rescuer. If another player is already committed, keep your objective covered.", "why": "Duplicate travel is the recorded failure mode; Kindred supplies hook-time aura information, not a guaranteed safe approach.", "enabledBy": ["perk:kindred"] },
+        { "id": "unhook-and-reset", "situation": "You can reach the hook without giving the Killer an immediate second down.", "action": "Unhook, move the saved player away from pressure, and heal them only when the route and cover are safe. Use the post-unhook healing window if available.", "why": "We'll Make It activates from your unhook and speeds healing other Survivors; the heal still costs time and position.", "enabledBy": ["perk:well-make-it"] },
+        { "id": "release-the-heal", "situation": "The Killer returns, the saved player is already escaping, or the team needs you elsewhere.", "action": "Separate and hand off the reset; do not chase a hook-side heal just to use a perk timer.", "why": "Preserving the rescue matters more than converting every activation into a heal." }
+      ],
+      "abortWhen": ["Leave an unsafe hook route to a better-positioned rescuer or a later window.", "Stop the reset if it exposes both Survivors to immediate pressure."]
+    },
+    "strengths": ["A well-assigned rescue can preserve hook tempo and create a short, efficient healing window."],
+    "weaknesses": ["Duplicate rescue travel and contested hook healing erase the payoff."],
+    "commonMistakes": ["Assuming Kindred makes the hook safe rather than merely showing auras.", "Treating We'll Make It as a self-heal bonus or a reason to heal under pressure."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A01#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A01@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "A01@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "A01@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "A01#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A01#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "A01#Common Mistakes" },
+    { "kind": "PERK", "ref": "kindred#/mechanics" },
+    { "kind": "PERK", "ref": "well-make-it#/mechanics" }
+  ]
+}
