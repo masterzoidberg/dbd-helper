@@ -316,6 +316,50 @@
     "boon-shadow-step": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "904fcc0bea82a3ae8118acc71309d79b0a2cccb9a6116a892ef286a424c7e427"
+    },
+    "small-game": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "5d7041bafac529d717e4689448057290073fe700615401564d98594cc914550f"
+    },
+    "counterforce": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "aa424fd35aab3e307385421dfc177ccf6b3e40e89252df8c0f50d99e9f09f852"
+    },
+    "overzealous": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "5bbfc4f77fb2de19ba6fb8f3d28bdf946049eed5eacfd0fe35d77f2ef71e2764"
+    },
+    "invocation-weaving-spiders": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "6296ac0624e7aed0a49d890ea0f06b8c65076bc6f9700de5df394037a2cf6834"
+    },
+    "invocation-treacherous-crows": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "3804b5583b1243e0df04354fa921c2810e9832eb81153fc69f93b38868184e1c"
+    },
+    "head-on": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "95e922d241dcb1be9b981e2118f6dbe45f37959311d0303be8378147496d94d4"
+    },
+    "diversion": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "ff656d6adba1c99c19bcea837af3c8e2415a5f68bdfc3df4b6616396499e58a3"
+    },
+    "deception": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "09b1332ded8827195a3e4114642542b13ff5f6ec4847b8caeabda086bb5a3b85"
+    },
+    "red-herring": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "0b4ef97ee5eabb0025f32da3b1eb742e269084b27d3e9271f2ec300a8c58966f"
+    },
+    "mirrored-illusion": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "76423d58c399147d074c9da1149db8b0af52961459d622103fc9a669ec890e20"
+    },
+    "bound-by-obsession": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "1cb72a200f18cd228d442847d38fd8f10bc9735caf8d1fb6f135c02672c5b6f1"
     }
   }
 }
