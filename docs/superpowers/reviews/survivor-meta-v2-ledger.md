@@ -287,3 +287,15 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 
 - Ruling: preserve the frozen manifest's canonical root-relative URL form `/survivor-meta/<slug>` while rejecting filesystem-absolute paths, traversal, malformed slugs, and any absolute-looking route outside that exact canonical URL prefix. The frozen Stage 3B manifest stores all 57 routes with the leading URL slash; accepting that established URL representation is required to keep canonical routes and root/GitHub base-path behavior unchanged, and changing the frozen input is prohibited. Cost if wrong: a stricter interpretation would reject every canonical route and require an unauthorized frozen-source migration.
 - Task 12 review's dangling-symlink finding remains load-bearing and enters fix round 1; the base-path behavior assertion remains a deferred Minor.
+
+### Task 12 — safe generation and isolated preview
+
+- BASE: `4d81734`.
+- Implementer: Linnaeus; initial commit `eb99414` (`feat: safely generate published guides with isolated previews`). Production generation now consumes the shared model/renderer, gates editorial content to PUBLISHED, preserves Research View Only for missing/DRAFT/REVIEWED, and supports explicit external previews.
+- Task review: Cicero — Critical dangling-symlink validation defect and Important noncanonical leading-slash route defect.
+- Ruling carried: frozen manifest routes are canonical root-relative URL strings `/survivor-meta/<slug>`; preserve them while rejecting filesystem-absolute/noncanonical leading-slash routes. See `1210e73`.
+- Fix round 1/5: `5f6b34b` (`feat: safely generate published guides with isolated previews`) added lstat-aware component validation before realpath/write and dangling runtime/detail/preview nonmutation regressions; canonical routes remain accepted and `/outside/escape` is rejected.
+- Scoped re-review: Ampere — both findings ADDRESSED, no new Critical/Important issues; Minor note that external preview-parent nonmutation is not directly snapshotted.
+- Controller verification: full Node 157/157; Python 4/4; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker and syntax/diff checks clean. Isolated preview produced 57 routes with production tree unchanged.
+- Task 12: complete (commits `4d81734..5f6b34b`, review clean after one fix round). Production artifacts are deterministic but remain Research View Only for the current unpublished/missing catalog; no editorial batch was published or deployed.
+- Task 12: minor (deferred): base-path behavior is asserted by source contract rather than a runtime `/` and `/dbd-helper/` test; preview-parent inventory is not directly snapshotted. No demonstrated defect.
