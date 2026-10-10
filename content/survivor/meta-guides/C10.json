@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C10",
+  "snapshotId": "C10@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "unbreakable", "mechanicsRevision": 1 },
+    { "perkId": "plot-twist", "mechanicsRevision": 1 },
+    { "perkId": "were-gonna-live-forever", "mechanicsRevision": 1 },
+    { "perkId": "boon-exponential", "mechanicsRevision": 1 },
+    { "perkId": "soul-guard", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Keep a Dying-state down from becoming free pressure: choose one self-recovery route, support teammate pickups or a recovery zone, and leave when the Killer has denied the window.",
+    "verdict": {
+      "recommendation": "Use one recovery expression to make a down less decisive; do not spend setup time or force a pickup after the Killer has made the area unsafe.",
+      "soloQ": "Treat the package as personal insurance or a clearly timed pickup opportunity; recover or leave safely instead of assuming a teammate will bodyguard the down.",
+      "coordinatedSwf": "Call whether the team is using a self-pick, a Dying-Survivor heal or a Boon zone so one player owns recovery while others keep objectives moving.",
+      "mainWeakness": "The package may never activate when the Killer hooks promptly, and individual options are gated by injury, totem range, a Hex condition, cooldowns or teammate access."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "anti-slug-recovery-module",
+          "label": "Anti-slug and self-recovery module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source provides a strategy framework rather than a verified four-perk implementation. Select one self-recovery identity and add only the support that matches the Trial; do not treat every cited anti-slug effect as a required union build.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Choose a self-recovery route",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "unbreakable",
+                  "whyItsHere": "When the Killer puts you into the Dying State, increase Recovery and unlock one full self-recovery for the Trial. Spend it when standing changes the team state, not merely to avoid waiting on the ground."
+                },
+                {
+                  "perkId": "plot-twist",
+                  "whyItsHere": "While Injured, crouch stationary and use the Active Ability to enter Dying silently, recover at the perk's faster rate, then become Healthy with brief Haste. It is an intentional reset with an Exit-Gate reactivation, not a free response to every down."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Heal a teammate from Dying",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "were-gonna-live-forever",
+                  "whyItsHere": "Heal a Dying Survivor faster and grant that Survivor Endurance when they reach Injured, subject to the 30-second Endurance limit. Use the rescue heal only when the area permits an exit."
+                }
+              ]
+            },
+            {
+              "slot": 3,
+              "role": "Create a recovery zone",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "boon-exponential",
+                  "whyItsHere": "Bless a Totem so Survivors within 24 metres recover from Dying faster and can fully self-recover. The Killer can snuff it and a prompt hook may never give the zone value."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "perkId": "soul-guard",
+          "usage": "FLEX",
+          "whyItsHere": "Use the post-recovery Endurance and Cursed self-recovery condition only when the Trial gives those conditions; it is a support option, not a baseline promise for every slug situation."
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before investing in a recovery route, identify where a down would actually change the match and where the Killer can reach. The package wins when the recovery creates movement, a pickup or denied pressure rather than a longer unsafe ground state."
+      ],
+      "rows": [
+        {
+          "id": "choose-the-recovery-window",
+          "situation": "You are Injured or have been put into the Dying State and the selected recovery route is available.",
+          "action": "Use Unbreakable for the one full self-pick when standing changes the chase or team state, or use Plot Twist only from its Injured, crouched-and-stationary activation. Do not trigger a reset merely because the Killer can still reach you.",
+          "why": "The two core choices have different activation conditions and opportunity costs; they are alternatives, not simultaneous guarantees.",
+          "enabledBy": ["slot:anti-slug-recovery-module#1"]
+        },
+        {
+          "id": "heal-with-an-exit",
+          "situation": "A teammate is Dying and the Killer has not made the recovery position unsafe.",
+          "action": "Heal the Dying Survivor only if the team can complete the interaction and move; use the resulting Endurance as an escape window, not as permission to perform a conspicuous action in the Killer's face.",
+          "why": "We're Gonna Live Forever accelerates the Dying heal and grants Endurance on reaching Injured, but its protection has a cooldown and does not make the position safe by itself.",
+          "enabledBy": ["perk:were-gonna-live-forever"]
+        },
+        {
+          "id": "hold-the-boon-radius",
+          "situation": "A Boon: Exponential zone is active and a Dying Survivor is within its 24-metre range.",
+          "action": "Recover inside the radius only while the zone remains relevant; leave or switch to another job when the Killer snuffs the Totem, holds the area or hooks promptly.",
+          "why": "The self-recovery and recovery-speed effects end outside range or when the totem is snuffed.",
+          "enabledBy": ["perk:boon-exponential"]
+        },
+        {
+          "id": "protect-the-stand",
+          "situation": "You have recovered from Dying or are Cursed and considering Soul Guard as the next layer.",
+          "action": "Use the brief post-recovery Endurance to reach safety and do not spend it on a Conspicuous Action; treat Cursed self-recovery as conditional upside, not a match assumption.",
+          "why": "Soul Guard's Endurance follows healing or recovery, while its full self-recovery clause depends on being Cursed and its Endurance has a 30-second cooldown.",
+          "enabledBy": ["perk:soul-guard"]
+        },
+        {
+          "id": "release-the-down",
+          "situation": "The Killer has returned, the pickup route is exposed, the recovery effect is unavailable or a prompt hook is more likely than a recovery.",
+          "action": "Stop forcing the recovery, leave the area or take the next productive job. Reattempt only after a new safe Dying-state window, not because the loadout still has an unused effect.",
+          "why": "C10 is activated by the Dying-state macro and can remain completely unused when the Killer hooks immediately."
+        }
+      ],
+      "abortWhen": [
+        "Abort a pickup or self-recovery attempt when the Killer can reach the position before the Survivor can stand or move.",
+        "Leave a Boon or recovery position when the Totem is snuffed, the radius no longer covers the down or the team needs objective tempo more than another unsafe attempt."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Make the recovery decision from the information you can see: if no teammate is coming and the Killer is rotating back, take the safe self-pick or leave rather than waiting for an assumed rescue."
+      ],
+      "coordinatedSwf": [
+        "Name the recovery owner, the escape route and the stop call so a self-pick, teammate heal and Boon zone do not draw multiple players into the same down."
+      ]
+    },
+    "strengths": [
+      "Can deny a Killer's expected value from a Dying-state down when the recovery condition and position line up."
+    ],
+    "weaknesses": [
+      "A prompt hook can leave the package unused, and recovery routes can be denied by unsafe positioning, a snuffed Totem or missing state conditions.",
+      "Several support effects have cooldowns or one-use limits, so spending the first recovery window without a team payoff reduces later coverage."
+    ],
+    "killerCounterplay": [
+      "The Killer can hook promptly, return to an exposed down, snuff the recovery Totem or hold the area until the recovery attempt costs more than it returns."
+    ],
+    "commonMistakes": [
+      "Treating all five cited anti-slug perks as a required four-perk build instead of selecting one recovery route and bounded support.",
+      "Forcing a self-pick, Dying heal or Boon hold while the Killer can immediately re-down or hook the Survivor.",
+      "Assuming Endurance, Cursed self-recovery or Boon coverage persists outside its exact trigger, range, cooldown or state condition."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C10#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C10@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C10@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C10@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C10#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C10#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C10#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C10#Common Mistakes" },
+    { "kind": "PERK", "ref": "unbreakable#/mechanics" },
+    { "kind": "PERK", "ref": "plot-twist#/mechanics" },
+    { "kind": "PERK", "ref": "were-gonna-live-forever#/mechanics" },
+    { "kind": "PERK", "ref": "boon-exponential#/mechanics" },
+    { "kind": "PERK", "ref": "soul-guard#/mechanics" }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C11",
+  "snapshotId": "C11@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "shoulder-the-burden", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Redistribute a vulnerable teammate's hook state only when preserving that player is worth taking your own state, injury and Broken cost; the transfer is a single high-commitment rescue decision, not a generic bodyblock plan.",
+    "verdict": {
+      "recommendation": "Use Shoulder the Burden to prevent an imminent elimination when the target and timing justify the trade; do not activate it simply because a hook is available.",
+      "soloQ": "Read the target's hook state and the Killer's pressure yourself, then take the transfer only when the immediate death-prevention value is clear; do not assume another player will cover your resulting state.",
+      "coordinatedSwf": "Call the intended target, the transfer owner and the exit route before the hook interaction so the team converts one hook-state trade into preserved player tempo.",
+      "mainWeakness": "The user takes a hook state, becomes Injured and Broken, and can waste the once-per-Trial action through poor target selection or a missed timing window."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "hook-state-transfer-module",
+          "label": "Hook-state transfer module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The frozen source names Shoulder the Burden plus a flexible survival/support shell, but it does not establish a verified four-perk implementation. Only the exact defining tool is authored here; the remaining slots stay open.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Transfer hook-state risk",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "shoulder-the-burden",
+                  "whyItsHere": "Once per Trial, while you have fewer than 2 Hook States and are next to a hooked Survivor, unhook them to remove 1 Hook State from them and take 1 yourself; you scream, become Injured and suffer Broken for 160/140/120 seconds."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before approaching the hook, compare the target's immediate elimination risk with the hook state, injury and Broken period you will assume. The transfer is valuable when it preserves the fourth player and leaves the team with a workable next rotation."
+      ],
+      "rows": [
+        {
+          "id": "select-the-target",
+          "situation": "A teammate is hooked and their hook-state risk is materially higher than the cost of your own transfer.",
+          "action": "Confirm your own Hook State count, the target's remaining state and the team's exit route before committing. If the target is not the player whose removal would most damage the team, keep the action available.",
+          "why": "The strategy is a hook-economy trade, so target selection is the central decision rather than an automatic rescue shortcut.",
+          "enabledBy": ["perk:shoulder-the-burden"]
+        },
+        {
+          "id": "make-the-transfer",
+          "situation": "You have fewer than 2 Hook States, are next to the hooked Survivor and the transfer is worth its cost.",
+          "action": "Use Active Ability Button 2 once to unhook the target. Expect the target to lose 1 Hook State and you to gain 1, scream, become Injured and become Broken; immediately take the planned exit rather than treating the state trade as free.",
+          "why": "These are the live 10.2.0 consequences of Shoulder the Burden; the PTB-wide deactivation for other Survivors is not part of the live record.",
+          "enabledBy": ["perk:shoulder-the-burden"]
+        },
+        {
+          "id": "spend-the-taken-state",
+          "situation": "The transfer has succeeded and the Killer can now punish the user or the team is missing an objective/rescue role.",
+          "action": "Leave the hook area, communicate the new hook-state ownership and route toward the highest-value safe job. Do not take a second unnecessary trade while already carrying the transferred state.",
+          "why": "The payoff is preserving a player, but the user has also become the vulnerable player and the perk cannot be reused during the Trial."
+        },
+        {
+          "id": "release-the-transfer",
+          "situation": "You already have 2 Hook States, the target is no longer in the relevant danger window, the Killer has moved the interaction out of reach or the team cannot afford your resulting Broken state.",
+          "action": "Do not activate the perk. Switch to the ordinary rescue, objective or chase route and preserve the unused transfer for a later high-value hook state.",
+          "why": "The live activation is state- and position-gated, and the source warns that poor target selection converts the protection into cost."
+        }
+      ],
+      "abortWhen": [
+        "Abort the transfer when the target's death-prevention value has passed, a safer rescue has already resolved the danger or the target is no longer next to the hook interaction.",
+        "After a successful transfer, abort further hook-state trading until the team has reassessed the user's new state, injury and Broken duration."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Treat the transfer as a personal high-commitment call: verify the target's danger and your own Hook State count before acting, then take responsibility for the exit after the trade."
+      ],
+      "coordinatedSwf": [
+        "Name the target, transfer owner and post-trade job before the unhook so the team does not duplicate rescue travel or leave the transferred player without an exit."
+      ]
+    },
+    "strengths": [
+      "Can preserve a vulnerable fourth player by moving hook-state risk instead of accepting an early elimination."
+    ],
+    "weaknesses": [
+      "The user pays a Hook State, injury and long Broken period, and the once-per-Trial action has no value if the target selection is poor.",
+      "The timing and teammate-state dependencies make an unannounced Solo Q transfer easier to waste."
+    ],
+    "killerCounterplay": [
+      "The Killer can change targets, leave the hook, force a poor approach or let the user absorb the transferred state and Broken period without granting a favorable follow-up."
+    ],
+    "commonMistakes": [
+      "Activating the transfer whenever a hooked Survivor is nearby instead of comparing hook-state value and the user's own cost.",
+      "Forgetting that the live user becomes Injured and Broken and gains a Hook State after the unhook.",
+      "Taking the transfer without calling the post-trade route, leaving the preserved player or the new target of pressure unsupported."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C11#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C11@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C11@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C11@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C11#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C11#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C11#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C11#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "C11#Common Mistakes" },
+    { "kind": "PERK", "ref": "shoulder-the-burden#/mechanics" }
+  ]
+}

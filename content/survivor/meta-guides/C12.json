@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C12",
+  "snapshotId": "C12@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "deliverance", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Bank one guaranteed first-stage self-unhook by completing a safe rescue first, then preserve the armed state for a hook where removing teammate travel time is worth the long Broken reset.",
+    "verdict": {
+      "recommendation": "Arm Deliverance through a genuinely safe rescue, then use the guaranteed first-stage self-unhook only when it saves more team time than its long Broken period costs.",
+      "soloQ": "Complete the safe rescue yourself and track the first Hook Stage and exit route; if early pressure denies the setup, return to ordinary objective and rescue decisions instead of forcing the plan.",
+      "coordinatedSwf": "Call who is taking the safe rescue and when the perk is armed so the team can route around the future self-unhook rather than sending a second player across the map by habit.",
+      "mainWeakness": "A hook before activation, an unsafe rescue, second Hook Stage or a last-Survivor hook can deny the self-rescue, while the post-use Broken period slows the next reset."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "deterministic-self-unhook-module",
+          "label": "Deterministic self-unhook module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source names Deliverance plus unspecified information/rescue support rather than a verified four-perk build. Keep the defining rescue-to-self-unhook loop explicit and leave the support shell open.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Bank the guaranteed self-unhook",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "deliverance",
+                  "whyItsHere": "After safely unhooking another Survivor, the next self-unhook attempt during your first Hook Stage succeeds once. The successful self-unhook applies Broken for 160/140/120 seconds by tier."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Treat the first rescue as the investment and the later self-unhook as the payout. Before taking either action, identify whether the rescue is safe enough to arm the perk and whether the eventual hook will repay the setup through saved team travel and time."
+      ],
+      "rows": [
+        {
+          "id": "arm-after-safe-rescue",
+          "situation": "Another Survivor is hooked and you can reach the hook with a rescue that meets the safe-unhook condition.",
+          "action": "Take the safe rescue only when the approach and departure are workable, then confirm the perk is armed before planning around self-rescue. An unsafe rescue does not bank the effect.",
+          "why": "Deliverance requires a safely unhooked Survivor before its first-stage self-unhook is guaranteed.",
+          "enabledBy": ["perk:deliverance"]
+        },
+        {
+          "id": "preserve-the-first-stage",
+          "situation": "Deliverance is armed and you are not yet hooked.",
+          "action": "Keep the armed state in mind while choosing routes, but do not take a reckless hook merely to spend it. Let the match decide whether the first Hook Stage is a valuable place to remove teammate travel time.",
+          "why": "The payoff is conditional self-rescue, not permission to ignore chase, objective or team tempo."
+        },
+        {
+          "id": "self-unhook-on-first-stage",
+          "situation": "You are in the first Hook Stage and the self-unhook will save more team travel than the post-use reset costs.",
+          "action": "Use the guaranteed self-unhook once, then leave the hook area and reassess the next job. Expect Broken for the tier-specific 160/140/120 seconds and do not plan an immediate heal as though the cost were absent.",
+          "why": "The current effect is once per Trial and the long Broken duration is the central recovery cost."
+        },
+        {
+          "id": "respect-denial-states",
+          "situation": "You were hooked before arming Deliverance, have reached the second Hook Stage or are the last Survivor remaining when hooked.",
+          "action": "Stop planning around self-unhook and switch to the ordinary rescue, chase or endgame decision available in the Trial. Do not treat the perk name as protection after its activation boundary is missed.",
+          "why": "These are explicit live conditions that prevent Deliverance from activating."
+        },
+        {
+          "id": "release-the-setup",
+          "situation": "The safe-rescue window has passed, the Killer denies the approach or the team needs objective tempo more than a risky arming attempt.",
+          "action": "Abandon the setup and take the highest-value available job. Revisit the strategy only if a new safe rescue can actually arm it; do not keep travelling to preserve a sunk cost.",
+          "why": "C12's value depends on the prior altruistic action and fails if the activation is denied."
+        }
+      ],
+      "abortWhen": [
+        "Abort the arming attempt when the rescue is unsafe, the Killer has denied the route or another teammate has already completed the safe rescue.",
+        "After the self-unhook, leave the hook area and abandon an immediate heal plan until the Broken condition and current pressure have been reassessed."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Take responsibility for identifying the safe rescue and for recognizing when the perk was denied; no teammate can be assumed to know that you are saving a later self-unhook."
+      ],
+      "coordinatedSwf": [
+        "Call the safe-rescue completion and the future hook plan so teammates preserve objectives instead of duplicating a rescue rotation that Deliverance can replace."
+      ]
+    },
+    "strengths": [
+      "Once armed, can remove one teammate rescue rotation and create a deterministic first-stage self-rescue."
+    ],
+    "weaknesses": [
+      "The first-chase problem is real: an early hook or unsafe rescue leaves the defining slot inactive.",
+      "The post-self-unhook Broken duration delays the next healing reset and makes the exit route part of the activation decision."
+    ],
+    "killerCounterplay": [
+      "The Killer can find the user before a safe rescue, deny the approach, force an unsafe rescue or create a state where the first-stage self-unhook is unavailable."
+    ],
+    "commonMistakes": [
+      "Taking an unsafe rescue and assuming Deliverance is armed anyway.",
+      "Forcing a hook or self-unhook plan after the activation boundary has been denied or after the team can no longer afford the travel-time trade.",
+      "Ignoring the long Broken period and treating a successful self-unhook as an immediate full reset."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C12#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C12@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C12@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C12@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C12#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C12#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C12#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C12#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "C12#Common Mistakes" },
+    { "kind": "PERK", "ref": "deliverance#/mechanics" }
+  ]
+}
