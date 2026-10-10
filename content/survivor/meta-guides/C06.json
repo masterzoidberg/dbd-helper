@@ -90,7 +90,7 @@
         {
           "id": "post-generator-window",
           "situation": "A Generator has completed and Dark Sense is ready for its conditional aura-reading window.",
-          "action": "Use the Killer, Survivor, Pallet and Window positions only when the Killer enters the trigger range, then pick the route that keeps the next job moving.",
+          "action": "Use the Killer and Survivor Auras during the active window, and the Pallet and Window Auras within 32 metres, then pick the route that keeps the next job moving.",
           "why": "Dark Sense is event and range gated; it is not a permanent map-wide read.",
           "enabledBy": ["perk:dark-sense"]
         },
@@ -113,7 +113,7 @@
           "situation": "You are entering a chase and the selected resource view is active.",
           "action": "Use Five Moves Ahead to choose a Pallet route or Windows of Opportunity to choose a Window route, then leave after the resource or its follow-up is spent.",
           "why": "The two views answer different route questions and must not be read as one combined all-resource map.",
-          "enabledBy": ["perk:five-moves-ahead", "perk:windows-of-opportunity"]
+          "enabledBy": ["slot:chase-information-module#2"]
         },
         {
           "id": "information-denied",
@@ -169,6 +169,7 @@
     { "kind": "PUBLICATION", "ref": "C06#Items and Add-ons" },
     { "kind": "PUBLICATION", "ref": "C06#Killer Counterplay" },
     { "kind": "PUBLICATION", "ref": "C06#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C06#Synergies, Hybrids, and Related Strategies" },
     { "kind": "PERK", "ref": "dark-sense#/mechanics" },
     { "kind": "PERK", "ref": "alert#/mechanics" },
     { "kind": "PERK", "ref": "premonition#/mechanics" },

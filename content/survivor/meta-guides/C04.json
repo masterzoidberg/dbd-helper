@@ -102,7 +102,7 @@
         },
         {
           "id": "track-resource-denial",
-          "situation": "The Killer breaks or damages a pallet, or Alert reveals a nearby action.",
+          "situation": "The Killer breaks or damages a pallet, and Alert reveals the Killer's Aura.",
           "action": "Use the aura cue to update the route and tell teammates which resource is being removed. Do not interpret it as a pallet or window map.",
           "why": "Alert reports Killer Break or Damage actions; the information is useful because it changes resource state.",
           "enabledBy": ["perk:alert"]

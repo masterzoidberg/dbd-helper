@@ -133,6 +133,7 @@
     { "kind": "PUBLICATION", "ref": "C05#Items and Add-ons" },
     { "kind": "PUBLICATION", "ref": "C05#Killer Counterplay" },
     { "kind": "PUBLICATION", "ref": "C05#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C05#Synergies, Hybrids, and Related Strategies" },
     { "kind": "PERK", "ref": "apocalyptic-ingenuity#/mechanics" }
   ]
 }

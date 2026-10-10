@@ -88,7 +88,7 @@
           "situation": "You are choosing how to stay quiet while moving to an objective, Chest or Totem, or after taking a hit.",
           "action": "Use Calm Spirit for quiet Crow, scream, Chest or Totem interactions; use Iron Will only while injured and not Exhausted; use Light-Footed only while healthy and off its Rushed Vault cooldown.",
           "why": "These perks cover different noise and state conditions. None makes every movement or interaction invisible.",
-          "enabledBy": ["perk:calm-spirit", "perk:iron-will", "perk:light-footed"]
+          "enabledBy": ["slot:stealth-avoidance-module#2"]
         },
         {
           "id": "stay-productive",
