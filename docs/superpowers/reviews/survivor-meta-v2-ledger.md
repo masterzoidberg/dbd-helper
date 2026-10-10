@@ -250,3 +250,13 @@ Minor review notes: `mainWeakness` is omitted; frozen article front matter is ex
 The second bounded fix round moved C01/G02 queue facts and P00 child queue/status facts into the first mobile interaction. Scoped re-review report `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-re-review-4.md` — **APPROVED**: zero Critical/Important findings, live mockup harness exit 0 with 0 failed checks, seven real guides loaded, canonical links and exceptional shapes verified, and desktop/mobile overflow/console/disclosure checks green. The report records only Minor presentation and screenshot-framing observations.
 
 Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No design-contract change is required; the renderer must retain the demonstrated compact MODULE, FAMILY, LEGACY, and TEAM equivalents. Tasks 9–12 are authorized to begin. The seven prototype guides remain DRAFT, no production HTML or publication was performed at this gate, and root canonical ZIPs plus frozen Stage 3A/3B inputs remain unchanged.
+
+### Task 9 — read-only transient presentation model
+
+- BASE: `0511723c5306f789215f27eb1c07b5b734921789`.
+- Implementer: Lorentz; initial commit `6817089` (`feat: assemble canonical-backed guide presentation models`).
+- Task review: Chandrasekhar — three Important findings: canonical builds leaked editorial notes, LEGACY identity warning lacked canonical legacy-history context, and perk queries used mutable display names.
+- Fix round 1/5: `1a48bfb` (`fix: isolate canonical facts in guide model`) addressed all three with RED→GREEN model regressions.
+- Scoped re-review: Hooke — all three findings ADDRESSED, no new Critical/Important breakage; review package `review-6817089..1a48bfb.diff`.
+- Controller/implementer verification: focused model tests 7/7; relevant combined tests 71/71; full Node suite 135/135; syntax, validation (7 DRAFT/50 missing/zero diagnostics), generated-artifact, and diff checks clean.
+- Task 9: complete (commits `0511723..1a48bfb`, review clean after one fix round). No renderer, guide JSON, canonical source, generated output, publication, or deployment changes.
