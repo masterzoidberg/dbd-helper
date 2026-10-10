@@ -5,8 +5,8 @@
     "verifiedDate": "2026-10-06",
     "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
   },
-  "reviewStatus": "DRAFT",
-  "reviewedDate": null,
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
   "strategyId": "C01",
   "snapshotId": "C01@10.2.0-r1",
   "perkReviews": [

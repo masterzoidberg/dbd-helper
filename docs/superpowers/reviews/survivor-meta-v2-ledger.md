@@ -10,7 +10,7 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 
 | ID | Canonical name | Kind | State | Review evidence | Commit reference |
 |---|---|---|---|---|---|
-| C01 | General Chase / Looping | STANDARD | DRAFT | [Content/source review](#c01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
+| C01 | General Chase / Looping | STANDARD | REVIEWED | Task 15 whole-catalog QA; source-faithful canonical choices and all-route preview/browser checks. | Task 15 |
 | C02 | Exhaustion Mobility Chase | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | C03 | Vault / Window Specialist | STANDARD | REVIEWED | Task 14 B1 source/editorial review; module alternatives, related receipt and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
 | C04 | Pallet / Resource Specialist | STANDARD | REVIEWED | Task 14 B1 source/editorial review; resource reset/exit cues and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
@@ -26,11 +26,11 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | C14 | Self-Sustain / Self-Heal | STANDARD | REVIEWED | Task 14 B3 source/editorial review; null Coordinated SWF ranking preserved, self-sustain routes and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
 | C15 | Haste / Movement Stack | STANDARD | REVIEWED | Task 14 B3 source/editorial review; provisional evaluations preserved, exact Haste gates and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
 | G01 | General Generator Pressure | STANDARD | REVIEWED | Task 14 B3 source/editorial review; both canonical build IDs remain source-derived with open SWF slot-4 alternative and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
-| G02 | Toolbox Generator Specialist | STANDARD | DRAFT | [Content/source review](#g02-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
+| G02 | Toolbox Generator Specialist | STANDARD | REVIEWED | Task 15 whole-catalog QA; bounded one-slot toolbox module and required-item guidance passed all-route preview/browser checks. | Task 15 |
 | G03 | Critical-Generator / Three-Gen Breaker | STANDARD | REVIEWED | Task 14 B3 source/editorial review; bounded target module, optional Toolbox binding and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
 | G04 | Cooperative Repair / Gen Duo | STANDARD | REVIEWED | Task 14 B3 source/editorial review; bounded cooperative-repair module and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
 | G05 | Manual Skill-Check Generator | STANDARD | REVIEWED | Task 14 B4 source/editorial review; manual-check reset boundary and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
-| G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | DRAFT | [Content/source review](#g06-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
+| G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | REVIEWED | Task 15 whole-catalog QA; historical mechanics/successor shape and no-current-build omission passed all-route preview/browser checks. | Task 15 |
 | G07 | Boon: Steadfast Repair Zone | STANDARD | REVIEWED | Task 13 editorial/source review; Provisional evaluation preserved; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | G08 | Road Life Repair-to-Self-Heal | STANDARD | REVIEWED | Task 14 B4 source/editorial review; injured Great-check gate and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
 | G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | REVIEWED | Task 14 B4 source/editorial review; own-unhook/basic-check handoff and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
@@ -43,7 +43,7 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | REVIEWED | Task 14 B5 source/editorial review; ordinary bodyblock route/abort guidance and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
 | A07 | Endgame Rescue | STANDARD | REVIEWED | Task 14 B6 source/editorial review; powered-endgame rescue gates and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P01 | Flashlight Save | STANDARD | REVIEWED | Task 14 B6 source/editorial review; required Flashlight pickup window and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
-| P02 | Flashbang Save | STANDARD | DRAFT | [Content/source review](#p02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
+| P02 | Flashbang Save | STANDARD | REVIEWED | Task 15 whole-catalog QA; bounded crafted-save module and conditional pickup guidance passed all-route preview/browser checks. | Task 15 |
 | P03 | Sabotage / Hook Denial | STANDARD | REVIEWED | Task 14 B6 source/editorial review; intended-hook denial route and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P04 | Breakout / Carry Interference | STANDARD | REVIEWED | Task 14 B6 source/editorial review; marginal-carry escort trade and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P05 | Teammate Pallet Save | STANDARD | REVIEWED | Task 14 B6 source/editorial review; finite-pallet carry-crossing condition and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
@@ -63,9 +63,9 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | R08 | Distraction / Misdirection | STANDARD | REVIEWED | Task 14 B9 source/editorial review; named decoy-to-rotation cues and team-safety aborts recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b` |
 | R09 | Obsession / High-Risk Aggro-Info | STANDARD | REVIEWED | Task 14 B9 source/editorial review; Bound by Obsession/Blood Pact risk and state-specific exits recorded; Blood Pact wording corrected in fix round; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b`, `2e32980` |
 | R10 | Endgame Gate / Escape Shell | STANDARD | REVIEWED | Task 14 B10 source/editorial review; endgame transition, gate/rescue assignment and late-only opportunity costs recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `a1f2e4e` |
-| X01 | Solo-Q Generalist | STANDARD | DRAFT | [Content/source review](#x01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
-| X02 | Coordinated SWF Flex Generalist | TEAM | DRAFT | [Content/source review](#x02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
-| P00 | Pickup Interception / Save Family | FAMILY | DRAFT | [Content/source review](#p00-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
+| X01 | Solo-Q Generalist | STANDARD | REVIEWED | Task 15 whole-catalog QA; canonical five-perk choice shape and solo optional omissions passed all-route preview/browser checks. | Task 15 |
+| X02 | Coordinated SWF Flex Generalist | TEAM | REVIEWED | Task 15 whole-catalog QA; exact four-role team shape and NOT_APPLICABLE Solo Q state passed all-route preview/browser checks. | Task 15 |
+| P00 | Pickup Interception / Save Family | FAMILY | REVIEWED | Task 15 whole-catalog QA; exact five-child comparison shape with no invented aggregate build passed all-route preview/browser checks. | Task 15 |
 | A00 | Rescue-and-Reset Support Family | FAMILY | REVIEWED | Task 14 B4 source/editorial review; four-child comparison and non-ranking status at 320×844/1440×900 recorded. | `846a1e0` |
 
 ## Task 7 group 1 — X01/C01/G02
@@ -400,3 +400,11 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Browser evidence: C14, C15, G01, G03 and G04 each passed 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25) with no horizontal overflow, one H1, visible gameplay, closed research/perk disclosures and focusable research summaries. The fix round added one focused regression test covering the Toolbox enabler and Blood Pact target/proximity wording.
 - Serialized index integration initialized exactly 12 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `blood-pact`, `boon-dark-theory`, `fast-track`, `friendly-competition`, `hope`, `inner-strength`, `leader`, `made-for-this`, `prove-thyself`, `road-life`, `self-care`, `strength-in-shadows`. Existing entries were unchanged.
 - Post-integration verification: validator `missing: 31`, `DRAFT: 7`, `REVIEWED: 19`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`; Python `4/4`; generated-artifact checker clean; `git diff --check` clean. No publication or deployment was performed.
+
+## Task 15 — whole-catalog QA/readiness
+
+- Reviewer: Codex, 2026-10-10 America/New_York. The focused catalog test was written and run RED before status changes: it reported the expected seven DRAFT records (`X01 C01 G02 P02 P00 G06 X02`) against the otherwise valid 57-record catalog. Its ranking/optional-omission, runtime-baseline, slot-count and route assertions already passed.
+- Re-review against the exact Stage 3A snapshot, Stage 3B article and canonical perk sources promoted only those seven source-faithful, useful records from DRAFT/null to REVIEWED with genuine `2026-10-10` dates. No names, mechanics, rankings, builds, substitutes, matchups or architecture were changed. The C13 visible legacy explanation was bounded to remove raw internal `LEGACY`/`NOT_CURRENT` terminology; no renderer/schema defect was found.
+- Catalog assertions cover the exact canonical 57-ID set excluding metadata, page kinds `52 STANDARD / 2 FAMILY / 2 LEGACY / 1 TEAM`, resolving receipts/builds/perk dependencies/enablers/dates, family children, legacy successors and four TEAM roles. C14 keeps Coordinated SWF `UNRANKED` null ranking fields; X02 keeps Solo Q `NOT_APPLICABLE` null fields; G07 remains `PROVISIONAL`; FAMILY/LEGACY pages have no aggregate tiers.
+- Preview build generated all 57 detail routes. The ignored content scan found publication/article coverage, complete named-perk links, deduplicated related destinations, no repeated boilerplate candidate and no internal terminology in the primary path for all 57 records. Instrumented Chrome checks passed `114/114` route/viewport cases at 390×844 and 1440×900 with zero failures; representative standard, family, legacy, team and unranked captures were visually inspected. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Shared perk-review index was unchanged; validator reports `missing: 0`, `DRAFT: 0`, `REVIEWED: 57`, `PUBLISHED: 0`, zero diagnostics. Full Node is `164/164`, Python `4/4`, generated-artifact verification is clean, and `git diff --check` is clean. No PUBLISHED status, publication, deployment or independent editorial deploy was performed.
