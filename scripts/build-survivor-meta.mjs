@@ -362,22 +362,46 @@ function outputError(message) {
   return new GuideValidationError(`OUTPUT_PATH_INVALID: ${message}`);
 }
 
-function rejectSymlink(file, label) {
-  if (fs.existsSync(file) && fs.lstatSync(file).isSymbolicLink()) {
-    throw outputError(`${label} must not be a symlink: ${file}`);
+function rejectSymlinkComponents(file, label) {
+  const resolved = path.resolve(file);
+  const parsed = path.parse(resolved);
+  let current = parsed.root;
+  const relative = path.relative(parsed.root, resolved);
+  for (const component of relative.split(path.sep).filter(Boolean)) {
+    current = path.join(current, component);
+    try {
+      if (fs.lstatSync(current).isSymbolicLink()) {
+        throw outputError(`${label} must not contain a symlink component: ${current}`);
+      }
+    } catch (error) {
+      if (error instanceof GuideValidationError) throw error;
+      if (error.code !== 'ENOENT' && error.code !== 'ENOTDIR') throw error;
+    }
   }
 }
 
 function validateOutputLayout({ rootDir, outputPath, detailOutputDir, preview, previewRoot, routes }) {
-  const rootReal = fs.realpathSync.native(path.resolve(rootDir));
   const sitePath = path.join(rootDir, 'site');
+  const outputTargets = [
+    [rootDir, 'root directory'],
+    [sitePath, 'production site'],
+    [detailOutputDir, 'detail output directory'],
+    [outputPath, 'runtime output']
+  ];
+  if (preview) outputTargets.push([previewRoot, 'preview output directory']);
+  for (const route of routes) {
+    const slug = route.split('/').filter(Boolean).at(-1);
+    outputTargets.push([path.join(detailOutputDir, slug), `route destination ${route}`]);
+  }
+  for (const [target, label] of outputTargets) rejectSymlinkComponents(target, label);
+
+  const rootReal = fs.realpathSync.native(path.resolve(rootDir));
   const siteReal = fs.realpathSync.native(sitePath);
   const detailReal = realCandidate(detailOutputDir);
   const runtimeReal = realCandidate(outputPath);
 
   if (preview) {
     if (!path.isAbsolute(previewRoot)) throw outputError('preview output directory must be absolute');
-    rejectSymlink(previewRoot, 'preview output directory');
     if (isWithin(realCandidate(previewRoot), rootReal)) throw outputError('preview output directory must be outside the production root');
     if (isWithin(realCandidate(previewRoot), siteReal)) throw outputError('preview output directory must be outside the production site');
     if (!isWithin(runtimeReal, realCandidate(previewRoot))) throw outputError('preview runtime must remain inside the preview root');
@@ -386,15 +410,11 @@ function validateOutputLayout({ rootDir, outputPath, detailOutputDir, preview, p
     if (!isWithin(detailReal, rootReal)) throw outputError('production detail output must remain inside the root');
     if (!isWithin(runtimeReal, rootReal)) throw outputError('production runtime output must remain inside the root');
   }
-  rejectSymlink(detailOutputDir, 'detail output directory');
-  rejectSymlink(outputPath, 'runtime output');
-
   for (const route of routes) {
     const slug = route.split('/').filter(Boolean).at(-1);
     const destination = path.join(detailOutputDir, slug);
     const destinationReal = realCandidate(destination);
     if (!isWithin(destinationReal, detailReal)) throw outputError(`route escapes detail output: ${route}`);
-    rejectSymlink(destination, `route destination ${route}`);
   }
 }
 

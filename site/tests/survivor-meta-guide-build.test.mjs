@@ -139,7 +139,7 @@ test('late invalid guides and renderer failures never mutate generated output', 
 });
 
 test('unsafe routes and preview destinations reject before mutation', t => {
-  for (const slug of ['/survivor-meta/../escape', '/absolute/escape']) {
+  for (const slug of ['/survivor-meta/../escape', '/absolute/escape', '/outside/escape']) {
     const tempRoot = copyRoot(t);
     const manifestFile = path.join(tempRoot, 'content/survivor/meta/10.2.0-r1/stage3b/strategy-pages-manifest.json');
     const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
@@ -195,4 +195,45 @@ test('detail writer validates before deletion and preserves support routes', t =
   const before = treeBytes(path.join(tempRoot, 'site'));
   assert.throws(() => writeDetailPages({ rootDir: tempRoot, release }), error => error.name === 'GuideValidationError');
   assert.deepEqual(treeBytes(path.join(tempRoot, 'site')), before);
+});
+
+test('dangling runtime, detail, and preview path components reject before mutation', t => {
+  const symlinkType = process.platform === 'win32' ? 'junction' : 'dir';
+
+  const runtimeRoot = copyRoot(t);
+  const runtimeAlias = path.join(runtimeRoot, 'site/assets/dangling-runtime');
+  fs.symlinkSync(path.join(runtimeRoot, 'missing-runtime-target'), runtimeAlias, symlinkType);
+  const runtimeBefore = treeBytes(path.join(runtimeRoot, 'site'));
+  assert.throws(
+    () => buildSurvivorMetaSite({
+      rootDir: runtimeRoot,
+      release,
+      outputPath: path.join(runtimeAlias, 'data-survivor-meta.js')
+    }),
+    error => error.name === 'GuideValidationError' && /OUTPUT_PATH_INVALID/.test(error.message)
+  );
+  assert.deepEqual(treeBytes(path.join(runtimeRoot, 'site')), runtimeBefore);
+
+  const detailRoot = copyRoot(t);
+  const detailAlias = path.join(detailRoot, 'site/survivor-meta/general-chase-looping');
+  fs.rmSync(detailAlias, { recursive: true, force: true });
+  fs.symlinkSync(path.join(detailRoot, 'missing-detail-target'), detailAlias, symlinkType);
+  const detailBefore = treeBytes(path.join(detailRoot, 'site'));
+  assert.throws(
+    () => buildSurvivorMetaSite({ rootDir: detailRoot, release }),
+    error => error.name === 'GuideValidationError' && /OUTPUT_PATH_INVALID/.test(error.message)
+  );
+  assert.deepEqual(treeBytes(path.join(detailRoot, 'site')), detailBefore);
+
+  const previewRoot = copyRoot(t);
+  const previewParent = fs.mkdtempSync(path.join(os.tmpdir(), 'survivor-meta-dangling-preview-'));
+  t.after(() => fs.rmSync(previewParent, { recursive: true, force: true }));
+  const previewAlias = path.join(previewParent, 'preview');
+  fs.symlinkSync(path.join(previewParent, 'missing-preview-target'), previewAlias, symlinkType);
+  const previewBefore = treeBytes(path.join(previewRoot, 'site'));
+  assert.throws(
+    () => buildSurvivorMetaSite({ rootDir: previewRoot, release, preview: true, outputDir: previewAlias }),
+    error => error.name === 'GuideValidationError' && /OUTPUT_PATH_INVALID/.test(error.message)
+  );
+  assert.deepEqual(treeBytes(path.join(previewRoot, 'site')), previewBefore);
 });
