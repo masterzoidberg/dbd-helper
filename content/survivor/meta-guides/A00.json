@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A00",
+  "snapshotId": "A00@10.2.0-r1",
+  "perkReviews": [],
+  "page": {
+    "kind": "FAMILY",
+    "summary": "Choose the support job the team actually needs: rescue and immediate reset, dedicated healing, a protection hit, or hook-state transfer. This is a family, not one equipable build or aggregate ranking.",
+    "comparisons": [
+      { "strategyId": "A01", "chooseWhen": "A hooked teammate needs a reachable unhook and a safe post-unhook reset can preserve their next chase.", "tradeoff": "The rescuer leaves objectives and can expose both Survivors if the Killer still controls the hook or heal location. Release the reset when it is unsafe." },
+      { "strategyId": "A03", "chooseWhen": "An injured teammate is reachable and a dedicated healer can restore them without abandoning a critical generator or hook.", "tradeoff": "Travel and healing take team time; against immediate pressure or anti-heal, hand off or return to the objective instead of chasing every injury." },
+      { "strategyId": "A05", "chooseWhen": "A well-positioned healthy Survivor can take a protection hit that materially keeps a teammate or route alive.", "tradeoff": "The protector spends a health state and risks a second down. Do not step into a hit when it cannot change the teammate's escape or rescue outcome." },
+      { "strategyId": "C11", "chooseWhen": "A hooked teammate's hook state is the limiting resource and an eligible Survivor can deliberately transfer one state.", "tradeoff": "The user inherits hook-state risk and the live perk's injury and Broken cost. Use the child plan only when that exchange is better than an ordinary safe unhook." }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A00#/generalStrategicDefinition" },
+    { "kind": "STRATEGY", "ref": "A00#/subtypeIds" },
+    { "kind": "SNAPSHOT", "ref": "A00@10.2.0-r1#/solo" },
+    { "kind": "SNAPSHOT", "ref": "A00@10.2.0-r1#/swf" },
+    { "kind": "SNAPSHOT", "ref": "A00@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "A00#Child Strategies" },
+    { "kind": "PUBLICATION", "ref": "A00#Why the Children Are Not Interchangeable" },
+    { "kind": "PUBLICATION", "ref": "A00#Shared Counterplay" },
+    { "kind": "STRATEGY", "ref": "A01#/generalStrategicDefinition" },
+    { "kind": "STRATEGY", "ref": "A03#/generalStrategicDefinition" },
+    { "kind": "STRATEGY", "ref": "A05#/generalStrategicDefinition" },
+    { "kind": "STRATEGY", "ref": "C11#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C11@10.2.0-r1#/counters" }
+  ]
+}

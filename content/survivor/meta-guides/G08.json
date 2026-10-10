@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G08",
+  "snapshotId": "G08@10.2.0-r1",
+  "perkReviews": [{ "perkId": "road-life", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "While injured, earn a future self-heal through basic Great repair checks, then take the reset only when its safety and timing repay leaving the generator.",
+    "verdict": {
+      "recommendation": "Use Road Life as an experimental repair-to-reset option, not a reason to remain injured or abandon an urgent objective for healing.",
+      "soloQ": "Build tokens on a safe generator and choose a safe self-heal location only after the live threshold is reached.",
+      "coordinatedSwf": "Tell teammates whether you are still repairing or taking the reset so the team does not duplicate a heal or leave rescue coverage empty.",
+      "mainWeakness": "The perk needs injury and basic Great repair checks; missed checks reduce tokens, and healing stops repair tempo."
+    },
+    "loadout": { "options": [{ "perkId": "road-life", "usage": "CORE", "whyItsHere": "While injured and repairing, basic Great checks build the 6/5/4-token self-heal threshold; no particular repair shell is established as a canonical build." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Take a safe generator first. A Med-Kit is not required for the core loop, and the source does not establish a fixed accessory build."],
+      "rows": [
+        { "id": "earn-reset", "situation": "You are injured, repairing a generator and can attempt basic repair Skill Checks without inviting an immediate down.", "action": "Hit basic Great checks for one Road Life token each; a missed basic check removes one. Continue objective work until the live 6/5/4 threshold is reached or the location becomes unsafe.", "why": "The self-heal access is earned through injured repair, not granted by merely equipping the perk.", "enabledBy": ["perk:road-life"] },
+        { "id": "choose-reset", "situation": "The Road Life threshold is ready and a safe self-heal would return you to useful work.", "action": "Leave for cover, begin self-healing to spend all tokens and use the 10% speed bonus. If you stop, resume within the four-second grace period or the granted self-heal ends.", "why": "A delayed or exposed reset can cost more than continuing repair or taking a teammate heal.", "enabledBy": ["perk:road-life"] },
+        { "id": "release-plan", "situation": "The Killer contests the repair, the heal is unsafe, or the team needs a rescue or critical generator covered.", "action": "Drop the token-chasing or reset assignment and take the higher-value job; rebuild only if a later injured repair window is genuinely available.", "why": "Staying injured for tokens or chasing an unsafe heal reverses the objective-to-reset exchange." }
+      ],
+      "abortWhen": ["Do not stay injured deliberately once the repair route is unsafe; leave without assuming the self-heal is ready.", "Stop the self-heal if Killer pressure makes it a likely down, and account for the four-second expiry after stopping."]
+    },
+    "strengths": ["Objective work can create independent healing access without a required Med-Kit."],
+    "weaknesses": ["Injury, check accuracy and a safe reset window must coincide; the current strategy remains experimental."],
+    "commonMistakes": ["Reading any Great check as progress toward Road Life when the perk requires injured basic repair checks.", "Spending the reset at an unsafe location or treating the four-second post-stop effect as unlimited."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G08#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G08@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G08@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G08@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G08#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G08#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G08#Items and Add-ons" },
+    { "kind": "PERK", "ref": "road-life#/mechanics" }
+  ]
+}
