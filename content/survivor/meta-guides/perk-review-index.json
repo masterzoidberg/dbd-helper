@@ -100,6 +100,50 @@
     "boon-illumination": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "0db73e899db7948cfa5139418c368d68b1f3b0cd54adf7961dd568c63f4db264"
+    },
+    "alert": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "6f74c4b7af9166cabbf74f09d382ac614fcaa9dcbccde70e83c3806989e9382d"
+    },
+    "any-means-necessary": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "098a9367df13192f9b144e8a73ab40cc666f19776f230e88ffa58d10b8e73a82"
+    },
+    "apocalyptic-ingenuity": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c43b235251c8cf793bb01012938c0e3836daf4ef7426583ec809d9009553554f"
+    },
+    "calm-spirit": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "6acb3f1acc58d5ba27d44084daedb30e894d0f486f01451ffe3aa786b2161d5e"
+    },
+    "dark-sense": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "967035f59f8d94c4d154ebacd434ac66a332bff074a217257071f3927ef76dec"
+    },
+    "distortion": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "b64c99389a60989ce072ffb3bfea25333fabdcdff32b98c6cb65af8e495fde05"
+    },
+    "iron-will": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "a8d157e285df154de25e1587d3bd76dac5b1d48c11b16a1fcaf161295a088403"
+    },
+    "light-footed": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "7c2a363baf253cacbae51e7d3f475aeac4e162aa343ce813ef1867b1672c4040"
+    },
+    "premonition": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "f66fe28dccb3387af9167815547edbf7a22ec9a1c8fe3525c0836c2b451da815"
+    },
+    "spine-chill": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "858669aaf884471a4ac4f13107f6ee60c9118c3bae3712f5a7e0fd5ad77995ca"
+    },
+    "windows-of-opportunity": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c94f1740f610e80d36a5d02cf32b4f4fdaa9655f5134790245231c208afdf556"
     }
   }
 }

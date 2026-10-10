@@ -12,11 +12,11 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 |---|---|---|---|---|---|
 | C01 | General Chase / Looping | STANDARD | DRAFT | [Content/source review](#c01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
 | C02 | Exhaustion Mobility Chase | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
-| C03 | Vault / Window Specialist | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C04 | Pallet / Resource Specialist | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C05 | Fragile-Pallet Restoration | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C06 | Chase Information / Routing | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C07 | Stealth / Chase Avoidance | STANDARD | NOT_STARTED | No record; review not started. | — |
+| C03 | Vault / Window Specialist | STANDARD | REVIEWED | Task 14 B1 source/editorial review; module alternatives, related receipt and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C04 | Pallet / Resource Specialist | STANDARD | REVIEWED | Task 14 B1 source/editorial review; resource reset/exit cues and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C05 | Fragile-Pallet Restoration | STANDARD | REVIEWED | Task 14 B1 source/editorial review; experimental/Chest omission and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C06 | Chase Information / Routing | STANDARD | REVIEWED | Task 14 B1 source/editorial review; slot-level information alternatives, related receipt and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C07 | Stealth / Chase Avoidance | STANDARD | REVIEWED | Task 14 B1 source/editorial review; slot-level stealth alternatives and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
 | C08 | Chase Reset / Disappearance | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C09 | Anti-Tunnel Package | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | C10 | Anti-Slug / Self-Recovery Package | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -311,3 +311,12 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - First-use perk index classifications: `balanced-landing`, `overcome`, `vigil`, `off-the-record`, `resurgence`, `empathy`, `empathic-connection`, `botany-knowledge`, `boon-steadfast` and `boon-illumination` were absent from the shared index before this wave. Each was initialized at mechanics revision 1 only after its exact canonical `#/mechanics` receipt and fingerprint were checked; no prior revision or change classification existed to preserve.
 - No renderer/schema/source/canonical ZIP/generated production output/publication/deployment changes. The seven prototype guides remain DRAFT; editorial content is still publication-gated.
 - Initial task review: Gibbs — four Important findings (G07 activation boundary, C02 Vigil purpose, A03 slot cue, and insufficient ledger evidence) plus one Minor canonical-duration wording issue. Fix round: `e866045` (`fix: address Task 13 editorial review findings`) after the content commit `d8417e1` (`content: review first Survivor guide population wave`). Scoped re-review: Franklin — all four Important findings addressed, no new Critical/Important/Minor findings. The Minor canonical-duration wording issue was corrected in the fix round.
+
+### Task 14 B1 — C03/C04/C05/C06/C07
+
+- Reviewer: Mencius. Initial B1 commit: `d7c659e` (`content: review Survivor guides B1`). Fix round: `d43c879` (`fix: address Task 14 B1 review findings`). Scoped re-review: Pasteur — all original findings addressed, no new Critical/Important/Minor findings.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. C03 covers window/resource routing without restoring the old Windows map; C04 preserves finite pallet economy and safe reset exits; C05 retains experimental status and omits unsupported Chest items; C06 binds approach/resource alternatives to selected slots and turns information into routes; C07 binds stealth layers to a selected slot and releases stealth for urgent team pressure or chase.
+- Exact source receipts and perk dependencies were re-resolved. The fix round added `C03#Synergies, Hybrids, and Related Strategies`, `C05#Synergies, Hybrids, and Related Strategies` and `C06#Synergies, Hybrids, and Related Strategies`; C06/C07 alternative gameplay rows use slot-level enablers. No fuzzy mappings, invented substitutions, unsupported matchup content or boilerplate were added.
+- Browser evidence: C03–C07 each passed the established 390×844 and 1440×900 checks for no horizontal overflow, one H1, visible summary/gameplay, closed research/perk disclosures, focusable research summary and primary landmark (10/10). Layout contract was unchanged.
+- Serialized index integration initialized exactly 11 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `alert`, `any-means-necessary`, `apocalyptic-ingenuity`, `calm-spirit`, `dark-sense`, `distortion`, `iron-will`, `light-footed`, `premonition`, `spine-chill`, `windows-of-opportunity`. Existing entries were unchanged.
+- Post-integration target: validator expected `missing: 41`, `DRAFT: 7`, `REVIEWED: 9`, `PUBLISHED: 0`, zero diagnostics; no production output, publication or deployment. Focused B1 regression passed 1/1; relevant suite passed 122/122; generated-artifact checker and diff checks clean.
