@@ -22,7 +22,7 @@
     ] },
     "gameplay": {
       "type": "DECISIONS",
-      "opening": ["Before entering an exposed route, separate a current Killer reveal from an old position. I02 tracks the Killer; teammate and generator auras in a Dark Sense window are supporting context, not the identity of this plan."],
+      "opening": ["Before entering an exposed route, separate a current Killer reveal from an old position. I02 tracks the Killer; other Survivor and nearby Pallet and Window auras in a Dark Sense window are supporting context, not the identity of this plan."],
       "rows": [
         { "id": "break-event-route", "situation": "Alert reveals the Killer after a Break or Damage action.", "action": "Use the shown position to choose a safer rotation or prepare the chase route, then return to your task when the brief reveal ends.", "why": "The cue is tied to a Killer action, not continuous pursuit tracking.", "enabledBy": ["perk:alert"] },
         { "id": "out-of-chase-warning", "situation": "You are not being chased and Premonition triggers while you face a nearby Killer.", "action": "Leave the vulnerable line or take position at a usable resource before the approach closes; do not rely on an immediate repeat trigger.", "why": "Premonition has an out-of-chase condition and cooldown.", "enabledBy": ["perk:premonition"] },
