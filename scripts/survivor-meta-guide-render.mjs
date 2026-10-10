@@ -7,20 +7,20 @@ const PROVENANCE_LABELS = {
 };
 
 const STATUS_LABELS = {
-  ESTABLISHED: 'Established',
-  PROVISIONAL: 'Provisional',
-  UNRANKED: 'Not yet ranked',
-  NOT_APPLICABLE: 'Not applicable',
-  NOT_CURRENT: 'Not current',
-  LEGACY: 'Historical'
+  ESTABLISHED: 'Well-supported',
+  PROVISIONAL: 'Early guidance',
+  UNRANKED: 'Evidence pending',
+  NOT_APPLICABLE: 'Not a queue recommendation',
+  NOT_CURRENT: 'Historical guidance',
+  LEGACY: 'Historical guidance'
 };
 
 const RANKING_LABELS = {
-  RANKED: 'Ranked',
-  PROVISIONAL: 'Provisional',
-  UNRANKED: 'Not yet ranked',
-  NOT_APPLICABLE: 'Not applicable',
-  NOT_CURRENT: 'Not current'
+  RANKED: 'Strong evidence',
+  PROVISIONAL: 'Early evidence',
+  UNRANKED: 'Evidence pending',
+  NOT_APPLICABLE: 'Not a queue recommendation',
+  NOT_CURRENT: 'Historical guidance'
 };
 
 const ENVIRONMENT_LABELS = {
@@ -90,11 +90,11 @@ function provenanceLabel(provenance) {
 }
 
 function statusLabel(status) {
-  return STATUS_LABELS[status] || humanize(status);
+  return STATUS_LABELS[status] || (status ? 'Status described in research' : '');
 }
 
 function rankingLabel(status) {
-  return RANKING_LABELS[status] || statusLabel(status);
+  return RANKING_LABELS[status] || (status ? 'Evidence details in research' : '');
 }
 
 function environmentLabel(environment) {
@@ -204,7 +204,13 @@ function renderHeroVerdict(model, parts) {
   const status = canonical.currentStatus || snapshot.currentStatus;
   const trend = canonical.trend || snapshot.trend;
   const verdict = page?.verdict || {};
-  return `<header class="guide-hero">${heading(1, title)}${summary ? `<p class="guide-summary-copy">${escapeHtml(summary)}</p>` : ''}<p class="guide-status">${escapeHtml(statusLabel(status))}${trend ? ` · ${escapeHtml(humanize(trend))}` : ''}</p>${verdict.recommendation ? `<section class="guide-verdict">${heading(2, 'Verdict')}<p>${escapeHtml(verdict.recommendation)}</p>${verdict.mainWeakness ? `<p><strong>Main weakness:</strong> ${escapeHtml(verdict.mainWeakness)}</p>` : ''}</section>` : ''}${cards.length ? `<section class="guide-environments">${cards.map(([label, evaluation]) => renderEvaluation(label, evaluation)).join('')}</section>` : ''}</header>`;
+  const environmentAdvice = [
+    verdict.soloQ ? `<p><strong>Solo Q:</strong> ${escapeHtml(verdict.soloQ)}</p>` : '',
+    verdict.coordinatedSwf ? `<p><strong>Coordinated SWF:</strong> ${escapeHtml(verdict.coordinatedSwf)}</p>` : ''
+  ].join('');
+  const bestFor = verdict.bestFor?.length ? `<section>${heading(3, 'Best for')}${list(verdict.bestFor)}</section>` : '';
+  const notIdealFor = verdict.notIdealFor?.length ? `<section>${heading(3, 'Not ideal for')}${list(verdict.notIdealFor)}</section>` : '';
+  return `<header class="guide-hero">${heading(1, title)}${summary ? `<p class="guide-summary-copy">${escapeHtml(summary)}</p>` : ''}<p class="guide-status">${escapeHtml(statusLabel(status))}${trend ? ` · ${escapeHtml(humanize(trend))}` : ''}</p>${verdict.recommendation ? `<section class="guide-verdict">${heading(2, 'Verdict')}<p>${escapeHtml(verdict.recommendation)}</p>${environmentAdvice}${bestFor}${notIdealFor}${verdict.mainWeakness ? `<p><strong>Main weakness:</strong> ${escapeHtml(verdict.mainWeakness)}</p>` : ''}</section>` : ''}${cards.length ? `<section class="guide-environments">${cards.map(([label, evaluation]) => renderEvaluation(label, evaluation)).join('')}</section>` : ''}</header>`;
 }
 
 function renderEvaluation(label, evaluation) {
@@ -302,8 +308,15 @@ function renderDecision(row, model, page, label = 'Decision') {
 function renderGameplay(page, model) {
   const gameplay = page?.gameplay;
   if (!gameplay) return '';
-  const opening = gameplay.opening ? `<section class="guide-opening">${heading(3, 'Opening')} ${paragraphs(gameplay.opening)}</section>` : '';
-  const abort = gameplay.abortWhen ? `<section class="guide-abort">${heading(3, 'When to stop')} ${list(gameplay.abortWhen)}</section>` : '';
+  const renderCue = (items, label, className, render = list) => {
+    const values = Array.isArray(items) ? items : items ? [items] : [];
+    return values.length ? `<section class="guide-${className}">${heading(3, label)}${render(values)}</section>` : '';
+  };
+  const opening = renderCue(gameplay.opening, 'Opening', 'opening', paragraphs);
+  const activation = renderCue(gameplay.type === 'SEQUENCE' ? gameplay.activationWhen : null, 'Activate when', 'activation');
+  const handoff = renderCue(gameplay.type === 'ROLE_GUIDE' ? gameplay.handoffWhen : null, 'Handoff when', 'handoff');
+  const abort = renderCue(gameplay.abortWhen, 'When to stop', 'abort');
+  const afterSuccess = renderCue(gameplay.type === 'SEQUENCE' ? gameplay.afterSuccess : null, 'After success', 'after-success');
   let body = '';
   if (gameplay.type === 'DECISIONS') body = (gameplay.rows || []).map(row => renderDecision(row, model, page)).join('');
   if (gameplay.type === 'SEQUENCE') {
@@ -312,9 +325,8 @@ function renderGameplay(page, model) {
   if (gameplay.type === 'ROLE_GUIDE') {
     body = (gameplay.priorities || []).map(row => renderDecision(row, model, page, 'Priority')).join('');
     if (gameplay.assignment) body = `<p><strong>Assignment:</strong> ${escapeHtml(gameplay.assignment)}</p>${body}`;
-    if (gameplay.handoff) body += `<section>${heading(3, 'Handoff and adaptation')}${paragraphs(Array.isArray(gameplay.handoff) ? gameplay.handoff : [gameplay.handoff])}</section>`;
   }
-  return `<section class="guide-gameplay">${heading(2, 'How to Play')}${opening}${body}${abort}${gameplay.afterSuccess ? `<section>${heading(3, 'After success')}${list(gameplay.afterSuccess)}</section>` : ''}</section>`;
+  return `<section class="guide-gameplay">${heading(2, 'How to Play')}${opening}${activation}${handoff}${body}${abort}${afterSuccess}</section>`;
 }
 
 function renderEnvironments(page) {
@@ -352,12 +364,12 @@ function renderFamily(page) {
   return `<section class="guide-family">${heading(2, 'Compare the approaches')}<p>No required perks.</p>${comparisons.map(item => {
     const destination = item.destination || {};
     return `<article>${heading(3, destination.name || 'Approach')}<p><a href="${routeHref(destination.route)}">Open this approach</a></p>${item.chooseWhen ? `<p><strong>Choose when:</strong> ${escapeHtml(item.chooseWhen)}</p>` : ''}${item.tradeoff ? `<p><strong>Trade-off:</strong> ${escapeHtml(item.tradeoff)}</p>` : ''}</article>`;
-  }).join('')}</section>`;
+  }).join('')}</section>${renderRelated(page)}`;
 }
 
 function renderLegacy(page, model) {
   const historical = page.historicalPerks || [];
-  return `<section class="guide-legacy">${heading(2, 'What it was')}${list(page.whatItWas)}${page.whyNotCurrent?.length ? `${heading(2, 'Why it is not current')}${list(page.whyNotCurrent)}` : ''}${page.successors?.length ? `<section>${heading(2, 'Current successors')}<ul>${page.successors.map(item => `<li><a href="${routeHref(item.destination?.route)}">${escapeHtml(item.destination?.name || 'Current successor')}</a>${item.why ? ` — ${escapeHtml(item.why)}` : ''}</li>`).join('')}</ul></section>` : ''}${historical.length ? `<section>${heading(2, 'Historical perk context')}<p>Current links show current mechanics; they do not recreate historical mechanics.</p>${historical.map(item => `<article>${heading(3, item.perk?.name || titleizeId(item.perkId))}<p>${perkLink(item.perk || item, model)}</p>${item.historicalUse ? `<p>${escapeHtml(item.historicalUse)}</p>` : ''}${item.perk?.currentEffect ? `<p><strong>Current effect:</strong> ${escapeHtml(item.perk.currentEffect)}</p>` : ''}</article>`).join('')}</section>` : ''}</section>`;
+  return `<section class="guide-legacy">${heading(2, 'What it was')}${list(page.whatItWas)}${page.whyNotCurrent?.length ? `${heading(2, 'Why it is not current')}${list(page.whyNotCurrent)}` : ''}${page.successors?.length ? `<section>${heading(2, 'Current successors')}<ul>${page.successors.map(item => `<li><a href="${routeHref(item.destination?.route)}">${escapeHtml(item.destination?.name || 'Current successor')}</a>${item.why ? ` — ${escapeHtml(item.why)}` : ''}</li>`).join('')}</ul></section>` : ''}${historical.length ? `<section>${heading(2, 'Historical perk context')}<p>Current links show current mechanics; they do not recreate historical mechanics.</p>${historical.map(item => `<article>${heading(3, item.perk?.name || titleizeId(item.perkId))}<p>${perkLink(item.perk || item, model)}</p>${item.historicalUse ? `<p>${escapeHtml(item.historicalUse)}</p>` : ''}${item.perk?.currentEffect ? `<p><strong>Current effect:</strong> ${escapeHtml(item.perk.currentEffect)}</p>` : ''}</article>`).join('')}</section>` : ''}</section>${renderRelated(page)}`;
 }
 
 function renderTeam(page, model) {
@@ -404,9 +416,9 @@ export function renderGuideBody(model) {
   const primary = page
     ? pageKind === 'FAMILY' ? renderFamily(page)
       : pageKind === 'LEGACY' ? renderLegacy(page, model)
-        : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderGameplay(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderRelated(page)}`
+        : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderMechanics(page)}${renderGameplay(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderRelated(page)}`
           : renderStandard(page, model)
     : `<p>This page contains research but no reviewed player-facing guide.</p>`;
-  return `${renderHeroVerdict(model, parts)}<div data-guide-primary>${primary}</div>${renderResearch(model, parts)}`;
+  return `<div data-guide-primary>${renderHeroVerdict(model, parts)}${primary}</div>${renderResearch(model, parts)}`;
 }
 

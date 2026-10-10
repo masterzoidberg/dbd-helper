@@ -108,3 +108,123 @@ test('research appendix retains structured fields, receipts, and full frozen art
   assert.ok(html.includes(articleHtml));
   assert.equal((html.match(/<h1>/g) || []).length, 1);
 });
+
+test('hero renders all supported verdict copy with player-safe status language', () => {
+  const base = modelFor('X01');
+  const model = {
+    ...base,
+    page: {
+      ...base.page,
+      verdict: {
+        ...base.page.verdict,
+        bestFor: ['Players who can change jobs as the trial develops.'],
+        notIdealFor: ['Players looking for one narrow specialist job.']
+      }
+    }
+  };
+  const html = renderGuideBody(model);
+  const primary = html.slice(html.indexOf('<div data-guide-primary>'), html.indexOf('<details data-guide-research'));
+
+  assert.match(primary, /Choose independent coverage/);
+  assert.match(primary, /Still usable, but agree who covers each job/);
+  assert.match(primary, /Best for/);
+  assert.match(primary, /Players who can change jobs/);
+  assert.match(primary, /Not ideal for/);
+  assert.match(primary, /one narrow specialist job/);
+  assert.doesNotMatch(primary, /\bEstablished\b|\bESTABLISHED\b|\bRANKED\b|\bPROVISIONAL\b/);
+  assert.match(html.slice(html.indexOf('<details data-guide-research')), /ESTABLISHED/);
+});
+
+test('gameplay renders schema cue fields and ignores nonexistent handoff content', () => {
+  const sequenceBase = fixtureModel('SEQUENCE');
+  const sequence = {
+    ...sequenceBase,
+    page: {
+      ...sequenceBase.page,
+      gameplay: {
+        ...sequenceBase.page.gameplay,
+        activationWhen: ['The prepared tool is available for a worthwhile save.'],
+        abortWhen: ['The save window is no longer reachable.'],
+        afterSuccess: ['Return to the open objective.']
+      }
+    }
+  };
+  const roleBase = fixtureModel('ROLE_GUIDE');
+  const role = {
+    ...roleBase,
+    page: {
+      ...roleBase.page,
+      gameplay: {
+        ...roleBase.page.gameplay,
+        handoffWhen: ['The assigned job is no longer available.'],
+        handoff: ['This unsupported field must not be rendered.'],
+        abortWhen: ['The assignment creates more risk than value.']
+      }
+    }
+  };
+
+  const sequenceHtml = renderGuideBody(sequence);
+  assert.match(sequenceHtml, /Activate when/);
+  assert.match(sequenceHtml, /prepared tool is available/);
+  assert.match(sequenceHtml, /When to stop/);
+  assert.match(sequenceHtml, /After success/);
+
+  const roleHtml = renderGuideBody(role);
+  assert.match(roleHtml, /Handoff when/);
+  assert.match(roleHtml, /assigned job is no longer available/);
+  assert.match(roleHtml, /When to stop/);
+  assert.doesNotMatch(roleHtml, /unsupported field must not be rendered/);
+});
+
+test('family and legacy related links plus TEAM optional sections use shared renderers', () => {
+  const related = [{
+    destination: { route: '/survivor-meta/related-approach', name: 'Related approach' },
+    relationship: 'SIMILAR',
+    why: 'Shares the same objective.'
+  }];
+  for (const strategyId of ['P00', 'G06']) {
+    const base = modelFor(strategyId);
+    const html = renderGuideBody({ ...base, page: { ...base.page, related } });
+    assert.match(html, /Related strategies/, strategyId);
+    assert.match(html, /Related approach/, strategyId);
+    assert.match(html, /Shares the same objective/, strategyId);
+  }
+
+  const base = modelFor('X02');
+  const html = renderGuideBody({
+    ...base,
+    page: {
+      ...base.page,
+      related,
+      mechanics: [{ id: 'team-callouts', explanation: 'Call the next assignment clearly.' }],
+      strengths: ['Shares pressure across the team.'],
+      difficulty: { learning: { label: 'HIGH', why: 'Several jobs must stay covered.' } }
+    }
+  });
+  assert.match(html, /Key mechanics/);
+  assert.match(html, /Call the next assignment clearly/);
+  assert.match(html, /Strengths/);
+  assert.match(html, /Shares pressure across the team/);
+  assert.match(html, /Difficulty/);
+  assert.match(html, /Several jobs must stay covered/);
+  assert.match(html, /Related strategies/);
+});
+
+test('TEAM role option-only loadouts emit compact summaries', () => {
+  const html = renderGuideBody(modelFor('X02'));
+  const roleStart = html.indexOf('<article id="guide-role-objectives"');
+  const roleEnd = html.indexOf('<article id="guide-role-reset"');
+  assert.ok(roleStart >= 0 && roleEnd > roleStart);
+  assert.match(html.slice(roleStart, roleEnd), /data-guide-summary/);
+});
+
+test('data-guide-primary contains hero and all player-facing content', () => {
+  const html = renderGuideBody(modelFor('X01'));
+  const primaryStart = html.indexOf('<div data-guide-primary>');
+  const heroStart = html.indexOf('<header class="guide-hero">');
+  const researchStart = html.indexOf('<details data-guide-research');
+  assert.ok(primaryStart >= 0 && heroStart > primaryStart);
+  assert.ok(researchStart > heroStart);
+  assert.ok(html.slice(primaryStart, researchStart).includes('<h1>'));
+  assert.ok(html.slice(researchStart).includes('ESTABLISHED'));
+});
