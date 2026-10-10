@@ -148,6 +148,22 @@ test('ranking, optional omissions, runtime baseline, slots and routes survive ca
     assert.equal(snapshot.swf.rankingStatus, 'PROVISIONAL');
   }
 
+  const c14Model = assembleGuidePage({ context, strategyId: 'C14', guide: guides.get('C14'), mode: 'preview' });
+  assert.equal(c14Model.canonical.evaluations.coordinatedSwf.rankingStatus, 'UNRANKED');
+  assert.equal(c14Model.canonical.evaluations.coordinatedSwf.power, null);
+  assert.equal(c14Model.canonical.evaluations.coordinatedSwf.tier, null);
+  assert.equal(c14Model.canonical.evaluations.coordinatedSwf.rankingIndex, null);
+
+  const x02Model = assembleGuidePage({ context, strategyId: 'X02', guide: guides.get('X02'), mode: 'preview' });
+  assert.equal(x02Model.canonical.evaluations.soloQ.rankingStatus, 'NOT_APPLICABLE');
+  assert.equal(x02Model.canonical.evaluations.soloQ.power, null);
+  assert.equal(x02Model.canonical.evaluations.soloQ.tier, null);
+  assert.equal(x02Model.canonical.evaluations.soloQ.rankingIndex, null);
+
+  const g07Model = assembleGuidePage({ context, strategyId: 'G07', guide: guides.get('G07'), mode: 'preview' });
+  assert.equal(g07Model.canonical.evaluations.soloQ.rankingStatus, 'PROVISIONAL');
+  assert.equal(g07Model.canonical.evaluations.coordinatedSwf.rankingStatus, 'PROVISIONAL');
+
   for (const id of ['P00', 'A00', 'C13', 'G06']) {
     const model = assembleGuidePage({ context, strategyId: id, guide: guides.get(id), mode: 'preview' });
     for (const evaluation of [model.canonical.evaluations.soloQ, model.canonical.evaluations.coordinatedSwf]) {
