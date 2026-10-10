@@ -45,7 +45,9 @@ test('X01 renders shared player landmarks, mechanics, choice semantics, and clos
   assert.match(html, /data-guide-summary/);
   assert.equal((html.match(/data-equipped-slot\b/g) || []).length, 4);
   assert.ok(html.indexOf('data-guide-summary') < html.indexOf('data-guide-perk-details'));
-  assert.match(html, /href="\/survivor\/perks\/\?q=lithe"/);
+  const perkLink = html.match(/<a href="([^"]*survivor\/perks\/\?q=lithe)">Lithe<\/a>/)?.[1];
+  assert.equal(perkLink, 'survivor/perks/?q=lithe');
+  assert.equal(new URL(perkLink, 'https://example.test/dbd-helper/').pathname, '/dbd-helper/survivor/perks/');
   const primaryStart = html.indexOf('<div data-guide-primary>');
   const primaryEnd = html.indexOf('<details data-guide-research');
   const primary = primaryStart >= 0 && primaryEnd > primaryStart ? html.slice(primaryStart, primaryEnd) : html;

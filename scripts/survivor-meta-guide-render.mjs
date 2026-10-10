@@ -131,7 +131,7 @@ function perkFacts(member, model) {
 
 function perkHref(perk) {
   const id = perk?.perkId || perk?.id;
-  return `/survivor/perks/?q=${encodeURIComponent(id || '')}`;
+  return `survivor/perks/?q=${encodeURIComponent(id || '')}`;
 }
 
 function perkLink(member, model) {
