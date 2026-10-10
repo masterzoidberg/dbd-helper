@@ -96,12 +96,13 @@ test('family, Legacy, and TEAM landmark text cannot mask broken navigation or mi
 });
 
 test('canonical guide navigation rejects wrong targets, root-absolute routes, and missing TEAM links', async t => {
-  const wrongRoute = manifest.find(route => route.strategyId === 'X01').slug;
+  const wrongRoute = manifest.find(route => route.strategyId === 'X01').slug.slice(1);
   const familyGuide = guides.get('P00');
   const expectedFamilyRoute = manifest.find(route => route.strategyId === familyGuide.page.comparisons[0].strategyId).slug;
   const cases = [
     ['family comparison targets its own approach', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a href=")[^"]+(">Open this approach<\/a>)/, `$1${wrongRoute}$2`)],
     ['data-href cannot mask a wrong family target', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a )href="[^"]+"(>Open this approach<\/a>)/, `$1data-href="${expectedFamilyRoute.slice(1)}" href="${wrongRoute}"$2`)],
+    ['quoted title href cannot mask a wrong family target', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a )href="[^"]+"(>Open this approach<\/a>)/, `$1title="note href='${expectedFamilyRoute.slice(1)}'" href="${wrongRoute}"$2`)],
     ['Legacy successor targets its own strategy', 'survivor-meta/luck-based-self-unhook/', html => html.replace(/(<h2>Current successors<\/h2><ul><li><a href=")[^"]+("[^>]*>)/, `$1${wrongRoute}$2`)],
     ['family route stays under the supplied base path', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a href=")[^"]+(">Open this approach<\/a>)/, (_, before, after) => `${before}${expectedFamilyRoute}${after}`)],
     ['TEAM links cover every role', 'survivor-meta/coordinated-swf-flex-generalist/', html => {
@@ -126,7 +127,7 @@ test('canonical guide navigation rejects wrong targets, root-absolute routes, an
 test('navigation smoke accepts harmless anchor and role article attributes', async () => {
   const f = fixture();
   const familyRoute = 'survivor-meta/pickup-interception-save-family/';
-  f.pages.set(familyRoute, f.pages.get(familyRoute).replace(/<a href="([^"]+)">Open this approach<\/a>/, '<a class="guide-link" data-guide-link href="$1">Open this approach</a>'));
+  f.pages.set(familyRoute, f.pages.get(familyRoute).replace(/<a href="([^"]+)">Open this approach<\/a>/, '<a title="note href=\'survivor-meta/other\'" class="guide-link" data-guide-link href=\'$1\'>Open this approach</a>'));
   const legacyRoute = 'survivor-meta/luck-based-self-unhook/';
   f.pages.set(legacyRoute, f.pages.get(legacyRoute).replace(/(<h2>Current successors<\/h2><ul><li>)<a href="([^"]+)">/, '$1<a data-guide-link href="$2" class="guide-link">'));
   const teamRoute = 'survivor-meta/coordinated-swf-flex-generalist/';

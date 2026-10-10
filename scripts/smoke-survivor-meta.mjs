@@ -30,7 +30,9 @@ function escapeHtml(value) {
 }
 
 function attribute(markup, name) {
-  return markup.match(new RegExp(`(?:^|\\s)${name}\\s*=\\s*(["'])(.*?)\\1`, 'i'))?.[2];
+  for (const [, key, doubleQuoted, singleQuoted, bare] of markup.matchAll(/(?:^|\s)([^\s=/>"'`<]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'`=<>]+)))?/g)) {
+    if (key.toLowerCase() === name) return doubleQuoted ?? singleQuoted ?? bare;
+  }
 }
 
 function hasDestination(markup, expectedRoute, base, label) {
