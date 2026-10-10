@@ -50,12 +50,32 @@ test('canonical perk facts are joined from prepared records and purpose remains 
   assert.equal(choice.owner, changedPerk.mechanics.sourceCharacter);
   assert.equal(choice.whyItsHere, guide.page.loadout.plans[0].notes[0].whyItsHere);
   assert.equal(choice.provenance, 'CANONICAL');
+  assert.equal(choice.query, '/survivor/perks/?q=lithe');
   assert.equal(Object.hasOwn(choice, 'mechanics'), false);
   assert.equal(model.canonical.name, context.strategies.get('X01').name);
   assert.deepEqual(model.page.loadout.plans[0].slots.map(slot => slot.slot), [1, 2, 3, 4]);
   assert.deepEqual(model.page.loadout.plans[0].slots[3].choices.map(item => item.perkId), ['kindred', 'well-make-it']);
   assert.equal(model.page.loadout.plans[0].flexSlotNote, context.snapshotByStrategy.get('X01').buildImplementations[0].flexSlotNote);
   assert.equal(model.page.gameplay.rows[0].enabledByResolved[0].perk.name, 'Déjà Vu');
+});
+
+test('canonical builds stay source-only while PLAYER plans carry guide annotations', () => {
+  const guide = cloneGuide('X01');
+  guide.page.loadout.plans[0].notes[0].substitutes = [{
+    perkId: 'sprint-burst',
+    provenance: 'EDITORIAL',
+    why: 'Use the reviewed alternative.',
+    source: { kind: 'PERK', ref: 'sprint-burst#/mechanics' },
+    reviewedDate: '2026-10-06'
+  }];
+  const model = assembleGuidePage({ context, strategyId: 'X01', guide, mode: 'preview' });
+  const canonicalSlot = model.canonical.builds[0].slots[0];
+  const playerSlot = model.page.loadout.plans[0].slots[0];
+  for (const field of ['role', 'usage', 'whyItsHere', 'substitutes']) assert.equal(Object.hasOwn(canonicalSlot, field), false, field);
+  assert.equal(playerSlot.role, guide.page.loadout.plans[0].notes[0].role);
+  assert.equal(playerSlot.usage, guide.page.loadout.plans[0].notes[0].usage);
+  assert.equal(playerSlot.choices[0].whyItsHere, guide.page.loadout.plans[0].notes[0].whyItsHere);
+  assert.equal(playerSlot.substitutes.length, 1);
 });
 
 test('research retains full canonical records and the frozen article without sharing input objects', () => {
@@ -106,6 +126,7 @@ test('family, legacy and team pages resolve exceptional canonical relationships 
   assert.deepEqual(legacy.canonical.relationships.successors.map(item => item.strategyId), ['G05']);
   assert.equal(legacy.page.successors[0].destination.name, context.strategies.get('G05').name);
   assert.equal(legacy.canonical.identityWarning.historical, true);
+  assert.deepEqual(legacy.canonical.identityWarning.context.legacyHistory, context.snapshotByStrategy.get('G06').analysis.legacyHistory);
   assert.equal(legacy.page.historicalPerks[0].perk.name, context.perks.get('stake-out').mechanics.name);
 
   const team = assembleGuidePage({ context, strategyId: 'X02', guide: cloneGuide('X02'), mode: 'preview' });

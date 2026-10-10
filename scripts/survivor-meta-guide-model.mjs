@@ -91,12 +91,14 @@ function canonicalRelationships(context, strategyId) {
 function canonicalIdentityWarning(context, strategyId) {
   const { strategy, snapshot } = exactStrategy(context, strategyId);
   if (snapshot.currentStatus !== 'LEGACY') return null;
+  const legacyHistory = clone(snapshot.analysis?.legacyHistory ?? null);
   return {
     historical: true,
     strategyId,
     name: strategy.name,
     currentStatus: snapshot.currentStatus,
     successorIds: clone(snapshot.analysis?.replacementStrategyIds || []),
+    context: { legacyHistory },
     provenance: 'CANONICAL'
   };
 }
@@ -119,7 +121,7 @@ function joinPerk(context, perkId, cache) {
     owner: mechanics.sourceCharacter ?? mechanics.source ?? null,
     source: clone(mechanics.source),
     status: clone(mechanics.status),
-    query: `/survivor/perks/?q=${encodeURIComponent(mechanics.name)}`,
+    query: `/survivor/perks/?q=${encodeURIComponent(perkId)}`,
     provenance: 'CANONICAL'
   };
   cache.set(perkId, facts);
@@ -146,18 +148,6 @@ function resolvedSlot(context, slot, provenance, cache) {
   output.choices = (slot.choices || []).map(choice => joinedMember(context, choice, provenance, cache));
   if (slot.substitutes) output.substitutes = resolvedSubstitutes(context, slot.substitutes, cache);
   return output;
-}
-
-function buildNotesFor(context, guide, buildId) {
-  const notes = [];
-  const page = guide?.page;
-  const loadouts = [page?.loadout, ...(page?.roles || []).map(role => role.loadout)];
-  for (const loadout of loadouts) {
-    for (const plan of loadout?.plans || []) {
-      if (plan.provenance === 'CANONICAL' && plan.buildId === buildId) notes.push(...(plan.notes || []));
-    }
-  }
-  return notes;
 }
 
 function resolvedCanonicalPlan(context, strategyId, plan, cache) {
@@ -199,11 +189,11 @@ function resolvedLoadout(context, strategyId, loadout, cache) {
   return output;
 }
 
-function canonicalBuild(context, strategyId, build, notes, cache) {
+function canonicalBuild(context, strategyId, build, cache) {
   if (Array.isArray(build.teamComposition) && build.teamComposition.length > 0) {
     return { ...clone(build), provenance: 'CANONICAL', environment: build.targetEnvironment };
   }
-  const assembled = resolveCanonicalPlan({ context, strategyId, buildId: build.buildId, notes });
+  const assembled = resolveCanonicalPlan({ context, strategyId, buildId: build.buildId, notes: [] });
   return {
     ...clone(assembled),
     provenance: 'CANONICAL',
@@ -211,15 +201,9 @@ function canonicalBuild(context, strategyId, build, notes, cache) {
   };
 }
 
-function canonicalBuilds(context, strategyId, guide, cache) {
+function canonicalBuilds(context, strategyId, cache) {
   const { snapshot } = exactStrategy(context, strategyId);
-  return (snapshot.buildImplementations || []).map(build => canonicalBuild(
-    context,
-    strategyId,
-    build,
-    buildNotesFor(context, guide, build.buildId),
-    cache
-  ));
+  return (snapshot.buildImplementations || []).map(build => canonicalBuild(context, strategyId, build, cache));
 }
 
 function resolvedEnabler(context, page, token, cache) {
@@ -381,7 +365,7 @@ export function assembleGuidePage({ context, strategyId, guide, mode }) {
   const selectedMode = guide && (mode === 'preview' || guide.reviewStatus === 'PUBLISHED') ? PLAYER : RESEARCH_ONLY;
   const cache = new Map();
   const sources = sourceFacts(context, guide?.sources);
-  const builds = canonicalBuilds(context, strategyId, guide, cache);
+  const builds = canonicalBuilds(context, strategyId, cache);
   const canonical = {
     ...canonicalStrategyFacts(context, strategyId),
     strategy: canonicalStrategyFacts(context, strategyId),
