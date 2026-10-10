@@ -55,7 +55,7 @@ function guideFailure(route, html, base) {
   if (!/<p class="guide-publication-status">Player Guide<\/p>/.test(html) || /Research View Only/.test(html)) return 'not a published Player Guide';
   if (!html.includes(`<h1>${escapeHtml(route.canonicalName)}</h1>`)) return 'canonical guide title missing';
   if (!/<article class="meta-article-body">/.test(html) || !/data-guide-primary/.test(html)) return 'player guide body missing';
-  if (!/<details\b[^>]*data-guide-research[^>]*id="guide-research"/.test(html) || !/<section class="guide-original-article">[\s\S]*Original Research Article[\s\S]*<div class="guide-article-body">/.test(html)) return 'original research article missing';
+  if (!/<details\b[^>]*data-guide-research[^>]*id="guide-research"/.test(html) || !/<details\b[^>]*data-guide-original-article[^>]*id="guide-original-article"[\s\S]*Original Research Article[\s\S]*<div id="guide-original-article-content" class="guide-article-body">/.test(html)) return 'original research article missing';
   const primary = html.split('<details data-guide-research')[0];
   if (/PARENT STRATEGY FAMILY|BuildImplementation|Stage 3[AB]/.test(primary.split('</header>')[0])) return 'raw research label in player hero';
   const checks = {

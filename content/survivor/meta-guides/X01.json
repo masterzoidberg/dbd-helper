@@ -129,7 +129,7 @@
         {
           "id": "tunnel-or-return",
           "situation": "You have just been unhooked and the Killer is still pursuing you.",
-          "action": "Prioritize an escape route and be ready for the pickup Skill Check if Will to Live is still active. Once the pursuit ends, return to a useful job deliberately rather than treating the protection as permanent.",
+          "action": "Prioritize an escape route and be ready to hit the Skill Check if the Killer picks you up while Will to Live is active. Once the pursuit ends, return to a useful job deliberately rather than treating the protection as permanent.",
           "why": "Its limited post-unhook opportunity cannot support an entire match plan; check its availability before relying on it.",
           "enabledBy": [
             "perk:will-to-live"
@@ -144,10 +144,10 @@
     "weaknesses": [
       "You still need teammates to convert your chase time into progress; flexibility cannot supply all four players' work."
     ],
-    "commonMistakes": [
-      "Rushed-vaulting casually before a chase and then planning an escape around unavailable Lithe.",
+      "commonMistakes": [
+      "Vaulting early without an actual chase, then planning an escape around an unavailable Lithe.",
       "Treating the fourth slot as both information and healing at once; play around the option you equipped.",
-      "Repairing or taking another Conspicuous Action, then assuming Will to Live remains active against a returning Killer."
+      "Repairing, healing, cleansing, or taking another Conspicuous Action, then assuming Will to Live remains active against a returning Killer."
     ],
     "environments": {
       "soloQ": [

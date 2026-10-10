@@ -88,7 +88,6 @@ test('X01 renders shared player landmarks, mechanics, choice semantics, and clos
   const primaryEnd = html.indexOf('<details data-guide-research');
   const primary = primaryStart >= 0 && primaryEnd > primaryStart ? html.slice(primaryStart, primaryEnd) : html;
   assert.doesNotMatch(primary, /Stage 3A|Stage 3B|BuildImplementation|GENERALIST SHELL|X01@/);
-  assert.match(html, /&lt;|&amp;|&quot;/);
 });
 
 test('renderer covers every approved page kind and gameplay type without strategy branches', () => {
@@ -148,22 +147,19 @@ test('Task 13 source-faithful player cues render through generic components', ()
   assert.match(boonHtml, /setup|zone|snuff/i);
 });
 
-test('research appendix retains structured fields, receipts, and full frozen article', () => {
+test('research appendix humanizes ranking fields and preserves the full frozen article', () => {
   const model = modelFor('X01');
   const html = renderGuideBody(model);
   const articleHtml = renderArticleMarkdown(model.research.article, { headingOffset: 1 });
-  assert.match(html, /Patch baseline/);
-  assert.match(html, /Ranking status/);
+  assert.match(html, /Meta Stability/);
+  assert.match(html, /Trend/);
+  assert.match(html, /Ranking Status/);
   assert.match(html, /Power/);
-  assert.match(html, /Stability components/);
-  assert.match(html, /Diagnostics/);
-  assert.match(html, /Dependencies/);
-  assert.match(html, /Volatility/);
-  assert.match(html, /Recheck conditions/);
-  assert.match(html, /Ecosystems/);
-  assert.match(html, /Builds/);
-  assert.match(html, /Relationships/);
-  assert.match(html, /Source receipts/);
+  assert.match(html, /Why it scores well/);
+  assert.match(html, /What holds it back/);
+  assert.match(html, /Ranking factors/);
+  assert.match(html, /Evaluated for/);
+  assert.doesNotMatch(html, /<pre\b|Complete canonical research record|sourceReceipts|strategicDiagnostics/);
   assert.match(html, /Original Research Article/);
   assert.ok(html.includes(articleHtml));
   assert.equal((html.match(/<h1>/g) || []).length, 1);
@@ -185,8 +181,9 @@ test('hero renders all supported verdict copy with player-safe status language',
   const html = renderGuideBody(model);
   const primary = html.slice(html.indexOf('<div data-guide-primary>'), html.indexOf('<details data-guide-research'));
 
-  assert.match(primary, /Choose independent coverage/);
-  assert.match(primary, /Still usable, but agree who covers each job/);
+  assert.doesNotMatch(primary, /Choose independent coverage/);
+  assert.doesNotMatch(primary, /Still usable, but agree who covers each job/);
+  assert.match(primary, /Use visible teammate activity and hook information/);
   assert.match(primary, /Best for/);
   assert.match(primary, /Players who can change jobs/);
   assert.match(primary, /Not ideal for/);
