@@ -195,12 +195,13 @@ return normalize([perkPrimaryHaystack(perk), perk.summary, perk.glossaryKeys.joi
 }
 function filterPerks(perks, query, tiers, roles) {
 const q = normalize(query);
+const exactPerk = perks.find((perk) => perk.id === query);
 const tokens = q ? q.split(' ') : [];
 const hasNameMatch = !!q && perks.some((perk) => tokens.every((token) => perkNameHaystack(perk).includes(token)));
 const hasPrimaryMatch = !hasNameMatch && !!q && perks.some((perk) => tokens.every((token) => perkPrimaryHaystack(perk).includes(token)));
 return perks.filter((perk) => {
 const searchable = hasNameMatch ? perkNameHaystack(perk) : (hasPrimaryMatch ? perkPrimaryHaystack(perk) : perkHaystack(perk));
-const textOk = !q || tokens.every((token) => searchable.includes(token));
+const textOk = exactPerk ? perk === exactPerk : (!q || tokens.every((token) => searchable.includes(token)));
 const tierOk = !tiers.length || tiers.includes(perk.tier);
 const roleOk = !roles.length || roles.some((role) => perk.roles.includes(role));
 return textOk && tierOk && roleOk;
