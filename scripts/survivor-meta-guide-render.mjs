@@ -233,7 +233,7 @@ function renderSlot(slot, model) {
     : choices.length === 1 ? perkLink(choices[0], model) : 'Open flex';
   const detail = slot.role ? `<span class="guide-slot-role">${escapeHtml(slot.role)}</span>` : '';
   const usage = slot.usage ? `<span class="guide-slot-usage">${escapeHtml(usageLabel(slot.usage))}</span>` : '';
-  return `<div data-equipped-slot class="guide-slot"><strong>Slot ${escapeHtml(slot.slot)}</strong>${detail}${usage}<p>${choiceText}</p></div>`;
+  return `<div data-equipped-slot class="guide-slot" role="group" aria-label="Slot ${escapeHtml(slot.slot)}"><strong>Slot ${escapeHtml(slot.slot)}</strong>${detail}${usage}<p>${choiceText}</p></div>`;
 }
 
 function renderReplacements(plan, model) {
@@ -252,13 +252,16 @@ function renderPlan(plan, model, page) {
 
 function collectPerksFromLoadout(loadout, model) {
   const members = [];
-  for (const plan of loadout?.plans || []) {
-    for (const slot of plan.slots || []) {
-      for (const choice of slot.choices || []) members.push({ member: choice, purpose: choice.whyItsHere });
-      for (const substitute of slot.substitutes || []) members.push({ member: substitute, purpose: substitute.why || substitute.whyItsHere });
+  const loadouts = Array.isArray(loadout) ? loadout : [loadout];
+  for (const current of loadouts) {
+    for (const plan of current?.plans || []) {
+      for (const slot of plan.slots || []) {
+        for (const choice of slot.choices || []) members.push({ member: choice, purpose: choice.whyItsHere });
+        for (const substitute of slot.substitutes || []) members.push({ member: substitute, purpose: substitute.why || substitute.whyItsHere });
+      }
     }
+    for (const option of current?.options || []) members.push({ member: option, purpose: option.whyItsHere });
   }
-  for (const option of loadout?.options || []) members.push({ member: option, purpose: option.whyItsHere });
   return members;
 }
 
@@ -273,7 +276,7 @@ function renderPerkDetails(loadout, model) {
     if (entry.purpose) unique.get(id).purposes.push(entry.purpose);
   }
   if (!unique.size) return '';
-  return `<section data-guide-perk-details class="guide-perk-details">${heading(2, 'Perk details')}${[...unique.values()].map(({ facts, purposes }) => `<article class="guide-perk-detail">${heading(3, facts.name || facts.perkId)}<p><a href="${href(perkHref(facts))}">${escapeHtml(facts.name || facts.perkId)}</a></p>${facts.currentEffect ? `<p><strong>What it does:</strong> ${escapeHtml(facts.currentEffect)}</p>` : ''}${facts.activation?.length ? `<p><strong>Activation:</strong></p>${list(facts.activation)}` : ''}${facts.owner ? `<p><strong>Owner:</strong> ${escapeHtml(facts.owner)}</p>` : ''}${purposes.length ? `<p><strong>Why it is here:</strong> ${escapeHtml([...new Set(purposes)].join(' '))}</p>` : ''}</article>`).join('')}</section>`;
+  return `<details data-guide-perk-details id="guide-perk-details" class="guide-perk-details"><summary aria-controls="guide-perk-details-content">Perk details</summary><div id="guide-perk-details-content">${[...unique.values()].map(({ facts, purposes }) => `<article class="guide-perk-detail">${heading(3, facts.name || facts.perkId)}<p><a href="${href(perkHref(facts))}">${escapeHtml(facts.name || facts.perkId)}</a></p>${facts.currentEffect ? `<p><strong>What it does:</strong> ${escapeHtml(facts.currentEffect)}</p>` : ''}${facts.activation?.length ? `<p><strong>Activation:</strong></p>${list(facts.activation)}` : ''}${facts.owner ? `<p><strong>Owner:</strong> ${escapeHtml(facts.owner)}</p>` : ''}${purposes.length ? `<p><strong>Why it is here:</strong> ${escapeHtml([...new Set(purposes)].join(' '))}</p>` : ''}</article>`).join('')}</div></details>`;
 }
 
 function renderLoadout(loadout, model, page) {
@@ -283,7 +286,7 @@ function renderLoadout(loadout, model, page) {
   const item = loadout.item;
   const summary = plans.length ? plans.map(plan => renderPlan(plan, model, page)).join('') : options.length ? `<section data-guide-summary class="guide-loadout-summary">${heading(3, 'Perk guidance')}<p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${options.map(option => `<li>${perkLink(option, model)}${option.usage ? ` · ${escapeHtml(usageLabel(option.usage))}` : ''}</li>`).join('')}</ul></section>` : '<div data-guide-summary class="guide-loadout-summary"><p>No required perks</p></div>';
   const optionDetails = options.length && plans.length ? `<section data-guide-summary class="guide-loadout-options">${heading(3, 'Additional perk guidance')}<p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '';
-  return `<section class="guide-loadout">${heading(2, 'Loadout')}${summary}${item && item.status !== 'NONE' ? renderItem(item) : ''}${optionDetails}${renderPerkDetails(loadout, model)}</section>`;
+  return `<section class="guide-loadout">${heading(2, 'Loadout')}${summary}${item && item.status !== 'NONE' ? renderItem(item) : ''}${optionDetails}</section>`;
 }
 
 function renderRoleLoadout(role, model, page) {
@@ -291,7 +294,12 @@ function renderRoleLoadout(role, model, page) {
   const plans = role.loadout.plans || [];
   const options = role.loadout.options || [];
   const body = plans.length ? plans.map(plan => renderPlan(plan, model, page)).join('') : options.length ? `<div data-guide-summary class="guide-role-loadout"><p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></div>` : '<p>No required perks</p>';
-  return `${body}${role.loadout.item && role.loadout.item.status !== 'NONE' ? renderItem(role.loadout.item) : ''}${renderPerkDetails(role.loadout, model)}`;
+  return `${body}${role.loadout.item && role.loadout.item.status !== 'NONE' ? renderItem(role.loadout.item) : ''}`;
+}
+
+function renderPagePerkDetails(page, model) {
+  const loadouts = [page?.loadout, ...(page?.roles || []).map(role => role.loadout)].filter(Boolean);
+  return renderPerkDetails(loadouts, model);
 }
 
 function renderMechanics(page) {
@@ -401,11 +409,11 @@ function renderResearch(model, parts) {
     ['Source receipts', research.sourceReceipts || research.sources]
   ];
   const structured = sections.filter(([, value]) => value && Object.values(value).some(item => item !== undefined));
-  return `<details data-guide-research class="guide-research"><summary>How We Rated This</summary>${structured.map(([label, value]) => `<section class="guide-research-section">${heading(3, label)}${renderResearchValue(value)}</section>`).join('')}<section class="guide-research-section">${heading(3, 'Complete canonical research record')}${renderResearchValue(research)}</section>${article ? `<section class="guide-original-article">${heading(3, 'Original Research Article')}<div class="guide-article-body">${renderArticleMarkdown(article, { headingOffset: 1 })}</div></section>` : ''}</details>`;
+  return `<details data-guide-research id="guide-research" class="guide-research"><summary aria-controls="guide-research-content">How We Rated This</summary><div id="guide-research-content">${structured.map(([label, value]) => `<section class="guide-research-section">${heading(3, label)}${renderResearchValue(value)}</section>`).join('')}<section class="guide-research-section">${heading(3, 'Complete canonical research record')}${renderResearchValue(research)}</section>${article ? `<section class="guide-original-article">${heading(3, 'Original Research Article')}<div class="guide-article-body">${renderArticleMarkdown(article, { headingOffset: 1 })}</div></section>` : ''}</div></details>`;
 }
 
 function renderStandard(page, model) {
-  return `${renderLoadout(page.loadout || { plans: [], options: [] }, model, page)}${renderMechanics(page)}${renderGameplay(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderOptionalValue(page, 'fit', 'Best fit')}${renderRelated(page)}`;
+  return `${renderLoadout(page.loadout || { plans: [], options: [] }, model, page)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderOptionalValue(page, 'fit', 'Best fit')}${renderRelated(page)}`;
 }
 
 export function renderGuideBody(model) {
@@ -416,7 +424,7 @@ export function renderGuideBody(model) {
   const primary = page
     ? pageKind === 'FAMILY' ? renderFamily(page)
       : pageKind === 'LEGACY' ? renderLegacy(page, model)
-        : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderMechanics(page)}${renderGameplay(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderRelated(page)}`
+        : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderRelated(page)}`
           : renderStandard(page, model)
     : `<p>This page contains research but no reviewed player-facing guide.</p>`;
   return `<div data-guide-primary>${renderHeroVerdict(model, parts)}${primary}</div>${renderResearch(model, parts)}`;
