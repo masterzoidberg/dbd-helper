@@ -360,6 +360,18 @@
     "bound-by-obsession": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "1cb72a200f18cd228d442847d38fd8f10bc9735caf8d1fb6f135c02672c5b6f1"
+    },
+    "adrenaline": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "6e03806c9f09e43fc9926a2fa6dc00e801b7bb51df8aefc5aaf3290df31ca389"
+    },
+    "down-to-the-last": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "070437d99be62d5a6d430ce6ce67ad4831f08a8eb13d00e55c29a1f42026c3a2"
+    },
+    "wake-up": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "36e3d0d384262f455970b09fe0e9295fbc0df653bb220264e10e5af2be220644"
     }
   }
 }
