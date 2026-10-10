@@ -19,6 +19,10 @@ function primary(html) {
   return html.slice(html.indexOf('<div data-guide-primary>'), html.indexOf('<details data-guide-research'));
 }
 
+function visibleText(html) {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+}
+
 test('hero exposes a compact primary queue verdict without research labels or duplicate queue advice', () => {
   const html = renderGuideBody(modelFor('X01'));
   const hero = html.slice(html.indexOf('<header class="guide-hero">'), html.indexOf('</header>') + '</header>'.length);
@@ -124,4 +128,34 @@ test('build slot hierarchy makes the role and perk name primary and enables scan
   assert.match(html, /data-decision-field="enabled-by"[^>]*>[\s\S]*<span class="guide-decision-label">Enabled by<\/span>/);
   assert.match(css, /\.guide-decision-cell\[data-decision-field="enabled-by"\][^{]*\{/);
   assert.match(css, /\.guide-enabled-by[^{]*\{[^}]*border-left/);
+});
+
+test('player prose hides internal research vocabulary and strategy identifiers', () => {
+  for (const strategyId of guides.keys()) {
+    const text = visibleText(renderGuideBody(modelFor(strategyId)));
+    assert.doesNotMatch(text, /Stage\s*[23](?:A|B)?|BuildImplementations?|snapshotId|manifest|\b(?:A|C|G|I|P|R|X)\d{2}\b/i, strategyId);
+  }
+});
+
+test('slot Enabled by references resolve to canonical perk links', () => {
+  const html = renderGuideBody(modelFor('C10'));
+  const enabled = html.slice(html.indexOf('data-decision-field="enabled-by"'), html.indexOf('</article>', html.indexOf('data-decision-field="enabled-by"')));
+
+  assert.match(enabled, /href="survivor\/perks\/\?q=unbreakable"[^>]*>Unbreakable<\/a>/);
+  assert.match(enabled, /href="survivor\/perks\/\?q=plot-twist"[^>]*>Plot Twist<\/a>/);
+  assert.doesNotMatch(enabled, /selected loadout option/);
+});
+
+test('standard pages without a loadout omit the optional Recommended Build section', () => {
+  for (const strategyId of ['A06', 'P05']) {
+    const html = renderGuideBody(modelFor(strategyId));
+    assert.doesNotMatch(html, /Recommended Build|No required perks/, strategyId);
+  }
+});
+
+test('widened guide layout constrains all long-form structured prose', () => {
+  assert.match(css, /\.guide-plan > p[^\{]*\{[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-opening p[^\{]*\{[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-mechanics p[^\{]*\{[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-abort li[^\{]*\{[^}]*max-width:\s*70ch/);
 });

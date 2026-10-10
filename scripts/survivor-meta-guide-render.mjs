@@ -48,6 +48,31 @@ function escapeHtml(value) {
   })[character]);
 }
 
+function playerCopy(value, model) {
+  const strategyNames = new Map();
+  const addStrategyName = candidate => {
+    if (candidate?.strategyId && candidate.name) strategyNames.set(candidate.strategyId, candidate.name);
+  };
+  addStrategyName(model?.canonical);
+  addStrategyName(model?.canonical?.strategy);
+  for (const relationship of Object.values(model?.canonical?.relationships || {})) {
+    for (const candidate of Array.isArray(relationship) ? relationship : [relationship]) addStrategyName(candidate);
+  }
+
+  const currentStrategyId = model?.strategyId;
+  return String(value ?? '')
+    .replace(/\bStage\s*3[AB]\b/gi, 'the research record')
+    .replace(/\bStage\s*2\b/gi, 'reviewed')
+    .replace(/\bBuildImplementations?\b/gi, 'fixed four-perk build')
+    .replace(/\b(?:A|C|G|I|P|R|X)\d{2}\b/g, strategyId => (
+      Object.is(strategyId, currentStrategyId) ? 'this strategy' : strategyNames.get(strategyId) || 'the related strategy'
+    ));
+}
+
+function sanitizePlayerMarkup(markup, model) {
+  return markup.replace(/>([^<]*)</g, (_, text) => `>${playerCopy(text, model)}<`);
+}
+
 function humanize(value) {
   return String(value ?? '').replace(/([a-z0-9])([A-Z])/g, '$1 $2').toLowerCase()
     .replaceAll('_', ' ')
@@ -183,6 +208,11 @@ function renderEnablers(enablers, model, page) {
 function renderEnablerLinks(enablers, model, page) {
   return (enablers || []).map(enabler => {
     if (enabler.type === 'perk') return perkLink(enabler.perk || enabler, model);
+    if (enabler.type === 'slot') {
+      const choices = enabler.choices || findSlot(page, enabler.id)?.slot?.choices || [];
+      const choiceLinks = choices.map(choice => perkLink(choice, model)).filter(Boolean);
+      if (choiceLinks.length) return choiceLinks.join(' <span aria-hidden="true">or</span> ');
+    }
     const label = resolvedEnablerLabel(enabler, page);
     if (enabler.type === 'role') return `<a href="#guide-role-${internalId(enabler.id)}">${escapeHtml(label)}</a>`;
     if (enabler.type === 'item') return `<a href="#guide-item-${internalId(enabler.id)}">${escapeHtml(label)}</a>`;
@@ -474,7 +504,7 @@ function renderResearch(model, parts) {
 }
 
 function renderStandard(page, model) {
-  return `${renderLoadout(page.loadout || { plans: [], options: [] }, model, page)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses', [page.verdict?.mainWeakness])}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderOptionalValue(page, 'fit', 'Best fit')}${renderRelated(page)}`;
+  return `${renderLoadout(page.loadout, model, page)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses', [page.verdict?.mainWeakness])}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderOptionalValue(page, 'fit', 'Best fit')}${renderRelated(page)}`;
 }
 
 export function renderGuideBody(model) {
@@ -488,6 +518,6 @@ export function renderGuideBody(model) {
         : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses', [page.verdict?.mainWeakness])}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderRelated(page)}`
           : renderStandard(page, model)
     : `<p>This page contains research but no reviewed player-facing guide.</p>`;
-  return `<div data-guide-primary>${renderHeroVerdict(model, parts)}${primary}</div>${renderResearch(model, parts)}`;
+  return sanitizePlayerMarkup(`<div data-guide-primary>${renderHeroVerdict(model, parts)}${primary}</div>${renderResearch(model, parts)}`, model);
 }
 

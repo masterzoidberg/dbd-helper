@@ -312,8 +312,11 @@ ul.compact li + li { margin-top:5px; }
 .guide-research-facts dd, .guide-ranking-factors dd { margin: 0; color: var(--text); font-weight: 700; text-align: right; }
 .guide-evaluated-for { color: var(--muted); font-size: .8125rem; }
 .guide-evaluated-for strong { color: var(--text); }
+.guide-plan > p, .guide-opening p, .guide-activation li, .guide-handoff li, .guide-after-success li,
 .guide-choice-detail p, .guide-decision-cell p, .guide-decision-cell ul, .guide-sequence-step li,
-.guide-environment-advice p, .guide-weaknesses li, .guide-commonMistakes li { max-width: 70ch; }
+.guide-mechanics p, .guide-item p, .guide-replacements li, .guide-loadout-options li,
+.guide-abort li, .guide-environment-advice p, .guide-family p, .guide-legacy p, .guide-team p,
+.guide-weaknesses li, .guide-killerCounterplay li, .guide-commonMistakes li { max-width: 70ch; }
 
 @media (min-width: 921px) {
   .meta-article-page:has([data-guide-primary]) { max-width: none; padding-inline: 24px; }
