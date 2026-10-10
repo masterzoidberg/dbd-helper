@@ -284,6 +284,38 @@
     "bond": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "a7812d8e7fb0b25f8149e71acd2ed01c76a3d033942c86f57275ee1d30e84585"
+    },
+    "salvations-cry": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "e198e103e14dabe5c43167eb1153bff6011d1031aeebcd266685684a9e0aa0cc"
+    },
+    "plunderers-instinct": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "ed1b0059bcd68aea69e7a7201505588001208602f840ff240decda754812edb5"
+    },
+    "appraisal": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "fb474b5b3500ea96f16c6eb6c2c9266c81339dd7d56248e19024c8acde51f7f5"
+    },
+    "pharmacy": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "260959cd9c4737240426872203cbe286b90cadcc4fd3c95b713f48852c228119"
+    },
+    "streetwise": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "a5a1f5e47f69de21dc9bbcf2ef2890ea06069849275a01a87ffe1fd0a1d847bf"
+    },
+    "scavenger": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "ea3b7879cd212ef0afaf43d5a8398be2bb63f966d36de47287ff768315f2fd45"
+    },
+    "boon-circle-of-healing": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "9b3820264abb56024dee67ee5b812692f8c56deaff8bababd8ace321d83e2547"
+    },
+    "boon-shadow-step": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "904fcc0bea82a3ae8118acc71309d79b0a2cccb9a6116a892ef286a424c7e427"
     }
   }
 }
