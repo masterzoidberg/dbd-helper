@@ -47,11 +47,11 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | P03 | Sabotage / Hook Denial | STANDARD | REVIEWED | Task 14 B6 source/editorial review; intended-hook denial route and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P04 | Breakout / Carry Interference | STANDARD | REVIEWED | Task 14 B6 source/editorial review; marginal-carry escort trade and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P05 | Teammate Pallet Save | STANDARD | REVIEWED | Task 14 B6 source/editorial review; finite-pallet carry-crossing condition and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
-| P06 | Carry-Escape / Wiggle Denial | STANDARD | NOT_STARTED | No record; review not started. | — |
-| I01 | Solo-Q Information Shell | STANDARD | NOT_STARTED | No record; review not started. | — |
-| I02 | Killer Tracking / Aura Seer | STANDARD | NOT_STARTED | No record; review not started. | — |
-| I03 | Teammate Tracking / Support Information | STANDARD | NOT_STARTED | No record; review not started. | — |
-| I04 | Objective / Resource Routing | STANDARD | NOT_STARTED | No record; review not started. | — |
+| P06 | Carry-Escape / Wiggle Denial | STANDARD | REVIEWED | Task 14 B7 source/editorial review; carry threshold, recovery and missed-route exits recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d`, `2ed4dcb` |
+| I01 | Solo-Q Information Shell | STANDARD | REVIEWED | Task 14 B7 source/editorial review; hook, generator and approach cues bound to distinct decisions; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d` |
+| I02 | Killer Tracking / Aura Seer | STANDARD | REVIEWED | Task 14 B7 source/editorial review; source-faithful break, approach and post-generator reads; Dark Sense wording corrected in fix round; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d`, `2ed4dcb` |
+| I03 | Teammate Tracking / Support Information | STANDARD | REVIEWED | Task 14 B7 source/editorial review; Bond/Empathy/Empathic Connection cues preserve aura direction and support exits; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d` |
+| I04 | Objective / Resource Routing | STANDARD | REVIEWED | Task 14 B7 source/editorial review; Déjà Vu/Dark Sense routes include stale-target exits; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d` |
 | I05 | Chase Broadcast / Salvation's Cry | STANDARD | NOT_STARTED | No record; review not started. | — |
 | R01 | Chest / Loot Scavenger | STANDARD | NOT_STARTED | No record; review not started. | — |
 | R02 | Pharmacy / Med-Kit Farming | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -356,6 +356,15 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25), with one H1, visible primary/gameplay content, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Evidence remains layout/usefulness evidence, not live-Trial outcome or owner-comprehension proof.
 - Serialized index integration initialized exactly four absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `no-one-left-behind`, `background-player`, `saboteur`, `breakout`. Existing entries were unchanged.
 - Post-integration verification: validator `missing: 16`, `DRAFT: 7`, `REVIEWED: 34`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, `git diff --check` clean, and browser checks `25/25`. No publication or deployment was performed.
+
+### Task 14 B7 — P06/I01/I02/I03/I04
+
+- Reviewer: Pascal. Initial B7 review found one Important source-fidelity issue in I02 and one Important evidence gap: the worker had not performed the required viewport usefulness matrix. Fix round `2ed4dcb` corrected I02's Dark Sense wording; scoped re-review Poincare found both findings addressed with no new Critical/Important breakage. The coordinator-owned browser matrix remains pending before this integration is committed.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. P06 preserves carry threshold/recovery/standing-pallet conditions and missed-route exits; I01 distinguishes hook, generator and approach cues; I02 distinguishes Alert, Premonition and post-generator Dark Sense reads; I03 preserves Bond/Empathy/Empathic Connection aura direction; I04 binds objective/resource routing to Déjà Vu and Dark Sense with stale-target exits.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported four-slot builds, substitutes, items, matchup claims and generic awareness boilerplate were omitted. No snapshot supplied a canonical `BuildImplementation`; all five records retain authored options/modules without copied canonical membership.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25) in the external preview at `.codex/visualizations/2026/10/10/task-14-B7-preview/browser-results.json`; zero console/resource errors, one H1 per route, visible primary/gameplay, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Representative screenshots were captured at 390×844 and 1440×900 for each ID. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized exactly four absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `boil-over`, `flip-flop`, `power-struggle`, `bond`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 11`, `DRAFT: 7`, `REVIEWED: 39`, `PUBLISHED: 0`, zero diagnostics; focused catalog/validation tests `24/24`; full Node/Python suites, generated-artifact and diff checks recorded with the integration commit. No publication or deployment was performed.
 
 ### Task 14 B3 — C14/C15/G01/G03/G04
 

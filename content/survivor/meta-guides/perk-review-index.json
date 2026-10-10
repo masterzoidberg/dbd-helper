@@ -268,6 +268,22 @@
     "breakout": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "3ccfa8d1b0de43904616806e2a8bbdcc20a8a2923e4ffa58b46710a8be794359"
+    },
+    "boil-over": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "9c925302c2f19f3b47d6313310deffe446175f753ff9f02e5aeb3674cf55cbf7"
+    },
+    "flip-flop": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "9493fa451e542ba02b6ecfd9f16c932c0315042f29ea695669efd1d859ca6da4"
+    },
+    "power-struggle": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "cd17d68b95e8dc8f890a69c0ac0b8d9a29451fa3d2862cd7efccd7e8f12a5141"
+    },
+    "bond": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "a7812d8e7fb0b25f8149e71acd2ed01c76a3d033942c86f57275ee1d30e84585"
     }
   }
 }
