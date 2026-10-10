@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C06",
+  "snapshotId": "C06@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "dark-sense", "mechanicsRevision": 1 },
+    { "perkId": "alert", "mechanicsRevision": 1 },
+    { "perkId": "premonition", "mechanicsRevision": 1 },
+    { "perkId": "five-moves-ahead", "mechanicsRevision": 1 },
+    { "perkId": "windows-of-opportunity", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Read the Killer or resource state early, convert that information into a route, and leave when the cue is spent, duplicated or no longer changes the next decision.",
+    "verdict": {
+      "recommendation": "Use information to choose a route before pressure closes it; information is a routing advantage, not raw speed and not a reason to stay in a bad tile.",
+      "soloQ": "Choose one information package that reduces your own pathing uncertainty, then return to generator or rescue tempo when the route is clear.",
+      "coordinatedSwf": "Spend slots on information only when it solves uncertainty the team cannot already call, and share the route or resource change instead of duplicating reads.",
+      "mainWeakness": "Voice knowledge, high-skill map familiarity, cooldowns and exhausted resources can make a cue redundant while its slots remain committed."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "chase-information-module",
+          "label": "Chase information module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source lists several information tools rather than a verified build. Choose one approach cue and one resource view; the choices are alternatives, not a union loadout.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Choose a Killer approach cue",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "dark-sense",
+                  "whyItsHere": "Use the post-generator completion window to read the Killer, nearby Survivors, Pallets and Windows when the Killer enters its trigger range."
+                },
+                {
+                  "perkId": "alert",
+                  "whyItsHere": "Use Break or Damage aura reveals to update the route when the Killer changes the resource state."
+                },
+                {
+                  "perkId": "premonition",
+                  "whyItsHere": "Use a directional Killer warning outside chase to leave or pre-position before the approach becomes a chase."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Choose a resource route view",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "five-moves-ahead",
+                  "whyItsHere": "Read nearby Pallets during its Terror Radius or chase conditions and choose a route that survives the next drop."
+                },
+                {
+                  "perkId": "windows-of-opportunity",
+                  "whyItsHere": "Read nearby Windows and plan the vault route, remembering that the current perk no longer reveals Pallets or Breakable Walls."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before the Killer reaches your area, decide which uncertainty the module is meant to solve: approach timing, a damaged resource, nearby Pallets or nearby Windows. Convert the first useful cue into a route rather than waiting for more information."
+      ],
+      "rows": [
+        {
+          "id": "read-and-commit",
+          "situation": "An information cue shows a Killer or resource position that changes your next route.",
+          "action": "Choose the next tile, generator or rescue path from the cue and commit early enough to use it. Do not remain in place to collect information that no longer changes the decision.",
+          "why": "The strategy's payoff is fewer pathing mistakes; the information itself is not a chase-speed effect."
+        },
+        {
+          "id": "post-generator-window",
+          "situation": "A Generator has completed and Dark Sense is ready for its conditional aura-reading window.",
+          "action": "Use the Killer, Survivor, Pallet and Window positions only when the Killer enters the trigger range, then pick the route that keeps the next job moving.",
+          "why": "Dark Sense is event and range gated; it is not a permanent map-wide read.",
+          "enabledBy": ["perk:dark-sense"]
+        },
+        {
+          "id": "killer-damages-resource",
+          "situation": "The Killer breaks or damages a resource and Alert reveals the action.",
+          "action": "Update the route or call the resource loss, then stop treating that area as unchanged. If no decision changes, return to the objective rather than following the aura.",
+          "why": "Alert is valuable when the Killer changes resource state; it is not continuous Killer tracking.",
+          "enabledBy": ["perk:alert"]
+        },
+        {
+          "id": "pre-chase-warning",
+          "situation": "You are not in chase, can look toward the Killer and Premonition is available.",
+          "action": "Use the short warning to leave the exposed route or pre-position at the selected resource. Respect its cooldown and do not keep scanning when ordinary work is safer.",
+          "why": "Premonition is a directional, non-chase cue with a cooldown, so it improves preparation rather than guaranteeing avoidance.",
+          "enabledBy": ["perk:premonition"]
+        },
+        {
+          "id": "choose-resource-view",
+          "situation": "You are entering a chase and the selected resource view is active.",
+          "action": "Use Five Moves Ahead to choose a Pallet route or Windows of Opportunity to choose a Window route, then leave after the resource or its follow-up is spent.",
+          "why": "The two views answer different route questions and must not be read as one combined all-resource map.",
+          "enabledBy": ["perk:five-moves-ahead", "perk:windows-of-opportunity"]
+        },
+        {
+          "id": "information-denied",
+          "situation": "The cue is on cooldown, duplicates what the team already knows or points to a depleted route.",
+          "action": "Stop following the information package and take the best available chase, generator or rescue line. Do not spend team tempo protecting an obsolete read.",
+          "why": "The canonical weakness is that information can duplicate player knowledge, especially in a coordinated team."
+        }
+      ],
+      "abortWhen": [
+        "Abort an information detour when it no longer changes the route or when following the cue abandons an urgent generator or rescue.",
+        "Leave a depleted tile even when its location is known; information cannot restore a spent Pallet or Window route."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Use the read to solve your own uncertainty, then act on it without waiting for teammates to interpret the same cue."
+      ],
+      "coordinatedSwf": [
+        "Compare the perk cue with voice information before spending time on it; call only the route or resource change that teammates can use."
+      ]
+    },
+    "strengths": [
+      "Reduce pathing mistakes and teach map or resource state without depending on a raw speed bonus."
+    ],
+    "weaknesses": [
+      "Information may duplicate player knowledge at high skill or in a coordinated team.",
+      "A cooldown or depleted route can leave the slot quiet when the team most needs tempo."
+    ],
+    "killerCounterplay": [
+      "The Killer can change targets, route away from the expected resource or force the team to spend the informed route before it pays off."
+    ],
+    "commonMistakes": [
+      "Collecting aura information without turning it into an early route decision.",
+      "Treating Dark Sense, Alert or Premonition as permanent Killer tracking.",
+      "Combining Pallet and Window views mentally as though the current perks reveal every resource at once."
+    ],
+    "related": [
+      {
+        "strategyId": "C01",
+        "relationship": "COMBINE_WITH",
+        "why": "This is a portable routing module that supports the broader chase and looping strategy."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C06#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C06@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C06@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "C06@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C06@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C06#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C06#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C06#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "C06#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C06#Common Mistakes" },
+    { "kind": "PERK", "ref": "dark-sense#/mechanics" },
+    { "kind": "PERK", "ref": "alert#/mechanics" },
+    { "kind": "PERK", "ref": "premonition#/mechanics" },
+    { "kind": "PERK", "ref": "five-moves-ahead#/mechanics" },
+    { "kind": "PERK", "ref": "windows-of-opportunity#/mechanics" }
+  ]
+}

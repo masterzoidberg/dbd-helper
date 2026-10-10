@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C04",
+  "snapshotId": "C04@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "five-moves-ahead", "mechanicsRevision": 1 },
+    { "perkId": "any-means-necessary", "mechanicsRevision": 1 },
+    { "perkId": "alert", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Read the pallet route, spend a drop only when it buys a useful next position, and reset a safe dropped pallet when the recovery repays its time.",
+    "verdict": {
+      "recommendation": "Manage pallets as a team resource: identify the next route before dropping, and do not turn information or reset tools into reasons to spend a pallet without chase value.",
+      "soloQ": "Use pallet information to avoid dead zones, then make the drop and reset decision yourself; return to objectives when the route is gone.",
+      "coordinatedSwf": "Call which pallet area is being spent and whether a reset is safe so teammates do not duplicate the same resource trip.",
+      "mainWeakness": "Map RNG, fast resource destruction, cooldowns and a Killer who changes timing can remove the expected pallet economy."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "pallet-resource-module",
+          "label": "Pallet resource module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source defines a pallet-economy framework, not a verified four-perk build. These tools cover route reading, reset value and a Killer-position cue without claiming a complete recipe.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Pallet route information",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "five-moves-ahead",
+                  "whyItsHere": "When Terror Radius or chase conditions are active, read nearby Pallets and use the post-drop movement to leave toward the next route."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Reset a dropped pallet",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "any-means-necessary",
+                  "whyItsHere": "Make a reset decision for a dropped pallet only when the interaction is safe and the restored route will matter to the team."
+                }
+              ]
+            },
+            {
+              "slot": 3,
+              "role": "Killer damage information",
+              "usage": "FLEX",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "alert",
+                  "whyItsHere": "Use a Break or Damage aura reveal to decide whether the Killer is clearing your route or has moved away; it does not reveal every pallet."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "While approaching a chase area, identify one pallet that buys the next position and one exit from the tile. Reserve the resource for a route-changing drop rather than spending it to prove the build is active."
+      ],
+      "rows": [
+        {
+          "id": "read-next-pallet",
+          "situation": "You are inside the conditions for Five Moves Ahead and need a pallet route.",
+          "action": "Choose the closest pallet that leads to a real next position, then keep the exit in mind before taking the interaction.",
+          "why": "The perk supplies pallet information during its active conditions; the value is route selection, not a reason to drop immediately.",
+          "enabledBy": ["perk:five-moves-ahead"]
+        },
+        {
+          "id": "spend-for-distance",
+          "situation": "The Killer reaches a pallet and the drop can create distance or protect the next objective route.",
+          "action": "Drop only when the resulting distance or denial is worth the resource. Move through the planned exit and reassess after the perk cooldown begins.",
+          "why": "A pallet spent only for an aura or movement trigger leaves the team with less future safety.",
+          "enabledBy": ["perk:five-moves-ahead"]
+        },
+        {
+          "id": "reset-safe-resource",
+          "situation": "A dropped pallet is useful again and Any Means Necessary can be completed without giving the Killer a free hit.",
+          "action": "Reset it only after checking the Killer's location and the team's next route. If the interaction is contested, leave and keep the objective moving.",
+          "why": "Resetting restores a resource only when the time and exposure do not cost more than the pallet returns.",
+          "enabledBy": ["perk:any-means-necessary"]
+        },
+        {
+          "id": "track-resource-denial",
+          "situation": "The Killer breaks or damages a pallet, or Alert reveals a nearby action.",
+          "action": "Use the aura cue to update the route and tell teammates which resource is being removed. Do not interpret it as a pallet or window map.",
+          "why": "Alert reports Killer Break or Damage actions; the information is useful because it changes resource state.",
+          "enabledBy": ["perk:alert"]
+        },
+        {
+          "id": "resource-exhausted",
+          "situation": "The route is depleted, the map gives no useful pallet or the Killer has already cleared the area.",
+          "action": "Leave the resource plan and take the best remaining chase path, generator or rescue job instead of travelling back to defend an exhausted tile.",
+          "why": "The strategy wins by avoiding dead zones, not by maintaining a route that no longer exists."
+        }
+      ],
+      "abortWhen": [
+        "Abort a reset when the Killer can reach you before it completes or when the restored pallet does not protect a useful route.",
+        "Stop routing around a spent area when ordinary objective or rescue work now repays more team tempo."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Treat a reset as your own timing decision and return to the next job when no teammate is visibly using the recovered route."
+      ],
+      "coordinatedSwf": [
+        "Call the pallet area being spent or reset, then release the assignment so another player can keep the next generator or rescue covered."
+      ]
+    },
+    "strengths": [
+      "Avoid dead zones and waste fewer pallets when the map supplies a usable route."
+    ],
+    "weaknesses": [
+      "Map RNG and rapid Killer resource destruction can remove the activation path.",
+      "A reset interaction and a pallet drop both spend time or exposure that may not be repaid."
+    ],
+    "killerCounterplay": [
+      "The Killer can clear resources quickly, refuse the expected pallet interaction or change timing so a reset becomes unsafe."
+    ],
+    "commonMistakes": [
+      "Dropping a pallet for the perk trigger without planning the next route.",
+      "Starting a reset while the Killer can interrupt it or while another job is more urgent.",
+      "Treating Five Moves Ahead as window information or Alert as a complete resource map."
+    ],
+    "related": [
+      {
+        "strategyId": "C01",
+        "relationship": "COMBINE_WITH",
+        "why": "This is a pallet-economy specialization of the broader chase and looping strategy."
+      },
+      {
+        "strategyId": "C05",
+        "relationship": "COMBINE_WITH",
+        "why": "Fragile-Pallet Restoration is the narrower chest-to-pallet branch and should be treated as a setup-dependent addition, not a normal pallet reset."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C04#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C04@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C04@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C04@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C04#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C04#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C04#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C04#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "C04#Common Mistakes" },
+    { "kind": "PERK", "ref": "five-moves-ahead#/mechanics" },
+    { "kind": "PERK", "ref": "any-means-necessary#/mechanics" },
+    { "kind": "PERK", "ref": "alert#/mechanics" }
+  ]
+}
