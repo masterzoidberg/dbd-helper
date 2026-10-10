@@ -47,7 +47,7 @@
               "usage": "SUPPORT",
               "choiceCount": 1,
               "choices": [
-                { "perkId": "boon-illumination", "whyItsHere": "Choose this only when faster blessing and nearby objective information repay the extra slot." }
+                { "perkId": "boon-illumination", "whyItsHere": "Choose this only when an active Boon makes faster future blessing or nearby objective information repay the extra slot; do not assume it speeds the first setup or a post-snuff rebuild." }
                ]
             }
           ]

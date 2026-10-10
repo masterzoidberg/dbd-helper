@@ -181,6 +181,10 @@ test('Task 13 source-faithful stress shapes preserve exact alternatives, modules
   assert.deepEqual(healerModel.page.gameplay.priorities[0].enabledByResolved.map(item => item.id), ['empathy']);
   assert.deepEqual(healerModel.page.gameplay.priorities[1].enabledByResolved.map(item => item.id), ['empathic-connection', 'med-kit']);
 
+  const reviewedHealer = assembleGuidePage({ context, strategyId: 'A03', guide: cloneGuide('A03'), mode: 'preview' });
+  assert.deepEqual(reviewedHealer.page.gameplay.priorities[1].enabledByResolved.map(item => item.id), ['healer-tools#2', 'med-kit']);
+  assert.deepEqual(reviewedHealer.page.gameplay.priorities[1].enabledByResolved[0].choices.map(choice => choice.perkId), ['empathic-connection', 'botany-knowledge']);
+
   const boon = bindTask13Fixture(context, 'G07');
   const boonModel = assembleGuidePage({ context: boon.context, strategyId: 'G07', guide: boon.guide, mode: 'preview' });
   assert.deepEqual(validateGuide({ guide: boon.guide, context: boon.context, schema }), []);

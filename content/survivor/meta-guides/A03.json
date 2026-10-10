@@ -88,7 +88,7 @@
           "situation": "You and the teammate can heal without pulling pressure onto the reset.",
           "action": "Start the heal with the selected speed tool or optional med-kit, and stop if the Killer turns the reset into a chase.",
           "why": "Healing speed cannot repay a down or an abandoned critical objective.",
-          "enabledBy": ["perk:empathic-connection", "item:med-kit"]
+          "enabledBy": ["slot:healer-tools#2", "item:med-kit"]
         },
         {
           "id": "after-unhook",

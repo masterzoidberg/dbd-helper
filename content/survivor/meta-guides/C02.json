@@ -55,7 +55,7 @@
               "usage": "SUPPORT",
               "choiceCount": 1,
               "choices": [
-                { "perkId": "vigil", "whyItsHere": "Recover Exhausted more efficiently when staying near the support effect is worth the time." }
+                { "perkId": "vigil", "whyItsHere": "Recover Exhausted faster for your next mobility cycle; support nearby teammates when their recovery happens inside the effect." }
               ]
             }
           ]
@@ -99,7 +99,7 @@
       "Reliable chase extension without total build commitment."
     ],
     "weaknesses": [
-      "Exhaustion management and trigger conditions limit repeated value; Sprint Burst currently gives a shorter burst than before."
+      "Exhaustion management and trigger conditions limit repeated value, so route the burst toward a useful next position instead of preserving it without a payoff."
     ],
     "killerCounterplay": [
       "The Killer can change targets, route you away from the activation geometry or force resources out before committing to the chase."
