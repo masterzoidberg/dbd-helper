@@ -219,7 +219,8 @@ function renderListBlock(lines) {
   return html;
 }
 
-export function renderArticleMarkdown(markdown) {
+export function renderArticleMarkdown(markdown, { headingOffset = 0 } = {}) {
+  if (!Number.isInteger(headingOffset) || headingOffset < 0) throw new Error('headingOffset must be a non-negative integer');
   const { body } = parseFrontMatter(markdown);
   if (/^\s*```/m.test(body)) throw new Error('unsupported fenced code block in Stage 3B article');
   if (/^\s*>/m.test(body)) throw new Error('unsupported blockquote in Stage 3B article');
@@ -236,7 +237,9 @@ export function renderArticleMarkdown(markdown) {
     const heading = /^(#{1,4})\s+(.*)$/.exec(line);
     if (heading) {
       const level = heading[1].length;
-      out.push(`<h${level}>${inline(heading[2])}</h${level}>`);
+      const renderedLevel = level + headingOffset;
+      if (renderedLevel > 6) throw new Error('headingOffset produces unsupported heading level');
+      out.push(`<h${renderedLevel}>${inline(heading[2])}</h${renderedLevel}>`);
       i += 1;
       continue;
     }
