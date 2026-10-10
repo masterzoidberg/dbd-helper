@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R02",
+  "snapshotId": "R02@10.2.0-r1",
+  "perkReviews": [{ "perkId": "pharmacy", "mechanicsRevision": 1 }, { "perkId": "plunderers-instinct", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Turn an accessible chest into a predictable Med-Kit when healing supply is missing, then use or hand off the kit before farming another.",
+    "verdict": {
+      "recommendation": "Choose Pharmacy for a deliberate in-Trial medical supply plan when bringing a Med-Kit directly is not the better answer.",
+      "soloQ": "Use the first safe chest when a Med-Kit would change the next heal; do not spend a rescue window searching for more stock.",
+      "coordinatedSwf": "Name who needs the kit and where it can be passed before assigning someone to chest duty.",
+      "mainWeakness": "Unopened chest access, travel and Killer pressure can make the guaranteed output arrive too late."
+    },
+    "loadout": { "options": [
+      { "perkId": "pharmacy", "usage": "CORE", "whyItsHere": "Makes an unlocked chest produce the medical item this subtype is built around, reducing uncertainty in the healing-supply decision." },
+      { "perkId": "plunderers-instinct", "usage": "SUPPORT", "whyItsHere": "Locates chests when finding one safely is the constraint; its general item-rarity value is secondary to Pharmacy's medical output." }
+    ] },
+    "weaknesses": ["A guaranteed kit still costs the perk slot, chest access and time that a pregame item would avoid."],
+    "commonMistakes": ["Opening extra chests while a usable Med-Kit is already idle.", "Assuming Pharmacy supplies an item without first unlocking a chest."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Decide before the Trial whether the intended healing supply is worth a perk slot and chest detour rather than bringing a Med-Kit directly."],
+      "rows": [
+        { "id": "medical-gap", "situation": "An unopened chest is safely reachable and the team lacks a Med-Kit for an upcoming heal.", "action": "Unlock it with Pharmacy, then take or deliver the Med-Kit to the survivor who can use it next.", "why": "The output is specified; the decision is whether the heal will repay the chest trip.", "enabledBy": ["perk:pharmacy"] },
+        { "id": "find-chest", "situation": "A medical need exists but the nearest chest is unknown.", "action": "Use the chest aura to choose a reachable chest on the team's route; skip a distant chest if the healing need will pass first.", "why": "Finding a chest is helpful only while the medical window remains open.", "enabledBy": ["perk:plunderers-instinct"] },
+        { "id": "supply-complete", "situation": "A usable Med-Kit has been supplied, or Killer pressure makes another chest trip unsafe.", "action": "Stop farming and return to healing, repair or the urgent rescue.", "why": "Unused inventory is not a team reset." }
+      ],
+      "abortWhen": ["Skip the chest when an immediate rescue or safe heal matters more than future kit supply.", "Stop once kits are available but cannot be used or delivered promptly."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R02#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R02@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R02@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "R02@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R02#Representative Builds" },
+    { "kind": "PERK", "ref": "pharmacy#/mechanics" },
+    { "kind": "PERK", "ref": "plunderers-instinct#/mechanics" }
+  ]
+}

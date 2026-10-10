@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R04",
+  "snapshotId": "R04@10.2.0-r1",
+  "perkReviews": [{ "perkId": "boon-circle-of-healing", "mechanicsRevision": 1 }, { "perkId": "boon-exponential", "mechanicsRevision": 1 }, { "perkId": "boon-shadow-step", "mechanicsRevision": 1 }, { "perkId": "boon-illumination", "mechanicsRevision": 1 }, { "perkId": "boon-steadfast", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Place a Boon where its actual team task will happen, maintain that useful zone, and relocate or abandon it when the team or Killer moves the fight elsewhere.",
+    "verdict": {
+      "recommendation": "Choose the team's needed zone effect and a totem location together; a network pays only while Survivors can use its local effects.",
+      "soloQ": "Bless for an observable nearby heal, recovery, escape route or objective; do not assume strangers will travel to an unannounced zone.",
+      "coordinatedSwf": "Assign a user and a maintainer for the selected zone, then call when its job moves so the next blessing has a purpose.",
+      "mainWeakness": "Blessing time, totem placement, snuffing and Shattered Hope can remove the zone before teammates recover its setup cost."
+    },
+    "loadout": { "options": [
+      { "perkId": "boon-circle-of-healing", "usage": "CORE", "whyItsHere": "Supports teammate healing inside the zone when the team has an actual reset location; it does not supply self-healing." },
+      { "perkId": "boon-exponential", "usage": "SUPPORT", "whyItsHere": "Makes the zone a recovery answer when teammates may be left dying there; low value if the Killer picks up immediately or slugs elsewhere." },
+      { "perkId": "boon-shadow-step", "usage": "SUPPORT", "whyItsHere": "Protects movement through the zone from Killer scratch-mark and aura reads when that route will be used." },
+      { "perkId": "boon-illumination", "usage": "SUPPORT", "whyItsHere": "Adds nearby generator and chest information and faster blessing while a Boon is already active; it does not accelerate the first setup or a fully snuffed network." },
+      { "perkId": "boon-steadfast", "usage": "SUPPORT", "whyItsHere": "Adds a local generator zone when a valuable repair target and a usable totem overlap." }
+    ] },
+    "environments": {
+      "soloQ": ["Choose a zone that teammates can visibly reach and use; if no one uses it, stop servicing it and work the next objective."],
+      "coordinatedSwf": ["Name the zone's task, the teammate using it and the next rotation before paying for repeated blessings."]
+    },
+    "weaknesses": ["A good effect in the wrong place is wasted; repeated snuffs can convert support into constant setup time."],
+    "killerCounterplay": ["The Killer can snuff the active Boon, pressure its users or destroy the totem with Shattered Hope."],
+    "commonMistakes": ["Blessing an available totem before choosing a heal, recovery route or generator it can support.", "Reblessing the same exposed site after repeated snuffs.", "Expecting Illumination's faster blessing while no Boon is active."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Identify the next team task, then pick a reachable totem whose zone covers that task without pulling everyone away from safer work."],
+      "rows": [
+        { "id": "healing-zone", "situation": "Injured teammates can regroup near a safe totem for healing each other.", "action": "Bless for Circle of Healing, bring the teammate to that zone and return to objectives after the reset; skip it if the heal must happen elsewhere.", "why": "The healing effect is shared and local, so the teammate has to use that location.", "enabledBy": ["perk:boon-circle-of-healing"] },
+        { "id": "recovery-zone", "situation": "The Killer is leaving survivors dying near a reachable totem.", "action": "Place or maintain Exponential where the slugged teammate can use it; if the Killer picks up or moves the down elsewhere, return to the more urgent save or repair.", "why": "Recovery value depends on a dying teammate actually remaining in the zone.", "enabledBy": ["perk:boon-exponential"] },
+        { "id": "route-or-generator", "situation": "The team's next route or repair target passes through a viable totem area.", "action": "Choose Shadow Step for the used movement route or Steadfast for the generator inside the zone; do not set either where the team has already rotated away.", "why": "Both benefits depend on useful geography, but answer different jobs.", "enabledBy": ["perk:boon-shadow-step", "perk:boon-steadfast"] },
+        { "id": "relocate", "situation": "A Boon is still active, but the team's next job has moved and a new totem can cover it.", "action": "Relocate only when the next zone has a named user or task; Illumination can shorten this blessing while the existing Boon remains active.", "why": "The faster blessing is conditional on having a Boon already, and relocation still costs time.", "enabledBy": ["perk:boon-illumination"] },
+        { "id": "zone-lost", "situation": "The Killer repeatedly snuffs the site, destroys its totem or forces teammates out of range.", "action": "Stop rebuilding that zone; use a safer totem only for a live task, otherwise return to repair, rescue or direct healing.", "why": "A denied network no longer repays setup." }
+      ],
+      "abortWhen": ["Do not bless when no teammate or next objective can use the chosen zone.", "After repeated snuffing, Shattered Hope or forced relocation, stop paying for an exposed location without a new task."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R04#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R04@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R04@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R04#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "R04#Killer Counterplay" },
+    { "kind": "PERK", "ref": "boon-circle-of-healing#/mechanics" },
+    { "kind": "PERK", "ref": "boon-exponential#/mechanics" },
+    { "kind": "PERK", "ref": "boon-shadow-step#/mechanics" },
+    { "kind": "PERK", "ref": "boon-illumination#/mechanics" },
+    { "kind": "PERK", "ref": "boon-steadfast#/mechanics" }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "I05",
+  "snapshotId": "I05@10.2.0-r1",
+  "perkReviews": [{ "perkId": "salvations-cry", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use the start of your chase to show the team who is being chased and where the Killer is, then route the chase away from the work they can safely keep doing.",
+    "verdict": {
+      "recommendation": "Use this as a chase-triggered information module when teammates cannot reliably call the first target switch.",
+      "soloQ": "Let the broadcast replace the missing first chase call; teammates should use that brief read to keep a safe repair or change course.",
+      "coordinatedSwf": "Keep the slot only if its automatic start signal adds something the team's own chase call misses.",
+      "mainWeakness": "It triggers when your chase starts and can repeat information an organized team already has."
+    },
+    "loadout": { "options": [{ "perkId": "salvations-cry", "usage": "CORE", "whyItsHere": "Broadcasts your chase start to unchased teammates while revealing their positions to you, so the runner and workers can make different immediate routing decisions." }] },
+    "environments": {
+      "soloQ": ["When the Killer commits to you, steer away from the teammate positions you just see; the others can use their brief Killer read to decide whether their generator remains safe."],
+      "coordinatedSwf": ["Compare the automatic trigger with the team's normal first chase call; do not spend a slot merely to duplicate a reliable callout."]
+    },
+    "weaknesses": ["No chase start means no broadcast, and the effect does not keep reporting later Killer movements."],
+    "commonMistakes": ["Treating the initial broadcast as continuous tracking.", "Leading the Killer into the teammate position just revealed to the runner."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before contact, identify a chase route that does not run through the team's current repair area."],
+      "rows": [
+        { "id": "chase-start", "situation": "The Killer starts chasing you and Salvation's Cry exposes teammate positions to you and your chase to them.", "action": "Turn away from occupied work; let unchased teammates use the initial Killer position to continue a safe generator or leave a threatened one.", "why": "The two sides receive different information at chase start; the immediate route choice is the payoff.", "enabledBy": ["perk:salvations-cry"] },
+        { "id": "broadcast-expired", "situation": "The initial aura read has ended or the Killer changes target.", "action": "Use current sight and ordinary chase cues; workers reassess their own safety rather than following the old broadcast.", "why": "A chase-start signal is not persistent Killer tracking." },
+        { "id": "no-new-signal", "situation": "A coordinated team already called the chased player and Killer location, or you never take chase.", "action": "Do not force contact to activate the perk; resume the team's repair, rescue or chase assignment.", "why": "Manufacturing a chase or duplicating a complete voice call spends tempo without new information." }
+      ],
+      "abortWhen": ["Do not seek a chase solely to trigger the broadcast.", "Once the start read is stale, stop routing by it and react to current pressure."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "I05#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "I05@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "I05@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "I05#How It Works" },
+    { "kind": "PUBLICATION", "ref": "I05#Solo Q vs SWF" },
+    { "kind": "PERK", "ref": "salvations-cry#/mechanics" }
+  ]
+}

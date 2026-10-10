@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R03",
+  "snapshotId": "R03@10.2.0-r1",
+  "perkReviews": [{ "perkId": "built-to-last", "mechanicsRevision": 1 }, { "perkId": "streetwise", "mechanicsRevision": 1 }, { "perkId": "scavenger", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Get another useful use from a valuable item when restoring or conserving its charges repays the time away from the team objective.",
+    "verdict": {
+      "recommendation": "Treat the item as a finite investment: choose a charge plan that matches the actual item and leave it when recharge costs more than the next use returns.",
+      "soloQ": "Recharge only after the item is depleted and there is a safe pause; do not leave a live rescue for a locker visit.",
+      "coordinatedSwf": "Assign the item to the player who can use the next charge window and have teammates cover the objective during a deliberate recharge pause.",
+      "mainWeakness": "Locker downtime, item loss and the separate conditions of each recharge tool can break the expected return."
+    },
+    "loadout": { "options": [
+      { "perkId": "built-to-last", "usage": "CORE", "whyItsHere": "Restores a depleted item's charges through a locker visit when the next use is worth leaving the current task." },
+      { "perkId": "streetwise", "usage": "SUPPORT", "whyItsHere": "Extends charges on items retrieved from chests; it is a conservation route for found items, not a refill for every equipped item." },
+      { "perkId": "scavenger", "usage": "SUPPORT", "whyItsHere": "Offers a conditional depleted-Toolbox refill for a player who can land the required Great repair checks and absorb the following repair penalty." }
+    ] },
+    "weaknesses": ["The plan depends on preserving a valuable item and on a safe window to restore or spend its charges."],
+    "commonMistakes": ["Entering a locker before the item is depleted and expecting Built to Last to refill it.", "Treating Streetwise as a recharge for an item brought from the lobby.", "Planning Scavenger around ordinary or special Skill Checks instead of its required Great basic repair checks."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Name the item and its next useful task before committing a slot to charge economy."],
+      "rows": [
+        { "id": "locker-refill", "situation": "The item is depleted, another use would matter, and a locker is safe without missing a rescue or generator window.", "action": "Take the Built to Last locker recharge, then return to the item task; skip it when travel and hiding would cost more than the recovered use.", "why": "The refill pays only when the restored charges are used in time.", "enabledBy": ["perk:built-to-last"] },
+        { "id": "found-item", "situation": "You retrieve a charge-bearing item from a chest.", "action": "Use the Streetwise-extended charges on the next relevant task; do not expect the effect on an item brought into the Trial.", "why": "Its charge benefit is tied to found items.", "enabledBy": ["perk:streetwise"] },
+        { "id": "toolbox-greats", "situation": "A Toolbox is depleted and you can keep repairing long enough for Scavenger's Great-check condition.", "action": "Continue the repair route only if the later Toolbox refill can repay the check effort and temporary repair slowdown; otherwise switch to ordinary repair or another item plan.", "why": "The payoff is conditional and carries a repair cost.", "enabledBy": ["perk:scavenger"] },
+        { "id": "item-denied", "situation": "The item is lost, the next use is no longer relevant, or pressure removes the safe recharge window.", "action": "Stop routing to lockers or chasing charges and return to the team's immediate objective.", "why": "A charge engine without a useful next item action is sunk cost." }
+      ],
+      "abortWhen": ["Do not recharge during an urgent rescue or while the item cannot be used soon.", "Abandon the item loop after loss or when its recharge condition cannot be met safely."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R03#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R03@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R03@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "R03@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R03#Representative Builds" },
+    { "kind": "PERK", "ref": "built-to-last#/mechanics" },
+    { "kind": "PERK", "ref": "streetwise#/mechanics" },
+    { "kind": "PERK", "ref": "scavenger#/mechanics" }
+  ]
+}
