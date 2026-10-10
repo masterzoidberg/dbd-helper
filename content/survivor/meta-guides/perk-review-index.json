@@ -188,6 +188,54 @@
     "were-gonna-live-forever": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "733f65e190c81f26184fb064bb1713248641964cb67a8146be4c16d645c8cc07"
+    },
+    "blood-pact": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "85ff2a25d13be0eed9866e09669bfa5279a03d1ec57783c46de486d8dc03240e"
+    },
+    "boon-dark-theory": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "ea83084101163bf1596c99c89c80c047e392f886ef827ae997beb45526226083"
+    },
+    "fast-track": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "0054205cf9c62a9f6cc894a97f30cf48be68f47c81add18c0cfe85d8a8a815cb"
+    },
+    "friendly-competition": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "ffc85764f652fc2d00a1c8c7f9f5ed6780d476e62a80e24175ed6a1238367cff"
+    },
+    "hope": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "96dca1fe307d3b233b395efdef95b7bf465b96ccf13310b67596fe1c2164cee3"
+    },
+    "inner-strength": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c017b0a5c05e94b90c24a90ae09581fda630ef61983e9a096efa81067e4bcb21"
+    },
+    "leader": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "d7060f0bd0b37060870477239e16a03985d6825a437cc9f4f9a7801f9a0575fd"
+    },
+    "made-for-this": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "15ebe733f64298bcb065fb618207a5b8ad120b66e529faf552ed1816c9a636c7"
+    },
+    "prove-thyself": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "8e1d8cb5ea667dd3b00dbebfffc5b0737517fb26fa64b1aea10e79b567289248"
+    },
+    "road-life": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "8cdfde46ce982b61400fcce837c74eefdce8a41daf838e72ddc74efb52e10882"
+    },
+    "self-care": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "de383f361026cd86144a9b7dbc7109294e412568082b7b90675ebea0f08ec63a"
+    },
+    "strength-in-shadows": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "2b671146bdaa351e65a15d77e40c866f5d802bb2526f1a2a6a5952d741a2b698"
     }
   }
 }
