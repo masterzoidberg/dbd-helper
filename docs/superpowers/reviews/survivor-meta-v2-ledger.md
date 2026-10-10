@@ -271,3 +271,14 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Controller verification: full Node suite 145/145; Python suite 4/4; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker clean; diff check clean.
 - Task 10: complete (commits `5195df0..dd3e72d`, review clean after one fix round). No responsive CSS, publication/generation, guide-status, canonical-source, generated-output, or deployment changes.
 - Task 10: minor (deferred): item add-ons and alternate perk names are not rendered yet; renderer tests have narrower direct coverage for those fields. Carry to later renderer/integration review without blocking this task.
+
+### Task 11 — compact responsive and accessible guide layouts
+
+- BASE: `dc6561f`.
+- Implementer: Noether; commit `a34eed7` (`feat: add compact accessible Survivor guide layouts`). Scope was limited to `site/assets/app.css`, renderer semantic/classes, and responsive tests.
+- Task review: Leibniz — static implementation compliant, but Important browser-evidence blocker because no live browser review was initially available.
+- Browser evidence completion: Chrome at `C:\Program Files\Google\Chrome\Application\chrome.exe` served an ignored preview around the real Task 9/10 models. Chrome/CDP checked all seven prototypes at 320×844, 390×844, 768×900, 1024×900, and 1440×900: 35/35 passed no horizontal overflow, one H1, closed research/perk disclosures, focusable summaries, required landmarks, and load checks; 35 screenshots captured. Representative X01 desktop/mobile, P00 mobile, and X02 mobile views were inspected.
+- Scoped re-review: Lagrange — browser blocker ADDRESSED, no new Critical/Important breakage; contrast and full 200% zoom remain bounded Minor evidence gaps.
+- Controller verification: full Node 151/151; Python 4/4; browser results 35/35 with zero failures; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker and diff check clean.
+- Task 11: complete (commit `a34eed7`, review clean after evidence re-review). No guide JSON, canonical source, generated artifact, publication, or deployment changes.
+- Task 11: minor (deferred): computed contrast and full 200% zoom remain unverified by automation; no demonstrated defect, carry to later browser QA.
