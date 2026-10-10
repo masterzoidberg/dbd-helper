@@ -1,7 +1,7 @@
 import { renderArticleMarkdown } from './build-survivor-meta.mjs';
 
 const PROVENANCE_LABELS = {
-  CANONICAL: 'Research loadout',
+  CANONICAL: 'Research-backed build',
   EDITORIAL: 'Field Guide recommendation',
   EXAMPLE: 'Example'
 };
@@ -51,7 +51,7 @@ function escapeHtml(value) {
 }
 
 function humanize(value) {
-  return String(value ?? '').toLowerCase()
+  return String(value ?? '').replace(/([a-z0-9])([A-Z])/g, '$1 $2').toLowerCase()
     .replaceAll('_', ' ')
     .replace(/\b\w/g, character => character.toUpperCase())
     .trim();
@@ -178,7 +178,12 @@ function resolvedEnablerLabel(enabler, page) {
 
 function renderEnablers(enablers, model, page) {
   if (!enablers?.length) return '';
-  const links = enablers.map(enabler => {
+  const links = renderEnablerLinks(enablers, model, page);
+  return links.length ? `<p class="guide-enabled-by"><strong>Enabled by:</strong> ${links.join(', ')}</p>` : '';
+}
+
+function renderEnablerLinks(enablers, model, page) {
+  return (enablers || []).map(enabler => {
     if (enabler.type === 'perk') return perkLink(enabler.perk || enabler, model);
     const label = resolvedEnablerLabel(enabler, page);
     if (enabler.type === 'role') return `<a href="#guide-role-${internalId(enabler.id)}">${escapeHtml(label)}</a>`;
@@ -186,31 +191,31 @@ function renderEnablers(enablers, model, page) {
     if (enabler.type === 'mechanic') return `<a href="#guide-mechanic-${internalId(enabler.id)}">${escapeHtml(label)}</a>`;
     return escapeHtml(label);
   }).filter(Boolean);
-  return links.length ? `<p class="guide-enabled-by"><strong>Relevant when:</strong> ${links.join(', ')}</p>` : '';
 }
 
 function renderHeroVerdict(model, parts) {
   const { canonical, strategy, snapshot, page } = parts;
   const title = strategy.name || canonical.name || 'Survivor guide';
-  const summary = page?.summary || strategy.generalStrategicDefinition || '';
+  const verdict = page?.verdict || {};
+  const summary = page?.summary || verdict.recommendation || strategy.generalStrategicDefinition || '';
   const evaluations = canonical.evaluations || {
     soloQ: snapshot.solo && { ...snapshot.solo, environmentId: 'SURVIVOR_SOLO_Q' },
     coordinatedSwf: snapshot.swf && { ...snapshot.swf, environmentId: 'SURVIVOR_COORDINATED_SWF' }
   };
-  const cards = [
-    ['Solo Q', evaluations.soloQ],
-    ['Coordinated SWF', evaluations.coordinatedSwf]
-  ].filter(([, evaluation]) => evaluation);
-  const status = canonical.currentStatus || snapshot.currentStatus;
-  const trend = canonical.trend || snapshot.trend;
-  const verdict = page?.verdict || {};
-  const environmentAdvice = [
-    verdict.soloQ ? `<p><strong>Solo Q:</strong> ${escapeHtml(verdict.soloQ)}</p>` : '',
-    verdict.coordinatedSwf ? `<p><strong>Coordinated SWF:</strong> ${escapeHtml(verdict.coordinatedSwf)}</p>` : ''
-  ].join('');
+  const primaryKey = page?.kind === 'TEAM' || !evaluations.soloQ ? 'coordinatedSwf' : 'soloQ';
+  const secondaryKey = primaryKey === 'soloQ' ? 'coordinatedSwf' : 'soloQ';
+  const hasEvaluation = evaluation => evaluation && (evaluation.tier || evaluation.rankingStatus || evaluation.power !== undefined || evaluation.confidence);
+  const primaryEvaluation = hasEvaluation(evaluations[primaryKey]) ? evaluations[primaryKey] : null;
+  const secondaryEvaluation = hasEvaluation(evaluations[secondaryKey]) ? evaluations[secondaryKey] : null;
+  const primaryLabel = primaryKey === 'soloQ' ? 'Solo Q' : 'Coordinated SWF';
+  const secondaryLabel = secondaryKey === 'soloQ' ? 'Solo Q' : 'Coordinated SWF';
+  const primaryTier = primaryEvaluation?.tier ? `${primaryEvaluation.tier} tier` : rankingLabel(primaryEvaluation?.rankingStatus);
+  const primaryVerdict = verdict.recommendation && primaryEvaluation?.tier ? 'Recommended' : rankingLabel(primaryEvaluation?.rankingStatus);
+  const primary = primaryEvaluation ? `<div class="guide-primary-verdict"><span class="guide-primary-queue">${escapeHtml(primaryLabel)}</span><strong class="guide-primary-tier">${escapeHtml(primaryTier)}</strong><span class="guide-primary-verdict-label">${escapeHtml(primaryVerdict)}</span></div>` : '';
+  const secondary = secondaryEvaluation ? `<div class="guide-secondary-verdict"><span>${escapeHtml(secondaryLabel)}</span><strong>${escapeHtml(secondaryEvaluation.tier ? `${secondaryEvaluation.tier} tier` : rankingLabel(secondaryEvaluation.rankingStatus))}</strong></div>` : '';
   const bestFor = verdict.bestFor?.length ? `<section>${heading(3, 'Best for')}${list(verdict.bestFor)}</section>` : '';
   const notIdealFor = verdict.notIdealFor?.length ? `<section>${heading(3, 'Not ideal for')}${list(verdict.notIdealFor)}</section>` : '';
-  return `<header class="guide-hero">${heading(1, title)}${summary ? `<p class="guide-summary-copy">${escapeHtml(summary)}</p>` : ''}<p class="guide-status">${escapeHtml(statusLabel(status))}${trend ? ` · ${escapeHtml(humanize(trend))}` : ''}</p>${verdict.recommendation ? `<section class="guide-verdict">${heading(2, 'Verdict')}<p>${escapeHtml(verdict.recommendation)}</p>${environmentAdvice}${bestFor}${notIdealFor}${verdict.mainWeakness ? `<p><strong>Main weakness:</strong> ${escapeHtml(verdict.mainWeakness)}</p>` : ''}</section>` : ''}${cards.length ? `<section class="guide-environments">${cards.map(([label, evaluation]) => renderEvaluation(label, evaluation)).join('')}</section>` : ''}</header>`;
+  return `<header class="guide-hero">${heading(1, title)}${summary ? `<p class="guide-summary-copy">${escapeHtml(summary)}</p>` : ''}${primary || secondary ? `<section class="guide-verdict">${primary}${secondary ? `<div class="guide-secondary-queue">${secondary}</div>` : ''}</section>` : ''}${verdict.mainWeakness ? `<p class="guide-main-weakness"><strong>Main weakness:</strong> ${escapeHtml(verdict.mainWeakness)}</p>` : ''}${bestFor}${notIdealFor}</header>`;
 }
 
 function renderEvaluation(label, evaluation) {
@@ -232,11 +237,26 @@ function renderItem(item, scope) {
 function renderSlot(slot, model) {
   const choices = slot.choices || [];
   const choiceText = choices.length > 1
-    ? `<span class="guide-choice-label">Choose one:</span> ${choices.map(choice => perkLink(choice, model)).join(' or ')}`
-    : choices.length === 1 ? perkLink(choices[0], model) : 'Open flex';
-  const detail = slot.role ? `<span class="guide-slot-role">${escapeHtml(slot.role)}</span>` : '';
+    ? `<span class="guide-choice-label">Choose one:</span> <span class="guide-choice-options">${choices.map(choice => perkLink(choice, model)).join(' <span aria-hidden="true">or</span> ')}</span>`
+    : choices.length === 1 ? perkLink(choices[0], model) : 'No reviewed choice';
+  const detail = slot.role ? `<span class="guide-slot-job">${escapeHtml(slot.role)}</span>` : '';
   const usage = slot.usage ? `<span class="guide-slot-usage">${escapeHtml(usageLabel(slot.usage))}</span>` : '';
-  return `<div data-equipped-slot class="guide-slot" role="group" aria-label="Slot ${escapeHtml(slot.slot)}"><strong>Slot ${escapeHtml(slot.slot)}</strong>${detail}${usage}<p>${choiceText}</p></div>`;
+  return `<div data-equipped-slot class="guide-slot" role="group" aria-label="Slot ${escapeHtml(slot.slot)}"><span class="guide-slot-number">Slot ${escapeHtml(slot.slot)}</span>${detail}${usage}<div class="guide-slot-perk">${choiceText}</div></div>`;
+}
+
+function canonicalEffectSummary(facts) {
+  return facts?.plainEnglishSummary || facts?.currentEffect || '';
+}
+
+function renderSlotDetails(slot, model) {
+  const choices = slot.choices || [];
+  if (!choices.length) return '';
+  return `<article class="guide-slot-detail"><h4>${escapeHtml(slot.role || `Slot ${slot.slot}`)}</h4>${choices.map(choice => {
+    const facts = perkFacts(choice, model);
+    const choiceHeading = choices.length > 1 ? `<p class="guide-choice-detail-name"><strong>Choice:</strong> ${perkLink(choice, model)}</p>` : '';
+    const effect = canonicalEffectSummary(facts);
+    return `<div class="guide-choice-detail">${choiceHeading}${choices.length === 1 ? `<p class="guide-choice-detail-name">${perkLink(choice, model)}</p>` : ''}${effect ? `<p><strong>What it does:</strong> ${escapeHtml(effect)}</p>` : ''}${choice.whyItsHere ? `<p><strong>Why it's here:</strong> ${escapeHtml(choice.whyItsHere)}</p>` : ''}</div>`;
+  }).join('')}</article>`;
 }
 
 function renderReplacements(plan, model) {
@@ -245,12 +265,11 @@ function renderReplacements(plan, model) {
   return `<section class="guide-replacements">${heading(4, 'Reviewed replacements')}<p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${replacements.map(({ substitute, slot }) => `<li>${perkLink(substitute, model)} for slot ${escapeHtml(slot.slot)}${substitute.why ? ` — ${escapeHtml(substitute.why)}` : ''}</li>`).join('')}</ul></section>`;
 }
 
-function renderPlan(plan, model, page) {
-  const label = plan.label || `${provenanceLabel(plan.provenance)}${plan.environment ? ` · ${environmentLabel(plan.environment)}` : ''}`;
+function renderPlan(plan, model, page, showPlanLabel = false) {
+  const label = plan.label || (plan.environment ? `${environmentLabel(plan.environment)} build` : '');
   const slots = plan.slots || [];
-  const choices = slots.flatMap(slot => slot.choices || []);
-  const headingText = label || provenanceLabel(plan.provenance);
-  return `<article class="guide-plan">${heading(3, headingText)}<p class="guide-provenance">${escapeHtml(provenanceLabel(plan.provenance))}</p>${plan.why ? `<p>${escapeHtml(plan.why)}</p>` : ''}<div data-guide-summary class="guide-loadout-summary">${slots.length ? slots.map(slot => renderSlot(slot, model)).join('') : '<p>No required perks</p>'}${plan.flexSlotNote ? `<p class="guide-open-flex"><strong>Open flex:</strong> ${escapeHtml(plan.flexSlotNote)}</p>` : ''}${renderItem(plan.item, plan.buildId || plan.id)}${renderReplacements(plan, model)}</div></article>`;
+  const headingText = showPlanLabel && label ? heading(3, label) : '';
+  return `<article class="guide-plan">${headingText}${plan.why ? `<p>${escapeHtml(plan.why)}</p>` : ''}<div data-guide-summary class="guide-loadout-summary">${slots.length ? slots.map(slot => renderSlot(slot, model)).join('') : '<p>No required perks</p>'}</div>${slots.length ? `<div class="guide-loadout-explanations">${slots.map(slot => renderSlotDetails(slot, model)).join('')}</div>` : ''}${renderItem(plan.item, plan.buildId || plan.id)}${renderReplacements(plan, model)}</article>`;
 }
 
 function collectPerksFromLoadout(loadout, model) {
@@ -287,16 +306,17 @@ function renderLoadout(loadout, model, page) {
   const plans = loadout.plans || [];
   const options = loadout.options || [];
   const item = loadout.item;
-  const summary = plans.length ? plans.map(plan => renderPlan(plan, model, page)).join('') : options.length ? `<section data-guide-summary class="guide-loadout-summary">${heading(3, 'Perk guidance')}<p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${options.map(option => `<li>${perkLink(option, model)}${option.usage ? ` · ${escapeHtml(usageLabel(option.usage))}` : ''}</li>`).join('')}</ul></section>` : '<div data-guide-summary class="guide-loadout-summary"><p>No required perks</p></div>';
-  const optionDetails = options.length && plans.length ? `<section data-guide-summary class="guide-loadout-options">${heading(3, 'Additional perk guidance')}<p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '';
-  return `<section class="guide-loadout">${heading(2, 'Loadout')}${summary}${item && item.status !== 'NONE' ? renderItem(item) : ''}${optionDetails}</section>`;
+  const provenance = plans[0]?.provenance || (options.length ? 'EDITORIAL' : null);
+  const summary = plans.length ? plans.map(plan => renderPlan(plan, model, page, plans.length > 1)).join('') : options.length ? `<section data-guide-summary class="guide-loadout-summary"><ul>${options.map(option => `<li>${perkLink(option, model)}${option.usage ? ` · ${escapeHtml(usageLabel(option.usage))}` : ''}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '<div data-guide-summary class="guide-loadout-summary"><p>No required perks</p></div>';
+  const optionDetails = options.length && plans.length ? `<section data-guide-summary class="guide-loadout-options">${heading(3, 'Additional perk guidance')}<ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '';
+  return `<section class="guide-loadout">${heading(2, 'Recommended Build')}${provenance ? `<p class="guide-provenance">${escapeHtml(provenanceLabel(provenance))}</p>` : ''}${summary}${item && item.status !== 'NONE' ? renderItem(item) : ''}${optionDetails}</section>`;
 }
 
 function renderRoleLoadout(role, model, page) {
   if (!role.loadout) return '<p>No required perks</p>';
   const plans = role.loadout.plans || [];
   const options = role.loadout.options || [];
-  const body = plans.length ? plans.map(plan => renderPlan(plan, model, page)).join('') : options.length ? `<div data-guide-summary class="guide-role-loadout"><p class="guide-provenance">${escapeHtml(provenanceLabel('EDITORIAL'))}</p><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></div>` : '<p>No required perks</p>';
+  const body = plans.length ? plans.map(plan => renderPlan(plan, model, page, plans.length > 1)).join('') : options.length ? `<div data-guide-summary class="guide-role-loadout"><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></div>` : '<p>No required perks</p>';
   return `${body}${role.loadout.item && role.loadout.item.status !== 'NONE' ? renderItem(role.loadout.item) : ''}`;
 }
 
@@ -310,10 +330,18 @@ function renderMechanics(page) {
   return `<section class="guide-mechanics">${heading(2, 'Key mechanics')}${page.mechanics.map(mechanic => `<article id="guide-mechanic-${internalId(mechanic.id)}">${heading(3, titleizeId(mechanic.id))}${mechanic.explanation ? `<p>${escapeHtml(mechanic.explanation)}</p>` : ''}</article>`).join('')}</section>`;
 }
 
+function decisionCell(field, label, value) {
+  if (!value) return '';
+  const content = Array.isArray(value) ? list(value) : `<p>${escapeHtml(value)}</p>`;
+  return `<div class="guide-decision-cell" data-decision-field="${escapeHtml(field)}"><span class="guide-decision-label">${escapeHtml(label)}</span>${content}</div>`;
+}
+
 function renderDecision(row, model, page, label = 'Decision') {
   const situation = row.situation || row.label || label;
-  const priority = label !== 'Decision' && row.situation ? `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(row.situation)}</p>` : '';
-  return `<article class="guide-decision">${heading(3, situation)}${priority}${row.situation && label === 'Decision' ? `<p><strong>Situation:</strong> ${escapeHtml(row.situation)}</p>` : ''}${row.action ? `<p><strong>Action:</strong> ${escapeHtml(row.action)}</p>` : ''}${row.instructions ? list(row.instructions) : ''}${row.why ? `<p><strong>Why:</strong> ${escapeHtml(row.why)}</p>` : ''}${renderEnablers(row.enabledByResolved, model, page)}</article>`;
+  const situationField = label === 'Decision' ? 'situation' : 'priority';
+  const situationLabel = label === 'Decision' ? 'Situation' : label;
+  const enabledBy = renderEnablerLinks(row.enabledByResolved, model, page);
+  return `<article class="guide-decision">${decisionCell(situationField, situationLabel, situation)}${decisionCell('do-this', 'Do this', row.action || row.instructions)}${decisionCell('why', 'Why', row.why)}${enabledBy.length ? `<div class="guide-decision-cell" data-decision-field="enabled-by"><span class="guide-decision-label">Enabled by</span><p>${enabledBy.join(', ')}</p></div>` : ''}</article>`;
 }
 
 function renderGameplay(page, model) {
@@ -341,15 +369,20 @@ function renderGameplay(page, model) {
 }
 
 function renderEnvironments(page) {
-  if (!page?.environments) return '';
-  const entries = [['soloQ', 'Solo Q'], ['coordinatedSwf', 'Coordinated SWF']].filter(([key]) => page.environments[key]?.length);
+  const entries = [['soloQ', 'Solo Q'], ['coordinatedSwf', 'Coordinated SWF']].map(([key, label]) => {
+    const authored = page?.environments?.[key];
+    const fallback = page?.verdict?.[key];
+    const values = authored?.length ? authored : fallback ? [fallback] : [];
+    return [key, label, values];
+  }).filter(([, , values]) => values.length);
   if (!entries.length) return '';
-  return `<section class="guide-environment-advice">${heading(2, 'Solo Q and SWF differences')}${entries.map(([key, label]) => `<article>${heading(3, label)}${paragraphs(page.environments[key])}</article>`).join('')}</section>`;
+  return `<section class="guide-environment-advice">${heading(2, 'Solo Q and SWF differences')}${entries.map(([, label, values]) => `<article>${heading(3, label)}${paragraphs(values)}</article>`).join('')}</section>`;
 }
 
-function renderOptionalList(page, key, label) {
-  if (!page?.[key]?.length) return '';
-  return `<section class="guide-${key}">${heading(2, label)}${list(page[key])}</section>`;
+function renderOptionalList(page, key, label, excluded = []) {
+  const values = (page?.[key] || []).filter(value => !excluded.includes(value));
+  if (!values.length) return '';
+  return `<section class="guide-${key}">${heading(2, label)}${list(values)}</section>`;
 }
 
 function renderOptionalValue(page, key, label) {
@@ -389,34 +422,64 @@ function renderTeam(page, model) {
   return `<section class="guide-team">${heading(2, 'Roles')}<p>No single four-perk loadout is implied; assign the role that covers the team's current gap.</p>${roles.map(role => `<article id="guide-role-${internalId(role.id)}">${heading(3, role.title || titleizeId(role.id))}${role.assignment ? `<p>${escapeHtml(role.assignment)}</p>` : ''}${renderRoleLoadout(role, model, page)}</article>`).join('')}${teamBuilds.length ? `<section>${heading(2, 'Team framework')}${teamBuilds.map(build => `<article>${build.teamComposition ? list(build.teamComposition) : ''}</article>`).join('')}</section>` : ''}</section>`;
 }
 
-function renderResearchValue(value) {
-  if (value === undefined || value === null) return '';
-  return `<pre>${escapeHtml(JSON.stringify(value, null, 2))}</pre>`;
+function renderRankingEvaluation(label, evaluation) {
+  if (!evaluation) return '';
+  const tier = evaluation.tier ? `${evaluation.tier} tier` : rankingLabel(evaluation.rankingStatus);
+  const power = evaluation.power === undefined || evaluation.power === null ? '' : ` · Power ${escapeHtml(evaluation.power)}`;
+  const confidence = evaluation.confidence ? `<small>Confidence: ${escapeHtml(humanize(evaluation.confidence))}</small>` : '';
+  return `<div class="guide-ranking-card"><span>${escapeHtml(label)}</span><strong>${escapeHtml(tier)}${power}</strong>${confidence}</div>`;
+}
+
+function renderResearchList(title, values) {
+  const filtered = (values || []).filter(value => value !== undefined && value !== null && String(value).trim() !== '');
+  return filtered.length ? `<section class="guide-research-section">${heading(3, title)}${list(filtered)}</section>` : '';
+}
+
+function renderResearchFacts(snapshot) {
+  const facts = [
+    ['Meta Stability', snapshot.metaStability === undefined || snapshot.metaStability === null ? '' : `${snapshot.metaStability} / 100`],
+    ['Trend', snapshot.trend ? humanize(snapshot.trend) : ''],
+    ['Ranking Status', snapshot.currentStatus ? humanize(snapshot.currentStatus) : ''],
+    ['Prevalence', snapshot.prevalence],
+    ['Patch volatility', snapshot.patchVolatility ? humanize(snapshot.patchVolatility) : ''],
+    ['Research confidence', snapshot.confidence?.powerConfidence ? humanize(snapshot.confidence.powerConfidence) : '']
+  ].filter(([, value]) => value !== undefined && value !== null && String(value).trim() !== '');
+  if (!facts.length) return '';
+  return `<section class="guide-research-section"><dl class="guide-research-facts">${facts.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl></section>`;
+}
+
+function renderRankingFactors(snapshot) {
+  const factors = Object.entries(snapshot.strategicDiagnostics || {});
+  if (!factors.length) return '';
+  return `<section class="guide-research-section">${heading(3, 'Ranking factors')}<dl class="guide-ranking-factors">${factors.map(([key, value]) => `<div><dt>${escapeHtml(humanize(key))}</dt><dd>${typeof value === 'number' ? `${value} / 5` : escapeHtml(humanize(value))}</dd></div>`).join('')}</dl></section>`;
 }
 
 function renderResearch(model, parts) {
   const { canonical, research, snapshot } = parts;
   const article = research.article || model.articleMarkdown || '';
-  const sections = [
-    ['Identity', { strategy: research.strategy || canonical.strategy, manifest: research.manifest }],
-    ['Patch baseline and binding', { patchBaseline: snapshot.patchBaseline, researchDate: snapshot.researchDate, researchRevision: snapshot.researchRevision, snapshotId: snapshot.snapshotId, strategyId: snapshot.strategyId }],
-    ['Ranking status, Power, and Index', { currentStatus: snapshot.currentStatus, solo: snapshot.solo, swf: snapshot.swf }],
-    ['Trends and prevalence', { trend: snapshot.trend, prevalence: snapshot.prevalence, materialChange: snapshot.materialChange, changeSummary: snapshot.changeSummary }],
-    ['Confidence and evidence', { confidence: snapshot.confidence, evidenceNotes: snapshot.evidenceNotes, evidenceRefs: snapshot.evidenceRefs }],
-    ['Stability components', { metaStability: snapshot.metaStability, stabilityLabel: snapshot.stabilityLabel, stabilityComponents: snapshot.stabilityComponents }],
-    ['Diagnostics and dependencies', { strategicDiagnostics: snapshot.strategicDiagnostics, dependencyTypes: snapshot.dependencyTypes }],
-    ['Volatility, flags, and Recheck conditions', { patchVolatility: snapshot.patchVolatility, researchFlags: snapshot.researchFlags, recheckConditions: snapshot.recheckConditions }],
-    ['Ecosystems', { perkEcosystem: snapshot.perkEcosystem, itemEcosystem: snapshot.itemEcosystem }],
-    ['Builds', { buildImplementations: snapshot.buildImplementations, canonicalBuilds: canonical.builds, teamBuilds: canonical.teamBuilds }],
-    ['Relationships', canonical.relationships],
-    ['Source receipts', research.sourceReceipts || research.sources]
+  const evaluations = canonical.evaluations || {};
+  const why = [
+    snapshot.analysis?.whyPlayersRunIt,
+    snapshot.analysis?.distinguishingFeature,
+    ...(snapshot.buildImplementations || []).flatMap(build => build.strengths || [])
   ];
-  const structured = sections.filter(([, value]) => value && Object.values(value).some(item => item !== undefined));
-  return `<details data-guide-research id="guide-research" class="guide-research"><summary aria-controls="guide-research-content">How We Rated This</summary><div id="guide-research-content">${structured.map(([label, value]) => `<section class="guide-research-section">${heading(3, label)}${renderResearchValue(value)}</section>`).join('')}<section class="guide-research-section">${heading(3, 'Complete canonical research record')}${renderResearchValue(research)}</section>${article ? `<section class="guide-original-article">${heading(3, 'Original Research Article')}<div class="guide-article-body">${renderArticleMarkdown(article, { headingOffset: 1 })}</div></section>` : ''}</div></details>`;
+  const holdsBack = [
+    ...(snapshot.counters || []),
+    ...(snapshot.buildImplementations || []).flatMap(build => build.weaknesses || [])
+  ];
+  const revision = snapshot.patchBaseline && snapshot.researchRevision !== undefined
+    ? `${snapshot.patchBaseline}-r${snapshot.researchRevision}`
+    : '';
+  const evaluatedFor = snapshot.patchBaseline || revision || snapshot.researchDate
+    ? `<p class="guide-evaluated-for"><strong>Evaluated for</strong>${snapshot.patchBaseline ? ` · Patch ${escapeHtml(snapshot.patchBaseline)}` : ''}${revision ? ` · Research revision ${escapeHtml(revision)}` : ''}${snapshot.researchDate ? ` · Reviewed ${escapeHtml(snapshot.researchDate)}` : ''}</p>`
+    : '';
+  const ranking = `<details data-guide-research id="guide-research" class="guide-research"><summary aria-controls="guide-research-content">How We Rated This</summary><div id="guide-research-content"><section class="guide-ranking-summary"><div class="guide-ranking-grid">${renderRankingEvaluation('Solo Q', evaluations.soloQ)}${renderRankingEvaluation('Coordinated SWF', evaluations.coordinatedSwf)}</div>${renderResearchFacts(snapshot)}</section>${renderResearchList('Why it scores well', why)}${renderResearchList('What holds it back', holdsBack)}${renderRankingFactors(snapshot)}${evaluatedFor}</div></details>`;
+  const original = article ? `<details data-guide-original-article id="guide-original-article" class="guide-original-article"><summary aria-controls="guide-original-article-content">Original Research Article</summary><div id="guide-original-article-content" class="guide-article-body">${renderArticleMarkdown(article, { headingOffset: 1 })}</div></details>` : '';
+  return `${ranking}${original}`;
 }
 
 function renderStandard(page, model) {
-  return `${renderLoadout(page.loadout || { plans: [], options: [] }, model, page)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderOptionalValue(page, 'fit', 'Best fit')}${renderRelated(page)}`;
+  return `${renderLoadout(page.loadout || { plans: [], options: [] }, model, page)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses', [page.verdict?.mainWeakness])}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderOptionalValue(page, 'fit', 'Best fit')}${renderRelated(page)}`;
 }
 
 export function renderGuideBody(model) {
@@ -427,7 +490,7 @@ export function renderGuideBody(model) {
   const primary = page
     ? pageKind === 'FAMILY' ? renderFamily(page)
       : pageKind === 'LEGACY' ? renderLegacy(page, model)
-        : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses')}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderRelated(page)}`
+        : pageKind === 'TEAM' ? `${renderTeam(page, model)}${renderMechanics(page)}${renderGameplay(page, model)}${renderPagePerkDetails(page, model)}${renderEnvironments(page)}${renderOptionalList(page, 'strengths', 'Strengths')}${renderOptionalList(page, 'weaknesses', 'Weaknesses', [page.verdict?.mainWeakness])}${renderOptionalList(page, 'killerCounterplay', 'Killer counterplay')}${renderOptionalList(page, 'commonMistakes', 'Common mistakes')}${renderOptionalValue(page, 'difficulty', 'Difficulty')}${renderRelated(page)}`
           : renderStandard(page, model)
     : `<p>This page contains research but no reviewed player-facing guide.</p>`;
   return `<div data-guide-primary>${renderHeroVerdict(model, parts)}${primary}</div>${renderResearch(model, parts)}`;

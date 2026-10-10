@@ -75,7 +75,7 @@ test('long names and competing choices remain present in the compact summary', (
 test('native disclosures are closed, meaningful, and target content', () => {
   const html = renderGuideBody(modelFor('X01'));
   const renderedDetails = details(html);
-  assert.equal(renderedDetails.length, 2);
+  assert.equal(renderedDetails.length, 3);
 
   for (const disclosure of renderedDetails) {
     assert.doesNotMatch(disclosure.attributes, /\bopen(?:\s|=|>)/);

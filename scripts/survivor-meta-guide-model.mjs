@@ -116,6 +116,7 @@ function joinPerk(context, perkId, cache) {
     name: mechanics.name,
     canonicalName: mechanics.name,
     alternateName: mechanics.alternateName ?? null,
+    plainEnglishSummary: clone(mechanics.plainEnglishSummary),
     currentEffect: clone(mechanics.currentEffect),
     activation: clone(mechanics.activation),
     owner: mechanics.sourceCharacter ?? mechanics.source ?? null,

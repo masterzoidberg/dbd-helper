@@ -146,13 +146,13 @@ for (const reviewStatus of ['DRAFT', 'REVIEWED']) {
     const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'survivor-meta-receipt-preview-'));
     t.after(() => fs.rmSync(outside, { recursive: true, force: true }));
     buildSurvivorMetaSite({ rootDir: tempRoot, release, preview: true, outputDir: outside });
-    assert.ok(fs.readFileSync(path.join(outside, 'survivor-meta/flashbang-save/index.html'), 'utf8').includes(note));
+    assert.ok(!fs.readFileSync(path.join(outside, 'survivor-meta/flashbang-save/index.html'), 'utf8').includes(note), 'preview HTML must exclude internal receipt notes');
     assert.deepEqual(treeBytes(path.join(tempRoot, 'site')), before);
     guide.reviewStatus = 'PUBLISHED';
     guide.reviewedDate = '2026-10-10';
     writeGuide(tempRoot, 'P02', guide);
     buildSurvivorMetaSite({ rootDir: tempRoot, release });
-    assert.ok(fs.readFileSync(page, 'utf8').includes(note), 'published receipts remain visible');
+    assert.ok(!fs.readFileSync(page, 'utf8').includes(note), 'published HTML must exclude internal receipt notes');
   });
 }
 
