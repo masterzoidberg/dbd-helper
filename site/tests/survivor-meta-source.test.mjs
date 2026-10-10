@@ -81,9 +81,9 @@ test('Pages workflow verifies Survivor Meta before deployment and service worker
   assert.match(workflow, /python3 scripts\/import-survivor-meta\.py/);
   assert.match(workflow, /node scripts\/build-survivor-meta\.mjs/);
   assert.match(workflow, /python3 -m unittest discover -s scripts\/tests/);
-  assert.match(workflow, /git diff --exit-code/);
+  assert.match(workflow, /node scripts\/verify-generated-artifacts\.mjs/);
   assert.match(workflow, /survivor-meta\//);
-  assert.match(sw, /dbd-field-guide-v6/);
+  assert.match(sw, /dbd-field-guide-v7/);
   assert.match(sw, /assets\/data-survivor-meta\.js/);
   assert.match(sw, /assets\/survivor-meta\.js/);
   assert.match(sw, /survivor-meta\//);

@@ -34,6 +34,9 @@ jobs:
       - name: Build Survivor Meta site
         run: node scripts/build-survivor-meta.mjs
 
+      - name: Validate Survivor guides
+        run: node scripts/survivor-meta-guide-validation.mjs
+
       - name: Test Survivor Meta importer
         run: python3 -m unittest discover -s scripts/tests -p 'test_*.py' -v
 
@@ -41,7 +44,7 @@ jobs:
         run: node --test site/tests/*.test.mjs
 
       - name: Verify committed Survivor Meta artifacts are deterministic
-        run: git diff --exit-code -- content/survivor/meta/10.2.0-r1 site/assets/data-survivor-meta.js site/survivor-meta
+        run: node scripts/verify-generated-artifacts.mjs
 
       - name: Upload site
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -57,6 +60,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout release sources for smoke
+        uses: actions/checkout@v4
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
@@ -103,10 +109,6 @@ jobs:
           check "survivor-meta/general-chase-looping/"
           grep -q "General Chase / Looping" /tmp/dbd-smoke
           grep -q "meta-article-body" /tmp/dbd-smoke
-          check "survivor-meta/rescue-and-reset-support-family/"
-          grep -q "PARENT STRATEGY FAMILY" /tmp/dbd-smoke
-          check "survivor-meta/luck-based-self-unhook/"
-          grep -q "LEGACY" /tmp/dbd-smoke
 
           check "assets/app-core.js"
           check "assets/mobile-filter.css"
@@ -120,3 +122,8 @@ jobs:
           check "manifest.webmanifest"
           python3 -m json.tool /tmp/dbd-smoke >/dev/null
           check "sw.js"
+
+      - name: Smoke test published Survivor guides
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/smoke-survivor-meta.mjs --base-url "$SITE_URL"
