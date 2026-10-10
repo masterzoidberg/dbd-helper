@@ -11,14 +11,14 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | ID | Canonical name | Kind | State | Review evidence | Commit reference |
 |---|---|---|---|---|---|
 | C01 | General Chase / Looping | STANDARD | DRAFT | [Content/source review](#c01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
-| C02 | Exhaustion Mobility Chase | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | Task 13 commit |
+| C02 | Exhaustion Mobility Chase | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | C03 | Vault / Window Specialist | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C04 | Pallet / Resource Specialist | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C05 | Fragile-Pallet Restoration | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C06 | Chase Information / Routing | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C07 | Stealth / Chase Avoidance | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C08 | Chase Reset / Disappearance | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C09 | Anti-Tunnel Package | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | Task 13 commit |
+| C09 | Anti-Tunnel Package | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | C10 | Anti-Slug / Self-Recovery Package | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C11 | Hook-State Transfer | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C12 | Deterministic Self-Unhook | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -31,13 +31,13 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | G04 | Cooperative Repair / Gen Duo | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G05 | Manual Skill-Check Generator | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | DRAFT | [Content/source review](#g06-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
-| G07 | Boon: Steadfast Repair Zone | STANDARD | REVIEWED | Task 13 editorial/source review; Provisional evaluation preserved; 390×844 and 1440×900 preview checks recorded. | Task 13 commit |
+| G07 | Boon: Steadfast Repair Zone | STANDARD | REVIEWED | Task 13 editorial/source review; Provisional evaluation preserved; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | G08 | Road Life Repair-to-Self-Heal | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G10 | Fruits of Your Labor Objective-to-Reset Hybrid | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A01 | Hook Rescue / Post-Unhook Reset | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A02 | Anti-Camp / Hook-Timer Control | STANDARD | NOT_STARTED | No record; review not started. | — |
-| A03 | Dedicated Healer / Triage | STANDARD | REVIEWED | Task 13 editorial/source review; ROLE_GUIDE assignment/handoff/abort checks and 390×844/1440×900 preview checks recorded. | Task 13 commit |
+| A03 | Dedicated Healer / Triage | STANDARD | REVIEWED | Task 13 editorial/source review; ROLE_GUIDE assignment/handoff/abort checks and 390×844/1440×900 preview checks recorded. | `d8417e1`, `e866045` |
 | A04 | Hook-State-Scaled Fast Healing | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A05 | Protection-Hit / Tank | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -310,4 +310,4 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Per-record editorial evidence, reviewed by Averroes on 2026-10-09 against the exact strategy, snapshot, frozen article and perk receipts: C02 preserves five mutually exclusive Exhaustion triggers plus optional Vigil support, and records route commitment/reassessment and stop conditions without adding an item or substitute; C09 is a portable two-slot anti-tunnel/recovery module with unspecified slots intentionally open, and its protection/reset guidance releases on Killer denial; A03 is a ROLE_GUIDE whose Empathy, slot-2 speed choices, optional Med-Kit and We'll Make It cues map to triage, handoff and abort decisions; G07 retains the canonical Provisional evaluation, limits the Boon plan to local setup/maintenance/relocation value, explicitly avoids first-setup/post-snuff speed claims, and omits unsupported matchups/substitutes. Each record passed the preview usefulness check for compact choices or role/zone actions at both viewports.
 - First-use perk index classifications: `balanced-landing`, `overcome`, `vigil`, `off-the-record`, `resurgence`, `empathy`, `empathic-connection`, `botany-knowledge`, `boon-steadfast` and `boon-illumination` were absent from the shared index before this wave. Each was initialized at mechanics revision 1 only after its exact canonical `#/mechanics` receipt and fingerprint were checked; no prior revision or change classification existed to preserve.
 - No renderer/schema/source/canonical ZIP/generated production output/publication/deployment changes. The seven prototype guides remain DRAFT; editorial content is still publication-gated.
-- Initial task review: Gibbs — four Important findings (G07 activation boundary, C02 Vigil purpose, A03 slot cue, and insufficient ledger evidence) plus one Minor canonical-duration wording issue. Fix round is recorded in the follow-up commit; scoped re-review pending.
+- Initial task review: Gibbs — four Important findings (G07 activation boundary, C02 Vigil purpose, A03 slot cue, and insufficient ledger evidence) plus one Minor canonical-duration wording issue. Fix round: `e866045` (`fix: address Task 13 editorial review findings`) after the content commit `d8417e1` (`content: review first Survivor guide population wave`). Scoped re-review: Franklin — all four Important findings addressed, no new Critical/Important/Minor findings. The Minor canonical-duration wording issue was corrected in the fix round.
