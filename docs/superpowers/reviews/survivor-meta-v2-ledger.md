@@ -244,3 +244,9 @@ Scoped re-review report: `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/ta
 6. X01 hides the snapshot's explicit allowance for another context-appropriate Solo flex in the fourth-slot choice.
 
 Minor review notes: `mainWeakness` is omitted; frozen article front matter is exposed and P00 table formatting is flattened; 200% zoom/contrast and owner comprehension observations remain unrecorded. No owner approval was obtained. Tasks 9–12 remain blocked, all seven guides remain DRAFT, and no design-contract change or production implementation is authorized by this checkpoint.
+
+### Task 8 — approval and release of the mockup gate
+
+The second bounded fix round moved C01/G02 queue facts and P00 child queue/status facts into the first mobile interaction. Scoped re-review report `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-re-review-4.md` — **APPROVED**: zero Critical/Important findings, live mockup harness exit 0 with 0 failed checks, seven real guides loaded, canonical links and exceptional shapes verified, and desktop/mobile overflow/console/disclosure checks green. The report records only Minor presentation and screenshot-framing observations.
+
+Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No design-contract change is required; the renderer must retain the demonstrated compact MODULE, FAMILY, LEGACY, and TEAM equivalents. Tasks 9–12 are authorized to begin. The seven prototype guides remain DRAFT, no production HTML or publication was performed at this gate, and root canonical ZIPs plus frozen Stage 3A/3B inputs remain unchanged.
