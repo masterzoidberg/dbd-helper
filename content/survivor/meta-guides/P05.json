@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "P05",
+  "snapshotId": "P05@10.2.0-r1",
+  "perkReviews": [],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use a still-standing pallet only when the pickup or carry will pass through its stun position and you are already close enough to time it.",
+    "verdict": {
+      "recommendation": "Confirm the pallet, carry path and your timing before leaving an objective; this is a narrow itemless opportunity.",
+      "soloQ": "Take visible nearby pallet-save chances, not a map-wide chase for geometry you cannot control.",
+      "coordinatedSwf": "Call the usable pallet and saver position so the team does not duplicate the attempt or spend the resource early.",
+      "mainWeakness": "The Killer can avoid the pallet, change pickup position or use a route that never offers a stun."
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Check that the pallet still stands and that the down or carry path actually intersects it; no perk or item is required by this record."],
+      "rows": [
+        { "id": "prepare-standing-pallet", "situation": "A teammate goes down near a standing pallet and you can reach its safe side before the pickup or carry passes.", "action": "Position to see the Killer's actual movement through the pallet rather than dropping it as soon as the teammate falls.", "why": "The resource only saves if the stun intersects the pickup or carry window." },
+        { "id": "stun-on-crossing", "situation": "The Killer is committed to carrying the teammate through the usable pallet.", "action": "Drop the pallet when its stun can interrupt the carry, then leave room for the freed teammate to escape.", "why": "A well-timed standing-pallet stun can deny a hook without a carried item, but consumes the pallet." },
+        { "id": "release-missed-window", "situation": "The pallet was already spent, the Killer avoids it, or the carry has moved beyond reach.", "action": "Do not chase the carry for another pallet; return to repair or plan a hook rescue.", "why": "Once the geometry is gone, this save method has no remaining leverage at that spot." }
+      ],
+      "abortWhen": ["The Killer does not carry through a standing pallet or you cannot reach its stun position in time.", "The save would require wasting a useful pallet without a realistic carry interruption."]
+    },
+    "weaknesses": ["Exact geometry and timing make activation unreliable; using the pallet also spends a chase resource."],
+    "commonMistakes": ["Dropping the pallet at the down rather than at the Killer's carry crossing.", "Waiting beside a spent pallet or chasing after the carry has left the tile."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "P05#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "P05@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "P05@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "P05#How It Works" },
+    { "kind": "PUBLICATION", "ref": "P05#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "P05#Common Mistakes" }
+  ]
+}

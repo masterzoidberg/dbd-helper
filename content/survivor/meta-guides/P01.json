@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "P01",
+  "snapshotId": "P01@10.2.0-r1",
+  "perkReviews": [{ "perkId": "background-player", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Carry a flashlight and pre-position for a clear pickup blind; abandon the save when the Killer denies the angle or the pickup window passes.",
+    "verdict": {
+      "recommendation": "Shadow only a nearby chase with a plausible pickup and exit; do not turn every chase into lost generator time.",
+      "soloQ": "Use a save you can read from your own position; avoid long speculative travel after a down.",
+      "coordinatedSwf": "Call who is covering the pickup so one saver approaches while others maintain objectives.",
+      "mainWeakness": "Walls, changed facing, delayed pickups and slugging can deny the blind while the saver spends time and flashlight charges."
+    },
+    "loadout": {
+      "options": [{ "perkId": "background-player", "usage": "SUPPORT", "whyItsHere": "A pickup of another Survivor opens a 10-second run-start window for a 50% Haste burst lasting 5 seconds if not Exhausted; it helps reach an angle but does not supply the flashlight or guarantee a blind." }],
+      "item": { "id": "flashlight", "status": "REQUIRED", "name": "Flashlight", "why": "The carried item supplies the line-of-sight blind; without it this specific save method is unavailable." }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Check flashlight charges, a reachable sightline and an exit before leaving repair to follow a chase."],
+      "rows": [
+        { "id": "stage-near-pickup", "situation": "A nearby chase may end where you can see the Killer's pickup position.", "action": "Stay out of the Killer's immediate path and move to a usable blind angle without exposing yourself or abandoning a distant objective.", "why": "Pickup timing cannot compensate for a blocked sightline or a saver who arrives too late." },
+        { "id": "use-pickup-burst", "situation": "The Killer begins picking up another Survivor and you are not Exhausted.", "action": "Start running inside the perk's 10-second activation window only if its burst can reach a real flashlight angle.", "why": "Background Player moves the saver; it neither blinds the Killer nor creates a valid angle.", "enabledBy": ["perk:background-player"] },
+        { "id": "attempt-blind", "situation": "You have a charged flashlight, a clear line of sight and the Killer has committed to a pickup or carry window.", "action": "Time the beam for the actual save window and leave space for the freed teammate to escape. If the Killer faces a wall or changes facing, do not spend charges at the old angle.", "why": "The payoff is preventing a hook, not merely shining the item.", "enabledBy": ["item:flashlight"] },
+        { "id": "leave-denied-window", "situation": "The Killer delays pickup, leaves the teammate down, blocks the sightline or the save window has passed.", "action": "Break off and return to repair or plan the hook/recovery response instead of hovering for a second forced blind.", "why": "Continued shadowing costs team tempo while the Killer controls the interaction." }
+      ],
+      "abortWhen": ["No flashlight charges or reachable sightline remain.", "The Killer denies or completes the pickup before you can attempt a meaningful blind."]
+    },
+    "weaknesses": ["Requires a carried flashlight, charges, line of sight and precise positioning; the Killer can face cover or refuse the pickup."],
+    "commonMistakes": ["Following a chase across the map for a save with no viable angle.", "Using the movement burst as if it guarantees a flashlight blind."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "P01#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "P01@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "P01@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "P01@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "P01#How It Works" },
+    { "kind": "PUBLICATION", "ref": "P01#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "P01#Common Mistakes" },
+    { "kind": "PERK", "ref": "background-player#/mechanics" }
+  ]
+}

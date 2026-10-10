@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "P04",
+  "snapshotId": "P04@10.2.0-r1",
+  "perkReviews": [{ "perkId": "breakout", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Escort an active carry only when extra wiggle pressure or a short bodyblock can turn a marginal route into an escape; disengage if the Killer drops or turns on you.",
+    "verdict": {
+      "recommendation": "Assess carry distance and nearby hooks before entering the Killer's reach.",
+      "soloQ": "Avoid speculative escorts without a readable hook route; the proximity cost is severe when the team cannot coordinate.",
+      "coordinatedSwf": "Call one escort and the expected hook route so other players maintain objective pressure.",
+      "mainWeakness": "Staying close to the carrying Killer exposes the escort to a hit or down, and the Killer can drop the teammate."
+    },
+    "loadout": { "options": [{ "perkId": "breakout", "usage": "CORE", "whyItsHere": "While within 5 m of the Killer carrying another Survivor, it grants you 6/8/10% Haste and makes that Survivor wiggle 25% faster; only one Breakout effect applies to the carried Survivor." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before closing distance, judge whether the carry is close enough to a hook that escorting will only donate your health state."],
+      "rows": [
+        { "id": "escort-marginal-carry", "situation": "A teammate is being carried along a marginal route and you can remain near without being immediately downed.", "action": "Move within Breakout's 5 m range for the useful part of the carry, then peel away when the carried player escapes or the hook outcome is decided.", "why": "The carried teammate wiggles faster only while you are close to the carrying Killer; proximity is the benefit and the risk.", "enabledBy": ["perk:breakout"] },
+        { "id": "block-only-for-result", "situation": "One brief obstruction of the carry route could prevent the hook.", "action": "Use your position only if the delay can change the outcome, and retain a route away after contact.", "why": "A bodyblock with no escape payoff trades your health for nothing." },
+        { "id": "disengage-on-drop", "situation": "The Killer drops the Survivor, turns to hit you or reaches a hook your escort cannot contest.", "action": "Leave the Killer's immediate range and reassess recovery or rescue instead of following a lost carry.", "why": "The active-carry condition and escape pressure disappear once the carry ends." }
+      ],
+      "abortWhen": ["The Killer drops the teammate or switches onto the escort.", "The route is too short for extra wiggle pressure to matter or you cannot leave safely."]
+    },
+    "weaknesses": ["High exposure near the carrying Killer; a dropped Survivor or short route cancels the expected payoff."],
+    "commonMistakes": ["Entering close range before confirming the carry can be contested.", "Continuing to escort after a drop or accepting a second down for no route gain."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "P04#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "P04@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "P04@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "P04#How It Works" },
+    { "kind": "PUBLICATION", "ref": "P04#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "P04#Common Mistakes" },
+    { "kind": "PERK", "ref": "breakout#/mechanics" }
+  ]
+}

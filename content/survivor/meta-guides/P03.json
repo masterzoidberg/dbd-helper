@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "P03",
+  "snapshotId": "P03@10.2.0-r1",
+  "perkReviews": [{ "perkId": "saboteur", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Deny the hook the Killer is actually carrying toward, early enough to force a drop or longer route; a broken hook alone is not a save.",
+    "verdict": {
+      "recommendation": "Read the likely hook and alternate route before spending sabotage time or charges.",
+      "soloQ": "Attempt only a nearby, readable carry route; do not assume the carried teammate will escape simply because one hook breaks.",
+      "coordinatedSwf": "Call the target hook and whether a second player can cover the route; keep other teammates on objectives.",
+      "mainWeakness": "The Killer can choose a different hook, hit the saboteur or leave the Survivor down."
+    },
+    "loadout": { "options": [{ "perkId": "saboteur", "usage": "CORE", "whyItsHere": "During another Survivor's carry, it reveals hooks within 56 m of the original pickup location and permits faster toolboxless sabotage; using that ability starts a 70/65/60-second cooldown." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Use pickup position and nearby hooks to decide whether denying one hook can actually change the carry; ordinary sabotage is also possible with a suitable Toolbox, but none is assumed here."],
+      "rows": [
+        { "id": "read-hooks", "situation": "The Killer picks up a teammate and the carry route is still undecided.", "action": "Read the revealed hook positions around the original pickup and identify the hook the Killer can reach, including a plausible alternate.", "why": "Saboteur shows normal hooks in white and Scourge Hooks in yellow during the carry; the auras are information, not a guarantee of route choice.", "enabledBy": ["perk:saboteur"] },
+        { "id": "deny-intended-hook", "situation": "You are ahead of the carry at its intended hook and can sabotage before the Killer arrives.", "action": "Break that hook without a Toolbox only if the changed route can matter and you have a safe exit after the action.", "why": "The toolboxless action uses Saboteur's speed benefit and starts its cooldown; a late break or nearby alternate hook wastes the commitment.", "enabledBy": ["perk:saboteur"] },
+        { "id": "leave-changed-route", "situation": "The Killer takes another hook, hits you, drops the carried player or reaches the hook first.", "action": "Stop chasing the old hook. Avoid a second down and switch to the next objective, recovery or rescue decision.", "why": "Hook denial works through route pressure, not by forcing the Killer to keep carrying through a denied path." }
+      ],
+      "abortWhen": ["The Killer has an uncontested alternate hook or reaches the target before sabotage completes.", "The Killer turns to hit the saboteur or drops the carried Survivor."]
+    },
+    "weaknesses": ["The saboteur must be ahead of a moving carry and remains vulnerable near the Killer; one removed hook may not change the result."],
+    "commonMistakes": ["Breaking a convenient hook instead of the one on the active carry route.", "Remaining near the Killer after the carry route changes or the teammate is dropped."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "P03#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "P03@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "P03@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "P03@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "P03#How It Works" },
+    { "kind": "PUBLICATION", "ref": "P03#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "P03#Common Mistakes" },
+    { "kind": "PERK", "ref": "saboteur#/mechanics" }
+  ]
+}
