@@ -260,3 +260,14 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Scoped re-review: Hooke — all three findings ADDRESSED, no new Critical/Important breakage; review package `review-6817089..1a48bfb.diff`.
 - Controller/implementer verification: focused model tests 7/7; relevant combined tests 71/71; full Node suite 135/135; syntax, validation (7 DRAFT/50 missing/zero diagnostics), generated-artifact, and diff checks clean.
 - Task 9: complete (commits `0511723..1a48bfb`, review clean after one fix round). No renderer, guide JSON, canonical source, generated output, publication, or deployment changes.
+
+### Task 10 — reusable renderer and research appendix
+
+- BASE: `5195df0`.
+- Implementer: Dalton; initial commit `127db4a` (`feat: render reusable Survivor player guides and research appendix`).
+- Task review: Heisenberg — six Important findings: dropped verdict/fit fields, wrong SEQUENCE/ROLE_GUIDE cue fields, omitted exceptional optional sections, forbidden `Established`/ranking language in primary copy, hero outside `data-guide-primary`, and missing TEAM option-only summary landmark.
+- Fix round 1/5: `dd3e72d` (`fix: close Task 10 renderer review findings`) added RED→GREEN regressions and addressed all six findings.
+- Scoped re-review: Bohr — all six findings ADDRESSED, no new Critical/Important breakage; review package `review-127db4a..dd3e72d.diff`.
+- Controller verification: full Node suite 145/145; Python suite 4/4; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker clean; diff check clean.
+- Task 10: complete (commits `5195df0..dd3e72d`, review clean after one fix round). No responsive CSS, publication/generation, guide-status, canonical-source, generated-output, or deployment changes.
+- Task 10: minor (deferred): item add-ons and alternate perk names are not rendered yet; renderer tests have narrower direct coverage for those fields. Carry to later renderer/integration review without blocking this task.
