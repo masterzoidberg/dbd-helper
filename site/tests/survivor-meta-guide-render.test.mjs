@@ -234,6 +234,23 @@ test('family and legacy related links plus TEAM optional sections use shared ren
   assert.match(html, /Related strategies/);
 });
 
+test('shared guide route links resolve within the deployment base and preserve query', () => {
+  const model = modelFor('P00');
+  const html = renderGuideBody({
+    ...model,
+    page: {
+      ...model.page,
+      related: [{ destination: { route: '/survivor-meta/related-approach?mode=compare', name: 'Related approach' } }]
+    }
+  });
+  const approachHref = html.match(/<a href="([^"]+)">Open this approach<\/a>/)?.[1];
+  const relatedHref = html.match(/<a href="([^"]+)">Related approach<\/a>/)?.[1];
+  const base = 'https://example.test/dbd-helper/';
+  assert.equal(new URL(approachHref, base).pathname, `/dbd-helper${model.page.comparisons[0].destination.route}`);
+  assert.equal(relatedHref, 'survivor-meta/related-approach?mode=compare');
+  assert.equal(new URL(relatedHref, base).href, 'https://example.test/dbd-helper/survivor-meta/related-approach?mode=compare');
+});
+
 test('TEAM role option-only loadouts emit compact summaries', () => {
   const html = renderGuideBody(modelFor('X02'));
   const roleStart = html.indexOf('<article id="guide-role-objectives"');

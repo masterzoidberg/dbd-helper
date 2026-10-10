@@ -75,8 +75,8 @@ test('missing, unpublished, choice-less, and article-less guides fail with exact
 
 test('family, Legacy, and TEAM landmark text cannot mask broken navigation or missing roles', async t => {
   const cases = [
-    ['survivor-meta/pickup-interception-save-family/', html => html.replace(/<a href="\/survivor-meta\/[^"]+">Open this approach<\/a>/g, '<span>Open this approach</span>')],
-    ['survivor-meta/rescue-and-reset-support-family/', html => html.replace(/<a href="\/survivor-meta\/[^"]+">Open this approach<\/a>/g, '<span>Open this approach</span>')],
+    ['survivor-meta/pickup-interception-save-family/', html => html.replace(/<a href="\/?survivor-meta\/[^"]+">Open this approach<\/a>/g, '<span>Open this approach</span>')],
+    ['survivor-meta/rescue-and-reset-support-family/', html => html.replace(/<a href="\/?survivor-meta\/[^"]+">Open this approach<\/a>/g, '<span>Open this approach</span>')],
     ['survivor-meta/luck-based-self-unhook/', html => html.replace(/(<h2>Current successors<\/h2><ul><li>)<a href="[^"]+">([^<]+)<\/a>/, '$1<span>$2</span>')],
     ['survivor-meta/classic-stake-outhyperfocus-engine/', html => html.replace(/(<h2>Current successors<\/h2><ul><li>)<a href="[^"]+">([^<]+)<\/a>/, '$1<span>$2</span>')],
     ['survivor-meta/coordinated-swf-flex-generalist/', html => html.replace(/id="guide-role-[^"]+"/g, 'id="missing-role"')],
@@ -93,6 +93,48 @@ test('family, Legacy, and TEAM landmark text cannot mask broken navigation or mi
       assert.ok(result.failures.some(failure => failure.url === `https://example.test/dbd-helper/${route}`), route);
     });
   }
+});
+
+test('canonical guide navigation rejects wrong targets, root-absolute routes, and missing TEAM links', async t => {
+  const wrongRoute = manifest.find(route => route.strategyId === 'X01').slug;
+  const familyGuide = guides.get('P00');
+  const expectedFamilyRoute = manifest.find(route => route.strategyId === familyGuide.page.comparisons[0].strategyId).slug;
+  const cases = [
+    ['family comparison targets its own approach', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a href=")[^"]+(">Open this approach<\/a>)/, `$1${wrongRoute}$2`)],
+    ['data-href cannot mask a wrong family target', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a )href="[^"]+"(>Open this approach<\/a>)/, `$1data-href="${expectedFamilyRoute.slice(1)}" href="${wrongRoute}"$2`)],
+    ['Legacy successor targets its own strategy', 'survivor-meta/luck-based-self-unhook/', html => html.replace(/(<h2>Current successors<\/h2><ul><li><a href=")[^"]+("[^>]*>)/, `$1${wrongRoute}$2`)],
+    ['family route stays under the supplied base path', 'survivor-meta/pickup-interception-save-family/', html => html.replace(/(<section class="guide-family">[\s\S]*?<a href=")[^"]+(">Open this approach<\/a>)/, (_, before, after) => `${before}${expectedFamilyRoute}${after}`)],
+    ['TEAM links cover every role', 'survivor-meta/coordinated-swf-flex-generalist/', html => {
+      const first = html.match(/href="#guide-role-[^"]+"/)?.[0];
+      return html.replace(/href="#guide-role-[^"]+"/g, link => link === first ? link : 'href="#missing-role"');
+    }]
+  ];
+  for (const [name, route, mutate] of cases) {
+    await t.test(name, async () => {
+      const f = fixture();
+      const original = f.pages.get(route);
+      const broken = mutate(original);
+      if (name === 'family route stays under the supplied base path') assert.ok(broken.includes(`href="${expectedFamilyRoute}"`), 'fixture must contain the correct root-absolute route');
+      else assert.notEqual(broken, original, `${name}: fixture must change navigation`);
+      f.pages.set(route, broken);
+      const result = await smoke({ baseUrl: 'https://example.test/dbd-helper/', fetchImpl: f.fetchImpl });
+      assert.ok(result.failures.some(failure => failure.url === `https://example.test/dbd-helper/${route}`), name);
+    });
+  }
+});
+
+test('navigation smoke accepts harmless anchor and role article attributes', async () => {
+  const f = fixture();
+  const familyRoute = 'survivor-meta/pickup-interception-save-family/';
+  f.pages.set(familyRoute, f.pages.get(familyRoute).replace(/<a href="([^"]+)">Open this approach<\/a>/, '<a class="guide-link" data-guide-link href="$1">Open this approach</a>'));
+  const legacyRoute = 'survivor-meta/luck-based-self-unhook/';
+  f.pages.set(legacyRoute, f.pages.get(legacyRoute).replace(/(<h2>Current successors<\/h2><ul><li>)<a href="([^"]+)">/, '$1<a data-guide-link href="$2" class="guide-link">'));
+  const teamRoute = 'survivor-meta/coordinated-swf-flex-generalist/';
+  f.pages.set(teamRoute, f.pages.get(teamRoute)
+    .replace(/<article id="(guide-role-[^"]+)">/, '<article class="guide-role" id="$1">')
+    .replace(/<a href="(#guide-role-[^"]+)">/, '<a class="guide-link" href="$1">'));
+  const result = await smoke({ baseUrl: 'https://example.test/dbd-helper/', fetchImpl: f.fetchImpl });
+  assert.deepEqual(result.failures, []);
 });
 
 test('network errors retry a bounded number of times and report the failed URL', async () => {

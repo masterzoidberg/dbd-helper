@@ -1,10 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadGuideRecords } from './survivor-meta-guide-source.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'content/survivor/meta/10.2.0-r1/stage3b/strategy-pages-manifest.json'), 'utf8'));
-const manifestRoutes = new Set(manifest.map(route => route.slug));
+const routesById = new Map(manifest.map(route => [route.strategyId, route.slug]));
+const guides = loadGuideRecords({ rootDir: root });
 const TIMEOUT_MS = 8000;
 const ATTEMPTS = 3;
 
@@ -27,12 +29,27 @@ function escapeHtml(value) {
   return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 }
 
-function hasDestination(markup, label) {
-  return [...markup.matchAll(/<a href="([^"]+)">([^<]+)<\/a>/g)]
-    .some(([, href, text]) => manifestRoutes.has(href.replace(/\/$/, '')) && (!label || text === label));
+function attribute(markup, name) {
+  return markup.match(new RegExp(`(?:^|\\s)${name}\\s*=\\s*(["'])(.*?)\\1`, 'i'))?.[2];
 }
 
-function guideFailure(route, html) {
+function hasDestination(markup, expectedRoute, base, label) {
+  const expected = routesById.get(expectedRoute);
+  if (!expected) return false;
+  const expectedUrl = new URL(expected.replace(/^\/+/, ''), base);
+  return [...markup.matchAll(/<a\b([^>]*)>([^<]*)<\/a>/g)].some(([, attributes, text]) => {
+    const href = attribute(attributes, 'href');
+    if (!href || (label && text !== label)) return false;
+    try {
+      const actual = new URL(href, base);
+      return actual.href.replace(/\/$/, '') === expectedUrl.href.replace(/\/$/, '');
+    } catch {
+      return false;
+    }
+  });
+}
+
+function guideFailure(route, html, base) {
   if (!/<p class="guide-publication-status">Player Guide<\/p>/.test(html) || /Research View Only/.test(html)) return 'not a published Player Guide';
   if (!html.includes(`<h1>${escapeHtml(route.canonicalName)}</h1>`)) return 'canonical guide title missing';
   if (!/<article class="meta-article-body">/.test(html) || !/data-guide-primary/.test(html)) return 'player guide body missing';
@@ -52,18 +69,22 @@ function guideFailure(route, html) {
   for (const pattern of checks[route.strategyId] || []) if (!pattern.test(primary)) return `player landmark missing: ${pattern}`;
   if (route.strategyId === 'P00' || route.strategyId === 'A00') {
     const family = primary.match(/<section class="guide-family">([\s\S]*?)<\/section>/)?.[1] || '';
-    const approaches = [...family.matchAll(/<article>[\s\S]*?<\/article>/g)];
-    if (!approaches.length || approaches.some(([article]) => !hasDestination(article, 'Open this approach'))) return 'family approach destination missing';
+    const approaches = [...family.matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/g)];
+    const expected = guides.get(route.strategyId)?.page.comparisons || [];
+    if (!expected.length || approaches.length !== expected.length || approaches.some(([article], index) => !hasDestination(article, expected[index].strategyId, base, 'Open this approach'))) return 'family approach destination missing';
   }
   if (route.strategyId === 'G06' || route.strategyId === 'C13') {
     const successors = primary.match(/<h2>Current successors<\/h2><ul>([\s\S]*?)<\/ul>/)?.[1] || '';
     const entries = [...successors.matchAll(/<li>[\s\S]*?<\/li>/g)];
-    if (!entries.length || entries.some(([entry]) => !hasDestination(entry))) return 'Legacy successor destination missing';
+    const expected = guides.get(route.strategyId)?.page.successors || [];
+    if (!expected.length || entries.length !== expected.length || entries.some(([entry], index) => !hasDestination(entry, expected[index].strategyId, base))) return 'Legacy successor destination missing';
   }
   if (route.strategyId === 'X02') {
-    const roles = [...primary.matchAll(/<article id="guide-role-([a-zA-Z0-9_-]+)"><h3>[^<]+<\/h3>/g)].map(([, id]) => id);
-    const roleLinks = [...primary.matchAll(/<a href="#guide-role-([a-zA-Z0-9_-]+)">/g)].map(([, id]) => id);
-    if (new Set(roles).size !== 4 || !roleLinks.length || roleLinks.some(id => !roles.includes(id))) return 'team roles or role links missing';
+    const team = primary.match(/<section class="guide-team">([\s\S]*?)<\/section>/)?.[1] || '';
+    const expected = (guides.get(route.strategyId)?.page.roles || []).map(role => `guide-role-${role.id}`);
+    const roles = [...team.matchAll(/<article\b([^>]*)>\s*<h3\b[^>]*>/g)].map(([, attributes]) => attribute(attributes, 'id'));
+    const roleLinks = [...primary.matchAll(/<a\b([^>]*)>/g)].map(([, attributes]) => attribute(attributes, 'href')).filter(href => href?.startsWith('#guide-role-')).map(href => href.slice(1));
+    if (expected.length !== 4 || new Set(roles).size !== 4 || expected.some(id => !roles.includes(id) || !roleLinks.includes(id)) || roleLinks.some(id => !expected.includes(id))) return 'team roles or role links missing';
   }
   return null;
 }
@@ -96,7 +117,7 @@ export async function smokeSurvivorMeta({ baseUrl, fetchImpl = fetch }) {
   if (!base.pathname.endsWith('/')) base.pathname += '/';
   const checks = [
     ...baseline.map(([path, pattern]) => ({ path, check: body => pattern.test(body) ? null : 'baseline content missing' })),
-    ...manifest.map(route => ({ path: `${route.slug.replace(/^\/+|\/+$/g, '')}/`, check: body => guideFailure(route, body) }))
+    ...manifest.map(route => ({ path: `${route.slug.replace(/^\/+|\/+$/g, '')}/`, check: body => guideFailure(route, body, base) }))
   ];
   const failures = [];
   let next = 0;

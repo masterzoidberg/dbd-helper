@@ -107,7 +107,7 @@ function usageLabel(usage) {
 
 function routeHref(route) {
   if (!route) return '#';
-  return href(`/${String(route).replace(/^\/+/, '')}`);
+  return href(String(route).replace(/^\/+/, ''));
 }
 
 function modelParts(model) {
