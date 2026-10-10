@@ -333,6 +333,9 @@ function cliFixture(t) {
   fs.writeFileSync(path.join(directory, 'content/survivor/meta-guides/P00.json'), JSON.stringify(unaffected));
   const git = args => execFileSync('git', ['-C', directory, ...args], { encoding: 'utf8' });
   git(['init', '-q']);
+  // Detached housekeeping can outlive fixture commits and race teardown.
+  git(['config', '--local', 'maintenance.auto', 'false']);
+  git(['config', '--local', 'gc.auto', '0']);
   git(['add', 'content']);
   git(['-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'Fixture baseline']);
   const run = (extra = []) => spawnSync(process.execPath, [cliPath, '--perk', 'lithe', '--classification', 'STRATEGY_SIGNIFICANT', '--reason', reason, ...extra], { cwd: directory, encoding: 'utf8' });
