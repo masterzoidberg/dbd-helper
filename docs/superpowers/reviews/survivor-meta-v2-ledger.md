@@ -35,12 +35,12 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | G08 | Road Life Repair-to-Self-Heal | STANDARD | REVIEWED | Task 14 B4 source/editorial review; injured Great-check gate and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
 | G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | REVIEWED | Task 14 B4 source/editorial review; own-unhook/basic-check handoff and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
 | G10 | Fruits of Your Labor Objective-to-Reset Hybrid | STANDARD | REVIEWED | Task 14 B4 source/editorial review; token-bank/payout split and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
-| A01 | Hook Rescue / Post-Unhook Reset | STANDARD | NOT_STARTED | No record; review not started. | — |
-| A02 | Anti-Camp / Hook-Timer Control | STANDARD | NOT_STARTED | No record; review not started. | — |
+| A01 | Hook Rescue / Post-Unhook Reset | STANDARD | REVIEWED | Task 14 B5 source/editorial review; safe unhook/reset handoff and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A02 | Anti-Camp / Hook-Timer Control | STANDARD | REVIEWED | Task 14 B5 source/editorial review; Reassurance range/timing gate and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
 | A03 | Dedicated Healer / Triage | STANDARD | REVIEWED | Task 13 editorial/source review; ROLE_GUIDE assignment/handoff/abort checks and 390×844/1440×900 preview checks recorded. | `d8417e1`, `e866045` |
-| A04 | Hook-State-Scaled Fast Healing | STANDARD | NOT_STARTED | No record; review not started. | — |
-| A05 | Protection-Hit / Tank | STANDARD | NOT_STARTED | No record; review not started. | — |
-| A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | NOT_STARTED | No record; review not started. | — |
+| A04 | Hook-State-Scaled Fast Healing | STANDARD | REVIEWED | Task 14 B5 source/editorial review; target Hook-State scaling and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A05 | Protection-Hit / Tank | STANDARD | REVIEWED | Task 14 B5 source/editorial review; conditional protection-hit payoff and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | REVIEWED | Task 14 B5 source/editorial review; ordinary bodyblock route/abort guidance and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
 | A07 | Endgame Rescue | STANDARD | NOT_STARTED | No record; review not started. | — |
 | P01 | Flashlight Save | STANDARD | NOT_STARTED | No record; review not started. | — |
 | P02 | Flashbang Save | STANDARD | DRAFT | [Content/source review](#p02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
@@ -338,6 +338,15 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Browser evidence after harness correction: 25/25 ID/viewport checks passed at 320×844, 390×844, 768×900, 1024×900 and 1440×900; 20/20 STANDARD records exposed `.guide-gameplay`, A00 correctly exposed no gameplay section, all 25 had one H1, closed disclosures, focusable research summaries and no horizontal overflow. The evidence remains layout/content evidence, not live-Trial or owner-comprehension proof.
 - Serialized index integration initialized the one absent dependency at revision 1 with `PRESENTATION_ONLY` and its canonical fingerprint: `fruits-of-your-labor`. Existing `hyperfocus`, `deja-vu`, `road-life` and `fast-track` entries were unchanged.
 - Post-integration verification: validator `missing: 26`, `DRAFT: 7`, `REVIEWED: 24`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, `git diff --check` clean, and corrected browser checks `25/25`. No publication or deployment was performed.
+
+### Task 14 B5 — A01/A02/A04/A05/A06
+
+- Reviewer: Maxwell. Initial B5 commit: `4f56420` (`content: review Survivor guides B5`). The review found no Critical content issue and two Important integration blockers: three exact perk classifications and the five execution-ledger rows were still coordinator-owned. The guide files themselves were source-faithful and closed-shape compliant.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. A01 preserves safe unhook/reset assignment and handoff; A02 treats Reassurance as a timed anti-camp pause that still requires a rescuer; A04 keeps Do No Harm target Hook-State scaling provisional; A05 treats Mettle of Man as a conditional protection-hit payoff rather than Endurance; A06 remains an ordinary bodyblock/pathing role with no asserted perk dependency.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported four-perk builds, substitutes, item/add-on packages, guaranteed rescue/protection outcomes, fabricated matchup data and boilerplate were omitted. A06 correctly retains `perkReviews: []` because no canonical perk/item implementation is asserted.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25), with one H1, visible primary/gameplay content, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Evidence remains layout/usefulness evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized exactly three absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `reassurance`, `do-no-harm`, `mettle-of-man`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 21`, `DRAFT: 7`, `REVIEWED: 29`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, and `git diff --check` clean. No publication or deployment was performed.
 
 ### Task 14 B3 — C14/C15/G01/G03/G04
 

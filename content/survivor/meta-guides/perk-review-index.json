@@ -240,6 +240,18 @@
     "fruits-of-your-labor": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "3e210b8fd49fb920d89ce187ee60bea5439d62f8771b6055e949c5626236f856"
+    },
+    "reassurance": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "9b1e3ade68d2b132cb3a4a53222ffb7434f74788770c5c09f010f04e5c501e23"
+    },
+    "do-no-harm": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "e4659f08b4ac7025c2d25442df29186691c3ab9f20483300fc5a2ac1506d5300"
+    },
+    "mettle-of-man": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "cca1a2451bdc8d61550f189f612281aa0af3022ffdec7f8f7ee4e265419be5b7"
     }
   }
 }
