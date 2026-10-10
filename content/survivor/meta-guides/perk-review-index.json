@@ -252,6 +252,22 @@
     "mettle-of-man": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "cca1a2451bdc8d61550f189f612281aa0af3022ffdec7f8f7ee4e265419be5b7"
+    },
+    "no-one-left-behind": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "97e77b6b5e85f6628296db37afd6cf6c8211430ef1bcb35bb3e3fe251c6e3549"
+    },
+    "background-player": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "8f93d1395ae639e0444140eb8a637d739fd4096c1edd4c5c0dea3632505adc88"
+    },
+    "saboteur": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "1a041a70f48cb1ca4169e89eae5b0092adc3400ee7a0799d38304a373b01aa5d"
+    },
+    "breakout": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "3ccfa8d1b0de43904616806e2a8bbdcc20a8a2923e4ffa58b46710a8be794359"
     }
   }
 }

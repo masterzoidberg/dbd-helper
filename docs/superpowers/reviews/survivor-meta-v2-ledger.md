@@ -41,12 +41,12 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | A04 | Hook-State-Scaled Fast Healing | STANDARD | REVIEWED | Task 14 B5 source/editorial review; target Hook-State scaling and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
 | A05 | Protection-Hit / Tank | STANDARD | REVIEWED | Task 14 B5 source/editorial review; conditional protection-hit payoff and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
 | A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | REVIEWED | Task 14 B5 source/editorial review; ordinary bodyblock route/abort guidance and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
-| A07 | Endgame Rescue | STANDARD | NOT_STARTED | No record; review not started. | — |
-| P01 | Flashlight Save | STANDARD | NOT_STARTED | No record; review not started. | — |
+| A07 | Endgame Rescue | STANDARD | REVIEWED | Task 14 B6 source/editorial review; powered-endgame rescue gates and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P01 | Flashlight Save | STANDARD | REVIEWED | Task 14 B6 source/editorial review; required Flashlight pickup window and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P02 | Flashbang Save | STANDARD | DRAFT | [Content/source review](#p02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
-| P03 | Sabotage / Hook Denial | STANDARD | NOT_STARTED | No record; review not started. | — |
-| P04 | Breakout / Carry Interference | STANDARD | NOT_STARTED | No record; review not started. | — |
-| P05 | Teammate Pallet Save | STANDARD | NOT_STARTED | No record; review not started. | — |
+| P03 | Sabotage / Hook Denial | STANDARD | REVIEWED | Task 14 B6 source/editorial review; intended-hook denial route and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P04 | Breakout / Carry Interference | STANDARD | REVIEWED | Task 14 B6 source/editorial review; marginal-carry escort trade and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P05 | Teammate Pallet Save | STANDARD | REVIEWED | Task 14 B6 source/editorial review; finite-pallet carry-crossing condition and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
 | P06 | Carry-Escape / Wiggle Denial | STANDARD | NOT_STARTED | No record; review not started. | — |
 | I01 | Solo-Q Information Shell | STANDARD | NOT_STARTED | No record; review not started. | — |
 | I02 | Killer Tracking / Aura Seer | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -347,6 +347,15 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25), with one H1, visible primary/gameplay content, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Evidence remains layout/usefulness evidence, not live-Trial outcome or owner-comprehension proof.
 - Serialized index integration initialized exactly three absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `reassurance`, `do-no-harm`, `mettle-of-man`. Existing entries were unchanged.
 - Post-integration verification: validator `missing: 21`, `DRAFT: 7`, `REVIEWED: 29`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, and `git diff --check` clean. No publication or deployment was performed.
+
+### Task 14 B6 — A07/P01/P03/P04/P05
+
+- Reviewer: Tesla. Initial B6 commit: `27358e9` (`content: review Survivor guides B6`). The review found no Critical guide-content issue and one Important combined-catalog blocker: four exact perk classifications remained coordinator-owned. The guide files themselves were source-faithful, closed-shape compliant, and correctly omitted unsupported builds/items.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. A07 preserves the powered-endgame rescue gate and post-unhook support; P01 requires the source-recorded Flashlight and distinguishes Background Player movement support from the blind; P03 targets the intended carried hook and abandons a changed route; P04 remains a marginal-carry escort distinct from sabotage/bodyblock; P05 has no mandatory perk or item and treats pallets as finite route resources.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported save shells, add-on packages, guaranteed saves, matchup claims and boilerplate were omitted. P05 correctly retains `perkReviews: []`; P01's Flashlight is required only because the strategy definition itself is the flashlight-save use case.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25), with one H1, visible primary/gameplay content, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Evidence remains layout/usefulness evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized exactly four absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `no-one-left-behind`, `background-player`, `saboteur`, `breakout`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 16`, `DRAFT: 7`, `REVIEWED: 34`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, `git diff --check` clean, and browser checks `25/25`. No publication or deployment was performed.
 
 ### Task 14 B3 — C14/C15/G01/G03/G04
 
