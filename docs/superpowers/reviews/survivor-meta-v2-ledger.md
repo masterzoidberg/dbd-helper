@@ -29,12 +29,12 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | G02 | Toolbox Generator Specialist | STANDARD | DRAFT | [Content/source review](#g02-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
 | G03 | Critical-Generator / Three-Gen Breaker | STANDARD | REVIEWED | Task 14 B3 source/editorial review; bounded target module, optional Toolbox binding and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
 | G04 | Cooperative Repair / Gen Duo | STANDARD | REVIEWED | Task 14 B3 source/editorial review; bounded cooperative-repair module and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
-| G05 | Manual Skill-Check Generator | STANDARD | NOT_STARTED | No record; review not started. | — |
+| G05 | Manual Skill-Check Generator | STANDARD | REVIEWED | Task 14 B4 source/editorial review; manual-check reset boundary and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
 | G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | DRAFT | [Content/source review](#g06-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
 | G07 | Boon: Steadfast Repair Zone | STANDARD | REVIEWED | Task 13 editorial/source review; Provisional evaluation preserved; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
-| G08 | Road Life Repair-to-Self-Heal | STANDARD | NOT_STARTED | No record; review not started. | — |
-| G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | NOT_STARTED | No record; review not started. | — |
-| G10 | Fruits of Your Labor Objective-to-Reset Hybrid | STANDARD | NOT_STARTED | No record; review not started. | — |
+| G08 | Road Life Repair-to-Self-Heal | STANDARD | REVIEWED | Task 14 B4 source/editorial review; injured Great-check gate and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
+| G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | REVIEWED | Task 14 B4 source/editorial review; own-unhook/basic-check handoff and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
+| G10 | Fruits of Your Labor Objective-to-Reset Hybrid | STANDARD | REVIEWED | Task 14 B4 source/editorial review; token-bank/payout split and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
 | A01 | Hook Rescue / Post-Unhook Reset | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A02 | Anti-Camp / Hook-Timer Control | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A03 | Dedicated Healer / Triage | STANDARD | REVIEWED | Task 13 editorial/source review; ROLE_GUIDE assignment/handoff/abort checks and 390×844/1440×900 preview checks recorded. | `d8417e1`, `e866045` |
@@ -66,7 +66,7 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | X01 | Solo-Q Generalist | STANDARD | DRAFT | [Content/source review](#x01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
 | X02 | Coordinated SWF Flex Generalist | TEAM | DRAFT | [Content/source review](#x02-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
 | P00 | Pickup Interception / Save Family | FAMILY | DRAFT | [Content/source review](#p00-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
-| A00 | Rescue-and-Reset Support Family | FAMILY | NOT_STARTED | No record; review not started. | — |
+| A00 | Rescue-and-Reset Support Family | FAMILY | REVIEWED | Task 14 B4 source/editorial review; four-child comparison and non-ranking status at 320×844/1440×900 recorded. | `846a1e0` |
 
 ## Task 7 group 1 — X01/C01/G02
 
@@ -329,6 +329,15 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Browser evidence: C08, C10, C11, C12 and C13 passed the established mobile/desktop checks with 25/25 combinations and zero failures; the prose-only fix required no new layout capture. Layout contract was unchanged.
 - Serialized index integration initialized exactly 11 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `boon-exponential`, `dance-with-me`, `deliverance`, `lightweight`, `lucky-break`, `plot-twist`, `quick-quiet`, `slippery-meat`, `soul-guard`, `unbreakable`, `were-gonna-live-forever`. Existing `iron-will` and `shoulder-the-burden` entries were retained unchanged.
 - Post-integration target: validator expected `missing: 36`, `DRAFT: 7`, `REVIEWED: 14`, `PUBLISHED: 0`, zero diagnostics; no production output, publication or deployment. Full Node remained 161/161, Python 4/4, generated-artifact checker and diff checks clean.
+
+### Task 14 B4 — G05/G08/G09/G10/A00
+
+- Reviewer: James. Initial B4 commit: `846a1e0` (`content: review Survivor guides B4`). The review found no Critical issue and one Important integration blocker: G10's exact `fruits-of-your-labor` mechanics classification had to be serialized in the shared index before the unit could be valid. It also identified a Minor browser-evidence signal mismatch: the disposable harness queried a nonexistent gameplay data attribute. The coordinator integrated the required exact classification through the existing CLI and corrected/reran the disposable evidence harness against the renderer's existing `.guide-gameplay` class; A00 correctly remains gameplay-free as a FAMILY comparison page.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. G05 preserves the post-10.2 manual-check route and invalidated historical automation; G08 preserves experimental/provisional Road Life gates; G09 binds Fast Track to the user's own unhook and later basic repair check; G10 keeps token banking separate from finishing-repair payout without inventing caps or expiry; A00 compares exactly four canonical children with NOT_APPLICABLE null rankings and no aggregate build.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported four-perk implementations, substitutes, item/add-on packages, fabricated matchup data and boilerplate were omitted. G05/G09 optional Toolbox context is explicitly optional and bound only where used; G08/G10 ordinary route decisions remain unbound.
+- Browser evidence after harness correction: 25/25 ID/viewport checks passed at 320×844, 390×844, 768×900, 1024×900 and 1440×900; 20/20 STANDARD records exposed `.guide-gameplay`, A00 correctly exposed no gameplay section, all 25 had one H1, closed disclosures, focusable research summaries and no horizontal overflow. The evidence remains layout/content evidence, not live-Trial or owner-comprehension proof.
+- Serialized index integration initialized the one absent dependency at revision 1 with `PRESENTATION_ONLY` and its canonical fingerprint: `fruits-of-your-labor`. Existing `hyperfocus`, `deja-vu`, `road-life` and `fast-track` entries were unchanged.
+- Post-integration verification: validator `missing: 26`, `DRAFT: 7`, `REVIEWED: 24`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, `git diff --check` clean, and corrected browser checks `25/25`. No publication or deployment was performed.
 
 ### Task 14 B3 — C14/C15/G01/G03/G04
 
