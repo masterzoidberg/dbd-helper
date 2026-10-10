@@ -33,7 +33,7 @@
           "label": "Chase-reset and disappearance module",
           "environment": "BOTH",
           "completeness": "MODULE",
-          "why": "The source provides a strategy framework rather than a verified four-perk implementation. Keep these trace and noise layers as deliberate choices; this module is not a claim that every cited effect must be equipped together.",
+          "why": "Choose the trace and audio layers that best support the post-hit reset, and leave the other support choices open until the Trial shows what the route needs.",
           "slots": [
             {
               "slot": 1,

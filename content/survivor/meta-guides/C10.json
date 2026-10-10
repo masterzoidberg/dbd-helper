@@ -33,7 +33,7 @@
           "label": "Anti-slug and self-recovery module",
           "environment": "BOTH",
           "completeness": "MODULE",
-          "why": "The source provides a strategy framework rather than a verified four-perk implementation. Select one self-recovery identity and add only the support that matches the Trial; do not treat every cited anti-slug effect as a required union build.",
+          "why": "Choose one self-recovery identity for the Dying-state plan, then leave the support shell open until its value in this Trial is clear.",
           "slots": [
             {
               "slot": 1,

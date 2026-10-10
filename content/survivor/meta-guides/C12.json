@@ -29,7 +29,7 @@
           "label": "Deterministic self-unhook module",
           "environment": "BOTH",
           "completeness": "MODULE",
-          "why": "The source names Deliverance plus unspecified information/rescue support rather than a verified four-perk build. Keep the defining rescue-to-self-unhook loop explicit and leave the support shell open.",
+          "why": "Deliverance defines the guaranteed self-unhook route; leave unspecified support open until the Trial shows what the rescue plan needs.",
           "slots": [
             {
               "slot": 1,
