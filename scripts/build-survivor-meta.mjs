@@ -1,6 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assembleGuidePage } from './survivor-meta-guide-model.mjs';
+import { loadGuideContext } from './survivor-meta-guide-source.mjs';
+import { validateGuideCatalog } from './survivor-meta-guide-validation.mjs';
+import { renderGuideBody } from './survivor-meta-guide-render.mjs';
 
 const DEFAULT_RELEASE = '10.2.0-r1';
 const EXPECTED_COUNT = 57;
@@ -8,6 +12,14 @@ const ENVIRONMENTS = [
   ['SURVIVOR_SOLO_Q', 'solo'],
   ['SURVIVOR_COORDINATED_SWF', 'swf']
 ];
+
+export class GuideValidationError extends Error {
+  constructor(message, diagnostics = []) {
+    super(message);
+    this.name = 'GuideValidationError';
+    this.diagnostics = diagnostics;
+  }
+}
 
 function defaultRoot() {
   return path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -81,8 +93,14 @@ export function loadSurvivorMetaSource({ rootDir = defaultRoot(), release = DEFA
 }
 
 function normalizeArticlePath(slug) {
-  const trimmed = String(slug || '').replace(/^\/+|\/+$/g, '');
-  if (!trimmed.startsWith('survivor-meta/')) throw new Error(`invalid Stage 3B slug: ${slug}`);
+  if (typeof slug !== 'string' || slug.includes('\\') || /[?#]/.test(slug)) {
+    throw new Error(`invalid Stage 3B slug: ${slug}`);
+  }
+  const trimmed = slug.replace(/^\/+|\/+$/g, '');
+  const parts = trimmed.split('/');
+  if (parts.length !== 2 || parts[0] !== 'survivor-meta' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(parts[1])) {
+    throw new Error(`invalid Stage 3B slug: ${slug}`);
+  }
   return `${trimmed}/`;
 }
 
@@ -309,64 +327,178 @@ export function writeRuntimeData({ rootDir = defaultRoot(), release = DEFAULT_RE
   return strategies;
 }
 
-function evaluationHtml(label, value) {
-  const tierPower = value.tier && value.power != null ? `${escapeHtml(value.tier)} · ${escapeHtml(value.power)}` : escapeHtml(value.rankingStatus.replaceAll('_', ' '));
-  return `<div class="meta-evaluation"><span class="quick-label">${escapeHtml(label)}</span><strong>${tierPower}</strong><small>${escapeHtml(value.rankingStatus.replaceAll('_', ' '))}${value.confidence ? ` · ${escapeHtml(value.confidence.replaceAll('_', ' '))}` : ''}</small></div>`;
-}
-
-function buildImplementationsHtml(snapshot) {
-  const builds = snapshot.buildImplementations || [];
-  if (!builds.length) return '';
-  return `<section class="meta-builds"><h2>Canonical Representative Builds</h2>${builds.map(build => {
-    const perkLinks = (build.perkIds || []).map(id => `<a href="survivor/perks/?q=${encodeURIComponent(id)}"><code>${escapeHtml(id)}</code></a>`).join(' · ');
-    const alternatives = (build.perkAlternativeSlots || []).flatMap(slot => slot.perkIds || []).map(id => `<a href="survivor/perks/?q=${encodeURIComponent(id)}"><code>${escapeHtml(id)}</code></a>`).join(' · ');
-    return `<article class="meta-build"><h3>${escapeHtml(build.buildType.replaceAll('_', ' '))}</h3><p>${perkLinks || 'No fixed canonical perk IDs.'}</p>${alternatives ? `<p><strong>Alternatives:</strong> ${alternatives}</p>` : ''}<p>${escapeHtml(build.rationale || '')}</p></article>`;
-  }).join('')}</section>`;
-}
-
-function detailPageHtml(strategy, snapshot, articleHtml) {
-  const solo = evaluation('SURVIVOR_SOLO_Q', snapshot.solo);
-  const swf = evaluation('SURVIVOR_COORDINATED_SWF', snapshot.swf);
+function detailPageHtml(model) {
+  const canonical = model.canonical;
+  const snapshot = model.research.snapshot;
   const bootstrap = `(function(){var parts=location.pathname.split('/').filter(Boolean);var i=parts.indexOf('dbd-helper');var base=i>=0?'/'+parts.slice(0,i+1).join('/')+'/':'/';document.write('<base href="'+base+'">');})();`;
-  return `<!doctype html><html lang="en"><head><title>${escapeHtml(strategy.name)} · Survivor Meta · DBD Field Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090a0d"><script data-dbd-base>${bootstrap}</script><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg"><link rel="stylesheet" href="assets/app.css"><link rel="stylesheet" href="assets/semantic-links.css"><script defer src="assets/data-meta.js"></script><script defer src="assets/app-core.js"></script><script defer src="assets/app-pages.js"></script></head><body><div data-shell></div><main class="app-main"><div class="page meta-article-page"><header class="page-head meta-detail-head"><div><p class="eyebrow">Survivor Meta · ${escapeHtml(strategy.id)}</p><h1>${escapeHtml(strategy.name)}</h1><p class="lede">${escapeHtml(strategy.generalStrategicDefinition)}</p><div class="perk-title-row"><span class="tag">${escapeHtml(strategy.structuralClassification)}</span><span class="tag live">${escapeHtml(snapshot.currentStatus)}</span><span class="tag">${escapeHtml(snapshot.trend)}</span></div></div><div class="version-card"><strong>Patch ${escapeHtml(snapshot.patchBaseline)}</strong><br>Research r${escapeHtml(snapshot.researchRevision)}</div></header><section class="meta-summary-grid">${evaluationHtml('Solo Q', solo)}${evaluationHtml('Coordinated SWF', swf)}<div class="meta-evaluation"><span class="quick-label">Meta Stability</span><strong>${snapshot.metaStability == null ? 'Not Current' : escapeHtml(snapshot.metaStability)}</strong><small>${escapeHtml(snapshot.stabilityLabel || 'Not Current')}</small></div></section>${buildImplementationsHtml(snapshot)}<article class="meta-article-body">${articleHtml}</article></div></main><script>document.addEventListener('DOMContentLoaded',()=>DBD_APP.injectShell('survivor-meta'));</script></body></html>\n`;
+  const publicationLabel = model.mode === 'PLAYER' ? 'Player Guide' : 'Research View Only';
+  const body = renderGuideBody(model);
+  if ((body.match(/<h1\b/g) || []).length !== 1) throw new Error(`${model.strategyId}: rendered detail page must contain exactly one H1`);
+  return `<!doctype html><html lang="en"><head><title>${escapeHtml(canonical.name)} · Survivor Meta · DBD Field Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090a0d"><script data-dbd-base>${bootstrap}</script><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg"><link rel="stylesheet" href="assets/app.css"><link rel="stylesheet" href="assets/semantic-links.css"><script defer src="assets/data-meta.js"></script><script defer src="assets/app-core.js"></script><script defer src="assets/app-pages.js"></script></head><body><div data-shell></div><main class="app-main"><div class="page meta-article-page"><p class="guide-publication-status">${publicationLabel}</p><article class="meta-article-body">${body}</article></div></main><script>document.addEventListener('DOMContentLoaded',()=>DBD_APP.injectShell('survivor-meta'));</script></body></html>\n`;
+}
+
+function runtimeText(strategies) {
+  return `window.DBD_DATA = window.DBD_DATA || {};\nwindow.DBD_DATA.survivorStrategies = ${JSON.stringify(strategies)};\n`;
+}
+
+function isWithin(candidate, parent) {
+  const relative = path.relative(parent, candidate);
+  return relative === '' || (!relative.startsWith(`..${path.sep}`) && relative !== '..' && !path.isAbsolute(relative));
+}
+
+function realCandidate(file) {
+  let current = path.resolve(file);
+  const suffix = [];
+  while (!fs.existsSync(current)) {
+    const parent = path.dirname(current);
+    if (parent === current) return current;
+    suffix.unshift(path.basename(current));
+    current = parent;
+  }
+  return path.resolve(fs.realpathSync.native(current), ...suffix);
+}
+
+function outputError(message) {
+  return new GuideValidationError(`OUTPUT_PATH_INVALID: ${message}`);
+}
+
+function rejectSymlink(file, label) {
+  if (fs.existsSync(file) && fs.lstatSync(file).isSymbolicLink()) {
+    throw outputError(`${label} must not be a symlink: ${file}`);
+  }
+}
+
+function validateOutputLayout({ rootDir, outputPath, detailOutputDir, preview, previewRoot, routes }) {
+  const rootReal = fs.realpathSync.native(path.resolve(rootDir));
+  const sitePath = path.join(rootDir, 'site');
+  const siteReal = fs.realpathSync.native(sitePath);
+  const detailReal = realCandidate(detailOutputDir);
+  const runtimeReal = realCandidate(outputPath);
+
+  if (preview) {
+    if (!path.isAbsolute(previewRoot)) throw outputError('preview output directory must be absolute');
+    rejectSymlink(previewRoot, 'preview output directory');
+    if (isWithin(realCandidate(previewRoot), rootReal)) throw outputError('preview output directory must be outside the production root');
+    if (isWithin(realCandidate(previewRoot), siteReal)) throw outputError('preview output directory must be outside the production site');
+    if (!isWithin(runtimeReal, realCandidate(previewRoot))) throw outputError('preview runtime must remain inside the preview root');
+    if (!isWithin(detailReal, realCandidate(previewRoot))) throw outputError('preview detail pages must remain inside the preview root');
+  } else {
+    if (!isWithin(detailReal, rootReal)) throw outputError('production detail output must remain inside the root');
+    if (!isWithin(runtimeReal, rootReal)) throw outputError('production runtime output must remain inside the root');
+  }
+  rejectSymlink(detailOutputDir, 'detail output directory');
+  rejectSymlink(outputPath, 'runtime output');
+
+  for (const route of routes) {
+    const slug = route.split('/').filter(Boolean).at(-1);
+    const destination = path.join(detailOutputDir, slug);
+    const destinationReal = realCandidate(destination);
+    if (!isWithin(destinationReal, detailReal)) throw outputError(`route escapes detail output: ${route}`);
+    rejectSymlink(destination, `route destination ${route}`);
+  }
+}
+
+function formatDiagnostics(diagnostics) {
+  return diagnostics.map(error => `${error.strategyId || 'catalog'}${error.path || ''}: ${error.code}: ${error.message}`).join('\n');
+}
+
+function prepareGeneration({ rootDir, release, outputPath, detailOutputDir, preview, previewRoot }) {
+  let catalog;
+  try {
+    catalog = validateGuideCatalog({ rootDir, release });
+  } catch (error) {
+    throw new GuideValidationError(error.message);
+  }
+  if (!catalog.ok) throw new GuideValidationError(formatDiagnostics(catalog.diagnostics), catalog.diagnostics);
+
+  try {
+    const context = loadGuideContext({ rootDir, release });
+    validateBuildPerkIds({ rootDir, snapshots: context.researchSource.snapshots });
+    const strategies = buildRuntimeStrategies({ rootDir, release });
+    const pages = [];
+    for (const item of context.researchSource.manifest) {
+      const route = normalizeArticlePath(item.slug);
+      const model = assembleGuidePage({
+        context,
+        strategyId: item.strategyId,
+        guide: catalog.guides.get(item.strategyId),
+        mode: preview ? 'preview' : 'production'
+      });
+      pages.push({ route, slug: route.split('/').filter(Boolean).at(-1), html: detailPageHtml(model) });
+    }
+    const routes = pages.map(page => page.route);
+    if (routes.length !== EXPECTED_COUNT || new Set(routes).size !== EXPECTED_COUNT) {
+      throw new Error(`generated Survivor Meta routes must contain exactly ${EXPECTED_COUNT} unique entries`);
+    }
+    validateOutputLayout({ rootDir, outputPath, detailOutputDir, preview, previewRoot, routes });
+    return { strategies, runtime: runtimeText(strategies), pages, routes };
+  } catch (error) {
+    if (error instanceof GuideValidationError) throw error;
+    throw new GuideValidationError(error.message, [{ code: 'PREPARATION_INVALID', path: '', message: error.message }]);
+  }
+}
+
+function writePreparedDetails(outputDir, pages) {
+  fs.mkdirSync(outputDir, { recursive: true });
+  for (const page of pages) {
+    const destination = path.join(outputDir, page.slug);
+    if (fs.existsSync(destination)) fs.rmSync(destination, { recursive: true, force: true });
+    fs.mkdirSync(destination, { recursive: true });
+    fs.writeFileSync(path.join(destination, 'index.html'), page.html, 'utf8');
+  }
+}
+
+function writePreparedRuntime(outputPath, runtime) {
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, runtime, 'utf8');
 }
 
 export function writeDetailPages({ rootDir = defaultRoot(), release = DEFAULT_RELEASE, outputDir = path.join(rootDir, 'site/survivor-meta') } = {}) {
-  const source = loadSurvivorMetaSource({ rootDir, release });
-  validateBuildPerkIds({ rootDir, snapshots: source.snapshots });
-  fs.mkdirSync(outputDir, { recursive: true });
-  const keepIndex = path.join(outputDir, 'index.html');
-  for (const entry of fs.readdirSync(outputDir, { withFileTypes: true })) {
-    if (entry.isDirectory()) fs.rmSync(path.join(outputDir, entry.name), { recursive: true, force: true });
-  }
-  const byStrategy = new Map(source.strategies.map(item => [item.id, item]));
-  const bySnapshot = new Map(source.snapshots.map(item => [item.strategyId, item]));
-  const routes = [];
-  for (const item of source.manifest) {
-    const strategy = byStrategy.get(item.strategyId);
-    const snapshot = bySnapshot.get(item.strategyId);
-    const route = normalizeArticlePath(item.slug);
-    const slug = route.split('/').filter(Boolean).at(-1);
-    const dir = path.join(outputDir, slug);
-    fs.mkdirSync(dir, { recursive: true });
-    const articleHtml = renderArticleMarkdown(source.articles[item.articleFilename]);
-    fs.writeFileSync(path.join(dir, 'index.html'), detailPageHtml(strategy, snapshot, articleHtml), 'utf8');
-    routes.push(route);
-  }
-  if (new Set(routes).size !== EXPECTED_COUNT) throw new Error('generated Survivor Meta routes are not unique');
-  void keepIndex;
-  return routes;
+  const prepared = prepareGeneration({
+    rootDir,
+    release,
+    outputPath: path.join(rootDir, 'site/assets/data-survivor-meta.js'),
+    detailOutputDir: outputDir,
+    preview: false,
+    previewRoot: null
+  });
+  writePreparedDetails(outputDir, prepared.pages);
+  return prepared.routes;
 }
 
-export function buildSurvivorMetaSite({ rootDir = defaultRoot(), release = DEFAULT_RELEASE, outputPath = path.join(rootDir, 'site/assets/data-survivor-meta.js'), outputDir = path.join(rootDir, 'site/survivor-meta') } = {}) {
-  const source = loadSurvivorMetaSource({ rootDir, release });
-  validateBuildPerkIds({ rootDir, snapshots: source.snapshots });
-  const strategies = writeRuntimeData({ rootDir, release, outputPath });
-  const routes = writeDetailPages({ rootDir, release, outputDir });
-  return { strategies, routes };
+export function buildSurvivorMetaSite(options = {}) {
+  const rootDir = options.rootDir ?? defaultRoot();
+  const release = options.release ?? DEFAULT_RELEASE;
+  const preview = options.preview === true;
+  if (preview && (!Object.hasOwn(options, 'outputDir') || !path.isAbsolute(String(options.outputDir || '')))) {
+    throw outputError('preview requires an absolute output directory');
+  }
+  const previewRoot = preview ? path.resolve(options.outputDir) : null;
+  const detailOutputDir = preview ? path.join(previewRoot, 'survivor-meta') : (options.outputDir ?? path.join(rootDir, 'site/survivor-meta'));
+  const outputPath = options.outputPath ?? path.join(preview ? previewRoot : path.join(rootDir, 'site'), 'assets/data-survivor-meta.js');
+  const prepared = prepareGeneration({ rootDir, release, outputPath, detailOutputDir, preview, previewRoot });
+  if (preview) {
+    fs.cpSync(path.join(rootDir, 'site'), previewRoot, { recursive: true, force: true });
+  }
+  writePreparedRuntime(outputPath, prepared.runtime);
+  writePreparedDetails(detailOutputDir, prepared.pages);
+  return { strategies: prepared.strategies, routes: prepared.routes };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const result = buildSurvivorMetaSite();
-  console.log(`Built Survivor Meta: ${result.strategies.length} strategies, ${result.routes.length} detail routes`);
+  try {
+    const args = process.argv.slice(2);
+    const preview = args.includes('--preview');
+    const outputIndex = args.indexOf('--output-dir');
+    const outputDir = outputIndex >= 0 ? args[outputIndex + 1] : undefined;
+    const unknown = args.some((arg, index) => arg !== '--preview' && index !== outputIndex && !(outputIndex >= 0 && index === outputIndex + 1));
+    if (unknown || (outputIndex >= 0 && (!outputDir || outputIndex !== args.length - 2)) || (!preview && outputIndex >= 0)) {
+      throw new Error('Usage: node scripts/build-survivor-meta.mjs [--preview --output-dir <absolute-preview-directory>]');
+    }
+    const result = buildSurvivorMetaSite({ ...(preview ? { preview: true, outputDir } : {}) });
+    console.log(`Built Survivor Meta: ${result.strategies.length} strategies, ${result.routes.length} detail routes`);
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+  }
 }
