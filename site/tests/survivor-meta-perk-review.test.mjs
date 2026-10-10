@@ -362,7 +362,7 @@ test('CLI updates only shared index and reports fingerprint revision reason and 
   assert.equal(output.newRevision, 2);
   assert.equal(output.oldFingerprint, fixture.context.reviewIndex.perks.lithe.acknowledgedFingerprint);
   assert.equal(output.newFingerprint, fingerprintPerkMechanics(perk));
-  assert.deepEqual(output.affectedStrategyIds, ['C01', 'G01', 'X01']);
+  assert.deepEqual(output.affectedStrategyIds, ['C01', 'C02', 'G01', 'X01']);
   assert.deepEqual(treeBytes(path.join(fixture.directory, 'content')).filter(([file]) => file !== fixture.file), before);
   const next = JSON.parse(fs.readFileSync(fixture.file));
   assert.equal(next.perks.lithe.mechanicsRevision, 2);

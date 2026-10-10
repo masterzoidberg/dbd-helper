@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-09",
+  "strategyId": "G07",
+  "snapshotId": "G07@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "boon-illumination", "mechanicsRevision": 1 },
+    { "perkId": "boon-steadfast", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Anchor repair around a selected generator and a useful Boon zone, then release the location when setup, snuffing or Killer pressure makes the commitment lose value.",
+    "verdict": {
+      "recommendation": "Choose the target generator and totem position first; this provisional plan is a local repair zone, not a map-wide promise.",
+      "soloQ": "Call or visibly establish the target before blessing, and rotate when the zone is no longer the team's useful objective.",
+      "coordinatedSwf": "Assign who repairs, who watches the zone and who calls the handoff when the Killer contests or snuffs it.",
+      "mainWeakness": "Totem setup and location, Killer snuffing or destruction, and locality can remove the value before the team repays the setup time."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "steadfast-zone",
+          "label": "Boon repair-zone tools",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "Anchor the module to one Boon zone; remaining slots stay open because the source does not establish a fixed build.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Establish the repair zone",
+              "usage": "REQUIRED",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "boon-steadfast", "whyItsHere": "Create the source-defined local repair zone around a generator worth defending." }
+               ]
+            },
+            {
+              "slot": 2,
+              "role": "Boon information support",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "boon-illumination", "whyItsHere": "Choose this only when faster blessing and nearby objective information repay the extra slot." }
+               ]
+            }
+          ]
+        }
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Do not expect teammates to infer the target generator; use the zone while it is useful, then return to ordinary repair or rescue work."
+      ],
+      "coordinatedSwf": [
+        "Call the target, keep repair assignments inside the useful zone and name the next job when the totem is contested or lost."
+      ]
+    },
+    "strengths": [
+      "Teamwide localized objective value."
+    ],
+    "weaknesses": [
+      "The strategy is exposed to totem location, snuffing and the cost of defending a local zone that the team has abandoned."
+    ],
+    "killerCounterplay": [
+      "The Killer can contest the location, snuff the Boon or force the team away from the selected generator."
+    ],
+    "commonMistakes": [
+      "Blessing a convenient totem without checking whether its zone supports the next generator rotation.",
+      "Keeping teammates on a denied zone after the Killer has made the location unsafe.",
+      "Treating a provisional local plan as a fixed repair assignment after its setup resource is gone."
+    ],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before blessing, identify a generator the team can defend and a totem position whose zone will remain useful after the first repair rotation."
+      ],
+      "rows": [
+        {
+          "id": "choose-zone",
+          "situation": "A target generator and a reachable totem can form a useful local zone.",
+          "action": "Bless there, call the target and begin work only while the zone helps the team's next repair rotation.",
+          "why": "The strategy is spatially anchored; a boon in an irrelevant corner is not objective value.",
+          "enabledBy": ["perk:boon-steadfast", "mechanic:boon-zone"]
+        },
+        {
+          "id": "maintain-zone",
+          "situation": "The zone is active and teammates are using the target generator.",
+          "action": "Keep the team on the defended work while checking whether the Killer is about to contest or snuff the totem.",
+          "why": "Maintenance is a location and assignment decision, not a map-wide repair bonus.",
+          "enabledBy": ["perk:boon-steadfast"]
+        },
+        {
+          "id": "zone-denied",
+          "situation": "The totem is snuffed, the target is abandoned or the Killer makes the location unsafe.",
+          "action": "Stop defending the old zone and rotate to the next useful generator or ordinary objective job.",
+          "why": "The provisional plan must release the locality when its setup no longer returns team tempo."
+        }
+      ],
+      "abortWhen": [
+        "Abort the setup when the chosen totem position cannot support a useful generator route.",
+        "Leave the zone when it is snuffed or the Killer has made its location a losing commitment."
+      ]
+    },
+    "mechanics": [
+      {
+        "id": "boon-zone",
+        "explanation": "The repair benefit is local to the active Boon zone; choose a generator and totem position that the team can continue to use."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G07#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G07@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G07@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "G07@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G07#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G07#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "G07#Killer Counterplay" },
+    { "kind": "PERK", "ref": "boon-steadfast#/mechanics" },
+    { "kind": "PERK", "ref": "boon-illumination#/mechanics" }
+  ]
+}

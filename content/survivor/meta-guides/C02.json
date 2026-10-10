@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-09",
+  "strategyId": "C02",
+  "snapshotId": "C02@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "balanced-landing", "mechanicsRevision": 1 },
+    { "perkId": "dead-hard", "mechanicsRevision": 1 },
+    { "perkId": "lithe", "mechanicsRevision": 1 },
+    { "perkId": "overcome", "mechanicsRevision": 1 },
+    { "perkId": "sprint-burst", "mechanicsRevision": 1 },
+    { "perkId": "vigil", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Convert one Exhaustion trigger into distance or the next loop, then return to objective tempo when the route or activation window is gone.",
+    "verdict": {
+      "recommendation": "Choose the trigger that matches the route you can reach; do not treat five named options as one four-perk build.",
+      "soloQ": "Use the burst to leave danger or reach the next usable resource, then repair or rescue when the Killer declines the chase.",
+      "coordinatedSwf": "Call where you are taking chase and which route is being spent so teammates can keep the next objective clear.",
+      "mainWeakness": "Exhaustion management and trigger conditions can leave the selected tool quiet; over-saving a burst can also cost more tempo than it returns."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "mobility-trigger",
+          "label": "Mobility trigger choices",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "Choose one mobility trigger; these are alternatives, not a simultaneous four-perk build.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Choose a mobility trigger",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "lithe", "whyItsHere": "Use a rushed vault to launch toward the next resource." },
+                { "perkId": "sprint-burst", "whyItsHere": "Start the escape toward a useful route when the trigger is available." },
+                { "perkId": "balanced-landing", "whyItsHere": "Use a safe fall to convert height into distance when the map offers it." },
+                { "perkId": "dead-hard", "whyItsHere": "Reserve the post-unhook injured chase timing for the moment it actually applies." },
+                { "perkId": "overcome", "whyItsHere": "Use the hit-created sprint to leave the first danger area when healthy-state conditions apply." }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Exhaustion recovery support",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "vigil", "whyItsHere": "Recover Exhausted more efficiently when staying near the support effect is worth the time." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Choose the trigger that fits the route before pressure starts; do not treat every listed choice as equipped."
+      ],
+      "rows": [
+        {
+          "id": "trigger-route",
+          "situation": "A trigger is available and the next route has a real resource.",
+          "action": "Commit the trigger toward that resource, then reassess instead of looping for the perk alone.",
+          "why": "Mobility only buys team value when it creates a better next position.",
+          "enabledBy": ["perk:lithe", "perk:sprint-burst"]
+        },
+        {
+          "id": "denied-route",
+          "situation": "The route or activation condition is denied.",
+          "action": "Stop forcing the trigger and return to the available objective, rescue or safest remaining route.",
+          "why": "A denied activation is an opportunity cost, not a reason to chase the original plan."
+        }
+      ],
+      "abortWhen": [
+        "Stop preserving Exhaustion when walking or repositioning costs more than the next useful activation can repay.",
+        "Leave a depleted route when the next resource cannot support another loop."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Do not assume a long chase means teammates are repairing; once the trigger has moved you, check which job is actually uncovered."
+      ],
+      "coordinatedSwf": [
+        "Call the chase route and spent resource so teammates can keep repairs away from the depleted area and hand off when the Killer switches."
+      ]
+    },
+    "strengths": [
+      "Reliable chase extension without total build commitment."
+    ],
+    "weaknesses": [
+      "Exhaustion management and trigger conditions limit repeated value; Sprint Burst currently gives a shorter burst than before."
+    ],
+    "killerCounterplay": [
+      "The Killer can change targets, route you away from the activation geometry or force resources out before committing to the chase."
+    ],
+    "commonMistakes": [
+      "Walking or repositioning only to preserve a burst when ordinary objective work would repay more.",
+      "Forcing the trigger after its value window has passed instead of returning to repair or rescue tempo.",
+      "Adding same-purpose mobility until the module becomes dead slots when the Killer refuses the interaction."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C02#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C02@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C02@10.2.0-r1#/dependencyTypes" },
+    { "kind": "PUBLICATION", "ref": "C02#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C02#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C02#Killer Counterplay" },
+    { "kind": "PERK", "ref": "lithe#/mechanics" },
+    { "kind": "PERK", "ref": "sprint-burst#/mechanics" },
+    { "kind": "PERK", "ref": "balanced-landing#/mechanics" },
+    { "kind": "PERK", "ref": "dead-hard#/mechanics" },
+    { "kind": "PERK", "ref": "overcome#/mechanics" },
+    { "kind": "PERK", "ref": "vigil#/mechanics" }
+  ]
+}

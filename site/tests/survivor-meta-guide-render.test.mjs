@@ -6,6 +6,7 @@ import { renderGuideBody } from '../../scripts/survivor-meta-guide-render.mjs';
 import { loadGuideContext, loadGuideRecords } from '../../scripts/survivor-meta-guide-source.mjs';
 import { assembleGuidePage } from '../../scripts/survivor-meta-guide-model.mjs';
 import { makeFixture } from './fixtures/survivor-meta-guide-fixture.mjs';
+import { bindTask13Fixture } from './fixtures/survivor-meta-guide-task13-fixture.mjs';
 
 const rootDir = path.resolve(import.meta.dirname, '../..');
 const context = loadGuideContext({ rootDir });
@@ -86,6 +87,27 @@ test('unsupported optional content is omitted and modules do not invent slots', 
   const familyPrimary = family.slice(0, family.indexOf('<details data-guide-research'));
   assert.doesNotMatch(familyPrimary, /Recommended build|Power|Difficulty/);
   assert.match(family, /No required perks/);
+});
+
+test('Task 13 source-faithful player cues render through generic components', () => {
+  for (const id of ['C02', 'C09', 'A03', 'G07']) {
+    const input = bindTask13Fixture(context, id);
+    const html = renderGuideBody(assembleGuidePage({ context: input.context, strategyId: id, guide: input.guide, mode: 'preview' }));
+    assert.match(html, /data-guide-summary/);
+    assert.match(html, /When to stop/);
+    assert.match(html, /What it does/);
+    assert.match(html, /Why it is here/);
+    assert.match(html, /How to Play/);
+  }
+  const healer = bindTask13Fixture(context, 'A03');
+  const healerHtml = renderGuideBody(assembleGuidePage({ context: healer.context, strategyId: 'A03', guide: healer.guide, mode: 'preview' }));
+  assert.match(healerHtml, /Priority/);
+  assert.match(healerHtml, /Handoff when/);
+  assert.match(healerHtml, /Empathy/);
+  const boon = bindTask13Fixture(context, 'G07');
+  const boonHtml = renderGuideBody(assembleGuidePage({ context: boon.context, strategyId: 'G07', guide: boon.guide, mode: 'preview' }));
+  assert.match(boonHtml, /Boon: Steadfast/);
+  assert.match(boonHtml, /setup|zone|snuff/i);
 });
 
 test('research appendix retains structured fields, receipts, and full frozen article', () => {

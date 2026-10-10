@@ -3,11 +3,15 @@ import path from 'node:path';
 import test from 'node:test';
 import { loadGuideContext, loadGuideRecords } from '../../scripts/survivor-meta-guide-source.mjs';
 import { assembleGuidePage } from '../../scripts/survivor-meta-guide-model.mjs';
+import { validateGuide } from '../../scripts/survivor-meta-guide-validation.mjs';
 import { makeFixture, makePlan } from './fixtures/survivor-meta-guide-fixture.mjs';
+import { bindTask13Fixture } from './fixtures/survivor-meta-guide-task13-fixture.mjs';
+import fs from 'node:fs';
 
 const rootDir = path.resolve(import.meta.dirname, '../..');
 const context = loadGuideContext({ rootDir });
 const guides = loadGuideRecords({ rootDir });
+const schema = JSON.parse(fs.readFileSync(path.join(rootDir, 'content/survivor/meta-guides/schema.json')));
 
 function cloneGuide(strategyId) {
   return structuredClone(guides.get(strategyId));
@@ -148,4 +152,41 @@ test('related destinations deduplicate editorial links while canonical edges rem
   assert.deepEqual(model.page.related[0].relationships.map(item => item.relationship), ['SIMILAR', 'ALTERNATIVE']);
   assert.equal(model.page.related[0].destination.name, context.strategies.get('C01').name);
   assert.deepEqual(model.canonical.relationships.related, []);
+});
+
+test('Task 13 source-faithful stress shapes preserve exact alternatives, modules, roles and provisional facts', () => {
+  const c02 = bindTask13Fixture(context, 'C02');
+  const c02Model = assembleGuidePage({ context: c02.context, strategyId: 'C02', guide: c02.guide, mode: 'preview' });
+  const mobilityPlan = c02Model.page.loadout.plans[0];
+  assert.equal(mobilityPlan.completeness, 'MODULE');
+  assert.equal(mobilityPlan.slots.length, 2);
+  assert.deepEqual(mobilityPlan.slots[0].choices.map(choice => choice.perkId), ['lithe', 'sprint-burst', 'balanced-landing', 'dead-hard', 'overcome']);
+  assert.equal(mobilityPlan.slots[0].choiceCount, 1);
+  assert.notEqual(mobilityPlan.slots[0].choices.length, mobilityPlan.slots.length);
+
+  const c09 = bindTask13Fixture(context, 'C09');
+  const antiTunnelPlan = assembleGuidePage({ context: c09.context, strategyId: 'C09', guide: c09.guide, mode: 'preview' }).page.loadout.plans[0];
+  assert.equal(antiTunnelPlan.completeness, 'MODULE');
+  assert.ok(antiTunnelPlan.slots.length >= 1 && antiTunnelPlan.slots.length <= 4);
+  assert.equal(antiTunnelPlan.slots.length, 2);
+  assert.deepEqual(antiTunnelPlan.slots.map(slot => slot.choices.map(choice => choice.perkId)), [['will-to-live', 'off-the-record'], ['resurgence']]);
+
+  const healer = bindTask13Fixture(context, 'A03');
+  const healerModel = assembleGuidePage({ context: healer.context, strategyId: 'A03', guide: healer.guide, mode: 'preview' });
+  assert.equal(healerModel.page.gameplay.type, 'ROLE_GUIDE');
+  assert.ok(healerModel.page.gameplay.assignment);
+  assert.ok(healerModel.page.gameplay.priorities.length >= 1);
+  assert.ok(healerModel.page.gameplay.handoffWhen.length >= 1);
+  assert.ok(healerModel.page.gameplay.abortWhen.length >= 1);
+  assert.deepEqual(healerModel.page.gameplay.priorities[0].enabledByResolved.map(item => item.id), ['empathy']);
+  assert.deepEqual(healerModel.page.gameplay.priorities[1].enabledByResolved.map(item => item.id), ['empathic-connection', 'med-kit']);
+
+  const boon = bindTask13Fixture(context, 'G07');
+  const boonModel = assembleGuidePage({ context: boon.context, strategyId: 'G07', guide: boon.guide, mode: 'preview' });
+  assert.deepEqual(validateGuide({ guide: boon.guide, context: boon.context, schema }), []);
+  assert.deepEqual(boonModel.research.snapshot, boon.context.snapshotByStrategy.get('G07'));
+  assert.equal(boonModel.research.snapshot.solo.rankingStatus, 'PROVISIONAL');
+  assert.match(boon.guide.page.gameplay.rows[0].action, /bless|zone/i);
+  assert.match(boon.guide.page.gameplay.rows[1].action, /snuff|contest/i);
+  assert.match(boon.guide.page.gameplay.abortWhen.join(' '), /snuffed|unsafe/i);
 });

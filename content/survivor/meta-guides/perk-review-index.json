@@ -60,6 +60,46 @@
     "shoulder-the-burden": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "d6ffb03f7a696f8365a6e6b9498409b0d41f4752db37a6ce26a350698325d899"
+    },
+    "balanced-landing": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "ff682410e6b2d530fb790f61c28f626ca5beee0ef911179d75257def93c3d039"
+    },
+    "overcome": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "0860afe6ed703ebb39f87c1b50819fc0e6a3834e72b028ff572c26d460db8171"
+    },
+    "vigil": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "93b7c4895b75d5b0b036057306c3554dd192a8ff952fab756c9ba42af5cfb579"
+    },
+    "off-the-record": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "36cf627455aa06b439772ab5ff288e3eb22e4965215a8268ba13a793d14c933a"
+    },
+    "resurgence": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "74eafa9c53388bf2ea3c95f50559f8d36465786835cbe9a02d2a8ce9f2d4df89"
+    },
+    "empathy": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "09171bfe801f24603afd64e85634d0d7673a57cccb736f159428e7a9de3b2456"
+    },
+    "empathic-connection": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c083ce1b57c8fc7d74c484f533676b002d5a0f83f7505875228187ace62315fd"
+    },
+    "botany-knowledge": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "51f0be6e1cc4ba6ea115adf193ef789516878d0eac93db059ad4cb9fc24f215b"
+    },
+    "boon-steadfast": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c6cef34ccbe936fab1c8333dfc8e02fdff30352a41b42572b8b682b05b2db735"
+    },
+    "boon-illumination": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "0db73e899db7948cfa5139418c368d68b1f3b0cd54adf7961dd568c63f4db264"
     }
   }
 }

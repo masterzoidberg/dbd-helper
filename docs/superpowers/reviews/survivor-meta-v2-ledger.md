@@ -11,14 +11,14 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | ID | Canonical name | Kind | State | Review evidence | Commit reference |
 |---|---|---|---|---|---|
 | C01 | General Chase / Looping | STANDARD | DRAFT | [Content/source review](#c01-content-review); Task 8 display pending. | 079b7b125b7db3c6f472f97241209567899b7fdb |
-| C02 | Exhaustion Mobility Chase | STANDARD | NOT_STARTED | No record; review not started. | — |
+| C02 | Exhaustion Mobility Chase | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | Task 13 commit |
 | C03 | Vault / Window Specialist | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C04 | Pallet / Resource Specialist | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C05 | Fragile-Pallet Restoration | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C06 | Chase Information / Routing | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C07 | Stealth / Chase Avoidance | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C08 | Chase Reset / Disappearance | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C09 | Anti-Tunnel Package | STANDARD | NOT_STARTED | No record; review not started. | — |
+| C09 | Anti-Tunnel Package | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | Task 13 commit |
 | C10 | Anti-Slug / Self-Recovery Package | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C11 | Hook-State Transfer | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C12 | Deterministic Self-Unhook | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -31,13 +31,13 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | G04 | Cooperative Repair / Gen Duo | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G05 | Manual Skill-Check Generator | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | DRAFT | [Content/source review](#g06-content-review); Task 8 display pending. | 82e24dd4154574c436ec838eaf38640438bac280 |
-| G07 | Boon: Steadfast Repair Zone | STANDARD | NOT_STARTED | No record; review not started. | — |
+| G07 | Boon: Steadfast Repair Zone | STANDARD | REVIEWED | Task 13 editorial/source review; Provisional evaluation preserved; 390×844 and 1440×900 preview checks recorded. | Task 13 commit |
 | G08 | Road Life Repair-to-Self-Heal | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G10 | Fruits of Your Labor Objective-to-Reset Hybrid | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A01 | Hook Rescue / Post-Unhook Reset | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A02 | Anti-Camp / Hook-Timer Control | STANDARD | NOT_STARTED | No record; review not started. | — |
-| A03 | Dedicated Healer / Triage | STANDARD | NOT_STARTED | No record; review not started. | — |
+| A03 | Dedicated Healer / Triage | STANDARD | REVIEWED | Task 13 editorial/source review; ROLE_GUIDE assignment/handoff/abort checks and 390×844/1440×900 preview checks recorded. | Task 13 commit |
 | A04 | Hook-State-Scaled Fast Healing | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A05 | Protection-Hit / Tank | STANDARD | NOT_STARTED | No record; review not started. | — |
 | A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -299,3 +299,13 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Controller verification: full Node 157/157; Python 4/4; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker and syntax/diff checks clean. Isolated preview produced 57 routes with production tree unchanged.
 - Task 12: complete (commits `4d81734..5f6b34b`, review clean after one fix round). Production artifacts are deterministic but remain Research View Only for the current unpublished/missing catalog; no editorial batch was published or deployed.
 - Task 12: minor (deferred): base-path behavior is asserted by source contract rather than a runtime `/` and `/dbd-helper/` test; preview-parent inventory is not directly snapshotted. No demonstrated defect.
+
+### Task 13 — first population wave
+
+- BASE: `8b09565`.
+- Implementer: Averroes; four genuine reviewed guide records for C02, C09, A03 and G07. Coordinator repaired one malformed G07 JSON nesting defect after reproducing the parser failure; the repair was followed by focused RED→GREEN verification.
+- Source-faithful fixtures cover: C02 alternatives remain choices rather than a union build; C09 leaves unspecified module slots open; A03 uses `ROLE_GUIDE` priorities, assignment, handoff and abort semantics; G07 preserves the canonical Provisional evaluation and local Boon setup/maintenance/abort guidance.
+- Focused model/render/validation/perk-review tests: 40/40. Preview generation produced all 57 isolated routes with production output unchanged. Validator: 46 missing, 7 DRAFT, 4 REVIEWED, 0 PUBLISHED, zero diagnostics.
+- Browser evidence: each new guide was inspected at 390×844 and 1440×900 (8/8 checks): one H1, summary, primary landmark, closed research disclosure and no horizontal overflow. Ignored screenshots are under the isolated Task 13 preview evidence directory. Static/file preview required local CSS injection and emitted expected file-relative asset errors; this is recorded as a harness limitation, not clean network evidence.
+- No renderer/schema/source/canonical ZIP/generated production output/publication/deployment changes. The seven prototype guides remain DRAFT; editorial content is still publication-gated.
+- Task 13: task review pending before commit integration.

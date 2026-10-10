@@ -433,3 +433,11 @@ test('catalog and CLI report exactly the stale perk-dependent guide in all revie
     assert.deepEqual(tree(f.directory), before);
   }
 });
+
+test('Task 13 reviewed guide records parse as JSON and pass semantic validation', () => {
+  for (const strategyId of ['C02', 'C09', 'A03', 'G07']) {
+    const file = path.join(rootDir, 'content/survivor/meta-guides', `${strategyId}.json`);
+    const guide = JSON.parse(fs.readFileSync(file, 'utf8'));
+    assert.deepEqual(validateGuide({ guide, context: prepared, schema }), [], strategyId);
+  }
+});

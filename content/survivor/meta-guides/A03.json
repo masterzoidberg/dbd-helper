@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-09",
+  "strategyId": "A03",
+  "snapshotId": "A03@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "botany-knowledge", "mechanicsRevision": 1 },
+    { "perkId": "empathic-connection", "mechanicsRevision": 1 },
+    { "perkId": "empathy", "mechanicsRevision": 1 },
+    { "perkId": "well-make-it", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Take injured-teammate triage as a real role: find the next reachable reset, heal while it is safe, and hand the job off when pressure or objective tempo changes.",
+    "verdict": {
+      "recommendation": "Choose this role when the team can spend time restoring health without turning the healer into a second down or abandoning a critical objective.",
+      "soloQ": "Use teammate information to choose a reachable heal, then verify the reset is still safe instead of crossing the map automatically.",
+      "coordinatedSwf": "Call the injured target, healer assignment and handoff so two players do not leave objectives for the same reset.",
+      "mainWeakness": "Healing can be strategically wrong under heavy slowdown or pressure; speed stacking has diminishing returns and the role commits substantial team time."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "healer-tools",
+          "label": "Healer tools",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "This module supports the healer role without pretending to be a fixed four-perk build.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Find injured teammates",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "empathy", "whyItsHere": "Locate injured or dying teammates before crossing the map for a heal." }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Healing speed",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "empathic-connection", "whyItsHere": "Make a reachable teammate heal efficient and give injured teammates a way to find you." },
+                { "perkId": "botany-knowledge", "whyItsHere": "Improve healing speed without requiring a particular teammate to carry the interaction." }
+              ]
+            },
+            {
+              "slot": 3,
+              "role": "Post-unhook heal window",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "well-make-it", "whyItsHere": "Convert a rescue into a timely teammate heal when the reset is safe." }
+              ]
+            }
+          ]
+        }
+      ],
+      "item": {
+        "id": "med-kit",
+        "status": "OPTIONAL",
+        "name": "Med-Kit",
+        "why": "Use a med-kit when it makes a safe reset or charge-efficient heal possible; the role does not depend on a particular add-on."
+      }
+    },
+    "gameplay": {
+      "type": "ROLE_GUIDE",
+      "assignment": "Take the next reachable injured health state as a deliberate team job, while abandoning the heal when pressure or objective tempo makes it wrong.",
+      "priorities": [
+        {
+          "id": "find-injury",
+          "situation": "A teammate is injured or dying and the path is reachable.",
+          "action": "Use the information tool to choose the nearest safe reset, then approach with an exit rather than crossing the map automatically.",
+          "why": "Triage value comes from selecting a heal that returns a teammate to a useful job.",
+          "enabledBy": ["perk:empathy"]
+        },
+        {
+          "id": "start-reset",
+          "situation": "You and the teammate can heal without pulling pressure onto the reset.",
+          "action": "Start the heal with the selected speed tool or optional med-kit, and stop if the Killer turns the reset into a chase.",
+          "why": "Healing speed cannot repay a down or an abandoned critical objective.",
+          "enabledBy": ["perk:empathic-connection", "item:med-kit"]
+        },
+        {
+          "id": "after-unhook",
+          "situation": "You have just unhooked a teammate and the reset window is safe.",
+          "action": "Use the post-unhook heal window if the teammate can finish the reset; otherwise hand the heal to a safer partner and return to the next job.",
+          "why": "The rescue-triggered tool is valuable only when the unhook actually creates a safe heal.",
+          "enabledBy": ["perk:well-make-it"]
+        }
+      ],
+      "handoffWhen": [
+        "Hand off a heal when the teammate is safer with another rescuer, the Killer has changed pressure or a critical generator/rescue is uncovered.",
+        "Call who owns the reset so two teammates do not abandon the same objective."
+      ],
+      "abortWhen": [
+        "Abort the heal when the Killer can reach both Survivors before the reset completes.",
+        "Stop travelling for an injured teammate when the distance or current hook state makes the reset less valuable than the uncovered team job."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "A visible injured teammate is an invitation to triage, not a command to travel; keep the nearest rescue or generator in view."
+      ],
+      "coordinatedSwf": [
+        "Name the healer and reset target, then release the role when another player is safer or the team needs the healer elsewhere."
+      ]
+    },
+    "strengths": [
+      "Restore team health efficiently when a safe reset is available."
+    ],
+    "weaknesses": [
+      "Healing can be the wrong macro decision against heavy pressure, and losing the med-kit or its charges reduces the role's ceiling."
+    ],
+    "killerCounterplay": [
+      "The Killer can change targets or pressure the reset route so the time spent seeking a heal no longer repays the team."
+    ],
+    "commonMistakes": [
+      "Crossing the map for an injured teammate while a nearer rescue or critical generator is uncovered.",
+      "Treating the optional med-kit as infinite or assuming healing speed makes every reset correct.",
+      "Keeping the healer assignment after the Killer has made the reset unsafe instead of handing it off."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A03#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A03@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "A03@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "A03@10.2.0-r1#/dependencyTypes" },
+    { "kind": "PUBLICATION", "ref": "A03#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A03#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "A03#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "A03#Killer Counterplay" },
+    { "kind": "PERK", "ref": "empathy#/mechanics" },
+    { "kind": "PERK", "ref": "empathic-connection#/mechanics" },
+    { "kind": "PERK", "ref": "well-make-it#/mechanics" },
+    { "kind": "PERK", "ref": "botany-knowledge#/mechanics" }
+  ]
+}
