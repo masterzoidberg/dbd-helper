@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "I04",
+  "snapshotId": "I04@10.2.0-r1",
+  "perkReviews": [{ "perkId": "deja-vu", "mechanicsRevision": 1 }, { "perkId": "dark-sense", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Choose the next useful generator from a real objective cue, then use a triggered resource read to leave safely instead of wandering for more information.",
+    "verdict": {
+      "recommendation": "Let routing information cut dead travel and avoid a bad generator commitment; the destination matters more than seeing every aura.",
+      "soloQ": "Use your own generator cue when no one can call the next repair and reassess if Killer pressure makes that route unsafe.",
+      "coordinatedSwf": "Compare the highlighted cluster with team assignments; communicate the useful destination instead of duplicating the same scouting trip.",
+      "mainWeakness": "Players with current map knowledge gain less from extra routing slots, and a temporary resource read cannot make a spent route safe."
+    },
+    "loadout": { "options": [
+      { "perkId": "deja-vu", "usage": "CORE", "whyItsHere": "Highlights the closest grouped trio of generators and rewards repair on those targets, turning objective search into a concrete destination." },
+      { "perkId": "dark-sense", "usage": "SUPPORT", "whyItsHere": "After a generator completion and Killer approach, reveals nearby pallets and windows during its temporary window so you can route away from the next threatened objective." }
+    ] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["I04 asks where to work next. Read the grouped generators first; use the post-generator resource window only if the Killer actually approaches. The source has no verified four-slot build."],
+      "rows": [
+        { "id": "select-objective", "situation": "Déjà Vu highlights a grouped generator trio after you leave an objective or need a new work target.", "action": "Choose a reachable highlighted generator that advances the match without crossing active danger; begin repair instead of searching for a theoretically perfect route.", "why": "The cue reduces dead travel and dangerous generator choices; the highlighted group can update as the Trial changes.", "enabledBy": ["perk:deja-vu"] },
+        { "id": "resource-exit", "situation": "A generator completion has armed Dark Sense and a nearby Killer triggers the aura window.", "action": "Use the visible nearby pallets and windows to choose an exit from the threatened objective, then move before the window expires.", "why": "The current Dark Sense resource view is conditional and temporary, not a standing map of all resources.", "enabledBy": ["perk:dark-sense"] },
+        { "id": "change-work-target", "situation": "The selected generator becomes dangerous, finishes or no longer supports a useful route.", "action": "Recheck the current objective cue, communicate the change if coordinated, and move to the next viable work target.", "why": "Routing serves objective tempo; holding to a stale destination defeats the strategy." },
+        { "id": "skip-redundant-read", "situation": "You already know the safe work target or the team has assigned it.", "action": "Work or cover a more urgent task instead of adding a scouting detour for the same information.", "why": "The frozen counter note says routing information loses value when map knowledge already answers the question." }
+      ],
+      "abortWhen": ["The highlighted objective is unsafe or completed and following it would waste travel.", "The resource window has expired or its pallets and windows are already spent."]
+    },
+    "weaknesses": ["Known maps and clear team assignments reduce incremental information value; objective auras do not remove Killer pressure."],
+    "commonMistakes": ["Walking toward an outdated generator highlight after the objective state changes.", "Treating Dark Sense as permanent resource vision rather than a triggered post-completion window."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "I04#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "I04@10.2.0-r1#/changeSummary" },
+    { "kind": "SNAPSHOT", "ref": "I04@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "I04@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "I04#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "I04#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PERK", "ref": "deja-vu#/mechanics" },
+    { "kind": "PERK", "ref": "dark-sense#/mechanics" }
+  ]
+}

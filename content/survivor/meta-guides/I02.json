@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "I02",
+  "snapshotId": "I02@10.2.0-r1",
+  "perkReviews": [{ "perkId": "alert", "mechanicsRevision": 1 }, { "perkId": "premonition", "mechanicsRevision": 1 }, { "perkId": "dark-sense", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use an actual Killer-position cue to rotate or prepare for chase before committing to a route; do not treat event-gated reveals as constant tracking.",
+    "verdict": {
+      "recommendation": "Pick the Killer read that matches the decision you need: a break event, an out-of-chase approach or a post-generator approach.",
+      "soloQ": "A brief Killer read can replace a missing warning call, but act on its location before the reveal ends.",
+      "coordinatedSwf": "Share the Killer's last confirmed action and route only when it adds to current voice information.",
+      "mainWeakness": "Aura blocking, Undetectable effects, inactive trigger windows and perk-slot cost limit reliability."
+    },
+    "loadout": { "options": [
+      { "perkId": "alert", "usage": "CORE", "whyItsHere": "Killer Break or Damage actions give a brief location reveal that can alter your next repair, rescue or chase route." },
+      { "perkId": "premonition", "usage": "SUPPORT", "whyItsHere": "Outside chase, looking toward a nearby Killer gives an approach warning and brief aura; its cooldown means the read is intermittent." },
+      { "perkId": "dark-sense", "usage": "SUPPORT", "whyItsHere": "A generator completion arms a Killer-approach reveal; its current multi-aura window also shows nearby pallets and windows for the immediate route." }
+    ] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before entering an exposed route, separate a current Killer reveal from an old position. I02 tracks the Killer; teammate and generator auras in a Dark Sense window are supporting context, not the identity of this plan."],
+      "rows": [
+        { "id": "break-event-route", "situation": "Alert reveals the Killer after a Break or Damage action.", "action": "Use the shown position to choose a safer rotation or prepare the chase route, then return to your task when the brief reveal ends.", "why": "The cue is tied to a Killer action, not continuous pursuit tracking.", "enabledBy": ["perk:alert"] },
+        { "id": "out-of-chase-warning", "situation": "You are not being chased and Premonition triggers while you face a nearby Killer.", "action": "Leave the vulnerable line or take position at a usable resource before the approach closes; do not rely on an immediate repeat trigger.", "why": "Premonition has an out-of-chase condition and cooldown.", "enabledBy": ["perk:premonition"] },
+        { "id": "armed-post-gen-read", "situation": "A generator completion has armed Dark Sense and the Killer enters its trigger range.", "action": "Read the Killer's approach and choose a safe route using the nearby pallet or window information while the window lasts.", "why": "Dark Sense now requires both the completed generator and Killer proximity before its temporary reveal.", "enabledBy": ["perk:dark-sense"] },
+        { "id": "no-current-position", "situation": "No trigger fires, the last aura has expired, or a Killer effect blocks the read.", "action": "Use visible and audible Trial cues and a conservative route; stop detouring to chase an old aura location.", "why": "A stale or denied read cannot justify an exposed commitment." }
+      ],
+      "abortWhen": ["The aura has expired or is blocked and no current Killer position is known.", "A detour to gain another read would cost more objective or rescue time than the route decision is worth."]
+    },
+    "weaknesses": ["Reveals depend on Killer actions, position or generator events; an inactive information slot does not protect a committed route."],
+    "killerCounterplay": ["Aura blocking or Undetectable effects can limit the read, while a changed Killer route makes an old position less useful."],
+    "commonMistakes": ["Following a brief aura long after it ends.", "Expecting Dark Sense to reveal continuously without its generator-completion and proximity triggers."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "I02#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "I02@10.2.0-r1#/changeSummary" },
+    { "kind": "SNAPSHOT", "ref": "I02@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "I02@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "I02#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "I02#Killer Counterplay" },
+    { "kind": "PERK", "ref": "alert#/mechanics" },
+    { "kind": "PERK", "ref": "premonition#/mechanics" },
+    { "kind": "PERK", "ref": "dark-sense#/mechanics" }
+  ]
+}

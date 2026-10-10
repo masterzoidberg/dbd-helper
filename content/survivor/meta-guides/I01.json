@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "I01",
+  "snapshotId": "I01@10.2.0-r1",
+  "perkReviews": [{ "perkId": "kindred", "mechanicsRevision": 1 }, { "perkId": "deja-vu", "mechanicsRevision": 1 }, { "perkId": "premonition", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Replace missing Solo-Q calls with specific hook, objective and approach cues, then act before the information loses value.",
+    "verdict": {
+      "recommendation": "Use a small information shell to settle who should rescue, where to repair and when to leave an exposed position.",
+      "soloQ": "Read the hook and objective state yourself when teammates cannot call it; turn each cue into one decision rather than collecting more auras.",
+      "coordinatedSwf": "Keep only the information that adds to voice calls; repeated known hook or generator state is usually a poor slot trade.",
+      "mainWeakness": "Information slots can crowd out direct tempo, especially when team calls already answer the same questions."
+    },
+    "loadout": { "options": [
+      { "perkId": "kindred", "usage": "CORE", "whyItsHere": "Hook events expose teammate positions and the Killer near the hook, helping decide whether you should rescue or keep working." },
+      { "perkId": "deja-vu", "usage": "SUPPORT", "whyItsHere": "Highlights a grouped generator trio so you can leave a finished job for useful repair instead of searching blindly." },
+      { "perkId": "premonition", "usage": "SUPPORT", "whyItsHere": "Outside chase, a directional nearby-Killer cue gives an approach decision when no teammate can warn you." }
+    ] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Ask which missing call matters next: hook coverage, the next grouped generator or an approaching Killer. The 10.2 intent system reduces some uncertainty but does not replace these specific reads."],
+      "rows": [
+        { "id": "assign-hook-response", "situation": "A teammate is hooked and Kindred shows another survivor nearer the hook or the Killer remaining nearby.", "action": "Let the nearer safe rescuer take the approach while you keep useful repair; move yourself only when the visible team state leaves the rescue uncovered.", "why": "The hook aura read prevents duplicated rescue trips, but only while a Survivor remains hooked.", "enabledBy": ["perk:kindred"] },
+        { "id": "choose-next-repair", "situation": "Your generator finishes or you leave a dangerous location and Déjà Vu shows the grouped trio.", "action": "Choose a reachable highlighted generator that advances the objective without dragging the chase into teammates; stop scouting once the destination is clear.", "why": "This is a destination cue, not an instruction to ignore immediate hook or Killer pressure.", "enabledBy": ["perk:deja-vu"] },
+        { "id": "respond-to-approach", "situation": "Outside chase, Premonition triggers while you look toward a nearby Killer.", "action": "Leave the exposed position or pre-position for the approach; do not keep turning for another cue while its cooldown runs.", "why": "The brief aura window supplies an early decision, not continuous tracking.", "enabledBy": ["perk:premonition"] },
+        { "id": "stop-duplicating-info", "situation": "The team already has a safe rescue covered, a work target is known or voice calls answer the same question.", "action": "Return to repair or the urgent rescue instead of detouring for another information read.", "why": "The source's main cost is overinvesting in knowledge instead of tempo." }
+      ],
+      "abortWhen": ["A cue no longer changes the rescue, repair or safety decision.", "A coordinated call already supplies the same state and following the aura would abandon a more urgent action."]
+    },
+    "weaknesses": ["Multiple information perks can displace direct chase, healing or repair value; voice coordination reduces the shell's distinct advantage."],
+    "commonMistakes": ["Both travelling to an obvious hook rescue when the aura already shows coverage.", "Waiting for a perfect information picture instead of beginning the next useful repair."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "I01#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "I01@10.2.0-r1#/changeSummary" },
+    { "kind": "SNAPSHOT", "ref": "I01@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "I01@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "I01#Solo Q vs SWF" },
+    { "kind": "PUBLICATION", "ref": "I01#Representative Builds" },
+    { "kind": "PERK", "ref": "kindred#/mechanics" },
+    { "kind": "PERK", "ref": "deja-vu#/mechanics" },
+    { "kind": "PERK", "ref": "premonition#/mechanics" }
+  ]
+}
