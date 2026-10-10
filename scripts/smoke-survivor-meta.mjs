@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(import.meta.dirname, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'content/survivor/meta/10.2.0-r1/stage3b/strategy-pages-manifest.json'), 'utf8'));
+const manifestRoutes = new Set(manifest.map(route => route.slug));
 const TIMEOUT_MS = 8000;
 const ATTEMPTS = 3;
 
@@ -26,6 +27,11 @@ function escapeHtml(value) {
   return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 }
 
+function hasDestination(markup, label) {
+  return [...markup.matchAll(/<a href="([^"]+)">([^<]+)<\/a>/g)]
+    .some(([, href, text]) => manifestRoutes.has(href.replace(/\/$/, '')) && (!label || text === label));
+}
+
 function guideFailure(route, html) {
   if (!/<p class="guide-publication-status">Player Guide<\/p>/.test(html) || /Research View Only/.test(html)) return 'not a published Player Guide';
   if (!html.includes(`<h1>${escapeHtml(route.canonicalName)}</h1>`)) return 'canonical guide title missing';
@@ -44,6 +50,21 @@ function guideFailure(route, html) {
     X02: [/class="guide-team"/, /No single four-perk loadout is implied/, /Solo Q<\/span><strong>Not a queue recommendation/]
   };
   for (const pattern of checks[route.strategyId] || []) if (!pattern.test(primary)) return `player landmark missing: ${pattern}`;
+  if (route.strategyId === 'P00' || route.strategyId === 'A00') {
+    const family = primary.match(/<section class="guide-family">([\s\S]*?)<\/section>/)?.[1] || '';
+    const approaches = [...family.matchAll(/<article>[\s\S]*?<\/article>/g)];
+    if (!approaches.length || approaches.some(([article]) => !hasDestination(article, 'Open this approach'))) return 'family approach destination missing';
+  }
+  if (route.strategyId === 'G06' || route.strategyId === 'C13') {
+    const successors = primary.match(/<h2>Current successors<\/h2><ul>([\s\S]*?)<\/ul>/)?.[1] || '';
+    const entries = [...successors.matchAll(/<li>[\s\S]*?<\/li>/g)];
+    if (!entries.length || entries.some(([entry]) => !hasDestination(entry))) return 'Legacy successor destination missing';
+  }
+  if (route.strategyId === 'X02') {
+    const roles = [...primary.matchAll(/<article id="guide-role-([a-zA-Z0-9_-]+)"><h3>[^<]+<\/h3>/g)].map(([, id]) => id);
+    const roleLinks = [...primary.matchAll(/<a href="#guide-role-([a-zA-Z0-9_-]+)">/g)].map(([, id]) => id);
+    if (new Set(roles).size !== 4 || !roleLinks.length || roleLinks.some(id => !roles.includes(id))) return 'team roles or role links missing';
+  }
   return null;
 }
 

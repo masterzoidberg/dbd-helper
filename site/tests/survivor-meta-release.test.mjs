@@ -73,6 +73,28 @@ test('missing, unpublished, choice-less, and article-less guides fail with exact
   }
 });
 
+test('family, Legacy, and TEAM landmark text cannot mask broken navigation or missing roles', async t => {
+  const cases = [
+    ['survivor-meta/pickup-interception-save-family/', html => html.replace(/<a href="\/survivor-meta\/[^"]+">Open this approach<\/a>/g, '<span>Open this approach</span>')],
+    ['survivor-meta/rescue-and-reset-support-family/', html => html.replace(/<a href="\/survivor-meta\/[^"]+">Open this approach<\/a>/g, '<span>Open this approach</span>')],
+    ['survivor-meta/luck-based-self-unhook/', html => html.replace(/(<h2>Current successors<\/h2><ul><li>)<a href="[^"]+">([^<]+)<\/a>/, '$1<span>$2</span>')],
+    ['survivor-meta/classic-stake-outhyperfocus-engine/', html => html.replace(/(<h2>Current successors<\/h2><ul><li>)<a href="[^"]+">([^<]+)<\/a>/, '$1<span>$2</span>')],
+    ['survivor-meta/coordinated-swf-flex-generalist/', html => html.replace(/id="guide-role-[^"]+"/g, 'id="missing-role"')],
+    ['survivor-meta/coordinated-swf-flex-generalist/', html => html.replace(/href="#guide-role-[^"]+"/g, 'href="#missing-role"')]
+  ];
+  for (const [index, [route, mutate]] of cases.entries()) {
+    await t.test(`${route} mutation ${index + 1}`, async () => {
+      const f = fixture();
+      const original = f.pages.get(route);
+      const broken = mutate(original);
+      assert.notEqual(broken, original, `${route}: fixture must remove navigation`);
+      f.pages.set(route, broken);
+      const result = await smoke({ baseUrl: 'https://example.test/dbd-helper/', fetchImpl: f.fetchImpl });
+      assert.ok(result.failures.some(failure => failure.url === `https://example.test/dbd-helper/${route}`), route);
+    });
+  }
+});
+
 test('network errors retry a bounded number of times and report the failed URL', async () => {
   const f = fixture();
   let attempts = 0;
