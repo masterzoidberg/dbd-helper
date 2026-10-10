@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C14",
+  "snapshotId": "C14@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "self-care", "mechanicsRevision": 1 },
+    { "perkId": "botany-knowledge", "mechanicsRevision": 1 },
+    { "perkId": "strength-in-shadows", "mechanicsRevision": 1 },
+    { "perkId": "inner-strength", "mechanicsRevision": 1 },
+    { "perkId": "plot-twist", "mechanicsRevision": 1 },
+    { "perkId": "road-life", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Reset your own health state only when the self-heal returns more team tempo than a teammate rotation or a generator would, then leave the reset when pressure makes it a sunk cost.",
+    "verdict": {
+      "recommendation": "Use one self-heal route and judge its time, location and state gates against the next generator or rescue. Independence is the payoff, not permission to heal whenever injured.",
+      "soloQ": "Choose a reachable reset that does not abandon an urgent hook or critical generator. When no safe route exists, return to ordinary objective or rescue work.",
+      "coordinatedSwf": "Treat the reset as a personal tempo decision and call when you are leaving an objective. The canonical Coordinated SWF evaluation is unranked, so this guide makes no numerical SWF claim.",
+      "mainWeakness": "Self-heal time, basement or totem access, injury and Dying-state gates, and Killer pressure can make independence slower than taking a teammate heal or continuing repair."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "self-sustain-module",
+          "label": "Independent reset module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source records a self-sustain framework rather than a verified four-perk implementation. Choose one access route, then add healing efficiency only if its conditions and the rest of the Trial support the time cost.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Choose one self-heal access route",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "self-care",
+                  "whyItsHere": "Heal without a Med-Kit when a safe reset is worth its slow 25/30/35% of regular Healing speed. The perk grants access, not a reason to ignore objective tempo."
+                },
+                {
+                  "perkId": "strength-in-shadows",
+                  "whyItsHere": "Use a Basement reset at 70% of normal Healing speed, then read the Killer Aura for 6/8/10 seconds after completion. It is only available inside the Basement."
+                },
+                {
+                  "perkId": "inner-strength",
+                  "whyItsHere": "Cleanse a Totem first, then spend 10/9/8 seconds in a Locker to heal one Health State. Blessing does not activate it, and Broken prevents the heal."
+                },
+                {
+                  "perkId": "plot-twist",
+                  "whyItsHere": "From Injured, crouch while stationary to enter the Dying State silently and recover yourself, then use the post-recovery Healthy state and 50% Haste for 2/3/4 seconds. Its use is gated again until the Exit Gates are powered."
+                },
+                {
+                  "perkId": "road-life",
+                  "whyItsHere": "While Injured and repairing, build 6/5/4 Tokens from basic Great Skill Checks, lose one on a missed basic check, then spend all Tokens to self-heal with the live 10% bonus."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Improve a selected healing route",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "botany-knowledge",
+                  "whyItsHere": "Increase Healing speed by 30/40/50% when the selected reset is safe. It does not create self-heal access by itself."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "item": {
+        "id": "med-kit",
+        "status": "OPTIONAL",
+        "name": "Med-Kit",
+        "why": "Use a Med-Kit only when its charges make a safe reset faster or preserve a self-heal route. The source calls the item common, not required, and no add-on package is established."
+      }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before leaving a job to heal, identify the nearest safe reset and the generator or rescue you are giving up. Start the self-sustain plan only when returning healthy or recovered will repay that interruption."
+      ],
+      "rows": [
+        {
+          "id": "choose-the-reset",
+          "situation": "You are Injured or in a recoverable state and no immediate rescue or critical generator is uncovered.",
+          "action": "Choose the shortest safe reset route, check the Killer's likely approach and begin only when you have an exit. If the route requires a long cross-map trip, keep the next objective moving instead.",
+          "why": "The strategy's value is independent recovery, but the recovery still spends time and positioning."
+        },
+        {
+          "id": "use-self-care-route",
+          "situation": "Self-Care is equipped and a quiet reset is safer than asking a teammate to travel.",
+          "action": "Self-heal at the current live 25/30/35% of regular Healing speed only when the location is safe enough to finish or disengage. Do not keep channeling after the Killer can reach the reset before it pays back.",
+          "why": "Self-Care removes the Med-Kit requirement but its slow rate makes a bad location especially expensive.",
+          "enabledBy": ["perk:self-care"]
+        },
+        {
+          "id": "use-gated-reset",
+          "situation": "Strength in Shadows, Inner Strength or Plot Twist is the selected access route and its state gate is available.",
+          "action": "Confirm the exact gate before travelling: Basement for Strength in Shadows, a previously cleansed Totem and a non-Broken state for Inner Strength, or Injured plus crouched and stationary for Plot Twist. Abort the detour when the gate is no longer worth the travel.",
+          "why": "These perks grant different self-heal actions; an available perk slot does not mean every reset is available now.",
+          "enabledBy": ["slot:self-sustain-module#1"]
+        },
+        {
+          "id": "cash-in-road-life",
+          "situation": "Road Life is equipped, you are Injured and a repair window offers basic Skill Checks.",
+          "action": "Build Tokens only while the generator remains a good job. At 6/5/4 Tokens, start the self-heal when the location is safe, spend all Tokens and remember that the 10% granted self-heal effect ends four seconds after stopping.",
+          "why": "Road Life turns repair and check accuracy into a conditional reset; leaving a useful generator only to protect a low-value heal can lose the exchange.",
+          "enabledBy": ["perk:road-life"]
+        },
+        {
+          "id": "support-the-reset",
+          "situation": "The selected self-heal route is active and Botany Knowledge or an optional Med-Kit can shorten it without exposing both resources.",
+          "action": "Use the speed support only after checking the exit and the next team job. If the Killer contests the reset, stop healing and leave rather than spending the item or perk slot to prove the route works.",
+          "why": "Healing speed improves a valid reset; it does not repair a bad location or a poor macro decision.",
+          "enabledBy": ["perk:botany-knowledge", "item:med-kit"]
+        },
+        {
+          "id": "release-the-reset",
+          "situation": "The Killer approaches, the reset is too slow, the selected gate disappears or an urgent hook or generator needs coverage.",
+          "action": "Stop the heal, take the safest available exit and return to the uncovered job. Do not travel back to recover a spent setup just because the build was intended to be self-sufficient.",
+          "why": "The source counter is time efficiency and anti-heal pressure; independence stops being valuable when it transfers more pressure to the team."
+        }
+      ],
+      "abortWhen": [
+        "Abort a self-heal when the Killer can reach the reset before it completes, the route is no longer safe or a hook or critical generator is uncovered.",
+        "Release the module after its state gate or resource is gone; continue the Trial with ordinary repair, rescue and chase decisions."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "No teammate can be assumed to understand why you are healing. Keep the nearest hook and generator in view and use the reset only when it returns you to useful play sooner than a teammate rotation."
+      ],
+      "coordinatedSwf": [
+        "Call the reset location and the job you are leaving, then release the plan when the team needs you back. The canonical SWF result is unranked rather than a numerical recommendation."
+      ]
+    },
+    "strengths": [
+      "Restore a useful health state without requiring a teammate to travel to you."
+    ],
+    "weaknesses": [
+      "Self-heal time varies sharply by route and can lose to ordinary repair or rescue tempo.",
+      "Basement, Totem, Injury, Broken, Dying-state and item conditions can deny the chosen reset."
+    ],
+    "killerCounterplay": [
+      "The Killer can pressure the reset location, deny the required state or force the player to abandon a slow heal before it repays its time."
+    ],
+    "commonMistakes": [
+      "Healing automatically after every hit while an urgent generator or rescue is uncovered.",
+      "Treating Botany Knowledge as self-heal access, or treating one gated route as available in every location and health state.",
+      "Continuing a Basement, Locker, Dying-state or Med-Kit detour after the Killer has made the reset unsafe."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C14#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C14@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C14@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "C14@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C14@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C14#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C14#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C14#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "C14#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C14#Common Mistakes" },
+    { "kind": "PERK", "ref": "self-care#/mechanics" },
+    { "kind": "PERK", "ref": "botany-knowledge#/mechanics" },
+    { "kind": "PERK", "ref": "strength-in-shadows#/mechanics" },
+    { "kind": "PERK", "ref": "inner-strength#/mechanics" },
+    { "kind": "PERK", "ref": "plot-twist#/mechanics" },
+    { "kind": "PERK", "ref": "road-life#/mechanics" }
+  ]
+}
