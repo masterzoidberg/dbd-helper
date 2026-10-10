@@ -382,6 +382,7 @@ export function assembleGuidePage({ context, strategyId, guide, mode }) {
   const page = selectedMode === PLAYER ? resolvePage(context, strategyId, guide, canonical, cache) : null;
   return {
     strategyId,
+    sourceStrategyIds: [...context.strategies.keys()],
     mode: selectedMode,
     kind: derivePageKind(strategy, snapshot),
     page,

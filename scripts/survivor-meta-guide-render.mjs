@@ -50,21 +50,54 @@ function escapeHtml(value) {
 
 function playerCopy(value, model) {
   const strategyNames = new Map();
+  const strategyIds = new Set();
   const addStrategyName = candidate => {
+    if (candidate?.strategyId) strategyIds.add(candidate.strategyId);
     if (candidate?.strategyId && candidate.name) strategyNames.set(candidate.strategyId, candidate.name);
   };
+  const addStrategyId = value => {
+    if (typeof value === 'string' && value.trim()) strategyIds.add(value);
+  };
+  const collectStrategyIds = value => {
+    if (Array.isArray(value)) {
+      value.forEach(collectStrategyIds);
+      return;
+    }
+    if (!value || typeof value !== 'object') return;
+    for (const [key, candidate] of Object.entries(value)) {
+      if (/strategyids?$/i.test(key)) {
+        if (Array.isArray(candidate)) candidate.forEach(addStrategyId);
+        else addStrategyId(candidate);
+      }
+      collectStrategyIds(candidate);
+    }
+  };
+  addStrategyId(model?.strategyId);
+  addStrategyId(model?.canonical?.id);
+  addStrategyId(model?.canonical?.strategy?.id);
+  addStrategyId(model?.research?.strategy?.id);
+  for (const strategyId of model?.sourceStrategyIds || []) addStrategyId(strategyId);
   addStrategyName(model?.canonical);
   addStrategyName(model?.canonical?.strategy);
   for (const relationship of Object.values(model?.canonical?.relationships || {})) {
     for (const candidate of Array.isArray(relationship) ? relationship : [relationship]) addStrategyName(candidate);
   }
+  collectStrategyIds(model?.canonical);
+  collectStrategyIds(model?.research);
 
   const currentStrategyId = model?.strategyId;
+  const strategyPattern = [...strategyIds]
+    .sort((left, right) => right.length - left.length)
+    .map(strategyId => strategyId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+  const strategyReference = strategyPattern
+    ? new RegExp(`(?<![A-Za-z0-9_-])(?:${strategyPattern})(?![A-Za-z0-9_-])`, 'g')
+    : null;
   return String(value ?? '')
     .replace(/\bStage\s*3[AB]\b/gi, 'the research record')
     .replace(/\bStage\s*2\b/gi, 'reviewed')
     .replace(/\bBuildImplementations?\b/gi, 'fixed four-perk build')
-    .replace(/\b(?:A|C|G|I|P|R|X)\d{2}\b/g, strategyId => (
+    .replace(strategyReference || /(?!)/g, strategyId => (
       Object.is(strategyId, currentStrategyId) ? 'this strategy' : strategyNames.get(strategyId) || 'the related strategy'
     ));
 }
@@ -211,7 +244,7 @@ function renderEnablerLinks(enablers, model, page) {
     if (enabler.type === 'slot') {
       const choices = enabler.choices || findSlot(page, enabler.id)?.slot?.choices || [];
       const choiceLinks = choices.map(choice => perkLink(choice, model)).filter(Boolean);
-      if (choiceLinks.length) return choiceLinks.join(' <span aria-hidden="true">or</span> ');
+      if (choiceLinks.length) return choiceLinks.join(' <span class="guide-choice-separator">or</span> ');
     }
     const label = resolvedEnablerLabel(enabler, page);
     if (enabler.type === 'role') return `<a href="#guide-role-${internalId(enabler.id)}">${escapeHtml(label)}</a>`;
@@ -265,7 +298,7 @@ function renderItem(item, scope) {
 function renderSlot(slot, model) {
   const choices = slot.choices || [];
   const choiceText = choices.length > 1
-    ? `<span class="guide-choice-label">Choose one:</span> <span class="guide-choice-options">${choices.map(choice => perkLink(choice, model)).join(' <span aria-hidden="true">or</span> ')}</span>`
+    ? `<span class="guide-choice-label">Choose one:</span> <span class="guide-choice-options">${choices.map(choice => perkLink(choice, model)).join(' <span class="guide-choice-separator">or</span> ')}</span>`
     : choices.length === 1 ? perkLink(choices[0], model) : 'No reviewed choice';
   const detail = slot.role ? `<span class="guide-slot-job">${escapeHtml(slot.role)}</span>` : '';
   const usage = slot.usage ? `<span class="guide-slot-usage">${escapeHtml(usageLabel(slot.usage))}</span>` : '';
@@ -297,7 +330,10 @@ function renderPlan(plan, model, page, showPlanLabel = false) {
   const label = plan.label || (plan.environment ? `${environmentLabel(plan.environment)} build` : '');
   const slots = plan.slots || [];
   const headingText = showPlanLabel && label ? heading(3, label) : '';
-  return `<article class="guide-plan">${headingText}${plan.why ? `<p>${escapeHtml(plan.why)}</p>` : ''}<div data-guide-summary class="guide-loadout-summary">${slots.length ? slots.map(slot => renderSlot(slot, model)).join('') : '<p>No required perks</p>'}</div>${slots.length ? `<div class="guide-loadout-explanations">${slots.map(slot => renderSlotDetails(slot, model)).join('')}</div>` : ''}${renderItem(plan.item, plan.buildId || plan.id)}${renderReplacements(plan, model)}</article>`;
+  const item = renderItem(plan.item, plan.buildId || plan.id);
+  const replacements = renderReplacements(plan, model);
+  if (!slots.length && !item && !replacements) return '';
+  return `<article class="guide-plan">${headingText}${plan.why ? `<p>${escapeHtml(plan.why)}</p>` : ''}${slots.length ? `<div data-guide-summary class="guide-loadout-summary">${slots.map(slot => renderSlot(slot, model)).join('')}</div><div class="guide-loadout-explanations">${slots.map(slot => renderSlotDetails(slot, model)).join('')}</div>` : ''}${item}${replacements}</article>`;
 }
 
 function collectPerksFromLoadout(loadout, model) {
@@ -334,18 +370,24 @@ function renderLoadout(loadout, model, page) {
   const plans = loadout.plans || [];
   const options = loadout.options || [];
   const item = loadout.item;
+  if (!plans.length && !options.length && (!item || item.status === 'NONE')) return '';
   const provenance = plans[0]?.provenance || (options.length ? 'EDITORIAL' : null);
-  const summary = plans.length ? plans.map(plan => renderPlan(plan, model, page, plans.length > 1)).join('') : options.length ? `<section data-guide-summary class="guide-loadout-summary"><ul>${options.map(option => `<li>${perkLink(option, model)}${option.usage ? ` · ${escapeHtml(usageLabel(option.usage))}` : ''}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '<div data-guide-summary class="guide-loadout-summary"><p>No required perks</p></div>';
-  const optionDetails = options.length && plans.length ? `<section data-guide-summary class="guide-loadout-options">${heading(3, 'Additional perk guidance')}<ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '';
-  return `<section class="guide-loadout">${heading(2, 'Recommended Build')}${provenance ? `<p class="guide-provenance">${escapeHtml(provenanceLabel(provenance))}</p>` : ''}${summary}${item && item.status !== 'NONE' ? renderItem(item) : ''}${optionDetails}</section>`;
+  const renderedPlans = plans.map(plan => renderPlan(plan, model, page, plans.length > 1)).filter(Boolean);
+  const itemMarkup = item && item.status !== 'NONE' ? renderItem(item) : '';
+  const summary = renderedPlans.length ? renderedPlans.join('') : options.length ? `<section data-guide-summary class="guide-loadout-summary"><ul>${options.map(option => `<li>${perkLink(option, model)}${option.usage ? ` · ${escapeHtml(usageLabel(option.usage))}` : ''}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '';
+  const optionDetails = options.length && renderedPlans.length ? `<section data-guide-summary class="guide-loadout-options">${heading(3, 'Additional perk guidance')}<ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></section>` : '';
+  if (!summary && !itemMarkup) return '';
+  return `<section class="guide-loadout">${heading(2, 'Recommended Build')}${provenance ? `<p class="guide-provenance">${escapeHtml(provenanceLabel(provenance))}</p>` : ''}${summary}${itemMarkup}${optionDetails}</section>`;
 }
 
 function renderRoleLoadout(role, model, page) {
-  if (!role.loadout) return '<p>No required perks</p>';
+  if (!role.loadout) return '';
   const plans = role.loadout.plans || [];
   const options = role.loadout.options || [];
-  const body = plans.length ? plans.map(plan => renderPlan(plan, model, page, plans.length > 1)).join('') : options.length ? `<div data-guide-summary class="guide-role-loadout"><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${escapeHtml(option.whyItsHere)}` : ''}</li>`).join('')}</ul></div>` : '<p>No required perks</p>';
-  return `${body}${role.loadout.item && role.loadout.item.status !== 'NONE' ? renderItem(role.loadout.item) : ''}`;
+  const renderedPlans = plans.map(plan => renderPlan(plan, model, page, plans.length > 1)).filter(Boolean);
+  const item = role.loadout.item && role.loadout.item.status !== 'NONE' ? renderItem(role.loadout.item) : '';
+  const body = renderedPlans.length ? renderedPlans.join('') : options.length ? `<div data-guide-summary class="guide-role-loadout"><ul>${options.map(option => `<li>${perkLink(option, model)}${option.whyItsHere ? ` — ${option.whyItsHere}` : ''}</li>`).join('')}</ul></div>` : '';
+  return body || item ? `${body}${item}` : '';
 }
 
 function renderPagePerkDetails(page, model) {

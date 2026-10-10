@@ -54,6 +54,7 @@ test('recommended build presents compact slots before canonical details and keep
   assert.match(build, /Why it.s here:/);
   assert.match(build, /Turn a usable vault into a route away/);
   assert.match(build, /Choose one:/);
+  assert.match(build, /<span class="guide-choice-separator">or<\/span>/);
   assert.match(build, /Kindred/);
   assert.match(build, /We.ll Make It/);
   assert.doesNotMatch(build, /Open flex|another context-appropriate/);
@@ -143,7 +144,19 @@ test('slot Enabled by references resolve to canonical perk links', () => {
 
   assert.match(enabled, /href="survivor\/perks\/\?q=unbreakable"[^>]*>Unbreakable<\/a>/);
   assert.match(enabled, /href="survivor\/perks\/\?q=plot-twist"[^>]*>Plot Twist<\/a>/);
+  assert.match(enabled, /<span class="guide-choice-separator">or<\/span>/);
+  assert.doesNotMatch(enabled, /aria-hidden="true"[^>]*>or<\/span>/);
   assert.doesNotMatch(enabled, /selected loadout option/);
+});
+
+test('player prose sanitizes source-backed strategy IDs without hard-coded ID families', () => {
+  const model = structuredClone(modelFor('X01'));
+  model.page.summary = 'Compare ZX9 before committing to this approach.';
+  model.sourceStrategyIds = ['ZX9'];
+
+  const text = visibleText(renderGuideBody(model));
+  assert.doesNotMatch(text, /\bZX9\b/);
+  assert.match(text, /the related strategy/);
 });
 
 test('standard pages without a loadout omit the optional Recommended Build section', () => {
@@ -153,9 +166,54 @@ test('standard pages without a loadout omit the optional Recommended Build secti
   }
 });
 
+test('loadouts containing only an unavailable item omit the optional Recommended Build section', () => {
+  const model = structuredClone(modelFor('X01'));
+  model.page.loadout = { item: { status: 'NONE' } };
+
+  const html = renderGuideBody(model);
+  assert.doesNotMatch(html, /Recommended Build|No required perks/);
+});
+
+test('team roles without a loadout omit fabricated required-perk placeholders', () => {
+  const html = renderGuideBody(modelFor('X02'));
+
+  assert.doesNotMatch(html, /No required perks/);
+});
+
+test('plans without slots omit the optional Recommended Build section', () => {
+  const model = structuredClone(modelFor('X01'));
+  model.page.loadout = { plans: [{ slots: [] }] };
+
+  const html = renderGuideBody(model);
+  assert.doesNotMatch(html, /Recommended Build|No required perks/);
+});
+
+test('empty plans do not duplicate real loadout options', () => {
+  const model = structuredClone(modelFor('X01'));
+  const option = structuredClone(model.page.loadout.plans[0].slots[0].choices[0]);
+  const optionName = option.name;
+  model.page.loadout = {
+    plans: [{ slots: [] }],
+    options: [option]
+  };
+
+  const html = renderGuideBody(model);
+  const loadout = html.slice(
+    html.indexOf('<section class="guide-loadout">'),
+    html.indexOf('<section class="guide-gameplay">')
+  );
+  assert.equal(loadout.split(optionName).length - 1, 1);
+  assert.doesNotMatch(loadout, /Additional perk guidance/);
+});
+
 test('widened guide layout constrains all long-form structured prose', () => {
   assert.match(css, /\.guide-plan > p[^\{]*\{[^}]*max-width:\s*70ch/);
   assert.match(css, /\.guide-opening p[^\{]*\{[^}]*max-width:\s*70ch/);
   assert.match(css, /\.guide-mechanics p[^\{]*\{[^}]*max-width:\s*70ch/);
   assert.match(css, /\.guide-abort li[^\{]*\{[^}]*max-width:\s*70ch/);
+});
+
+test('Survivor Meta index keeps internal research stage terminology out of player copy', () => {
+  const index = fs.readFileSync(path.join(rootDir, 'site/survivor-meta/index.html'), 'utf8');
+  assert.doesNotMatch(visibleText(index), /Stage\s*3[AB]|BuildImplementations?|snapshotId|manifest/);
 });
