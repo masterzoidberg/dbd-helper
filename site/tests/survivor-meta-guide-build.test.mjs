@@ -105,6 +105,84 @@ test('Stage 3B CRLF and LF inputs render identical production pages without rewr
   assert.equal(fs.readFileSync(article, 'utf8'), original.replace(/\n/g, '\r\n'));
 });
 
+test('fresh preview rejects source runtime symlinks before copying or writing', t => {
+  const tempRoot = copyRoot(t);
+  const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'survivor-meta-source-link-'));
+  t.after(() => fs.rmSync(outside, { recursive: true, force: true }));
+  const sentinel = path.join(outside, 'sentinel.js');
+  fs.writeFileSync(sentinel, 'external-sentinel');
+  const runtime = path.join(tempRoot, 'site/assets/data-survivor-meta.js');
+  fs.unlinkSync(runtime);
+  fs.symlinkSync(sentinel, runtime, 'file');
+  const before = treeBytes(path.join(tempRoot, 'site'));
+  const preview = path.join(outside, 'fresh-preview');
+  let failure;
+  try {
+    buildSurvivorMetaSite({ rootDir: tempRoot, release, preview: true, outputDir: preview });
+  } catch (error) {
+    failure = error;
+  }
+  assert.equal(fs.readFileSync(sentinel, 'utf8'), 'external-sentinel');
+  assert.ok(failure?.name === 'GuideValidationError' && /OUTPUT_PATH_INVALID/.test(failure.message));
+  assert.deepEqual(treeBytes(path.join(tempRoot, 'site')), before);
+  assert.equal(fs.existsSync(preview), false);
+});
+
+for (const reviewStatus of ['DRAFT', 'REVIEWED']) {
+  test(`${reviewStatus} authored receipt notes never leak anywhere in production HTML`, t => {
+    const tempRoot = copyRoot(t);
+    const guide = JSON.parse(fs.readFileSync(path.join(tempRoot, 'content/survivor/meta-guides/P02.json'), 'utf8'));
+    guide.reviewStatus = reviewStatus;
+    if (reviewStatus === 'DRAFT') guide.reviewedDate = null;
+    const note = `private-${reviewStatus}-receipt-note`;
+    guide.sources[0].note = note;
+    writeGuide(tempRoot, 'P02', guide);
+    buildSurvivorMetaSite({ rootDir: tempRoot, release });
+    const page = path.join(tempRoot, 'site/survivor-meta/flashbang-save/index.html');
+    const production = fs.readFileSync(page, 'utf8');
+    assert.ok(!production.includes(note), 'whole production HTML must exclude unpublished receipt notes');
+    assert.ok(production.includes('Original Research Article'));
+    const before = treeBytes(path.join(tempRoot, 'site'));
+    const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'survivor-meta-receipt-preview-'));
+    t.after(() => fs.rmSync(outside, { recursive: true, force: true }));
+    buildSurvivorMetaSite({ rootDir: tempRoot, release, preview: true, outputDir: outside });
+    assert.ok(fs.readFileSync(path.join(outside, 'survivor-meta/flashbang-save/index.html'), 'utf8').includes(note));
+    assert.deepEqual(treeBytes(path.join(tempRoot, 'site')), before);
+    guide.reviewStatus = 'PUBLISHED';
+    guide.reviewedDate = '2026-10-10';
+    writeGuide(tempRoot, 'P02', guide);
+    buildSurvivorMetaSite({ rootDir: tempRoot, release });
+    assert.ok(fs.readFileSync(page, 'utf8').includes(note), 'published receipts remain visible');
+  });
+}
+
+test('preview copy rejects nested source and destination symlinks before output mutation', t => {
+  for (const linkedTree of ['source', 'destination']) {
+    const tempRoot = copyRoot(t);
+    const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'survivor-meta-copy-link-'));
+    t.after(() => fs.rmSync(outside, { recursive: true, force: true }));
+    const external = path.join(outside, 'external');
+    fs.mkdirSync(external);
+    fs.writeFileSync(path.join(external, 'sentinel.txt'), 'external-sentinel');
+    const preview = path.join(outside, 'preview');
+    const parent = linkedTree === 'source' ? path.join(tempRoot, 'site/icons') : path.join(preview, 'icons');
+    fs.mkdirSync(parent, { recursive: true });
+    fs.symlinkSync(external, path.join(parent, 'copy-alias'), process.platform === 'win32' ? 'junction' : 'dir');
+    // A destination alias must reject before cpSync can write matching source files through it.
+    if (linkedTree === 'destination') {
+      const source = path.join(tempRoot, 'site/icons/copy-alias');
+      fs.mkdirSync(source);
+      fs.writeFileSync(path.join(source, 'sentinel.txt'), 'must-not-copy');
+    }
+    const before = treeBytes(path.join(tempRoot, 'site'));
+    const previewBefore = fs.existsSync(preview) ? treeBytes(preview) : null;
+    assert.throws(() => buildSurvivorMetaSite({ rootDir: tempRoot, release, preview: true, outputDir: preview }), /OUTPUT_PATH_INVALID/);
+    assert.equal(fs.readFileSync(path.join(external, 'sentinel.txt'), 'utf8'), 'external-sentinel');
+    assert.deepEqual(treeBytes(path.join(tempRoot, 'site')), before);
+    assert.deepEqual(fs.existsSync(preview) ? treeBytes(preview) : null, previewBefore);
+  }
+});
+
 test('missing, DRAFT, REVIEWED, and PUBLISHED records select the intended page mode', t => {
   const tempRoot = copyRoot(t);
   const reviewed = makeFixture({ reviewStatus: 'REVIEWED' }).guide;

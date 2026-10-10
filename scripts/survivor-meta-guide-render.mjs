@@ -220,10 +220,13 @@ function renderEvaluation(label, evaluation) {
   return `<div class="guide-evaluation"><span>${escapeHtml(label)}</span>${tier}${queueStatus}</div>`;
 }
 
-function renderItem(item) {
+function renderItem(item, scope) {
   if (!item || item.status === 'NONE') return '';
+  if (typeof item === 'string') item = { name: item };
   const itemId = item.id || item.name;
-  return `<section class="guide-item" id="guide-item-${internalId(itemId)}">${heading(3, 'Item guidance')}<p><strong>${escapeHtml(item.name || titleizeId(item.id))}</strong> · ${escapeHtml(usageLabel(item.status))}</p>${item.why ? `<p>${escapeHtml(item.why)}</p>` : ''}</section>`;
+  const anchor = scope ? `${internalId(scope)}-${internalId(itemId)}` : internalId(itemId);
+  const addOns = item.addOns?.length ? `<ul>${item.addOns.map(addOn => `<li><strong>${escapeHtml(addOn.name)}</strong>${addOn.why ? ` — ${escapeHtml(addOn.why)}` : ''}</li>`).join('')}</ul>` : '';
+  return `<section class="guide-item" id="guide-item-${anchor}">${heading(3, 'Item guidance')}<p><strong>${escapeHtml(item.name || titleizeId(item.id))}</strong>${item.status ? ` · ${escapeHtml(usageLabel(item.status))}` : ''}</p>${item.why ? `<p>${escapeHtml(item.why)}</p>` : ''}${addOns}</section>`;
 }
 
 function renderSlot(slot, model) {
@@ -247,7 +250,7 @@ function renderPlan(plan, model, page) {
   const slots = plan.slots || [];
   const choices = slots.flatMap(slot => slot.choices || []);
   const headingText = label || provenanceLabel(plan.provenance);
-  return `<article class="guide-plan">${heading(3, headingText)}<p class="guide-provenance">${escapeHtml(provenanceLabel(plan.provenance))}</p>${plan.why ? `<p>${escapeHtml(plan.why)}</p>` : ''}<div data-guide-summary class="guide-loadout-summary">${slots.length ? slots.map(slot => renderSlot(slot, model)).join('') : '<p>No required perks</p>'}${plan.flexSlotNote ? `<p class="guide-open-flex"><strong>Open flex:</strong> ${escapeHtml(plan.flexSlotNote)}</p>` : ''}${renderItem(plan.item)}${renderReplacements(plan, model)}</div></article>`;
+  return `<article class="guide-plan">${heading(3, headingText)}<p class="guide-provenance">${escapeHtml(provenanceLabel(plan.provenance))}</p>${plan.why ? `<p>${escapeHtml(plan.why)}</p>` : ''}<div data-guide-summary class="guide-loadout-summary">${slots.length ? slots.map(slot => renderSlot(slot, model)).join('') : '<p>No required perks</p>'}${plan.flexSlotNote ? `<p class="guide-open-flex"><strong>Open flex:</strong> ${escapeHtml(plan.flexSlotNote)}</p>` : ''}${renderItem(plan.item, plan.buildId || plan.id)}${renderReplacements(plan, model)}</div></article>`;
 }
 
 function collectPerksFromLoadout(loadout, model) {

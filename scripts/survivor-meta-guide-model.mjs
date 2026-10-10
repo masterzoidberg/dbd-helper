@@ -364,7 +364,7 @@ export function assembleGuidePage({ context, strategyId, guide, mode }) {
   }
   const selectedMode = guide && (mode === 'preview' || guide.reviewStatus === 'PUBLISHED') ? PLAYER : RESEARCH_ONLY;
   const cache = new Map();
-  const sources = sourceFacts(context, guide?.sources);
+  const sources = sourceFacts(context, selectedMode === PLAYER ? guide.sources : undefined);
   const builds = canonicalBuilds(context, strategyId, cache);
   const canonical = {
     ...canonicalStrategyFacts(context, strategyId),

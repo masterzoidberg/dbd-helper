@@ -1,16 +1,19 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { renderArticleMarkdown } from '../../scripts/build-survivor-meta.mjs';
 import { renderGuideBody } from '../../scripts/survivor-meta-guide-render.mjs';
 import { loadGuideContext, loadGuideRecords } from '../../scripts/survivor-meta-guide-source.mjs';
 import { assembleGuidePage } from '../../scripts/survivor-meta-guide-model.mjs';
+import { validateGuide } from '../../scripts/survivor-meta-guide-validation.mjs';
 import { makeFixture } from './fixtures/survivor-meta-guide-fixture.mjs';
 import { bindTask13Fixture } from './fixtures/survivor-meta-guide-task13-fixture.mjs';
 
 const rootDir = path.resolve(import.meta.dirname, '../..');
 const context = loadGuideContext({ rootDir });
 const guides = loadGuideRecords({ rootDir });
+const schema = JSON.parse(fs.readFileSync(path.join(rootDir, 'content/survivor/meta-guides/schema.json')));
 
 function modelFor(strategyId) {
   return assembleGuidePage({ context, strategyId, guide: guides.get(strategyId), mode: 'preview' });
@@ -20,6 +23,39 @@ function fixtureModel(gameplay) {
   const { guide } = makeFixture({ gameplay });
   return assembleGuidePage({ context, strategyId: 'X01', guide, mode: 'preview' });
 }
+
+test('canonical string items render named cards with unique anchors and no invented status', () => {
+  const model = modelFor('G01');
+  assert.deepEqual(model.page.loadout.plans.map(plan => plan.item), ['Toolbox', 'Toolbox']);
+  const html = renderGuideBody(model);
+  const primary = html.slice(0, html.indexOf('<details data-guide-research'));
+  const cards = [...primary.matchAll(/<section class="guide-item" id="([^"]+)">([\s\S]*?)<\/section>/g)];
+  assert.equal(cards.length, 3);
+  assert.equal(new Set(cards.map(card => card[1])).size, 3, 'item anchors must be unique');
+  for (const card of cards.slice(0, 2)) {
+    assert.ok(card[2].includes('<strong>Toolbox</strong>'), 'canonical item must have its source name');
+    assert.ok(!card[2].includes('Optional') && !card[2].includes('Required') && !card[2].includes(' · '));
+  }
+  assert.ok(primary.includes('id="guide-item-toolbox"'));
+  assert.ok(primary.includes('href="#guide-item-toolbox"'));
+  assert.ok(primary.includes(model.page.loadout.item.why));
+});
+
+test('supported item add-ons render source-backed fixture names and reasons escaped', () => {
+  const guide = structuredClone(guides.get('G02'));
+  guide.page.loadout.item.addOns = [{
+    name: 'Repair add-ons & "charge economy"',
+    why: 'Toolbox charges and add-ons, recharge/efficiency; finite charges & recharge downtime.'
+  }];
+  assert.deepEqual(validateGuide({ context, guide, schema }), []);
+  const model = assembleGuidePage({ context, strategyId: 'G02', guide, mode: 'preview' });
+  const html = renderGuideBody(model);
+  const primary = html.slice(0, html.indexOf('<details data-guide-research'));
+  assert.ok(primary.includes('Repair add-ons &amp; &quot;charge economy&quot;'));
+  assert.ok(primary.includes('Toolbox charges and add-ons, recharge/efficiency; finite charges &amp; recharge downtime.'));
+  assert.ok(!primary.includes('Repair add-ons & "charge economy"'));
+  assert.ok(primary.includes(model.page.loadout.item.why));
+});
 
 test('article headings offset without changing paragraphs or order', () => {
   const article = '# Article title\n\nKeep < and & and "quotes".\n\n## A section\n\n- First\n- Second';

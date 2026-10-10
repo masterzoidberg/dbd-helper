@@ -381,6 +381,15 @@ function rejectSymlinkComponents(file, label) {
   }
 }
 
+function rejectSymlinkTree(directory, label) {
+  if (!fs.existsSync(directory)) return;
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isSymbolicLink()) throw outputError(`${label} must not contain a symlink: ${file}`);
+    if (entry.isDirectory()) rejectSymlinkTree(file, label);
+  }
+}
+
 function validateOutputLayout({ rootDir, outputPath, detailOutputDir, preview, previewRoot, routes }) {
   const sitePath = path.join(rootDir, 'site');
   const outputTargets = [
@@ -499,7 +508,10 @@ export function buildSurvivorMetaSite(options = {}) {
   const outputPath = options.outputPath ?? path.join(preview ? previewRoot : path.join(rootDir, 'site'), 'assets/data-survivor-meta.js');
   const prepared = prepareGeneration({ rootDir, release, outputPath, detailOutputDir, preview, previewRoot });
   if (preview) {
+    rejectSymlinkTree(path.join(rootDir, 'site'), 'preview source site');
+    rejectSymlinkTree(previewRoot, 'preview output directory');
     fs.cpSync(path.join(rootDir, 'site'), previewRoot, { recursive: true, force: true });
+    validateOutputLayout({ rootDir, outputPath, detailOutputDir, preview, previewRoot, routes: prepared.routes });
   }
   writePreparedRuntime(outputPath, prepared.runtime);
   writePreparedDetails(detailOutputDir, prepared.pages);
