@@ -282,3 +282,8 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Controller verification: full Node 151/151; Python 4/4; browser results 35/35 with zero failures; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker and diff check clean.
 - Task 11: complete (commit `a34eed7`, review clean after evidence re-review). No guide JSON, canonical source, generated artifact, publication, or deployment changes.
 - Task 11: minor (deferred): computed contrast and full 200% zoom remain unverified by automation; no demonstrated defect, carry to later browser QA.
+
+### Task 12 — route-contract ruling before fix round
+
+- Ruling: preserve the frozen manifest's canonical root-relative URL form `/survivor-meta/<slug>` while rejecting filesystem-absolute paths, traversal, malformed slugs, and any absolute-looking route outside that exact canonical URL prefix. The frozen Stage 3B manifest stores all 57 routes with the leading URL slash; accepting that established URL representation is required to keep canonical routes and root/GitHub base-path behavior unchanged, and changing the frozen input is prohibited. Cost if wrong: a stricter interpretation would reject every canonical route and require an unauthorized frozen-source migration.
+- Task 12 review's dangling-symlink finding remains load-bearing and enters fix round 1; the base-path behavior assertion remains a deferred Minor.
