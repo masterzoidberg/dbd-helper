@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R05",
+  "snapshotId": "R05@10.2.0-r1",
+  "perkReviews": [{ "perkId": "small-game", "mechanicsRevision": 1 }, { "perkId": "counterforce", "mechanicsRevision": 1 }, { "perkId": "inner-strength", "mechanicsRevision": 1 }, { "perkId": "overzealous", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Find and cleanse a totem when removing a live Hex or converting that cleanse into a useful heal or repair window repays the search time.",
+    "verdict": {
+      "recommendation": "Treat cleansing as a response to a visible threat or a planned reward, not a standing detour from repairs.",
+      "soloQ": "Follow nearby totem information and abandon a long search when a rescue or useful repair is available.",
+      "coordinatedSwf": "Tell teammates which Hex or cleanse reward is worth pursuing so several players do not duplicate the same search.",
+      "mainWeakness": "Search and cleanse time can buy nothing against a low-totem match and can consume a totem a teammate wanted to bless."
+    },
+    "loadout": { "options": [
+      { "perkId": "small-game", "usage": "SUPPORT", "whyItsHere": "Shows nearby totems during an already useful route; use it to shorten a search rather than roam solely for a distant dull totem." },
+      { "perkId": "counterforce", "usage": "SUPPORT", "whyItsHere": "Rewards consecutive cleanses with faster cleansing and a farthest-totem lead; useful when several totems really need removal." },
+      { "perkId": "inner-strength", "usage": "SUPPORT", "whyItsHere": "Turns a cleanse into a later locker self-heal, provided the user is not Broken and can take a safe locker pause." },
+      { "perkId": "overzealous", "usage": "SUPPORT", "whyItsHere": "Converts a cleanse into repair speed until the next lost health state; strongest reason to cleanse when safe repair time follows." }
+    ] },
+    "weaknesses": ["Totems are finite and searching competes with generator, rescue and teammate Boon time."],
+    "commonMistakes": ["Leaving a live objective to clear every dull totem without a reward or Hex to answer.", "Expecting Inner Strength from blessing instead of cleansing, or trying its locker heal while Broken.", "Keeping a cleanse reward plan after the next health-state loss ends Overzealous."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Decide whether the immediate job is removing a dangerous Hex or earning a specific cleanse reward; check what objective or rescue the detour will delay."],
+      "rows": [
+        { "id": "nearby-threat", "situation": "A relevant Hex is active and a totem is on a reachable route.", "action": "Use Small Game's nearby reveal to check that route and cleanse the target if the removal matters now; stop ranging outward when the team needs a rescue or generator completion.", "why": "The threat makes the detour valuable, while a broad hunt can surrender more tempo than the Hex costs.", "enabledBy": ["perk:small-game"] },
+        { "id": "multiple-totems", "situation": "Another totem removal is justified after your first cleanse.", "action": "Use Counterforce's farthest-totem reveal as a lead only if a second cleanse is worth its travel; otherwise return to the team objective.", "why": "Its speed and information improve a real cleanse chain but cannot make an unnecessary chain valuable.", "enabledBy": ["perk:counterforce"] },
+        { "id": "cleanse-payoff", "situation": "A safe dull or Hex totem is nearby and a later self-heal or uninterrupted repair period is likely.", "action": "Cleanse for Inner Strength's locker heal or Overzealous's repair bonus, then take that planned follow-up; skip the totem if the follow-up is unlikely.", "why": "The payoff comes after cleansing and still requires a usable locker or repair window.", "enabledBy": ["perk:inner-strength", "perk:overzealous"] },
+        { "id": "contested-or-empty", "situation": "No meaningful Hex remains, the team needs an immediate save, or a teammate is using the totem for a Boon.", "action": "Leave the totem and resume rescue or repair; coordinate before consuming a planned Boon site.", "why": "A finite totem can be worth more as team time or a shared zone than as an isolated cleanse." }
+      ],
+      "abortWhen": ["Stop hunting when no Hex or near-term cleanse reward justifies another travel and cleanse cycle.", "Yield to an urgent rescue or a teammate's planned Boon site rather than finishing a low-value search."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R05#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R05@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R05@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R05#Representative Builds" },
+    { "kind": "PERK", "ref": "small-game#/mechanics" },
+    { "kind": "PERK", "ref": "counterforce#/mechanics" },
+    { "kind": "PERK", "ref": "inner-strength#/mechanics" },
+    { "kind": "PERK", "ref": "overzealous#/mechanics" }
+  ]
+}

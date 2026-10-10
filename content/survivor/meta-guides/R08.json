@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R08",
+  "snapshotId": "R08@10.2.0-r1",
+  "perkReviews": [{ "perkId": "diversion", "mechanicsRevision": 1 }, { "perkId": "deception", "mechanicsRevision": 1 }, { "perkId": "red-herring", "mechanicsRevision": 1 }, { "perkId": "mirrored-illusion", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Send the Killer a plausible false location when that can open a real escape, rescue or repair rotation.",
+    "verdict": {
+      "recommendation": "Choose the decoy whose trigger is ready and whose false location is safely away from the team; leave when the Killer ignores it.",
+      "soloQ": "Use a decoy to buy your own route only when it cannot plausibly pull the Killer onto a teammate's live objective.",
+      "coordinatedSwf": "Call the false location and the intended rotation so teammates do not run into the investigation you invited.",
+      "mainWeakness": "False notifications have uncertain value, and a Killer who recognizes the tell can stay on the real target."
+    },
+    "loadout": { "options": [
+      { "perkId": "diversion", "usage": "CORE", "whyItsHere": "Throws a false noise and trail after charging outside chase in the Killer's Terror Radius; use it when the landing point creates a safer route." },
+      { "perkId": "deception", "usage": "CORE", "whyItsHere": "Fakes a running locker entry and briefly suppresses your trail, creating an immediate route split near a locker." },
+      { "perkId": "red-herring", "usage": "SUPPORT", "whyItsHere": "Sends a noise to a previously touched generator when you enter a locker; plan the marked generator so the lure does not reveal useful team work." },
+      { "perkId": "mirrored-illusion", "usage": "SUPPORT", "whyItsHere": "Places a static prop-side decoy after enough repair; useful only when a Killer could plausibly investigate it while you rotate." }
+    ] },
+    "weaknesses": ["Charging or placing a decoy costs position and time, and the Killer may not follow the signal."],
+    "killerCounterplay": ["The Killer can recognize a fake locker or generator cue and keep chasing the actual Survivor or guarding the important objective."],
+    "commonMistakes": ["Throwing Diversion before it is charged or while already in chase.", "Marking a generator the team still needs with Red Herring and drawing the Killer to it.", "Repeating the same fake location after the Killer stops responding."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Name the real route the decoy will buy; a noise without a follow-up move is only an announcement."],
+      "rows": [
+        { "id": "pebble-route", "situation": "Diversion has charged outside chase and a false landing point draws attention away from the route you need.", "action": "Throw from cover while crouched and still, then take the opposite safe rotation; skip it if the false cue points toward a teammate.", "why": "The fake trail and noise matter only if the Killer investigates the wrong place.", "enabledBy": ["perk:diversion"] },
+        { "id": "locker-fake", "situation": "A locker sits at a route split and the Killer is tracking your approach.", "action": "Use Deception while running to fake the entry, then leave along a different route during the brief trail suppression; abandon the trick if the Killer has direct sight of your exit.", "why": "The decoy suggests a locker search, but it does not conceal a visible Survivor.", "enabledBy": ["perk:deception"] },
+        { "id": "generator-lure", "situation": "A previously touched generator can safely draw the Killer away from a more important route.", "action": "Enter a locker to trigger Red Herring only after leaving that marked generator; skip it if teammates are repairing or about to return there.", "why": "The notification goes to the marked generator, which can harm the team if it is the wrong target.", "enabledBy": ["perk:red-herring"] },
+        { "id": "prop-decoy", "situation": "Mirrored Illusion is ready and a suitable prop lies on a plausible Killer patrol route.", "action": "Place the static decoy beside that prop, then rotate away; do not spend the setup when the Killer already has your position or an urgent rescue needs you.", "why": "The illusion offers a false visual lead only when the Killer might inspect it.", "enabledBy": ["perk:mirrored-illusion"] },
+        { "id": "ignored", "situation": "The Killer ignores repeated fake signals or stays on the real target.", "action": "Stop investing in decoys and return to a direct escape, rescue or repair route.", "why": "A lure that changes no Killer decision is pure setup cost." }
+      ],
+      "abortWhen": ["Do not send a false cue onto a teammate's active objective or rescue route.", "Stop repeating a decoy after the Killer demonstrates they will ignore it."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R08#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R08@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R08@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R08#Representative Builds" },
+    { "kind": "PERK", "ref": "diversion#/mechanics" },
+    { "kind": "PERK", "ref": "deception#/mechanics" },
+    { "kind": "PERK", "ref": "red-herring#/mechanics" },
+    { "kind": "PERK", "ref": "mirrored-illusion#/mechanics" }
+  ]
+}

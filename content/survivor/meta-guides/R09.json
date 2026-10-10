@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R09",
+  "snapshotId": "R09@10.2.0-r1",
+  "perkReviews": [{ "perkId": "bound-by-obsession", "mechanicsRevision": 1 }, { "perkId": "blood-pact", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Accept reciprocal Killer information risk only when your position and team plan can turn the reveal or Obsession link into a useful rotation.",
+    "verdict": {
+      "recommendation": "Use Bound by Obsession for a deliberate mutual aura window, or Blood Pact for a partner route while you are not the Obsession; check the live state before taking either risk.",
+      "soloQ": "Use the information for your own safe route and objective choice; do not assume an unbriefed teammate will take over a chase or stay paired.",
+      "coordinatedSwf": "Tell the team when you are exposed or when the partner link is active, and assign who keeps repairing while attention shifts.",
+      "mainWeakness": "The Killer may exploit your revealed position, while a partner or Obsession change can remove the expected link."
+    },
+    "loadout": { "options": [
+      { "perkId": "bound-by-obsession", "usage": "CORE", "whyItsHere": "Gives reciprocal Killer aura information when the Killer sees yours; its periodic Obsession reveal deliberately exposes your location, so use it with a safe route." },
+      { "perkId": "blood-pact", "usage": "SUPPORT", "whyItsHere": "Offers injury-based partner information and a post-heal movement route while you are not the Obsession; its linked benefits are unavailable when you are the Obsession." }
+    ] },
+    "environments": {
+      "soloQ": ["Treat the reveal as a cue to relocate or protect your own position; the team may not know why the Killer is arriving."],
+      "coordinatedSwf": ["Agree on a safe attention route and a partner handoff before exposing your location or depending on a linked heal."]
+    },
+    "weaknesses": ["Information is reciprocal only in the relevant reveal state; inviting attention can cost a health state or pull the Killer onto teammates."],
+    "killerCounterplay": ["The Killer can use the revealed aura to approach the exposed Survivor or decline the intended chase and pressure a weaker teammate."],
+    "commonMistakes": ["Taking the periodic reveal near a vulnerable teammate or critical generator without an escape route.", "Expecting Blood Pact's aura and Haste while you are the Obsession.", "Continuing to solicit Killer attention after the team has lost the capacity to cover objectives or rescue."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Check who is the Obsession, where the team is working and where you can lead attention without endangering that work."],
+      "rows": [
+        { "id": "reciprocal-read", "situation": "You have Bound by Obsession and the Killer can see your aura, including a periodic reveal while you are the Obsession.", "action": "Read the Killer's aura, rotate from an exposed objective toward a defensible route, and tell teammates where the Killer is moving; do not linger beside a teammate who cannot absorb that visit.", "why": "The information arrives with a matching location leak that the Killer can act on.", "enabledBy": ["perk:bound-by-obsession"] },
+        { "id": "partner-link", "situation": "You are not the Obsession, you or the Obsession is injured, and Blood Pact exposes the partner location.", "action": "Use the link to decide whether a safe partner heal or rotation is practical; after a qualifying heal, stay near only while the movement benefit serves a real route.", "why": "The link and later movement benefit depend on role, health state and partner proximity.", "enabledBy": ["perk:blood-pact"] },
+        { "id": "role-changed", "situation": "The Obsession changes, the partner moves away, or the Killer refuses your planned chase.", "action": "Recheck which perk conditions still hold and resume repair, rescue or ordinary chase routing instead of pursuing a dead link.", "why": "The strategy's value changes with Obsession and opponent behavior, not merely with equipped perks." },
+        { "id": "unsafe-exposure", "situation": "You are injured or out of safe terrain and a reveal would bring the Killer to the team's active work.", "action": "Leave the work area and take a safer route; if you cannot absorb attention, stop trying to draw it and preserve the team's objective time.", "why": "A predictable reveal becomes a liability when no useful chase or information decision follows." }
+      ],
+      "abortWhen": ["Stop inviting attention when the exposed route leads through a rescue or generator the team must protect.", "Drop the partner plan when you become the Obsession or cannot safely stay within the relevant link."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R09#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R09@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R09@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R09#Representative Builds" },
+    { "kind": "PERK", "ref": "bound-by-obsession#/mechanics" },
+    { "kind": "PERK", "ref": "blood-pact#/mechanics" }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R06",
+  "snapshotId": "R06@10.2.0-r1",
+  "perkReviews": [{ "perkId": "invocation-weaving-spiders", "mechanicsRevision": 1 }, { "perkId": "invocation-treacherous-crows", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Trade basement time and a lasting personal health restriction for one chosen teamwide Invocation effect.",
+    "verdict": {
+      "recommendation": "Choose the effect the team can actually use before entering the basement; the ritual's absence from repairs and the invoker's lasting cost need a clear payoff.",
+      "soloQ": "Commit only when teammates can keep urgent rescues and objectives covered without assuming they will join the ritual.",
+      "coordinatedSwf": "Assign the invoker and any helpers before entering, with another player covering rescue or repair and a call to abandon a threatened attempt.",
+      "mainWeakness": "A prolonged basement action can be interrupted or punished, and completion leaves the invoker Injured and Broken for the rest of the Trial."
+    },
+    "loadout": { "options": [
+      { "perkId": "invocation-weaving-spiders", "usage": "CORE", "whyItsHere": "Choose this ritual when remaining generators can benefit from its lasting repair requirement reduction and the team can absorb the invoker's health cost." },
+      { "perkId": "invocation-treacherous-crows", "usage": "CORE", "whyItsHere": "Choose this ritual when the team can act on its conditional Killer aura reveals; the crow and Terror Radius condition makes it an uncertain information payoff." }
+    ] },
+    "weaknesses": ["The team loses active labor during travel and ritual time; an interrupted attempt can lose progress, while a completed one permanently restricts its invoker."],
+    "killerCounterplay": ["The Killer can contest the basement and force participants off an unfinished ritual."],
+    "commonMistakes": ["Beginning a ritual while a hook rescue is uncovered.", "Treating Treacherous Crows as continuous Killer tracking without its crow and Terror Radius condition.", "Finishing an Invocation without planning around the invoker's Injured and Broken state."],
+    "gameplay": {
+      "type": "SEQUENCE",
+      "steps": [
+        { "id": "choose-payoff", "label": "Choose the team payoff", "instructions": ["Before leaving work, choose Weaving Spiders for remaining generator work or Treacherous Crows for a team that can exploit its conditional information.", "If neither payoff will be used, stay on the current objective; both rituals consume team time."], "enabledBy": ["perk:invocation-weaving-spiders", "perk:invocation-treacherous-crows"] },
+        { "id": "cover-cost", "label": "Cover the absence", "instructions": ["Confirm that a teammate can handle an urgent save or repair while you travel to the basement; in a group, decide who may join and who stays on the objective.", "Helpers speed the ritual but also leave their own tasks."] },
+        { "id": "ritual", "label": "Start only with a safe window", "instructions": ["At the basement circle, begin the chosen Invocation when the Killer is occupied elsewhere and the team can tolerate your absence.", "Leave if the Killer contests the basement or a rescue becomes urgent; lost progress is cheaper than a lost rescue or health state."], "enabledBy": ["perk:invocation-weaving-spiders", "perk:invocation-treacherous-crows"] },
+        { "id": "after-completion", "label": "Use the result", "instructions": ["After completion, return to a safe objective and plan around being Injured and Broken; for Treacherous Crows, call useful Killer reveals only when its trigger occurs.", "The payoff comes through later team actions while the invoker carries the lasting restriction."], "enabledBy": ["perk:invocation-weaving-spiders", "perk:invocation-treacherous-crows"] }
+      ],
+      "abortWhen": ["Do not start when the current hook or generator window needs your labor.", "Leave an interrupted or camped basement attempt when restarting would surrender another rescue, health state or objective for an unlikely payoff."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R06#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R06@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R06@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R06#Representative Builds" },
+    { "kind": "PERK", "ref": "invocation-weaving-spiders#/mechanics" },
+    { "kind": "PERK", "ref": "invocation-treacherous-crows#/mechanics" }
+  ]
+}

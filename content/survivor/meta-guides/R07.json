@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "REVIEWED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R07",
+  "snapshotId": "R07@10.2.0-r1",
+  "perkReviews": [{ "perkId": "head-on", "mechanicsRevision": 1 }, { "perkId": "quick-quiet", "mechanicsRevision": 1 }, { "perkId": "built-to-last", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use a locker as a planned stun or item station when its position and timing serve an immediate chase or resource need.",
+    "verdict": {
+      "recommendation": "Pick the locker job before entering: a prepared Head On escape or a worthwhile item recharge. A locker without a timely next action is lost tempo.",
+      "soloQ": "Prepare a stun only when the Killer may cross that locker soon; otherwise keep moving or work the objective.",
+      "coordinatedSwf": "Call the locker position and the teammate route before a planned stun, while others keep rescue and repair covered.",
+      "mainWeakness": "Predictable locker checks, Head On's ready and range conditions, and item recharge downtime can turn the setup into a free hit."
+    },
+    "loadout": {
+      "options": [
+        { "perkId": "head-on", "usage": "CORE", "whyItsHere": "Creates the prepared locker stun when a Killer actually approaches within range and the user is not Exhausted." },
+        { "perkId": "quick-quiet", "usage": "SUPPORT", "whyItsHere": "Suppresses a qualifying rushed locker interaction's noise when available, helping a route into or out of the station without guaranteeing concealment." },
+        { "perkId": "built-to-last", "usage": "SUPPORT", "whyItsHere": "Offers a separate locker job for a depleted useful item, but only when the restored charges repay travel and hiding time." }
+      ],
+      "item": { "id": "rechargeable-item", "status": "OPTIONAL", "name": "Charge-bearing item", "why": "Bring one only if using the Built to Last recharge route; Head On itself needs no item." }
+    },
+    "weaknesses": ["Entering and waiting in a locker gives up movement or objective time; repeated use of the same station becomes predictable."],
+    "killerCounterplay": ["The Killer can check the predictable locker, approach outside the stun window or force the user out before the setup is ready."],
+    "commonMistakes": ["Rushing out before Head On is ready or while Exhausted.", "Treating Quick & Quiet as a guarantee that the Killer did not see the locker entry.", "Waiting to recharge an item that is not depleted or has no next useful use."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Identify a locker beside a real chase route or a safe item pause; do not travel across the map merely to occupy one."],
+      "rows": [
+        { "id": "planned-stun", "situation": "The Killer is likely to pass the locker soon, you have room to prepare inside, and Head On is available.", "action": "Enter, let Head On ready, then rush out only when the Killer is close enough for the stun; leave the plan if they check early or take another route.", "why": "The stun depends on preparation, proximity and a usable exit, so waiting indefinitely invites a locker check.", "enabledBy": ["perk:head-on"] },
+        { "id": "quiet-route", "situation": "A rushed locker interaction would expose your route and Quick & Quiet is available.", "action": "Use the suppressed interaction to break a known line of pursuit, then actually change route; abandon the concealment plan if the Killer watched you enter.", "why": "Noise suppression cannot erase direct observation or keep you safe in a checked locker.", "enabledBy": ["perk:quick-quiet"] },
+        { "id": "item-pause", "situation": "Your item is depleted, its next use matters, and the locker can be occupied safely.", "action": "Recharge with Built to Last and leave for the item task; skip the pause when a rescue or generator window is more urgent.", "why": "The regained charges have value only if the item is used before the lost tempo matters.", "enabledBy": ["perk:built-to-last", "item:rechargeable-item"] },
+        { "id": "station-denied", "situation": "The Killer is checking this locker, Head On is unavailable, or no worthwhile item use remains.", "action": "Stop returning to the station and take the safer route or direct objective.", "why": "A known, inactive station offers the Killer more value than the Survivor." }
+      ],
+      "abortWhen": ["Do not wait for a Head On stun after the Killer bypasses the locker or while the perk cannot activate.", "Leave the locker plan when its expected stun or item use no longer repays the time and exposure."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R07#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R07@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R07@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "R07@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R07#Representative Builds" },
+    { "kind": "PERK", "ref": "head-on#/mechanics" },
+    { "kind": "PERK", "ref": "quick-quiet#/mechanics" },
+    { "kind": "PERK", "ref": "built-to-last#/mechanics" }
+  ]
+}
