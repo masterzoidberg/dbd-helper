@@ -82,7 +82,8 @@ export function loadSurvivorMetaSource({ rootDir = defaultRoot(), release = DEFA
     const articlePath = normalizeArticlePath(item.slug);
     if (seenPaths.has(articlePath)) throw new Error(`duplicate Survivor Meta route: ${articlePath}`);
     seenPaths.add(articlePath);
-    articles[item.articleFilename] = markdown;
+    // Keep the imported archive bytes intact; serialize the article consistently in research HTML.
+    articles[item.articleFilename] = markdown.replace(/\r\n?/g, '\n');
   }
   for (const strategy of strategies) {
     if (strategy.side !== 'SURVIVOR') throw new Error(`${strategy.id}: side must be SURVIVOR`);

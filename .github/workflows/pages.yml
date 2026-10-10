@@ -35,7 +35,7 @@ jobs:
         run: node scripts/build-survivor-meta.mjs
 
       - name: Validate Survivor guides
-        run: node scripts/survivor-meta-guide-validation.mjs
+        run: node scripts/survivor-meta-guide-validation.mjs --require-published
 
       - name: Test Survivor Meta importer
         run: python3 -m unittest discover -s scripts/tests -p 'test_*.py' -v

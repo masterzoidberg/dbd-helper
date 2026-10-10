@@ -54,6 +54,9 @@ test('production gates editorial content, preview is isolated, and runtime stays
   const guideFile = path.join(tempRoot, 'content/survivor/meta-guides/P02.json');
   const guide = JSON.parse(fs.readFileSync(guideFile, 'utf8'));
   const editorialText = guide.page.summary;
+  guide.reviewStatus = 'DRAFT';
+  guide.reviewedDate = null;
+  writeGuide(tempRoot, 'P02', guide);
   const productionBefore = treeBytes(path.join(tempRoot, 'site'));
 
   const production = buildSurvivorMetaSite({ rootDir: tempRoot, release });
@@ -88,12 +91,31 @@ test('production gates editorial content, preview is isolated, and runtime stays
   assert.deepEqual(readRuntime(path.join(previewRoot, 'assets/data-survivor-meta.js')), expectedRuntime);
 });
 
+test('Stage 3B CRLF and LF inputs render identical production pages without rewriting source', t => {
+  const tempRoot = copyRoot(t);
+  const article = path.join(tempRoot, 'content/survivor/meta/10.2.0-r1/stage3b/strategy-pages/C01-general-chase-looping.md');
+  const original = fs.readFileSync(article, 'utf8').replace(/\r\n?/g, '\n');
+  fs.writeFileSync(article, original);
+  buildSurvivorMetaSite({ rootDir: tempRoot, release });
+  const page = path.join(tempRoot, 'site/survivor-meta/general-chase-looping/index.html');
+  const lfPage = fs.readFileSync(page);
+  fs.writeFileSync(article, original.replace(/\n/g, '\r\n'));
+  buildSurvivorMetaSite({ rootDir: tempRoot, release });
+  assert.deepEqual(fs.readFileSync(page), lfPage);
+  assert.equal(fs.readFileSync(article, 'utf8'), original.replace(/\n/g, '\r\n'));
+});
+
 test('missing, DRAFT, REVIEWED, and PUBLISHED records select the intended page mode', t => {
   const tempRoot = copyRoot(t);
   const reviewed = makeFixture({ reviewStatus: 'REVIEWED' }).guide;
   const published = makeFixture({ reviewStatus: 'PUBLISHED' }).guide;
   const reviewedText = reviewed.page.summary;
   const publishedText = published.page.summary;
+  fs.rmSync(path.join(tempRoot, 'content/survivor/meta-guides/X02.json'));
+  const draft = JSON.parse(fs.readFileSync(path.join(tempRoot, 'content/survivor/meta-guides/P02.json'), 'utf8'));
+  draft.reviewStatus = 'DRAFT';
+  draft.reviewedDate = null;
+  writeGuide(tempRoot, 'P02', draft);
 
   writeGuide(tempRoot, 'X01', reviewed);
   buildSurvivorMetaSite({ rootDir: tempRoot, release });

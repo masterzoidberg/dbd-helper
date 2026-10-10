@@ -10,6 +10,7 @@ import { loadGuideContext, loadGuideRecords } from '../../scripts/survivor-meta-
 import { assembleGuidePage } from '../../scripts/survivor-meta-guide-model.mjs';
 import { renderGuideBody } from '../../scripts/survivor-meta-guide-render.mjs';
 import { buildSurvivorMetaSite } from '../../scripts/build-survivor-meta.mjs';
+import { validateGuideCatalog } from '../../scripts/survivor-meta-guide-validation.mjs';
 
 const root = path.resolve(import.meta.dirname, '../..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'content/survivor/meta/10.2.0-r1/stage3b/strategy-pages-manifest.json')));
@@ -205,6 +206,43 @@ test('CLI accepts a bounded local release fixture built from 57 published guide 
   assert.match(output, /Checked 69 release URLs; 0 failures/);
 });
 
+test('release guard rejects the reviewed catalog and one reviewed holdout, then accepts exactly 57 published guides', t => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'dbd-survivor-publication-'));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+  fs.cpSync(path.join(root, 'content/survivor'), path.join(tempRoot, 'content/survivor'), { recursive: true });
+  const guideDir = path.join(tempRoot, 'content/survivor/meta-guides');
+  for (const route of manifest) {
+    const file = path.join(guideDir, `${route.strategyId}.json`);
+    const guide = JSON.parse(fs.readFileSync(file, 'utf8'));
+    assert.equal(guide.reviewStatus, 'PUBLISHED');
+    guide.reviewStatus = 'REVIEWED';
+    fs.writeFileSync(file, JSON.stringify(guide));
+  }
+  const baseline = validateGuideCatalog({ rootDir: tempRoot, requirePublished: true });
+  assert.deepEqual(baseline.counts, { missing: 0, DRAFT: 0, REVIEWED: 57, PUBLISHED: 0 });
+  assert.equal(baseline.ok, false);
+  for (const route of manifest.slice(0, 56)) {
+    const file = path.join(guideDir, `${route.strategyId}.json`);
+    const guide = JSON.parse(fs.readFileSync(file, 'utf8'));
+    assert.equal(guide.reviewStatus, 'REVIEWED');
+    guide.reviewStatus = 'PUBLISHED';
+    fs.writeFileSync(file, JSON.stringify(guide));
+  }
+  const partial = validateGuideCatalog({ rootDir: tempRoot, requirePublished: true });
+  assert.deepEqual(partial.counts, { missing: 0, DRAFT: 0, REVIEWED: 1, PUBLISHED: 56 });
+  assert.equal(partial.ok, false);
+  assert.deepEqual(partial.diagnostics.map(item => [item.strategyId, item.code]), [[manifest[56].strategyId, 'RELEASE_INCOMPLETE']]);
+  const last = path.join(guideDir, `${manifest[56].strategyId}.json`);
+  const guide = JSON.parse(fs.readFileSync(last, 'utf8'));
+  assert.equal(guide.reviewStatus, 'REVIEWED');
+  guide.reviewStatus = 'PUBLISHED';
+  fs.writeFileSync(last, JSON.stringify(guide));
+  const complete = validateGuideCatalog({ rootDir: tempRoot, requirePublished: true });
+  assert.deepEqual(complete.counts, { missing: 0, DRAFT: 0, REVIEWED: 0, PUBLISHED: 57 });
+  assert.deepEqual(complete.diagnostics, []);
+  assert.equal(complete.ok, true);
+});
+
 test('CI preserves sequential preparation, validates, checks drift, and deploys only main', () => {
   const steps = [
     'python3 scripts/import-survivor-v15.py',
@@ -219,7 +257,8 @@ test('CI preserves sequential preparation, validates, checks drift, and deploys 
   ];
   const positions = steps.map(step => workflow.indexOf(step));
   assert.ok(positions.every((position, index) => position >= 0 && (!index || position > positions[index - 1])), positions.join(','));
-  assert.doesNotMatch(workflow, /--preview|--require-published/);
+  assert.doesNotMatch(workflow, /--preview/);
+  assert.match(workflow, /run: node scripts\/survivor-meta-guide-validation\.mjs --require-published/);
   assert.match(workflow, /Upload site\s*\n\s*if: github\.ref == 'refs\/heads\/main' && github\.event_name != 'pull_request'/);
   assert.match(workflow, /deploy:\s*\n\s*if: github\.ref == 'refs\/heads\/main' && github\.event_name != 'pull_request'/);
   assert.match(workflow, /node scripts\/smoke-survivor-meta\.mjs --base-url/);

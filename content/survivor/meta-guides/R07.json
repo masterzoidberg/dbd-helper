@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
-  "reviewStatus": "REVIEWED",
+  "reviewStatus": "PUBLISHED",
   "reviewedDate": "2026-10-10",
   "strategyId": "R07",
   "snapshotId": "R07@10.2.0-r1",

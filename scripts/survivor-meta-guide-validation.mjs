@@ -393,7 +393,7 @@ export function validateGuideCatalog({ rootDir = defaultRoot, release = '10.2.0-
       counts.missing = context.strategies.size - existing.size;
       if (requirePublished) {
         for (const strategyId of [...context.strategies.keys()].sort()) {
-          if (!published.has(strategyId)) diagnostics.push({ code: 'PUBLICATION_REQUIRED', strategyId, file: path.join(directory, `${strategyId}.json`), path: '/reviewStatus', message: 'Release requires a valid, genuinely reviewed PUBLISHED guide for every one of the 57 strategies' });
+          if (!published.has(strategyId)) diagnostics.push({ code: 'RELEASE_INCOMPLETE', strategyId, file: path.join(directory, `${strategyId}.json`), path: '/reviewStatus', message: 'Release requires a valid, genuinely reviewed PUBLISHED guide for every one of the 57 strategies' });
         }
       }
     } catch (error) { diagnostics.push({ code: 'CATALOG_READ_INVALID', file: directory, path: '', message: error.message }); }

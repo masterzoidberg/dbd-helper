@@ -81,12 +81,12 @@ function assertChoiceSlots(model, strategyId) {
   }
 }
 
-test('whole catalog has exact reviewed identities, source joins, relationships and useful page kinds', () => {
+test('whole catalog has exact published identities, source joins, relationships and useful page kinds', () => {
   const result = validateGuideCatalog({ rootDir, release });
   assert.deepEqual(result.diagnostics, []);
   assert.equal(result.guides.size, 57);
   assert.deepEqual([...result.guides.keys()].sort(), [...expectedIds].sort());
-  assert.deepEqual(result.counts, { missing: 0, DRAFT: 0, REVIEWED: 57, PUBLISHED: 0 });
+  assert.deepEqual(result.counts, { missing: 0, DRAFT: 0, REVIEWED: 0, PUBLISHED: 57 });
 
   const pageKinds = Object.fromEntries(expectedIds.map(id => [id, derivePageKind(context.strategies.get(id), context.snapshotByStrategy.get(id))]));
   assert.deepEqual(
@@ -98,7 +98,7 @@ test('whole catalog has exact reviewed identities, source joins, relationships a
     const guide = result.guides.get(id);
     const strategy = context.strategies.get(id);
     const snapshot = context.snapshotByStrategy.get(id);
-    assert.ok(['REVIEWED', 'PUBLISHED'].includes(guide.reviewStatus), `${id} is not release-reviewed`);
+    assert.equal(guide.reviewStatus, 'PUBLISHED', `${id} is not published`);
     assert.match(guide.reviewedDate, /^2026-\d{2}-\d{2}$/);
     for (const source of guide.sources || []) assert.doesNotThrow(() => resolveSourceReceipt(source, context), `${id}: source ${source.ref}`);
     assert.doesNotThrow(() => collectPerkReferences({ guide, context }), `${id}: perk dependency`);
