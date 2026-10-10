@@ -144,6 +144,50 @@
     "windows-of-opportunity": {
       "mechanicsRevision": 1,
       "acknowledgedFingerprint": "c94f1740f610e80d36a5d02cf32b4f4fdaa9655f5134790245231c208afdf556"
+    },
+    "boon-exponential": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "233efbf57b1e9455f7dd0ab62671039baf41abc7a750e8dae92f0cb96c2e349f"
+    },
+    "dance-with-me": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "1f151940edd6e7e4f45f6dbc52cea85694a306ae4cc4e4d3d367f30d9f377cfc"
+    },
+    "deliverance": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "632a7f49d0adca7f7e1dc80db388ed0f21a7d0f8e78d2079346b1afa1547e4bf"
+    },
+    "lightweight": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "8481c68044097c5e9c97b9e35ed735baee8f7f12f77358d221a1f5cd922c51cd"
+    },
+    "lucky-break": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "da5cf55f6e4a7b67f058dcb00009b6ea747cac5a987c4f2bbb4488355da64700"
+    },
+    "plot-twist": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "c1b46cb924da9b0f7095e297ea237abe18adfeaabbfcb776952c8af4986178a3"
+    },
+    "quick-quiet": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "8e1ddc66face7378cfc53b5b4cb5c6380fd229f5d279b845180e4d8c666aa26e"
+    },
+    "slippery-meat": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "f7148ae7ac7e5286bd6c7cf7230a7f067fe4bb5a07e9415b1e5011d812e0111c"
+    },
+    "soul-guard": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "2458baca99669cf4a881bd9f7979ff6b143280cd593667826c288484a5b1d28d"
+    },
+    "unbreakable": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "589ccbdbd8409ddcd94551381794cf0fcfd2b101108becbc0641aff0e525abb0"
+    },
+    "were-gonna-live-forever": {
+      "mechanicsRevision": 1,
+      "acknowledgedFingerprint": "733f65e190c81f26184fb064bb1713248641964cb67a8146be4c16d645c8cc07"
     }
   }
 }

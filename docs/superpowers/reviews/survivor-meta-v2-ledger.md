@@ -17,12 +17,12 @@ Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair:
 | C05 | Fragile-Pallet Restoration | STANDARD | REVIEWED | Task 14 B1 source/editorial review; experimental/Chest omission and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
 | C06 | Chase Information / Routing | STANDARD | REVIEWED | Task 14 B1 source/editorial review; slot-level information alternatives, related receipt and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
 | C07 | Stealth / Chase Avoidance | STANDARD | REVIEWED | Task 14 B1 source/editorial review; slot-level stealth alternatives and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
-| C08 | Chase Reset / Disappearance | STANDARD | NOT_STARTED | No record; review not started. | — |
+| C08 | Chase Reset / Disappearance | STANDARD | REVIEWED | Task 14 B2 source/editorial review; reset/noise alternatives and 390×844/1440×900 usefulness checks recorded. | `03c1b25`, `857cc8b` |
 | C09 | Anti-Tunnel Package | STANDARD | REVIEWED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
-| C10 | Anti-Slug / Self-Recovery Package | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C11 | Hook-State Transfer | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C12 | Deterministic Self-Unhook | STANDARD | NOT_STARTED | No record; review not started. | — |
-| C13 | Luck-Based Self-Unhook | LEGACY | NOT_STARTED | No record; review not started. | — |
+| C10 | Anti-Slug / Self-Recovery Package | STANDARD | REVIEWED | Task 14 B2 source/editorial review; Dying-state recovery choices and 390×844/1440×900 usefulness checks recorded. | `03c1b25`, `857cc8b` |
+| C11 | Hook-State Transfer | STANDARD | REVIEWED | Task 14 B2 source/editorial review; provisional hook-state trade and 390×844/1440×900 usefulness checks recorded. | `03c1b25` |
+| C12 | Deterministic Self-Unhook | STANDARD | REVIEWED | Task 14 B2 source/editorial review; safe-rescue/activation denial cues and 390×844/1440×900 usefulness checks recorded. | `03c1b25`, `857cc8b` |
+| C13 | Luck-Based Self-Unhook | LEGACY | REVIEWED | Task 14 B2 source/editorial review; NOT_CURRENT history and exact C12 successor with 390×844/1440×900 usefulness checks recorded. | `03c1b25` |
 | C14 | Self-Sustain / Self-Heal | STANDARD | NOT_STARTED | No record; review not started. | — |
 | C15 | Haste / Movement Stack | STANDARD | NOT_STARTED | No record; review not started. | — |
 | G01 | General Generator Pressure | STANDARD | NOT_STARTED | No record; review not started. | — |
@@ -320,3 +320,12 @@ Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No desi
 - Browser evidence: C03–C07 each passed the established 390×844 and 1440×900 checks for no horizontal overflow, one H1, visible summary/gameplay, closed research/perk disclosures, focusable research summary and primary landmark (10/10). Layout contract was unchanged.
 - Serialized index integration initialized exactly 11 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `alert`, `any-means-necessary`, `apocalyptic-ingenuity`, `calm-spirit`, `dark-sense`, `distortion`, `iron-will`, `light-footed`, `premonition`, `spine-chill`, `windows-of-opportunity`. Existing entries were unchanged.
 - Post-integration target: validator expected `missing: 41`, `DRAFT: 7`, `REVIEWED: 9`, `PUBLISHED: 0`, zero diagnostics; no production output, publication or deployment. Focused B1 regression passed 1/1; relevant suite passed 122/122; generated-artifact checker and diff checks clean.
+
+### Task 14 B2 — C08/C10/C11/C12/C13
+
+- Reviewer: Dirac. Initial B2 commit: `03c1b25` (`review Survivor guides B2`). Fix round: `857cc8b` (`fix: address Task 14 B2 review findings`) removed repeated generic module disclaimers from C08/C10/C11/C12 with record-specific open-content explanations. Scoped re-review: Newton — original finding addressed, no new Critical/Important/Minor findings.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. C08 preserves finite chase-reset and trace/noise boundaries; C10 keeps Dying-state self-recovery conditions and optional support limits; C11 preserves provisional hook-state transfer cost and live 10.2.0 mechanics; C12 retains safe-rescue gating and deterministic self-unhook cost; C13 remains LEGACY/NOT_CURRENT with exactly one source-supported successor C12 and no current build/gameplay.
+- Exact source receipts and perk dependencies were re-resolved. C08/C10/C11/C12 use bounded MODULE shapes; C13 uses HISTORY semantics. Unsupported items, substitutes, matchup tables, current C13 ranking/build claims and generic boilerplate were omitted.
+- Browser evidence: C08, C10, C11, C12 and C13 passed the established mobile/desktop checks with 25/25 combinations and zero failures; the prose-only fix required no new layout capture. Layout contract was unchanged.
+- Serialized index integration initialized exactly 11 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `boon-exponential`, `dance-with-me`, `deliverance`, `lightweight`, `lucky-break`, `plot-twist`, `quick-quiet`, `slippery-meat`, `soul-guard`, `unbreakable`, `were-gonna-live-forever`. Existing `iron-will` and `shoulder-the-burden` entries were retained unchanged.
+- Post-integration target: validator expected `missing: 36`, `DRAFT: 7`, `REVIEWED: 14`, `PUBLISHED: 0`, zero diagnostics; no production output, publication or deployment. Full Node remained 161/161, Python 4/4, generated-artifact checker and diff checks clean.
