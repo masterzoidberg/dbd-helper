@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "081-085",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "blood-rush",
+  "mechanics": {
+    "name": "Blood Rush",
+    "alternateName": null,
+    "source": "Renato Lyra",
+    "status": "Live 10.2.0",
+    "currentEffect": "After being unhooked by any means, the perk activates for 40/50/60 seconds. While active, use the Active Ability button to instantly recover from an existing Exhausted status. It does not cause Exhausted. A Conspicuous Action ends it early; using it deactivates it, and it is disabled for the rest of the Trial once the Exit Gates are powered.",
+    "activation": [
+      "Be unhooked by any means.",
+      "Use the Active Ability while Exhausted during the activation window.",
+      "Ends/deactivates when: A Conspicuous Action ends it early.",
+      "Ends/deactivates when: It deactivates after use and is disabled once Exit Gates are powered."
+    ],
+    "patchNote": "Latest live balance change (8.3.0): Reworked into the current post-unhook Exhausted-removal effect.",
+    "plainEnglishSummary": "After an unhook, use a limited window to remove Exhausted once without receiving Exhausted again.",
+    "cooldown": null,
+    "duration": [
+      "Activation window: 40/50/60 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Once used, deactivates; disabled for remainder of Trial when Exit Gates are powered.",
+    "statusEffectsInvolved": [
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "Blood Rush itself does not cause Exhausted."
+    ],
+    "sourceCharacter": "Renato Lyra",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "blood-rush",
+    "rank": 84,
+    "tier": "B",
+    "roles": [
+      "Anti-Tunnel",
+      "Exhaustion",
+      "Chase"
+    ],
+    "summary": "After an unhook, gain a limited window where you can instantly clear an existing Exhausted status once, potentially bringing a powerful Exhaustion perk back online.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "exhausted",
+      "anti-tunnel",
+      "tunneling",
+      "conspicuous-action"
+    ],
+    "useCases": [
+      "Reset Sprint Burst, Lithe, Dead Hard, or another Exhaustion perk during the dangerous post-unhook window.",
+      "Turn an expected tunnel chase into a second Exhaustion-perk activation the Killer may not be prepared for.",
+      "Use the threat of another chase burst to reach a safer area after rescue."
+    ],
+    "counters": [
+      "Only activates after an unhook and expires after the short activation window.",
+      "Conspicuous Actions end the opportunity early.",
+      "It is disabled once the Exit Gates are powered."
+    ],
+    "pros": [
+      "Can effectively create a second use of an elite chase perk.",
+      "Excellent anti-tunnel ceiling.",
+      "No health-state sacrifice in its modern form."
+    ],
+    "cons": [
+      "Requires already being Exhausted.",
+      "Very timing-sensitive.",
+      "Completely inactive before your first unhook."
+    ],
+    "analysis": [
+      "Blood Rush leads this band because resetting Exhaustion is one of the more powerful effects a Survivor perk can offer. Exhaustion perks are deliberately limited by downtime, so removing that downtime during the most dangerous post-unhook portion of the match can radically change a tunnel chase.",
+      "The strongest use is not random activation. It is planning around a specific second chase tool. A Survivor who used Sprint Burst before going down, or who needs Dead Hard available again after rescue, can create a second layer of chase protection that the Killer may not expect.",
+      "The perk also improved significantly from its older, harsher form. It no longer requires sacrificing a health state to clear Exhaustion, which makes the current version much more practical as anti-tunnel utility rather than a desperation gimmick.",
+      "It remains B because the activation is narrow and temporary. You must be unhooked, already Exhausted, and able to use the reset before a Conspicuous Action or the timer ends. When those pieces line up, Blood Rush can perform above this rank."
+    ],
+    "verdict": "A high-ceiling post-unhook Exhaustion reset. Blood Rush is narrow, but when paired with an elite Exhaustion perk it can make a tunnel chase unexpectedly expensive.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Renato Lyra"
+    },
+    "synergyPerkIds": [
+      "sprint-burst",
+      "dead-hard",
+      "lithe",
+      "off-the-record"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Sprint Burst",
+      "Dead Hard",
+      "Lithe",
+      "Off the Record"
+    ],
+    "antiSynergies": []
+  }
+}

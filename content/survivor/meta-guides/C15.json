@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C15",
+  "snapshotId": "C15@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "blood-pact", "mechanicsRevision": 1 },
+    { "perkId": "made-for-this", "mechanicsRevision": 1 },
+    { "perkId": "hope", "mechanicsRevision": 1 },
+    { "perkId": "boon-dark-theory", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use conditional Haste to change the next route, rescue position or endgame rotation, but commit only when the state gates and pathing value outweigh the setup cost.",
+    "verdict": {
+      "recommendation": "Treat Haste as a route-changing resource. Blood Pact, Made for This, Hope and Boon: Dark Theory have different conditions, so stack only the layers you can actually activate and use.",
+      "soloQ": "Take the route you can verify from your own health, position and game state. Do not assume an injured teammate, Boon zone or endgame trigger will appear when the chase starts.",
+      "coordinatedSwf": "Call the partner, Haste zone or endgame timing before routing around it. Communication raises reliability, but the canonical result remains provisional and too early for a settled claim.",
+      "mainWeakness": "State gates, proximity, setup, Haste reduction or caps and Killer anti-Haste tools can leave multiple slots quiet while the player is still committed to the movement plan."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "haste-stack-module",
+          "label": "Conditional Haste layers",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source records a framework, not a verified four-perk implementation. Pick layers whose gates overlap with the Trial you expect; the choices are not a promise that every Haste source will be active together.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Choose a conditional chase Haste route",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "blood-pact",
+                  "whyItsHere": "When you are not the Obsession and either of you is injured, finish healing the Obsession—or let the Obsession finish healing you—within 16 metres to give both Survivors 5/6/7% Haste while you remain within range."
+                },
+                {
+                  "perkId": "made-for-this",
+                  "whyItsHere": "While Injured, healing another Survivor can grant Endurance for 6/8/10 seconds, and running while suffering from Deep Wound activates its live Haste effect."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Endgame movement layer",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "hope",
+                  "whyItsHere": "Once the Exit Gates are powered, gain 3/4/5% Haste for the remainder of the Trial. Save the movement plan for the endgame state instead of treating Hope as an opening tool."
+                }
+              ]
+            },
+            {
+              "slot": 3,
+              "role": "Local team Haste zone",
+              "usage": "FLEX",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "boon-dark-theory",
+                  "whyItsHere": "Bless a Dull or Hex Totem to create a 24-metre area with 3% Haste and a 2/3/4-second linger after leaving. Reposition when the totem is snuffed or the route leaves the zone."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before the Trial forces a chase, identify which Haste layer is meant to change your next path and what job the movement protects. If the route has no destination, the speed is only setup cost."
+      ],
+      "rows": [
+        {
+          "id": "choose-the-layer",
+          "situation": "You are selecting a Haste route before an expected chase, rescue or rotation.",
+          "action": "Check the actual gate: Blood Pact needs the non-Obsession injury and qualifying heal link, Made for This needs its injured or Deep Wound state, Hope needs powered Exit Gates, and Boon: Dark Theory needs an active local totem.",
+          "why": "These perks are conditional layers, not one interchangeable movement button.",
+          "enabledBy": ["slot:haste-stack-module#1", "slot:haste-stack-module#2", "slot:haste-stack-module#3"]
+        },
+        {
+          "id": "route-with-blood-pact",
+          "situation": "Blood Pact is active after the qualifying heal and both Survivors can remain within 16 metres.",
+          "action": "Use the shared Haste to reach the next safe position or rescue route, then separate when staying together no longer helps. Do not chase a partner across the map to preserve the effect.",
+          "why": "Blood Pact's Haste lasts while the pair remains within range; proximity is both its payoff and its cost.",
+          "enabledBy": ["perk:blood-pact"]
+        },
+        {
+          "id": "route-with-made-for-this",
+          "situation": "You are Injured and Made for This can supply its current running or post-heal condition.",
+          "action": "Heal another Survivor only when the Endurance window protects a real route, and use the Deep Wound running Haste to create distance rather than looping in place. Stop relying on it when the state ends or a Conspicuous Action removes Endurance.",
+          "why": "Made for This has separate Injured, healing and Deep Wound gates; being equipped does not make its movement effect unconditional.",
+          "enabledBy": ["perk:made-for-this"]
+        },
+        {
+          "id": "save-hope-for-endgame",
+          "situation": "The Exit Gates are powered and Hope is active.",
+          "action": "Use the persistent 3/4/5% Haste to choose a gate, rescue or escape line with a clear destination. Do not spend the early Trial planning around a bonus that does not exist yet.",
+          "why": "Hope is a one-time endgame activation for the remainder of the Trial.",
+          "enabledBy": ["perk:hope"]
+        },
+        {
+          "id": "use-the-boon-zone",
+          "situation": "Boon: Dark Theory is active and the next movement route passes through its 24-metre area.",
+          "action": "Use the 3% Haste to cross the selected route, then account for the 2/3/4-second linger after leaving. If the Killer snuffs the totem or the job moves outside the zone, leave the old plan.",
+          "why": "The Boon is local and can be denied; defending an irrelevant totem is not movement value.",
+          "enabledBy": ["perk:boon-dark-theory"]
+        },
+        {
+          "id": "release-the-stack",
+          "situation": "A condition is missing, the route has no destination, the Killer has anti-Haste pressure or an urgent generator or rescue is uncovered.",
+          "action": "Stop protecting the movement setup and take the best ordinary route or team job. Do not keep a partner nearby, a Boon active or an injured state solely to preserve a low-value speed plan.",
+          "why": "The canonical weakness is setup and denial; the strategy loses when the conditions consume more tempo than the altered path returns."
+        }
+      ],
+      "abortWhen": [
+        "Abort a Haste detour when its trigger is unavailable, the next route cannot use the speed or a generator or rescue needs immediate coverage.",
+        "Release the stack when the Killer has forced a different path or the team is paying more positioning and communication cost than the movement changes."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Use only the Haste conditions you can verify yourself. An uninjured or unavailable partner, an unlit endgame state or a snuffed Boon cannot be assumed by the rest of the team."
+      ],
+      "coordinatedSwf": [
+        "Call the partner, Boon route and release cue before moving so the team does not hold an obsolete formation. Coordination improves the provisional engine but does not remove its state gates."
+      ]
+    },
+    "strengths": [
+      "Change chase spacing, rescue approach or endgame routing when the right Haste condition is active."
+    ],
+    "weaknesses": [
+      "The plan is rare and exposed to setup, state gates, proximity, Haste reduction or caps and anti-Haste Killer tools.",
+      "Multiple movement slots can be inactive at once while still displacing objective or rescue tools."
+    ],
+    "killerCounterplay": [
+      "The Killer can force a different route, deny the qualifying state, contest the Boon area or use anti-Haste tools so the planned movement exchange no longer pays."
+    ],
+    "commonMistakes": [
+      "Treating Blood Pact, Made for This, Hope and Boon: Dark Theory as unconditional speed sources.",
+      "Following a partner or defending a Boon after the route has moved elsewhere.",
+      "Using movement to prolong a losing chase instead of returning to the generator, rescue or endgame job the speed was meant to protect."
+    ],
+    "related": [
+      {
+        "strategyId": "C01",
+        "relationship": "COMBINE_WITH",
+        "why": "Haste / Movement Stack is a movement-focused branch of the broader General Chase / Looping strategy."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C15#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C15@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C15@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C15@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C15#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C15#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C15#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C15#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "C15#Common Mistakes" },
+    { "kind": "PERK", "ref": "blood-pact#/mechanics" },
+    { "kind": "PERK", "ref": "made-for-this#/mechanics" },
+    { "kind": "PERK", "ref": "hope#/mechanics" },
+    { "kind": "PERK", "ref": "boon-dark-theory#/mechanics" }
+  ]
+}

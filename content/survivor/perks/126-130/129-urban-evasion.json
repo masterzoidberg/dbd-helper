@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "batch": "126-130",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "urban-evasion",
+  "mechanics": {
+    "name": "Urban Evasion",
+    "alternateName": null,
+    "source": "Nea Karlsson",
+    "status": "Live 10.2.0",
+    "currentEffect": "Permanently increases your Movement speed while crouched by 90/95/100%.",
+    "activation": [
+      "Be moving while crouched.",
+      "Ends/deactivates when: The bonus applies only while crouched."
+    ],
+    "patchNote": "Latest live balance change (1.7.0): Removed the uninjured requirement and increased crouched movement speed bonus to 90/95/100%.",
+    "plainEnglishSummary": "Lets you move faster while crouching.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Nea Karlsson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "urban-evasion",
+    "rank": 129,
+    "tier": "C",
+    "roles": [
+      "Stealth",
+      "Mobility"
+    ],
+    "summary": "Move at normal walking speed while crouched at Tier III.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Reposition around low cover without standing and exposing your model.",
+      "Move quickly while avoiding some Killer sightlines and powers that care about posture.",
+      "Navigate stealth-heavy indoor or edge-map situations with less crouch-speed penalty."
+    ],
+    "counters": [
+      "Crouching is still slower than running.",
+      "Overusing the perk can destroy map tempo.",
+      "Many Killers can detect or pressure crouched Survivors normally."
+    ],
+    "pros": [
+      "Permanent and simple.",
+      "Removes the normal movement tax from crouching relative to walking.",
+      "Useful around low obstacles and stealth situations."
+    ],
+    "cons": [
+      "Easy to misuse by crouching unnecessarily.",
+      "No chase burst or action-speed benefit.",
+      "Often weaker than simply learning when to run."
+    ],
+    "analysis": [
+      "Urban Evasion ranks this position because moving at walking speed while crouched is useful in specific geometry, but the perk has an infamous trap: it can make inefficient movement feel safe. The effect is strongest when crouching is already the correct tactical choice.",
+      "Low-cover tiles and certain Killer interactions can reward staying crouched while repositioning. In those moments, doubling crouch movement speed makes the posture much less costly.",
+      "The problem is players treating crouching as a default travel mode. Even fast crouching is dramatically slower than sprinting across the map, and map pressure is often more important than avoiding a hypothetical detection event.",
+      "Urban Evasion is therefore a decent utility perk with a behavior tax. Used deliberately it has a niche; used constantly it can make the player less effective than if they had equipped nothing."
+    ],
+    "verdict": "A situational movement tool, not permission to crouch everywhere. Urban Evasion is good when posture matters and bad when it replaces normal rotation speed.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Crouch"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nea Karlsson"
+    },
+    "synergyPerkIds": [
+      "fixated",
+      "still-sight",
+      "boon-shadow-step",
+      "light-footed"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Fixated",
+      "Still Sight",
+      "Boon: Shadow Step",
+      "Light-Footed"
+    ],
+    "antiSynergies": []
+  }
+}

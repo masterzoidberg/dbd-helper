@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C08",
+  "snapshotId": "C08@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "lucky-break", "mechanicsRevision": 1 },
+    { "perkId": "iron-will", "mechanicsRevision": 1 },
+    { "perkId": "quick-quiet", "mechanicsRevision": 1 },
+    { "perkId": "lightweight", "mechanicsRevision": 1 },
+    { "perkId": "dance-with-me", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Turn an earned line-of-sight break into a reset: spend the trace and noise layers deliberately, then return to a useful job when the Killer has lost the route or the reset has stopped repaying its cost.",
+    "verdict": {
+      "recommendation": "Use the package to convert contact into a real disappearance, not to assume that one missing trace defeats every tracking method.",
+      "soloQ": "Choose your own safe exit after the hit or line-of-sight break and return to a productive job; do not expect teammates to cover a long disappearance without a call.",
+      "coordinatedSwf": "Call the route and reset window so teammates know whether to hold objectives, take pressure or stop duplicating the same disappearance.",
+      "mainWeakness": "The layers are gated by injury, Exhausted state, cooldowns and finite time, while direct sight or another tracking channel can erase the value of a broken trail."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "chase-reset-module",
+          "label": "Chase-reset and disappearance module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "Choose the trace and audio layers that best support the post-hit reset, and leave the other support choices open until the Trial shows what the route needs.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Suppress the post-hit trail",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "lucky-break",
+                  "whyItsHere": "When Injured, suppress Pools of Blood and Scratch Marks for its timer; healing another Survivor can restore that timer. Spend the window on the line-of-sight break rather than treating it as permanent concealment."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Reduce injured audio",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "iron-will",
+                  "whyItsHere": "While Injured and not Exhausted, reduce Grunts of Pain. It does not hide Blood or Scratch Marks, and it stops helping while Exhausted."
+                }
+              ]
+            },
+            {
+              "slot": 3,
+              "role": "Silence one rushed route action",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "quick-quiet",
+                  "whyItsHere": "A Rushed vault or Locker entry/exit suppresses the interaction noises and Loud Noise Notification, then becomes unavailable during its cooldown. Use it only where the missing cue changes the route."
+                }
+              ]
+            },
+            {
+              "slot": 4,
+              "role": "Choose a Scratch Mark route break",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "lightweight",
+                  "whyItsHere": "Shorten Scratch Mark lifetime and make the patches less consistent on every route. It does not remove Blood, sound, Auras or direct visual contact."
+                },
+                {
+                  "perkId": "dance-with-me",
+                  "whyItsHere": "After a Rushed Window vault or Locker exit, suppress Scratch Marks for 5 seconds. Immediately use a route split; the effect has a tier-based cooldown and hides only Scratch Marks."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before accepting a chase, identify the first real line-of-sight break and the productive destination after it. The package succeeds when the disappearance buys a reset or useful rotation, not when it only delays contact for a few seconds."
+      ],
+      "rows": [
+        {
+          "id": "take-the-earned-break",
+          "situation": "You have taken the expected contact or reached a real line-of-sight break with an exit route available.",
+          "action": "Commit to the break, use the safest route split and stop exposing the same path. If Lucky Break is active, spend its finite Injured window on the disappearance rather than circling back to the Killer.",
+          "why": "C08 starts with accepted chase and pays off only when the break terminates the chase abruptly.",
+          "enabledBy": ["perk:lucky-break"]
+        },
+        {
+          "id": "respect-pain-and-exhausted-gates",
+          "situation": "You are Injured and choosing whether injured audio can be part of the reset.",
+          "action": "Use Iron Will only while Injured and not Exhausted; if Exhausted, injured audio is no longer covered, so choose a route that does not depend on silence alone.",
+          "why": "Iron Will has both health-state and Exhausted-state conditions; it is one layer, not a complete disappearance.",
+          "enabledBy": ["perk:iron-will"]
+        },
+        {
+          "id": "spend-the-quiet-action",
+          "situation": "A Rushed Window, Pallet or Locker action can create uncertainty at the line-of-sight break.",
+          "action": "Use Quick & Quiet on the action that changes the Killer's expected route, then plan without it until its cooldown ends. Do not spend the silent action on an obvious path that leaves the rest of the trail unchanged.",
+          "why": "The current perk suppresses the qualifying interaction's noises and Loud Noise Notification, but it does not grant movement or remove visual tracking.",
+          "enabledBy": ["perk:quick-quiet"]
+        },
+        {
+          "id": "choose-the-trace-layer",
+          "situation": "You have a route split after a vault or are relying on passive Scratch Mark disruption.",
+          "action": "Use Lightweight as passive trail noise, or use Dance With Me after a Rushed Window vault or Locker exit and immediately take the route split. Treat the two choices as alternatives, not a promise that every Scratch Mark is hidden.",
+          "why": "The module's fourth slot contains two distinct Scratch Mark tools with different activation boundaries.",
+          "enabledBy": ["slot:chase-reset-module#4"]
+        },
+        {
+          "id": "return-after-reset",
+          "situation": "The Killer has lost the route, the selected timer or cooldown has been spent, or the team needs a generator or rescue.",
+          "action": "Leave the disappearance route and take the useful next job from a safe position. Call the handoff in a coordinated team instead of extending the reset just to preserve the build's identity.",
+          "why": "The source payoff is a full reset; continued hiding after the reset has succeeded can transfer pressure to the team."
+        },
+        {
+          "id": "release-on-reacquisition",
+          "situation": "The Killer maintains direct sight, uses another tracking channel or has already reacquired your route.",
+          "action": "Stop trying to force the disappearance and switch to the best ordinary chase or safety route. Reattempt the reset only after a new safe break, not from the same exposed path.",
+          "why": "C08 is a chase-reset branch, not a guarantee against tracking powers or direct contact."
+        }
+      ],
+      "abortWhen": [
+        "Abort the reset detour when a critical rescue or generator is uncovered and the team cannot afford more disappearance time.",
+        "Release the plan when the trace layer is inactive, its cooldown or timer is spent, or another tracking channel has reacquired you; transition to ordinary chase survival."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Keep the productive destination and nearest team need in mind; a solo disappearance is only successful if it returns you to work or removes pressure without assuming an unannounced teammate handoff."
+      ],
+      "coordinatedSwf": [
+        "Call the break, route and reset completion so one player does not disappear while another abandons the same objective or rescue coverage."
+      ]
+    },
+    "strengths": [
+      "Can turn a successful line-of-sight break into a full reset when the selected trace and noise layers remain active."
+    ],
+    "weaknesses": [
+      "Injury, Exhausted state, cooldowns and finite Lucky Break time can remove a layer when it is needed.",
+      "Direct sight and other tracking channels remain effective, and an extended disappearance can cost team tempo."
+    ],
+    "killerCounterplay": [
+      "The Killer can maintain sight, use another tracking channel, wait out a cooldown or pressure the team until continued disappearance costs more than taking the next action."
+    ],
+    "commonMistakes": [
+      "Treating Lucky Break, Iron Will or a Scratch Mark tool as full invisibility across every health and game state.",
+      "Spending Quick & Quiet or Dance With Me on an obvious route that does not create a meaningful split.",
+      "Continuing to hide after the reset has succeeded or after the Killer has reacquired the route instead of returning to team tempo."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C08#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C08@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C08@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "C08@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C08@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C08#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C08#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C08#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "C08#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C08#Common Mistakes" },
+    { "kind": "PERK", "ref": "lucky-break#/mechanics" },
+    { "kind": "PERK", "ref": "iron-will#/mechanics" },
+    { "kind": "PERK", "ref": "quick-quiet#/mechanics" },
+    { "kind": "PERK", "ref": "lightweight#/mechanics" },
+    { "kind": "PERK", "ref": "dance-with-me#/mechanics" }
+  ]
+}

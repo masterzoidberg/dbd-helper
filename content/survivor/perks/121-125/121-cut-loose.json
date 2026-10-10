@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "121-125",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "cut-loose",
+  "mechanics": {
+    "name": "Cut Loose",
+    "alternateName": null,
+    "source": "Thalita Lyra",
+    "status": "Live 10.2.0",
+    "currentEffect": "After performing a Rushed Vault while in chase, Cut Loose activates for 4/5/6 seconds. During that time, Rushed Vaults create no sound or Killer notification; each Rushed Vault resets the timer. A 45-second cooldown begins when the effect ends.",
+    "activation": [
+      "Perform a Rushed Vault while in chase.",
+      "Ends/deactivates when: Effect expires after 4/5/6 seconds without another Rushed Vault; a vault resets that timer."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Rushed Vaults become silent for a short time after vaulting during chase, with vaults extending the effect.",
+    "cooldown": "45 seconds after effect ends",
+    "duration": [
+      "Effect window: 4/5/6 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Suppresses Rushed Vault sound and its Killer notification."
+    ],
+    "sourceCharacter": "Thalita Lyra",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "cut-loose",
+    "rank": 121,
+    "tier": "C",
+    "roles": [
+      "Chase",
+      "Stealth"
+    ],
+    "summary": "After a rushed vault in chase, your rushed vaults become silent for up to 6 seconds; additional rushed vaults refresh the timer before a 45-second cooldown.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping"
+    ],
+    "useCases": [
+      "Chain silent vaults around structures where the Killer relies on audio through walls.",
+      "Break line of sight after the first vault and use later silent vaults to disguise your route.",
+      "Pair with other vault perks to create layered chase mindgames."
+    ],
+    "counters": [
+      "The first rushed vault still creates normal information before the effect is active.",
+      "Direct visual contact makes the missing sound irrelevant.",
+      "The perk enters a 45-second cooldown after the active chain ends."
+    ],
+    "pros": [
+      "Can refresh itself repeatedly during a vault sequence.",
+      "Strong on indoor and tall-wall structures.",
+      "Does not cause Exhaustion."
+    ],
+    "cons": [
+      "Requires good chase geometry.",
+      "Audio denial is indirect value.",
+      "Experienced Killers may infer the vault from pathing anyway."
+    ],
+    "analysis": [
+      "Cut Loose ranks here because repeated silent vaults can create legitimate chase uncertainty without consuming an Exhaustion slot. Once the first rushed vault activates the perk, every qualifying vault during the window resets the timer, allowing a Survivor to maintain the silence through a sequence of windows.",
+      "The effect is strongest when line of sight is already broken. At tall walls or indoor structures, Killers often use the vault sound to decide whether the Survivor committed to the window or doubled back. Removing that cue forces them to verify the route visually.",
+      "Quick & Quiet is easier to use for one decisive silent action, while Cut Loose asks for an ongoing chase pattern. Pairing the two can make the first vault silent as well, though spending two slots purely on vault audio is a deliberate specialist build.",
+      "Cut Loose remains B because sound denial does not guarantee distance. The Survivor still needs a structure where uncertainty matters and must path intelligently after each vault."
+    ],
+    "verdict": "A real chase mindgame perk on the right structures. Cut Loose can make repeated vault routes much harder to read, but the Survivor still has to turn silence into a Killer mistake.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Vault",
+      "Sound Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Thalita Lyra"
+    },
+    "synergyPerkIds": [
+      "quick-quiet",
+      "lithe",
+      "dance-with-me",
+      "finesse"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Quick & Quiet",
+      "Lithe",
+      "Dance With Me",
+      "Finesse"
+    ],
+    "antiSynergies": []
+  }
+}

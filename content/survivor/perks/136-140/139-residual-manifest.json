@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "136-140",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "residual-manifest",
+  "mechanics": {
+    "name": "Residual Manifest",
+    "alternateName": null,
+    "source": "Haddie Kaur",
+    "status": "Live 10.2.0",
+    "currentEffect": "After a successful Killer Blind, the Killer suffers Blindness for 20/25/30 seconds. Once per Trial, Residual Manifest lets you rummage through an opened Chest and guarantees a Basic Flashlight.",
+    "activation": [
+      "Successfully blind the Killer to apply Blindness.",
+      "Interact with an opened Chest to use the one rummage allowed by the perk.",
+      "Ends/deactivates when: Killer Blindness ends after 20/25/30 seconds.",
+      "Ends/deactivates when: The Chest rummage allowance is spent when used."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Blinding the Killer applies Blindness, and once per Trial you can rummage an opened Chest for a Basic Flashlight.",
+    "cooldown": null,
+    "duration": [
+      "Killer Blindness: 20/25/30 seconds."
+    ],
+    "tokenOrStackBehavior": "One rummage allowance per Trial; it is consumed when rummaging an opened Chest.",
+    "oncePerTrialOrOtherLimits": "Can rummage an opened Chest once per Trial; that rummage guarantees a Basic Flashlight.",
+    "statusEffectsInvolved": [
+      "Blindness (Killer)"
+    ],
+    "specialInteractions": [
+      "The Killer Blindness effect can be triggered by blinds from Firecrackers, Flash Grenades, and Blast Mine.",
+      "When used with Appraisal, Residual Manifest's rummage token is consumed first."
+    ],
+    "sourceCharacter": "Haddie Kaur",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "residual-manifest",
+    "rank": 139,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Chase",
+      "Stealth"
+    ],
+    "summary": "Blinding the Killer inflicts Blindness for up to 30 seconds, and once per Trial you can rummage an opened Chest for a guaranteed basic Flashlight.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Turn any successful blind into a longer period where the Killer loses Aura-reading support.",
+      "Guarantee access to a basic Flashlight without bringing one into the Trial.",
+      "Use the rummage after your original Item is consumed or when a chest is already open."
+    ],
+    "counters": [
+      "Requires successful Killer blinds to apply the main effect.",
+      "Lightborn or careful anti-blind play can shut down most value.",
+      "The guaranteed Flashlight is basic rather than premium."
+    ],
+    "pros": [
+      "Provides its own tool for activating the perk.",
+      "Thirty seconds of Killer Blindness can disable important Aura information.",
+      "Useful in dedicated blind builds."
+    ],
+    "cons": [
+      "High execution dependence.",
+      "Very little value if blinds are denied.",
+      "One guaranteed basic Flashlight does not justify the slot alone."
+    ],
+    "analysis": [
+      "Residual Manifest ranks this position because it is one of the more self-contained blind-build perks. Even if you enter without a Flashlight, one rummage can guarantee a basic one, giving the perk a path to its own activation.",
+      "The Blindness effect can be meaningful against Killers relying on Aura information. Thirty seconds is long enough to cover post-hook rotations, generator pressure, or several chase decisions where the Killer expected to see an Aura.",
+      "The obvious issue is that successful blinds are not free. A Killer can face walls during pickups, avoid pallet blinds, or bring Lightborn. In those matches the main effect struggles to appear.",
+      "Residual Manifest is therefore solid specialist utility. It is better than a pure meme perk, but too dependent on blind access for a general-purpose ranking."
+    ],
+    "verdict": "A respectable blind-build support perk that even supplies its own basic Flashlight. Strong when blinds land, nearly invisible when they do not.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Flashlight",
+      "Blind",
+      "Information Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Haddie Kaur"
+    },
+    "synergyPerkIds": [
+      "champion-of-light",
+      "background-player",
+      "flashbang",
+      "built-to-last"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Champion of Light",
+      "Background Player",
+      "Flashbang",
+      "Built to Last"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "146-150",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "fruits-of-your-labor",
+  "mechanics": {
+    "name": "Fruits of Your Labor",
+    "alternateName": null,
+    "source": "Aurora Stardotter",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever a Generator is completed, you gain 1 Token. Whenever you finish repairing a Generator, for each Token you gain 5% Haste for 2 seconds and 10/15/20% Healing progress, according to perk tier.",
+    "activation": [
+      "Whenever any Generator is completed, gain 1 Token.",
+      "You must finish repairing a Generator to trigger the per-Token Haste and Healing progress.",
+      "Ends/deactivates when: Each Haste instance lasts 2 seconds."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Generator completions build tokens that grant a brief Haste boost and Healing progress when you finish repairing a Generator.",
+    "cooldown": null,
+    "duration": [
+      "Haste: 2 seconds per Token when you finish repairing a Generator."
+    ],
+    "tokenOrStackBehavior": "Gain 1 Token whenever any Generator is completed. No cap, token expenditure, loss, or expiry is stated in the current effect text; tokens remain available for each time you finish repairing a Generator.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The per-Token Haste and Healing progress occur when you finish repairing a Generator, not merely when another Generator is completed."
+    ],
+    "sourceCharacter": "Aurora Stardotter",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "fruits-of-your-labor",
+    "rank": 149,
+    "tier": "C",
+    "roles": [
+      "Objective",
+      "Healing",
+      "Mobility"
+    ],
+    "summary": "Generator completions build Tokens; when you finish repairing a generator, each Token grants a brief Haste bonus and permanent healing progress toward your current Health State.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "health-state",
+      "pressure"
+    ],
+    "useCases": [
+      "Convert late generator completions into a large chunk of healing progress.",
+      "Finish a generator while injured and immediately gain movement plus self-recovery progress.",
+      "Benefit more in later game when several completion Tokens have accumulated."
+    ],
+    "counters": [
+      "You must personally finish a generator to cash the Tokens.",
+      "Early-game activations have few Tokens and modest payoff.",
+      "If you are already Healthy, the healing portion can be wasted."
+    ],
+    "pros": [
+      "Rewards the main objective rather than a side quest.",
+      "Scaling improves naturally as the Trial progresses.",
+      "Can combine objective completion, healing progress, and movement in one trigger."
+    ],
+    "cons": [
+      "Back-loaded value.",
+      "Needs the perk owner to be on the exact generator when it completes.",
+      "Part of the trigger is wasted in some health states."
+    ],
+    "analysis": [
+      "Fruits of Your Labor ranks high in C because the perk scales with match progression rather than requiring an unrelated chore. Every generator completion creates future value, and the payout happens when you personally finish a generator later.",
+      "The healing progress is the more interesting reward. If several Tokens are banked and you finish a late generator while injured, the perk can remove a large portion of the next heal without requiring anyone to stop repairing beforehand.",
+      "The brief Haste can help with the immediate post-completion rotation, but it is not a replacement for a true Exhaustion perk. The important question is whether you can reliably be present for the generator finish that cashes the stack.",
+      "That ownership problem keeps the perk in C. Solo Q teammates may finish objectives without you, and an early finish pays very little. In a coordinated objective build, the scaling can be planned much more deliberately."
+    ],
+    "verdict": "A promising late-objective payoff that asks you to own the generator finish. Fruits of Your Labor can compress a later heal nicely, but its value arrives on the match's schedule.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Haste"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Aurora Stardotter"
+    },
+    "synergyPerkIds": [
+      "resilience",
+      "deja-vu",
+      "adrenaline",
+      "hope"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Resilience",
+      "Déjà Vu",
+      "Adrenaline",
+      "Hope"
+    ],
+    "antiSynergies": []
+  }
+}

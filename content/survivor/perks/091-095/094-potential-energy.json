@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "091-095",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "potential-energy",
+  "mechanics": {
+    "name": "Potential Energy",
+    "alternateName": null,
+    "source": "Vittorio Toscano",
+    "status": "Live 10.2.0",
+    "currentEffect": "While repairing a Generator, press Active Ability to store Potential Energy: repair charges no longer progress that Generator and instead yield 1 Token per equivalent 1% progression, up to 10/15/20. A failed Repair Skill Check below the token cap removes 20% of accumulated Tokens; a failed check at the cap regresses the Generator by 10%. With at least one Token, press Active Ability again on the same or another Generator to spend all Tokens and instantly progress that Generator by 1% per Token. The perk deactivates after use or losing a Health State; losing a Health State also removes all stored Tokens.",
+    "activation": [
+      "Be repairing a Generator and press Active Ability to store progress as Tokens.",
+      "Have at least one Token and press Active Ability on a Generator to spend the stored Tokens.",
+      "Ends/deactivates when: Deactivates after spending Tokens.",
+      "Ends/deactivates when: Losing any Health State deactivates the perk and removes all accumulated Tokens."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Removed the minimum repair time to activate, changed the conversion to 1% repair progress per Token, and set the cap to 10/15/20 Tokens by tier.",
+    "plainEnglishSummary": "It converts Generator repair into capped tokens that can be spent as instant progress on another Generator, but is lost after use or taking damage.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Gain 1 Token per 1% equivalent repair progression, up to 10/15/20. Below the cap, a failed Repair Skill Check removes 20% of accumulated Tokens; at the cap, a failed check regresses the Generator by 10% instead. Spending Tokens consumes all of them, each yielding 1% instant Generator progression. Losing a Health State removes all Tokens.",
+    "oncePerTrialOrOtherLimits": "The perk deactivates after use or losing any Health State, so it cannot be used again in that Trial after either event.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Token charge rate is affected by repair-speed effects and Generator repair progression bonuses, including Great Skill Check bonus progression."
+    ],
+    "sourceCharacter": "Vittorio Toscano",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "potential-energy",
+    "rank": 94,
+    "tier": "B",
+    "roles": [
+      "Objective"
+    ],
+    "summary": "Store up to 20% worth of repair as Tokens instead of progressing the current generator, then dump those Tokens into another generator later; taking damage loses the stored Tokens.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "pressure",
+      "swf"
+    ],
+    "useCases": [
+      "Move progress from a safe generator into a dangerous central or 3-gen-breaking objective.",
+      "Bank objective value before rotating to a generator the Killer is heavily defending.",
+      "Coordinate a sudden burst completion in SWF."
+    ],
+    "counters": [
+      "Taking damage deletes all stored Tokens.",
+      "While storing, the current generator is not advancing normally.",
+      "Poor macro decisions can simply move progress around without creating a net advantage."
+    ],
+    "pros": [
+      "Unique ability to transfer repair effort between generators.",
+      "Useful against difficult generator layouts.",
+      "Can create burst objective pressure."
+    ],
+    "cons": [
+      "Risk of losing all stored value.",
+      "High macro requirement.",
+      "No inherent speed increase."
+    ],
+    "analysis": [
+      "Potential Energy earns this position because its value is strategic rather than numerical. The perk does not create free repair speed; it lets the Survivor decide where their repair investment eventually lands.",
+      "That becomes useful against dangerous generator clusters. A Survivor can work safely elsewhere, store Tokens, then rotate into the contested generator and inject progress before the Killer has time to fully respond.",
+      "The entire mechanic is punished by taking damage. Losing twenty stored Tokens can erase a large chunk of personal tempo, so the user must understand Killer position and choose the transfer window carefully.",
+      "SWF can exploit Potential Energy much better because the team can coordinate when a burst completion matters. In ordinary Solo Q it is easier to overcomplicate a situation that simple generator repair would have solved."
+    ],
+    "verdict": "A clever anti-3-gen and burst-progress tool, not a repair-speed perk. Potential Energy rewards macro planning and punishes greed brutally.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Progress Transfer",
+      "Macro"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Vittorio Toscano"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "prove-thyself",
+      "hyperfocus",
+      "sprint-burst"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Prove Thyself",
+      "Hyperfocus",
+      "Sprint Burst"
+    ],
+    "antiSynergies": []
+  }
+}

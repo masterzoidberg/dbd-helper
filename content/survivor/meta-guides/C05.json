@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C05",
+  "snapshotId": "C05@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "apocalyptic-ingenuity", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Turn one safe Chest interaction into one tactical Fragile Pallet, then leave the setup plan when its route or timing no longer repays the detour.",
+    "verdict": {
+      "recommendation": "Use Apocalyptic Ingenuity to restore a specific exhausted tile only when the Chest, broken Pallet and future chase route form a safe plan; this is an experimental module, not ordinary pallet conservation.",
+      "soloQ": "Choose the chest and broken pallet route yourself, and abandon the setup when a generator, rescue or active chase is more urgent.",
+      "coordinatedSwf": "Call the intended restored tile before leaving the objective so teammates know the Fragile Pallet is temporary and do not spend the same route twice.",
+      "mainWeakness": "Chest travel, setup exposure, random access and the Fragile Pallet's immediate break on drop can cost more tempo than the restored tile returns."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "fragile-pallet-module",
+          "label": "Fragile pallet restoration tool",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source names one defining tool and does not establish a complete four-perk recipe. The Chest is an interaction dependency, not a supported item or add-on recommendation.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Enable one pallet rebuild",
+              "usage": "REQUIRED",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "apocalyptic-ingenuity",
+                  "whyItsHere": "After a Chest interaction, rebuild one broken Pallet as a Fragile Pallet when the restored tile has a real future use."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before rummaging or unlocking a Chest, identify a broken Pallet worth restoring and a safe path between the Chest, rebuild location and the next objective. One qualifying Chest interaction enables one rebuild."
+      ],
+      "rows": [
+        {
+          "id": "choose-restoration-route",
+          "situation": "A broken Pallet could reopen a useful chase route and the Chest detour is currently safe.",
+          "action": "Commit to the Chest only after checking the next generator, rescue and Killer position. If the route cannot be reached safely, keep doing the uncovered job.",
+          "why": "The strategy pays for a specific exhausted tile; a Chest interaction without a usable destination is setup cost without the intended payoff."
+        },
+        {
+          "id": "rebuild-broken-pallet",
+          "situation": "You have completed the qualifying Chest interaction and reached the chosen broken Pallet without immediate pressure.",
+          "action": "Complete the rebuild interaction and leave if the Killer can interrupt it. Do not begin the interaction merely because the broken-pallet aura is visible.",
+          "why": "Apocalyptic Ingenuity requires both the Chest condition and a safe rebuild interaction beside a broken Pallet.",
+          "enabledBy": ["perk:apocalyptic-ingenuity"]
+        },
+        {
+          "id": "use-fragile-resource",
+          "situation": "The Fragile Pallet has been rebuilt and the route is now contested or in chase.",
+          "action": "Use it as one tactical resource, then move through the exit. After it is dropped it breaks immediately, so do not plan a second reset or a normal long-term pallet economy around it.",
+          "why": "The restored object is temporary by design; its value is one timely route, not conservation of an existing pallet.",
+          "enabledBy": ["perk:apocalyptic-ingenuity"]
+        },
+        {
+          "id": "call-temporary-route",
+          "situation": "A teammate may later enter the restored area or the Killer is changing targets.",
+          "action": "Call the tile and its temporary status in a coordinated team. In Solo Q, assume nobody has seen the setup and do not cross the map to defend it after the team has moved on.",
+          "why": "Teammate behavior is a canonical dependency; the setup is wasted when the team cannot use the restored route."
+        },
+        {
+          "id": "abandon-setup",
+          "situation": "The Chest route is pressured, the target tile is no longer useful or an urgent generator or rescue is uncovered.",
+          "action": "Stop travelling for the rebuild and return to the higher-value objective or rescue. Do not chase the original setup after its value window has closed.",
+          "why": "The source marks setup time and Killer pre-emption as central failure modes."
+        }
+      ],
+      "abortWhen": [
+        "Abort before the Chest when the Killer can cut off the route or the broken Pallet will not serve the next useful chase area.",
+        "Leave the rebuild when it is interrupted or when the team has abandoned the location; the enabled interaction does not justify a down."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Treat the Chest detour as your own experiment and return to the actual team job when the restored tile cannot be used immediately."
+      ],
+      "coordinatedSwf": [
+        "Name the target broken Pallet and release the setup assignment if the Killer contests it, so another player does not wait for a resource that will break on its first drop."
+      ]
+    },
+    "strengths": [
+      "Restore one otherwise exhausted tile when the Chest and broken Pallet line up safely."
+    ],
+    "weaknesses": [
+      "Chest travel and rebuild exposure can consume more team tempo than one temporary pallet returns.",
+      "The Fragile Pallet breaks immediately when dropped and cannot be treated as a normal resettable resource."
+    ],
+    "killerCounterplay": [
+      "The Killer can pressure the Chest route, interrupt the rebuild or force the team away before the temporary pallet repays its setup."
+    ],
+    "commonMistakes": [
+      "Treating a Chest interaction as automatically valuable without naming the broken Pallet and future route first.",
+      "Using the Fragile Pallet as though it were a normal pallet that can be preserved or reset.",
+      "Continuing the setup after the Killer has made the route unsafe or an urgent team job is uncovered."
+    ],
+    "related": [
+      {
+        "strategyId": "C04",
+        "relationship": "COMBINE_WITH",
+        "why": "This is the narrower Chest-to-pallet restoration branch of pallet-resource management, not a replacement for ordinary pallet routing."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C05#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C05@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C05@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "C05@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C05@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C05#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C05#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C05#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "C05#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C05#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C05#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PERK", "ref": "apocalyptic-ingenuity#/mechanics" }
+  ]
+}

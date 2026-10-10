@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "031-035",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "alert",
+  "mechanics": {
+    "name": "Alert",
+    "alternateName": null,
+    "source": "Feng Min",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever the Killer performs a Break or Damage Action, their Aura is revealed to you for 3/4/5 seconds.",
+    "activation": [
+      "The Killer performs a Break or Damage Action.",
+      "Ends/deactivates when: Aura reveal ends after the tier duration."
+    ],
+    "patchNote": "Latest live balance change (2.3.0): Removed range and cooldown; reveal duration set to 3/4/5 seconds.",
+    "plainEnglishSummary": "Breaking or damaging something reveals the Killer's Aura briefly.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 3/4/5 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Feng Min",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "alert",
+    "rank": 33,
+    "tier": "A",
+    "roles": [
+      "Information"
+    ],
+    "summary": "Whenever the Killer breaks or damages something, see their Aura for up to 5 seconds, with no range or cooldown.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 5,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "pressure"
+    ],
+    "useCases": [
+      "Identify the Killer's location and direction after pallet breaks, generator kicks, and other Break or Damage actions.",
+      "Use repeated Aura reads to decide whether to stay on a generator, rotate, rescue, or prepare for chase.",
+      "Learn how different Killers path after breaking resources, making the perk useful for developing game sense."
+    ],
+    "counters": [
+      "Stealth or Aura-blocking effects can deny the information.",
+      "A Killer who performs few qualifying Break or Damage actions gives the perk fewer triggers.",
+      "Knowing the Killer's location does not itself create distance if your positioning is already poor."
+    ],
+    "pros": [
+      "Patch 9.5.0 removed the old range and cooldown limitations.",
+      "Requires no setup and can trigger many times in a normal Trial.",
+      "Excellent Solo Q information that remains useful even without voice communication."
+    ],
+    "cons": [
+      "Pure information perk with no direct chase speed, healing, or objective bonus.",
+      "Trigger frequency varies by Killer and playstyle.",
+      "Aura denial can shut down the perk at important moments."
+    ],
+    "analysis": [
+      "Alert closes this band at this position because its current 9.5-era design is one of the cleanest information perks in the game. Whenever the Killer performs a qualifying Break or Damage action, their Aura is shown for up to five seconds, and the modern version no longer has the old range or cooldown restrictions.",
+      "That makes the perk useful in almost every phase of a Trial. A generator kick can tell you whether the Killer is turning toward your position. A pallet break reveals the direction they take after the animation. Repeated triggers also let Solo Q players infer where pressure is moving without needing teammates to communicate it.",
+      "Alert is especially valuable for learning. New and intermediate players can watch how Killers path after breaking pallets and understand when a chase is actually heading toward them. Experienced players use the same information more aggressively, deciding when to greed generator progress or rotate before the Killer can establish pressure.",
+      "It ranks below the more directly impactful perks because information only matters if the player acts on it. Alert does not save a health state, accelerate a generator, or shorten a heal by itself. But because it is passive, repeatable, and broadly applicable, it remains more dependable than narrower utility perks."
+    ],
+    "verdict": "A superb low-maintenance information perk. Alert's current no-range, no-cooldown design gives Solo Q players repeated Killer-location reads without demanding any setup.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Solo Q"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Feng Min"
+    },
+    "synergyPerkIds": [
+      "kindred",
+      "bond",
+      "troubleshooter",
+      "deja-vu"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Kindred",
+      "Bond",
+      "Troubleshooter",
+      "Déjà Vu"
+    ],
+    "antiSynergies": []
+  }
+}

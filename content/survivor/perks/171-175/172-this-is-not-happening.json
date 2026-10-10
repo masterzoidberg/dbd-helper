@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "batch": "171-175",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "this-is-not-happening",
+  "mechanics": {
+    "name": "This Is Not Happening",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Good basic Skill Check zones are 150/175/200% bigger.",
+    "activation": [
+      "Perform an interaction that produces a basic Skill Check with a Good zone."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: removed the Injured requirement and old Great Skill Check zone bonus; Good basic Skill Check zones are now 150/175/200% bigger.",
+    "plainEnglishSummary": "Greatly enlarges Good basic Skill Check zones.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Only Good basic Skill Check zones are enlarged in the final live version."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "this-is-not-happening",
+    "rank": 172,
+    "tier": "D",
+    "roles": [
+      "Skill Check",
+      "Utility"
+    ],
+    "summary": "Make Good basic Skill Check zones 150/175/200% larger at all health states.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [],
+    "useCases": [
+      "Make ordinary Skill Checks far easier for a new or accessibility-focused player.",
+      "Reduce missed checks on unfamiliar interactions.",
+      "Use as a temporary learning perk while basic Skill Check consistency develops."
+    ],
+    "counters": [
+      "It provides no extra progress for hitting a Good check.",
+      "The 10.2 live version does not enlarge Great zones.",
+      "Experienced players gain almost nothing from the larger Good zone."
+    ],
+    "pros": [
+      "Works at every health state after 10.2.",
+      "Enormous Good-zone increase.",
+      "Simple accessibility value."
+    ],
+    "cons": [
+      "No speed or progress bonus.",
+      "No Great-check synergy.",
+      "Quickly outgrown by experienced players."
+    ],
+    "analysis": [
+      "This Is Not Happening is now an accessibility perk rather than an injured-state Great-check perk. Good basic Skill Check zones become enormous, and the health-state requirement is gone.",
+      "The live release deliberately removed the PTB Great-zone bonus because of its Hyperfocus interaction. That means experienced players do not receive a progression ceiling from the rework; they simply receive safer ordinary checks.",
+      "For new players or anyone who struggles with Skill Check timing, that safety can be useful. Preventing repeated failed checks is real value even if it does not appear on a meta spreadsheet.",
+      "Competitive ranking remains low because the perk does not make successful actions faster or more rewarding. It makes failure less likely, which is valuable until the player no longer needs the help."
+    ],
+    "verdict": "A pure accessibility and beginner perk in 10.2. Excellent at making Good checks easy, intentionally useless for Great-check optimization.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Accessibility",
+      "Beginner"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "stable",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "corrective-action",
+      "technician"
+    ],
+    "synergyOther": [
+      "Beginner builds"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Corrective Action",
+      "Technician",
+      "Beginner builds"
+    ],
+    "antiSynergies": []
+  }
+}

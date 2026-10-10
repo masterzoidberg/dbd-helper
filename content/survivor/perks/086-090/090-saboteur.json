@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "086-090",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "saboteur",
+  "mechanics": {
+    "name": "Saboteur",
+    "alternateName": null,
+    "source": "Jake Park",
+    "status": "Live 10.2.0",
+    "currentEffect": "While the Killer carries another Survivor, reveals the Auras of all Hooks within 56 m of the original pickup location; normal Hooks appear white and Scourge Hooks yellow. Grants the ability to sabotage Hooks without a Toolbox and increases toolboxless sabotage speed by 30%. Using this toolboxless sabotage ability starts the tiered cooldown.",
+    "activation": [
+      "Hook auras are revealed while the Killer is carrying another Survivor.",
+      "The sabotage-speed effect applies to sabotage performed without a Toolbox.",
+      "Ends/deactivates when: Hook aura reading ends when the Killer is no longer carrying a Survivor.",
+      "Ends/deactivates when: The toolboxless sabotage speed ability is unavailable during its cooldown."
+    ],
+    "patchNote": "Latest live balance change (7.1.0): Reduced the cooldown to 70/65/60 seconds and toolboxless sabotage time to 2.3 seconds.",
+    "plainEnglishSummary": "Shows nearby hooks while the Killer carries someone and lets you sabotage hooks without a Toolbox, with a cooldown.",
+    "cooldown": "70/65/60 seconds after toolboxless sabotage use",
+    "duration": [
+      "Hook auras are revealed for the duration the Killer carries the Survivor."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Normal Hooks are white and Scourge Hooks are yellow while revealed."
+    ],
+    "sourceCharacter": "Jake Park",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "saboteur",
+    "rank": 90,
+    "tier": "B",
+    "roles": [
+      "Rescue",
+      "Information"
+    ],
+    "summary": "When the Killer picks up a teammate, reveal nearby Hook Auras including Scourge Hooks and let you sabotage without a Toolbox.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "hook-state",
+      "bodyblock",
+      "protection-hit"
+    ],
+    "useCases": [
+      "Identify the Killer's likely hook route before committing to a sabotage.",
+      "Remove a key hook to force a longer carry path.",
+      "Target yellow Scourge Hooks specifically to deny powerful Scourge Hook perks."
+    ],
+    "counters": [
+      "The Killer can choose another hook.",
+      "Toolboxless sabotage has a cooldown.",
+      "Poor timing can result in a free hit without preventing the hook."
+    ],
+    "pros": [
+      "Strong hook-route information.",
+      "Can deny Scourge Hook value.",
+      "Does not require bringing a Toolbox."
+    ],
+    "cons": [
+      "High positioning demand.",
+      "Often needs team coordination.",
+      "Can cost generator tempo when the save is unrealistic."
+    ],
+    "analysis": [
+      "Saboteur takes this position because the information portion is almost as important as the sabotage itself. Seeing the nearby hook network, with Scourge Hooks highlighted separately, lets the Survivor immediately judge whether a carry denial is realistic.",
+      "A successful sabotage can create a major swing. The Killer may be forced into a distant hook, take extra bodyblocks, or lose the carry entirely. Denying a critical Scourge Hook can also remove perk value beyond the hook state itself.",
+      "The danger is hero-play syndrome. Running across the map for every pickup can destroy generator tempo, and many hook layouts simply give the Killer another easy option. Strong Saboteur play depends on recognizing the few carries that are actually vulnerable.",
+      "That specialization keeps it in B. In coordinated save builds it performs much higher; in ordinary Solo Q, it is often an information perk with occasional sabotage opportunities."
+    ],
+    "verdict": "A strong carry-denial specialist with valuable hook information. Saboteur rewards choosing the right save, not attempting every save.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Hook Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jake Park"
+    },
+    "synergyPerkIds": [
+      "breakout",
+      "background-player",
+      "boil-over",
+      "empathy"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Breakout",
+      "Background Player",
+      "Boil Over",
+      "Empathy"
+    ],
+    "antiSynergies": []
+  }
+}

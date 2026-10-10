@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "051-055",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "smash-hit",
+  "mechanics": {
+    "name": "Smash Hit",
+    "alternateName": null,
+    "source": "Lee Yun-Jin",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you stun the Killer with a Pallet, gain 50% Haste for 4 seconds. You cannot use Smash Hit while Exhausted; using it applies Exhausted for 30/25/20 seconds.",
+    "activation": [
+      "Stun the Killer with a Pallet.",
+      "You must not be Exhausted.",
+      "Ends/deactivates when: Haste ends after 4 seconds."
+    ],
+    "patchNote": "Latest live balance change (7.1.0): Reduced the Exhausted duration to 30/25/20 seconds.",
+    "plainEnglishSummary": "A successful Pallet stun gives you a short speed burst and then Exhausted.",
+    "cooldown": null,
+    "duration": [
+      "Haste: 4 seconds.",
+      "Exhausted: 30/25/20 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste",
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "Shares the Exhausted status-effect recovery rules with other Exhaustion perks."
+    ],
+    "sourceCharacter": "Lee Yun-Jin",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "smash-hit",
+    "rank": 51,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Exhaustion",
+      "Pallet"
+    ],
+    "summary": "After you Pallet-stun the Killer, gain 50% Haste for 4 seconds and only 20 seconds of Exhaustion at Tier III.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "haste",
+      "exhausted",
+      "looping"
+    ],
+    "useCases": [
+      "Turn a successful pallet stun into enough distance to leave the tile entirely.",
+      "Exploit the short Exhaustion timer for repeat use in long matches.",
+      "Pair with stun-oriented builds that already aim to land pallets."
+    ],
+    "counters": [
+      "Requires an actual pallet stun, not merely a drop.",
+      "Cannot activate while already Exhausted.",
+      "Strong Killers can respect pallets and avoid giving clean stun opportunities.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "Four seconds at 50% Haste is a huge burst.",
+      "Very short Exhaustion compared with classic perks.",
+      "Excellent reward for a successful chase interaction."
+    ],
+    "cons": [
+      "Trigger is much less reliable than a vault or start-running condition.",
+      "Requires pallet resources.",
+      "Can be dead against Killers or players who rarely take pallet stuns."
+    ],
+    "analysis": [
+      "Smash Hit takes this position because four seconds of 50% Haste is one of the largest Exhaustion payoffs in the game. A landed pallet stun can immediately become enough distance to abandon the tile and reach a much stronger resource.",
+      "The 20-second Tier III Exhaustion timer is another major strength. If the match contains enough chase downtime, Smash Hit can realistically return before another important chase much sooner than Sprint Burst or Lithe.",
+      "The reason it remains B is simple: the activation is not guaranteed. Good Killers often respect pallets, use powers through them, or force early drops that never stun. The perk is only as reliable as the user's ability to create the correct pallet interaction.",
+      "Players who are already strong at pallet timing can extract much more value than average users. It is a high-ceiling chase perk, but not a universal one."
+    ],
+    "verdict": "A huge reward for a condition the Killer can often deny. Smash Hit is excellent in practiced pallet hands, but too trigger-dependent for the top chase tier.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Lee Yun-Jin"
+    },
+    "synergyPerkIds": [
+      "five-moves-ahead",
+      "parental-guidance",
+      "any-means-necessary"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Five Moves Ahead",
+      "Parental Guidance",
+      "Any Means Necessary"
+    ],
+    "antiSynergies": []
+  }
+}

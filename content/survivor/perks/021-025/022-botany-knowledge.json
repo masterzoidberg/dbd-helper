@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "021-025",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "botany-knowledge",
+  "mechanics": {
+    "name": "Botany Knowledge",
+    "alternateName": null,
+    "source": "Claudette Morel",
+    "status": "Live 10.2.0",
+    "currentEffect": "Increases your Healing speed by 30/40/50%.",
+    "activation": [],
+    "patchNote": "Latest live balance change (9.0.0): Removed the Med-Kit efficiency penalty.",
+    "plainEnglishSummary": "You heal faster.",
+    "cooldown": null,
+    "duration": [
+      "Continuous during the Trial."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The former Med-Kit efficiency penalty was removed in 9.0.0 and is not part of the live effect."
+    ],
+    "sourceCharacter": "Claudette Morel",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "botany-knowledge",
+    "rank": 22,
+    "tier": "A",
+    "roles": [
+      "Healing",
+      "Objective"
+    ],
+    "summary": "Permanently heal 50% faster at Tier III, with no trigger, cooldown, or remaining Med-Kit efficiency penalty.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Shorten ordinary teammate heals so two Survivors return to generators or rescues sooner.",
+      "Improve emergency resets when the team has several injured Survivors but limited safe time.",
+      "Amplify self-heal or Med-Kit strategies without the old item-efficiency drawback."
+    ],
+    "counters": [
+      "Broken still prevents completing a heal regardless of speed.",
+      "A Killer who immediately pressures the healing area can deny the time needed to finish.",
+      "Faster healing is less valuable in matches where the team deliberately stays injured."
+    ],
+    "pros": [
+      "Always active and mechanically effortless.",
+      "50% is a large enough bonus to meaningfully change reset time.",
+      "Patch 9.0.0 removed the old Med-Kit efficiency penalty, restoring clean item synergy."
+    ],
+    "cons": [
+      "Does not create value unless healing actually occurs.",
+      "Can tempt teams into over-healing instead of repairing when a reset is unnecessary.",
+      "Offers no direct chase protection or objective progress."
+    ],
+    "analysis": [
+      "Botany Knowledge opens this band at this position because its current version is much cleaner than the perk many returning players remember. Tier III provides a permanent 50% healing-speed increase, and the 9.0.0 removal of the Med-Kit efficiency penalty eliminated the most awkward tradeoff from its previous design.",
+      "The practical value is team tempo. A heal normally occupies two Survivors at once: the injured player and the healer. Cutting that interaction substantially frees both players earlier, so the time saved is more meaningful than looking only at one progress bar. It is especially noticeable after unhooks, during multi-injury resets, and when the Killer temporarily loses map pressure.",
+      "The perk also has one of the healthiest reliability profiles in the healing category. It asks for no token, no hook trigger, no special location, and no successful Skill Check. If you heal another Survivor, it works. That simplicity makes it excellent in Solo Q, while coordinated teams can deliberately schedule very short resets around it.",
+      "Botany Knowledge stays outside the top thirty because healing itself is not always the correct macro decision. Against some Killers or in some game states, repairing while injured is stronger than resetting. The perk is therefore powerful whenever healing is strategically justified, but it cannot force healing to be the right play."
+    ],
+    "verdict": "A top-tier pure healing-speed perk. Modern Botany Knowledge is simple, permanent, and efficient, but its value still depends on knowing when the team should actually stop to heal.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Efficiency",
+      "Reset"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Claudette Morel"
+    },
+    "synergyPerkIds": [
+      "well-make-it",
+      "resurgence",
+      "self-care"
+    ],
+    "synergyOther": [
+      "Med-Kits"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "We'll Make It",
+      "Resurgence",
+      "Self-Care",
+      "Med-Kits"
+    ],
+    "antiSynergies": []
+  }
+}

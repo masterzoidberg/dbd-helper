@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "066-070",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "friendly-competition",
+  "mechanics": {
+    "name": "Friendly Competition",
+    "alternateName": null,
+    "source": "Thalita Lyra",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you finish repairing a Generator with at least 1 other Survivor, the Survivors who finished repairing it repair 10% faster for 80/85/90 seconds.",
+    "activation": [
+      "You must complete a Generator while at least one other Survivor is also repairing it.",
+      "Ends/deactivates when: Each affected Survivor's repair-speed bonus expires after 80/85/90 seconds."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Increased cooperative repair bonus from 5% to 10% and reduced its duration from 100/110/120 to 80/85/90 seconds.",
+    "plainEnglishSummary": "Completing a Generator cooperatively gives all finishing participants a 10% repair-speed bonus for a tiered duration.",
+    "cooldown": null,
+    "duration": [
+      "Repair-speed bonus: 80/85/90 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The repair-speed bonus affects every Survivor who participated in that Generator's repair, including the perk user."
+    ],
+    "sourceCharacter": "Thalita Lyra",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "friendly-competition",
+    "rank": 69,
+    "tier": "B",
+    "roles": [
+      "Objective",
+      "Team Support"
+    ],
+    "summary": "Finish a Generator cooperatively and every finisher repairs 10% faster for up to 90 seconds afterward.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "pressure",
+      "swf"
+    ],
+    "useCases": [
+      "Carry a cooperative generator completion into faster work on the next objective.",
+      "Buff multiple Survivors from one successful co-op finish.",
+      "Coordinate a SWF split after completion so several generators benefit from the same 10% bonus."
+    ],
+    "counters": [
+      "Requires completing a generator cooperatively.",
+      "The perk does nothing before that first qualifying completion.",
+      "Ten percent is useful but not enough to justify inefficiently stacking generators just to trigger it."
+    ],
+    "pros": [
+      "Long 80/85/90-second duration.",
+      "Can buff several Survivors simultaneously.",
+      "Rewards a common objective event rather than a niche side task."
+    ],
+    "cons": [
+      "Activation requires co-op completion.",
+      "Can tempt players into unnecessary generator stacking.",
+      "No direct chase or rescue value."
+    ],
+    "analysis": [
+      "Friendly Competition doubled its repair bonus in 10.2 from 5% to 10%, while shortening the duration to 80/85/90 seconds. That trade strongly favors the perk because the bonus is large enough to shape the next objective rather than merely decorate it.",
+      "The correct macro remains “finish together, then split.” Every participating Survivor carries the buff away from the completed generator, so coordinated teams can turn one co-op finish into pressure on several different objectives.",
+      "The activation still creates a risk of over-stacking. Survivors should not crowd a generator solely to trigger the perk when separate repairs would have been stronger.",
+      "At 10%, however, the payoff is now substantial enough to justify a serious re-rank. The old 5% evaluation understates the live version."
+    ],
+    "verdict": "A real objective snowball perk after the 10.2 buff. Finish one generator together, then spread the 10% bonus across the map.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "tags": [
+      "Co-op",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Thalita Lyra"
+    },
+    "synergyPerkIds": [
+      "prove-thyself",
+      "deja-vu",
+      "teamwork-full-circuit",
+      "hyperfocus"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Prove Thyself",
+      "Déjà Vu",
+      "Teamwork: Full Circuit",
+      "Hyperfocus"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "081-085",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "empathic-connection",
+  "mechanics": {
+    "name": "Empathic Connection",
+    "alternateName": null,
+    "source": "Yoichi Asakawa",
+    "status": "Live 10.2.0",
+    "currentEffect": "You heal other Survivors 30/35/40% faster. Injured Survivors see your Aura.",
+    "activation": [
+      "The healing-speed bonus applies while healing another Survivor.",
+      "The Aura effect applies to injured Survivors.",
+      "Ends/deactivates when: The Aura effect ends for a Survivor when they are no longer injured."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Increased altruistic healing-speed bonus from 25/30/35% to 30/35/40%; injured Survivors continue to see your Aura.",
+    "plainEnglishSummary": "You heal teammates faster and injured teammates can see your Aura.",
+    "cooldown": null,
+    "duration": [
+      "Healing-speed bonus is passive during altruistic healing.",
+      "Aura visibility applies while another Survivor is injured."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Yoichi Asakawa",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "empathic-connection",
+    "rank": 85,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "Heal other Survivors substantially faster, while every injured teammate can see your Aura anywhere on the map.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "reset",
+      "solo-q",
+      "aura-reading",
+      "health-state"
+    ],
+    "useCases": [
+      "Act as a visible healing anchor for injured teammates in Solo Q.",
+      "Shorten normal team resets without needing a trigger or token.",
+      "Let injured teammates come to you instead of wasting time searching for each other."
+    ],
+    "counters": [
+      "The healing bonus only applies when you heal someone else.",
+      "Your visible Aura can draw multiple teammates away from generators if they over-prioritize resets.",
+      "You gain no personal self-heal speed."
+    ],
+    "pros": [
+      "Always-on healing bonus.",
+      "Map-wide injured-teammate coordination.",
+      "Very easy to use."
+    ],
+    "cons": [
+      "No chase value.",
+      "Can encourage unnecessary healing.",
+      "Less impactful if the team already has strong voice communication."
+    ],
+    "analysis": [
+      "Empathic Connection ranks this position because it combines two support effects that naturally reinforce each other. Injured Survivors can see your Aura from anywhere, and when they reach you, your healing speed is significantly increased.",
+      "That solves a real Solo Q problem: injured players frequently spend time searching for someone willing to reset them. With Empathic Connection, the support player becomes a visible destination instead of an uncertain possibility.",
+      "The perk is also clean. There is no hook trigger, token stack, or proximity requirement for the Aura. If someone is injured, they know where you are. If you heal them, the speed bonus applies.",
+      "It stays in B because healing support does not matter in every game state. Strong teams often need to stay on generators while injured, and SWF can coordinate heal locations verbally. The perk is excellent at its role without being a universal slot."
+    ],
+    "verdict": "A very clean Solo Q support perk. Empathic Connection makes you easy to find and meaningfully faster at the job teammates are seeking you out to perform.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Support",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Yoichi Asakawa"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "autodidact",
+      "desperate-measures",
+      "aftercare"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Botany Knowledge",
+      "Autodidact",
+      "Desperate Measures",
+      "Aftercare"
+    ],
+    "antiSynergies": []
+  }
+}

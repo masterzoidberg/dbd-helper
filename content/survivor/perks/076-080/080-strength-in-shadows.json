@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "076-080",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "strength-in-shadows",
+  "mechanics": {
+    "name": "Strength in Shadows",
+    "alternateName": null,
+    "source": "Sable Ward",
+    "status": "Live 10.2.0",
+    "currentEffect": "While inside the Basement, unlocks self-healing without a Med-Kit at 70% of normal Healing speed. After completing a heal in the Basement, reveals the Killer's Aura to you for 6/8/10 seconds.",
+    "activation": [
+      "Be inside the Basement to use the self-heal ability.",
+      "Complete the heal while in the Basement to reveal the Killer's Aura.",
+      "Ends/deactivates when: The self-heal ability is available only while inside the Basement.",
+      "Ends/deactivates when: Aura reveal ends after 6/8/10 seconds."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Lets you self-heal at reduced speed in the Basement and then briefly reveals the Killer after the heal.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 6/8/10 seconds after completing the Basement heal."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The self-heal does not require a Med-Kit."
+    ],
+    "sourceCharacter": "Sable Ward",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "strength-in-shadows",
+    "rank": 80,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Self-Sustain",
+      "Information"
+    ],
+    "summary": "In the Basement, self-heal at 70% normal speed; completing the heal reveals the Killer for up to 10 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "reset",
+      "aura-reading",
+      "health-state"
+    ],
+    "useCases": [
+      "Create independent self-sustain when teammates are unavailable.",
+      "Use the post-heal Killer Aura read to decide how to leave the Basement safely.",
+      "Pair with Basement-adjacent objectives or perks that already bring you downstairs."
+    ],
+    "counters": [
+      "Requires traveling into the Basement.",
+      "Basement positioning can be dangerous if the Killer checks it.",
+      "A teammate heal elsewhere may be faster overall."
+    ],
+    "pros": [
+      "Much faster than Self-Care.",
+      "Includes a long Killer Aura read after completion.",
+      "No Med-Kit required."
+    ],
+    "cons": [
+      "Location tax is significant.",
+      "Can walk into a dangerous dead zone to activate.",
+      "Travel time can erase the apparent healing efficiency."
+    ],
+    "analysis": [
+      "Strength in Shadows earns this position because 70% normal healing speed is a respectable independent self-heal, much faster than base Self-Care. The ten-second Killer Aura read afterward also reduces some of the danger of leaving the Basement.",
+      "The real cost is travel. A perk can quote a good heal time and still be inefficient if the Survivor spends fifteen seconds running downstairs and back out. Maps with centrally accessible Basements are kinder than maps where the trip is a major detour.",
+      "The perk becomes better when the build or match already gives you a reason to visit the Basement. In those cases, the activation cost shrinks and the self-sustain feels much more efficient.",
+      "It stays in B because geography is unavoidable. The effect is strong enough to respect, but the Basement requirement prevents it from competing with more portable healing tools."
+    ],
+    "verdict": "A good independent heal with a real map tax. Strength in Shadows is efficient once you are downstairs, but getting there is part of the perk's true cost.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Sable Ward"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "wicked",
+      "inner-strength",
+      "iron-will"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Botany Knowledge",
+      "Wicked",
+      "Inner Strength",
+      "Iron Will"
+    ],
+    "antiSynergies": []
+  }
+}

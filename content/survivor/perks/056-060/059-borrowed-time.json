@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "batch": "056-060",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "borrowed-time",
+  "mechanics": {
+    "name": "Borrowed Time",
+    "alternateName": null,
+    "source": "William \"Bill\" Overbeck",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you unhook another Survivor, extend their Endurance by 6/8/10 seconds to 16/18/20 seconds total and extend their Haste by 10 seconds to 20 seconds total. Endurance is cancelled early if they perform a Conspicuous Action.",
+    "activation": [
+      "Unhook another Survivor.",
+      "Ends/deactivates when: Endurance ends early if rescued Survivor performs a Conspicuous Action.",
+      "Ends/deactivates when: Both effects expire after their durations."
+    ],
+    "patchNote": "Latest live balance change (6.1.0): Reworked the perk to extend Endurance by 6/8/10 seconds and movement-speed bonus by 10 seconds.",
+    "plainEnglishSummary": "Unhooking a teammate extends their post-unhook Endurance and Haste protections.",
+    "cooldown": null,
+    "duration": [
+      "Endurance total: 16/18/20 seconds by tier.",
+      "Haste total: 20 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Endurance",
+      "Haste"
+    ],
+    "specialInteractions": [
+      "Extends post-unhook protections."
+    ],
+    "sourceCharacter": "William \"Bill\" Overbeck",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "borrowed-time",
+    "rank": 59,
+    "tier": "B",
+    "roles": [
+      "Anti-Tunnel",
+      "Rescue"
+    ],
+    "summary": "Extend a rescued Survivor's base unhook Endurance by up to 10 seconds and their Haste by another 10 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "endurance",
+      "anti-tunnel",
+      "hook-state",
+      "conspicuous-action"
+    ],
+    "useCases": [
+      "Protect a rescue when the Killer remains near the hook.",
+      "Give the unhooked Survivor more time to reach a safe tile before protections expire.",
+      "Stack longer Endurance with coordinated bodyblocks or endgame saves."
+    ],
+    "counters": [
+      "Only affects Survivors you unhook.",
+      "Conspicuous Actions still end Endurance early.",
+      "The modern base game already grants meaningful unhook protection without the perk.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "Simple anti-tunnel extension.",
+      "No cooldown or token system.",
+      "Excellent for dangerous endgame rescues."
+    ],
+    "cons": [
+      "Partially overlaps basekit unhook protection.",
+      "No Killer information.",
+      "Does not help if the Killer ignores the rescued Survivor."
+    ],
+    "analysis": [
+      "Borrowed Time sits at this position because it is still good, but the base game absorbed much of what once made it mandatory. Every unhook already provides Endurance and Haste, so the perk now extends protection rather than creating it.",
+      "That extension is still meaningful. Twenty total seconds of Endurance at Tier III can force a camping Killer to wait much longer or commit into protection that would otherwise have expired.",
+      "The perk is particularly valuable in endgame or forced-trade scenarios, where there may be no safer macro option than rescuing under direct pressure. SWF can coordinate around the extended timer very effectively.",
+      "It ranks below Babysitter because Babysitter provides speed, trail denial, and Killer information in one slot. Borrowed Time remains dependable, but narrower."
+    ],
+    "verdict": "Still a respectable rescue perk, no longer a mandatory one. Borrowed Time is best when you expect the Killer to pressure the unhooked Survivor for longer than basekit protection covers.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "tags": [
+      "Endurance"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "William \"Bill\" Overbeck"
+    },
+    "synergyPerkIds": [
+      "babysitter",
+      "shoulder-the-burden",
+      "kindred",
+      "well-make-it"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Babysitter",
+      "Shoulder the Burden",
+      "Kindred",
+      "We'll Make It"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "156-160",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "corrective-action",
+  "mechanics": {
+    "name": "Corrective Action",
+    "alternateName": null,
+    "source": "Jonah Vasquez",
+    "status": "Live 10.2.0",
+    "currentEffect": "Start with 1/2/3 Tokens, up to 5. Completing a Great Skill Check grants 1 Token. While cooperating with another Survivor on an action that causes Skill Checks, a Token is spent when they fail a Skill Check to turn it into a Good Skill Check; their Aura is revealed to you for 6 seconds.",
+    "activation": [
+      "Start with tier-dependent Tokens.",
+      "Great Skill Checks grant a Token.",
+      "Cooperate with another Survivor on an action that causes Skill Checks when they fail.",
+      "Ends/deactivates when: Tokens are spent when converting a failed teammate Skill Check."
+    ],
+    "patchNote": "Latest live balance change (8.3.0): Changed starting Tokens to 1/2/3 and maximum Tokens to 5.",
+    "plainEnglishSummary": "Your tokens can convert a teammate's failed cooperative Skill Check into a Good one and reveal their Aura.",
+    "cooldown": null,
+    "duration": [
+      "Teammate Aura reveal: 6 seconds."
+    ],
+    "tokenOrStackBehavior": "Starts with 1/2/3 Tokens; gain 1 on Great Skill Check; maximum 5; spend 1 to convert a teammate's failed cooperative check.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Applies to another Survivor performing a Skill Check during a cooperative action with you."
+    ],
+    "sourceCharacter": "Jonah Vasquez",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "corrective-action",
+    "rank": 157,
+    "tier": "C",
+    "roles": [
+      "Team Support",
+      "Skill Check"
+    ],
+    "summary": "Bank Tokens from Great Skill Checks and automatically convert a cooperating teammate’s failed Skill Check into a Good one.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "pressure"
+    ],
+    "useCases": [
+      "Protect cooperative generators from a teammate miss.",
+      "Support newer players during heals or repairs without interrupting the action.",
+      "Replenish Tokens through your own Great Skill Checks."
+    ],
+    "counters": [
+      "It only helps teammates performing a cooperative action with you.",
+      "Experienced teammates may rarely fail a Skill Check.",
+      "Tokens are wasted if the team mostly works separately."
+    ],
+    "pros": [
+      "Starts with Tokens and can replenish them.",
+      "A prevented generator miss can save a large chunk of progress.",
+      "Passive once the co-op action is underway."
+    ],
+    "cons": [
+      "Value depends on someone else making a mistake.",
+      "No benefit while working alone.",
+      "Much weaker in experienced teams."
+    ],
+    "analysis": [
+      "Corrective Action is one of those perks whose value depends more on the lobby than on the Killer. In a team with inconsistent Skill Checks, one prevented failure can save a meaningful amount of generator or healing progress.",
+      "The perk starts with Tokens and earns more from the user’s Great Skill Checks, so a mechanically strong player can effectively insure a weaker teammate during cooperative actions.",
+      "In experienced groups the trigger becomes rare, and the perk cannot create extra progress when nobody makes mistakes. That makes its ceiling practical rather than competitive.",
+      "It belongs above true gimmicks because the prevention is automatic and can save real time, but its value shrinks as the team improves."
+    ],
+    "verdict": "Excellent insurance for co-op Skill Check mistakes, increasingly unnecessary as teammates become consistent. A useful teaching/support perk rather than a meta engine.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Co-op",
+      "Beginner Support"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jonah Vasquez"
+    },
+    "synergyPerkIds": [
+      "prove-thyself",
+      "friendly-competition",
+      "better-together",
+      "hyperfocus"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Prove Thyself",
+      "Friendly Competition",
+      "Better Together",
+      "Hyperfocus"
+    ],
+    "antiSynergies": []
+  }
+}

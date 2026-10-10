@@ -34,6 +34,33 @@ The GitHub Pages workflow performs import → build → tests → deploy. The li
 
 See `content/survivor/README.md` for the generated record layout.
 
+## Prepare the canonical Survivor baseline
+
+Before local development or tests, run these existing commands sequentially from the repository root:
+
+```sh
+python scripts/import-survivor-v15.py
+node scripts/build-survivor-data.mjs
+python scripts/import-survivor-meta.py
+node scripts/build-survivor-meta.mjs
+```
+
+Preparation replaces the incomplete/stale perk checkout with all 176 canonical records and regenerates browser data with the verified patch/date. It then imports the frozen Stage 3A/3B research from `survivor-meta.zip` and builds all 57 Survivor Meta routes. Do not edit the archives or imported research to resolve validation failures. Repeating the recipe must produce the same file inventory and content as the first prepared output. On Windows, Git may check text out as CRLF while the Meta importer preserves the archive's LF bytes; compare Git-normalized content for checkout drift and raw bytes for repeated preparation.
+
+Verify the baseline and run both full suites:
+
+```sh
+node --test site/tests/survivor-meta-baseline.test.mjs
+python -m unittest discover -s scripts/tests -p 'test_*.py' -v
+node --test site/tests/*.test.mjs
+```
+
+If the local Node shell does not expand globs, use this equivalent PowerShell command for the full site suite:
+
+```powershell
+node --test (Get-ChildItem site/tests -Filter '*.test.mjs').FullName
+```
+
 ## Canonical mechanics and editorial
 
 Editorial judgment remains separate from mechanics so a balance patch can update factual effects without silently rewriting tier placement or analysis. The current baseline is live patch 10.2.0, verified 2026-10-06.

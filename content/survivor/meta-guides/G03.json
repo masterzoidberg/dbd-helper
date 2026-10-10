@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G03",
+  "snapshotId": "G03@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "deja-vu", "mechanicsRevision": 1 },
+    { "perkId": "fast-track", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Repair the generators that shape the next rotation, not merely the nearest ones; preserve enough time and resources to break the dangerous cluster before it becomes the endgame.",
+    "verdict": {
+      "recommendation": "Use target selection as the main tool. Commit to a dangerous or strategically important generator when its completion prevents a worse late-game position, then release the plan when the Killer or team state makes that target a sunk cost.",
+      "soloQ": "Use your own grouped-generator information and hook state to choose the next target. Do not cross the map repeatedly for a perfect cluster while an accessible critical generator is already available.",
+      "coordinatedSwf": "Call the cluster, assign who owns it and reserve the post-rescue Fast Track burst for a target that still matters. Coordination raises the ceiling but does not justify stacking every repair window.",
+      "mainWeakness": "The plan demands macro judgment and sometimes dangerous positioning; a late call, denied route or exhausted item can leave the team with the same cluster it meant to break."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "critical-generator-module",
+          "label": "Critical generator selection module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source provides a strategy framework and no canonical BuildImplementation. These are exact objective tools for choosing and accelerating a target, not a complete four-perk prescription.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Identify the dangerous cluster",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "deja-vu",
+                  "whyItsHere": "Reveal the three closest grouped Generators and repair those targets 4/5/6% faster, using the current grouped trio as a routing input rather than a command to repair the nearest one."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Convert rescue into target progress",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "fast-track",
+                  "whyItsHere": "Earn 1 Token per unhook up to 1/2/3, then spend all Tokens on a Great basic repair Skill Check for 5% permanent progress per Token on the selected generator."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "item": {
+        "id": "toolbox",
+        "status": "OPTIONAL",
+        "name": "Toolbox",
+        "why": "The snapshot calls Toolbox use optional. Use charges only when they materially finish the chosen critical generator; no add-on or fixed item package is established."
+      }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "At the first rotation, identify the dangerous group of generators and the one target whose completion improves the team's later positions. Record the route and release condition before committing to a long cross-map repair."
+      ],
+      "rows": [
+        {
+          "id": "read-the-cluster",
+          "situation": "You can choose between several accessible generators and Déjà Vu shows a grouped trio.",
+          "action": "Compare the highlighted trio with hooks, teammate positions and the Killer's pressure. Choose the target that prevents the most dangerous late-game lock, not automatically the closest aura.",
+          "why": "Generator selection is the defining mechanic; raw repair speed cannot repair a bad map position.",
+          "enabledBy": ["perk:deja-vu"]
+        },
+        {
+          "id": "commit-selectively",
+          "situation": "The selected generator is strategically important and the current route can finish meaningful progress.",
+          "action": "Commit while the target still changes the future rotation, then leave before a forced chase or dangerous approach costs more than completing the target returns. Keep the next safe route visible.",
+          "why": "The plan wins by selective commitment, not by defending one generator after its value window has closed."
+        },
+        {
+          "id": "cash-fast-track",
+          "situation": "You have Fast Track Tokens from an unhook and can reach a Great basic repair Skill Check on the chosen target.",
+          "action": "Spend the held Tokens on the target that still matters, accepting 5% permanent progress per Token. If the cluster has changed or the target is already lost, do not travel only to cash out the burst.",
+          "why": "Fast Track converts a prior rescue into permanent target progress, but the value still depends on generator selection.",
+          "enabledBy": ["perk:fast-track"]
+        },
+        {
+          "id": "spend-optional-item",
+          "situation": "A Toolbox can close a meaningful amount of progress on the selected generator and the Killer cannot immediately deny the route.",
+          "action": "Spend charges only on the target whose completion changes the rotation. If the item or target is denied, switch to ordinary repair or the uncovered rescue rather than preserving the old plan.",
+          "why": "The item is optional and finite; an item burst on the wrong generator does not solve the cluster.",
+          "enabledBy": ["item:toolbox"]
+        },
+        {
+          "id": "release-the-target",
+          "situation": "The Killer controls the route, the target's completion no longer prevents a lock or a teammate needs an urgent rescue.",
+          "action": "Abandon the selected generator and rotate to the next useful objective or rescue. Reassess the cluster after the team state changes instead of paying more time to validate the original call.",
+          "why": "The canonical failure is continuing a selective commitment after the payoff no longer repays its positioning cost."
+        }
+      ],
+      "abortWhen": [
+        "Abort a cross-map target trip when the route is unsafe, a rescue is uncovered or an accessible generator now changes the rotation more.",
+        "Release an exhausted target when the Killer has converted it into a losing chase or the team can no longer finish it before the map state moves on."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Use your own cluster and hook information, then choose a target you can actually reach. Do not assume teammates will follow a silent three-generator assignment."
+      ],
+      "coordinatedSwf": [
+        "Call the cluster, owner and release cue. Let another player take the next objective when the selected target is denied so the team does not keep paying for a stale macro call."
+      ]
+    },
+    "strengths": [
+      "Prevent a worse late-game generator position through deliberate target selection.",
+      "Turn unhooks or optional item charges into progress on the generator that matters most."
+    ],
+    "weaknesses": [
+      "The strategy asks for macro knowledge and dangerous positioning rather than only faster repair.",
+      "A denied route, exhausted item or late target call can make the specialization cost more than broad repair."
+    ],
+    "killerCounterplay": [
+      "The Killer can pressure the selected cluster, force a long approach or turn the target into a chase before the strategic completion pays."
+    ],
+    "commonMistakes": [
+      "Repairing the nearest generator without checking whether it leaves the dangerous cluster for last.",
+      "Crossing the map for an ideal target after its completion no longer changes the future rotation.",
+      "Saving Fast Track Tokens or Toolbox charges for a target that has already become unsafe or strategically obsolete."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G03#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G03@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G03@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G03@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "G03@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G03#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G03#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "G03#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G03#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "G03#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "G03#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "G03#Common Mistakes" },
+    { "kind": "PERK", "ref": "deja-vu#/mechanics" },
+    { "kind": "PERK", "ref": "fast-track#/mechanics" }
+  ]
+}

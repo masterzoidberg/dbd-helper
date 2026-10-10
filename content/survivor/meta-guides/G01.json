@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G01",
+  "snapshotId": "G01@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "deja-vu", "mechanicsRevision": 1 },
+    { "perkId": "built-to-last", "mechanicsRevision": 1 },
+    { "perkId": "resilience", "mechanicsRevision": 1 },
+    { "perkId": "lithe", "mechanicsRevision": 1 },
+    { "perkId": "friendly-competition", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Turn generator repair into the match plan: select useful targets, protect productive uptime and leave the objective when chase, rescue or pressure makes the next repair window low value.",
+    "verdict": {
+      "recommendation": "Use repair, routing and optional item value to advance the win condition directly. The plan is strong because it is broad, but every repair choice still has to repay its travel, exposure and resource cost.",
+      "soloQ": "Use the canonical target-generator route while checking which rescues and teammate repairs are actually covered. Do not assume the team will select the same generator or protect your toolbox detour.",
+      "coordinatedSwf": "Assign the target, decide when a cooperative finish is worth stacking and split immediately after the objective payoff. Communication turns the canonical objective shell into more reliable tempo.",
+      "mainWeakness": "Chase pressure can deny the repair window, teammate generator choices are not fully controllable and toolbox value can be lost or exhausted."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "CANONICAL",
+          "buildId": "G01@10.2.0-r1:solo-representative",
+          "notes": [
+            {
+              "slot": 1,
+              "role": "Critical generator routing",
+              "usage": "CORE",
+              "whyItsHere": "Use the highlighted grouped generator information to choose the next repair target rather than defaulting to the nearest safe generator."
+            },
+            {
+              "slot": 2,
+              "role": "Toolbox charge recovery",
+              "usage": "SUPPORT",
+              "whyItsHere": "Make a depleted Toolbox recoverable when the next repair window can repay the locker detour; later uses restore less."
+            },
+            {
+              "slot": 3,
+              "role": "Injured objective tempo",
+              "usage": "SUPPORT",
+              "whyItsHere": "Keep repair progress moving while Injured when the state is safer than abandoning the generator for a reset."
+            },
+            {
+              "slot": 4,
+              "role": "Chase exit",
+              "usage": "FLEX",
+              "whyItsHere": "Turn a Rushed Vault into a route away from the generator or toward the next objective when chase pressure arrives."
+            }
+          ]
+        },
+        {
+          "provenance": "CANONICAL",
+          "buildId": "G01@10.2.0-r1:swf-representative",
+          "notes": [
+            {
+              "slot": 1,
+              "role": "Critical generator assignment",
+              "usage": "CORE",
+              "whyItsHere": "Give the team a shared grouped-generator target and route the repair burst to the generator that matters next."
+            },
+            {
+              "slot": 2,
+              "role": "Protected Toolbox value",
+              "usage": "SUPPORT",
+              "whyItsHere": "Recover the Toolbox only when the group can preserve the next objective window and the detour is not abandoning a needed job."
+            },
+            {
+              "slot": 3,
+              "role": "Cooperative finish tempo",
+              "usage": "CORE",
+              "whyItsHere": "Finish a selected generator with another Survivor, then carry the live 10.2.0 repair bonus into the next split rotation."
+            },
+            {
+              "slot": 4,
+              "role": "Team safety flex",
+              "usage": "FLEX",
+              "whyItsHere": "Resilience is the named Stage 2 example for the intentionally open fourth slot; use it for injured repair and rescue tempo without treating it as mandatory.",
+              "optionReasons": [
+                {
+                  "perkId": "resilience",
+                  "whyItsHere": "Use the named Stage 2 safety flex while Injured when keeping repair or the next team action moving is worth the health-state risk."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "item": {
+        "id": "toolbox",
+        "status": "OPTIONAL",
+        "name": "Toolbox",
+        "why": "The canonical representative builds use a Toolbox, while the snapshot identifies it as optional. Bring one when a protected repair burst or charge-recovery plan can repay the item risk; no add-on package is established."
+      }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "At the first generator, identify the next target and the reason it matters. Keep a rescue route and a chase exit in mind before spending a Toolbox or committing the team to a repair position."
+      ],
+      "rows": [
+        {
+          "id": "select-useful-generator",
+          "situation": "You are free to repair and a grouped generator target or important rotation is available.",
+          "action": "Use Déjà Vu's three closest grouped-generator Auras to choose a target, then work the generator that improves the next team rotation. Leave when the Killer has made the target a losing chase or an urgent hook needs coverage.",
+          "why": "Generator pressure is useful progress, not simply time spent on the nearest safe machine.",
+          "enabledBy": ["perk:deja-vu"]
+        },
+        {
+          "id": "spend-the-toolbox",
+          "situation": "A Toolbox can create meaningful progress on the selected generator and the current route is safe.",
+          "action": "Spend charges on the target that changes the next rotation. If the Toolbox is depleted, enter a Locker for Built to Last only when the 14/12/10-second first recharge detour and its declining later returns are worth leaving the job.",
+          "why": "The item is optional and finite; a faster repair is not valuable when the detour or item loss gives the Killer a better pressure window.",
+          "enabledBy": ["perk:built-to-last", "item:toolbox"]
+        },
+        {
+          "id": "repair-while-injured",
+          "situation": "You are Injured and Resilience can improve the next repair or team action.",
+          "action": "Keep repairing while the location remains safe and the injured speed matters. Do not take a forced hit or remain on a denied generator merely to preserve the bonus.",
+          "why": "Resilience is a state-conditioned efficiency tool, not protection from chase pressure.",
+          "enabledBy": ["perk:resilience"]
+        },
+        {
+          "id": "exit-the-chase",
+          "situation": "The Killer reaches the objective and Lithe has a usable Rushed Vault.",
+          "action": "Choose the destination before vaulting, then use the 50% Haste for 3 seconds to leave the pressured generator area or reach the next planned route. Reassess after Exhaustion blocks another activation.",
+          "why": "The chase slot protects objective uptime only when its movement reaches a useful next job.",
+          "enabledBy": ["perk:lithe"]
+        },
+        {
+          "id": "finish-and-split",
+          "situation": "The SWF representative route has at least one other Survivor on a generator that is close to completion.",
+          "action": "Finish the selected generator together to trigger Friendly Competition, then split the finishing Survivors toward separate useful targets while the 10% repair bonus lasts for 80/85/90 seconds.",
+          "why": "The live cooperative bonus is valuable when it converts one deliberate stack into several next objectives; stacking every generator wastes map-wide labor.",
+          "enabledBy": ["perk:friendly-competition"]
+        },
+        {
+          "id": "release-objective-routine",
+          "situation": "The target is defended, a rescue is uncovered, the Toolbox route is denied or the next repair no longer repays travel and exposure.",
+          "action": "Stop protecting the original repair routine and take the highest-value rescue, chase exit or next generator. Return only when the new objective is again the best team tempo.",
+          "why": "The canonical failure state is continuing the repair plan after the match has changed its value window."
+        }
+      ],
+      "abortWhen": [
+        "Abort a Toolbox or Locker detour when a hook needs attention, the current generator can finish now or the Killer controls the route.",
+        "Leave the generator when the chase, rescue or team rotation is worth more than the next repair action; generator pressure is a macro plan, not a fixed location."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Use the visible generator state and hook coverage to choose the next job; no teammate can be assumed to protect the same target or cover your recharge detour."
+      ],
+      "coordinatedSwf": [
+        "Call the target, the cooperative finish and the split destinations. The team can protect Toolbox value and release the stack before map-wide repair labor is lost."
+      ]
+    },
+    "strengths": [
+      "Directly advance the win condition while retaining a route out of chase pressure.",
+      "The same broad plan can absorb routing, item and cooperative objective modules."
+    ],
+    "weaknesses": [
+      "A chase can deny the repair window before the intended progress is realized.",
+      "Toolbox charges and recharge time are finite, and Solo Q cannot control teammate generator selection."
+    ],
+    "killerCounterplay": [
+      "The Killer can pressure the selected generator, force a chase before the repair burst pays or deny the Toolbox and its intended recharge route."
+    ],
+    "commonMistakes": [
+      "Repairing the easiest generator while the dangerous cluster remains untouched.",
+      "Entering a Locker or spending item charges automatically instead of comparing the detour with the next objective.",
+      "Stacking or preserving the repair routine after a rescue, chase or map rotation has changed the best team job."
+    ],
+    "related": [
+      {
+        "strategyId": "G03",
+        "relationship": "COMBINE_WITH",
+        "why": "Critical-Generator / Three-Gen Breaker is the narrower target-selection branch of this broader generator-pressure plan."
+      },
+      {
+        "strategyId": "G04",
+        "relationship": "COMBINE_WITH",
+        "why": "Cooperative Repair / Gen Duo adds deliberate teammate stacking and post-finish repair tempo to the general objective plan."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G01#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G01@10.2.0-r1#/buildImplementations/0" },
+    { "kind": "SNAPSHOT", "ref": "G01@10.2.0-r1#/buildImplementations/1" },
+    { "kind": "SNAPSHOT", "ref": "G01@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G01@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G01@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "G01@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G01#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G01#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "G01#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G01#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "G01#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "G01#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "G01#Common Mistakes" },
+    { "kind": "PERK", "ref": "deja-vu#/mechanics" },
+    { "kind": "PERK", "ref": "built-to-last#/mechanics" },
+    { "kind": "PERK", "ref": "resilience#/mechanics" },
+    { "kind": "PERK", "ref": "lithe#/mechanics" },
+    { "kind": "PERK", "ref": "friendly-competition#/mechanics" }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C03",
+  "snapshotId": "C03@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "windows-of-opportunity", "mechanicsRevision": 1 },
+    { "perkId": "finesse", "mechanicsRevision": 1 },
+    { "perkId": "resilience", "mechanicsRevision": 1 },
+    { "perkId": "spine-chill", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Route toward reusable windows, use the vault timing that matches your health state, and leave when the route no longer repays its resource or perk cost.",
+    "verdict": {
+      "recommendation": "Treat Windows of Opportunity as a window route read, not the old pallet map, and commit only when the next tile or objective is worth the chase path.",
+      "soloQ": "Pre-position for a usable window and keep an onward route; when the route is spent or the Killer refuses the chase, return to the uncovered generator or rescue.",
+      "coordinatedSwf": "Call the area where you are taking chase and which windows remain usable so teammates can keep repairs away from a depleted route.",
+      "mainWeakness": "Map layout, health-state conditions, cooldowns and anti-vault pressure can remove the timing or route that the module needs."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "vault-window-module",
+          "label": "Window and vault module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source establishes a framework rather than a verified four-perk build. Use the route read and choose a health-state timing tool that fits the rest of the loadout.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Window route information",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "windows-of-opportunity",
+                  "whyItsHere": "See nearby Windows and plan the exit before pressure reaches the tile. The current perk does not reveal Pallets or Breakable Walls."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Choose a vault-state timing tool",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "finesse",
+                  "whyItsHere": "Use the healthy-state Fast Vault timing for the first route, then reassess after its vault cooldown or after taking a hit."
+                },
+                {
+                  "perkId": "resilience",
+                  "whyItsHere": "Use the injured-state action and vault speed when the route must continue after a hit; it does not preserve the healthy-state bonus."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "perkId": "spine-chill",
+          "usage": "FLEX",
+          "whyItsHere": "Use the Killer-looking cue and temporary vault value only when its trigger helps the chosen route; it is not a permanent window map."
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before committing to a chase, identify the first usable Window and where its exit leads. Keep the next resource or objective in mind rather than treating one strong tile as the whole plan."
+      ],
+      "rows": [
+        {
+          "id": "read-window-route",
+          "situation": "You are approaching a tile with Windows of Opportunity available.",
+          "action": "Use the nearby Window information to choose an entry and exit, then move toward the next usable route instead of looping only to keep the aura on screen.",
+          "why": "The current Windows record is a window and vault tool; it is not the old all-resource map.",
+          "enabledBy": ["perk:windows-of-opportunity"]
+        },
+        {
+          "id": "healthy-vault-window",
+          "situation": "You are healthy and Finesse is available for the next Fast Vault.",
+          "action": "Take the vault when it creates distance or reaches the next route. After using it, plan the tile without assuming the bonus is immediately available again.",
+          "why": "Finesse is health-state and cooldown gated, so the next decision must survive without treating one vault as repeatable speed.",
+          "enabledBy": ["perk:finesse"]
+        },
+        {
+          "id": "injured-vault-reassessment",
+          "situation": "You have been injured and the healthy vault plan no longer applies.",
+          "action": "Use Resilience only while its injured condition is active, then reassess whether the next vault is worth the remaining route. Do not stay in a losing tile to preserve the specialization.",
+          "why": "Resilience and Finesse cover different health states; equipping the module does not make every vault doubly protected.",
+          "enabledBy": ["perk:resilience"]
+        },
+        {
+          "id": "killer-looking-cue",
+          "situation": "Spine Chill is equipped and its Killer-looking trigger gives a temporary vault cue.",
+          "action": "Use the notification to choose whether to leave or take the prepared vault, then continue along the planned route. Do not wait in the tile for another trigger after its cooldown starts.",
+          "why": "The cue can improve a decision window, but it does not supply permanent route information or raw chase immunity.",
+          "enabledBy": ["perk:spine-chill"]
+        },
+        {
+          "id": "route-denied",
+          "situation": "A window is blocked, anti-vault pressure makes the interaction unsafe, or the next route has no usable continuation.",
+          "action": "Leave the specialized route before the Killer closes it and take the best remaining chase path, generator or rescue job.",
+          "why": "The canonical counterplay is denial of the vault interaction and the cost of stacking or forcing modifiers."
+        }
+      ],
+      "abortWhen": [
+        "Abort the chase extension when the next window or exit no longer creates a safe continuation.",
+        "Stop preserving the module when returning to a generator or rescue repays more team tempo than another vault attempt."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Do not assume a long chase means teammates are repairing. Once the Killer releases you, check the nearest uncovered job before seeking another window."
+      ],
+      "coordinatedSwf": [
+        "Call the chase area and spent windows so teammates can route repairs away from the depleted tile and take the next assignment when the Killer changes targets."
+      ]
+    },
+    "strengths": [
+      "Exploit strong window structures when the map gives a reusable route."
+    ],
+    "weaknesses": [
+      "Window blocking, anti-vault powers, health-state restrictions and cooldowns can remove the expected timing.",
+      "Overinvesting in the same vault purpose leaves fewer slots for the failure state when the Killer refuses the route."
+    ],
+    "killerCounterplay": [
+      "The Killer can block windows, use anti-vault pressure or force the survivor to spend the route before the timing module is ready."
+    ],
+    "commonMistakes": [
+      "Reading Windows of Opportunity as Pallet or Breakable Wall information after the 10.2.0 rework.",
+      "Treating healthy Finesse and injured Resilience as simultaneous guarantees instead of reassessing after a hit or cooldown.",
+      "Taking a vault because it is available without identifying the next resource or objective."
+    ],
+    "related": [
+      {
+        "strategyId": "C01",
+        "relationship": "COMBINE_WITH",
+        "why": "This is a window-focused specialization of the broader chase and looping strategy."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C03#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C03@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C03@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C03@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C03#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C03#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C03#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C03#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C03#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PERK", "ref": "windows-of-opportunity#/mechanics" },
+    { "kind": "PERK", "ref": "finesse#/mechanics" },
+    { "kind": "PERK", "ref": "resilience#/mechanics" },
+    { "kind": "PERK", "ref": "spine-chill#/mechanics" }
+  ]
+}

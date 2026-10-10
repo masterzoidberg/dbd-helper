@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "146-150",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "last-stand",
+  "mechanics": {
+    "name": "Last Stand",
+    "alternateName": null,
+    "source": "Michonne Grimes",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you spend 120/105/90 seconds in the Killer's Terror Radius while not in a Chase, Last Stand activates. While active, a Rushed Vault stuns the Killer for 3 seconds if they are within 2.5 m of the vault location. After the perk triggers, it is disabled for the remainder of the Trial.",
+    "activation": [
+      "Accumulate 120/105/90 seconds in the Killer's Terror Radius while not in a Chase.",
+      "While active, perform a Rushed Vault with the Killer within 2.5 m of the vault location.",
+      "Ends/deactivates when: After its stun triggers, the perk is disabled for the remainder of the Trial."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Introduced live with a 120/105/90-second Terror Radius charge requirement and a 3-second stun; the launch values were higher than the preceding PTB proposal.",
+    "plainEnglishSummary": "Time spent in the Terror Radius outside Chase charges a one-use stun that can trigger on a close Rushed Vault.",
+    "cooldown": null,
+    "duration": [
+      "Killer stun: 3 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Once the effect triggers, it cannot be used again for the remainder of the Trial.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Michonne Grimes",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "last-stand",
+    "rank": 147,
+    "tier": "C",
+    "roles": [
+      "Chase",
+      "Utility"
+    ],
+    "summary": "After spending 90 seconds inside the Killer's Terror Radius outside chase, your next close rushed vault can stun the Killer for 3 seconds, once per Trial.",
+    "metaStatus": "Situational",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "terror-radius",
+      "looping"
+    ],
+    "useCases": [
+      "Cash the charged perk during a critical close vault to force a three-second chase swing.",
+      "Use against a Killer who repeatedly patrols near you without committing to chase.",
+      "Pair with vault-heavy chase builds so the one-use stun arrives at a meaningful moment."
+    ],
+    "counters": [
+      "Ninety seconds of Terror Radius time outside chase is an enormous setup requirement.",
+      "The Killer must be within 2.5 metres of the rushed vault.",
+      "The perk disables permanently after its one successful trigger."
+    ],
+    "pros": [
+      "Three-second Killer stun is a large payoff.",
+      "Can surprise the Killer at a normally unsafe close vault.",
+      "Current usage shows players do build intentionally around it."
+    ],
+    "cons": [
+      "One-use only.",
+      "Extremely slow setup.",
+      "Stealth Killers can make charging much harder."
+    ],
+    "analysis": [
+      "Last Stand ranks this position because a three-second stun from an ordinary rushed vault can absolutely win a chase interaction. The effect itself is not weak; the ninety-second charging requirement is what drags the perk down.",
+      "That charging time must occur inside the Terror Radius while you are not in chase. A match against a mobile or stealth Killer can make the condition painfully slow, while a territorial Killer may charge it more naturally around contested objectives.",
+      "Once ready, the perk still needs a close vault with the Killer inside 2.5 metres. Good timing can transform a near-hit into a stun and enough distance to reset the chase.",
+      "The payoff is fun and real, but a single-use perk with both a ninety-second setup and a positional trigger cannot rank on payoff alone."
+    ],
+    "verdict": "A strong one-time stun buried under a marathon charging condition. Last Stand can steal a chase, but spends most of the Trial asking when the dramatic music starts.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Stun",
+      "Comeback"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      138,
+      156
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Michonne Grimes"
+    },
+    "synergyPerkIds": [
+      "finesse",
+      "lithe",
+      "teamwork-throw-down"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Finesse",
+      "Lithe",
+      "Teamwork: Throw Down"
+    ],
+    "antiSynergies": []
+  }
+}

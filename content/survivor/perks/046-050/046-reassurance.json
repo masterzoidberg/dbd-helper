@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "046-050",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "reassurance",
+  "mechanics": {
+    "name": "Reassurance",
+    "alternateName": null,
+    "source": "Rebecca Chambers",
+    "status": "Live 10.2.0",
+    "currentEffect": "While within 6 metres of a hooked Survivor, press Active Ability to pause that Survivor's Sacrifice Process for 20/25/30 seconds. This also pauses Struggle Skill Checks if that Survivor is in the Struggle Phase, and highlights the hooked Survivor's outline in white to you. Reassurance can be used only once per Survivor per Hook Instance.",
+    "activation": [
+      "Be within 6 metres of a hooked Survivor and press Active Ability.",
+      "Ends/deactivates when: The pause and outline effects end after 20/25/30 seconds."
+    ],
+    "patchNote": "Latest live balance change (6.2.0): Removed the 40-second cooldown and added the once-per-Survivor-per-Hook-Instance use limit.",
+    "plainEnglishSummary": "Near a hook, it pauses that Survivor's Sacrifice Process briefly and marks their outline for you.",
+    "cooldown": null,
+    "duration": [
+      "Sacrifice Process pause and white outline: 20/25/30 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Once per Survivor per Hook Instance; a Hook Instance is a single continuous hook event, even if the Survivor advances from first to second Hook Stage without being unhooked.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "If the hooked Survivor is in the Struggle Phase, their Struggle Skill Checks are paused too.",
+      "One activation can affect multiple hooked Survivors within range when several are hooked close together, such as in the Basement."
+    ],
+    "sourceCharacter": "Rebecca Chambers",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "reassurance",
+    "rank": 46,
+    "tier": "B",
+    "roles": [
+      "Rescue",
+      "Objective"
+    ],
+    "summary": "From within 6 metres, pause a hooked Survivor's sacrifice timer for up to 30 seconds once per hook instance.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "hook-state",
+      "pressure",
+      "trade"
+    ],
+    "useCases": [
+      "Buy generator time when the Killer is camping or heavily contesting a hook.",
+      "Pause a second-stage timer while the team organizes a safer rescue instead of forcing an immediate trade.",
+      "Stabilize endgame hooks where rushing the save would feed the Killer multiple downs."
+    ],
+    "counters": [
+      "You must get within 6 metres of the hooked Survivor, which can itself be dangerous against a camping Killer.",
+      "It can be used only once per Survivor per Hook Instance.",
+      "If the team already has a safe immediate rescue, delaying the hook timer may add little practical value."
+    ],
+    "pros": [
+      "Can turn camping into extra generator time instead of forcing a bad rescue.",
+      "Particularly strong in coordinated teams that know exactly how to use the extra 30 seconds.",
+      "Pausing Struggle Skill Checks reduces mechanical pressure while the timer is frozen."
+    ],
+    "cons": [
+      "Very situational when the Killer leaves hooks normally.",
+      "The six-metre activation range can expose the user to hits or trades.",
+      "Solo Q teammates may not understand that the extra hook time is meant to be converted into objectives or a better rescue setup."
+    ],
+    "analysis": [
+      "Reassurance closes this batch at this position because its best-case value is enormous but concentrated in a very specific problem: a Killer who is heavily defending the hook. In that situation, immediately forcing a rescue can be exactly what the Killer wants. Reassurance lets the team refuse that timing and create another 30 seconds of decision space.",
+      "Those 30 seconds matter because three other Survivors can convert them into generators, healing, positioning, or a coordinated rescue plan. The perk therefore does not merely save hook time; it changes the economic trade around camping. A Killer who continues to stand near the hook may be giving the rest of the team substantially more objective progress than they expected.",
+      "SWF gets the cleanest value because everyone can agree on what the pause means. One player uses Reassurance, others stay on generators, and the rescue happens later under better conditions. In Solo Q, some teammates will still panic and approach the hook immediately, reducing the perk's strategic payoff even though the timer itself is successfully paused.",
+      "The reason Reassurance does not rank higher is opportunity frequency. Many Killers leave the hook, and in those matches a normal rescue happens before the pause matters. It is therefore weaker as a blind general-purpose slot than Bond or Distortion. But when the match becomes hook-defense heavy, few perks buy time as directly or as safely for the team."
+    ],
+    "verdict": "A high-impact anti-camp tool whose strength depends on the Killer giving you the problem it solves. In coordinated teams, 30 extra hook seconds can be converted into a brutal amount of objective time.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Camp",
+      "Time"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      40,
+      60
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Rebecca Chambers"
+    },
+    "synergyPerkIds": [
+      "kindred",
+      "shoulder-the-burden",
+      "well-make-it",
+      "background-player"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Kindred",
+      "Shoulder the Burden",
+      "We'll Make It",
+      "Background Player"
+    ],
+    "antiSynergies": []
+  }
+}

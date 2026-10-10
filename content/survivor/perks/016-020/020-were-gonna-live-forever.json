@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "batch": "016-020",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "were-gonna-live-forever",
+  "mechanics": {
+    "name": "We're Gonna Live Forever",
+    "alternateName": null,
+    "source": "David King",
+    "status": "Live 10.2.0",
+    "currentEffect": "When healing a Dying Survivor, your Healing speed is increased by 100%. A Survivor you heal from Dying to Injured gains Endurance for 6/8/10 seconds. The Endurance effect can trigger only once every 30 seconds.",
+    "activation": [
+      "Heal a Survivor in the Dying State for the 100% healing-speed bonus.",
+      "Heal a Dying Survivor back to Injured to grant them Endurance.",
+      "Ends/deactivates when: Endurance ends after 6/8/10 seconds, subject to Endurance rules.",
+      "Ends/deactivates when: The Endurance grant is unavailable during its 30-second cooldown."
+    ],
+    "patchNote": "Latest live balance change (8.3.2): Reverted the healing-speed bonus to 100% (was 150% in 8.3.0); 8.3.0 replaced Tokens with a 6/8/10 s Endurance grant on a 30 s cooldown.",
+    "plainEnglishSummary": "Speeds up healing downed teammates and grants the teammate you get back up brief Endurance.",
+    "cooldown": "30 seconds between Endurance grants",
+    "duration": [
+      "Endurance: 6/8/10 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "The Endurance effect can trigger once every 30 seconds.",
+    "statusEffectsInvolved": [
+      "Endurance"
+    ],
+    "specialInteractions": [
+      "The healing-speed bonus applies while healing a Dying Survivor; the Endurance grant occurs when that Survivor reaches Injured."
+    ],
+    "sourceCharacter": "David King",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "were-gonna-live-forever",
+    "rank": 20,
+    "tier": "A",
+    "roles": [
+      "Anti-Slug",
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "Heal downed teammates 100% faster and give them brief Endurance when you pick them back up.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "slugging",
+      "anti-slug",
+      "dying-state",
+      "endurance",
+      "snowball"
+    ],
+    "useCases": [
+      "Break a Killer's multi-Survivor slug snowball before they can convert every down into hooks.",
+      "Swoop in after the Killer leaves a downed teammate and complete the pickup quickly.",
+      "Protect a freshly recovered teammate from being immediately downed again."
+    ],
+    "counters": [
+      "A Killer who hooks every down immediately can deny most of the perk's value.",
+      "The Endurance grant can trigger only once every 30 seconds.",
+      "Reaching the downed Survivor safely is still required."
+    ],
+    "pros": [
+      "Cuts one of the riskiest Survivor recovery interactions in half.",
+      "Adds Endurance after the pickup, not just speed.",
+      "Directly punishes Killers who overextend for slug pressure."
+    ],
+    "cons": [
+      "Can be a dead slot against immediate-hook play.",
+      "More reliable with communication or good teammate-location information.",
+      "Its best moments depend on another Survivor already being downed."
+    ],
+    "analysis": [
+      "We're Gonna Live Forever makes this position because slugging pressure can end a match before normal healing perks have time to matter. Doubling the speed of a Dying-State heal lets one Survivor reverse a down while the Killer is carrying, chasing, or trying to extend the snowball elsewhere.",
+      "The Endurance component is what turns the perk from simple speed into genuine anti-slug insurance. A teammate who stands up and can immediately absorb another qualifying hit is much harder for the Killer to erase again, especially when the pickup happens during a chaotic endgame or multi-down situation.",
+      "Its ceiling rises substantially in coordinated teams because teammates can deliberately recover, communicate Killer position, and create a safe pickup window. In Solo Q, the perk still works, but finding and reaching the right downed teammate at the correct moment is less predictable.",
+      "The reason it finishes below Plot Twist is independence. Plot Twist creates its own value and can heal the user without relying on Killer behavior. WGLF needs somebody else to be slugged. When that condition appears, however, it is one of the most efficient ways to stop a Killer snowball."
+    ],
+    "verdict": "Strong anti-slug support. It will not fire in every match, but when a Killer starts chaining downs, the pickup speed plus Endurance can turn a collapse back into a playable game.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Teamplay"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "David King"
+    },
+    "synergyPerkIds": [
+      "made-for-this",
+      "botany-knowledge",
+      "for-the-people",
+      "bond"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Made for This",
+      "Botany Knowledge",
+      "For the People",
+      "Bond"
+    ],
+    "antiSynergies": []
+  }
+}

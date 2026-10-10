@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "046-050",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "blast-mine",
+  "mechanics": {
+    "name": "Blast Mine",
+    "alternateName": null,
+    "source": "Jill Valentine",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you repair Generators for a total of 40%, install a trap on a Generator with the Active Ability button. If the Killer begins damaging it, the trap triggers halfway through the action, stuns the Killer for 4 seconds and blinds players within 12.5 metres. All Survivors see its yellow Aura. The trap expires after 100/110/120 seconds if unused.",
+    "activation": [
+      "Accumulate 40% total Generator repair progress.",
+      "Install the trap on a Generator.",
+      "Ends/deactivates when: Trap is consumed when triggered or expires after its tier duration."
+    ],
+    "patchNote": "Latest live balance change (8.2.0): Changed the activation requirement to 40% total Generator repair progress.",
+    "plainEnglishSummary": "After enough Generator repair, you can booby-trap a Generator to stun the Killer who damages it.",
+    "cooldown": null,
+    "duration": [
+      "Trap duration: 100/110/120 seconds.",
+      "Killer stun: 4 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One trap per activation; another requires reactivation.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Triggers halfway through the Killer's Generator damage action.",
+      "Blinds players within 12.5 metres; all Survivors see its yellow Aura."
+    ],
+    "sourceCharacter": "Jill Valentine",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "blast-mine",
+    "rank": 49,
+    "tier": "B",
+    "roles": [
+      "Objective",
+      "Chase",
+      "Information"
+    ],
+    "summary": "After 40% generator repair, trap a Generator for up to 120 seconds; if the Killer kicks it, they are stunned for 4 seconds and nearby players are blinded.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "pressure",
+      "aura-reading"
+    ],
+    "useCases": [
+      "Punish a Killer who repeatedly returns to kick a contested generator.",
+      "Use the yellow Generator Aura to communicate an important objective to teammates.",
+      "Buy four seconds of Killer downtime during a regression attempt."
+    ],
+    "counters": [
+      "The Killer must actually damage the trapped generator.",
+      "A trap can expire unused.",
+      "The blind can affect nearby Survivors too."
+    ],
+    "pros": [
+      "Four-second Killer stun is meaningful time.",
+      "Easy to charge through normal repair.",
+      "Trap also marks the generator for the team."
+    ],
+    "cons": [
+      "Trigger is Killer-controlled.",
+      "Does not stop the initial decision to pressure the generator.",
+      "Can become mostly entertainment value if the stunned Killer was not losing meaningful tempo."
+    ],
+    "analysis": [
+      "Blast Mine ranks this position because a four-second stun is real Killer downtime attached to normal generator participation. Forty percent total repair is a reasonable charge condition, so many Trials offer multiple opportunities to arm it.",
+      "The yellow Aura also gives the perk a communication layer. Teammates can identify the trapped generator and infer that it is strategically important, which matters more in Solo Q than the text first suggests.",
+      "The weakness is agency. The Killer can ignore the generator, let the mine expire, or arrive only after the situation no longer matters. Unlike a chase stun, the Survivor cannot force the trigger.",
+      "That puts Blast Mine in a useful but conditional band. It is easy, useful, and occasionally disruptive, but too dependent on Killer behavior to outrank more reliable information and support tools."
+    ],
+    "verdict": "A satisfying and legitimately useful regression punish. Blast Mine buys real time when it triggers, but the Killer decides whether the trigger ever happens.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Stun"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jill Valentine"
+    },
+    "synergyPerkIds": [
+      "wiretap",
+      "deja-vu",
+      "residual-manifest",
+      "champion-of-light"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Wiretap",
+      "Déjà Vu",
+      "Residual Manifest",
+      "Champion of Light"
+    ],
+    "antiSynergies": []
+  }
+}

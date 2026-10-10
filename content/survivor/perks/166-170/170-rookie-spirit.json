@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "166-170",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "rookie-spirit",
+  "mechanics": {
+    "name": "Rookie Spirit",
+    "alternateName": null,
+    "source": "Leon S. Kennedy",
+    "status": "Live 10.2.0",
+    "currentEffect": "While repairing Generators, succeed at 5/4/3 Good or Great Skill Checks to activate Rookie Spirit for the remainder of the Trial. It reveals the Auras of any regressing Generators until they stop regressing by any means.",
+    "activation": [
+      "While repairing Generators, succeed at 5/4/3 Good or Great Skill Checks.",
+      "Ends/deactivates when: Each Generator Aura stops being revealed when that Generator stops regressing by any means."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "After enough successful Generator Skill Checks, you see regressing Generator Auras for the rest of the Trial.",
+    "cooldown": null,
+    "duration": [
+      "Perk activates for the remainder of the Trial; each Aura reveal lasts while that Generator is regressing."
+    ],
+    "tokenOrStackBehavior": "Successful Good or Great Repair Skill Checks count toward the 5/4/3 activation requirement.",
+    "oncePerTrialOrOtherLimits": "Activates for the remainder of the Trial after meeting the Skill Check requirement.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Leon S. Kennedy",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "rookie-spirit",
+    "rank": 170,
+    "tier": "D",
+    "roles": [
+      "Objective",
+      "Information"
+    ],
+    "summary": "After landing three basic generator Skill Checks at Tier III, permanently reveal every generator that is currently regressing.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 1,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Identify which generators the Killer has recently kicked or otherwise forced into regression.",
+      "Return to a threatened generator before too much progress is lost.",
+      "Use regression Auras as indirect information about where the Killer has been applying pressure."
+    ],
+    "counters": [
+      "Requires three generator Skill Checks before activation.",
+      "Does not show the Killer or tell you how much progress the generator has.",
+      "Some regression sources or game states may create information that is obvious anyway."
+    ],
+    "pros": [
+      "Permanent activation after the initial setup.",
+      "Can protect team generator progress indirectly.",
+      "Very easy to read once active."
+    ],
+    "cons": [
+      "Setup timing depends on Skill Check RNG.",
+      "Pure information.",
+      "Outclassed by stronger objective-information perks."
+    ],
+    "analysis": [
+      "Rookie Spirit takes this position because seeing regressing generators can help the team identify objectives that are quietly losing progress, especially in Solo Q where nobody may call out the kick.",
+      "Once activated, the perk stays active for the rest of the Trial. The problem is getting the three repair Skill Checks early enough for the information to matter. A generator can sometimes be nearly finished before the perk has even armed.",
+      "The Auras provide indirect Killer information as well. A newly regressing generator often tells you where the Killer just spent time, though the perk does not show their current direction.",
+      "Rookie Spirit remains low C because Déjà Vu, Alert, Poised, and other objective tools provide more actionable information with fewer setup quirks."
+    ],
+    "verdict": "A reasonable regression monitor that arrives after three Skill Checks. Rookie Spirit can save unnoticed generator progress, but stronger information perks answer bigger questions.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Regression"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Leon S. Kennedy"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "poised",
+      "alert",
+      "better-together"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Poised",
+      "Alert",
+      "Better Together"
+    ],
+    "antiSynergies": []
+  }
+}

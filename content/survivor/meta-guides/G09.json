@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G09",
+  "snapshotId": "G09@10.2.0-r1",
+  "perkReviews": [{ "perkId": "fast-track", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Take a needed unhook, then turn its Fast Track token into permanent progress on a useful generator with a Great basic repair check.",
+    "verdict": {
+      "recommendation": "Treat the rescue as the necessary team job first. Fast Track makes your own unhook pay again later, but does not justify a late or unsafe rescue.",
+      "soloQ": "Cover a reachable hook only when you can complete the rescue safely, then choose a meaningful generator for the token cash-out.",
+      "coordinatedSwf": "Assign the rescuer and next generator so only one player leaves objectives for the hook and the saved repair progress lands on a useful target.",
+      "mainWeakness": "No token is earned without your unhook, and the progress requires a later Great basic repair check; a poor target or missed window strands the benefit."
+    },
+    "loadout": {
+      "options": [{ "perkId": "fast-track", "usage": "CORE", "whyItsHere": "Your unhooks bank up to 1/2/3 tokens. A Great basic repair check spends all held tokens for 5% permanent progress each on that generator." }],
+      "item": { "id": "toolbox", "status": "OPTIONAL", "name": "Toolbox", "why": "The snapshot permits none or an optional Toolbox. Use finite charges only to complete a selected target; no fixed item or add-on package is established." }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Check hook timing, route safety and who else is covering the rescue before leaving a generator. The perk pays for a real unhook, not for hovering near one."],
+      "rows": [
+        { "id": "take-needed-unhook", "situation": "A hooked teammate needs a rescuer, you can reach safely and no better-positioned player has the assignment.", "action": "Unhook the teammate, then route back toward the most valuable reachable generator. Do not force a rescue through Killer pressure merely to bank a token.", "why": "Fast Track grants one token for your unhook, up to 1/2/3 by tier, while the rescue itself must still protect team hook economy.", "enabledBy": ["perk:fast-track"] },
+        { "id": "cash-out", "situation": "You hold Fast Track tokens and are repairing a generator whose completion still matters.", "action": "Hit a Great basic repair check to spend every held token for 5% permanent progress each on that generator. If the target is denied or loses value before the check, rotate instead of camping it for the perk.", "why": "Stored tokens only convert on the specified check, and all spend at once on the current generator.", "enabledBy": ["perk:fast-track"] },
+        { "id": "use-optional-item", "situation": "A selected generator is close enough that Toolbox charges change its finish timing.", "action": "Spend only the needed charges, then return to the next team job; the item does not generate Fast Track tokens.", "why": "The Toolbox is optional efficiency, not the rescue-to-repair trigger.", "enabledBy": ["item:toolbox"] },
+        { "id": "release-rescue-role", "situation": "Another teammate owns the save, the hook route is unsafe, or your current generator is critical.", "action": "Keep the objective covered and hand the rescue to the better-positioned Survivor. Do not duplicate support labor for a speculative token.", "why": "The strategic conversion works only when the altruism was needed and the later repair opportunity remains real." }
+      ],
+      "abortWhen": ["Leave a missed or unsafe hook window and plan the next rescue rather than donating another down.", "Release a stale generator target if the Killer or map state makes its token cash-out low value."]
+    },
+    "strengths": ["A necessary unhook can produce later permanent generator progress."],
+    "weaknesses": ["Requires your own unhooks and later Great basic checks; tokens cannot rescue poor timing or target choice."],
+    "commonMistakes": ["Assuming any teammate's unhook grants your tokens.", "Chasing a token through an unsafe hook or spending it on a generator the team no longer needs."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G09#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G09@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G09@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G09@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "G09@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G09#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G09#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G09#Items and Add-ons" },
+    { "kind": "PERK", "ref": "fast-track#/mechanics" }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "batch": "026-030",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "hyperfocus",
+  "mechanics": {
+    "name": "Hyperfocus",
+    "alternateName": null,
+    "source": "Rebecca Chambers",
+    "status": "Live 10.2.0",
+    "currentEffect": "Succeeding a Great Skill Check while repairing or healing grants 1 Token, up to 6. Each Token increases Skill Check trigger odds by 4% and pointer rotation speed by 4%, up to 24% each. Each Token also increases Great Skill Check bonus progression by 10/20/30% of its base value, up to a total bonus of 60/120/180% by tier. All Tokens are lost after succeeding only a Good Skill Check, failing a Skill Check, or having the action interrupted by any means.",
+    "activation": [
+      "You must be repairing or healing and succeed a Great Skill Check to gain a Token.",
+      "Ends/deactivates when: All Tokens are lost if you succeed only a Good Skill Check.",
+      "Ends/deactivates when: All Tokens are lost if you fail a Skill Check.",
+      "Ends/deactivates when: All Tokens are lost if the repair or healing action is interrupted by any means."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Consecutive Great Skill Checks while repairing or healing build up to six tokens that increase Skill Check odds, pointer speed, and Great-check progress.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Gain 1 Token per successful Great Skill Check while repairing or healing, up to 6. Tokens increase Skill Check trigger odds and pointer rotation speed by 4% each, and increase Great Skill Check bonus progression by 10/20/30% of its base per token according to tier. All tokens are lost on the listed reset conditions.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Applies to both repairing and healing Skill Checks; interruption of either action resets the accumulated Tokens."
+    ],
+    "sourceCharacter": "Rebecca Chambers",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "hyperfocus",
+    "rank": 30,
+    "tier": "A",
+    "roles": [
+      "Objective",
+      "Skill Check",
+      "Utility"
+    ],
+    "summary": "Chain Great Skill Checks to build up to six Tokens that make future checks faster, more frequent, and progressively more rewarding.",
+    "metaStatus": "Strong",
+    "skillLevel": "Very High",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure",
+      "reset"
+    ],
+    "useCases": [
+      "Accelerate generator progress dramatically when you can consistently hit repeated Great Skill Checks.",
+      "Turn long uninterrupted generator windows into substantially more progress than a normal repair perk provides."
+    ],
+    "counters": [
+      "A Good Skill Check, failed Skill Check, or interruption wipes all Tokens.",
+      "The increasing pointer speed makes the perk progressively harder as its reward grows.",
+      "Killers that repeatedly force Survivors off generators can erase the setup before it pays off."
+    ],
+    "pros": [
+      "Among the highest objective-speed ceilings in the Survivor perk roster.",
+      "Rewards mechanical consistency rather than relying on the Killer to create a specific situation.",
+      "Can snowball its own value because each Token also increases Skill Check frequency."
+    ],
+    "cons": [
+      "Extremely punishing when the user misses or is interrupted.",
+      "Much less reliable for average players than its theoretical ceiling suggests."
+    ],
+    "analysis": [
+      "Hyperfocus takes this position because its ceiling is absurdly high while its floor can be nearly zero. Each successful Great Skill Check makes the next sequence harder but more rewarding, eventually producing faster pointer movement, more frequent checks, and much larger Great Skill Check progression bonuses.",
+      "That feedback loop is why the perk can outperform ordinary repair-speed perks in uninterrupted generator windows. A player who repeatedly lands Greats is not receiving one fixed percentage bonus; they are building a machine that creates more opportunities to generate additional progress. At six Tokens, the effect is strong enough to materially compress generator completion time.",
+      "The downside is fragility. One merely Good Skill Check drops the entire stack, as does a failure or any interruption. Killers do not need to understand the exact token count to counter Hyperfocus; forcing the Survivor off the action is enough. The perk therefore performs best when someone else is occupying the Killer and the user has room to settle into the Skill Check rhythm.",
+      "It ranks below broader perks because most players cannot access its ceiling consistently without support. The old Stake Out safety-net interaction no longer exists in live 10.2, but spending two slots to make one repair engine reliable is a real opportunity cost. In expert hands, Hyperfocus can look elite; across normal matches, its volatility is the limiting factor."
+    ],
+    "verdict": "A monstrous repair perk in skilled hands and a very ordinary one when the Great Skill Check chain collapses. Hyperfocus deserves respect for its ceiling, but not a ranking that ignores how easy that ceiling is to lose.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "High Ceiling"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      25,
+      40
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Rebecca Chambers"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "built-to-last",
+      "prove-thyself"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "stake-out"
+    ],
+    "archetypeRatings": [
+      {
+        "archetype": "Expert Toolbox repair",
+        "grade": "A+/S-",
+        "requires": [
+          "built-to-last"
+        ],
+        "note": "Expert Great-check consistency preserves a much higher ceiling than the average global rank; old Stake Out safety-net assumptions are excluded.",
+        "confidence": "Medium"
+      }
+    ],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Built to Last",
+      "Prove Thyself"
+    ],
+    "antiSynergies": [
+      "Stake Out"
+    ]
+  }
+}

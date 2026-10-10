@@ -1,0 +1,450 @@
+# Survivor Meta V2 execution ledger
+
+Tracks actual guide files, not a second plan. NOT_STARTED means no record; DRAFT means authored content with display review still pending. Canonical facts remain in the frozen research and prepared perk records.
+
+Task 7 reviewer: Codex (author self-review), 2026-10-08 America/New_York. No independent or owner gameplay approval is claimed. Every authored guide remains DRAFT with reviewedDate null. Standalone desktop/mobile, link/display and comprehension evidence is pending Task 8; production-renderer preview is deferred to Task 12.
+
+Base: `41d3f882050a76d29ecb2190e7593486704fd7eb`. Owner-supplied fixture repair: `ed7fc2ada175bbd93ab9879162b21ed2cd1316f7` (34/34 source/review tests). Only those two test assertions were changed; no production tooling changes.
+
+## Canonical coverage
+
+| ID | Canonical name | Kind | State | Review evidence | Commit reference |
+|---|---|---|---|---|---|
+| C01 | General Chase / Looping | STANDARD | PUBLISHED | Task 15 whole-catalog QA; source-faithful canonical choices and all-route preview/browser checks. | Task 15 |
+| C02 | Exhaustion Mobility Chase | STANDARD | PUBLISHED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
+| C03 | Vault / Window Specialist | STANDARD | PUBLISHED | Task 14 B1 source/editorial review; module alternatives, related receipt and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C04 | Pallet / Resource Specialist | STANDARD | PUBLISHED | Task 14 B1 source/editorial review; resource reset/exit cues and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C05 | Fragile-Pallet Restoration | STANDARD | PUBLISHED | Task 14 B1 source/editorial review; experimental/Chest omission and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C06 | Chase Information / Routing | STANDARD | PUBLISHED | Task 14 B1 source/editorial review; slot-level information alternatives, related receipt and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C07 | Stealth / Chase Avoidance | STANDARD | PUBLISHED | Task 14 B1 source/editorial review; slot-level stealth alternatives and 390×844/1440×900 usefulness checks recorded. | `d7c659e`, `d43c879` |
+| C08 | Chase Reset / Disappearance | STANDARD | PUBLISHED | Task 14 B2 source/editorial review; reset/noise alternatives and 390×844/1440×900 usefulness checks recorded. | `03c1b25`, `857cc8b` |
+| C09 | Anti-Tunnel Package | STANDARD | PUBLISHED | Task 13 editorial/source review; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
+| C10 | Anti-Slug / Self-Recovery Package | STANDARD | PUBLISHED | Task 14 B2 source/editorial review; Dying-state recovery choices and 390×844/1440×900 usefulness checks recorded. | `03c1b25`, `857cc8b` |
+| C11 | Hook-State Transfer | STANDARD | PUBLISHED | Task 14 B2 source/editorial review; provisional hook-state trade and 390×844/1440×900 usefulness checks recorded. | `03c1b25` |
+| C12 | Deterministic Self-Unhook | STANDARD | PUBLISHED | Task 14 B2 source/editorial review; safe-rescue/activation denial cues and 390×844/1440×900 usefulness checks recorded. | `03c1b25`, `857cc8b` |
+| C13 | Luck-Based Self-Unhook | LEGACY | PUBLISHED | Task 14 B2 source/editorial review; NOT_CURRENT history and exact C12 successor with 390×844/1440×900 usefulness checks recorded. | `03c1b25` |
+| C14 | Self-Sustain / Self-Heal | STANDARD | PUBLISHED | Task 14 B3 source/editorial review; null Coordinated SWF ranking preserved, self-sustain routes and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
+| C15 | Haste / Movement Stack | STANDARD | PUBLISHED | Task 14 B3 source/editorial review; provisional evaluations preserved, exact Haste gates and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
+| G01 | General Generator Pressure | STANDARD | PUBLISHED | Task 14 B3 source/editorial review; both canonical build IDs remain source-derived with open SWF slot-4 alternative and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
+| G02 | Toolbox Generator Specialist | STANDARD | PUBLISHED | Task 15 whole-catalog QA; bounded one-slot toolbox module and required-item guidance passed all-route preview/browser checks. | Task 15 |
+| G03 | Critical-Generator / Three-Gen Breaker | STANDARD | PUBLISHED | Task 14 B3 source/editorial review; bounded target module, optional Toolbox binding and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
+| G04 | Cooperative Repair / Gen Duo | STANDARD | PUBLISHED | Task 14 B3 source/editorial review; bounded cooperative-repair module and 320×844/1440×900 usefulness checks recorded. | `d8a16ec`, `d001d47` |
+| G05 | Manual Skill-Check Generator | STANDARD | PUBLISHED | Task 14 B4 source/editorial review; manual-check reset boundary and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
+| G06 | Classic Stake Out–Hyperfocus Engine | LEGACY | PUBLISHED | Task 15 whole-catalog QA; historical mechanics/successor shape and no-current-build omission passed all-route preview/browser checks. | Task 15 |
+| G07 | Boon: Steadfast Repair Zone | STANDARD | PUBLISHED | Task 13 editorial/source review; Provisional evaluation preserved; 390×844 and 1440×900 preview checks recorded. | `d8417e1`, `e866045` |
+| G08 | Road Life Repair-to-Self-Heal | STANDARD | PUBLISHED | Task 14 B4 source/editorial review; injured Great-check gate and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
+| G09 | Fast Track Rescue-to-Repair Tempo | STANDARD | PUBLISHED | Task 14 B4 source/editorial review; own-unhook/basic-check handoff and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
+| G10 | Fruits of Your Labor Objective-to-Reset Hybrid | STANDARD | PUBLISHED | Task 14 B4 source/editorial review; token-bank/payout split and 320×844/1440×900 usefulness checks recorded. | `846a1e0` |
+| A01 | Hook Rescue / Post-Unhook Reset | STANDARD | PUBLISHED | Task 14 B5 source/editorial review; safe unhook/reset handoff and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A02 | Anti-Camp / Hook-Timer Control | STANDARD | PUBLISHED | Task 14 B5 source/editorial review; Reassurance range/timing gate and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A03 | Dedicated Healer / Triage | STANDARD | PUBLISHED | Task 13 editorial/source review; ROLE_GUIDE assignment/handoff/abort checks and 390×844/1440×900 preview checks recorded. | `d8417e1`, `e866045` |
+| A04 | Hook-State-Scaled Fast Healing | STANDARD | PUBLISHED | Task 14 B5 source/editorial review; target Hook-State scaling and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A05 | Protection-Hit / Tank | STANDARD | PUBLISHED | Task 14 B5 source/editorial review; conditional protection-hit payoff and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A06 | Hook-Trade / Carry Bodyblock Protector | STANDARD | PUBLISHED | Task 14 B5 source/editorial review; ordinary bodyblock route/abort guidance and 320×844/1440×900 usefulness checks recorded. | `4f56420` |
+| A07 | Endgame Rescue | STANDARD | PUBLISHED | Task 14 B6 source/editorial review; powered-endgame rescue gates and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P01 | Flashlight Save | STANDARD | PUBLISHED | Task 14 B6 source/editorial review; required Flashlight pickup window and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P02 | Flashbang Save | STANDARD | PUBLISHED | Task 15 whole-catalog QA; bounded crafted-save module and conditional pickup guidance passed all-route preview/browser checks. | Task 15 |
+| P03 | Sabotage / Hook Denial | STANDARD | PUBLISHED | Task 14 B6 source/editorial review; intended-hook denial route and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P04 | Breakout / Carry Interference | STANDARD | PUBLISHED | Task 14 B6 source/editorial review; marginal-carry escort trade and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P05 | Teammate Pallet Save | STANDARD | PUBLISHED | Task 14 B6 source/editorial review; finite-pallet carry-crossing condition and 320×844/1440×900 usefulness checks recorded. | `27358e9` |
+| P06 | Carry-Escape / Wiggle Denial | STANDARD | PUBLISHED | Task 14 B7 source/editorial review; carry threshold, recovery and missed-route exits recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d`, `2ed4dcb` |
+| I01 | Solo-Q Information Shell | STANDARD | PUBLISHED | Task 14 B7 source/editorial review; hook, generator and approach cues bound to distinct decisions; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d` |
+| I02 | Killer Tracking / Aura Seer | STANDARD | PUBLISHED | Task 14 B7 source/editorial review; source-faithful break, approach and post-generator reads; Dark Sense wording corrected in fix round; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d`, `2ed4dcb` |
+| I03 | Teammate Tracking / Support Information | STANDARD | PUBLISHED | Task 14 B7 source/editorial review; Bond/Empathy/Empathic Connection cues preserve aura direction and support exits; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d` |
+| I04 | Objective / Resource Routing | STANDARD | PUBLISHED | Task 14 B7 source/editorial review; Déjà Vu/Dark Sense routes include stale-target exits; 320×844/1440×900 representative checks plus full viewport matrix passed. | `855506d` |
+| I05 | Chase Broadcast / Salvation's Cry | STANDARD | PUBLISHED | Task 14 B8 source/editorial review; chase-start broadcast boundary and stale-read exit recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `eab065a` |
+| R01 | Chest / Loot Scavenger | STANDARD | PUBLISHED | Task 14 B8 source/editorial review; found-item value and urgent-objective stop conditions recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `eab065a` |
+| R02 | Pharmacy / Med-Kit Farming | STANDARD | PUBLISHED | Task 14 B8 source/editorial review; medical-item value and inventory-idle stop conditions recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `eab065a` |
+| R03 | Item Recharge / Recursion | STANDARD | PUBLISHED | Task 14 B8 source/editorial review; depleted-item/locker/toolbox conditions and payback exits recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `eab065a` |
+| R04 | Boon Support Network | STANDARD | PUBLISHED | Task 14 B8 source/editorial review; distinct boon jobs, maintenance, relocation and abort cues recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `eab065a` |
+| R05 | Totem Hunter / Cleanser | STANDARD | PUBLISHED | Task 14 B9 source/editorial review; Hex value, cleanse opportunity cost and abort cues recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b`, `2e32980` |
+| R06 | Invocation Ritual | STANDARD | PUBLISHED | Task 14 B9 source/editorial review; basement labor, team coverage and interruption exits recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b` |
+| R07 | Locker Utility / Head On | STANDARD | PUBLISHED | Task 14 B9 source/editorial review; Head On setup and item-recharge jobs separated with route exits; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b` |
+| R08 | Distraction / Misdirection | STANDARD | PUBLISHED | Task 14 B9 source/editorial review; named decoy-to-rotation cues and team-safety aborts recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b` |
+| R09 | Obsession / High-Risk Aggro-Info | STANDARD | PUBLISHED | Task 14 B9 source/editorial review; Bound by Obsession/Blood Pact risk and state-specific exits recorded; Blood Pact wording corrected in fix round; 320×844/1440×900 representative checks plus full viewport matrix passed. | `2e65b8b`, `2e32980` |
+| R10 | Endgame Gate / Escape Shell | STANDARD | PUBLISHED | Task 14 B10 source/editorial review; endgame transition, gate/rescue assignment and late-only opportunity costs recorded; 320×844/1440×900 representative checks plus full viewport matrix passed. | `a1f2e4e` |
+| X01 | Solo-Q Generalist | STANDARD | PUBLISHED | Task 15 whole-catalog QA; canonical five-perk choice shape and solo optional omissions passed all-route preview/browser checks. | Task 15 |
+| X02 | Coordinated SWF Flex Generalist | TEAM | PUBLISHED | Task 15 whole-catalog QA; exact four-role team shape and NOT_APPLICABLE Solo Q state passed all-route preview/browser checks. | Task 15 |
+| P00 | Pickup Interception / Save Family | FAMILY | PUBLISHED | Task 15 whole-catalog QA; exact five-child comparison shape with no invented aggregate build passed all-route preview/browser checks. | Task 15 |
+| A00 | Rescue-and-Reset Support Family | FAMILY | PUBLISHED | Task 14 B4 source/editorial review; four-child comparison and non-ranking status at 320×844/1440×900 recorded. | `846a1e0` |
+
+## Task 7 group 1 — X01/C01/G02
+
+Reviewer: Codex, 2026-10-08. Each of X01, C01 and G02 separately completed source/snapshot/full-article inspection, exact perk mechanics review, authored meaning, receipts, optional-substitute assessment, Trial action/exit review and enabledBy review (editorial cycle 1–8). Each passed the catalog CLI after creation (step 9). Steps 10–12 remain deferred as specified: no Task 12 renderer preview, no Task 8 desktop/mobile evidence and no REVIEWED transition. Step 13 is this ledger. Step 14 now passes: focused schema/source/review/validation tests 95/95 after the authorized fixture repair. Group 1 commit: `079b7b125b7db3c6f472f97241209567899b7fdb`, message `content: draft Survivor guide prototypes (X01/C01/G02)`.
+
+### X01 content review
+
+Source receipts: `X01#/generalStrategicDefinition`, `X01@10.2.0-r1#/buildImplementations/0`, `X01@10.2.0-r1#/changeSummary`, `X01#How It Works`, `X01#Solo Q vs SWF`, plus each referenced perk's `#/mechanics`. All 10 receipts resolve.
+
+Canonical build `X01@10.2.0-r1:solo-representative` derives fixed slots lithe/deja-vu/will-to-live and choose-one slot 4 kindred/well-make-it. Exact set: five perks, all revision 1. Decisive Strike is the current display alias of will-to-live, not another ID. The generic ecosystem pattern and open flex note do not authorize extra membership or substitutes. Item null remains canonical; no item requirement invented.
+
+Reviewed decisions: highlighted objective versus pressure, vault-to-next-route, conditional Kindred rescue coverage, conditional We'll Make It reset and post-unhook escape. Each genuinely tool-enabled row links its perk; strategic aborts require no invented enabler. Protection deactivation and endgame availability checked. Weakness is incomplete team coverage, not fabricated Killer counterplay; no optional counterplay section filled with boilerplate. Validator after creation: missing 56 / DRAFT 1, no diagnostics.
+
+### C01 content review
+
+Source receipts: `C01#/generalStrategicDefinition`, `C01@10.2.0-r1#/buildImplementations`, `C01@10.2.0-r1#/dependencyTypes`, `C01#How It Works`, `C01#Killer Counterplay`, plus each referenced perk's `#/mechanics`. All 12 receipts resolve.
+
+Both owned builds retained: `C01@10.2.0-r1:solo-representative` (lithe/resilience/finesse/will-to-live), and `C01@10.2.0-r1:swf-representative` (slot 1 sprint-burst or dead-hard; slots 2–4 finesse/resilience/five-moves-ahead). Exact union: seven perks, all revision 1. “Chase info” is not fuzzy-mapped: five-moves-ahead comes from the explicit build ID. Both canonical item nulls remain intact. No substitute or matchup assertions added.
+
+Reviewed healthy Finesse versus injured Resilience, Exhausted mobility availability, prior-unhook Dead Hard constraint, pallet-only Five Moves Ahead and cooldown, conditional safety and refusal-of-chase exit. Inherent resource depletion, deliberate target-switch denial and player routing mistakes are separate. Slot enabler preserves conditional choice; no advice claims both Exhaustion options are equipped. Validator after creation: missing 55 / DRAFT 2, no diagnostics.
+
+### G02 content review
+
+Source receipts: `G02#/generalStrategicDefinition`, `G02@10.2.0-r1#/perkEcosystem/typicalDefiningPerks`, `G02@10.2.0-r1#/itemEcosystem`, `G02@10.2.0-r1#/counters`, `G02#Representative Builds`, `G02#Common Mistakes`, `built-to-last#/mechanics`. All seven receipts resolve.
+
+One-slot EXAMPLE MODULE `toolbox-recharge`, not a fabricated canonical or complete build. Toolbox is REQUIRED because strategy definition makes it indispensable, not just because ITEM is a dependency. Built to Last is CORE, not an individually mandatory identity for every toolbox strategy. Exact guide reference set: built-to-last at revision 1.
+
+Mapping decision: “Streetwise/Scavenger-type support” is a descriptive research phrase, not an interchangeable slot. Read exact streetwise and scavenger mechanics: current Streetwise charge benefit is for chest-found items; Scavenger has its own depleted-toolbox/Great-check recharge and repair penalty. Neither is asserted as a substitute. “Objective info” does not resolve a specific perk. No named add-on is established, so no add-on recipe is invented. These inspected-but-unused perks are not added to perkReviews or the index.
+
+Reviewed burst target, safe depleted-item recharge, declining recharge return, urgent-rescue override and lost-item exit. Perk/item enablers used only for actual recharge/charge advice. Weakness: finite charges/downtime; denial: item/repair-window pressure; mistakes: low-impact spending and unnecessary locker trips. Validator after creation: missing 54 / DRAFT 3, no diagnostics.
+
+### Serial initial classifications
+
+The existing impact CLI was called separately and serially for the 11 entries below:
+`node scripts/survivor-meta-perk-review.mjs --perk <id> --classification PRESENTATION_ONLY --reason "<exact reason below>"`.
+
+All calls exited 0; old fingerprint/revision null, new revision 1, affectedStrategyIds empty. PRESENTATION_ONLY here initializes the first reviewed baseline; it does not claim an unseen mechanics change is harmless. Current full fingerprints are retained in perk-review-index.json and were compared to fingerprintPerkMechanics for every actual guide dependency. No canonical mechanics were edited, and no entries were removed/reset.
+
+| Perk ID | Exact classification reason |
+|---|---|
+| lithe | Initial reviewed use for X01/C01: checked current rushed-vault activation and Exhausted gating; no mechanics change. |
+| deja-vu | Initial reviewed use for X01: checked current grouped-generator routing and highlighted-target context; no mechanics change. |
+| will-to-live | Initial reviewed use for X01/C01: exact Decisive Strike alias, post-unhook availability and deactivation reviewed; no mechanics change. |
+| kindred | Initial reviewed X01 slot-four choice: hook information and asymmetric sharing reviewed; no mechanics change. |
+| well-make-it | Initial reviewed X01 slot-four choice: rescuer activation and altruistic-only healing reviewed; no mechanics change. |
+| resilience | Initial reviewed C01 build member: injured-state actions reviewed separately from healthy Finesse; no mechanics change. |
+| finesse | Initial reviewed C01 build member: healthy fast-vault availability and cooldown reviewed; no mechanics change. |
+| sprint-burst | Initial reviewed C01 SWF choice: starting-run activation and Exhausted constraint reviewed; no mechanics change. |
+| dead-hard | Initial reviewed C01 SWF choice: prior unhook, injury, running and Exhausted constraints reviewed; no mechanics change. |
+| five-moves-ahead | Initial reviewed C01 SWF routing tool: pallet-only information and post-drop cooldown reviewed; no mechanics change. |
+| built-to-last | Initial reviewed G02 example module: depleted held item, locker interruption and declining limited recharges reviewed; no mechanics change. |
+
+### Resolved prerequisite fixture issues
+
+Owner-supplied fixes were explicitly authorized and committed separately: `ed7fc2a` removes real-index-empty assumptions; `7e7e09456f0c48f4680cb3da6bd2a1a989159254` excludes copied real guide records from the temporary catalog fixture while retaining metadata. Prior failures were reproduced before repair. No production validator/schema/source/review code changed.
+
+Fresh verification: catalog fixture suite 23/23; focused schema/source/review/validation 95/95, exit 0. Real catalog CLI: three DRAFT, 54 missing, no diagnostics. Artifact checker clean. Earlier failed runs are retained in the implementer report history, not current blockers.
+
+## Task 7 group 2 — P02/P00/G06/X02
+
+Reviewer: Codex, 2026-10-08. Each ID separately completed editorial cycle steps 1–9 and 13–14: complete canonical strategy/current snapshot (including evaluations, builds, dependencies and evidence), full frozen article, exact candidate perk mechanics review, authored meaning, receipts/revisions, optional-substitute decision, action/exit and enabledBy review, then the real validator. Steps 10–12 are intentionally incomplete: standalone display evidence is Task 8, renderer preview is Task 12, and no guide has been advanced to REVIEWED.
+
+Group 2 commit: `82e24dd4154574c436ec838eaf38640438bac280`, message `content: draft Survivor guide prototypes (P02/P00/G06/X02)`.
+
+### P02 content review
+
+Receipts: `P02#/generalStrategicDefinition`, `P02#/conceptualMechanics`, `P02@10.2.0-r1#/itemEcosystem`, `P02@10.2.0-r1#/counters`, `P02#How It Works`, `P02#Representative Builds`, `P02#Common Mistakes`, `flashbang#/mechanics`. All eight resolve.
+
+Exact dependency: flashbang, revision 1. EXAMPLE MODULE `crafted-save` has only slot 1, REQUIRED Flashbang; no support-slot completion. Read background-player, bond and empathy as candidate ecosystem tools; “Bond/Empathy” is a descriptive pair, not a canonical choose-one slot. Those tools have different activation/visibility constraints and are omitted rather than forced into this defining-tool module. No substitute can replace its required identity, so none is asserted. A generated grenade is a declared mechanic, not a required carried flashlight/item.
+
+Gameplay review: own repair work → safe locker craft → pickup geometry/exit → conditional blast-timed commitment → disengage/reassess. No invented seconds, fuse, range or guaranteed blind. Perk enables preparation; crafted-resource mechanic enables the attempt; positional/exit judgment has no fake perk enabler. Abort on missed window, changed position, threatened exit or deliberate pickup denial; after success return to repair/preparation. Weakness is setup/position cost, counterplay is Killer reposition/delay/punishment, mistakes include arriving unprepared and hovering. Solo opportunity and coordinated readiness/cancellation calls are distinct. Validator after creation: four DRAFT / 53 missing, no diagnostics.
+
+### P00 content review
+
+Receipts: `P00#/subtypeIds`, `P00#Why the Children Are Not Interchangeable`, `P00#Shared Counterplay`, plus `<child>#/generalStrategicDefinition` and `<child>@10.2.0-r1#/counters` for each of P01/P02/P03/P04/P05. All 13 resolve.
+
+Read each child's canonical definition/current evaluation/dependencies/counters/evidence as supporting context. Exactly those five comparisons, no extra child, family build, aggregate ranking, numeric timing or perk recipe. Source phrases “tracking support” and the family ecosystem do not declare dependencies. perkReviews is honestly empty: comparing child strategies does not import their perk sets transitively.
+
+Review checks each choice has a concrete opportunity and cost/exit: flashlight sightline denial; prepared grenade/changed position; intended hook/changed route; carry escort/drop or lost window; standing pallet/geometry or consumed resource. No universal gameplay component or invented enabler is attached to this FAMILY shape. Distinct player errors, resource constraints and Killer denial are conveyed inside comparisons. No substitutes apply. Both canonical Not Applicable/null evaluations stay derived and unchanged. Validator after creation: five DRAFT / 52 missing, no diagnostics.
+
+### G06 content review
+
+Receipts: `G06#/conceptualMechanics`, `G06@10.2.0-r1#/analysis/legacyHistory`, `G06@10.2.0-r1#/analysis/replacementStrategyIds`, `G06#What Changed`, `G06#Why It Is Not Current`, `G05#/generalStrategicDefinition`, `G05@10.2.0-r1#/changeSummary`, `stake-out#/mechanics`, `hyperfocus#/mechanics`. All nine resolve.
+
+Exact historical IDs stake-out/hyperfocus, both revision 1. “Stake Out + Hyperfocus” maps to those separate verified records. “Often Deja Vu/Built to Last” does not establish required historical support slots and is omitted. No current loadout or substitutes manufactured. Current mechanics and the historical interaction are explicitly separated; current links cannot be read as restoration of the former engine.
+
+Reviewed the invalidated special-check interaction and G05's current manual compatible-check approach, including its provisional source evaluation (not copied into guide scores). Adaptation is to stop investing in automated consistency and assess manual execution; no current low tier is invented, and no Killer-denial boilerplate disguises mechanical invalidation. Historical identity and successor, not a current Trial sequence, are the correct shape. Legacy/null canonical state preserved. Validator after creation: six DRAFT / 51 missing, no diagnostics.
+
+### X02 content review
+
+Receipts: `X02#/generalStrategicDefinition`, `X02@10.2.0-r1#/buildImplementations/0`, `X02@10.2.0-r1#/solo/rankingStatus`, `X02@10.2.0-r1#/dependencyTypes`, `X02#Team Setup`, `X02#Midgame Role Switching`, `X02#Endgame`, `deja-vu#/mechanics`, `shoulder-the-burden#/mechanics`. All nine resolve.
+
+Owned team reference `X02@10.2.0-r1:swf-team-architecture`; exactly four assignments runner/objectives/reset/flex. Two named tools in source teamComposition explicitly map to deja-vu and shoulder-the-burden. The former's revision 1/fingerprint is retained; the latter is initialized at revision 1. They appear as scoped advisory role options, not fabricated individual builds or copied canonical perkIds. Broad “item engine”, “saver engine”, “safety”, “chase” and “reset/anti-camp support” do not resolve additional perks. No unsupported item/add-on distribution recipe or substitutes.
+
+Gameplay review: agree targets and tools, hand objective coverage to flex on a target switch, consider eligible transfer with its cost/exit, cover the vulnerable reset player without attempting a Broken-blocked heal, cancel denied saves, reassign for endgame. Real tool advice has role plus perk enablers; ordinary team decisions use role or no enabler as appropriate. Coordination weakness and player duplication/missed-handoff errors are distinct; no fabricated matchup or unsupported counterplay section. Solo Not Applicable is explicit and its null rankings are untouched. Validator after creation: seven DRAFT / 50 missing, no diagnostics.
+
+### Group 2 serial initial classifications
+
+Same existing CLI syntax as group 1, called serially. Four first-use entries, old fingerprint/revision null → revision 1, affectedStrategyIds empty, exit 0. No source mechanic change is implied by PRESENTATION_ONLY initialization.
+
+| Perk ID | Exact classification reason |
+|---|---|
+| flashbang | Initial reviewed P02 defining tool: personal repair charge, locker crafting and repeat preparation reviewed against current mechanics and full publication; no mechanics change. |
+| stake-out | Initial reviewed G06 historical identity: current special-check interaction excludes the former Hyperfocus consistency engine; history and current mechanics distinguished; no mechanics change. |
+| hyperfocus | Initial reviewed G06 historical identity and G05 successor: manual compatible Great checks and interruption/reset limits reviewed; no mechanics change. |
+| shoulder-the-burden | Initial reviewed X02 named reset-role tool: hook-state eligibility, transfer cost, personal once-per-Trial limit and current Injured/Broken downside reviewed; no mechanics change. |
+
+## Task 7 verification and self-review
+
+- `node scripts/survivor-meta-guide-validation.mjs`: exit 0 after each ID and combined; final seven DRAFT, 50 missing, zero REVIEWED/PUBLISHED, no diagnostics.
+- `node --test site/tests/survivor-meta-guide-schema.test.mjs site/tests/survivor-meta-guide-source.test.mjs site/tests/survivor-meta-perk-review.test.mjs site/tests/survivor-meta-guide-validation.test.mjs`: 95/95, exit 0 for both groups.
+- `node --test (Get-ChildItem site/tests -Filter '*.test.mjs').FullName`: 128/128, exit 0.
+- `python -B -m unittest discover -s scripts/tests -p 'test_*.py' -v`: 4/4, exit 0; -B prevents incidental bytecode files.
+- `node scripts/verify-generated-artifacts.mjs`: exit 0, Generated artifacts match Git.
+- Read-only audit: exact seven-guide set, exact snapshot binding and null dates; all 68 source receipts resolve; dependency sets match perkReviews and current fingerprints; 15 retained index entries, all revision 1; original 11 entries unchanged during group 2.
+- Frozen preservation: 65 imported research files aggregate SHA256 `8e6af994e13e85a4213223a24402288471a51746c511a306ae206e2377da8803` unchanged, all three ZIP hashes unchanged, artifact scope clean. No source/output preparation pipeline rerun.
+- ROLE_GUIDE structural/semantic fixture remains green without A03.json. Optional substitutes, map/matchup claims, numeric timing/skill scores and copied canonical rankings/mechanics are absent.
+- `git diff --check` clean; commits stage only explicit Task 7 paths (plus separately authorized prerequisite tests).
+
+Final review: author self-review, no agents per owner instruction. Checked all seven records against the brief and the per-ID cycle: real content and traceable IDs/receipts, no extra guides, canonical versus authored provenance, conditional choices/enablers, item dependence, exceptional nulls and source-faithful omissions. No unresolved content/schema/reference finding found. Display usefulness remains an unperformed Task 8 gate, not a passing-test claim or an approved publication. Task 7 does not authorize release or renderer work.
+
+## Pending display evidence
+
+Task 8: standalone 320/390/768/1440 desktop/mobile review, exact displayed choices/perk links, source-versus-purpose separation, full article access, owner 10-second/two-minute comprehension and approval. Task 12: actual renderer preview. None was attempted. All existing guides are DRAFT with reviewedDate null.
+
+## Task 8 — standalone mockup/display gate (owner approval pending)
+
+Disposable mockup: `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-mockup/index.html`. It is outside `site/` and production `scripts/`; no production renderer, guide status, publication, deployment, or root ZIP changed.
+
+The mockup loads the seven real DRAFT guide JSON records, strategy names and article paths from the frozen Stage 3B manifest, all 15 exact canonical perk JSON records named by the prototype dependency set, and the seven matching frozen Stage 3B Markdown articles. The original article is behind a native closed disclosure and was opened in-browser for X01 to confirm the full source is present. The mockup uses page kind and gameplay type as display discriminants; it contains no strategy-ID-specific layout branch.
+
+### Shape and responsive evidence
+
+| ID | Shape exercised | Compact/exceptional first interaction |
+|---|---|---|
+| X01 | STANDARD / DECISIONS | Four slots; slot 4 visibly says Choose one. |
+| C01 | STANDARD / DECISIONS | Four slots; the SWF choice remains a choice, not union equipment. |
+| G02 | STANDARD / DECISIONS / MODULE | One authored Built to Last tool; required Toolbox item context; remaining slots stay open. |
+| P02 | STANDARD / SEQUENCE / MODULE | One authored Flashbang tool; preparation/position/abort sequence follows. |
+| P00 | FAMILY / COMPARISON | Five named child strategies with choose-when and trade-off. |
+| G06 | LEGACY / HISTORY | Historical identity, invalidation, and named G05 successor; no current historical build. |
+| X02 | TEAM / DECISIONS | Four roles, scoped exact perk options, and explicit Solo Q Not applicable. |
+
+Browser review was run at 1440×900, 768×900, 390×844, and 320×844. At every width all seven views loaded without an error or horizontal overflow. At 390px, action rows, long text, roles, comparisons, and history cards remained within their panels; native disclosures were closed by default. At 768px the rail collapsed to two readable columns; at 320px the rail collapsed to one column. Screenshots for every ID at 1440px and 390px are under `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-mockup/screenshots/`.
+
+### Comprehension self-test
+
+- Ten-second queue/build/choice test: X01 exposes the four-slot summary and the slot-four choice; G02 exposes the required Toolbox context and one defining recharge tool; P00 exposes all five named options; G06 exposes the current successor; X02 exposes four jobs rather than four individual builds.
+- Two-minute action/abort test: X01 presents action, reason, and leave cues in the same decision row; P02 presents repair → craft → position → attempt → disengage/reassess; X02 presents reassignment, cancellation, and handoff cues. These are controller checks of discoverability, not owner approval.
+
+### Issues found and resolved during Task 8
+
+1. The research disclosure initially contained placeholder copy. It now fetches and renders the matching frozen Stage 3B article for each prototype.
+2. The disposable mockup initially duplicated canonical perk names/mechanics and prototype names. It now derives perk names/summaries from exact canonical JSON and strategy/article names from the frozen manifest.
+3. P00/G06 related destinations initially displayed child IDs. They now display canonical child/successor names from the same manifest.
+
+No design-contract change is required at this gate. The evidence does clarify that the shared renderer must support an exceptional compact equivalent: one defining MODULE tool, five FAMILY comparisons, LEGACY history/successor, and four TEAM roles without inventing a four-slot loadout. All seven guides remain DRAFT with `reviewedDate: null`; Tasks 9–12 are blocked on explicit owner approval of this mockup direction.
+
+### Task 8 — fresh verification and scoped re-review
+
+Fresh verification after the latest mockup revision:
+
+- `node scripts/survivor-meta-guide-validation.mjs` → 7 DRAFT, 50 missing, 0 REVIEWED, 0 PUBLISHED, zero diagnostics.
+- Focused guide tests → 95/95; full Node suite → 128/128; Python suite → 4/4; generated artifact checker → clean; `git diff --check` → clean apart from Git's LF/CRLF warning.
+- Live browser checks at 1440×900, 768×900, 390×844, and 320×844 → all seven views loaded with no console errors or horizontal overflow; expected slot/comparison/history/role counts matched; native disclosures were closed by default and opened by keyboard, including the real frozen article.
+- Fresh screenshots: all seven IDs at 1440px and 390px under the disposable mockup screenshot directory. The 768px and 320px checks were live verification only, not saved captures.
+
+Scoped re-review report: `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-re-review-2.md` — **FIX_REQUIRED**. No Critical findings. Important blockers:
+
+1. `deja-vu` and `well-make-it` perk links do not return results in the current perk browser because the mockup queries by ID while the browser searches display names.
+2. Canonical/example provenance labels are reversed for canonical plans and MODULE examples.
+3. Canonical Solo Q/SWF tier and status facts are omitted from verdict presentation.
+4. `enabledBy` perk cues are plain text; C01's SWF slot cue and P02's authored mechanic explanation are omitted.
+5. Long verdicts precede exceptional content; required G02 Toolbox guidance is not adjacent to its defining slot on mobile.
+6. X01 hides the snapshot's explicit allowance for another context-appropriate Solo flex in the fourth-slot choice.
+
+Minor review notes: `mainWeakness` is omitted; frozen article front matter is exposed and P00 table formatting is flattened; 200% zoom/contrast and owner comprehension observations remain unrecorded. No owner approval was obtained. Tasks 9–12 remain blocked, all seven guides remain DRAFT, and no design-contract change or production implementation is authorized by this checkpoint.
+
+### Task 8 — approval and release of the mockup gate
+
+The second bounded fix round moved C01/G02 queue facts and P00 child queue/status facts into the first mobile interaction. Scoped re-review report `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-8-re-review-4.md` — **APPROVED**: zero Critical/Important findings, live mockup harness exit 0 with 0 failed checks, seven real guides loaded, canonical links and exceptional shapes verified, and desktop/mobile overflow/console/disclosure checks green. The report records only Minor presentation and screenshot-framing observations.
+
+Owner explicitly approved proceeding beyond the Task 8 mockup hard stop. No design-contract change is required; the renderer must retain the demonstrated compact MODULE, FAMILY, LEGACY, and TEAM equivalents. Tasks 9–12 are authorized to begin. The seven prototype guides remain DRAFT, no production HTML or publication was performed at this gate, and root canonical ZIPs plus frozen Stage 3A/3B inputs remain unchanged.
+
+### Task 9 — read-only transient presentation model
+
+- BASE: `0511723c5306f789215f27eb1c07b5b734921789`.
+- Implementer: Lorentz; initial commit `6817089` (`feat: assemble canonical-backed guide presentation models`).
+- Task review: Chandrasekhar — three Important findings: canonical builds leaked editorial notes, LEGACY identity warning lacked canonical legacy-history context, and perk queries used mutable display names.
+- Fix round 1/5: `1a48bfb` (`fix: isolate canonical facts in guide model`) addressed all three with RED→GREEN model regressions.
+- Scoped re-review: Hooke — all three findings ADDRESSED, no new Critical/Important breakage; review package `review-6817089..1a48bfb.diff`.
+- Controller/implementer verification: focused model tests 7/7; relevant combined tests 71/71; full Node suite 135/135; syntax, validation (7 DRAFT/50 missing/zero diagnostics), generated-artifact, and diff checks clean.
+- Task 9: complete (commits `0511723..1a48bfb`, review clean after one fix round). No renderer, guide JSON, canonical source, generated output, publication, or deployment changes.
+
+### Task 10 — reusable renderer and research appendix
+
+- BASE: `5195df0`.
+- Implementer: Dalton; initial commit `127db4a` (`feat: render reusable Survivor player guides and research appendix`).
+- Task review: Heisenberg — six Important findings: dropped verdict/fit fields, wrong SEQUENCE/ROLE_GUIDE cue fields, omitted exceptional optional sections, forbidden `Established`/ranking language in primary copy, hero outside `data-guide-primary`, and missing TEAM option-only summary landmark.
+- Fix round 1/5: `dd3e72d` (`fix: close Task 10 renderer review findings`) added RED→GREEN regressions and addressed all six findings.
+- Scoped re-review: Bohr — all six findings ADDRESSED, no new Critical/Important breakage; review package `review-127db4a..dd3e72d.diff`.
+- Controller verification: full Node suite 145/145; Python suite 4/4; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker clean; diff check clean.
+- Task 10: complete (commits `5195df0..dd3e72d`, review clean after one fix round). No responsive CSS, publication/generation, guide-status, canonical-source, generated-output, or deployment changes.
+- Task 10: minor (deferred): item add-ons and alternate perk names are not rendered yet; renderer tests have narrower direct coverage for those fields. Carry to later renderer/integration review without blocking this task.
+
+### Task 11 — compact responsive and accessible guide layouts
+
+- BASE: `dc6561f`.
+- Implementer: Noether; commit `a34eed7` (`feat: add compact accessible Survivor guide layouts`). Scope was limited to `site/assets/app.css`, renderer semantic/classes, and responsive tests.
+- Task review: Leibniz — static implementation compliant, but Important browser-evidence blocker because no live browser review was initially available.
+- Browser evidence completion: Chrome at `C:\Program Files\Google\Chrome\Application\chrome.exe` served an ignored preview around the real Task 9/10 models. Chrome/CDP checked all seven prototypes at 320×844, 390×844, 768×900, 1024×900, and 1440×900: 35/35 passed no horizontal overflow, one H1, closed research/perk disclosures, focusable summaries, required landmarks, and load checks; 35 screenshots captured. Representative X01 desktop/mobile, P00 mobile, and X02 mobile views were inspected.
+- Scoped re-review: Lagrange — browser blocker ADDRESSED, no new Critical/Important breakage; contrast and full 200% zoom remain bounded Minor evidence gaps.
+- Controller verification: full Node 151/151; Python 4/4; browser results 35/35 with zero failures; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker and diff check clean.
+- Task 11: complete (commit `a34eed7`, review clean after evidence re-review). No guide JSON, canonical source, generated artifact, publication, or deployment changes.
+- Task 11: minor (deferred): computed contrast and full 200% zoom remain unverified by automation; no demonstrated defect, carry to later browser QA.
+
+### Task 12 — route-contract ruling before fix round
+
+- Ruling: preserve the frozen manifest's canonical root-relative URL form `/survivor-meta/<slug>` while rejecting filesystem-absolute paths, traversal, malformed slugs, and any absolute-looking route outside that exact canonical URL prefix. The frozen Stage 3B manifest stores all 57 routes with the leading URL slash; accepting that established URL representation is required to keep canonical routes and root/GitHub base-path behavior unchanged, and changing the frozen input is prohibited. Cost if wrong: a stricter interpretation would reject every canonical route and require an unauthorized frozen-source migration.
+- Task 12 review's dangling-symlink finding remains load-bearing and enters fix round 1; the base-path behavior assertion remains a deferred Minor.
+
+### Task 12 — safe generation and isolated preview
+
+- BASE: `4d81734`.
+- Implementer: Linnaeus; initial commit `eb99414` (`feat: safely generate published guides with isolated previews`). Production generation now consumes the shared model/renderer, gates editorial content to PUBLISHED, preserves Research View Only for missing/DRAFT/REVIEWED, and supports explicit external previews.
+- Task review: Cicero — Critical dangling-symlink validation defect and Important noncanonical leading-slash route defect.
+- Ruling carried: frozen manifest routes are canonical root-relative URL strings `/survivor-meta/<slug>`; preserve them while rejecting filesystem-absolute/noncanonical leading-slash routes. See `1210e73`.
+- Fix round 1/5: `5f6b34b` (`feat: safely generate published guides with isolated previews`) added lstat-aware component validation before realpath/write and dangling runtime/detail/preview nonmutation regressions; canonical routes remain accepted and `/outside/escape` is rejected.
+- Scoped re-review: Ampere — both findings ADDRESSED, no new Critical/Important issues; Minor note that external preview-parent nonmutation is not directly snapshotted.
+- Controller verification: full Node 157/157; Python 4/4; validator 7 DRAFT/50 missing/zero diagnostics; generated-artifact checker and syntax/diff checks clean. Isolated preview produced 57 routes with production tree unchanged.
+- Task 12: complete (commits `4d81734..5f6b34b`, review clean after one fix round). Production artifacts are deterministic but remain Research View Only for the current unpublished/missing catalog; no editorial batch was published or deployed.
+- Task 12: minor (deferred): base-path behavior is asserted by source contract rather than a runtime `/` and `/dbd-helper/` test; preview-parent inventory is not directly snapshotted. No demonstrated defect.
+
+### Task 13 — first population wave
+
+- BASE: `8b09565`.
+- Implementer: Averroes; four guide records for C02, C09, A03 and G07. Coordinator repaired one malformed G07 JSON nesting defect after reproducing the parser failure; the repair was followed by focused RED→GREEN verification. A bounded review fix round then corrected two perk-purpose descriptions and one incomplete enabledBy cue.
+- Source-faithful fixtures cover: C02 alternatives remain choices rather than a union build; C09 leaves unspecified module slots open; A03 uses `ROLE_GUIDE` priorities, assignment, handoff and abort semantics; G07 preserves the canonical Provisional evaluation and local Boon setup/maintenance/abort guidance.
+- Focused model/render/validation/perk-review tests: 40/40. Preview generation produced all 57 isolated routes with production output unchanged. Validator: 46 missing, 7 DRAFT, 4 REVIEWED, 0 PUBLISHED, zero diagnostics.
+- Browser evidence: each new guide was inspected at 390×844 and 1440×900 (8/8 checks): one H1, summary, primary landmark, closed research disclosure and no horizontal overflow. Ignored screenshots are under the isolated Task 13 preview evidence directory. Static/file preview required local CSS injection and emitted expected file-relative asset errors; this is recorded as a harness limitation, not clean network evidence.
+- Per-record editorial evidence, reviewed by Averroes on 2026-10-09 against the exact strategy, snapshot, frozen article and perk receipts: C02 preserves five mutually exclusive Exhaustion triggers plus optional Vigil support, and records route commitment/reassessment and stop conditions without adding an item or substitute; C09 is a portable two-slot anti-tunnel/recovery module with unspecified slots intentionally open, and its protection/reset guidance releases on Killer denial; A03 is a ROLE_GUIDE whose Empathy, slot-2 speed choices, optional Med-Kit and We'll Make It cues map to triage, handoff and abort decisions; G07 retains the canonical Provisional evaluation, limits the Boon plan to local setup/maintenance/relocation value, explicitly avoids first-setup/post-snuff speed claims, and omits unsupported matchups/substitutes. Each record passed the preview usefulness check for compact choices or role/zone actions at both viewports.
+- First-use perk index classifications: `balanced-landing`, `overcome`, `vigil`, `off-the-record`, `resurgence`, `empathy`, `empathic-connection`, `botany-knowledge`, `boon-steadfast` and `boon-illumination` were absent from the shared index before this wave. Each was initialized at mechanics revision 1 only after its exact canonical `#/mechanics` receipt and fingerprint were checked; no prior revision or change classification existed to preserve.
+- No renderer/schema/source/canonical ZIP/generated production output/publication/deployment changes. The seven prototype guides remain DRAFT; editorial content is still publication-gated.
+- Initial task review: Gibbs — four Important findings (G07 activation boundary, C02 Vigil purpose, A03 slot cue, and insufficient ledger evidence) plus one Minor canonical-duration wording issue. Fix round: `e866045` (`fix: address Task 13 editorial review findings`) after the content commit `d8417e1` (`content: review first Survivor guide population wave`). Scoped re-review: Franklin — all four Important findings addressed, no new Critical/Important/Minor findings. The Minor canonical-duration wording issue was corrected in the fix round.
+
+### Task 14 B1 — C03/C04/C05/C06/C07
+
+- Reviewer: Mencius. Initial B1 commit: `d7c659e` (`content: review Survivor guides B1`). Fix round: `d43c879` (`fix: address Task 14 B1 review findings`). Scoped re-review: Pasteur — all original findings addressed, no new Critical/Important/Minor findings.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. C03 covers window/resource routing without restoring the old Windows map; C04 preserves finite pallet economy and safe reset exits; C05 retains experimental status and omits unsupported Chest items; C06 binds approach/resource alternatives to selected slots and turns information into routes; C07 binds stealth layers to a selected slot and releases stealth for urgent team pressure or chase.
+- Exact source receipts and perk dependencies were re-resolved. The fix round added `C03#Synergies, Hybrids, and Related Strategies`, `C05#Synergies, Hybrids, and Related Strategies` and `C06#Synergies, Hybrids, and Related Strategies`; C06/C07 alternative gameplay rows use slot-level enablers. No fuzzy mappings, invented substitutions, unsupported matchup content or boilerplate were added.
+- Browser evidence: C03–C07 each passed the established 390×844 and 1440×900 checks for no horizontal overflow, one H1, visible summary/gameplay, closed research/perk disclosures, focusable research summary and primary landmark (10/10). Layout contract was unchanged.
+- Serialized index integration initialized exactly 11 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `alert`, `any-means-necessary`, `apocalyptic-ingenuity`, `calm-spirit`, `dark-sense`, `distortion`, `iron-will`, `light-footed`, `premonition`, `spine-chill`, `windows-of-opportunity`. Existing entries were unchanged.
+- Post-integration target: validator expected `missing: 41`, `DRAFT: 7`, `REVIEWED: 9`, `PUBLISHED: 0`, zero diagnostics; no production output, publication or deployment. Focused B1 regression passed 1/1; relevant suite passed 122/122; generated-artifact checker and diff checks clean.
+
+### Task 14 B2 — C08/C10/C11/C12/C13
+
+- Reviewer: Dirac. Initial B2 commit: `03c1b25` (`review Survivor guides B2`). Fix round: `857cc8b` (`fix: address Task 14 B2 review findings`) removed repeated generic module disclaimers from C08/C10/C11/C12 with record-specific open-content explanations. Scoped re-review: Newton — original finding addressed, no new Critical/Important/Minor findings.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. C08 preserves finite chase-reset and trace/noise boundaries; C10 keeps Dying-state self-recovery conditions and optional support limits; C11 preserves provisional hook-state transfer cost and live 10.2.0 mechanics; C12 retains safe-rescue gating and deterministic self-unhook cost; C13 remains LEGACY/NOT_CURRENT with exactly one source-supported successor C12 and no current build/gameplay.
+- Exact source receipts and perk dependencies were re-resolved. C08/C10/C11/C12 use bounded MODULE shapes; C13 uses HISTORY semantics. Unsupported items, substitutes, matchup tables, current C13 ranking/build claims and generic boilerplate were omitted.
+- Browser evidence: C08, C10, C11, C12 and C13 passed the established mobile/desktop checks with 25/25 combinations and zero failures; the prose-only fix required no new layout capture. Layout contract was unchanged.
+- Serialized index integration initialized exactly 11 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `boon-exponential`, `dance-with-me`, `deliverance`, `lightweight`, `lucky-break`, `plot-twist`, `quick-quiet`, `slippery-meat`, `soul-guard`, `unbreakable`, `were-gonna-live-forever`. Existing `iron-will` and `shoulder-the-burden` entries were retained unchanged.
+- Post-integration target: validator expected `missing: 36`, `DRAFT: 7`, `REVIEWED: 14`, `PUBLISHED: 0`, zero diagnostics; no production output, publication or deployment. Full Node remained 161/161, Python 4/4, generated-artifact checker and diff checks clean.
+
+### Task 14 B4 — G05/G08/G09/G10/A00
+
+- Reviewer: James. Initial B4 commit: `846a1e0` (`content: review Survivor guides B4`). The review found no Critical issue and one Important integration blocker: G10's exact `fruits-of-your-labor` mechanics classification had to be serialized in the shared index before the unit could be valid. It also identified a Minor browser-evidence signal mismatch: the disposable harness queried a nonexistent gameplay data attribute. The coordinator integrated the required exact classification through the existing CLI and corrected/reran the disposable evidence harness against the renderer's existing `.guide-gameplay` class; A00 correctly remains gameplay-free as a FAMILY comparison page.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. G05 preserves the post-10.2 manual-check route and invalidated historical automation; G08 preserves experimental/provisional Road Life gates; G09 binds Fast Track to the user's own unhook and later basic repair check; G10 keeps token banking separate from finishing-repair payout without inventing caps or expiry; A00 compares exactly four canonical children with NOT_APPLICABLE null rankings and no aggregate build.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported four-perk implementations, substitutes, item/add-on packages, fabricated matchup data and boilerplate were omitted. G05/G09 optional Toolbox context is explicitly optional and bound only where used; G08/G10 ordinary route decisions remain unbound.
+- Browser evidence after harness correction: 25/25 ID/viewport checks passed at 320×844, 390×844, 768×900, 1024×900 and 1440×900; 20/20 STANDARD records exposed `.guide-gameplay`, A00 correctly exposed no gameplay section, all 25 had one H1, closed disclosures, focusable research summaries and no horizontal overflow. The evidence remains layout/content evidence, not live-Trial or owner-comprehension proof.
+- Serialized index integration initialized the one absent dependency at revision 1 with `PRESENTATION_ONLY` and its canonical fingerprint: `fruits-of-your-labor`. Existing `hyperfocus`, `deja-vu`, `road-life` and `fast-track` entries were unchanged.
+- Post-integration verification: validator `missing: 26`, `DRAFT: 7`, `REVIEWED: 24`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, `git diff --check` clean, and corrected browser checks `25/25`. No publication or deployment was performed.
+
+### Task 14 B5 — A01/A02/A04/A05/A06
+
+- Reviewer: Maxwell. Initial B5 commit: `4f56420` (`content: review Survivor guides B5`). The review found no Critical content issue and two Important integration blockers: three exact perk classifications and the five execution-ledger rows were still coordinator-owned. The guide files themselves were source-faithful and closed-shape compliant.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. A01 preserves safe unhook/reset assignment and handoff; A02 treats Reassurance as a timed anti-camp pause that still requires a rescuer; A04 keeps Do No Harm target Hook-State scaling provisional; A05 treats Mettle of Man as a conditional protection-hit payoff rather than Endurance; A06 remains an ordinary bodyblock/pathing role with no asserted perk dependency.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported four-perk builds, substitutes, item/add-on packages, guaranteed rescue/protection outcomes, fabricated matchup data and boilerplate were omitted. A06 correctly retains `perkReviews: []` because no canonical perk/item implementation is asserted.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25), with one H1, visible primary/gameplay content, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Evidence remains layout/usefulness evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized exactly three absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `reassurance`, `do-no-harm`, `mettle-of-man`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 21`, `DRAFT: 7`, `REVIEWED: 29`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, and `git diff --check` clean. No publication or deployment was performed.
+
+### Task 14 B6 — A07/P01/P03/P04/P05
+
+- Reviewer: Tesla. Initial B6 commit: `27358e9` (`content: review Survivor guides B6`). The review found no Critical guide-content issue and one Important combined-catalog blocker: four exact perk classifications remained coordinator-owned. The guide files themselves were source-faithful, closed-shape compliant, and correctly omitted unsupported builds/items.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. A07 preserves the powered-endgame rescue gate and post-unhook support; P01 requires the source-recorded Flashlight and distinguishes Background Player movement support from the blind; P03 targets the intended carried hook and abandons a changed route; P04 remains a marginal-carry escort distinct from sabotage/bodyblock; P05 has no mandatory perk or item and treats pallets as finite route resources.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported save shells, add-on packages, guaranteed saves, matchup claims and boilerplate were omitted. P05 correctly retains `perkReviews: []`; P01's Flashlight is required only because the strategy definition itself is the flashlight-save use case.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25), with one H1, visible primary/gameplay content, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Evidence remains layout/usefulness evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized exactly four absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `no-one-left-behind`, `background-player`, `saboteur`, `breakout`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 16`, `DRAFT: 7`, `REVIEWED: 34`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`, Python `4/4`, generated-artifact checker clean, `git diff --check` clean, and browser checks `25/25`. No publication or deployment was performed.
+
+### Task 14 B7 — P06/I01/I02/I03/I04
+
+- Reviewer: Pascal. Initial B7 review found one Important source-fidelity issue in I02 and one Important evidence gap: the worker had not performed the required viewport usefulness matrix. Fix round `2ed4dcb` corrected I02's Dark Sense wording; scoped re-review Poincare found both findings addressed with no new Critical/Important breakage. The coordinator-owned browser matrix remains pending before this integration is committed.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. P06 preserves carry threshold/recovery/standing-pallet conditions and missed-route exits; I01 distinguishes hook, generator and approach cues; I02 distinguishes Alert, Premonition and post-generator Dark Sense reads; I03 preserves Bond/Empathy/Empathic Connection aura direction; I04 binds objective/resource routing to Déjà Vu and Dark Sense with stale-target exits.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported four-slot builds, substitutes, items, matchup claims and generic awareness boilerplate were omitted. No snapshot supplied a canonical `BuildImplementation`; all five records retain authored options/modules without copied canonical membership.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25) in the external preview at `.codex/visualizations/2026/10/10/task-14-B7-preview/browser-results.json`; zero console/resource errors, one H1 per route, visible primary/gameplay, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Representative screenshots were captured at 390×844 and 1440×900 for each ID. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized exactly four absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `boil-over`, `flip-flop`, `power-struggle`, `bond`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 11`, `DRAFT: 7`, `REVIEWED: 39`, `PUBLISHED: 0`, zero diagnostics; focused catalog/validation tests `24/24`; full Node/Python suites, generated-artifact and diff checks recorded with the integration commit. No publication or deployment was performed.
+
+### Task 14 B8 — I05/R01/R02/R03/R04
+
+- Reviewer: Descartes. Initial B8 review found the five guide records source-supported and structurally valid, but flagged the accidentally tracked worker report and the missing coordinator viewport matrix. Fix round `da1a434` removed the report from Git tracking and corrected its local evidence wording; scoped re-review McClintock confirmed the five-guide tracked scope and truthful browser boundary with no new Critical/Important breakage.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. I05 binds the chase-start broadcast to a concrete route decision; R01/R02 make chest trips conditional on useful item value; R03 separates Built to Last, Streetwise and Scavenger resource conditions; R04 keeps heal, slug recovery, movement and repair boon jobs distinct with maintenance/relocation/abort cues.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported complete builds, substitutes, numeric claims, matchups and generic communication/boon boilerplate were omitted. No snapshot supplied a canonical `BuildImplementation`; all five records retain authored options without copied canonical membership.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25) in the external preview at `.codex/visualizations/2026/10/10/task-14-B8-preview/browser-results.json`; zero console/resource errors, one H1 per route, visible primary/gameplay, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Representative screenshots were captured at 390×844 and 1440×900 for each ID. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Serialized index integration initialized eight absent dependencies at revision 1 with `PRESENTATION_ONLY` first-use acknowledgments and canonical fingerprints: `salvations-cry`, `plunderers-instinct`, `appraisal`, `pharmacy`, `streetwise`, `scavenger`, `boon-circle-of-healing`, and `boon-shadow-step`. Existing `built-to-last`, `boon-exponential`, `boon-illumination`, and `boon-steadfast` entries were retained unchanged.
+- Post-integration verification: validator `missing: 6`, `DRAFT: 7`, `REVIEWED: 44`, `PUBLISHED: 0`, zero diagnostics; focused catalog/validation tests `24/24`; full Node `162/162`; Python `4/4`; generated-artifact checker clean; `git diff --check` clean. No publication or deployment was performed.
+
+### Task 14 B9 — R05/R06/R07/R08/R09
+
+- Reviewer: Banach. Initial B9 review found the five-guide tracked scope and source-backed opportunity-cost decisions sound, but identified one Important Blood Pact condition error and a coordinator viewport-matrix evidence gap. Fix round `2e32980` corrected R09's aura-versus-Haste wording; scoped re-review Sartre marked the content finding ADDRESSED with no new Critical/Important breakage. The coordinator evidence is recorded below.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. R05 binds totem work to a meaningful Hex/cleanse payoff; R06 preserves basement labor and persistent invoker costs; R07 separates Head On staging from item recharge; R08 ties decoys to named rotations; R09 preserves provisional state and distinguishes reciprocal information from exposure risk.
+- Exact source receipts and perk dependencies were re-resolved. Unsupported complete builds, substitutes, numeric claims, matchups, and generic cleanse/ritual/locker/distraction/aggro boilerplate were omitted. No snapshot supplied a canonical `BuildImplementation`; all five records retain authored options without copied canonical membership.
+- Serialized index integration initialized eleven absent dependencies at revision 1 with `PRESENTATION_ONLY` first-use acknowledgments and canonical fingerprints: `small-game`, `counterforce`, `overzealous`, `invocation-weaving-spiders`, `invocation-treacherous-crows`, `head-on`, `diversion`, `deception`, `red-herring`, `mirrored-illusion`, and `bound-by-obsession`. Existing entries were retained unchanged.
+- Browser evidence: all five IDs passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25) in the external preview at `.codex/visualizations/2026/10/10/task-14-B9-preview/browser-results.json`; the rerun captured zero console errors, HTTP responses at or above 400, or failed requests, with one H1 per route, visible primary/gameplay, closed research/perk disclosures, focusable research summaries and no horizontal overflow. Representative screenshots were captured at 390×844 and 1440×900 for each ID. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Post-integration verification: validator `missing: 1`, `DRAFT: 7`, `REVIEWED: 49`, `PUBLISHED: 0`, zero diagnostics; focused catalog/validation tests `24/24`; full Node/Python suites, generated-artifact and diff checks recorded with the integration commit. No publication or deployment was performed.
+
+### Task 14 B10 — R10
+
+- Reviewer: Bernoulli. Scoped content review of `a1f2e4e` found no Critical/Important/Minor issues. R10 remains an options-only strategic module because the canonical snapshot has no `BuildImplementation`; unsupported item, Sole Survivor and matchup claims were omitted.
+- R10 was reviewed against the exact current strategy, snapshot and complete frozen article source on 2026-10-10. The guide preserves late-only opportunity cost, powered-gate transition conditions, gate/rescue assignment, Adrenaline eligibility, Hope movement routing, No One Left Behind rescue limits and Down to the Last's distinct team/last-Survivor branches.
+- Exact source receipts and perk dependencies were re-resolved. Three absent exact dependencies were serialized through the existing CLI as revision-1 `PRESENTATION_ONLY` with canonical fingerprints: `adrenaline`, `down-to-the-last`, and `wake-up`. Existing `hope` and `no-one-left-behind` entries were retained unchanged.
+- Browser evidence: R10 passed the established 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (5/5) in the external preview at `.codex/visualizations/2026/10/10/task-14-B10-preview/browser-results.json`; the instrumented harness captured zero console errors, HTTP responses at or above 400, or failed requests, with one H1, visible primary/gameplay, closed research/perk disclosures, focusable research summaries and no horizontal overflow at each viewport. Representative screenshots were captured at 390×844 and 1440×900. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Post-integration verification: validator `missing: 0`, `DRAFT: 7`, `REVIEWED: 50`, `PUBLISHED: 0`, zero diagnostics; focused catalog/validation tests `45/45`; preview build generated all 57 routes; no publication or deployment was performed.
+
+### Task 14 B3 — C14/C15/G01/G03/G04
+
+- Reviewer: Pauli. Initial B3 commit: `d8a16ec` (`review Survivor guides B3`). The reviewer raised one Critical concern about machine-readable canonical build membership and two Important content concerns. The canonical-build concern was ruled out: `scripts/survivor-meta-guide-source.mjs` resolves canonical `buildId` slots and perk IDs from frozen source, existing G01 source tests cover that behavior, and copying canonical membership into guide JSON would violate the approved source-derived architecture. Fix round: `d001d47` (`fix Survivor guides B3 review findings`). Scoped re-review: Galileo — both valid findings addressed, no new Critical/Important findings.
+- All five records were reviewed independently against exact current strategy, snapshot and complete frozen article sources on 2026-10-10. C14 preserves the Coordinated SWF `UNRANKED` state and null ranking fields while making self-sustain a gated route choice; C15 preserves provisional Solo Q/SWF evaluations and treats Haste as conditional movement layers; G01 preserves both canonical build IDs and the intentionally open SWF slot-4 alternative; G03 and G04 use bounded modules because their snapshots do not contain canonical `BuildImplementation` records.
+- Exact source receipts and perk dependencies were re-resolved. G03's optional Toolbox gameplay row is bound to `item:toolbox`; C15's Blood Pact cue names the canonical Obsession-heal target and 16-metre condition. Unsupported item add-ons, substitutes, fabricated matchup data, numerical SWF ranking for C14 and invented G03/G04 build slots were omitted.
+- Browser evidence: C14, C15, G01, G03 and G04 each passed 320×844, 390×844, 768×900, 1024×900 and 1440×900 checks (25/25) with no horizontal overflow, one H1, visible gameplay, closed research/perk disclosures and focusable research summaries. The fix round added one focused regression test covering the Toolbox enabler and Blood Pact target/proximity wording.
+- Serialized index integration initialized exactly 12 absent dependencies at revision 1 with `PRESENTATION_ONLY` classifications and canonical fingerprints: `blood-pact`, `boon-dark-theory`, `fast-track`, `friendly-competition`, `hope`, `inner-strength`, `leader`, `made-for-this`, `prove-thyself`, `road-life`, `self-care`, `strength-in-shadows`. Existing entries were unchanged.
+- Post-integration verification: validator `missing: 31`, `DRAFT: 7`, `REVIEWED: 19`, `PUBLISHED: 0`, zero diagnostics; full Node `162/162`; Python `4/4`; generated-artifact checker clean; `git diff --check` clean. No publication or deployment was performed.
+
+## Task 15 — whole-catalog QA/readiness
+
+- Reviewer: Codex, 2026-10-10 America/New_York. The focused catalog test was written and run RED before status changes: it reported the expected seven DRAFT records (`X01 C01 G02 P02 P00 G06 X02`) against the otherwise valid 57-record catalog. Its ranking/optional-omission, runtime-baseline, slot-count and route assertions already passed.
+- Re-review against the exact Stage 3A snapshot, Stage 3B article and canonical perk sources promoted only those seven source-faithful, useful records from DRAFT/null to REVIEWED with genuine `2026-10-10` dates. No names, mechanics, rankings, builds, substitutes, matchups or architecture were changed. The C13 visible legacy explanation was bounded to remove raw internal `LEGACY`/`NOT_CURRENT` terminology; no renderer/schema defect was found.
+- Catalog assertions cover the exact canonical 57-ID set excluding metadata, page kinds `52 STANDARD / 2 FAMILY / 2 LEGACY / 1 TEAM`, resolving receipts/builds/perk dependencies/enablers/dates, family children, legacy successors and four TEAM roles. C14 keeps Coordinated SWF `UNRANKED` null ranking fields; X02 keeps Solo Q `NOT_APPLICABLE` null fields; G07 remains `PROVISIONAL`; FAMILY/LEGACY pages have no aggregate tiers.
+- Preview build generated all 57 detail routes. The ignored content scan found publication/article coverage, complete named-perk links, deduplicated related destinations, no repeated boilerplate candidate and no internal terminology in the primary path for all 57 records. Instrumented Chrome checks passed `114/114` route/viewport cases at 390×844 and 1440×900 with zero failures; representative standard, family, legacy, team and unranked captures were visually inspected. Evidence is layout/content evidence, not live-Trial outcome or owner-comprehension proof.
+- Shared perk-review index was unchanged; validator reports `missing: 0`, `DRAFT: 0`, `REVIEWED: 57`, `PUBLISHED: 0`, zero diagnostics. Full Node is `164/164`, Python `4/4`, generated-artifact verification is clean, and `git diff --check` is clean. No PUBLISHED status, publication, deployment or independent editorial deploy was performed.
+- Scoped review: Bacon identified one Important regression-coverage gap: the catalog test asserted C14/X02/G07 ranking semantics from raw snapshots but not from `assembleGuidePage().canonical.evaluations`. Fix round adds those model-level assertions; the focused test was reproduced RED with a temporary C14 projection mutation and returned GREEN after restoring the owning model unchanged. Minor deferred: the ignored primary-path scan does not include every internal enum token (`NOT_CURRENT`, `NOT_APPLICABLE`, `UNRANKED`, `PROVISIONAL`); the current 57-route scan still found no primary-path leakage, but broadening that scan is deferred.
+
+## Task 16 — exact perk destinations, navigation and browser accessibility
+
+- Reviewer: Codex, 2026-10-10 America/New_York. Added the VM-loaded regression test and reproduced the expected RED (`2/2` failed) before the implementation. The smallest exact-ID branch in `DBD_CORE.filterPerks` now selects an existing canonical `perk.id` while preserving tier/role filtering, rank sorting, ordinary name/alias/token search, and unknown-ID normal-search behavior.
+- GREEN: focused regression/home/perk/Meta/source/mobile navigation set passed `20/20`; full Node suite passed `166/166`. No unrelated tracked files changed.
+- Browser preview built all `57` routes outside the production root. At `390x844`, all `57/57` routes had one H1, primary content, closed research, focusable summaries, and no horizontal overflow. `430` actual guide-link instances covered `93` unique canonical perk IDs; every ID query returned exactly one matching perk card, including `will-to-live`, `well-make-it`, and `deja-vu`. `53` routes exposed compact loadout summaries; the four FAMILY/LEGACY routes honestly omit current loadout/gameplay summaries and retain family/successor/history navigation.
+- Representative `STANDARD/DECISIONS`, `STANDARD/SEQUENCE`, `FAMILY`, `LEGACY`, and `TEAM/ROLE_GUIDE` cases passed `20/20` at `320x844`, `390x844`, `768x900`, and `1440x900`. Home search, perk query, Meta search/tier/classification/role filters, queue switching, parent/Legacy links, bottom navigation, keyboard disclosure/focus, contrast, and static no-JS original article checks passed. 10-second and 2-minute usefulness outcomes are recorded in ignored evidence at `.superpowers/sdd/2026-10-08-survivor-meta-rework-v2/task-16-browser/evidence.md`.
+- Initial scoped review by Plato found one Important navigation defect: guide-rendered perk links were root-absolute and ignored the GitHub Pages `/dbd-helper/` base path. Fix commit `9b3abbf` changes only the renderer's presentation href to `survivor/perks/?q=...`; canonical model `query` values remain unchanged. The renderer regression proves the href resolves to `/dbd-helper/survivor/perks/`, and the fix-only re-review by Hypatia marked the finding addressed with no Critical/Important/Minor findings.
+- Fresh fix verification: focused renderer/perk tests `13/13`; full Node `166/166`; Python `4/4`; validator `missing: 0`, `DRAFT: 0`, `REVIEWED: 57`, `PUBLISHED: 0`, zero diagnostics; generated-artifact checker and `git diff --check` clean. The clean-base browser rerun covered all `57` routes, `93` unique canonical IDs and representative links under `/dbd-helper/`.
+- Honest omissions/rulings: 200% zoom was not verified because the connected browser surface did not expose working zoom controls; a second local port was harness-blocked and a stale service-worker run was discarded and rerun on a clean localhost origin. No PUBLISHED state, production output, deployment, Stage 3A/3B change, or Task 17 work was performed.
+
+## Task 17 — equivalent CI, bounded release smoke and cache update
+
+- Initial scoped review by Archimedes found no CI-ordering, deployment-guard, generated-drift, or v7 cache regression. It found one Important release-smoke gap: family/Legacy/TEAM checks could pass visible labels without usable destination anchors or rendered role targets. Minor findings were deferred: base URL query/hash normalization, direct timeout/concurrency assertions, and offline shell fallback population in the service-worker mock.
+- Fix `0c27cc5` added RED mutation fixtures and required canonical family/Legacy anchors plus all four TEAM role targets. Re-review by Hubble found two remaining Important gaps: any manifest slug could satisfy a family/Legacy check, root-absolute links could still leave `/dbd-helper/`, and only one TEAM role link was required.
+- Fix `db9c05f` derived expected comparison/successor routes from source guide meaning, resolved links against the supplied base URL, required all four TEAM role links, and made the shared renderer's `routeHref` base-relative while preserving query text. Re-review by Mill found one remaining Important parser false-positive: an embedded `href=` inside another quoted attribute could mask the real href.
+- Fix `10bd8d8` added quote-aware attribute tokenization and a RED fixture with an embedded fake href plus a wrong real href; wrong-target fixtures now use wrong base-relative routes, with root-absolute rejection retained separately. Final scoped re-review by Fermat found no Critical/Important/Minor issues.
+- Fresh verification at exact `10bd8d8`: focused release/renderer tests `34/34`; full Node `189/189`; Python `4/4`; validator `missing: 0`, `DRAFT: 0`, `REVIEWED: 57`, `PUBLISHED: 0`, zero diagnostics; generated-artifact checker and `git diff --check` clean. Task 17 local fixture smoke covered `69` URLs with zero failures; browser cache evidence covered v7 shell-only precache, v6 cleanup, opportunistic detail caching and offline revisit. No live deployment was run.
+- Deferred minors: the smoke still does not explicitly test base URL query/hash normalization, timeout abort/concurrency caps, or shell-cache population in the mock. These do not block the bounded release contract demonstrated by the current focused/full tests and local browser evidence.
+- Ruling carried from execution: the existing LF-versus-escaped-CRLF publication-output drift exposed by canonical preparation is consumed by Task 18, which owns regenerating/committing all 57 publication outputs and repeating deterministic preparation. Task 17 did not alter canonical/importer/generated output; cost if wrong: CI could expose the same pre-publication drift before Task 18 regenerates the coherent release output.
+
+## Task 18 — testing publication and fix round 1
+
+- Publication commit: `801f937` (`release: publish reviewed Survivor Meta guide catalog`), 120 files. Owner authorization: "site itself on github is testing location so publish it for testing" plus "I am overriding". Exactly 57 REVIEWED records became PUBLISHED; dates and all other guide fields were preserved. The coverage table now reflects actual states without replacing review evidence or historical commit references. No push, merge or live deployment is claimed.
+- Original Task18 evidence: two canonical preparations produced identical 306-file prepared inventories; Node 191/191, Python 4/4; local browser 114/114 functional route/viewport cases. These are historical publication results, not reruns during this fix.
+- Supplied reviewer finding: 65 frozen Stage 3A/3B local files changed only from CRLF to LF after import; Git-normalized equality did not prove Task1 raw preservation. Fix round 1 inspected immutable `task-1-frozen-evidence.json` and `task-1-final-evidence.json` and actual bytes first: all 65 raw hashes differed, and every LF-to-CRLF candidate matched both immutable hashes before writing. Guarded mechanical restoration returned all 65 to exact Task1 raw bytes; all three root ZIP hashes also match. Per-file expected/actual hashes and repeatable read-only verification are in ignored `task-18-fix1-hashes.md` and `task-18-fix1-verify.cjs` under the execution SDD directory. Neither baseline manifest was rewritten.
+- After restoration, full tracked and staged Git diffs were empty before this ledger edit. In-memory LF normalization remains unchanged; no canonical import was rerun. No logical research, guide advice, ZIP, dependency or product behavior changed. Windows status can show stat-only source changes while normalized diffs remain empty; no source path is included in this evidence-only commit.
+- Fresh fix verification: `node --test site/tests/survivor-meta-guide-build.test.mjs site/tests/survivor-meta-release.test.mjs` passed 30/30; `node scripts/survivor-meta-guide-validation.mjs --require-published` reports missing 0 / DRAFT 0 / REVIEWED 0 / PUBLISHED 57 and zero diagnostics; `node scripts/verify-generated-artifacts.mjs` reports Generated artifacts match Git; `git diff --check` is clean. Exact publication audit verified all 57 objects differ from `801f937^` only in status, retaining review evidence, and all 57 production pages expose original research. Full suites/browser were not rerun for this mechanical fix.
+- Minor follow-up, pre-existing and nonblocking: the original local browser observed 570 transient speculative relative-asset 404s before the base bootstrap, followed by successful `/dbd-helper/assets/` requests. This fix does not resolve or independently reproduce them. A live deployment/network check remains needed; no live check, push or merge was performed. Status: DONE_WITH_CONCERNS; raw-preservation and stale-ledger findings addressed.
+## Task 19 — whole-branch review and testing publication
+
+- PR: https://github.com/masterzoidberg/dbd-helper/pull/7. Initial GitHub verification passed at `801f937dfdc4c43d6c8186d71412cd5cb626ed47`; the PR deployment job was skipped. Later commits require fresh CI.
+- Independent whole-branch reviewer Beauvoir inspected `01141a91..801f937`: no Critical findings; two Important findings required fixes before merge. Preview copying could introduce a source symlink after destination validation, and unpublished guide receipt notes could leak into production research-only output. Single contained TDD fix wave `eceabf6` addresses both and the two bounded item-rendering findings below.
+- Two bounded renderer findings are included in the same fix wave: canonical Toolbox strings currently produce empty item cards with duplicate IDs, and supported optional item add-on advice is not displayed. No guide advice is being changed.
+- Deferred Minor: speculative asset requests before the existing inline base bootstrap cause transient 404s; both independent reviewers classified this as pre-existing network noise rather than demonstrated functional breakage. Live checks must confirm successful asset loading. The earlier Task 15/17 deferred test-polish items remain nonblocking evidence limitations.
+- Owner publication authorization: “The site itself on github is the testing location so publish it for testing”, followed by “I am overriding” and “continue”. The controller treats this later direction as overriding the earlier pre-merge approval stop for this testing publication; review and green CI still precede merge.
+- Review boundaries: the whole-branch review did not independently repeat browser layout/200% zoom/player-comprehension checks, new external gameplay research, or Pages/cache verification. Frozen-source fidelity is the content authority; live verification remains pending.
+- Task 18 scoped re-review Galileo approved `a3bf485`: all 65 frozen source hashes and three ZIPs match both immutable Task 1 manifests; all 57 PUBLISHED ledger rows match guide identities and retain earlier review evidence.
+- Fix-wave evidence at `eceabf6`: six expected regression failures reproduced before changes, then six passed without skips. Focused Node 56/56; full Node 197/197; Python 4/4; production generation 57 routes; release validator 57 PUBLISHED with zero diagnostics; repeated generation and post-commit artifact verification clean. Raw 65-source/three-ZIP comparison remains 68/68. Only G01 generated item cards changed; no guide advice changed. Scoped final re-review Kepler approved all four findings as addressed, with no new fix-scope breakage. Final CI and Pages/live verification follow this evidence commit.

@@ -32,7 +32,7 @@ test('survivor page loads the mobile drawer assets and service worker refreshes 
 
   assert.match(html, /assets\/mobile-filter\.css/);
   assert.match(html, /assets\/mobile-filter\.js/);
-  assert.match(sw, /dbd-field-guide-v6/);
+  assert.match(sw, /dbd-field-guide-v7/);
   assert.match(sw, /assets\/mobile-filter\.css/);
   assert.match(sw, /assets\/mobile-filter\.js/);
 });

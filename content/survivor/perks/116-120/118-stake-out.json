@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "batch": "116-120",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "stake-out",
+  "mechanics": {
+    "name": "Stake Out",
+    "alternateName": null,
+    "source": "David Tapp",
+    "status": "Live 10.2.0",
+    "currentEffect": "After hiding for 15 seconds within 24 metres of the Killer while inside their Terror Radius, gain 1 Token, up to 2/3/4. While you have at least 1 Token, basic Skill Checks are replaced by special Skill Checks. Special Skill Checks grant 4% more progress, and hitting or missing one spends 1 Token.",
+    "activation": [
+      "Hide for 15 seconds while within 24 metres of the Killer and inside the Killer's Terror Radius to gain a Token.",
+      "Have at least 1 Token for basic Skill Checks to become special Skill Checks.",
+      "Ends/deactivates when: Hitting or missing a special Skill Check consumes 1 Token.",
+      "Ends/deactivates when: Without a Token, basic Skill Checks are no longer replaced by Stake Out's special Skill Checks."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: hiding 15 seconds within 24 metres of the Killer while in the Terror Radius earns Tokens; Tokens replace basic Skill Checks with special +4%-progress checks and are spent on hit or miss.",
+    "plainEnglishSummary": "Hide near the Killer inside the Terror Radius to build tokens that turn basic Skill Checks into special +4%-progress checks.",
+    "cooldown": null,
+    "duration": [
+      "Hiding requirement: 15 seconds for each Token earned."
+    ],
+    "tokenOrStackBehavior": "Gain 1 Token after meeting the 15-second hiding condition, up to 2/3/4. Each hit or missed special Skill Check spends 1 Token.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Stake Out's special Skill Checks grant +4% progress.",
+      "The final live release removed the PTB's additional progression penalty for missing a special Skill Check.",
+      "10.2.0 fixed token-consumption issues so tokens are not incorrectly spent by unrelated Special Skill Checks and are correctly updated when a basic Skill Check interaction is interrupted.",
+      "Stake Out's special Skill Checks do not activate other Skill Check perks."
+    ],
+    "sourceCharacter": "David Tapp",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "stake-out",
+    "rank": 118,
+    "tier": "C",
+    "roles": [
+      "Objective",
+      "Skill Check",
+      "Utility"
+    ],
+    "summary": "Hide near the Killer inside their Terror Radius to bank Tokens, then spend each Token on a harder special Skill Check worth +4% progress.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "terror-radius",
+      "pressure"
+    ],
+    "useCases": [
+      "Bank Tokens while safely hidden near a Killer pressure zone.",
+      "Cash Tokens on generators for +4% progress per successful special Skill Check.",
+      "Use up to four stocked Tokens as a burst-progress resource later."
+    ],
+    "counters": [
+      "The special Skill Check is intentionally harder than a normal basic check.",
+      "The checks no longer trigger Hyperfocus or other Skill Check perks.",
+      "Charging requires 15 seconds hidden within 24 metres of the Killer while in the Terror Radius."
+    ],
+    "pros": [
+      "Up to four +4% progress checks can create meaningful objective value.",
+      "No longer depends on converting Good checks into Greats.",
+      "Can bank value for later."
+    ],
+    "cons": [
+      "Lost the famous Hyperfocus synergy.",
+      "Charging Tokens asks you to spend time near danger while hidden.",
+      "Missing still spends the Token."
+    ],
+    "analysis": [
+      "Stake Out was fundamentally rebuilt in 10.2. The old Good-to-Great conversion, and with it the classic Hyperfocus safety net, is gone. The perk now creates its own special Skill Checks worth +4% progress.",
+      "The new ceiling is still interesting. Four banked Tokens can represent a large burst of bonus progress if you successfully hit all four special checks, giving the perk independent objective value instead of merely supporting another perk.",
+      "The trade is difficulty and setup. Tokens require hiding close to the Killer inside the Terror Radius, and the special checks are intentionally harder and no longer activate other Skill Check perks.",
+      "This version deserves a completely fresh rank rather than inheriting the old Hyperfocus-based evaluation. It is now a standalone risk-and-reward objective perk."
+    ],
+    "verdict": "No longer Hyperfocus glue. Modern Stake Out banks dangerous proximity into harder +4% progress checks, giving it its own ceiling and its own execution risk.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Risk Reward"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      105,
+      132
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "needs-controlled-testing",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "David Tapp"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "resilience"
+    ],
+    "synergyOther": [
+      "Stealth-oriented play that naturally banks safe Terror Radius time"
+    ],
+    "antiSynergyPerkIds": [
+      "fast-track",
+      "fogwise",
+      "hyperfocus",
+      "road-life",
+      "scavenger",
+      "specialist"
+    ],
+    "archetypeRatings": [],
+    "synergies": [
+      "Déjà Vu",
+      "Resilience",
+      "Stealth-oriented play that naturally banks safe Terror Radius time"
+    ],
+    "antiSynergies": [
+      "Fast Track",
+      "Fogwise",
+      "Hyperfocus",
+      "Road Life",
+      "Scavenger",
+      "Specialist"
+    ]
+  }
+}

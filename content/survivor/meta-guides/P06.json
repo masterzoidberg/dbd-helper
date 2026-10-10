@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "P06",
+  "snapshotId": "P06@10.2.0-r1",
+  "perkReviews": [{ "perkId": "boil-over", "mechanicsRevision": 1 }, { "perkId": "flip-flop", "mechanicsRevision": 1 }, { "perkId": "power-struggle", "mechanicsRevision": 1 }, { "perkId": "unbreakable", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use hook distance, a real drop route or a standing pallet to contest your own carry; nearby hooks and slugging can remove the escape window.",
+    "verdict": {
+      "recommendation": "Treat this as self-preservation at favorable geometry, not a reliable way to escape every pickup.",
+      "soloQ": "Read nearby hooks and upright pallets before taking a risky down; do not expect a teammate to create the route for you.",
+      "coordinatedSwf": "Tell teammates when the Killer is carrying toward a long route or when you are being left down, so they can choose pressure or recovery without blindly following.",
+      "mainWeakness": "A close hook, route that avoids a drop or pallet, or deliberate slugging can deny the payoff."
+    },
+    "loadout": { "options": [
+      { "perkId": "boil-over", "usage": "CORE", "whyItsHere": "Makes your wiggle effects stronger while carried and hides nearby hook auras; a Killer fall adds progress, so terrain and carry route matter." },
+      { "perkId": "flip-flop", "usage": "SUPPORT", "whyItsHere": "Recovery while downed banks some wiggle progress before pickup; it helps only if the Killer leaves time to recover." },
+      { "perkId": "power-struggle", "usage": "SUPPORT", "whyItsHere": "Shows upright pallets while downed and can convert enough carried wiggle progress into a self-release at a nearby standing pallet." },
+      { "perkId": "unbreakable", "usage": "SUPPORT", "whyItsHere": "If the Killer puts you in the Dying State and leaves you there, faster recovery and one self-recovery answer the slugging counter instead of improving the carry itself." }
+    ] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before committing to a risky position, identify the nearest usable hook, any actual fall on the likely carry route and an upright pallet you could reach while carried. These are separate opportunities, not a guaranteed combo."],
+      "rows": [
+        { "id": "contest-long-carry", "situation": "The Killer picks you up where the practical hook route is long or crosses a fall.", "action": "Wiggle through the real carry; use any fall-induced progress without assuming the Killer must take that route.", "why": "Boil Over helps only during a carry, and the Killer can choose a closer hook or avoid the drop.", "enabledBy": ["perk:boil-over"] },
+        { "id": "recover-before-pickup", "situation": "You are left down long enough to recover before the Killer returns.", "action": "Build recovery to bank wiggle progress, then reassess the actual pickup route rather than assuming a pallet escape is available.", "why": "Flip-Flop converts recovery into wiggle progress; it cannot help when the Killer immediately picks you up.", "enabledBy": ["perk:flip-flop"] },
+        { "id": "pallet-self-release", "situation": "You have enough wiggle progress while carried and the Killer passes an upright pallet you can drop.", "action": "Drop that pallet during the carry to stun and escape, then leave the area before the Killer recovers.", "why": "Power Struggle requires both its wiggle threshold and a nearby standing pallet; knowing a pallet exists is not enough.", "enabledBy": ["perk:power-struggle"] },
+        { "id": "answer-slugging", "situation": "The Killer refuses to carry and leaves you down after putting you in the Dying State.", "action": "Use the recovery window if safe; after the one full self-recovery is spent, stop planning around a second one.", "why": "Unbreakable answers a slug, not a short hook route, and its full self-recovery is once per Trial.", "enabledBy": ["perk:unbreakable"] },
+        { "id": "release-denied-window", "situation": "A nearby hook is uncontested, the Killer avoids the fall or pallet, or you are picked up before recovery gains value.", "action": "Stop treating the denial package as an active escape plan; wiggle normally, then play the resulting hook or recovery state.", "why": "The source identifies smart pathing, nearby hooks and slugging as direct counters." }
+      ],
+      "abortWhen": ["No relevant fall or standing pallet intersects the actual carry and the Killer has a nearby hook.", "The Killer slugs you and your usable recovery window or one full self-recovery has already been spent."]
+    },
+    "weaknesses": ["Carry denial depends on local hook geometry, the Killer's route and time left down; several committed perk slots can produce no escape."],
+    "killerCounterplay": ["The Killer can take a nearby hook, avoid drops and pallets, or leave you down instead of offering the carry interaction."],
+    "commonMistakes": ["Assuming Boil Over guarantees escape on any carry.", "Expecting Power Struggle without both sufficient wiggle progress and a reachable upright pallet.", "Treating Unbreakable as unlimited self-recovery or as a carry-speed tool."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "P06#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "P06@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "P06@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "P06@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "P06#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "P06#Common Mistakes" },
+    { "kind": "PERK", "ref": "boil-over#/mechanics" },
+    { "kind": "PERK", "ref": "flip-flop#/mechanics" },
+    { "kind": "PERK", "ref": "power-struggle#/mechanics" },
+    { "kind": "PERK", "ref": "unbreakable#/mechanics" }
+  ]
+}

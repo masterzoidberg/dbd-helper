@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "036-040",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "desperate-measures",
+  "mechanics": {
+    "name": "Desperate Measures",
+    "alternateName": null,
+    "source": "Felix Richter",
+    "status": "Live 10.2.0",
+    "currentEffect": "For each injured, Dying, or hooked Survivor (including you), increase Healing and Unhooking speed by 16/18/20%, up to four stacks (64/72/80%).",
+    "activation": [
+      "At least one Survivor is injured, Dying, or hooked; you are included.",
+      "Ends/deactivates when: Bonus decreases as qualifying Survivors return to Healthy or leave the qualifying state."
+    ],
+    "patchNote": "Latest live balance change (9.0.0): Increased the per-Survivor bonus to 16/18/20%.",
+    "plainEnglishSummary": "Injured, downed, or hooked teammates increase your Healing and Unhooking speed.",
+    "cooldown": null,
+    "duration": [
+      "Per qualifying Survivor: 16/18/20%; maximum 64/72/80%."
+    ],
+    "tokenOrStackBehavior": "Stacks once per injured, Dying, or hooked Survivor, including you; max four stacks.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Felix Richter",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "desperate-measures",
+    "rank": 39,
+    "tier": "A",
+    "roles": [
+      "Healing",
+      "Rescue",
+      "Utility"
+    ],
+    "summary": "For each injured, dying, or hooked Survivor, heal and unhook 20% faster at Tier III, scaling up to an 80% bonus.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "reset",
+      "dying-state",
+      "hook-state",
+      "health-state"
+    ],
+    "useCases": [
+      "Speed up emergency heals when several teammates are injured.",
+      "Create extremely fast unhooks during snowball pressure.",
+      "Exploit the perk's strongest stacks exactly when the team is in danger."
+    ],
+    "counters": [
+      "Low bonus when the team is healthy.",
+      "Does not help generator repair.",
+      "The highest stacks usually occur in dangerous game states where reaching the action can still be difficult."
+    ],
+    "pros": [
+      "Excellent comeback scaling.",
+      "Affects both healing and unhooking.",
+      "No cooldown or activation button."
+    ],
+    "cons": [
+      "Weakest when the team is already stable.",
+      "Can look better numerically than it feels if the Killer controls access to the hook or downed players.",
+      "No direct chase benefit."
+    ],
+    "analysis": [
+      "Desperate Measures earns its place because its strongest numbers arrive exactly when Survivors most need speed. One injured teammate gives a useful bonus; two or three injured, downed, or hooked teammates can make healing and unhooking dramatically faster.",
+      "The perk is especially strong during snowballs. A normal heal may be too slow before the Killer returns, while a heavily stacked Desperate Measures can create a reset window that otherwise would not exist. The same scaling can make contested unhooks much harder to interrupt.",
+      "It is also one of the easiest support perks to use. There is no token economy or special trigger beyond the team's current health states. If the match is messy, the perk is strong automatically.",
+      "The downside is that it is inherently reactive. A healthy team gets little value, and the perk cannot create objective pressure on its own. Even so, its 9.0-era 20%-per-stack ceiling is too strong to leave buried in mid-B."
+    ],
+    "verdict": "An excellent comeback support perk. Desperate Measures gets stronger as the match gets uglier, and its current 20%-per-stack scaling can rescue otherwise hopeless reset windows.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Comeback"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Felix Richter"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "well-make-it",
+      "were-gonna-live-forever",
+      "do-no-harm"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Botany Knowledge",
+      "We'll Make It",
+      "We're Gonna Live Forever",
+      "Do No Harm"
+    ],
+    "antiSynergies": []
+  }
+}

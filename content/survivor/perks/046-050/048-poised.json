@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "046-050",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "poised",
+  "mechanics": {
+    "name": "Poised",
+    "alternateName": null,
+    "source": "Jane Romero",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever a Generator is completed, suppresses your Scratch Marks for 20/25/30 seconds. The first time you start repairing each Generator, reveals the Killer's Aura to you for 8 seconds.",
+    "activation": [
+      "A Generator is completed for the Scratch Mark effect.",
+      "Start repairing a given Generator for the first time for its Killer-aura reveal.",
+      "Ends/deactivates when: Scratch Mark suppression ends after 20/25/30 seconds.",
+      "Ends/deactivates when: The Killer Aura reveal ends after 8 seconds and does not trigger again for that Generator."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Increased Scratch Mark suppression to 20/25/30 seconds and Killer Aura reveal on first repair of each Generator to 8 seconds.",
+    "plainEnglishSummary": "Generator completions hide your Scratch Marks temporarily, and starting each Generator for the first time reveals the Killer briefly.",
+    "cooldown": null,
+    "duration": [
+      "Scratch Mark suppression: 20/25/30 seconds after each Generator completion.",
+      "Killer Aura reveal: 8 seconds on the first repair start for each Generator."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "The Killer Aura component triggers only on the first repair start of each individual Generator.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Jane Romero",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "poised",
+    "rank": 48,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Stealth",
+      "Objective"
+    ],
+    "summary": "The first time you start repairing each Generator, reveal the Killer for 8 seconds; whenever a Generator completes, hide your Scratch Marks for up to 30 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure",
+      "solo-q"
+    ],
+    "useCases": [
+      "Use the first repair touch on a generator as an 8-second Killer location check.",
+      "Rotate safely after any generator completion with hidden Scratch Marks.",
+      "Combine objective play with passive information instead of sacrificing a slot to pure scouting."
+    ],
+    "counters": [
+      "Each generator grants the Aura read only once.",
+      "Scratch-Mark suppression after completion matters only if movement and Killer proximity make it relevant.",
+      "Undetectable or Aura-blocking effects can reduce the information value."
+    ],
+    "pros": [
+      "Strong passive value from normal objective play.",
+      "Eight-second Aura reads are long enough to guide real decisions.",
+      "Thirty-second trail suppression can cover an entire rotation."
+    ],
+    "cons": [
+      "Aura trigger is one-time per generator.",
+      "Stealth half can be wasted by poor timing.",
+      "No direct action-speed bonus."
+    ],
+    "analysis": [
+      "Poised deserves this position because its modern version quietly bundles two useful effects into ordinary generator play. Touching a fresh generator grants an eight-second Killer Aura read, which is enough time to decide whether the objective is safe before committing.",
+      "The second half triggers on any generator completion, not only one you finish. Thirty seconds without Scratch Marks can support a long rotation or a chase transition if the timing lines up with Killer pressure.",
+      "The perk is particularly good in Solo Q because it supplies information without requiring teammate coordination. You are rewarded for doing the main objective, and the information can prevent a bad repair commitment before the Killer arrives.",
+      "Poised stays in B because neither effect is under perfect player control. A generator can finish while you are nowhere near danger, and Aura denial can blunt the first-repair read. Still, the 9.2 buffs made it a much more complete perk than older rankings suggest."
+    ],
+    "verdict": "A strong passive objective-information hybrid. Poised now gives enough Killer vision and post-gen stealth to justify a real build slot, especially in Solo Q.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jane Romero"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "lightweight",
+      "fixated",
+      "quick-quiet"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Lightweight",
+      "Fixated",
+      "Quick & Quiet"
+    ],
+    "antiSynergies": []
+  }
+}

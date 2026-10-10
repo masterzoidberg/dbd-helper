@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A07",
+  "snapshotId": "A07@10.2.0-r1",
+  "perkReviews": [{ "perkId": "no-one-left-behind", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "After the generators finish, assign a safe rescuer and a route to the exit before committing to a late hook; endgame support is wasted if the team never reaches that state or the rescue cannot be converted.",
+    "verdict": {
+      "recommendation": "Check hook pressure, teammate positions and the gate route; take the rescue only when the saved player can actually leave.",
+      "soloQ": "Use visible teammate positions to avoid a duplicate rescue and do not assume someone else will cover the gate.",
+      "coordinatedSwf": "Call one rescuer, one gate assignment and the exit path before leaving the hook area.",
+      "mainWeakness": "Endgame perk slots do nothing before generator completion and a late rescue can still cost another down."
+    },
+    "loadout": { "options": [{ "perkId": "no-one-left-behind", "usage": "SUPPORT", "whyItsHere": "After all generators complete, it reveals other Survivors, speeds healing and unhooking them by 80/90/100%, and adds 10% more Haste to a Survivor you unhook; it does not create an earlier rescue window." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before the last generator completes, keep contributing to the objective; this rescue package does not pay off if the gates never become powered."],
+      "rows": [
+        { "id": "assign-late-save", "situation": "The generators are complete and a teammate is hooked while an exit route is plausible.", "action": "Identify the safe approach, who is opening a gate and who will escort the rescued player. If teammates are already converging, avoid duplicate travel.", "why": "A late unhook matters only if the team can convert it into escape rather than another hook trade." },
+        { "id": "use-endgame-support", "situation": "You can safely reach the hook after all generators are complete.", "action": "Use the teammate auras to confirm the assignment, unhook at the workable moment, and use the faster altruistic heal only if the Killer gives you a real reset window.", "why": "No One Left Behind improves post-generator teammate information and altruistic actions, but its added post-unhook Haste is not a guaranteed escape.", "enabledBy": ["perk:no-one-left-behind"] },
+        { "id": "release-failed-save", "situation": "The route is blocked, the rescue arrives too late or the saved player cannot reach a gate.", "action": "Stop forcing the hook approach; preserve a possible exit or return to the immediately useful team assignment.", "why": "Further health-state and travel costs cannot recover an expired rescue window." }
+      ],
+      "abortWhen": ["Do not take a late hook trade without a plausible exit for the rescued Survivor.", "If generators never complete, keep the objective plan rather than waiting for an endgame perk to activate."]
+    },
+    "weaknesses": ["Value is concentrated after generator completion; coordination and a viable exit route still determine whether a rescue converts."],
+    "commonMistakes": ["Sending multiple Survivors to the same late hook while no one prepares the gate.", "Treating faster unhooking or post-unhook Haste as proof that a contested route is safe."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A07#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A07@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "A07@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "A07@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "A07#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A07#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "A07#Common Mistakes" },
+    { "kind": "PERK", "ref": "no-one-left-behind#/mechanics" }
+  ]
+}

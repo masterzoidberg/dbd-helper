@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "076-080",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "ghost-notes",
+  "mechanics": {
+    "name": "Ghost Notes",
+    "alternateName": null,
+    "source": "Vee Boonyasak",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are Exhausted, your Scratch Marks disappear 50% faster and your Exhaustion recovery rate increases by 5/7.5/10%. Ghost Notes does not itself cause Exhaustion.",
+    "activation": [
+      "You must be suffering from the Exhausted status effect.",
+      "Ends/deactivates when: The effects stop when Exhausted ends."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "While Exhausted, you recover from it faster and your Scratch Marks fade faster.",
+    "cooldown": null,
+    "duration": [
+      "Applies for as long as you are Exhausted."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "Ghost Notes does not inflict Exhausted; it only affects an existing Exhausted status."
+    ],
+    "sourceCharacter": "Vee Boonyasak",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "ghost-notes",
+    "rank": 78,
+    "tier": "B",
+    "roles": [
+      "Exhaustion",
+      "Stealth",
+      "Recovery"
+    ],
+    "summary": "While Exhausted, Scratch Marks disappear 50% faster and Exhaustion recovers up to 10% faster.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "exhausted",
+      "looping"
+    ],
+    "useCases": [
+      "Pair with any Exhaustion perk to shorten downtime slightly.",
+      "Make trail tracking less reliable during the same period you are waiting for Exhaustion to recover.",
+      "Add passive value without changing activation habits."
+    ],
+    "counters": [
+      "Does nothing while you are not Exhausted.",
+      "The 10% recovery increase is much smaller than Vigil.",
+      "Only changes Scratch-Mark duration, not Blood, sound, or Aura reading."
+    ],
+    "pros": [
+      "Always passive once Exhausted.",
+      "Combines chase recovery and stealth.",
+      "Easy to use."
+    ],
+    "cons": [
+      "Low numerical ceiling.",
+      "Requires another perk or effect to cause Exhaustion.",
+      "Usually worse than Vigil as pure Exhaustion support."
+    ],
+    "analysis": [
+      "Ghost Notes lands at this position because it is a nice companion perk rather than a build centerpiece. While Exhausted, it slightly shortens the recovery period and makes Scratch Marks disappear much faster.",
+      "The stealth half is often more interesting than the recovery number. Fifty percent faster Scratch-Mark disappearance can make long chase transitions harder to read, particularly after an Exhaustion burst creates enough distance to break line of sight.",
+      "The problem is efficiency. Ten percent faster Exhaustion recovery is helpful but modest, and Vigil offers a stronger support effect that can also help nearby teammates.",
+      "Ghost Notes therefore makes sense when the user specifically wants the combination of Exhaustion support and trail disruption. As a general slot, its impact is too small for the upper tiers."
+    ],
+    "verdict": "A useful but modest Exhaustion companion. Ghost Notes adds passive trail disruption and a little recovery speed, but rarely changes a match by itself.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Vee Boonyasak"
+    },
+    "synergyPerkIds": [
+      "sprint-burst",
+      "lithe",
+      "dead-hard",
+      "vigil"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Sprint Burst",
+      "Lithe",
+      "Dead Hard",
+      "Vigil"
+    ],
+    "antiSynergies": []
+  }
+}

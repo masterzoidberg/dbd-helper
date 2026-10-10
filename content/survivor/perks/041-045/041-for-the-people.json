@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "batch": "041-045",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "for-the-people",
+  "mechanics": {
+    "name": "For the People",
+    "alternateName": null,
+    "source": "Zarina Kassir",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healthy and actively healing another Survivor without using a Med-Kit, press the Active Ability button to trade one Health State: a dying or Deep Wounded target is healed to Injured, while an injured target is healed to full health. You become injured and Broken for 80/70/60 seconds, and become the Killer's Obsession if you are not already. The perk reduces your chance of being the initial Obsession by 100%.",
+    "activation": [
+      "You must be healthy.",
+      "You must be healing another Survivor.",
+      "You must not be using a Med-Kit for that healing action.",
+      "Press the Active Ability button.",
+      "Ends/deactivates when: The active effect is consumed when used.",
+      "Ends/deactivates when: Broken lasts for 80/70/60 seconds; the healthy-state requirement also has to be met again before another use."
+    ],
+    "patchNote": "Latest live balance change (5.3.0): Reduced the duration of the Broken status effect from 110/100/90 to 80/70/60 seconds.",
+    "plainEnglishSummary": "While healing someone, you can trade one of your Health States to heal theirs instantly, at the cost of becoming injured and Broken.",
+    "cooldown": null,
+    "duration": [
+      "Self-inflicted Broken: 80/70/60 seconds (Tier I/II/III)."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "No fixed once-per-Trial limit; each use requires meeting the healthy and active-healing conditions again. The Killer can have only one Obsession at a time.",
+    "statusEffectsInvolved": [
+      "Broken",
+      "Deep Wound"
+    ],
+    "specialInteractions": [
+      "A dying or Deep Wounded target is healed to Injured; an injured target is healed to full health.",
+      "Makes you the Killer's Obsession if you are not already, while reducing your chance of being the initial Obsession by 100%."
+    ],
+    "sourceCharacter": "Zarina Kassir",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "for-the-people",
+    "rank": 41,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Rescue"
+    ],
+    "summary": "While Healthy, instantly trade one of your Health States to heal another Survivor by one state, then become Injured and Broken.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "health-state",
+      "broken",
+      "dying-state"
+    ],
+    "useCases": [
+      "Instantly pick a downed teammate back to Injured before the Killer can secure the pickup.",
+      "Turn an Injured teammate Healthy without spending normal healing time when immediate tempo matters.",
+      "Use coordinated health-state trades to deny a snowball or save a teammate on death hook."
+    ],
+    "counters": [
+      "You must be Healthy and cannot perform the activation while using a Med-Kit.",
+      "You become Injured and Broken for up to 60 seconds at Tier III.",
+      "Poor timing can simply transfer the Killer's pressure from one vulnerable Survivor to another."
+    ],
+    "pros": [
+      "Instant healing can deny a down or save several seconds at a critical moment.",
+      "Extremely strong in coordinated teams that know when the health-state trade is worth it.",
+      "Can change who the Killer is able to pressure immediately."
+    ],
+    "cons": [
+      "Costs your own Healthy state.",
+      "Broken prevents an immediate reset afterward.",
+      "Solo Q teammates may not capitalize on the tempo you create."
+    ],
+    "analysis": [
+      "For the People ranks this position because instant health-state transfers can produce some of the sharpest Survivor tempo swings outside a direct save perk. A teammate on the ground can be returned to Injured immediately, denying the Killer a comfortable pickup if the timing is right.",
+      "The perk is especially dangerous in SWF because the team can engineer the trade. A Healthy Survivor knows exactly when to step in, the recipient knows to move immediately, and the rest of the team can cover the now-Injured user. That coordination can turn one expected hook into two mobile Survivors.",
+      "The cost prevents the perk from ranking much higher. You do not create a free health state; you move one from yourself to someone else and accept Broken afterward. In a poor position, the Killer can simply hit the new Injured target or switch to you. The perk therefore rewards situational judgment more than raw button timing.",
+      "For the People is strongest when one Survivor's continued mobility matters more than your own Healthy state, such as protecting someone on death hook or breaking a slugging sequence. It is not an every-heal perk. Used sparingly, it is excellent; used casually, it can make the team easier to pressure."
+    ],
+    "verdict": "An elite emergency health-state trade, not a routine heal. For the People is powerful because it changes timing instantly, but the user must know when sacrificing their own safety is actually worth it.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Tempo"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Zarina Kassir"
+    },
+    "synergyPerkIds": [
+      "were-gonna-live-forever",
+      "made-for-this",
+      "dead-hard",
+      "shoulder-the-burden"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "We're Gonna Live Forever",
+      "Made for This",
+      "Dead Hard",
+      "Shoulder the Burden"
+    ],
+    "antiSynergies": []
+  }
+}

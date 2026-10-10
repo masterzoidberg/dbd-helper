@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "batch": "031-035",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "quick-quiet",
+  "mechanics": {
+    "name": "Quick & Quiet",
+    "alternateName": null,
+    "source": "Meg Thomas",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you perform a Rushed action to vault over a Pallet or Window or to enter or exit a Locker, suppresses all noises related to the interaction and its accompanying Loud Noise Notification. The perk has a 25/20/15-second cooldown.",
+    "activation": [
+      "Perform a Rushed vault over a Pallet or Window, or a Rushed Locker entry or exit.",
+      "Ends/deactivates when: The suppression applies to that qualifying interaction; the perk is then unavailable during its cooldown."
+    ],
+    "patchNote": "Latest live balance change (8.6.0): Reduced cooldown to 25/20/15 seconds and expanded suppression to all interaction noises instead of only reducing the Loud Noise Notification range.",
+    "plainEnglishSummary": "Rushed vaults and Locker entries or exits are silent and do not create their usual Loud Noise Notification, subject to cooldown.",
+    "cooldown": "25/20/15 seconds.",
+    "duration": [
+      "Suppresses noises associated with the qualifying interaction and its accompanying Loud Noise Notification."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Meg Thomas",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "quick-quiet",
+    "rank": 32,
+    "tier": "A",
+    "roles": [
+      "Chase",
+      "Stealth",
+      "Locker"
+    ],
+    "summary": "Every 15 seconds at Tier III, a Rushed vault or Locker entry/exit can be completely silent and suppress its Loud Noise Notification.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium–High",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "looping",
+      "pressure"
+    ],
+    "useCases": [
+      "Break line of sight and perform a silent Rushed vault so the Killer loses the expected audio and notification cue.",
+      "Enter a Locker quickly without advertising the interaction, enabling Head On or stealth mindgames.",
+      "Use repeated 15-second-cycle activations during longer chases to create uncertainty at windows and pallets."
+    ],
+    "counters": [
+      "The 15-second cooldown can be tracked and exploited by an attentive Killer.",
+      "Visual confirmation or direct tracking can make the missing sound irrelevant.",
+      "A silent action only matters if the Survivor actually creates uncertainty about their route."
+    ],
+    "pros": [
+      "Patch 8.6.0 improved both cooldown and audio suppression.",
+      "Works with windows, pallets, and Locker entries or exits.",
+      "Can create genuine chase mindgames without requiring a special item or teammate."
+    ],
+    "cons": [
+      "Provides no direct speed or health-state protection.",
+      "Value depends heavily on line-of-sight breaks and player creativity.",
+      "Less useful against Killers whose power or tracking makes the route obvious anyway."
+    ],
+    "analysis": [
+      "Quick & Quiet lands at this position because the modern version is substantially better than the old 'hide the loud-noise bubble' perk. Since 8.6.0, it suppresses the interaction noises themselves and can be available every 15 seconds at Tier III, which makes it a repeatable chase tool rather than a once-in-a-while stealth gimmick.",
+      "Its strength comes from information denial. Killers often make chase decisions using sound before they regain visual contact. If a Survivor disappears behind a wall and the expected vault sound never occurs, the Killer must spend time verifying the route. That hesitation can create more distance than a raw percentage bonus would suggest.",
+      "The perk also has excellent build synergy. Head On turns silent Locker entries into a direct stun threat, Lithe can pair a silent vault with immediate distance, and Deception can create competing Locker information. Even without a dedicated build, a good looper can use Quick & Quiet to make familiar tiles harder to read.",
+      "It ranks below Head On because the payoff is indirect. Quick & Quiet does not force the Killer to lose time; the Survivor must construct a believable mindgame. That makes it stronger in experienced hands and weaker for players who simply vault silently but continue running along the most obvious path."
+    ],
+    "verdict": "A deceptively strong information-denial perk after its modern buffs. Quick & Quiet rewards players who understand how Killers use sound and can turn one missing cue into a real pathing mistake.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Meg Thomas"
+    },
+    "synergyPerkIds": [
+      "head-on",
+      "lithe",
+      "deception",
+      "lucky-break"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Head On",
+      "Lithe",
+      "Deception",
+      "Lucky Break"
+    ],
+    "antiSynergies": []
+  }
+}

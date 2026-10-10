@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "batch": "171-175",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "mirrored-illusion",
+  "mechanics": {
+    "name": "Mirrored Illusion",
+    "alternateName": null,
+    "source": "Aestri Yazar",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you have repaired Generators for a total of 20% progression, press the Active Ability button while next to a Chest, Exit Gate, Generator, or Totem to create a Static Illusion of that prop. The illusion lasts for the tier duration. The perk deactivates after successfully creating an illusion.",
+    "activation": [
+      "Repair Generators for 20% total progression.",
+      "Be next to a Chest, Exit Gate, Generator, or Totem and press the Active Ability button.",
+      "Ends/deactivates when: Deactivates after successfully triggering the illusion."
+    ],
+    "patchNote": "Latest live balance change (8.2.0): Reduced required Generator repair progression from 50% to 20% and reduced illusion duration from 100/110/120 to 40/50/60 seconds.",
+    "plainEnglishSummary": "After repairing 20% total generator progress, you can create a temporary static decoy beside a listed prop.",
+    "cooldown": null,
+    "duration": [
+      "Static Illusion: 40/50/60 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "No explicit once-per-Trial limit is stated; the perk deactivates after a successful trigger and requires its activation condition again to be available for another use.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Aestri Yazar",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "mirrored-illusion",
+    "rank": 175,
+    "tier": "D",
+    "roles": [
+      "Stealth",
+      "Utility"
+    ],
+    "summary": "After enough Generator repair, create a temporary static decoy beside a Chest, Exit Gate, Generator, or Totem.",
+    "metaStatus": "Weak",
+    "skillLevel": "Medium",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [],
+    "useCases": [
+      "Place a distant decoy where the Killer might waste a quick glance or ranged action.",
+      "Mask the exact position of a real objective from far away.",
+      "Use creative prop placement for occasional mindgames."
+    ],
+    "counters": [
+      "The illusion looks obviously artificial at close range.",
+      "Requires 20% repair before each activation cycle.",
+      "The Killer can ignore it without losing anything."
+    ],
+    "pros": [
+      "Creative and funny mindgame potential.",
+      "Can be placed on several prop categories.",
+      "Long enough duration for a distant visual fake."
+    ],
+    "cons": [
+      "Weak visual deception up close.",
+      "No guaranteed interaction or slowdown.",
+      "Repair setup for a purely psychological effect."
+    ],
+    "analysis": [
+      "Mirrored Illusion is a visual bluff rather than mechanical power. The decoy can occasionally make a Killer spend attention on the wrong object, particularly from long range or in a rushed rotation.",
+      "The problem is fidelity. The illusion is visibly holographic at close range, and experienced Killers have little reason to commit meaningful time to verifying it.",
+      "The perk also requires generator contribution before use, which means a productive action is being converted into an effect that may generate zero measurable delay.",
+      "That keeps Mirrored Illusion near the bottom. It can create memorable stories and clever clips without offering enough repeatable match value for a serious ranking."
+    ],
+    "verdict": "Great theater, weak economics. Mirrored Illusion can fool attention for a moment, but rarely fools the Killer long enough to justify the slot.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Misdirection",
+      "Gimmick"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Aestri Yazar"
+    },
+    "synergyPerkIds": [
+      "diversion",
+      "red-herring",
+      "deception",
+      "blast-mine"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Diversion",
+      "Red Herring",
+      "Deception",
+      "Blast Mine"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "batch": "086-090",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "no-one-left-behind",
+  "mechanics": {
+    "name": "No One Left Behind",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "When all Generators are completed, you see the Auras of other Survivors and heal and unhook other Survivors 80/90/100% faster. Whenever you unhook a Survivor, they gain 10% more Haste.",
+    "activation": [
+      "All Generators must be completed.",
+      "Ends/deactivates when: The effects are inactive until all Generators are completed; once activated, they last through the remainder of the Trial."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Raised the healing-other-Survivors and unhook speed bonuses from 50/75/100% to 80/90/100%; existing Aura and post-unhook Haste enhancement remain.",
+    "plainEnglishSummary": "After the Generators are finished, you see teammates, heal and unhook them much faster, and increase the Haste of Survivors you unhook.",
+    "cooldown": null,
+    "duration": [
+      "Aura reading and action-speed effects: from all Generators completed until the Trial ends.",
+      "The additional Haste applies to the rescued Survivor's post-unhook Haste effect."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The unhook effect increases the rescued Survivor's existing post-unhook Haste by 10%; the patch notes express this as '10% more Haste' rather than a standalone total."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "no-one-left-behind",
+    "rank": 88,
+    "tier": "B",
+    "roles": [
+      "Endgame",
+      "Rescue",
+      "Healing"
+    ],
+    "summary": "Once the Exit Gates are powered, see every teammate, heal and unhook up to 100% faster, and give Survivors you unhook 20% Haste for 10 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "hook-state",
+      "haste",
+      "aura-reading",
+      "health-state"
+    ],
+    "useCases": [
+      "Turn a dangerous endgame hook into a much faster rescue interaction.",
+      "Use global teammate Auras to understand who is at gates, hooked, injured, or moving for a save.",
+      "Give the rescued Survivor a huge 20% Haste window to reach safety."
+    ],
+    "counters": [
+      "Does absolutely nothing before the Exit Gates are powered.",
+      "A match that collapses before endgame leaves the slot dead.",
+      "Endgame Killer powers can still overpower the rescue despite the speed.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit."
+    ],
+    "pros": [
+      "Extremely strong endgame numbers.",
+      "Global teammate information.",
+      "Combines rescue speed, healing speed, and post-unhook mobility."
+    ],
+    "cons": [
+      "Dead for the majority of every Trial.",
+      "Requires the team to reach powered gates.",
+      "Cannot help the team get to endgame."
+    ],
+    "analysis": [
+      "No One Left Behind takes this position because its endgame package is extraordinary. Once the gates are powered, healing and unhooking can be twice as fast at Tier III, every teammate becomes visible, and an unhooked Survivor receives 20% Haste for fifteen seconds.",
+      "Those effects are exactly what an endgame rescue needs. Faster interaction reduces the window for interruption, the Aura layer tells you where everyone is positioned, and the Haste can carry the rescued player out of a collapsing hook area.",
+      "The ranking penalty is entirely activation timing. The perk contributes zero value to the first five generators, which means it cannot help repair a losing match into a winning one. That is the same structural issue that holds Hope back, only more severe because No One Left Behind is primarily rescue-focused.",
+      "If your build is intentionally designed around endgame heroics, the perk can perform far above this position. As a blind general slot, however, we cannot ignore how long it stays completely dormant."
+    ],
+    "verdict": "A spectacular endgame rescue perk with a brutal opportunity cost: it does nothing until the gates are powered. When active, its numbers are genuinely excellent.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      80,
+      100
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "stable",
+    "evidenceStatus": "strong-inference",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "hope",
+      "babysitter",
+      "borrowed-time",
+      "kindred"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Hope",
+      "Babysitter",
+      "Borrowed Time",
+      "Kindred"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -10,7 +10,10 @@
     "source": "William \"Bill\" Overbeck",
     "status": "Live 10.2.0",
     "currentEffect": "When the Killer puts you into the Dying State, increases your Recovery speed by 25/30/35%, unlocks Self-Recovery to fully recover from the Dying State, and limits that full recovery to once per Trial.",
-    "activation": ["The Killer must put you into the Dying State.","Ends/deactivates when: The full Self-Recovery ability is consumed after one use in the Trial."],
+    "activation": [
+      "The Killer must put you into the Dying State.",
+      "Ends/deactivates when: The full Self-Recovery ability is consumed after one use in the Trial."
+    ],
     "patchNote": "Latest live balance change (9.5.0): Restricted activation to when the Killer puts you into the Dying State.",
     "plainEnglishSummary": "After the Killer downs you, you recover faster and can pick yourself up from the Dying State once per Trial.",
     "cooldown": null,
@@ -18,28 +21,59 @@
     "tokenOrStackBehavior": null,
     "oncePerTrialOrOtherLimits": "Full Self-Recovery can be used once per Trial.",
     "statusEffectsInvolved": [],
-    "specialInteractions": ["The current activation condition specifies being put in the Dying State by the Killer."],
+    "specialInteractions": [
+      "The current activation condition specifies being put in the Dying State by the Killer."
+    ],
     "sourceCharacter": "William \"Bill\" Overbeck",
     "isGeneralPerk": false,
     "currentLivePatchVerified": "10.2.0"
   },
   "editorial": {
+    "id": "unbreakable",
     "rank": 5,
     "tier": "S",
-    "roles": ["Anti-Slug","Utility"],
+    "roles": [
+      "Anti-Slug",
+      "Utility"
+    ],
     "summary": "Recover faster after the Killer downs you and fully pick yourself up once per Trial.",
     "metaStatus": "Elite",
     "skillLevel": "Low",
     "soloQ": 5,
     "swf": 5,
     "unlockPriority": "Very High",
-    "glossaryKeys": ["slugging","anti-slug","dying-state","snowball"],
-    "useCases": ["Stop multi-Survivor slug snowballs.","Punish Killers who leave you downed to chase another Survivor.","Create a surprise recovery during endgame or pickup-denial situations."],
-    "counters": ["A Killer who hooks promptly can deny the self-pickup.","The once-per-Trial recovery can be baited out early.","Some Killers can return before you finish recovering."],
-    "synergies": ["Will to Live","Tenacity","Soul Guard","Flip-Flop"],
-    "pros": ["Can single-handedly reverse a losing slug situation.","Faster recovery provides value even if a teammate completes the pickup.","Very easy to use correctly."],
-    "cons": ["Can be a dead slot against Killers who never slug.","Full recovery is limited to one use.","Requires the Killer to cause the Dying State under the current version."],
-    "analysis": ["Unbreakable is the classic anti-slug benchmark because it attacks the exact moment when Killer pressure is most likely to snowball. One Survivor down is manageable. Two or three Survivors down at once can end the match. The ability to stand up without another teammate can break that chain entirely.","The 25/30/35% recovery-speed bonus matters more than the dramatic self-pickup gets credit for. Even when a teammate is coming to rescue you, faster recovery reduces the time they must spend finishing the pickup. In other words, the perk has a smaller efficiency benefit before it ever cashes in its once-per-Trial headline effect.","Its weakness is pure matchup consistency. Some Killers hook almost every down immediately, and in those matches the perk may do very little. But when slugging is the correct Killer play, Unbreakable can transform a match-losing position into a reset. That ceiling is high enough to keep it near the top despite occasional zero-value games.","For Solo Q, the independence is especially important because you cannot guarantee that a random teammate understands when to stop a gen and pick you up. SWF teams can deliberately exploit the threat of Unbreakable to make aggressive pickup-denial and bodyblock plays much safer."],
+    "glossaryKeys": [
+      "slugging",
+      "anti-slug",
+      "dying-state",
+      "snowball"
+    ],
+    "useCases": [
+      "Stop multi-Survivor slug snowballs.",
+      "Punish Killers who leave you downed to chase another Survivor.",
+      "Create a surprise recovery during endgame or pickup-denial situations."
+    ],
+    "counters": [
+      "A Killer who hooks promptly can deny the self-pickup.",
+      "The once-per-Trial recovery can be baited out early.",
+      "Some Killers can return before you finish recovering."
+    ],
+    "pros": [
+      "Can single-handedly reverse a losing slug situation.",
+      "Faster recovery provides value even if a teammate completes the pickup.",
+      "Very easy to use correctly."
+    ],
+    "cons": [
+      "Can be a dead slot against Killers who never slug.",
+      "Full recovery is limited to one use.",
+      "Requires the Killer to cause the Dying State under the current version."
+    ],
+    "analysis": [
+      "Unbreakable is the classic anti-slug benchmark because it attacks the exact moment when Killer pressure is most likely to snowball. One Survivor down is manageable. Two or three Survivors down at once can end the match. The ability to stand up without another teammate can break that chain entirely.",
+      "The 25/30/35% recovery-speed bonus matters more than the dramatic self-pickup gets credit for. Even when a teammate is coming to rescue you, faster recovery reduces the time they must spend finishing the pickup. In other words, the perk has a smaller efficiency benefit before it ever cashes in its once-per-Trial headline effect.",
+      "Its weakness is pure matchup consistency. Some Killers hook almost every down immediately, and in those matches the perk may do very little. But when slugging is the correct Killer play, Unbreakable can transform a match-losing position into a reset. That ceiling is high enough to keep it near the top despite occasional zero-value games.",
+      "For Solo Q, the independence is especially important because you cannot guarantee that a random teammate understands when to stop a gen and pick you up. SWF teams can deliberately exploit the threat of Unbreakable to make aggressive pickup-denial and bodyblock plays much safer."
+    ],
     "verdict": "The premier anti-slug perk. It is not guaranteed to trigger every match, but when the Killer tries to snowball on the ground, few Survivor perks can swing the game harder.",
     "editorialStatus": "complete",
     "publicationStatus": "published",
@@ -49,12 +83,29 @@
     "rankConfidence": "Not assessed",
     "rankStatus": "inherited",
     "evidenceStatus": "inherited",
-    "acquisition": {"type":"character","sourceCharacter":"William \"Bill\" Overbeck"},
-    "synergyPerkIds": ["will-to-live","tenacity","soul-guard","flip-flop"],
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "William \"Bill\" Overbeck"
+    },
+    "synergyPerkIds": [
+      "will-to-live",
+      "tenacity",
+      "soul-guard",
+      "flip-flop"
+    ],
     "synergyOther": [],
     "antiSynergyPerkIds": [],
-    "antiSynergies": [],
     "archetypeRatings": [],
-    "reviewFlags": ["v15-schema-migrated","queue-rating:normalized-tier-plus-v14-specialization-signal"]
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Will to Live",
+      "Tenacity",
+      "Soul Guard",
+      "Flip-Flop"
+    ],
+    "antiSynergies": []
   }
 }

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "121-125",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "reactive-healing",
+  "mechanics": {
+    "name": "Reactive Healing",
+    "alternateName": null,
+    "source": "Ada Wong",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever another Survivor within 32 metres loses a Health State by any means while you are in the Injured State, grants you 40/45/50% of your missing Healing Progress toward your Health Bar. Repeated triggers can provide additional progress; the effect rounds up to full health when only a tiny amount of healing is missing.",
+    "activation": [
+      "Be in the Injured State when another Survivor within 32 metres loses a Health State by any means.",
+      "Ends/deactivates when: The instant Healing Progress grant occurs on each qualifying event; no separate timed effect is stated."
+    ],
+    "patchNote": "Latest live balance change (7.1.1): Added rounding up to 100% healing when only a tiny amount of Healing Progress is missing.",
+    "plainEnglishSummary": "A nearby teammate losing a Health State gives you part of the Healing Progress you still need while you are injured.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 7.1.1 live update changed rounding so a trigger that leaves only a tiny amount of healing missing completes the Health State."
+    ],
+    "sourceCharacter": "Ada Wong",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "reactive-healing",
+    "rank": 125,
+    "tier": "C",
+    "roles": [
+      "Healing",
+      "Information"
+    ],
+    "summary": "While injured, a nearby teammate losing a Health State instantly grants up to 50% of your missing healing progress.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "health-state",
+      "reset"
+    ],
+    "useCases": [
+      "Passively gain healing progress while another nearby Survivor is being pressured.",
+      "Combine multiple triggers to approach or complete a heal without spending equivalent healing time.",
+      "Pair the free progress with a Med-Kit or teammate heal to finish the remaining portion quickly."
+    ],
+    "counters": [
+      "You must already be Injured.",
+      "Another Survivor must lose a Health State within 32 metres.",
+      "The perk does not automatically complete a full heal from a fresh Injured state in one ordinary trigger."
+    ],
+    "pros": [
+      "Free healing progress with no action time.",
+      "Can trigger repeatedly.",
+      "Useful in chaotic multi-Survivor pressure situations."
+    ],
+    "cons": [
+      "Entirely dependent on nearby teammates taking damage.",
+      "Does not provide a controlled heal on demand.",
+      "Can encourage staying injured while hoping for a trigger."
+    ],
+    "analysis": [
+      "Reactive Healing ranks this position because free healing progress is always attractive, but the trigger belongs to the Killer and your teammates rather than you. When another Survivor within 32 metres loses a Health State while you are Injured, half of your missing healing progress can appear instantly at Tier III.",
+      "That progress is most valuable when it shortens a later interaction. A teammate or Med-Kit only needs to finish the remainder, and repeated triggers can push the bar even farther. In chaotic matches, the perk can quietly save a meaningful amount of reset time.",
+      "The downside is control. If the team spreads out well or the Killer chases far away, Reactive Healing may sit idle. If everyone is nearby taking repeated hits, the team already has a larger pressure problem.",
+      "It remains B because the perk can be wonderfully efficient without being reliable. Think of it as opportunistic free progress rather than a self-heal plan."
+    ],
+    "verdict": "Free healing progress is good; relying on teammates getting hit nearby is not. Reactive Healing is a nice tempo bonus when chaos happens naturally.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Passive Recovery",
+      "Solo Q"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ada Wong"
+    },
+    "synergyPerkIds": [
+      "resurgence",
+      "botany-knowledge",
+      "self-care"
+    ],
+    "synergyOther": [
+      "Med-Kits"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Resurgence",
+      "Botany Knowledge",
+      "Self-Care",
+      "Med-Kits"
+    ],
+    "antiSynergies": []
+  }
+}

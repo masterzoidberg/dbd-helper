@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "101-105",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "buckle-up",
+  "mechanics": {
+    "name": "Buckle Up",
+    "alternateName": null,
+    "source": "Ash Williams",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healing a Survivor in the Dying State, you both see the Killer's Aura. When you finish healing them into the Injured State, the healed Survivor leaves no Scratch Marks and gains 50% Haste for 3/4/5 seconds.",
+    "activation": [
+      "Heal another Survivor from the Dying State to Injured.",
+      "Ends/deactivates when: Killer Aura reading applies while the healing interaction is in progress.",
+      "Ends/deactivates when: Haste and Scratch Mark suppression end after 3/4/5 seconds."
+    ],
+    "patchNote": "Latest live balance change (8.0.0): Reworked the perk to its current Dying-State healing and post-heal Haste effect.",
+    "plainEnglishSummary": "Healing a downed teammate reveals the Killer, then gives the rescued teammate a brief Haste burst and hides their Scratch Marks.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reading while healing.",
+      "Post-heal Haste and no Scratch Marks: 3/4/5 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "Both you and the healed Survivor see the Killer's Aura while healing a Survivor in the Dying State."
+    ],
+    "sourceCharacter": "Ash Williams",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "buckle-up",
+    "rank": 103,
+    "tier": "B",
+    "roles": [
+      "Anti-Slug",
+      "Recovery",
+      "Mobility"
+    ],
+    "summary": "While healing a downed teammate, both of you can see the Killer; completing the pickup gives the rescued Survivor a strong Haste burst and hides their Scratch Marks.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "dying-state",
+      "aura-reading",
+      "haste",
+      "anti-slug"
+    ],
+    "useCases": [
+      "Read whether the Killer is returning while you attempt a ground pickup.",
+      "Give the recovered teammate enough Haste to escape the immediate area.",
+      "Use Scratch-Mark suppression to make the revived Survivor's exit route harder to follow."
+    ],
+    "counters": [
+      "Only helps during Dying-State heals.",
+      "The speed and stealth benefits go to the recovered Survivor, not the healer.",
+      "If the Killer hooks promptly, the perk never matters."
+    ],
+    "pros": [
+      "Built-in Killer information during the risky heal.",
+      "Strong escape burst for the recovered teammate.",
+      "Easy to understand."
+    ],
+    "cons": [
+      "Slugging-dependent.",
+      "No protection for the healer.",
+      "Less powerful than older versions players may remember."
+    ],
+    "analysis": [
+      "Buckle Up takes this position because the current version still has useful anti-slug value even though it no longer carries the infamous protection package of older metas. The Killer Aura during the heal tells both players whether finishing the pickup is safe.",
+      "Once the teammate reaches Injured, their Haste burst can create substantial immediate distance, while hidden Scratch Marks make the path harder to track after line of sight breaks.",
+      "The perk's weakness is opportunity. A Killer who hooks downed Survivors normally gives Buckle Up almost nothing to do. Even during slugging, the healer remains vulnerable to interruption.",
+      "That makes it a competent recovery-support perk rather than a meta staple. It works well in anti-slug builds, but does not deserve a slot in every match."
+    ],
+    "verdict": "A useful modern anti-slug support perk. Buckle Up helps the recovered Survivor escape, but its old reputation should not inflate the strength of the current version.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ash Williams"
+    },
+    "synergyPerkIds": [
+      "were-gonna-live-forever",
+      "conviction",
+      "soul-guard",
+      "empathy"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "We're Gonna Live Forever",
+      "Conviction",
+      "Soul Guard",
+      "Empathy"
+    ],
+    "antiSynergies": []
+  }
+}

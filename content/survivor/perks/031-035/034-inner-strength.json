@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "031-035",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "inner-strength",
+  "mechanics": {
+    "name": "Inner Strength",
+    "alternateName": null,
+    "source": "Nancy Wheeler",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you cleanse a Totem, Inner Strength activates. While active, hide in a Locker for 10/9/8 seconds to heal yourself by one Health State. It deactivates after healing and cannot be used while you are Broken. Cleansing another Totem can activate it again.",
+    "activation": [
+      "Cleanse a Totem; blessing a Totem does not activate the perk.",
+      "While activated, remain hidden inside a Locker for 10/9/8 seconds.",
+      "You must not be suffering from Broken when attempting to use it.",
+      "Ends/deactivates when: Deactivates after healing one Health State."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Cleansing a Totem lets you heal one Health State by hiding in a Locker for the tier's stated time.",
+    "cooldown": null,
+    "duration": [
+      "Locker channel required: 10/9/8 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Broken (prevents use)"
+    ],
+    "specialInteractions": [
+      "Heals the user by one Health State, including Dying to Injured or Injured to Healthy."
+    ],
+    "sourceCharacter": "Nancy Wheeler",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "inner-strength",
+    "rank": 34,
+    "tier": "A",
+    "roles": [
+      "Healing",
+      "Self-Sustain",
+      "Totem"
+    ],
+    "summary": "Cleanse a Totem, then spend 8 seconds in a Locker at Tier III to heal yourself by one Health State.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low–Medium",
+    "soloQ": 5,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "health-state",
+      "reset",
+      "broken"
+    ],
+    "useCases": [
+      "Create a guaranteed self-heal without needing a teammate or Med-Kit.",
+      "Bank the heal before a dangerous rescue or objective so it is ready when you later become injured.",
+      "Turn necessary Hex cleansing into future personal sustain."
+    ],
+    "counters": [
+      "Requires finding and cleansing a Totem before the heal becomes available.",
+      "Cannot be used while Broken.",
+      "The cleansing plus Locker time can be slower overall than simply receiving a fast teammate heal."
+    ],
+    "pros": [
+      "Reliable self-sustain once charged.",
+      "Does not depend on teammate availability or healing coordination.",
+      "Can be activated repeatedly by cleansing additional Totems."
+    ],
+    "cons": [
+      "Consumes Totems that may have value for Boons or other perk interactions.",
+      "Requires setup time before any healing value exists.",
+      "Locker travel and hiding time can be awkward during active pressure."
+    ],
+    "analysis": [
+      "Inner Strength ranks this position because it offers one of the cleanest forms of independent Survivor healing. After cleansing a Totem, the player has a banked health state that can be redeemed by spending eight seconds in a Locker at Tier III. That independence is particularly valuable in Solo Q, where finding a teammate for a safe heal can be unreliable.",
+      "The perk is strongest when the Totem cleanse was useful anyway. Removing a Hex and receiving a future heal is excellent value because the setup is not wasted time. Even on a Dull Totem, the ability to pre-charge a heal and use it later can support aggressive rescues or generator commitments without needing to carry a Med-Kit.",
+      "The real cost is that the full interaction includes finding the Totem, cleansing it, reaching a Locker, and spending the eight seconds inside. If a teammate is standing next to you ready to heal, Inner Strength is often less efficient. It also competes with the team's Boon economy, which can matter in builds centered around Shadow Step or other Boons.",
+      "It rates well because the effect is dependable after setup and solves a genuine Solo Q problem. It does not climb higher because that setup cost is real, and good teams can often produce faster resets through ordinary healing."
+    ],
+    "verdict": "A dependable self-heal with meaningful setup. Inner Strength shines when independence matters, especially in Solo Q, but it is not free healing once Totem and Locker time are counted.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Nancy Wheeler"
+    },
+    "synergyPerkIds": [
+      "quick-quiet",
+      "head-on",
+      "counterforce",
+      "overzealous"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Quick & Quiet",
+      "Head On",
+      "Counterforce",
+      "Overzealous"
+    ],
+    "antiSynergies": []
+  }
+}

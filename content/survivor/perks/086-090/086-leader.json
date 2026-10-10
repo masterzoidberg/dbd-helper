@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "086-090",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "leader",
+  "mechanics": {
+    "name": "Leader",
+    "alternateName": null,
+    "source": "Dwight Fairfield",
+    "status": "Live 10.2.0",
+    "currentEffect": "All other Survivors within 10 m of you gain 20/25/30% action speed for Cleansing, Gate-Opening, Healing, Sabotaging, Unhooking, and Unlocking. The effect lingers for 15 seconds after leaving the radius. A Survivor can be affected by only one instance of Leader at a time; the perk owner does not benefit from their own Leader.",
+    "activation": [
+      "Another Survivor must be within 10 m of you to receive the action-speed bonus.",
+      "Ends/deactivates when: For each affected Survivor, the bonus ends 15 seconds after leaving the 10 m radius."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Raised the action-speed bonus to 20/25/30% from 15/20/25% and increased the radius to 10 m from 8 m.",
+    "plainEnglishSummary": "Nearby teammates gain faster listed actions, with the bonus lingering briefly after they leave your radius.",
+    "cooldown": null,
+    "duration": [
+      "Linger after leaving range: 15 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "Each Survivor can benefit from only one instance of Leader at a time.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The perk affects other Survivors, not its owner."
+    ],
+    "sourceCharacter": "Dwight Fairfield",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "leader",
+    "rank": 86,
+    "tier": "B",
+    "roles": [
+      "Team Support",
+      "Healing"
+    ],
+    "summary": "Nearby teammates perform several non-generator actions 30% faster, including healing, unhooking, sabotaging, cleansing, unlocking, and opening Exit Gates.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "swf",
+      "reset",
+      "hook-state"
+    ],
+    "useCases": [
+      "Speed up a teammate healing you without needing to equip a personal healing-speed perk.",
+      "Accelerate endgame gate opening and contested unhooks.",
+      "Support sabotage and cleansing plays when teammates are operating nearby."
+    ],
+    "counters": [
+      "You do not benefit from your own Leader.",
+      "Teammates must be nearby to receive the effect.",
+      "It does not increase generator repair speed."
+    ],
+    "pros": [
+      "Broad action-speed package.",
+      "Thirty percent is substantial.",
+      "Linger keeps the buff active briefly after leaving range."
+    ],
+    "cons": [
+      "No self-benefit.",
+      "Requires proximity.",
+      "Excludes generator repair."
+    ],
+    "analysis": [
+      "Leader takes this position because thirty percent faster action speed across several important interactions is a strong support package. Healing, unhooking, gate opening, cleansing, sabotage, and chest interactions all occur often enough that the perk can find value throughout a match.",
+      "The most practical interaction is often a teammate healing you. Because the perk owner cannot benefit from Leader directly, the value appears when another Survivor performs the action near you. That design makes it more naturally supportive than self-sufficient.",
+      "Endgame is another strong phase. Faster gate opening and unhooking can matter enormously under pressure, and the brief linger means teammates can begin the interaction near you without remaining attached to your position for the entire duration.",
+      "Leader stays in B because its strongest effects depend on another Survivor being nearby and performing the right action. It is broad but not individually empowering, which is why coordinated groups usually get more from it than isolated Solo Q players."
+    ],
+    "verdict": "A strong general support aura with a meaningful 30% bonus. Leader does many useful things, but always through someone else.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Support",
+      "Action Speed",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Dwight Fairfield"
+    },
+    "synergyPerkIds": [
+      "prove-thyself",
+      "bond",
+      "no-one-left-behind",
+      "well-make-it"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Prove Thyself",
+      "Bond",
+      "No One Left Behind",
+      "We'll Make It"
+    ],
+    "antiSynergies": []
+  }
+}

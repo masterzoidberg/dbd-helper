@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G04",
+  "snapshotId": "G04@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "prove-thyself", "mechanicsRevision": 1 },
+    { "perkId": "friendly-competition", "mechanicsRevision": 1 },
+    { "perkId": "leader", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Pair on a selected generator only when the burst or post-finish benefit repays lost map-wide labor, then split or hand off as soon as the cooperative window ends.",
+    "verdict": {
+      "recommendation": "Use deliberate teammate stacking for a key generator, not as a default repair posture. Prove Thyself and Friendly Competition reward different moments, while Leader supports nearby actions but does not speed generator repair.",
+      "soloQ": "Take a cooperative repair window when another Survivor is already present and the target is worth finishing. Leave the stack when teammates do not follow the plan or a different generator or rescue needs coverage.",
+      "coordinatedSwf": "Call the target, who is stacking and where each player will split after completion. Coordination is the core dependency, but the canonical recommendation still depends on the team's time and map state.",
+      "mainWeakness": "Two Survivors on one generator reduce map-wide labor, and the perks are inert or inefficient when the partner is absent, the target is poor or the Killer turns the stack into pressure."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "cooperative-repair-module",
+          "label": "Cooperative repair tools",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source names a cooperative framework but no canonical BuildImplementation. These exact perks cover shared repair, a post-finish tempo bonus and nearby team support without inventing the remaining slot.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Create a deliberate co-op repair burst",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "prove-thyself",
+                  "whyItsHere": "While repairing within 4 metres of other Survivors, share the stackable 6/8/10% per nearby Survivor bonus up to 18/24/30%. Use it for a target worth finishing, not every generator."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Carry a cooperative finish into the split",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "friendly-competition",
+                  "whyItsHere": "Finish a generator with at least one other Survivor to give every finisher 10% faster repair for 80/85/90 seconds, then spread the team back across useful objectives."
+                }
+              ]
+            },
+            {
+              "slot": 3,
+              "role": "Support nearby non-generator work",
+              "usage": "FLEX",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "leader",
+                  "whyItsHere": "Give other Survivors within 10 metres 20/25/30% faster Cleansing, Gate-Opening, Healing, Sabotaging, Unhooking and Unlocking, with a 15-second linger. Leader does not increase generator repair and does not benefit its owner."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "item": {
+        "id": "toolbox",
+        "status": "OPTIONAL",
+        "name": "Toolbox",
+        "why": "The snapshot calls Toolboxes optional. Use one only when the coordinated target and charge spend are agreed; no add-on or fixed item package is established."
+      }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Before stacking, name the generator that must finish and the job each player will take afterward. If there is no target or split plan, repair separately and preserve map-wide labor."
+      ],
+      "rows": [
+        {
+          "id": "choose-the-coop-target",
+          "situation": "Another Survivor is reachable and a selected generator is more valuable finished now than two separate repairs.",
+          "action": "Call the target, confirm the exit and start the cooperative repair only while the team can afford the temporary concentration. Do not stack a safe low-value generator just to activate a perk.",
+          "why": "The strategy's payoff is burst on a selected target; the opportunity cost is lost map coverage."
+        },
+        {
+          "id": "use-prove-thyself",
+          "situation": "You and at least one other Survivor are repairing within Prove Thyself's 4-metre range.",
+          "action": "Use the shared 6/8/10% per other Survivor bonus up to 18/24/30% to finish the chosen target, then leave the stack when its completion no longer needs both players.",
+          "why": "Prove Thyself has no value on a solo repair and can turn into inefficient stacking when the target is not critical.",
+          "enabledBy": ["perk:prove-thyself"]
+        },
+        {
+          "id": "finish-and-split",
+          "situation": "A generator is nearly complete and at least one other Survivor is repairing it with Friendly Competition equipped.",
+          "action": "Finish together to activate the live 10% repair bonus for 80/85/90 seconds, then split toward separate useful generators or the next assigned job instead of remaining on the completed machine.",
+          "why": "The post-finish bonus repays the stack when it is carried into several next objectives; the point is not to keep everyone together.",
+          "enabledBy": ["perk:friendly-competition"]
+        },
+        {
+          "id": "support-the-handoff",
+          "situation": "A nearby teammate needs healing, an unhook, a gate, a cleanse or another listed non-generator action while Leader is equipped.",
+          "action": "Stay within 10 metres long enough to support that action, then release the support position. Do not keep a teammate near you expecting Leader to speed generator repair.",
+          "why": "Leader affects other Survivors and listed actions, but explicitly excludes generator repair and self-benefit.",
+          "enabledBy": ["perk:leader"]
+        },
+        {
+          "id": "release-the-stack",
+          "situation": "The target is denied, the Killer has forced a chase, the partner leaves or an uncovered generator or rescue is now more valuable.",
+          "action": "Stop the cooperative repair assignment and take the best remaining job. Call the handoff in a coordinated team so the same two players do not keep travelling back to a losing target.",
+          "why": "The source counter is reduced map-wide labor; cooperation is only an advantage while the selected payoff remains larger than that cost."
+        }
+      ],
+      "abortWhen": [
+        "Abort stacking when a second player is no longer needed to finish the target or when another generator or rescue is more valuable.",
+        "Leave the target when the Killer can pressure both Survivors before the cooperative payoff is realized; ordinary split repair is the recovery plan."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Use a visible teammate already on a worthwhile generator as the cooperation cue. If the partner leaves or no longer communicates the target, stop treating the module as a fixed assignment."
+      ],
+      "coordinatedSwf": [
+        "Call the target, stack owner and split destinations before committing. Release the stack immediately when the team has extracted the finish bonus or the Killer has made the location inefficient."
+      ]
+    },
+    "strengths": [
+      "Create a large short objective burst and carry the cooperative finish into a coordinated split."
+    ],
+    "weaknesses": [
+      "Stacking reduces map-wide labor and needs another Survivor's presence and behavior.",
+      "Leader supports nearby listed actions but cannot repair generators faster or benefit its owner."
+    ],
+    "killerCounterplay": [
+      "The Killer can change targets, pressure the stacked generator or force the partner away so the team pays the cooperation cost without receiving the intended finish."
+    ],
+    "commonMistakes": [
+      "Putting multiple Survivors on every generator instead of selecting one target worth the temporary labor loss.",
+      "Staying together after Friendly Competition activates instead of splitting the 10% repair bonus across the next objectives.",
+      "Expecting Leader to increase generator repair or to speed the perk owner's own actions."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G04#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G04@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G04@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G04@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "G04@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G04#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G04#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "G04#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G04#Items and Add-ons" },
+    { "kind": "PUBLICATION", "ref": "G04#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "G04#Synergies, Hybrids, and Related Strategies" },
+    { "kind": "PUBLICATION", "ref": "G04#Common Mistakes" },
+    { "kind": "PERK", "ref": "prove-thyself#/mechanics" },
+    { "kind": "PERK", "ref": "friendly-competition#/mechanics" },
+    { "kind": "PERK", "ref": "leader#/mechanics" }
+  ]
+}

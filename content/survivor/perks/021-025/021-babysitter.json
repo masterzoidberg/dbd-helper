@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "batch": "021-025",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "babysitter",
+  "mechanics": {
+    "name": "Babysitter",
+    "alternateName": null,
+    "source": "Steve Harrington",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you unhook another Survivor, you see the Killer's Aura for 8 seconds. The rescued Survivor leaves no Scratch Marks or Pools of Blood and gains 10% Haste for 20/25/30 seconds.",
+    "activation": [
+      "Unhook another Survivor.",
+      "Ends/deactivates when: Aura reveal and rescued Survivor effects end after their durations."
+    ],
+    "patchNote": "Latest live balance change (9.0.0): Reduced the rescued Survivor's Haste bonus to 10%.",
+    "plainEnglishSummary": "Unhooking a teammate briefly reveals the Killer and gives the rescued Survivor a temporary Haste and trail-suppression effect.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 8 seconds.",
+      "Rescued Survivor Haste and no Scratch Marks/Pools of Blood: 20/25/30 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The effects apply to the rescued Survivor; the Aura reveal applies to you."
+    ],
+    "sourceCharacter": "Steve Harrington",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "babysitter",
+    "rank": 21,
+    "tier": "A",
+    "roles": [
+      "Anti-Tunnel",
+      "Rescue",
+      "Information"
+    ],
+    "summary": "After you unhook someone, reveal the Killer for 8 seconds while the rescued Survivor gets 10% Haste and leaves no Scratch Marks or Blood for up to 30 seconds.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "anti-tunnel",
+      "tunneling",
+      "haste",
+      "aura-reading",
+      "hook-state"
+    ],
+    "useCases": [
+      "Make a tunneled rescue much harder to immediately reacquire.",
+      "Use the Killer Aura read to decide whether to heal, split, or run.",
+      "Give the rescued Survivor enough speed and trail denial to reach a safer tile."
+    ],
+    "counters": [
+      "Only works when you perform the unhook.",
+      "The Haste does not itself prevent a down if the Killer maintains direct sight.",
+      "A Killer who leaves the hook may never test the anti-tunnel package.",
+      "Hex: Under Your Thumb can cap running Haste while the Hex remains lit.",
+      "Basekit post-unhook Elusive overlaps part of this perk's tracking-denial value during the first 10 seconds after rescue."
+    ],
+    "pros": [
+      "Excellent rescue protection in one slot.",
+      "8 seconds of Killer Aura information helps both macro and safety.",
+      "The 30-second 10% Haste window is long enough to matter in a real chase."
+    ],
+    "cons": [
+      "Hook-event dependent.",
+      "Does not protect you, only the rescued Survivor.",
+      "Less valuable when the Killer consistently rotates away."
+    ],
+    "analysis": [
+      "Babysitter deserves much more respect because its current package is much stronger than its old reputation suggests. The rescued Survivor receives 10% Haste for as long as 30 seconds while also hiding Scratch Marks and Pools of Blood, which attacks both chase speed and tracking at once.",
+      "The eight-second Killer Aura read matters just as much. It tells the rescuer whether the Killer is returning, proxying nearby, or rotating elsewhere, so the team can choose between healing, splitting, or immediately leaving the area with much better information.",
+      "The perk scales well in both Solo Q and SWF. Solo players get a self-contained safety signal and a strong rescue buff, while coordinated teams can route the protected Survivor toward a preplanned tile or reset location.",
+      "It still sits below the very best anti-tunnel perks because the trigger belongs to the rescuer and the Killer can simply choose another target. But when the Killer does try to tunnel through the unhook, Babysitter creates an unusually strong 30-second problem for them."
+    ],
+    "verdict": "A genuinely strong modern rescue perk. Babysitter combines speed, tracking denial, and Killer information into one of the best anti-tunnel support packages available.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      18,
+      30
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Steve Harrington"
+    },
+    "synergyPerkIds": [
+      "shoulder-the-burden",
+      "well-make-it",
+      "kindred",
+      "borrowed-time"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Shoulder the Burden",
+      "We'll Make It",
+      "Kindred",
+      "Borrowed Time"
+    ],
+    "antiSynergies": []
+  }
+}

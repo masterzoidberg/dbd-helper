@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "126-130",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "teamwork-power-of-two",
+  "mechanics": {
+    "name": "Teamwork: Power of Two",
+    "alternateName": null,
+    "source": "Thalita Lyra",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you finish healing another Survivor, you and the healed Survivor gain 5% Haste while within 8/12/16 m of one another. The effect lingers for 4 seconds after leaving range and resumes if you re-enter range before the linger ends. Survivors can only be affected by one instance of Teamwork: Power of Two at a time.",
+    "activation": [
+      "Finish healing another Survivor.",
+      "Both Survivors must remain within 8/12/16 m to keep Haste active.",
+      "Ends/deactivates when: Haste ends 4 seconds after leaving range unless you re-enter before the timer ends."
+    ],
+    "patchNote": "Latest live balance change (8.3.0): Removed the cooldown and the health-state loss cancellation; clarified that the effect does not stack.",
+    "plainEnglishSummary": "Finishing a heal gives you and that teammate Haste while you stay close together.",
+    "cooldown": null,
+    "duration": [
+      "Continues while within range; lingers for 4 seconds after leaving range."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "A Survivor can be affected by only one instance of this perk at a time.",
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "The effect applies to both the healer and the healed Survivor; it does not stack with another instance of this perk."
+    ],
+    "sourceCharacter": "Thalita Lyra",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "teamwork-power-of-two",
+    "rank": 126,
+    "tier": "C",
+    "roles": [
+      "Mobility",
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "After you finish healing another Survivor, both of you gain 5% Haste while remaining within up to 16 metres of each other.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium–High",
+    "soloQ": 1,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "swf",
+      "health-state"
+    ],
+    "useCases": [
+      "Create a two-Survivor Haste pair after a heal.",
+      "Use the speed to coordinate bodyblocks, paired rotations, or chase support.",
+      "Pair with Blood Pact-style tether builds for unusual movement advantages."
+    ],
+    "counters": [
+      "The effect requires staying near the healed Survivor.",
+      "Splitting up for efficient generator pressure ends the Haste after the short linger.",
+      "Only one instance can affect a Survivor at once."
+    ],
+    "pros": [
+      "Five percent Haste is meaningful.",
+      "Applies to both players.",
+      "No fixed duration while the tether is maintained."
+    ],
+    "cons": [
+      "Tether conflicts with normal split pressure.",
+      "Requires completing a heal first.",
+      "Awkward in Solo Q."
+    ],
+    "analysis": [
+      "Teamwork: Power of Two ranks here because 5% Haste is strong enough to affect real chase geometry, but the tether condition fights Survivor macro. The two players must remain within sixteen metres of each other to preserve the effect beyond its brief linger.",
+      "In coordinated play, that can be exploited deliberately. One Survivor can support a chase, bodyblock, or rotate alongside the other while both move faster. The same idea is much harder to sustain with a random teammate who may immediately run in another direction.",
+      "The heal trigger is reasonable and occurs naturally, but the best play after a heal is often for the two Survivors to split up and pressure different objectives. Power of Two rewards the opposite behavior.",
+      "That tension keeps the perk from climbing higher. Its movement bonus is absolutely real; the cost is organizing the team around a pair when the game often rewards four independent pressure points."
+    ],
+    "verdict": "Five percent Haste for two Survivors is powerful, but the leash is the perk. Power of Two shines in coordinated pair play and fades quickly when efficient macro requires you to split.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Haste",
+      "Teamwork"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Thalita Lyra"
+    },
+    "synergyPerkIds": [
+      "blood-pact",
+      "empathic-connection",
+      "botany-knowledge",
+      "teamwork-collective-stealth"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Blood Pact",
+      "Empathic Connection",
+      "Botany Knowledge",
+      "Teamwork: Collective Stealth"
+    ],
+    "antiSynergies": []
+  }
+}

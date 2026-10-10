@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "batch": "061-065",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "champion-of-light",
+  "mechanics": {
+    "name": "Champion of Light",
+    "alternateName": null,
+    "source": "Alan Wake",
+    "status": "Live 10.2.0",
+    "currentEffect": "While shining a Flashlight, gain 50% Haste. After blinding the Killer by any means, they suffer 20% Hindered for 6 seconds. The perk then has a 60/50/40-second cooldown.",
+    "activation": [
+      "Shine a Flashlight for Haste.",
+      "Blind the Killer by any means to apply Hindered.",
+      "Ends/deactivates when: Haste applies while shining the Flashlight.",
+      "Ends/deactivates when: Hindered ends after 6 seconds; perk cooldown follows."
+    ],
+    "patchNote": "Latest live balance change (9.0.0): Reduced the cooldown to 60/50/40 seconds.",
+    "plainEnglishSummary": "Shining a Flashlight speeds you up, and blinding the Killer briefly Hinders them.",
+    "cooldown": "60/50/40 seconds by tier",
+    "duration": [
+      "Killer Hindered: 6 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste",
+      "Hindered"
+    ],
+    "specialInteractions": [
+      "The blind may be caused by any means; after its Hindered effect, this perk has a cooldown."
+    ],
+    "sourceCharacter": "Alan Wake",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "champion-of-light",
+    "rank": 61,
+    "tier": "B",
+    "roles": [
+      "Item",
+      "Chase"
+    ],
+    "summary": "Move faster while shining a Flashlight, and after any blind inflict 20% Hindered on the Killer for 6 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "looping"
+    ],
+    "useCases": [
+      "Use Flashlight movement speed to reposition around blind attempts and pallet interactions.",
+      "Convert a successful Killer blind into a six-second Hindered window that creates extra chase distance.",
+      "Pair with save-oriented Flashlight play so successful blinds also improve the escape afterward."
+    ],
+    "counters": [
+      "Requires a Flashlight for the primary movement effect and reliable access to blinds for the secondary effect.",
+      "Blind-resistant play, facing walls, or Lightborn can deny much of the build plan.",
+      "The Hindered effect has a cooldown after a successful blind."
+    ],
+    "pros": [
+      "Successful blinds gain a meaningful chase payoff beyond visual denial.",
+      "Works with blinds from multiple sources for the Hindered component.",
+      "Cooldown was reduced in 9.0.0."
+    ],
+    "cons": [
+      "Highly equipment- and execution-dependent.",
+      "Can produce no value in a match where blinds are consistently denied.",
+      "Encourages a specialized playstyle rather than broad team utility."
+    ],
+    "analysis": [
+      "Champion of Light ranks this position because the secondary effect is genuinely powerful: after a blind, the Killer suffers 20% Hindered for six seconds. That can convert a normal blind into much more distance, especially at a pallet or during a rescue where the Survivor needs to escape immediately afterward.",
+      "The problem is access. The movement-speed portion requires actively shining a Flashlight, and the meaningful slowdown requires a successful blind. Killers can face walls during pickups, look away during transitions, or equip Lightborn, all of which reduce the number of opportunities the perk receives.",
+      "Skilled Flashlight users get much more value than average players. They already understand blind timings and angles, so Champion of Light simply adds another reward to actions they were going to attempt anyway. Background Player and Flashbang also create specialized builds where multiple blind tools support the same strategy.",
+      "That specialization is why we place it in B rather than A despite a strong numerical effect. A perk that requires both the correct equipment and repeated execution should not outrank broad information, healing, or chase tools that function in nearly every match."
+    ],
+    "verdict": "A strong specialist perk for confident blind players. Champion of Light makes successful blinds much more punishing, but its floor is too equipment-dependent to be a universal recommendation.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Flashlight",
+      "Hindered"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Alan Wake"
+    },
+    "synergyPerkIds": [
+      "flashbang",
+      "background-player",
+      "chemical-trap",
+      "residual-manifest"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Flashbang",
+      "Background Player",
+      "Chemical Trap",
+      "Residual Manifest"
+    ],
+    "antiSynergies": []
+  }
+}

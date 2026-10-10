@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G05",
+  "snapshotId": "G05@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "hyperfocus", "mechanicsRevision": 1 },
+    { "perkId": "deja-vu", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Turn manually hit basic Great repair checks into progress on a worthwhile generator; release the engine when checks, pressure or target value do not support it.",
+    "verdict": {
+      "recommendation": "Try the current manual Hyperfocus route only if you can hit compatible Great checks consistently. The former Stake Out automation is not the current engine, and the post-10.2 evaluation is provisional.",
+      "soloQ": "Choose a useful repair target before investing in the check chain; do not leave an urgent rescue uncovered to defend your stack.",
+      "coordinatedSwf": "Call the repair target and rescue coverage, but treat execution as your own check-timing task rather than a guaranteed team bonus.",
+      "mainWeakness": "A Good check, failed check or any interruption removes Hyperfocus tokens; skill demand and target changes can erase the expected payoff."
+    },
+    "loadout": {
+      "options": [
+        { "perkId": "hyperfocus", "usage": "CORE", "whyItsHere": "Manually hit consecutive Great repair checks to build up to six tokens; a Good, miss or interrupted action resets the chain." },
+        { "perkId": "deja-vu", "usage": "SUPPORT", "whyItsHere": "See the closest grouped trio of generators and gain 4/5/6% repair speed on those highlighted targets; choose one only when its completion matters." }
+      ],
+      "item": { "id": "toolbox", "status": "OPTIONAL", "name": "Toolbox", "why": "The snapshot makes a Toolbox optional. Spend charges only when they help finish a valuable target; no add-on package or special-check interaction is established." }
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Choose a generator whose completion changes the team's rotation. A highlighted Déjà Vu target is a candidate, not an order to ignore a nearer rescue or safer repair."],
+      "rows": [
+        { "id": "select-target", "situation": "A valuable generator is reachable and repair time is available.", "action": "Commit to that target while it is safe; if the team needs a rescue or the Killer contests it, change jobs instead of guarding a potential check chain.", "why": "Progress only matters if the selected generator remains worth the time." },
+        { "id": "manual-check-chain", "situation": "You are repairing and receive compatible basic Skill Checks.", "action": "Aim for genuine Great checks to build Hyperfocus. Expect up to six tokens, with each token raising check odds and pointer speed by 4% and the Great bonus by 10/20/30% of its base value by tier. Reassess after a Good, failure or interruption resets all tokens.", "why": "The current route rewards manual accuracy; special-check conversion does not replace the basic-check execution requirement.", "enabledBy": ["perk:hyperfocus"] },
+        { "id": "use-highlighted-target", "situation": "One of Déjà Vu's closest grouped trio is a useful current target.", "action": "Use its aura and 4/5/6% repair bonus while the target is still strategically valuable; leave if the highlighted group updates or the target loses priority.", "why": "The highlighted trio is information and a speed opportunity, not a fixed assignment.", "enabledBy": ["perk:deja-vu"] },
+        { "id": "spend-optional-toolbox", "situation": "The selected generator can be completed sooner with remaining Toolbox charges.", "action": "Spend charges for the concrete finish, then return to ordinary repair or rescue when the charge spend no longer changes the outcome.", "why": "The item is optional and finite; it does not recreate the obsolete automated check engine.", "enabledBy": ["item:toolbox"] }
+      ],
+      "abortWhen": ["Stop protecting a lost check chain when pressure interrupts repair, or when a rescue or better generator is now the higher-value job."]
+    },
+    "strengths": ["Manual Great-check accuracy can add repair progress without relying on the old converted-check interaction."],
+    "weaknesses": ["Mechanical consistency is required; interruption or a non-Great check clears the Hyperfocus chain."],
+    "commonMistakes": ["Assuming Stake Out's former automated special-check route still powers Hyperfocus.", "Keeping a poor generator assignment merely to preserve or rebuild tokens."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G05#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G05@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G05@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G05@10.2.0-r1#/counters" },
+    { "kind": "SNAPSHOT", "ref": "G05@10.2.0-r1#/changeSummary" },
+    { "kind": "PUBLICATION", "ref": "G05#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G05#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G05#Common Mistakes" },
+    { "kind": "PERK", "ref": "hyperfocus#/mechanics" },
+    { "kind": "PERK", "ref": "deja-vu#/mechanics" }
+  ]
+}

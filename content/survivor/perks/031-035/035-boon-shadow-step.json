@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "031-035",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "boon-shadow-step",
+  "mechanics": {
+    "name": "Boon: Shadow Step",
+    "alternateName": null,
+    "source": "Mikaela Reid",
+    "status": "Live 10.2.0",
+    "currentEffect": "Bless a Dull or Hex Totem. Survivors within 24 metres have their Scratch Marks and Auras hidden from the Killer; these effects linger for 2/3/4 seconds after leaving the radius.",
+    "activation": [
+      "Bless a Dull or Hex Totem.",
+      "Be within 24 metres for the main concealment effect.",
+      "Ends/deactivates when: Effects end after leaving range and the tiered linger time, or when the totem is snuffed."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "A Boon Totem hides nearby Survivors' Scratch Marks and Auras from the Killer.",
+    "cooldown": null,
+    "duration": [
+      "Scratch Mark/Aura concealment lingers 2/3/4 seconds outside the radius."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One active Boon Totem per Survivor; equipped Boons apply to that totem.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Mikaela Reid",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "boon-shadow-step",
+    "rank": 35,
+    "tier": "A",
+    "roles": [
+      "Boon",
+      "Stealth"
+    ],
+    "summary": "Bless a Totem to hide Survivor Scratch Marks and Auras from the Killer within 24 metres, with a short linger after leaving.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "aura-reading",
+      "looping"
+    ],
+    "useCases": [
+      "Create a chase zone where the Killer cannot rely on Scratch Marks after losing line of sight.",
+      "Protect teammates from Aura-reading effects while they repair, heal, or rotate through the Boon area.",
+      "Use multi-floor or dense indoor geometry to make tracking dramatically harder."
+    ],
+    "counters": [
+      "The Killer can snuff the Boon and remove the entire setup.",
+      "Value is geographically limited to the Totem's 24-metre radius plus the brief linger.",
+      "Open maps with poor Totem placement may provide much weaker chase coverage."
+    ],
+    "pros": [
+      "Benefits every Survivor in range rather than only the perk owner.",
+      "Simultaneously attacks Scratch-Mark tracking and Aura reading.",
+      "Can become oppressive on indoor or multi-floor maps where the Boon covers several useful areas."
+    ],
+    "cons": [
+      "Requires Totem setup time.",
+      "Location and map layout heavily influence value.",
+      "A single Killer snuff can erase the investment until you re-bless."
+    ],
+    "analysis": [
+      "Boon: Shadow Step ranks this position because its best maps turn a modest-looking radius into a serious tracking problem. Survivors within 24 metres leave no Scratch Marks and have their Auras hidden from the Killer, attacking two of the most common information channels at the same time.",
+      "The effect becomes particularly strong around line-of-sight-heavy structures. When a Survivor disappears around a corner, the Killer cannot simply follow Scratch Marks to recover the route. On multi-floor maps, the radius can also cover a surprising amount of playable space vertically, giving the entire team access to the protection.",
+      "The weakness is infrastructure. Someone must find a Totem, spend time blessing it, and hope the location is actually useful. The Killer can also snuff it, turning the perk into repeated setup time if the Boon is placed somewhere obvious or strategically important.",
+      "It ranks below individual always-available perks because the map and Totem placement introduce inconsistency. But when Shadow Step controls a good section of the map, it can affect several Survivors and multiple chases from one perk slot, giving it a team ceiling that many stealth perks cannot match."
+    ],
+    "verdict": "A map-dependent team stealth engine. Shadow Step can be merely decent on a poor Totem and brutally disruptive when its radius covers a strong chase or indoor area.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Information Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Mikaela Reid"
+    },
+    "synergyPerkIds": [
+      "boon-circle-of-healing",
+      "boon-steadfast",
+      "quick-quiet",
+      "lucky-break"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Boon: Circle of Healing",
+      "Boon: Steadfast",
+      "Quick & Quiet",
+      "Lucky Break"
+    ],
+    "antiSynergies": []
+  }
+}

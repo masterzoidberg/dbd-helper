@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "X01",
+  "snapshotId": "X01@10.2.0-r1",
+  "perkReviews": [
+    {
+      "perkId": "lithe",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "deja-vu",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "will-to-live",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "kindred",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "well-make-it",
+      "mechanicsRevision": 1
+    }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Cover chase, generators and rescue without betting on strangers to fill the gaps. Change jobs when the team needs something else.",
+    "verdict": {
+      "recommendation": "A dependable Solo Q starting point when you do not know your teammates' plans.",
+      "soloQ": "Choose independent coverage, then use the information you actually have to avoid duplicated rescues and idle time.",
+      "coordinatedSwf": "Still usable, but agree who covers each job; spreading the same tools across everyone gives up the benefit of planned roles.",
+      "mainWeakness": "Covering several problems leaves less room to specialize in any one of them."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "CANONICAL",
+          "buildId": "X01@10.2.0-r1:solo-representative",
+          "notes": [
+            {
+              "slot": 1,
+              "role": "Chase exit",
+              "usage": "CORE",
+              "whyItsHere": "Turn a usable vault into a route away from the current tile, so one chase does not consume every nearby resource."
+            },
+            {
+              "slot": 2,
+              "role": "Generator routing",
+              "usage": "CORE",
+              "whyItsHere": "Give yourself an objective target when nobody is calling generators, instead of leaving the dangerous cluster until last."
+            },
+            {
+              "slot": 3,
+              "role": "Post-unhook safety",
+              "usage": "SUPPORT",
+              "whyItsHere": "Keep a personal answer to being picked up again after an unhook; it is insurance for that situation, not permission to take unnecessary hits."
+            },
+            {
+              "slot": 4,
+              "role": "Rescue information or recovery",
+              "usage": "FLEX",
+              "whyItsHere": "Choose one: solve uncertainty about who is rescuing, or improve the recovery after your own rescue.",
+              "optionReasons": [
+                {
+                  "perkId": "kindred",
+                  "whyItsHere": "Choose this when knowing whether another teammate is approaching the hook is more valuable than committing blindly yourself."
+                },
+                {
+                  "perkId": "well-make-it",
+                  "whyItsHere": "Choose this when you expect to take unhooks and help the rescued teammate return to useful play, rather than leaving them injured."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Check the highlighted generator cluster and a usable escape route before settling into repair. Reassess your job at each hook or chase change."
+      ],
+      "rows": [
+        {
+          "id": "uncovered-objective",
+          "situation": "Nobody needs an immediate rescue and you are free to repair.",
+          "action": "Work on an accessible highlighted generator that helps break up the cluster. If the Killer makes it unsafe, rotate rather than feeding a hit for the highlight.",
+          "why": "Objective information should remove indecision, not force commitment to a defended location.",
+          "enabledBy": [
+            "perk:deja-vu"
+          ]
+        },
+        {
+          "id": "leave-the-tile",
+          "situation": "The Killer is closing in and you have a usable vault with Lithe available.",
+          "action": "Choose your next route before vaulting, then spend the escape on distance to that route instead of circling back into the same pressure.",
+          "why": "A mobility tool buys useful time only when you have somewhere to go.",
+          "enabledBy": [
+            "perk:lithe"
+          ]
+        },
+        {
+          "id": "read-the-rescue",
+          "situation": "A teammate is hooked and you chose Kindred.",
+          "action": "Check who is already moving toward the hook. Keep repairing if the rescue is covered; approach if it is not, adjusting for any Killer information you can see.",
+          "why": "Sending everyone to one rescue abandons the other jobs this loadout is meant to cover.",
+          "enabledBy": [
+            "perk:kindred"
+          ]
+        },
+        {
+          "id": "rescue-then-reset",
+          "situation": "You made the unhook and chose We'll Make It.",
+          "action": "Offer the rescued teammate a heal where the Killer cannot immediately interrupt. If the Killer returns, move apart and escape instead of insisting on finishing under pressure.",
+          "why": "The recovery is valuable when it gets a teammate back into the Trial, not when it creates two vulnerable targets.",
+          "enabledBy": [
+            "perk:well-make-it"
+          ]
+        },
+        {
+          "id": "tunnel-or-return",
+          "situation": "You have just been unhooked and the Killer is still pursuing you.",
+          "action": "Prioritize an escape route and be ready for the pickup Skill Check if Will to Live is still active. Once the pursuit ends, return to a useful job deliberately rather than treating the protection as permanent.",
+          "why": "Its limited post-unhook opportunity cannot support an entire match plan; check its availability before relying on it.",
+          "enabledBy": [
+            "perk:will-to-live"
+          ]
+        }
+      ],
+      "abortWhen": [
+        "If a teammate has already covered the rescue or reset you were approaching, stop duplicating it and take the unattended generator or other open job.",
+        "When your safety perk is unavailable, especially after the gates are powered, choose routes and rescues on their own merits rather than banking on a second escape."
+      ]
+    },
+    "weaknesses": [
+      "You still need teammates to convert your chase time into progress; flexibility cannot supply all four players' work."
+    ],
+    "commonMistakes": [
+      "Rushed-vaulting casually before a chase and then planning an escape around unavailable Lithe.",
+      "Treating the fourth slot as both information and healing at once; play around the option you equipped.",
+      "Repairing or taking another Conspicuous Action, then assuming Will to Live remains active against a returning Killer."
+    ],
+    "environments": {
+      "soloQ": [
+        "Use visible teammate activity and hook information to choose an uncovered job; the Intent System helps but does not guarantee that someone will complete it."
+      ],
+      "coordinatedSwf": [
+        "Call the job you are taking before rotating, so flexibility fills a gap instead of pulling a second player off the same generator."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "X01#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "X01@10.2.0-r1#/buildImplementations/0"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "X01@10.2.0-r1#/changeSummary"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "X01#How It Works"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "X01#Solo Q vs SWF"
+    },
+    {
+      "kind": "PERK",
+      "ref": "lithe#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "deja-vu#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "will-to-live#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "kindred#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "well-make-it#/mechanics"
+    }
+  ]
+}

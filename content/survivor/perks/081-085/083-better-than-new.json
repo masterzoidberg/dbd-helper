@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "081-085",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "better-than-new",
+  "mechanics": {
+    "name": "Better Than New",
+    "alternateName": null,
+    "source": "Rebecca Chambers",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you finish healing another Survivor, until they take damage, they Bless and Cleanse Totems, heal, and unlock Chests 40/45/50% faster.",
+    "activation": [
+      "Finish healing another Survivor.",
+      "Ends/deactivates when: The affected Survivor loses the bonuses when they take damage."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Increased the affected Survivor's Blessing/Cleansing, healing, and Chest-unlocking speed bonuses from 12/14/16% to 40/45/50%.",
+    "plainEnglishSummary": "Finishing a heal gives that Survivor faster Totem interactions, healing, and Chest unlocking until they take damage.",
+    "cooldown": null,
+    "duration": [
+      "Persists on the healed Survivor until they take damage."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The bonuses apply to the Survivor you finished healing, not to you."
+    ],
+    "sourceCharacter": "Rebecca Chambers",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "better-than-new",
+    "rank": 83,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "After you finish healing someone, they heal, bless/cleanse, and unlock Chests up to 50% faster until they take damage.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Turn one completed heal into a strong support buff on that teammate.",
+      "Create a fast healer who can immediately help reset someone else.",
+      "Buff a teammate before they work through Hexes, Boons, or chest interactions."
+    ],
+    "counters": [
+      "The buff disappears as soon as the affected Survivor takes damage.",
+      "It does not increase generator repair speed.",
+      "You must first complete a full heal on someone else."
+    ],
+    "pros": [
+      "Up to 50% is a major support-speed bonus.",
+      "No cooldown after the initial heal trigger.",
+      "10.2 massively improved the live numbers."
+    ],
+    "cons": [
+      "Target loses everything on the next hit.",
+      "No direct chase protection.",
+      "Value depends on the healed teammate actually using the supported actions."
+    ],
+    "analysis": [
+      "Better Than New is one of the clearest 10.2 winners. The old 16% ceiling became 50% for healing, Totem interactions, and Chest unlocking, which is finally large enough to shape team decisions.",
+      "The best use is chaining support. Heal an injured teammate, then let that newly buffed Survivor perform the next heal dramatically faster while you return to another task.",
+      "The effect is fragile because one hit removes it, and generator repair is not part of the speed package. A Killer applying broad injury pressure can therefore erase value quickly.",
+      "Even with those limits, the old low-tier reputation is obsolete. The independent ranking review should treat the 10.2 version as a serious support perk rather than legacy filler."
+    ],
+    "verdict": "A legitimate support perk after a huge 10.2 buff. Fifty percent faster healing and side-objective actions gives the healed Survivor something worth protecting.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Support",
+      "Action Speed"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Rebecca Chambers"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "empathic-connection",
+      "desperate-measures"
+    ],
+    "synergyOther": [
+      "Boon perks"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Botany Knowledge",
+      "Empathic Connection",
+      "Desperate Measures",
+      "Boon perks"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "161-165",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "teamwork-soft-spoken",
+  "mechanics": {
+    "name": "Teamwork: Soft-Spoken",
+    "alternateName": null,
+    "source": "Eleven",
+    "status": "Live 10.2.0",
+    "currentEffect": "For each other Survivor repairing a Generator with you, reduces the range at which its repair noises are heard by 15/20/25%. While repairing with at least one other Survivor, you repair 5% faster.",
+    "activation": [
+      "Repair a Generator with at least one other Survivor for the 5% repair-speed bonus.",
+      "Each other Survivor repairing with you increases the noise-range reduction.",
+      "Ends/deactivates when: Bonuses end when you stop repairing with the other Survivor or Survivors."
+    ],
+    "patchNote": "Latest live balance change (9.4.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "Cooperative repairs are faster and quieter for each teammate working on the Generator with you.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The noise-range reduction scales for each other Survivor on the same Generator."
+    ],
+    "sourceCharacter": "Eleven",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "teamwork-soft-spoken",
+    "rank": 165,
+    "tier": "D",
+    "roles": [
+      "Objective",
+      "Team Support",
+      "Stealth"
+    ],
+    "summary": "While repairing with at least one teammate, repair 5% faster; each other Survivor also reduces the distance at which the generator's repair noise can be heard.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure",
+      "swf"
+    ],
+    "useCases": [
+      "Add a modest repair bonus when the team deliberately stacks a generator.",
+      "Make cooperative generator work quieter on indoor or low-visibility maps.",
+      "Combine with other co-op perks during a planned burst repair."
+    ],
+    "counters": [
+      "Provides nothing while repairing alone.",
+      "Five percent does not make inefficient generator stacking automatically good.",
+      "Quiet generator audio matters less when the Killer already knows the objective location."
+    ],
+    "pros": [
+      "Simple always-on co-op bonus.",
+      "Combines speed and stealth.",
+      "No cooldown or token economy."
+    ],
+    "cons": [
+      "Zero solo value.",
+      "Lower ceiling than Prove Thyself or Friendly Competition.",
+      "Requires grouping Survivors on one objective."
+    ],
+    "analysis": [
+      "Teamwork: Soft-Spoken lands at this position because five percent faster cooperative repair is useful, but Survivors do not need another excuse to over-stack generators. The bonus is best when two players already have a strategic reason to finish one objective immediately.",
+      "The quieter repair noise can help on indoor maps, especially when walls prevent the Killer from visually confirming the generator. With multiple teammates, the audible-distance reduction stacks through each additional Survivor.",
+      "The perk is easy to use and equally easy to overvalue. A five-percent modifier cannot repay every second lost by putting multiple Survivors on one generator instead of spreading map pressure.",
+      "That leaves Soft-Spoken as a modest co-op specialist. It has a clean floor when the trigger exists and no value at all when you are repairing alone."
+    ],
+    "verdict": "A small co-op repair and stealth bonus that should follow good macro, not dictate it. Soft-Spoken is fine when stacking is already correct.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Co-op"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Eleven"
+    },
+    "synergyPerkIds": [
+      "prove-thyself",
+      "friendly-competition",
+      "teamwork-full-circuit",
+      "better-together"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Prove Thyself",
+      "Friendly Competition",
+      "Teamwork: Full Circuit",
+      "Better Together"
+    ],
+    "antiSynergies": []
+  }
+}

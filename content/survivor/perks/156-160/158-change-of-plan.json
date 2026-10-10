@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "156-160",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "change-of-plan",
+  "mechanics": {
+    "name": "Change of Plan",
+    "alternateName": null,
+    "source": "Dustin Henderson",
+    "status": "Live 10.2.0",
+    "currentEffect": "Start with 2 Tokens. While inside a Locker and holding a non-event Toolbox, use the Active Ability button to spend 1 Token and transform the Toolbox into a Med-Kit of the same rarity with a random Add-on of the same rarity. The new Med-Kit has 80/90/100% of its charges.",
+    "activation": [
+      "Have a Token and a non-event Toolbox.",
+      "Be in a Locker and use the Active Ability button.",
+      "Ends/deactivates when: Transformation ends after use; cannot be used without a Token or Toolbox."
+    ],
+    "patchNote": "Latest live balance change (9.4.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "Spend tokens in a Locker to turn a Toolbox into a same-rarity Med-Kit with a random Add-on.",
+    "cooldown": null,
+    "duration": [
+      "Resulting Med-Kit charges: 80/90/100% by tier."
+    ],
+    "tokenOrStackBehavior": "Starts with 2 Tokens; spend 1 per transformation.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The old Toolbox is replaced by a same-rarity Med-Kit with one random Add-on of that rarity."
+    ],
+    "sourceCharacter": "Dustin Henderson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "change-of-plan",
+    "rank": 158,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Utility",
+      "Healing"
+    ],
+    "summary": "Start with two Tokens and transform a non-event Toolbox in a Locker into a same-rarity Med-Kit with full Tier III charges and a random same-rarity Add-on.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "reset"
+    ],
+    "useCases": [
+      "Use a Toolbox for early objective pressure, then convert it into healing utility later.",
+      "Transform a depleted or less-needed Toolbox rather than carrying an irrelevant Item through the rest of the Trial.",
+      "Use a second found Toolbox for the remaining Token if the match provides one."
+    ],
+    "counters": [
+      "Requires holding a qualifying Toolbox and entering a Locker.",
+      "The conversion destroys the Toolbox identity and its Add-ons.",
+      "The random Med-Kit Add-on may not suit the situation."
+    ],
+    "pros": [
+      "Strong item-role flexibility.",
+      "Two Tokens allow another conversion if you acquire another Toolbox.",
+      "Same-rarity Med-Kit keeps high-quality Item value."
+    ],
+    "cons": [
+      "Requires a Toolbox in the first place.",
+      "Locker and conversion setup costs time.",
+      "Random Add-on reduces planning precision."
+    ],
+    "analysis": [
+      "Change of Plan ranks around the C transition because its best use is clever resource sequencing rather than raw power. A Survivor can bring a Toolbox, spend its useful generator charges early, then convert that Item slot into a Med-Kit later instead of carrying an exhausted resource.",
+      "The same-rarity conversion is important. A valuable Toolbox becomes a correspondingly valuable Med-Kit rather than a generic low-grade item, and the Tier III version supplies the new Med-Kit at full charges.",
+      "The cost is commitment. The Toolbox is gone, its original Add-ons no longer matter, and the new Add-on is random. You also need a Locker and the correct moment to perform the conversion.",
+      "In a deliberate item-economy build, Change of Plan is a neat way to extract two roles from one starting Item. In a normal build, carrying the resource you actually want from the beginning is usually simpler."
+    ],
+    "verdict": "A flexible item-economy perk for players who want early Toolbox pressure and later healing. Clever, useful, and more complicated than simply bringing the right Item.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Flexibility"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Dustin Henderson"
+    },
+    "synergyPerkIds": [
+      "built-to-last",
+      "streetwise",
+      "pharmacy",
+      "plunderers-instinct"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Built to Last",
+      "Streetwise",
+      "Pharmacy",
+      "Plunderer's Instinct"
+    ],
+    "antiSynergies": []
+  }
+}

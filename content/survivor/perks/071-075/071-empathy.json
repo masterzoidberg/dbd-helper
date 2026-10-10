@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "071-075",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "empathy",
+  "mechanics": {
+    "name": "Empathy",
+    "alternateName": null,
+    "source": "Claudette Morel",
+    "status": "Live 10.2.0",
+    "currentEffect": "The Auras of injured or dying Survivors are revealed to you within 64/96/128 metres.",
+    "activation": [
+      "An injured or dying Survivor must be within the applicable Aura-reading range.",
+      "Ends/deactivates when: The Aura reveal ends when the Survivor is no longer injured or dying or moves out of range."
+    ],
+    "patchNote": "Latest live balance change (2.6.0): Changed the Aura-reading range to 64/96/128 m from an effectively unlimited 32/64/99999.99 m range.",
+    "plainEnglishSummary": "You see injured and dying teammates' Auras when they are within your tier's range.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Claudette Morel",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "empathy",
+    "rank": 71,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Healing",
+      "Team Support"
+    ],
+    "summary": "See injured or dying teammates at extremely long range, reaching 128 metres at Tier III.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 2,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading",
+      "solo-q",
+      "dying-state"
+    ],
+    "useCases": [
+      "Locate injured teammates for healing without wasting time searching.",
+      "Infer where a chase is happening by watching an injured Survivor's movement.",
+      "Track downed teammates and decide whether a pickup or rescue route is developing."
+    ],
+    "counters": [
+      "Healthy teammates are not shown.",
+      "The perk reveals teammate state and position, not the Killer directly.",
+      "SWF voice communication can reproduce some of the information."
+    ],
+    "pros": [
+      "Enormous effective range.",
+      "Excellent for dedicated healing/support builds.",
+      "Provides useful indirect chase information in Solo Q."
+    ],
+    "cons": [
+      "No information about Healthy Survivors.",
+      "Does not directly accelerate any action.",
+      "Lower marginal value in coordinated teams."
+    ],
+    "analysis": [
+      "Empathy ranks this position because 128 metres is effectively map-wide on many Trials. Whenever a teammate is Injured or Dying, their Aura becomes a persistent information source that tells you where support is needed and often where Killer pressure is happening.",
+      "Dedicated healers get the clearest value. Autodidact, Botany Knowledge, and For the People all become easier to use when the player can immediately locate the next injured teammate instead of searching. The perk therefore turns information into action more naturally than many generic Aura perks.",
+      "Solo Q also benefits from chase inference. An injured Survivor sprinting across the far side of the map is often the current chase target, which can tell you that your generator is safe. A suddenly downed Aura warns you that a pickup or slug scenario is developing.",
+      "Empathy remains B because Healthy teammates are invisible and the perk itself changes no speed or health state. Bond is more generally useful at close range, while Empathy is better when the user specifically wants global information about injured players."
+    ],
+    "verdict": "A superb support-information perk with near-global range. Empathy is strongest when your build has a reason to actively seek injured teammates.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Support"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Claudette Morel"
+    },
+    "synergyPerkIds": [
+      "autodidact",
+      "botany-knowledge",
+      "well-make-it",
+      "for-the-people"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Autodidact",
+      "Botany Knowledge",
+      "We'll Make It",
+      "For the People"
+    ],
+    "antiSynergies": []
+  }
+}

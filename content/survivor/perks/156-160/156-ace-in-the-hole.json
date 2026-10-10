@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "batch": "156-160",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "ace-in-the-hole",
+  "mechanics": {
+    "name": "Ace in the Hole",
+    "alternateName": null,
+    "source": "Ace Visconti",
+    "status": "Live 10.2.0",
+    "currentEffect": "Regular Items retrieved from Chests come with one guaranteed Add-on of Visceral Rarity or lower and a 50/75/100% chance of a second Add-on of Uncommon Rarity or lower. Add-ons on your held Item are retained when you escape.",
+    "activation": [
+      "Retrieve a regular Item from a Chest."
+    ],
+    "patchNote": "Latest live balance change (8.4.0): Raised the guaranteed Add-on rarity cap to Ultra Rare and increased the tiered second-Add-on chance to 50/75/100%.",
+    "plainEnglishSummary": "Chest Items receive a guaranteed Add-on and may receive a second; their Add-ons are kept on escape.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Does not add these effects to non-Chest Items."
+    ],
+    "sourceCharacter": "Ace Visconti",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "ace-in-the-hole",
+    "rank": 156,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Objective"
+    ],
+    "summary": "Items taken from Chests gain a guaranteed Add-on, may gain a second Add-on, and keep their Add-ons if you escape.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [],
+    "useCases": [
+      "Improve the expected quality of chest loot.",
+      "Pair with Plunderer’s Instinct and Appraisal to generate better-equipped Items.",
+      "Escape with valuable Add-ons instead of losing them."
+    ],
+    "counters": [
+      "Only regular Items retrieved from Chests receive the Add-ons.",
+      "The base Item itself can still be something you do not need.",
+      "No immediate match value if you never open a Chest."
+    ],
+    "pros": [
+      "Guaranteed Add-on on chest Items.",
+      "Tier III always rolls a second Add-on chance at 100%.",
+      "Add-ons can be retained on escape."
+    ],
+    "cons": [
+      "Completely chest-dependent.",
+      "Random resource identity and Add-ons.",
+      "No direct chase, repair, healing, or rescue effect."
+    ],
+    "analysis": [
+      "Ace in the Hole improves the quality of an activity that is already optional: looting Chests. The perk guarantees one Add-on and can guarantee a second at Tier III, which is meaningful when the Item itself is useful.",
+      "Its strongest role is inside a full loot economy. Plunderer’s Instinct finds and accelerates Chests, Appraisal produces more Items, and Ace in the Hole improves what those Items contain.",
+      "The weakness is that no amount of Add-on quality makes a badly timed chest detour efficient. The team still needs generators, rescues, and chase time more urgently than random loot in many matches.",
+      "That keeps Ace in the Hole low despite solid synergy. It improves chest output rather than solving the fundamental opportunity cost of opening Chests."
+    ],
+    "verdict": "A good chest-build multiplier and a weak general perk. Better loot is nice; needing loot in the first place is the harder argument.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Chest",
+      "Resource"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ace Visconti"
+    },
+    "synergyPerkIds": [
+      "plunderers-instinct",
+      "appraisal",
+      "pharmacy",
+      "streetwise"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Plunderer's Instinct",
+      "Appraisal",
+      "Pharmacy",
+      "Streetwise"
+    ],
+    "antiSynergies": []
+  }
+}

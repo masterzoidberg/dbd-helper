@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "061-065",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "quick-gambit",
+  "mechanics": {
+    "name": "Quick Gambit",
+    "alternateName": null,
+    "source": "Vittorio Toscano",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are being chased by the Killer, reveals the Auras of other Survivors to you and increases those Survivors' Repair speed by 3/4/5%. Quick Gambit enters a 40-second cooldown when you lose a Health State.",
+    "activation": [
+      "Be in a chase with the Killer.",
+      "Ends/deactivates when: The chase-dependent effects end when the chase ends.",
+      "Ends/deactivates when: The perk is unavailable for 40 seconds after you lose a Health State."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Reduced the cooldown after losing a Health State from 60 seconds to 40 seconds.",
+    "plainEnglishSummary": "During a chase, it shows teammates to you and increases their Generator repair speed until the chase effect ends.",
+    "cooldown": "40 seconds after losing a Health State.",
+    "duration": [
+      "Aura reading and repair bonus: while being chased by the Killer."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Vittorio Toscano",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "quick-gambit",
+    "rank": 62,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Objective",
+      "Team Support"
+    ],
+    "summary": "While you are being chased, see teammate Auras and make every other Survivor repair up to 5% faster; losing a Health State starts a 40-second cooldown.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure",
+      "aura-reading",
+      "swf",
+      "solo-q",
+      "looping"
+    ],
+    "useCases": [
+      "Turn a long chase into extra generator progress for the entire team.",
+      "Use teammate Auras to avoid dragging the Killer onto active generators.",
+      "Coordinate chase routes in SWF so repair-heavy teammates stay uninterrupted."
+    ],
+    "counters": [
+      "Taking damage starts the cooldown.",
+      "If teammates are healing or rescuing instead of repairing, the repair bonus does nothing.",
+      "Short chases produce little total objective value."
+    ],
+    "pros": [
+      "Rewards exactly the team behavior Survivors already want during a good chase.",
+      "Can affect multiple teammates at once.",
+      "Aura information helps the chased player protect teammates' positions."
+    ],
+    "cons": [
+      "Value depends on surviving chase for meaningful time.",
+      "Cooldown after damage reduces uptime.",
+      "Team repair bonus is wasted if nobody is on generators."
+    ],
+    "analysis": [
+      "Quick Gambit moves into A because it monetizes chase time directly. If you hold the Killer for thirty or forty seconds while two teammates repair, the perk converts your personal chase skill into teamwide objective pressure without asking those teammates to equip anything.",
+      "The Aura component is not filler. Seeing every teammate while chased helps you avoid active generators, healing clusters, or rescue routes, which makes the perk easier to use correctly than a blind repair buff would be.",
+      "Its ceiling rises sharply in SWF because the team can deliberately keep strong repairers on generators while the chased Survivor routes elsewhere. Solo Q gets less predictable repair participation, but still benefits from the information layer.",
+      "Quick Gambit stays below the elite chase perks because its value disappears when the chase ends quickly or teammates are not repairing. It rewards strong play rather than rescuing weak play, which is powerful but conditional."
+    ],
+    "verdict": "A high-skill team perk that turns a good chase into extra generator pressure. Quick Gambit is strongest when the rest of the team is actually repairing while you hold the Killer.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      55,
+      72
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Vittorio Toscano"
+    },
+    "synergyPerkIds": [
+      "bond",
+      "resilience",
+      "finesse",
+      "windows-of-opportunity"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Bond",
+      "Resilience",
+      "Finesse",
+      "Windows of Opportunity"
+    ],
+    "antiSynergies": []
+  }
+}

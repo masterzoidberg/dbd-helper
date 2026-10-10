@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "batch": "126-130",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "invocation-weaving-spiders",
+  "mechanics": {
+    "name": "Invocation: Weaving Spiders",
+    "alternateName": null,
+    "source": "Sable Ward",
+    "status": "Live 10.2.0",
+    "currentEffect": "While in the Basement near the Invocation circle, press Activate Ability 2 to begin a 60-second ritual. Your Aura is revealed to all other Survivors during it. Other Survivors can join; each joining Survivor increases ritual speed by 100% if they have an Invocation perk equipped, or 50% otherwise. When completed, permanently reduce the repair-charge requirement of every Generator in the Trial by 8/9/10 charges. The invoker enters the Injured State and suffers Broken for the remainder of the Trial. If everyone stops participating, unfinished ritual progress regresses; the live 8.0.0 change made full regression take 90 seconds. Completion disables other copies of this Invocation for the Trial.",
+    "activation": [
+      "Be in the Basement near the Invocation circle and press Activate Ability 2.",
+      "Complete the 60-second ritual; teammates may join to increase its speed.",
+      "Ends/deactivates when: If no Survivor continues the ritual, its progress regresses back to zero.",
+      "Ends/deactivates when: The Broken Status Effect on the invoker lasts for the remainder of the Trial."
+    ],
+    "patchNote": "Latest live balance change (8.0.0): Reduced ritual completion time from 120 to 60 seconds and slowed full regression of interrupted progress from 6 to 90 seconds.",
+    "plainEnglishSummary": "A Basement ritual permanently lowers every Generator's repair requirement, while leaving the invoker Injured and Broken for the Trial.",
+    "cooldown": null,
+    "duration": [
+      "Ritual: 60 seconds before helper speed modifiers.",
+      "Interrupted ritual progress takes 90 seconds to fully regress under the live regression rule.",
+      "Generator repair requirement reduction and Broken: permanent for the remainder of the Trial."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "This Invocation can be completed once per Trial across all Survivors; completion disables other copies of Invocation: Weaving Spiders.",
+    "statusEffectsInvolved": [
+      "Broken"
+    ],
+    "specialInteractions": [
+      "During an Invocation, teammates can join and speed it up; those with any Invocation perk contribute +100% speed, while those without contribute +50%."
+    ],
+    "sourceCharacter": "Sable Ward",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "invocation-weaving-spiders",
+    "rank": 127,
+    "tier": "C",
+    "roles": [
+      "Objective",
+      "Invocation",
+      "Information"
+    ],
+    "summary": "Complete a 60-second Basement Invocation to permanently reduce every remaining generator's required charges by up to 10, then become Injured and Broken for the rest of the Trial.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium–High",
+    "soloQ": 1,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "broken",
+      "pressure",
+      "swf"
+    ],
+    "useCases": [
+      "Front-load a global objective reduction when several generators remain unfinished.",
+      "Coordinate teammates to accelerate the Invocation when the team has deliberately built around it.",
+      "Create permanent objective progress that cannot be removed by ordinary regression."
+    ],
+    "counters": [
+      "The invoker spends substantial time traveling to and performing in the Basement.",
+      "Completion leaves the invoker Broken for the rest of the Trial.",
+      "Poor timing can trade more Survivor tempo for the ritual than the generator reduction returns."
+    ],
+    "pros": [
+      "Global permanent effect on every remaining generator.",
+      "Can be accelerated by teammates.",
+      "Ordinary regression cannot restore the removed maximum requirement."
+    ],
+    "cons": [
+      "Large setup and travel cost.",
+      "Permanent Broken penalty.",
+      "Can encourage multiple Survivors to abandon generators for the ritual."
+    ],
+    "analysis": [
+      "Invocation: Weaving Spiders ranks in the middle of this band because its reward is genuinely global. Completing the ritual reduces the maximum repair requirement of every remaining generator, creating permanent progress that does not behave like a normal repair bar the Killer can simply kick away.",
+      "The arithmetic is not automatically favorable. The invoker spends travel time plus as much as sixty seconds in the Basement, and helpers accelerate the ritual by sacrificing their own objective time. The team must receive enough value from the reduced generator requirements to repay that investment.",
+      "The permanent Broken penalty is also significant. The invoker becomes easier to down for the rest of the Trial and loses normal healing options, so the perk effectively converts personal safety into team objective pressure.",
+      "Coordinated teams can plan around that trade and finish the ritual early while many generators remain. In Solo Q, the same play can look like someone disappearing into the Basement while the team needs immediate help. The ceiling is real; the consistency is not."
+    ],
+    "verdict": "A global objective investment with a permanent personal price. Weaving Spiders can create meaningful team progress, but sixty Basement seconds and permanent Broken make the decision far from free.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Global"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Sable Ward"
+    },
+    "synergyPerkIds": [
+      "no-mither",
+      "resilience",
+      "deja-vu",
+      "invocation-treacherous-crows"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "No Mither",
+      "Resilience",
+      "Déjà Vu",
+      "Invocation: Treacherous Crows"
+    ],
+    "antiSynergies": []
+  }
+}

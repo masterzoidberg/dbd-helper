@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R10",
+  "snapshotId": "R10@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "wake-up", "mechanicsRevision": 1 },
+    { "perkId": "hope", "mechanicsRevision": 1 },
+    { "perkId": "adrenaline", "mechanicsRevision": 1 },
+    { "perkId": "no-one-left-behind", "mechanicsRevision": 1 },
+    { "perkId": "down-to-the-last", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Keep a deliberately weak early-game slot only when it gives you a clear last-generator, gate, rescue or hatch job; this is a module, not a fixed four-perk recipe.",
+    "verdict": {
+      "recommendation": "Use an endgame option when the team can still reach the final generator and someone has a defined late job. Leave the module behind when early collapse is the more likely outcome.",
+      "soloQ": "Choose a late job you can execute without a teammate's promise: read the gate state, take the first safe useful rotation and do not hold a rescue or opening position that leaves the team without repair tempo.",
+      "coordinatedSwf": "Assign the gate opener, rescue path and final-generator call before the transition; use communication to avoid two players paying the same travel or rescue cost.",
+      "mainWeakness": "Several slots can do nothing before the endgame, and a late effect still loses value when the user is hooked, carried, out of position or the team reaches the transition without a safe assignment."
+    },
+    "loadout": {
+      "options": [
+        { "perkId": "wake-up", "usage": "CORE", "whyItsHere": "Choose this for a gate-opening job when the team can reach the powered-gate state; the switch information and visible opener support a deliberate gate assignment rather than an early-game task." },
+        { "perkId": "hope", "usage": "CORE", "whyItsHere": "Choose this for a sustained late rotation or rescue route after the gates are powered; it is a completely inactive slot until that transition, so the endgame payoff must justify the early cost." },
+        { "perkId": "adrenaline", "usage": "CORE", "whyItsHere": "Choose this for the last-generator transition when you can remain eligible for its activation; use the resulting health-state and movement swing to take a safe route instead of assuming it rescues a hooked or carried Survivor." },
+        { "perkId": "no-one-left-behind", "usage": "SUPPORT", "whyItsHere": "Choose this when your late job is locating and assisting teammates after the generators are complete; its rescue value still depends on a reachable, safe unhook rather than a blind rush to the hook." },
+        { "perkId": "down-to-the-last", "usage": "SUPPORT", "whyItsHere": "Choose this when your own hooks and generator work can build a useful token state for the team's gate speed, with a separate last-Survivor branch if that state is actually reached." }
+      ]
+    },
+    "environments": {
+      "soloQ": ["Call your own transition by reading teammate locations and the live hook state; do not wait for an unbriefed teammate to open a gate, cover a rescue or preserve a generator window."],
+      "coordinatedSwf": ["Name one gate opener and one rescue lead before the final generator finishes, then cancel duplicated routes when the Killer changes pressure or a teammate cannot reach the assignment."]
+    },
+    "strengths": ["Converts a reached endgame into a defined gate, rescue, movement or last-Survivor job.", "The module can be attached to a broader build without pretending its options form one verified research loadout."],
+    "weaknesses": ["Late-only options contribute no help to the first generators, so an early collapse can turn several slots into opportunity cost.", "A missed transition, unsafe route or unavailable teammate can leave a ready effect with no worthwhile action."],
+    "killerCounterplay": ["The Killer can force an early collapse, keep the user hooked or carried during the transition, change targets to break the planned assignment, or hold a gate and rescue route until the late investment cannot be converted."],
+    "commonMistakes": ["Equipping several late-only perks without a realistic plan for reaching the final generator.", "Waiting to react until the gates are powered instead of pre-positioning and assigning the first job.", "Treating a powered-gate effect as permission to rush a hook or gate through Killer pressure.", "Continuing the planned rescue or gate route after the team has lost the position, health state or teammate coverage that made it worthwhile."],
+    "related": [
+      { "strategyId": "A00", "relationship": "COMBINE_WITH", "why": "Use the Rescue-and-Reset support family when the endgame plan needs a deliberate rescue or recovery assignment rather than another late-only slot." }
+    ],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Before the final generator, choose the late job you can actually reach: open a gate, take a rescue, support a teammate's transition or preserve a last-Survivor route. Check who is hooked, injured, carried or already moving before committing to the plan."],
+      "rows": [
+        { "id": "final-generator-transition", "situation": "The last generator is close to completion and your endgame option is ready to matter, but the team has not yet chosen a safe transition route.", "action": "Tell the team which job you are taking, check whether you will be eligible and mobile at the transition, then finish or delay the generator according to the immediate rescue and Killer-pressure state. Do not abandon useful repair merely to stand in an unconfirmed gate position.", "why": "The module pays only after the transition, while a premature move can trade guaranteed generator progress for a late job nobody can complete.", "enabledBy": ["perk:adrenaline"] },
+        { "id": "gate-information", "situation": "The gates are powered and Wake Up! is available, with more than one gate or route that the team could use.", "action": "Use the revealed gate information to choose the safer opening route, call the gate you are taking and leave a visible opening assignment only while the team can protect or use it. If the Killer closes that route, rotate rather than finish a doomed opening attempt.", "why": "The perk makes gate selection and team visibility useful, but it does not make a contested switch safe by itself.", "enabledBy": ["perk:wake-up"] },
+        { "id": "late-movement-route", "situation": "The gates are powered and you must cross between a gate, rescue route or teammate while Hope's late movement effect is active.", "action": "Use the movement advantage to shorten a real route or create safer spacing, then return to the assigned gate or rescue job. Do not detour into a chase just because the effect is active.", "why": "The value is the route the team needs now; movement without a destination still spends the endgame window and can pull the Killer onto the wrong teammate.", "enabledBy": ["perk:hope"] },
+        { "id": "transition-burst", "situation": "The gates become powered while you are eligible for Adrenaline and a safe route exists from your current position.", "action": "Take the health-state and movement transition, then use the brief opening to reach cover, a gate or the assigned rescue path. If you are hooked or carried at the transition, stop planning around this activation and make the ordinary rescue or escape decision instead.", "why": "The activation state and the route determine whether the transition creates distance; it is not a substitute for being present and eligible when the gates power.", "enabledBy": ["perk:adrenaline"] },
+        { "id": "endgame-rescue", "situation": "The generators are complete, a teammate needs an unhook or heal and No One Left Behind is active.", "action": "Use the teammate aura and faster assistance to select a reachable rescue, approach with an exit and leave after the rescue when the team has a safer next route. Do not rush a hook through direct Killer pressure or assume the action-speed bonus erases a bad approach.", "why": "The perk improves late assistance after the generators, but the Killer can still make the hook unsafe and the rescue still needs a follow-up escape plan.", "enabledBy": ["perk:no-one-left-behind"] },
+        { "id": "token-branch", "situation": "Down to the Last has built tokens and the team is opening gates, or you are the last Survivor with the required token state.", "action": "Let the token benefit support the team's gate assignment while other Survivors remain, then switch to the last-Survivor hatch route only if that exact state is reached. If the team still needs a normal rescue or gate rotation, do not abandon it for a branch that has not activated.", "why": "The perk has different team and last-Survivor jobs; confusing them can sacrifice a live teammate for a hypothetical hatch plan.", "enabledBy": ["perk:down-to-the-last"] },
+        { "id": "module-abort", "situation": "The team is collapsing before the transition, the Killer has denied the route, or your assigned gate or rescue job is no longer reachable.", "action": "Drop the late-only plan and return to the highest-value live action: repair, a reachable rescue, a safe gate rotation or an exit. Stop paying travel and exposure cost for a window that has already passed.", "why": "The strategy accepts early opportunity cost only while the late payoff remains plausible; once that payoff is denied, ordinary tempo is the better plan." }
+      ],
+      "abortWhen": ["Abandon the module when an early collapse makes the powered-gate transition unlikely or when your late-only slot cannot affect the remaining team state.", "Stop a gate or rescue commitment when the Killer changes route, a teammate no longer needs the assignment, or continuing would give up a reachable repair, rescue or escape."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R10#/generalStrategicDefinition" },
+    { "kind": "STRATEGY", "ref": "R10#/conceptualMechanics" },
+    { "kind": "STRATEGY", "ref": "R10#/relatedStrategyIds" },
+    { "kind": "SNAPSHOT", "ref": "R10@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R10@10.2.0-r1#/counters" },
+    { "kind": "SNAPSHOT", "ref": "R10@10.2.0-r1#/synergies" },
+    { "kind": "PUBLICATION", "ref": "R10#How It Works" },
+    { "kind": "PUBLICATION", "ref": "R10#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "R10#Common Mistakes" },
+    { "kind": "PERK", "ref": "wake-up#/mechanics" },
+    { "kind": "PERK", "ref": "hope#/mechanics" },
+    { "kind": "PERK", "ref": "adrenaline#/mechanics" },
+    { "kind": "PERK", "ref": "no-one-left-behind#/mechanics" },
+    { "kind": "PERK", "ref": "down-to-the-last#/mechanics" }
+  ]
+}

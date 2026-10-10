@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "batch": "106-110",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "blood-pact",
+  "mechanics": {
+    "name": "Blood Pact",
+    "alternateName": null,
+    "source": "Cheryl Mason",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are not the Obsession, if you or the Obsession is injured, you see each other's Auras. When you finish healing the Obsession or they finish healing you, both gain 5/6/7% Haste while within 16 metres of each other; this lasts as long as you remain within that range. While you are the Obsession, if you are hooked, another Survivor becomes the Obsession. At Trial start, you are less likely to become the Obsession.",
+    "activation": [
+      "You are not the Obsession for the mutual Aura and post-heal Haste effects.",
+      "You or the Obsession is injured for the Aura link.",
+      "Complete a qualifying heal while within 16 metres for Haste.",
+      "If you are the Obsession, being hooked transfers the Obsession to another Survivor.",
+      "Ends/deactivates when: The Aura link ends when neither you nor the Obsession is injured, or while you are the Obsession.",
+      "Ends/deactivates when: The post-heal Haste ends when you and the Obsession are no longer within 16 metres of each other; it has no fixed time limit."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Added an Obsession-transfer effect: if you are the Obsession and are hooked, another Survivor becomes the Obsession; existing Aura, Haste, and initial-Obsession modifiers remain.",
+    "plainEnglishSummary": "While you are not the Obsession, you share injury-based Aura information and can gain shared Haste after healing each other; if you are the Obsession and get hooked, the Obsession transfers.",
+    "cooldown": null,
+    "duration": [
+      "Post-heal Haste lasts for as long as both Survivors remain within 16 metres of each other; no fixed duration."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Haste"
+    ],
+    "specialInteractions": [
+      "At Trial start, you are less likely to be selected as the Obsession.",
+      "If you are the Obsession and are hooked, another Survivor becomes the Obsession."
+    ],
+    "sourceCharacter": "Cheryl Mason",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "blood-pact",
+    "rank": 108,
+    "tier": "B",
+    "roles": [
+      "Mobility",
+      "Healing",
+      "Utility"
+    ],
+    "summary": "While you are not the Obsession, you and the injured Obsession see each other; after either heals the other, both gain up to 7% Haste while staying within 16 metres.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium–High",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "haste",
+      "aura-reading",
+      "swf"
+    ],
+    "useCases": [
+      "Create a powerful two-person Haste pair after a heal.",
+      "Use mutual Aura information to locate the Obsession when either of you is injured.",
+      "Coordinate paired rotations or loops where both Survivors can remain within the Haste radius.",
+      "If you are the Obsession and get hooked, the Obsession can transfer to another Survivor, allowing the perk to become usable again afterward."
+    ],
+    "counters": [
+      "The perk is disabled while you are the Obsession.",
+      "The Haste disappears when the pair separates beyond the allowed range.",
+      "Staying close together can create inefficient map pressure or expose two Survivors to the Killer."
+    ],
+    "pros": [
+      "Seven percent Haste is a major movement bonus.",
+      "Mutual Aura information helps the pair reunite.",
+      "No fixed duration while the proximity condition is maintained."
+    ],
+    "cons": [
+      "Obsession restriction can disable the perk completely.",
+      "Tether requirement is awkward.",
+      "Grouping two Survivors can be strategically dangerous."
+    ],
+    "analysis": [
+      "Blood Pact ranks here because 7% Haste is too large to dismiss, even with a frustrating tether condition. After the relevant heal, two Survivors can move significantly faster for as long as they remain within sixteen metres of each other.",
+      "The mutual Aura reading helps create the setup. When either you or the Obsession is injured, finding the other player is easy, making the heal trigger more practical than a blind teammate search.",
+      "The problem is what happens afterward. Dead by Daylight usually rewards Survivors for spreading pressure, while Blood Pact wants two people to stay close. In chase that can create bodyblocks and unusual movement advantages, but on generators it can encourage inefficient grouping.",
+      "The perk also shuts off entirely if you are the Obsession, though it reduces the chance of starting that way. Blood Pact has an excellent ceiling in a coordinated pair and enough awkward conditions to remain B."
+    ],
+    "verdict": "Seven percent Haste can be outrageous, but Blood Pact asks two Survivors to stay tethered together and can disable itself through the Obsession system. Strong in a plan, awkward in ordinary play.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Haste",
+      "Obsession"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Cheryl Mason"
+    },
+    "synergyPerkIds": [
+      "teamwork-power-of-two",
+      "a-place-for-us",
+      "botany-knowledge",
+      "hope"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Teamwork: Power of Two",
+      "A Place for Us",
+      "Botany Knowledge",
+      "Hope"
+    ],
+    "antiSynergies": []
+  }
+}

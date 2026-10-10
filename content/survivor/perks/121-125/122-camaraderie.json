@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "121-125",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "camaraderie",
+  "mechanics": {
+    "name": "Camaraderie",
+    "alternateName": null,
+    "source": "Steve Harrington",
+    "status": "Live 10.2.0",
+    "currentEffect": "While you are hooked in the Struggle Phase, the Hook timer pauses for 26/30/34 seconds when another Survivor enters within 16 metres of you.",
+    "activation": [
+      "Be hooked in the Struggle Phase.",
+      "Another Survivor enters within 16 metres.",
+      "Ends/deactivates when: The Hook timer resumes when the tiered pause expires."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "A teammate coming near you during the Struggle Phase pauses the Hook timer temporarily.",
+    "cooldown": null,
+    "duration": [
+      "Hook timer pause: 26/30/34 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Steve Harrington",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "camaraderie",
+    "rank": 122,
+    "tier": "C",
+    "roles": [
+      "Rescue",
+      "Objective"
+    ],
+    "summary": "While you are in the Struggle Phase, a teammate entering within 16 metres pauses your hook timer for up to 34 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "hook-state",
+      "pressure"
+    ],
+    "useCases": [
+      "Buy the team extra generator time against a Killer defending your second-stage hook.",
+      "Prevent an approaching rescuer from being forced into an immediate bad trade.",
+      "Coordinate with Reassurance to stretch a contested hook dramatically."
+    ],
+    "counters": [
+      "Only works during the Struggle Phase.",
+      "A teammate must get within 16 metres before the timer pause begins.",
+      "If the Killer leaves the hook and a safe rescue is available, the extra timer may add little."
+    ],
+    "pros": [
+      "Thirty-four extra hook seconds can be a major macro swing.",
+      "Requires no input from the hooked player.",
+      "Strong anti-camp team value."
+    ],
+    "cons": [
+      "Second-hook-stage only.",
+      "Needs teammate proximity.",
+      "Very low value against Killers who do not defend hooks."
+    ],
+    "analysis": [
+      "Camaraderie sits in this band because thirty-four paused hook seconds can be extremely valuable against a Killer who is refusing to leave second-stage pressure. Those seconds can become generator progress instead of forcing the team into the immediate trade the Killer wants.",
+      "The condition is simple but not automatic. A teammate must enter the sixteen-metre range, which means the team still has to approach the dangerous area before the pause begins. Once triggered, however, the rescuer can retreat or wait for a better opening.",
+      "Reassurance creates the obvious strategic pairing. One perk can pause the hook from the rescuer's side and the other adds a separate second-stage delay from the hooked Survivor's loadout, creating a large amount of time for the rest of the team.",
+      "Camaraderie remains B because it only matters on second hook and only against meaningful hook defense. In the matches where that problem appears, its value can be far higher than its tiny pick rate suggests."
+    ],
+    "verdict": "A potent second-stage anti-camp timer extension. Camaraderie is narrow, but thirty-four seconds is enough time to materially change the team's rescue economics.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Anti-Camp",
+      "Hook",
+      "Time"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Steve Harrington"
+    },
+    "synergyPerkIds": [
+      "reassurance",
+      "kindred",
+      "babysitter",
+      "shoulder-the-burden"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Reassurance",
+      "Kindred",
+      "Babysitter",
+      "Shoulder the Burden"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "036-040",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "built-to-last",
+  "mechanics": {
+    "name": "Built to Last",
+    "alternateName": null,
+    "source": "Felix Richter",
+    "status": "Live 10.2.0",
+    "currentEffect": "While in a Locker with a depleted Item, after 14/12/10 seconds by perk tier restore its Charges to 99% of maximum. Each subsequent use restores 66%, then 33%. Can be used a maximum of 3 times per Trial.",
+    "activation": [
+      "Enter a Locker with a depleted Item.",
+      "Ends/deactivates when: Each recharge ends when its tier time has elapsed or the interaction is interrupted.",
+      "Ends/deactivates when: Cannot be used after three activations."
+    ],
+    "patchNote": "Latest live balance change (9.1.0): Final 9.1.0 live notes set the time spent in a Locker to 14/12/10 seconds; this differs from the 12/10/8-second PTB value.",
+    "plainEnglishSummary": "After 14/12/10 seconds by perk tier, a Locker recharge restores a depleted Item to 99%; later activations restore 66% and then 33%, up to 3 uses per Trial.",
+    "cooldown": null,
+    "duration": [
+      "First recharge after 14/12/10 seconds by tier; restores 99%.",
+      "Second use restores 66%; third use restores 33%."
+    ],
+    "tokenOrStackBehavior": "Uses are limited to 3 per Trial; recharge amount declines from 99% to 66% to 33%.",
+    "oncePerTrialOrOtherLimits": "Maximum 3 uses per Trial.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The recovered Item Charges are based on the held Item's maximum."
+    ],
+    "sourceCharacter": "Felix Richter",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "built-to-last",
+    "rank": 36,
+    "tier": "A",
+    "roles": [
+      "Item",
+      "Objective"
+    ],
+    "summary": "Recharge a depleted Item in a Locker up to three times, restoring 99%, then 66%, then 33% of its maximum Charges.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "reset"
+    ],
+    "useCases": [
+      "Extend strong Toolboxes across multiple generators instead of exhausting them in one burst.",
+      "Turn high-quality Med-Kits into repeated healing resources throughout the Trial.",
+      "Recharge Flashlights or other limited Items when their utility is central to the build."
+    ],
+    "counters": [
+      "Requires the Item to be depleted and costs 10 seconds in a Locker at Tier III for each recharge.",
+      "The restored percentage drops on each successive use.",
+      "A weak Item remains a weak Item even when you receive more Charges."
+    ],
+    "pros": [
+      "Can multiply the total value of a strong Item several times over.",
+      "Works with multiple Item categories rather than one narrow strategy.",
+      "Predictable and easy to execute once the Item is depleted."
+    ],
+    "cons": [
+      "Requires bringing or finding an Item worth recharging.",
+      "Locker downtime can erase part of the gained efficiency.",
+      "Third recharge is much smaller than the first."
+    ],
+    "analysis": [
+      "Built to Last earns this position because Items are some of the strongest resources Survivors can bring, and the perk effectively stretches those resources far beyond their normal charge limit. A first recharge to 99% is especially powerful with a high-quality Toolbox or Med-Kit that was already optimized with Add-ons.",
+      "The perk becomes more impressive when the Item itself creates time savings. Recharging a Toolbox costs Locker time, but the restored charges can accelerate generators later. Recharging a Med-Kit can create additional independent heals. The correct question is not whether ten Locker seconds are free; it is whether the restored Item produces more strategic value than those seconds cost.",
+      "Its flexibility also matters. Built to Last is not locked to generators or healing, and it can support Flashlight-focused players as well. That makes the perk a resource multiplier whose exact role changes with the Item equipped, which is useful for players who already build intentionally around their inventory.",
+      "It stays below the stronger universal perks because the slot is only as good as the Item being recycled. A player who enters with a poor Item, loses it, or never needs its extra Charges gets limited value. With premium equipment, however, Built to Last can quietly produce a huge amount of additional match resources."
+    ],
+    "verdict": "A powerful Item multiplier whose ceiling depends on what you bring. Built to Last turns premium gear into a much deeper resource pool, at the cost of deliberate Locker downtime.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Resource"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Felix Richter"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "botany-knowledge"
+    ],
+    "synergyOther": [
+      "Flashlights"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Hyperfocus",
+      "Botany Knowledge",
+      "Flashlights"
+    ],
+    "antiSynergies": []
+  }
+}

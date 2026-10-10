@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "R01",
+  "snapshotId": "R01@10.2.0-r1",
+  "perkReviews": [{ "perkId": "plunderers-instinct", "mechanicsRevision": 1 }, { "perkId": "appraisal", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Take a nearby chest when its likely item can solve a current need, then put that item to work instead of turning the whole Trial into looting.",
+    "verdict": {
+      "recommendation": "Use the faster, visible chest transaction to acquire useful equipment; measure it against repair and rescue time.",
+      "soloQ": "Open a chest on a safe route when you lack a useful item, then stop searching once you have one that answers the present need.",
+      "coordinatedSwf": "Assign one looter only if the team has a recipient or task for the item; avoid multiple players leaving objectives for the same chest economy.",
+      "mainWeakness": "Chest access and item quality are limited; extra rolls cannot guarantee the specific tool the match needs."
+    },
+    "loadout": { "options": [
+      { "perkId": "plunderers-instinct", "usage": "CORE", "whyItsHere": "Shows chest and loose-item locations and shortens chest opening, making the first loot detour easier to price against objective work." },
+      { "perkId": "appraisal", "usage": "SUPPORT", "whyItsHere": "Adds limited rummage rolls from opened chests when another item is worth the extra detour; it does not guarantee a particular item." }
+    ] },
+    "weaknesses": ["The time spent reaching and using chests competes with generators, rescues and safe resets."],
+    "commonMistakes": ["Rummaging again after a usable item is already available and the team needs repair progress.", "Treating improved rarity odds as a guarantee of a specific tool."],
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Identify the item gap before leaving an objective; a nearby chest on the next safe route is more attractive than a map-crossing detour."],
+      "rows": [
+        { "id": "visible-chest", "situation": "Plunderer's Instinct shows a chest on your safe route and you have no useful item for the next task.", "action": "Open it, evaluate the actual item and carry it to the task or teammate who can use it.", "why": "The faster chest transaction can repay a small detour only if its output gets used.", "enabledBy": ["perk:plunderers-instinct"] },
+        { "id": "extra-roll", "situation": "The first item does not address the current need and an opened chest is still reachable without abandoning an urgent objective.", "action": "Spend one Appraisal rummage if another item roll is worth that travel and interaction; stop when the result is useful or the team needs you elsewhere.", "why": "Additional rolls are finite and still uncertain.", "enabledBy": ["perk:appraisal"] },
+        { "id": "loot-not-worth-it", "situation": "The Killer contests the chest route, a teammate needs rescue, or a usable item is already in hand.", "action": "Leave the chest and return to repair, rescue or using the item already acquired.", "why": "Loot value disappears when the team pays more time than the item can return." }
+      ],
+      "abortWhen": ["Do not cross the map for another random item while an urgent rescue or safe repair is available.", "Stop looting when chest access is unsafe or the acquired item already covers the need."]
+    }
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "R01#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "R01@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "R01@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "R01#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "R01#Weaknesses and Failure Modes" },
+    { "kind": "PERK", "ref": "plunderers-instinct#/mechanics" },
+    { "kind": "PERK", "ref": "appraisal#/mechanics" }
+  ]
+}

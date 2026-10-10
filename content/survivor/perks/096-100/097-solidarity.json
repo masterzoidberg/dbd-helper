@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "096-100",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "solidarity",
+  "mechanics": {
+    "name": "Solidarity",
+    "alternateName": null,
+    "source": "Jane Romero",
+    "status": "Live 10.2.0",
+    "currentEffect": "While injured and healing another Survivor, you also gain healing progress at 65/70/75% speed.",
+    "activation": [
+      "Be injured and heal another Survivor.",
+      "Ends/deactivates when: The self-healing progress effect ends when you stop healing another Survivor or are no longer injured."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Increased parallel self-healing progress from 50/60/70% to 65/70/75% and removed the no-Med-Kit restriction.",
+    "plainEnglishSummary": "While injured and healing a teammate, you also build your own healing progress at a reduced rate.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 10.2.0 live effect no longer requires healing without a Med-Kit."
+    ],
+    "sourceCharacter": "Jane Romero",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "solidarity",
+    "rank": 97,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Objective",
+      "Self-Sustain"
+    ],
+    "summary": "While injured, convert up to 75% of the healing you give another Survivor into progress on your own heal, including when using a Med-Kit.",
+    "metaStatus": "Good",
+    "skillLevel": "Low–Medium",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Turn one teammate heal into substantial progress on your own health bar.",
+      "Combine two injured Survivors' reset needs into less total healing time.",
+      "Pair with strong altruistic healing bonuses so the shared reset becomes even faster."
+    ],
+    "counters": [
+      "You must already be injured and heal another Survivor .",
+      "It never completes your own heal unless enough progress is generated or someone finishes it afterward.",
+      "If the team should remain injured and repair, healing at all can still be the wrong macro choice."
+    ],
+    "pros": [
+      "Excellent two-for-one healing efficiency.",
+      "70% conversion is substantial.",
+      "Requires no token, cooldown, or special map object."
+    ],
+    "cons": [
+      "Needs another injured Survivor to heal.",
+      "Does not help when you are the one receiving the heal first.",
+      "Still tied to the strategic value of healing in that match."
+    ],
+    "analysis": [
+      "Solidarity became cleaner in 10.2. The conversion rate now reaches 75% and the old restriction against using a Med-Kit on the other Survivor is gone.",
+      "The perk still shines when two Survivors need a reset. One altruistic heal advances both health bars, reducing the total team time needed before both players can return to objectives.",
+      "Allowing Med-Kits broadens the build space because the user can accelerate the teammate heal with an Item without disabling Solidarity’s personal progress.",
+      "The buff is incremental rather than transformational, but it raises an already-efficient support perk and deserves consideration above its previous placement."
+    ],
+    "verdict": "A better two-for-one heal in 10.2: 75% conversion and no Med-Kit restriction make Solidarity easier to exploit without changing its core job.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Efficiency"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jane Romero"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "well-make-it",
+      "desperate-measures",
+      "empathy"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Botany Knowledge",
+      "We'll Make It",
+      "Desperate Measures",
+      "Empathy"
+    ],
+    "antiSynergies": []
+  }
+}

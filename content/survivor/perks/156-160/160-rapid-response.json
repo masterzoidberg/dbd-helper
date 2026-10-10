@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "156-160",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "rapid-response",
+  "mechanics": {
+    "name": "Rapid Response",
+    "alternateName": null,
+    "source": "Orela Rose",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you become afflicted by Exhausted, Rapid Response reveals the Killer's Aura to you for 2 seconds. You can voluntarily trigger Exhausted by Fast Exiting a Locker; this applies Exhausted for 30/25/20 seconds by tier. Rapid Response cannot override an Exhausted effect that is already active.",
+    "activation": [
+      "Become afflicted by Exhausted to reveal the Killer's Aura.",
+      "To voluntarily trigger the perk, Fast Exit a Locker while not already Exhausted.",
+      "Ends/deactivates when: Killer Aura reveal ends after 2 seconds.",
+      "Ends/deactivates when: The voluntary Exhausted effect lasts 30/25/20 seconds by tier; the perk cannot override an existing Exhausted effect."
+    ],
+    "patchNote": "Latest live balance change (8.7.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "Gaining Exhausted reveals the Killer's Aura to you briefly, and a Fast Locker Exit can trigger tier-scaled Exhaustion voluntarily.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 2 seconds.",
+      "Exhausted from Fast Exiting a Locker: 30/25/20 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "The aura reveal also triggers when Exhausted is applied by another source; the perk cannot override an already active Exhausted status."
+    ],
+    "sourceCharacter": "Orela Rose",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "rapid-response",
+    "rank": 160,
+    "tier": "C",
+    "roles": [
+      "Information",
+      "Exhaustion"
+    ],
+    "summary": "Whenever you become Exhausted, briefly reveal the Killer's Aura; fast-exiting a Locker can voluntarily apply a short Exhausted timer.",
+    "metaStatus": "Situational",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "exhausted",
+      "aura-reading"
+    ],
+    "useCases": [
+      "Add a short Killer Aura read to Sprint Burst, Lithe, Dramaturgy, or other Exhaustion activations.",
+      "Use a fast Locker exit to trigger the information deliberately when you are not already Exhausted.",
+      "Pair with Vigil to shorten the voluntary Exhaustion tax."
+    ],
+    "counters": [
+      "The Aura read lasts only two seconds.",
+      "Voluntarily becoming Exhausted can disable stronger chase perks when mistimed.",
+      "Fast Locker exits are noisy and require a Locker."
+    ],
+    "pros": [
+      "Naturally piggybacks on popular Exhaustion perks.",
+      "Player can force a trigger through a Locker.",
+      "Vigil makes the short voluntary Exhaustion easier to manage."
+    ],
+    "cons": [
+      "Very short information duration.",
+      "Can sabotage your own Exhaustion perk.",
+      "Low standalone impact."
+    ],
+    "analysis": [
+      "Rapid Response ranks this position because it can attach useful information to an event strong Survivor builds already create: becoming Exhausted. Sprint Burst, Dramaturgy, Lithe, and similar perks all become two-second Killer Aura triggers for free.",
+      "Two seconds is short but not meaningless. It can tell you which side of a structure the Killer chose after your burst or whether they abandoned chase entirely. Eyes of Belmont can extend that small window.",
+      "The Locker activation exists as a manual information button, but voluntarily inflicting Exhausted can be actively harmful when your real chase perk is ready. The user must understand which resource they are spending.",
+      "Rapid Response remains C because the information is brief and the manual trigger is awkward. It is best as garnish on an Exhaustion build rather than the reason the build exists."
+    ],
+    "verdict": "A neat Exhaustion-information rider, not a core perk. Rapid Response adds two seconds of Killer vision to strong chase tools, but careless manual use can shut those tools off.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Orela Rose"
+    },
+    "synergyPerkIds": [
+      "vigil",
+      "sprint-burst",
+      "dramaturgy",
+      "eyes-of-belmont"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Vigil",
+      "Sprint Burst",
+      "Dramaturgy",
+      "Eyes of Belmont"
+    ],
+    "antiSynergies": []
+  }
+}

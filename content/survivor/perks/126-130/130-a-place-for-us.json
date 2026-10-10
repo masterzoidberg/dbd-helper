@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "126-130",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "a-place-for-us",
+  "mechanics": {
+    "name": "A Place for Us",
+    "alternateName": null,
+    "source": "Kwon Tae-Young",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healing another Survivor, you and that Survivor gain Elusive. If you complete healing the Obsession, both of you gain Elusive for 20/25/30 seconds. At Trial start, the perk reduces your chance of becoming the initial Obsession.",
+    "activation": [
+      "Begin healing another Survivor.",
+      "Complete healing the Obsession for the tiered timed effect.",
+      "The initial-Obsession chance modifier applies at Trial start.",
+      "Ends/deactivates when: The in-progress effect ends when the heal ends; the completed-heal effect ends after its timer."
+    ],
+    "patchNote": "Latest live balance change (9.5.0): Introduced the perk with Elusive sharing during a heal and a 20/25/30-second effect after completing a heal on the Obsession.",
+    "plainEnglishSummary": "Healing a teammate grants both of you Elusive, with a timed extension after healing the Obsession; the perk also reduces your chance to become the initial Obsession.",
+    "cooldown": null,
+    "duration": [
+      "Elusive during the heal; 20/25/30 seconds after completing a heal on the Obsession."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Elusive"
+    ],
+    "specialInteractions": [
+      "At Trial start, you are less likely to become the Obsession."
+    ],
+    "sourceCharacter": "Kwon Tae-Young",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "a-place-for-us",
+    "rank": 130,
+    "tier": "C",
+    "roles": [
+      "Healing",
+      "Stealth"
+    ],
+    "summary": "While healing another Survivor, both of you gain Elusive; completing a heal on the Obsession extends Elusive for up to 30 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Protect both healer and patient from Aura reads and trail tracking during a reset.",
+      "Create a long post-heal stealth window when the target is the Obsession.",
+      "Use safe healing zones to rotate both Survivors without leaving normal tracking cues."
+    ],
+    "counters": [
+      "Requires healing another Survivor.",
+      "The long timed extension only occurs when you fully heal the Obsession.",
+      "Direct sight and non-covered tracking can still reveal you."
+    ],
+    "pros": [
+      "Protects two Survivors at once during healing.",
+      "Thirty-second Obsession extension can cover a full rotation.",
+      "Strong information-denial theme."
+    ],
+    "cons": [
+      "Target-dependent ceiling.",
+      "No healing-speed bonus.",
+      "Does nothing when you are the one receiving the heal."
+    ],
+    "analysis": [
+      "A Place for Us ranks this position because Elusive is a broad stealth package, and applying it to both healer and patient can make a reset safer against Aura-heavy Killers. The base effect is present whenever you heal another Survivor rather than requiring a cooldown or token.",
+      "The Obsession clause raises the ceiling substantially. Completing that heal can extend Elusive to both Survivors for up to thirty seconds, enough time to leave the area and reposition without normal Aura, Scratch-Mark, Blood, or pain-sound tracking.",
+      "The weakness is that the perk does not make the heal itself faster. If the Killer simply walks back before the interaction finishes, information denial may not compensate for the time spent resetting.",
+      "It sits in B because the protection is useful but target-dependent. Against heavy tracking builds or when the Obsession needs repeated heals, it can perform far above this slot."
+    ],
+    "verdict": "A solid two-person stealth shield during resets. A Place for Us is strongest when the Obsession clause turns one completed heal into a long protected rotation.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Information Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Kwon Tae-Young"
+    },
+    "synergyPerkIds": [
+      "empathic-connection",
+      "botany-knowledge",
+      "bound-by-obsession",
+      "boon-shadow-step"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Empathic Connection",
+      "Botany Knowledge",
+      "Bound by Obsession",
+      "Boon: Shadow Step"
+    ],
+    "antiSynergies": []
+  }
+}

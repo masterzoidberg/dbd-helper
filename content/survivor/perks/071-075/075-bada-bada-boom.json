@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "071-075",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "bada-bada-boom",
+  "mechanics": {
+    "name": "Bada Bada Boom",
+    "alternateName": null,
+    "source": "Dustin Henderson",
+    "status": "Live 10.2.0",
+    "currentEffect": "After completing 20% worth of Generator repairs, the perk activates. While active, use the Active Ability button next to a Window to install a Trap that remains for up to 40/50/60 seconds. When the Killer vaults through the trapped Window, they suffer 50% Hindered for 6 seconds. The trap ends after triggering or timing out, and all Survivors see the trapped Window's yellow Aura.",
+    "activation": [
+      "Accumulate 20% total Generator repair progress.",
+      "While active, use the Active Ability button next to a Window to install the trap.",
+      "Ends/deactivates when: The trap ends when triggered or when its timer expires."
+    ],
+    "patchNote": "Latest live balance change (9.4.0): Introduced with a 20% repair threshold and 40/50/60-second trap duration.",
+    "plainEnglishSummary": "After enough Generator repair, trap a Window to Hinder the Killer when they vault through it.",
+    "cooldown": null,
+    "duration": [
+      "Trap duration: 40/50/60 seconds.",
+      "Killer Hindered: 6 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "The trap is consumed on trigger; another requires qualifying progress and installation.",
+    "statusEffectsInvolved": [
+      "Hindered"
+    ],
+    "specialInteractions": [
+      "The Killer is Hindered when vaulting through the trapped Window.",
+      "All Survivors see the trapped Window's yellow Aura."
+    ],
+    "sourceCharacter": "Dustin Henderson",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "bada-bada-boom",
+    "rank": 75,
+    "tier": "B",
+    "roles": [
+      "Chase"
+    ],
+    "summary": "After 20% generator repair, trap a Window; if the Killer vaults it, they suffer 50% Hindered for 6 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium–High",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "looping",
+      "pressure"
+    ],
+    "useCases": [
+      "Trap a powerful Window the Killer is likely to vault during chase.",
+      "Create a massive slowdown that lets a Survivor leave the tile after the Killer follows.",
+      "Mark the trapped Window for teammates through its yellow Aura."
+    ],
+    "counters": [
+      "The Killer must vault the trapped Window before the timer expires.",
+      "Some Killers can play the tile without ever vaulting.",
+      "Requires prior generator repair and a good Window location."
+    ],
+    "pros": [
+      "50% Hindered for 6 seconds is enormous.",
+      "Low 20% repair charge requirement.",
+      "Can affect another Survivor's chase, not only your own."
+    ],
+    "cons": [
+      "Very trigger-dependent.",
+      "Trap can expire unused.",
+      "Experienced Killers may route around it."
+    ],
+    "analysis": [
+      "Bada Bada Boom ranks this position because the successful trigger is excellent but hard to force. A Killer vaulting the trapped Window eats a 50% Hindered effect for six seconds, enough to completely break many chase sequences.",
+      "The low repair requirement means charging it is not the problem. The real challenge is predicting a Window the Killer will actually vault before the trap expires.",
+      "Good map knowledge raises the ceiling because some strong structures naturally encourage Killer vaults. The yellow Aura also lets teammates recognize the trapped resource.",
+      "It remains mid-B because many Killers can refuse the interaction. A trap that never fires creates no chase swing regardless of how impressive the number looks."
+    ],
+    "verdict": "A brutal Window trap when the Killer cooperates. Bada Bada Boom has huge payoff and unreliable agency, which makes it a specialist rather than a default chase perk.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Trap",
+      "Hindered"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Dustin Henderson"
+    },
+    "synergyPerkIds": [
+      "chemical-trap",
+      "lithe",
+      "windows-of-opportunity",
+      "quick-quiet"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Chemical Trap",
+      "Lithe",
+      "Windows of Opportunity",
+      "Quick & Quiet"
+    ],
+    "antiSynergies": []
+  }
+}

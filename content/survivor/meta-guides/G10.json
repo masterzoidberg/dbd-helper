@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G10",
+  "snapshotId": "G10@10.2.0-r1",
+  "perkReviews": [{ "perkId": "fruits-of-your-labor", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Bank tokens as generators finish, then use your own repair finish for a brief rotation burst and healing progress when the next job can use them.",
+    "verdict": {
+      "recommendation": "Treat Fruits of Your Labor as a provisional objective-to-reset bonus, not a reason to finish the wrong generator or promise a full heal.",
+      "soloQ": "Work a useful generator and plan the destination after its finish; accept the bonus when it arrives without holding a nearly complete machine for a heal.",
+      "coordinatedSwf": "Call who owns the finish and whether anyone actually needs the subsequent reset or rotation; ordinary objective coverage remains the priority.",
+      "mainWeakness": "Other generator completions only bank tokens. The Haste and Healing progress require your own repair finish, and their value depends on the next game state."
+    },
+    "loadout": { "options": [{ "perkId": "fruits-of-your-labor", "usage": "CORE", "whyItsHere": "Every completed generator grants a token; finishing repair yourself activates per-token 5% Haste for two seconds and 10/15/20% Healing progress by tier." }] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Choose a generator worth finishing regardless of the perk. There is no canonical four-perk implementation or required item for this experimental strategy."],
+      "rows": [
+        { "id": "bank-tokens", "situation": "Any generator is completed while Fruits of Your Labor is equipped.", "action": "Note the gained token, then keep the best current objective or rescue assignment; do not expect an immediate Haste or heal effect from that completion alone.", "why": "The token is banked at completion, but the payoff has a separate finishing-repair trigger.", "enabledBy": ["perk:fruits-of-your-labor"] },
+        { "id": "finish-and-rotate", "situation": "You are finishing repair on a useful generator and have banked tokens.", "action": "Finish the repair, then use the per-token 5% Haste for two seconds to reach the next safe job. Count the 10/15/20% Healing progress per token as reset value only if a heal is actually useful now.", "why": "The effect triggers on your repair finish, not on a teammate's finish elsewhere; brief movement and healing progress have different follow-up uses.", "enabledBy": ["perk:fruits-of-your-labor"] },
+        { "id": "release-finish-plan", "situation": "The selected generator is denied, a hook needs coverage, or no reset is needed.", "action": "Take the higher-value job and let the perk wait for a later legitimate finish. Do not delay an objective or force a heal merely to demonstrate the bonus.", "why": "The strategy loses value when activation timing overrides objective and hook-state priorities." }
+      ],
+      "abortWhen": ["Abandon a contested or low-value finish; the banked-token plan is not worth a down or an uncovered rescue."]
+    },
+    "strengths": ["Main-objective progress can carry a short movement and healing-progress benefit into the next rotation."],
+    "weaknesses": ["Requires generator completions and your own repair finish; healing progress may have no immediate use."],
+    "commonMistakes": ["Treating any generator completion as the immediate payoff trigger.", "Forcing a reset or delaying a finish to extract value from a provisional bonus."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "G10#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "G10@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "G10@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "G10@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "G10#How It Works" },
+    { "kind": "PUBLICATION", "ref": "G10#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "G10#Common Mistakes" },
+    { "kind": "PERK", "ref": "fruits-of-your-labor#/mechanics" }
+  ]
+}

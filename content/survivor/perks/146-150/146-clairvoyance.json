@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "146-150",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "clairvoyance",
+  "mechanics": {
+    "name": "Clairvoyance",
+    "alternateName": null,
+    "source": "Mikaela Reid",
+    "status": "Live 10.2.0",
+    "currentEffect": "After cleansing or blessing a Totem, while empty-handed hold the Use Item button to reveal Auras of Chests, Exit Gate switches, Generators, the Hatch, and Hooks within 64 metres, for up to 10/11/12 seconds while the interaction is held.",
+    "activation": [
+      "Cleanse or bless a Totem.",
+      "Be empty-handed and hold Use Item.",
+      "Ends/deactivates when: Aura reading ends when the button is released or after 10/11/12 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.2.0): Increased maximum aura-reading duration to 10/11/12 seconds.",
+    "plainEnglishSummary": "After interacting with a Totem, you can reveal several important object Auras while empty-handed.",
+    "cooldown": null,
+    "duration": [
+      "Aura-reading duration: up to 10/11/12 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Reveals Chests, Exit Gate switches, Generators, Hatch and Hooks within 64 metres."
+    ],
+    "sourceCharacter": "Mikaela Reid",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "clairvoyance",
+    "rank": 146,
+    "tier": "C",
+    "roles": [
+      "Information",
+      "Totem"
+    ],
+    "summary": "After cleansing or blessing a Totem, while empty-handed you can reveal chests, gates, generators, Hatch, and hooks within 64 metres for up to 12 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Locate the Hatch or Exit Gate switches in late-game situations.",
+      "Scout hooks, generators, and chests after a Totem interaction.",
+      "Use the information burst to plan a long rotation without carrying an Item."
+    ],
+    "counters": [
+      "Requires a prior Totem cleanse or blessing.",
+      "You must be empty-handed to use it.",
+      "The total Aura-reading time is limited."
+    ],
+    "pros": [
+      "Very broad object list.",
+      "Sixty-four-metre radius.",
+      "Includes Hatch information."
+    ],
+    "cons": [
+      "Setup plus empty-hand restriction.",
+      "No Killer or teammate information.",
+      "Limited duration."
+    ],
+    "analysis": [
+      "Clairvoyance ranks this position because its object list is broad enough to solve several navigation problems at once. The Hatch inclusion is especially notable, giving the perk a potential endgame purpose beyond ordinary generator routing.",
+      "The Totem setup is not terrible in builds already cleansing or blessing, but it is still a requirement. The empty-hand condition can also conflict with strong Items, making the perk less attractive in equipment-heavy builds.",
+      "The twelve seconds of total use should be treated as a scouting resource rather than a permanent map overlay. A short scan can identify the direction of gates, generators, hooks, or the Hatch before you resume normal movement.",
+      "It remains lower B because the information is about objects rather than threats. Useful navigation is nice, but the strongest perks tell you where the Killer is or directly change survival odds."
+    ],
+    "verdict": "A flexible object scanner with useful Hatch information. Clairvoyance solves navigation problems, but its setup and empty-hand requirement keep it niche.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Scouting"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Mikaela Reid"
+    },
+    "synergyPerkIds": [
+      "detective-s-hunch",
+      "inner-strength",
+      "counterforce",
+      "left-behind"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Detective's Hunch",
+      "Inner Strength",
+      "Counterforce",
+      "Left Behind"
+    ],
+    "antiSynergies": []
+  }
+}

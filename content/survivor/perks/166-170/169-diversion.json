@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "166-170",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "diversion",
+  "mechanics": {
+    "name": "Diversion",
+    "alternateName": null,
+    "source": "Adam Francis",
+    "status": "Live 10.2.0",
+    "currentEffect": "After spending 30/25/20 seconds in the Killer's Terror Radius while not in chase, Diversion activates. While crouched and motionless, use the Active Ability button to throw a pebble up to 20 metres, creating a Loud Noise notification and fake Scratch Marks at the landing point. It deactivates after use.",
+    "activation": [
+      "Spend tier time in the Terror Radius while not in chase.",
+      "Crouch, remain motionless and use Active Ability.",
+      "Ends/deactivates when: Deactivates after the pebble is thrown."
+    ],
+    "patchNote": "Latest live balance change (8.2.0): Reduced the Terror Radius charge time to 30/25/20 seconds.",
+    "plainEnglishSummary": "Staying near the Killer without being chased charges a pebble that creates a decoy noise and trail.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Charges one use after 30/25/20 seconds in Terror Radius outside chase; one pebble per activation.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Creates a Loud Noise notification and fake Scratch Marks at the pebble landing point."
+    ],
+    "sourceCharacter": "Adam Francis",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "diversion",
+    "rank": 169,
+    "tier": "D",
+    "roles": [
+      "Stealth",
+      "Utility"
+    ],
+    "summary": "Charge near the Killer outside chase, then throw a pebble that creates a fake Loud Noise notification and Scratch Marks 20 metres away.",
+    "metaStatus": "Weak",
+    "skillLevel": "Medium–High",
+    "soloQ": 1,
+    "swf": 1,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "terror-radius"
+    ],
+    "useCases": [
+      "Send the Killer toward a plausible false location after a hook or patrol event.",
+      "Create fake Scratch Marks at the decoy point.",
+      "Use coordinated timing to pull a mobile Killer away from a real objective."
+    ],
+    "counters": [
+      "The Killer can recognize implausible notifications or simply ignore them.",
+      "Stealth Killers make charging harder because Terror Radius uptime is lower.",
+      "A bad throw can point the Killer toward real teammates instead."
+    ],
+    "pros": [
+      "Player-controlled decoy.",
+      "Can create both noise and fake trail information.",
+      "Shorter modern charge time than historical versions."
+    ],
+    "cons": [
+      "No guaranteed Killer reaction.",
+      "Requires Terror Radius charging outside chase.",
+      "Easy to use in a way that accomplishes nothing."
+    ],
+    "analysis": [
+      "Diversion is one of the game’s better comedy perks because the effect can also be strategically real. A well-timed fake notification can pull a Killer toward a location they believe contains a Survivor or objective mistake.",
+      "The fake Scratch Marks help sell the story if the Killer reaches the landing point, but the perk never controls whether the Killer takes the bait in the first place.",
+      "Charging requires time in the Terror Radius without being chased, which is easier against territorial standard Killers than stealth or highly mobile ones.",
+      "Diversion belongs low because misdirection is probabilistic value. Creative players can manufacture strong moments, but a perk that needs the opponent to believe the lie cannot be consistent."
+    ],
+    "verdict": "A pebble with a résumé. Diversion can genuinely redirect a Killer, but its power begins and ends with whether the Killer believes you.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Misdirection"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Adam Francis"
+    },
+    "synergyPerkIds": [
+      "red-herring",
+      "deception",
+      "lucky-star"
+    ],
+    "synergyOther": [
+      "Stealth builds"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Red Herring",
+      "Deception",
+      "Lucky Star",
+      "Stealth builds"
+    ],
+    "antiSynergies": []
+  }
+}

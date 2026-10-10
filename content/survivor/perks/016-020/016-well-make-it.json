@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "batch": "016-020",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "well-make-it",
+  "mechanics": {
+    "name": "We'll Make It",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you unhook a Survivor, for 70/80/90 seconds you heal other Survivors 100% faster.",
+    "activation": [
+      "Unhook another Survivor.",
+      "Ends/deactivates when: The effect ends after 70/80/90 seconds."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Increased activation duration from 30/60/90 to 70/80/90 seconds; +100% altruistic healing speed remains.",
+    "plainEnglishSummary": "After an unhook, you heal other Survivors twice as fast for 70/80/90 seconds.",
+    "cooldown": null,
+    "duration": [
+      "70/80/90 seconds after unhooking another Survivor."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The 100% speed bonus applies to Altruistic Healing, not self-healing."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "well-make-it",
+    "rank": 16,
+    "tier": "A",
+    "roles": [
+      "Healing",
+      "Rescue",
+      "Objective"
+    ],
+    "summary": "After an unhook, heal other Survivors at double speed for up to 90 seconds.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Immediate",
+    "glossaryKeys": [
+      "reset",
+      "hook-state",
+      "pressure"
+    ],
+    "useCases": [
+      "Heal the Survivor you just rescued before the Killer can return and interrupt the reset.",
+      "Carry the 90-second healing bonus away from hook to rapidly stabilize another injured teammate.",
+      "Reduce the time two Survivors spend off generators during routine post-hook resets."
+    ],
+    "counters": [
+      "The perk must be activated by unhooking another Survivor.",
+      "A Killer returning immediately to hook can deny a safe healing window despite the speed bonus.",
+      "Broken, Plague-style anti-healing, or teams intentionally staying injured can reduce its value."
+    ],
+    "pros": [
+      "Extremely simple trigger tied to an action Survivors already need to perform.",
+      "A 90-second Tier III window is long enough to heal more than only the rescued teammate.",
+      "Strong in both Solo Q and SWF with almost no mechanical execution requirement."
+    ],
+    "cons": [
+      "Offers no value before you perform an unhook.",
+      "Does not protect the healed Survivor if the Killer immediately commits to tunneling.",
+      "Healing speed is less valuable in matchups where healing itself is strategically inefficient."
+    ],
+    "analysis": [
+      "We'll Make It closes the top twenty because it is one of the cleanest tempo perks in Survivor's entire roster. Unhooking is already mandatory team work. The perk simply turns that necessary action into a long window where healing other Survivors takes half the usual time.",
+      "The obvious use is the under-hook reset. A normal heal asks two Survivors to stop progressing the match for a meaningful amount of time; doubling the healing speed gets both players back to useful jobs much sooner. That value is especially visible when the Killer has moved away and the team can safely cash in the heal immediately.",
+      "The 90-second duration is what keeps the perk from being merely a hook-heal gimmick. After the rescue, the user can rotate into another injured teammate and still carry the bonus. In messy Solo Q matches, that long window makes the perk forgiving because the user does not need perfect communication or timing to get a second useful heal.",
+      "It ranks below Resurgence because it needs the user to be the rescuer and still requires the full heal interaction, while Resurgence front-loads most of the heal automatically for the unhooked Survivor. It also lacks the protection of Babysitter or anti-tunnel perks. But for raw, repeatable team efficiency, We'll Make It remains excellent."
+    ],
+    "verdict": "Simple, reliable, and brutally efficient. We'll Make It is one of the best general-purpose healing perks because its trigger is normal gameplay and its 90-second payoff is difficult to waste.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Efficiency"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "resurgence",
+      "babysitter",
+      "botany-knowledge",
+      "kindred"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Resurgence",
+      "Babysitter",
+      "Botany Knowledge",
+      "Kindred"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "071-075",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "wiretap",
+  "mechanics": {
+    "name": "Wiretap",
+    "alternateName": null,
+    "source": "Ada Wong",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you repair Generators for a total of 40% progression, Wiretap activates. While active, use the Active Ability button while standing next to a Generator to install a listening device for 100/110/120 seconds. All Survivors see the Killer's Aura when the Killer comes within 14 m of that Generator. The device deactivates when its timer expires or when the Generator is damaged; all Survivors see the Aura of a bugged Generator in yellow.",
+    "activation": [
+      "Repair Generators for a total of 40% progression to activate the perk.",
+      "While active, stand next to a Generator and use the Active Ability button to install the device.",
+      "Ends/deactivates when: The device ends after 100/110/120 seconds or when the Generator is damaged."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "After repairing 40% total Generator progress, you can attach a device that shares the Killer's Aura when they approach a Generator.",
+    "cooldown": null,
+    "duration": [
+      "Device duration: 100/110/120 seconds, unless the Generator is damaged first."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Any effects that change the perk user's Repair speed also affect how quickly Wiretap charges.",
+      "The Aura-reveal effect remains active while the Generator is blocked by the Entity."
+    ],
+    "sourceCharacter": "Ada Wong",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "wiretap",
+    "rank": 72,
+    "tier": "B",
+    "roles": [
+      "Information",
+      "Objective"
+    ],
+    "summary": "After enough generator repair, bug a generator so all Survivors can see the Killer's Aura whenever they come within 14 metres of it.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure"
+    ],
+    "useCases": [
+      "Turn a central or contested generator into a local Killer-detection beacon.",
+      "Use the Aura zone during nearby chases to see the Killer through walls and structures.",
+      "Give every teammate information from one placed device."
+    ],
+    "counters": [
+      "The perk requires 40% total personal generator repair to charge.",
+      "Damaging the bugged generator deactivates the device.",
+      "Poor generator placement can create an Aura zone that nobody uses."
+    ],
+    "pros": [
+      "Teamwide information rather than owner-only Aura reading.",
+      "Long device duration at Tier III.",
+      "Can be extremely strong around central indoor generators or chase structures."
+    ],
+    "cons": [
+      "Needs repair setup and a strategically useful generator.",
+      "Killer can remove it by damaging the generator.",
+      "Limited 14-metre detection radius."
+    ],
+    "analysis": [
+      "Wiretap takes this position because it turns generator work into a reusable team information zone. After enough repair contribution, the Survivor can install the device on a generator, and every teammate sees the Killer's Aura whenever they enter the nearby radius.",
+      "The perk is particularly strong around central generators and indoor structures. A loop that passes near the bugged objective effectively gains intermittent wallhacks, making Killer mindgames much harder. Even Survivors elsewhere can use the Aura appearance to understand where pressure currently sits.",
+      "Placement quality determines most of the value. A safe corner generator the Killer never revisits is a poor target, while a contested central objective can produce repeated reads. The device also disappears when the Killer damages the generator, so obvious placements may have short lives.",
+      "Wiretap is held back because it requires both charge and geography. When the setup is right it can produce teamwide information approaching premium information quality, but that setup is too variable for a higher general ranking."
+    ],
+    "verdict": "A strong local information beacon when placed intelligently. Wiretap can give an entire team repeated Killer Aura reads, but only around the right generator.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ada Wong"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "open-handed",
+      "kindred",
+      "troubleshooter"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Open-Handed",
+      "Kindred",
+      "Troubleshooter"
+    ],
+    "antiSynergies": []
+  }
+}

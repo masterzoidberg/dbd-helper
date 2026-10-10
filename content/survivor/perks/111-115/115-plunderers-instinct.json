@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "111-115",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "plunderers-instinct",
+  "mechanics": {
+    "name": "Plunderer's Instinct",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "You see the Auras of Chests and Items. You unlock Chests 150/175/200% faster. Whenever you unlock a Chest, you are 50% more likely to find an Item of higher rarity.",
+    "activation": [
+      "Aura reading is passive.",
+      "Unlock a Chest for the speed and higher-rarity Item effects.",
+      "Ends/deactivates when: The speed and rarity effects apply to Chest unlocking; the 10.2.0 notes do not extend the rarity trigger to rummaging."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Removed the 32/48/64-metre Aura limit, added 150/175/200% faster Chest unlocking, and tied the 50% higher-rarity Item chance to Chest unlocking.",
+    "plainEnglishSummary": "See Chests and Items without the former range limit, open Chests dramatically faster, and improve the chance of a higher-rarity Item when unlocking one.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The former 32/48/64-metre Aura range was removed.",
+      "The higher-rarity chance is tied to unlocking a Chest."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "plunderers-instinct",
+    "rank": 115,
+    "tier": "C",
+    "roles": [
+      "Item",
+      "Information"
+    ],
+    "summary": "See Chests and dropped Items without the old range limit, open Chests up to 200% faster, and improve higher-rarity Item odds by 50%.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 2,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Locate every relevant chest/item resource quickly.",
+      "Open Chests fast enough that a loot detour costs far less time than before.",
+      "Drive Appraisal, Ace in the Hole, Pharmacy, and other chest builds."
+    ],
+    "counters": [
+      "Loot is still random.",
+      "Chest value competes with generator time.",
+      "A strong brought Item can make the whole chest economy unnecessary."
+    ],
+    "pros": [
+      "10.2 removed the old Aura range restriction.",
+      "200% faster Chest unlocking is enormous.",
+      "Higher-rarity chance improves the average Item roll."
+    ],
+    "cons": [
+      "Still a side-objective perk.",
+      "Cannot guarantee the Item category you need.",
+      "Low value if the team already entered with premium Items."
+    ],
+    "analysis": [
+      "Plunderer’s Instinct is another 10.2 perk that should not inherit its old reputation. The Aura range restriction is gone and Chest opening can be 200% faster at Tier III, substantially reducing the time cost of the entire loot strategy.",
+      "The 50% higher-rarity modifier remains, so the perk now combines map-wide resource information, dramatically faster acquisition, and better average quality in one slot.",
+      "That does not make Chests the main objective. Random Items still have to repay travel and interaction time, and a lobby that already brought strong equipment has less reason to loot.",
+      "The live version deserves a meaningful promotion among specialist perks. It is still a chest perk, but it is finally an extremely efficient chest perk."
+    ],
+    "verdict": "A serious chest-build perk after 10.2. Global resource information and 200% faster opening make looting far less embarrassing to the team’s generator clock.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Chest"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "appraisal",
+      "ace-in-the-hole",
+      "pharmacy",
+      "streetwise"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Appraisal",
+      "Ace in the Hole",
+      "Pharmacy",
+      "Streetwise"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "batch": "026-030",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "prove-thyself",
+  "mechanics": {
+    "name": "Prove Thyself",
+    "alternateName": null,
+    "source": "Dwight Fairfield",
+    "status": "Live 10.2.0",
+    "currentEffect": "While repairing a Generator, increases Repair speed by a stackable 6/8/10% per other Survivor within 4 metres, up to 18/24/30%. Prove Thyself extends its effect to all Survivors within its range. A Survivor can be affected by only one instance of Prove Thyself at a time.",
+    "activation": [
+      "Repair a Generator with at least one other Survivor within 4 metres for a bonus to apply.",
+      "Ends/deactivates when: The bonus changes as nearby Survivors enter or leave the 4-metre range and ends when the relevant Generator repair stops."
+    ],
+    "patchNote": "Latest live balance change (7.1.0): Reduced the Repair speed bonus from 15% to 6/8/10% and removed the cooperative Bloodpoint bonus.",
+    "plainEnglishSummary": "Nearby teammates increase Generator repair speed for you and other Survivors in range, up to a tier-specific cap.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Stacks 6/8/10% per other Survivor within 4 metres, capped at 18/24/30% (up to three nearby Survivors). The effect is shared with other Survivors in range.",
+    "oncePerTrialOrOtherLimits": "A Survivor can be affected by only one instance of Prove Thyself at a time.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Dwight Fairfield",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "prove-thyself",
+    "rank": 27,
+    "tier": "A",
+    "roles": [
+      "Objective",
+      "Team Support"
+    ],
+    "summary": "Boost cooperative generator repair speed when teammates work within 4 metres, partially offsetting the normal co-op repair penalty.",
+    "metaStatus": "Strong",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 5,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "pressure",
+      "swf",
+      "solo-q"
+    ],
+    "useCases": [
+      "Finish a high-priority generator quickly when multiple Survivors need to commit together.",
+      "Convert coordinated SWF rotations into stronger burst repair windows.",
+      "Help recover generator tempo after the team is forced into the same area by hooks or pressure."
+    ],
+    "counters": [
+      "Provides no benefit when repairing alone.",
+      "Grouping multiple Survivors on one generator can make the team vulnerable to area pressure and multi-target Killer powers.",
+      "Its bonus partly compensates for cooperative repair inefficiency rather than turning stacked repairs into pure linear scaling."
+    ],
+    "pros": [
+      "Easy to use and tied to a common objective.",
+      "Very strong when a coordinated team intentionally wants one generator finished now.",
+      "Extends its bonus to nearby teammates, so only one Survivor needs the perk."
+    ],
+    "cons": [
+      "Zero value on solo repairs.",
+      "Can encourage inefficient generator stacking when spreading out would create more map pressure.",
+      "Less predictable in Solo Q because teammates decide whether the trigger exists."
+    ],
+    "analysis": [
+      "Prove Thyself lands at this position because cooperative repair remains one of the clearest ways to create a short burst of objective pressure. The perk scales with nearby teammates and shares the benefit with them, so one equipped copy can improve an entire stacked generator without requiring every player to dedicate a slot.",
+      "Its best use is not simply putting three Survivors on every generator. Dead by Daylight normally rewards splitting pressure because multiple simultaneous generators force the Killer to choose where to respond. Prove Thyself shines when the team has a reason to break that rule: a critical central generator, an unsafe objective that must be completed before the Killer returns, or a coordinated endgame push.",
+      "That makes SWF substantially better at extracting value. A premade can call a temporary stack, finish the target, then immediately spread back out. Solo Q teammates may instead sit together too long, turning the perk into an excuse for inefficient map pressure. Bond helps by making those co-op opportunities easier to identify without wandering.",
+      "The perk is strong because the activation is simple and the outcome is tangible, but it ranks below Hyperfocus because its ceiling depends on other Survivors being present. A great Survivor perk should ideally remain useful when the team is scattered. Prove Thyself is excellent when the match offers a co-op repair window and completely inert when it does not."
+    ],
+    "verdict": "Excellent burst objective pressure when the team deliberately stacks a key generator. Prove Thyself is strongest as a tactical co-op tool, not as permission to repair every generator shoulder-to-shoulder.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Co-op",
+      "Efficiency"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Dwight Fairfield"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "hyperfocus",
+      "bond",
+      "resilience"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Hyperfocus",
+      "Bond",
+      "Resilience"
+    ],
+    "antiSynergies": []
+  }
+}

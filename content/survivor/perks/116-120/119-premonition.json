@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "116-120",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "premonition",
+  "mechanics": {
+    "name": "Premonition",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "While not being chased by the Killer, whenever you look in the Killer's direction within 32 metres, you are notified and see the Killer's Aura for 3 seconds. Cooldown: 55/50/45 seconds.",
+    "activation": [
+      "You are not being chased.",
+      "Look in the Killer's direction while they are within 32 metres.",
+      "Ends/deactivates when: The Aura reveal ends after 3 seconds.",
+      "Ends/deactivates when: The perk cannot trigger during its 55/50/45-second cooldown or while you are being chased."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Reworked to trigger while not chased when looking toward the Killer within 32 metres, reveal the Killer's Aura for 3 seconds, and use a 55/50/45-second cooldown.",
+    "plainEnglishSummary": "Outside chase, looking toward a nearby Killer gives a notification and a brief Aura reveal.",
+    "cooldown": "55/50/45 seconds.",
+    "duration": [
+      "Killer Aura reveal: 3 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The former 45-degree detection-cone field is removed; final 10.2.0 live text uses 'look in the Killer's direction'."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "premonition",
+    "rank": 119,
+    "tier": "C",
+    "roles": [
+      "Information"
+    ],
+    "summary": "While not in chase, looking toward a Killer within 32 metres gives a warning and reveals their Aura for 3 seconds.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "aura-reading"
+    ],
+    "useCases": [
+      "Check whether a nearby Killer is actually on the side of the structure you suspect.",
+      "Get a short Aura confirmation before committing to a generator or rescue.",
+      "Detect nearby stealth Killers when the trigger conditions are satisfied."
+    ],
+    "counters": [
+      "It does not trigger while you are already in chase.",
+      "A 45-second Tier III cooldown is long.",
+      "Three seconds of Aura information is modest compared with stronger information perks."
+    ],
+    "pros": [
+      "Now gives real Killer Aura information.",
+      "Simple warning for Solo Q and newer players.",
+      "Can help against nearby stealth approaches."
+    ],
+    "cons": [
+      "Long cooldown.",
+      "No direct chase power.",
+      "Outclassed by broader Aura perks."
+    ],
+    "analysis": [
+      "Premonition received the rework it needed. Instead of a vague directional ping on a short cooldown, the live 10.2 version gives a clear notification and three seconds of Killer Aura when you look toward a nearby Killer outside chase.",
+      "That makes the information much easier to act on. A short Aura is enough to confirm which side of a wall the Killer occupies or whether a suspicious approach is real.",
+      "The forty-five-second Tier III cooldown is the limiting factor, and the perk shuts off in chase where Killer information often matters most.",
+      "Premonition is therefore improved beginner and Solo Q awareness, not a top information perk. It finally answers a concrete question instead of merely making the player nervous."
+    ],
+    "verdict": "Much healthier in 10.2: a real three-second Aura read instead of a cryptic ping. Useful awareness, still limited by a long cooldown and no chase activation.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Awareness",
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "eyes-of-belmont",
+      "dark-sense",
+      "kindred",
+      "bond"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Eyes of Belmont",
+      "Dark Sense",
+      "Kindred",
+      "Bond"
+    ],
+    "antiSynergies": []
+  }
+}

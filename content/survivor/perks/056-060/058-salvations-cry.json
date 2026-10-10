@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "056-060",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "salvations-cry",
+  "mechanics": {
+    "name": "Salvation's Cry",
+    "alternateName": null,
+    "source": "Aurora Stardotter",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever the Killer starts chasing you, you see the Auras of all other Survivors for 1/2/3 seconds. Every Survivor who is not being chased sees your Aura and the Killer's Aura for 5 seconds.",
+    "activation": [
+      "The Killer must start chasing you.",
+      "Ends/deactivates when: Aura reveals end after their stated durations."
+    ],
+    "patchNote": "Latest live balance change (10.1.0): Added as a new Aurora Stardotter perk; no later live balance change verified.",
+    "plainEnglishSummary": "When a chase starts on you, briefly shares Survivor and Killer locations with everyone not in chase.",
+    "cooldown": null,
+    "duration": [
+      "Other Survivors' Auras are visible to you for 1/2/3 seconds.",
+      "Your Aura and the Killer's Aura are visible to each Survivor not being chased for 5 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The shared Aura reveal is limited to Survivors who are not currently being chased."
+    ],
+    "sourceCharacter": "Aurora Stardotter",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "salvations-cry",
+    "rank": 58,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Information"
+    ],
+    "summary": "When the Killer starts chasing you, briefly show teammates to you and show both you and the Killer to every teammate not in chase.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "aura-reading",
+      "pressure",
+      "solo-q",
+      "swf"
+    ],
+    "useCases": [
+      "Give the entire team immediate Killer information when your chase begins.",
+      "Help teammates know whether the chase is moving toward their generator or rescue path.",
+      "Use the brief teammate Auras to route away from active objectives."
+    ],
+    "counters": [
+      "Only triggers when a chase officially begins.",
+      "The user sees teammates for only up to 3 seconds.",
+      "Teammates already in chase do not receive the same team-information package."
+    ],
+    "pros": [
+      "Teamwide information from a natural chase event.",
+      "No cooldown or setup stated in the current effect.",
+      "Particularly useful for SWF-like coordination in Solo Q."
+    ],
+    "cons": [
+      "Short personal Aura duration.",
+      "No direct chase power.",
+      "Official chase detection can occasionally behave differently from player intuition."
+    ],
+    "analysis": [
+      "Salvation's Cry lands at this position because it broadcasts one of the most important match facts, the start of a chase, to the rest of the team. Survivors not being chased see both the chased Survivor and the Killer for five seconds.",
+      "That information immediately answers macro questions. A teammate can stay on a generator if the Killer is moving away, rotate early if the chase is coming toward them, or abandon a risky rescue path before the Killer arrives.",
+      "The chased player also gets a short teammate Aura snapshot, helping them avoid dragging the Killer onto active objectives. That overlaps conceptually with Quick Gambit, though without the repair-speed bonus.",
+      "It remains B because the perk changes information rather than chase physics. The team must convert the five-second read into better decisions for the slot to matter."
+    ],
+    "verdict": "A clean team-information perk that makes chase starts visible to everyone. Salvation's Cry is especially valuable when Solo Q needs SWF-like awareness without voice comms.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Team Information",
+      "Aura Reading"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Aurora Stardotter"
+    },
+    "synergyPerkIds": [
+      "quick-gambit",
+      "kindred",
+      "bond",
+      "poised"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Quick Gambit",
+      "Kindred",
+      "Bond",
+      "Poised"
+    ],
+    "antiSynergies": []
+  }
+}

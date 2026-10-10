@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "111-115",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "breakdown",
+  "mechanics": {
+    "name": "Breakdown",
+    "alternateName": null,
+    "source": "Jeff Johansen",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you are unhooked by any means, that Hook breaks and the Killer's Aura is revealed to you for 4/5/6 seconds. The Hook repairs itself after 180 seconds.",
+    "activation": [
+      "Be unhooked by any means.",
+      "Ends/deactivates when: Killer Aura reveal ends after 4/5/6 seconds.",
+      "Ends/deactivates when: Hook repairs after 180 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.3.2): Reverted to the break-on-unhook version (Killer Aura 4/5/6 s, Hook repairs after 180 s) after the perk was disabled in 9.3.0.",
+    "plainEnglishSummary": "Being unhooked breaks the Hook temporarily and briefly reveals the Killer.",
+    "cooldown": null,
+    "duration": [
+      "Killer Aura reveal: 4/5/6 seconds.",
+      "Hook auto-repair: 180 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Broken Hook cannot be used until repaired."
+    ],
+    "sourceCharacter": "Jeff Johansen",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "breakdown",
+    "rank": 111,
+    "tier": "B",
+    "roles": [
+      "Rescue",
+      "Anti-Tunnel",
+      "Information"
+    ],
+    "summary": "Whenever you are unhooked, destroy that Hook for 180 seconds and reveal the Killer's Aura to yourself for up to 6 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 4,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "hook-state",
+      "aura-reading",
+      "anti-tunnel"
+    ],
+    "useCases": [
+      "Create a temporary hook dead zone around the place you were rescued.",
+      "Use the Killer Aura read to route safely after the unhook.",
+      "Stack multiple copies or sabotage tools to make nearby future carries substantially harder."
+    ],
+    "counters": [
+      "The Killer may have another hook within easy carrying distance.",
+      "The hook destruction matters only after you have already been hooked there.",
+      "Some maps have enough dense hook coverage that removing one hook changes little."
+    ],
+    "pros": [
+      "Natural activation with no extra input.",
+      "Three-minute hook removal is extremely long.",
+      "Includes useful post-unhook Killer information."
+    ],
+    "cons": [
+      "Map- and hook-layout dependent.",
+      "Requires first being hooked.",
+      "Can encourage anti-carry strategies that provoke slugging instead."
+    ],
+    "analysis": [
+      "Breakdown ranks high in this band because 180 seconds is long enough for a destroyed hook to affect multiple later carries. Unlike a temporary sabotage, the hook remains unavailable through a large portion of the match after a completely natural unhook trigger.",
+      "The six-second Killer Aura read gives the perk independent post-unhook value even if the hook removal never matters. It helps the rescued Survivor understand whether the Killer is returning, rotating away, or cutting off an escape route.",
+      "The ceiling rises sharply when the map already has awkward hook spacing or when teammates also bring Breakout and Saboteur. Removing a key hook can force long carry routes, create pallet-save opportunities, or convince the Killer to abandon a pickup.",
+      "The ranking stays in B because hook density is outside the Survivor's control. Some maps give the Killer another hook a few steps away. Breakdown is easy to use and occasionally vicious, but not consistently decisive."
+    ],
+    "verdict": "An underrated hook-denial perk with a useful information bonus. Breakdown can quietly ruin a carry zone for three full minutes, but map geometry decides how painful that really is.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Hook Denial"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jeff Johansen"
+    },
+    "synergyPerkIds": [
+      "saboteur",
+      "breakout",
+      "boil-over",
+      "off-the-record"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Saboteur",
+      "Breakout",
+      "Boil Over",
+      "Off the Record"
+    ],
+    "antiSynergies": []
+  }
+}

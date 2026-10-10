@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "111-115",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "overzealous",
+  "mechanics": {
+    "name": "Overzealous",
+    "alternateName": null,
+    "source": "Haddie Kaur",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you cleanse or bless a Totem, Overzealous activates and increases your Generator repair speed by 8/9/10%. The bonus is doubled to 16/18/20% when the activation is from cleansing a Hex Totem. It deactivates after you lose a Health State by any means.",
+    "activation": [
+      "Cleanse or bless a Totem.",
+      "Ends/deactivates when: Losing a Health State by any means."
+    ],
+    "patchNote": "Latest live balance change (6.7.0): Raised the repair bonus to 8/9/10% from 6/7/8% and enabled activation from blessing a Totem; the Hex Totem bonus remains double.",
+    "plainEnglishSummary": "Cleansing or blessing a Totem speeds up your repairs until you lose a Health State, with a doubled bonus for cleansing a Hex Totem.",
+    "cooldown": null,
+    "duration": [
+      "Active until you lose a Health State or the Trial ends."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Cleansing a Hex Totem doubles the repair-speed bonus; cleansing a Dull Totem or blessing a Totem applies the normal bonus."
+    ],
+    "sourceCharacter": "Haddie Kaur",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "overzealous",
+    "rank": 114,
+    "tier": "C",
+    "roles": [
+      "Objective",
+      "Totem"
+    ],
+    "summary": "After cleansing or blessing a Totem, repair 10% faster; cleansing a Hex doubles the bonus to 20% until you lose a Health State.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low–Medium",
+    "soloQ": 2,
+    "swf": 2,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "pressure",
+      "health-state"
+    ],
+    "useCases": [
+      "Convert a necessary Hex cleanse into a powerful objective-speed buff.",
+      "Use a Dull Totem for a reliable 10% repair bonus when you expect a long safe generator window.",
+      "Stack the repair bonus with objective-information perks so the speed goes onto an important generator."
+    ],
+    "counters": [
+      "Losing a Health State ends the bonus immediately.",
+      "Totem setup time can offset the repair time saved.",
+      "Using a Dull Totem may conflict with Boon strategies."
+    ],
+    "pros": [
+      "10% repair speed is meaningful; 20% after a Hex is excellent.",
+      "No cooldown once activated.",
+      "Naturally rewards useful Hex cleansing."
+    ],
+    "cons": [
+      "Requires Totem interaction first.",
+      "Fragile to any Health-State loss.",
+      "Can waste team Totem resources."
+    ],
+    "analysis": [
+      "Overzealous ranks this position because ten percent repair speed is a legitimate objective bonus, and the twenty-percent Hex version is much stronger than many players remember. If you were going to cleanse a dangerous Hex anyway, the repair boost is almost pure upside.",
+      "The Dull Totem version is more complicated. Time spent finding and cleansing the Totem must eventually be repaid through faster generator work, so the perk needs a reasonably long safe repair window to become efficient.",
+      "Its biggest weakness is fragility. Any Health-State loss ends the effect, which means the Killer can erase the entire setup with one successful hit. Skilled positioning and good information therefore improve Overzealous more than its simple text suggests.",
+      "It remains B because setup plus fragility make the average value inconsistent. Against the right Hex build, however, a twenty-percent repair bonus can easily make the perk look much stronger."
+    ],
+    "verdict": "A strong objective reward for Totem interaction, especially against Hexes. Overzealous has excellent numbers, but one hit can erase all the setup.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Repair Speed"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Haddie Kaur"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "counterforce",
+      "resilience"
+    ],
+    "synergyOther": [
+      "Boon perks"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Counterforce",
+      "Resilience",
+      "Boon perks"
+    ],
+    "antiSynergies": []
+  }
+}

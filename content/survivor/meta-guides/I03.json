@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "I03",
+  "snapshotId": "I03@10.2.0-r1",
+  "perkReviews": [{ "perkId": "bond", "mechanicsRevision": 1 }, { "perkId": "empathy", "mechanicsRevision": 1 }, { "perkId": "empathic-connection", "mechanicsRevision": 1 }],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Locate the teammate whose state matters next, reach them for a useful heal or cooperative task, and avoid bringing chase to their work.",
+    "verdict": {
+      "recommendation": "Use team-location information to make a support handoff without spending the whole Trial searching for one teammate.",
+      "soloQ": "A visible nearby teammate or injured aura can replace a missing location call; approach only when the heal, rescue or repair handoff is timely.",
+      "coordinatedSwf": "Use voice positions first; keep a tracking slot only when the changing location or injury state still adds useful information.",
+      "mainWeakness": "Team auras can duplicate coordinated calls, and following an injured player can waste time or lead the Killer to them."
+    },
+    "loadout": { "options": [
+      { "perkId": "bond", "usage": "CORE", "whyItsHere": "Shows nearby teammate auras so you can find a cooperative repair or avoid steering the Killer into their position." },
+      { "perkId": "empathy", "usage": "SUPPORT", "whyItsHere": "Shows injured or dying teammates within range, making a timely heal or recovery approach possible without a voice call." },
+      { "perkId": "empathic-connection", "usage": "SUPPORT", "whyItsHere": "Lets injured teammates see your aura and speeds your healing of others; this broadcasts your support position rather than revealing every teammate to you." }
+    ] },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Choose whether the next useful teammate interaction is a nearby co-op task, a heal or a safe place for an injured teammate to find you. These perks answer different location questions."],
+      "rows": [
+        { "id": "nearby-handoff", "situation": "Bond shows a nearby teammate working or moving through your route.", "action": "Join a worthwhile cooperative objective or route away if you are bringing the Killer toward them.", "why": "Bond is a nearby teammate-location read, not an injury or map-wide rescue signal.", "enabledBy": ["perk:bond"] },
+        { "id": "injury-triage", "situation": "Empathy reveals an injured or dying teammate within its range.", "action": "Check whether reaching them changes recovery or healing now; if chase or hook pressure makes the approach unsafe, keep working and reassess later.", "why": "The aura identifies a support opportunity, but travelling to every injured player can lose more tempo than the heal returns.", "enabledBy": ["perk:empathy"] },
+        { "id": "let-injured-find-you", "situation": "An injured teammate can see you through Empathic Connection and you can offer a safe heal.", "action": "Hold a safe support position and heal them when they arrive; do not chase their unseen location or assume this perk reveals them to you.", "why": "Its aura direction is from you to injured teammates; the healing bonus matters only during your heal of another Survivor.", "enabledBy": ["perk:empathic-connection"] },
+        { "id": "leave-redundant-search", "situation": "The teammate is out of range, fully healed, already supported or has called a safe position.", "action": "Stop searching and return to repair or the urgent rescue rather than spending a slot's value on a redundant meeting.", "why": "I03 is a team-location layer, not a requirement to shadow teammates." }
+      ],
+      "abortWhen": ["The visible teammate is already covered or the route to them is unsafe under current Killer pressure.", "A voice call or completed heal makes further aura-chasing redundant."]
+    },
+    "weaknesses": ["The value is lower when teammates can call locations, and support travel can displace repair time."],
+    "commonMistakes": ["Treating Empathic Connection as if it reveals injured teammates to the perk owner.", "Running toward every injury aura without checking whether a heal is safe or needed."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "I03#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "I03@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "I03@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "I03#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "I03#Solo Q vs SWF" },
+    { "kind": "PERK", "ref": "bond#/mechanics" },
+    { "kind": "PERK", "ref": "empathy#/mechanics" },
+    { "kind": "PERK", "ref": "empathic-connection#/mechanics" }
+  ]
+}

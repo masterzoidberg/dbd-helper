@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "006-010",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "finesse",
+  "mechanics": {
+    "name": "Finesse",
+    "alternateName": null,
+    "source": "Lara Croft",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healthy, your Fast Vaults are 20% faster. After performing a Fast Vault, Finesse goes on cooldown for 40/35/30 seconds.",
+    "activation": [
+      "You must be healthy to receive the Fast Vault speed bonus.",
+      "You must not be on cooldown.",
+      "Ends/deactivates when: The Fast Vault speed bonus is unavailable while injured or on cooldown."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "While healthy, you Fast Vault 20% faster, then the perk rests after a Fast Vault.",
+    "cooldown": "40/35/30 seconds (Tier I/II/III) after performing a Fast Vault.",
+    "duration": [
+      "The bonus applies during a Fast Vault action."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Lara Croft",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "finesse",
+    "rank": 10,
+    "tier": "A",
+    "roles": [
+      "Chase"
+    ],
+    "summary": "While healthy, your Fast Vaults are significantly quicker, letting good pathing turn close hits into misses.",
+    "metaStatus": "Strong",
+    "skillLevel": "Medium–High",
+    "soloQ": 4,
+    "swf": 4,
+    "unlockPriority": "Very High",
+    "glossaryKeys": [
+      "looping",
+      "health-state"
+    ],
+    "useCases": [
+      "Win tight window timings where the Killer would normally connect during the vault animation.",
+      "Extend the first health state of a chase before the Killer can force you injured.",
+      "Pair strong map knowledge with safer greed at windows that would otherwise be marginal."
+    ],
+    "counters": [
+      "Finesse only works while Healthy, so it shuts off after the first injury until you heal.",
+      "The 30-second Tier III cooldown prevents repeated use at every vault in the same chase.",
+      "Poor pathing is not rescued by a faster vault if the Killer already has the angle or distance advantage."
+    ],
+    "pros": [
+      "Can directly deny hits rather than merely save a small amount of time.",
+      "Rewards strong chase fundamentals and becomes more valuable as the player's pathing improves.",
+      "Pairs naturally with several already-strong chase perks."
+    ],
+    "cons": [
+      "Healthy-only activation limits uptime.",
+      "Cooldown means the user must choose which vault deserves the effect.",
+      "Less forgiving for players who do not already understand fast-vault angles and tile routing."
+    ],
+    "analysis": [
+      "Finesse takes this position because its 20% Fast Vault bonus changes one of the most contested timings in Survivor chase. A vault that finishes slightly sooner can be the difference between preserving the Healthy State and giving the Killer a free first hit. That makes the perk more consequential than its simple description suggests.",
+      "The perk scales heavily with player skill. Newer Survivors can still benefit, but experienced loopers are better at identifying the exact window where the Killer must commit and at choosing a route that forces the Killer to respect the faster animation. In strong hands, Finesse turns already-good windows into extremely awkward hit timings.",
+      "Its limitations keep it below the very top chase perks. It only works while Healthy and then enters a 30-second cooldown, so it cannot carry an entire chase by itself. The user also needs to reach a Fast Vault in the first place. A Killer who zones the Survivor away from windows or secures the first hit in open space bypasses most of the perk's value.",
+      "Finesse is especially attractive because it combines cleanly with existing meta tools. Lithe converts the same vault into distance, while Windows or Five Moves Ahead help the Survivor reach the right structure. It is a focused perk rather than a universal one, but its focused job is extremely important."
+    ],
+    "verdict": "A high-end chase perk for players who know how to route windows. Finesse does not fix bad positioning, but it makes good positioning substantially harder for the Killer to punish.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Vaulting"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      8,
+      14
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Lara Croft"
+    },
+    "synergyPerkIds": [
+      "lithe",
+      "windows-of-opportunity",
+      "five-moves-ahead",
+      "resilience"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Lithe",
+      "Windows of Opportunity",
+      "Five Moves Ahead",
+      "Resilience"
+    ],
+    "antiSynergies": []
+  }
+}

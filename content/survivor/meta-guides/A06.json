@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": { "patch": "10.2.0", "verifiedDate": "2026-10-06", "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0" },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "A06",
+  "snapshotId": "A06@10.2.0-r1",
+  "perkReviews": [],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Use position and, if necessary, one health state to interrupt a hook trade or carrying route only when it can avert a hook; leave when the carry or rescue window closes.",
+    "verdict": {
+      "recommendation": "Pre-position near a real pathing choke point, verify a teammate can use the delay, and abandon the block if the Killer changes target or route.",
+      "soloQ": "Attempt only a clear, immediate save; uncertainty about teammate movement makes extended carry interference especially costly.",
+      "coordinatedSwf": "Call the intended route and blocker before contact so the carried or rescued teammate can convert the delay and others stay on objectives.",
+      "mainWeakness": "The Killer can drop the carried Survivor, switch targets or take another hook route while the blocker sacrifices health and objective time."
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": ["Identify the actual hook or carry path and whether your body can change the outcome before leaving an objective."],
+      "rows": [
+        { "id": "protect-rescue-route", "situation": "A rescued teammate needs one short opening to leave and you are already positioned to cover that route.", "action": "Occupy the useful path and take a hit only if it lets the teammate escape the immediate recapture. Peel away once their route is open.", "why": "Physical presence is the resource; a second down for no route gain loses the trade." },
+        { "id": "interrupt-carry", "situation": "The Killer carries a teammate toward a known hook and your position can force a meaningful detour.", "action": "Block the relevant path briefly and let the carried teammate exploit the delay; do not chase the Killer across the map for a speculative block.", "why": "The payoff is prevented hook tempo, not merely contact with the Killer." },
+        { "id": "release-denied-block", "situation": "The Killer changes hooks, drops the carried Survivor or turns onto you.", "action": "Leave the failed line, avoid donating a second down and return to the next rescue or objective assignment.", "why": "The recorded counterplay directly removes the value of overcommitted body presence." }
+      ],
+      "abortWhen": ["Abort when no reachable route can change the hook or escape result.", "Exit after a route change or drop rather than following the Killer indefinitely."]
+    },
+    "strengths": ["Good position can exchange one health state for avoided hook tempo."],
+    "weaknesses": ["High positioning and timing cost, especially without communication; the Killer can refuse the expected path."],
+    "commonMistakes": ["Arriving after the carry route is already decided.", "Continuing to bodyblock after the Killer drops the Survivor or switches to the blocker."]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "A06#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "A06@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "A06@10.2.0-r1#/counters" },
+    { "kind": "SNAPSHOT", "ref": "A06@10.2.0-r1#/itemEcosystem" },
+    { "kind": "PUBLICATION", "ref": "A06#How It Works" },
+    { "kind": "PUBLICATION", "ref": "A06#Representative Builds" },
+    { "kind": "PUBLICATION", "ref": "A06#Common Mistakes" }
+  ]
+}

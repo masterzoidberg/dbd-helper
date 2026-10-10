@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "batch": "051-055",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "flow-state",
+  "mechanics": {
+    "name": "Flow State",
+    "alternateName": null,
+    "source": "Kwon Tae-Young",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever a Generator is completed, gain 1 Token, up to 5. For each Token, you Bless and Cleanse Totems, heal, and unhook Survivors 13/14/15% faster.",
+    "activation": [
+      "A Generator must be completed to gain a Token."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Increased each per-Token Bless/Cleanse, healing, and unhook speed bonus from 8/9/10% to 13/14/15%.",
+    "plainEnglishSummary": "Generator completions build permanent tokens that increasingly speed Totem interactions, healing, and unhooking.",
+    "cooldown": null,
+    "duration": [
+      "Tokens and their action-speed bonuses persist for the remainder of the Trial; no expiry is stated."
+    ],
+    "tokenOrStackBehavior": "Gain 1 Token whenever any Generator is completed, up to 5. Tokens are not spent; each one adds the tier's action-speed bonus to blessing/cleansing, healing, and unhooking.",
+    "oncePerTrialOrOtherLimits": "Maximum of 5 Tokens.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [],
+    "sourceCharacter": "Kwon Tae-Young",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "flow-state",
+    "rank": 54,
+    "tier": "B",
+    "roles": [
+      "Team Support",
+      "Healing"
+    ],
+    "summary": "Each completed Generator permanently adds a Token that massively speeds your healing, unhooking, cleansing, and blessing actions, up to five Tokens.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "reset",
+      "hook-state"
+    ],
+    "useCases": [
+      "Scale into faster heals and unhooks as the Trial progresses.",
+      "Improve Totem interaction speed in Boon or anti-Hex builds.",
+      "Use late-game Tokens to make rescue and reset interactions noticeably faster."
+    ],
+    "counters": [
+      "The perk starts with zero Tokens.",
+      "Early-game value is limited until generators are completed.",
+      "It does not accelerate generator repair itself."
+    ],
+    "pros": [
+      "Multiple useful action categories scale from the same Tokens.",
+      "Requires no active management after generators are completed.",
+      "Late-game bonuses can become large if the team has progressed well."
+    ],
+    "cons": [
+      "Win-more tendency because the perk strengthens as generators are completed.",
+      "No effect on the objective that generates its Tokens.",
+      "Weakest during the early game when establishing momentum matters most."
+    ],
+    "analysis": [
+      "Flow State received one of the largest numerical buffs in 10.2. Each Generator Token now adds 13/14/15% action speed to healing, unhooking, blessing, and cleansing, still stacking up to five times.",
+      "The scaling becomes meaningful much earlier than endgame. At Tier III, two completed generators already represent 30% faster support actions, while three represent 45%. Those are numbers that can materially change rescue and reset timing.",
+      "The structural weakness remains that the perk starts at zero. It cannot prevent an early snowball before generators are completed, and it does not accelerate generator repair itself.",
+      "Even with that caveat, the old lower-B evaluation is too conservative after the buff. Flow State should be one of the first perks an independent reviewer reconsiders upward."
+    ],
+    "verdict": "A much stronger scaling support perk in 10.2. It still starts asleep, but every completed Generator now wakes it up far more aggressively.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Support",
+      "Scaling"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Kwon Tae-Young"
+    },
+    "synergyPerkIds": [
+      "boon-circle-of-healing",
+      "boon-steadfast",
+      "well-make-it",
+      "lend-a-hand"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Boon: Circle of Healing",
+      "Boon: Steadfast",
+      "We'll Make It",
+      "Lend a Hand"
+    ],
+    "antiSynergies": []
+  }
+}

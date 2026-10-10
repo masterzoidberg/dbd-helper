@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "batch": "061-065",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "road-life",
+  "mechanics": {
+    "name": "Road Life",
+    "alternateName": null,
+    "source": "Vee Boonyasak",
+    "status": "Live 10.2.0",
+    "currentEffect": "While injured and repairing a Generator, hitting a basic Great Skill Check gives 1 Token and missing a basic Skill Check removes 1 Token. At 6/5/4 Tokens, you can heal yourself; spending all Tokens lets you self-heal 10% faster. After you stop healing, this self-heal effect ends after 4 seconds.",
+    "activation": [
+      "Be Injured and repairing a Generator to gain or lose Tokens from basic Repair Skill Checks.",
+      "Reach 6/5/4 Tokens to gain the ability to self-heal.",
+      "Begin self-healing to spend all Tokens and receive the 10% self-heal speed bonus.",
+      "Ends/deactivates when: Stopping the self-heal starts a 4-second grace period; after 4 seconds the granted self-heal effect ends.",
+      "Ends/deactivates when: Missed basic Repair Skill Checks remove 1 Token while the token-building condition is active."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Reworked into a Repair-Skill-Check token system that grants self-healing at 6/5/4 Tokens, spends all Tokens on use, gives 10% faster self-healing, and ends 4 seconds after healing stops.",
+    "plainEnglishSummary": "While injured on Generators, Great checks build and missed checks remove tokens; reaching the tier threshold lets you spend them to self-heal slightly faster.",
+    "cooldown": null,
+    "duration": [
+      "Granted self-heal ability persists for 4 seconds after stopping the heal before ending."
+    ],
+    "tokenOrStackBehavior": "While Injured and repairing, basic Great Skill Checks add 1 Token and missed basic Skill Checks remove 1. Threshold is 6/5/4 by tier. Starting the granted self-heal spends all Tokens.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The final live self-heal speed bonus is 10%, not the higher PTB test value."
+    ],
+    "sourceCharacter": "Vee Boonyasak",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "road-life",
+    "rank": 65,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Skill Check",
+      "Self-Sustain"
+    ],
+    "summary": "While injured on a Generator, earn Tokens from Great basic Skill Checks; at the threshold, spend them to self-heal 10% faster.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "health-state",
+      "reset"
+    ],
+    "useCases": [
+      "Convert productive injured Generator repair into access to a repeatable self-heal.",
+      "Stay productive while charging the perk instead of spending time on a separate setup objective.",
+      "Use it when independent self-reset access is more valuable than carrying a dedicated healing perk or item."
+    ],
+    "counters": [
+      "Token acquisition depends on Great basic Skill Check frequency and execution, so charge time varies substantially.",
+      "Missed checks cost progress, and the practical effect of interruptions still needs controlled testing.",
+      "Stake Out is not a partner: its special Skill Checks replace the basic checks Road Life needs while Tokens are held."
+    ],
+    "pros": [
+      "The completed self-heal is fast enough to be meaningful.",
+      "The perk charges during productive Generator work.",
+      "Live gameplay supports repeatable use rather than a one-use payoff."
+    ],
+    "cons": [
+      "The Token economy is still unmeasured and is the main reason the exact rank is provisional.",
+      "Requires staying injured while repairing to build toward the heal.",
+      "Great-check consistency matters."
+    ],
+    "analysis": [
+      "Road Life is best understood as a self-heal access perk whose reward is strong once earned. Live gameplay showed the completed heal is practically useful and can be earned again, so the old one-use and 100%-speed framing is obsolete.",
+      "The unresolved variable is the Token economy. The precision review could not justify the optimistic charge-rate assumption behind rank #58, so the perk moved to #65 with a wide credible range.",
+      "A neutral working assumption is roughly one activation per generator's worth of injured repair for a player who hits most Great checks. That is an assumption to test, not a mechanic to encode as fact.",
+      "Because setup happens during productive repair, Road Life still compares favorably with slower or travel-dependent self-heal options even when its charge time is imperfect."
+    ],
+    "verdict": "A genuinely useful self-heal once charged, held to a provisional mid-B rank because the real Token-acquisition rate is still the unanswered question.",
+    "editorialStatus": "patch-watch",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      45,
+      95
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "provisional",
+    "evidenceStatus": "needs-controlled-testing",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Vee Boonyasak"
+    },
+    "synergyPerkIds": [
+      "hyperfocus",
+      "one-two-three-four",
+      "botany-knowledge",
+      "resilience"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [
+      "stake-out"
+    ],
+    "archetypeRatings": [],
+    "synergies": [
+      "Hyperfocus",
+      "One-Two-Three-Four!",
+      "Botany Knowledge",
+      "Resilience"
+    ],
+    "antiSynergies": [
+      "Stake Out"
+    ]
+  }
+}

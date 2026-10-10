@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C07",
+  "snapshotId": "C07@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "distortion", "mechanicsRevision": 1 },
+    { "perkId": "calm-spirit", "mechanicsRevision": 1 },
+    { "perkId": "iron-will", "mechanicsRevision": 1 },
+    { "perkId": "light-footed", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Stay productive without starting chase, spend stealth layers deliberately, and switch to ordinary escape or team coverage when the Killer has found the route.",
+    "verdict": {
+      "recommendation": "Use stealth to preserve objective and rescue tempo, not to avoid every risk; choose the layer that matches your current health, movement and task.",
+      "soloQ": "Pre-position for a productive job and track teammate pressure yourself; when the team needs a rescue or the Killer has your trail, stop immersing and act.",
+      "coordinatedSwf": "Call who is taking pressure and who is covering the objective so stealth does not silently shift the Killer's work onto teammates.",
+      "mainWeakness": "The Killer can bypass a selected stealth layer, tokens and state gates can leave it inactive, and prolonged avoidance can transfer pressure to the team."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "stealth-avoidance-module",
+          "label": "Stealth and chase-avoidance module",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "The source gives a strategy framework rather than a verified four-perk build. Keep aura denial and one noise or trace layer as choices that fit the actual Trial state.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Deny an aura read",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "distortion",
+                  "whyItsHere": "Spend a token to block a Killer Aura read and suppress Scratch Marks briefly, then treat the remaining tokens as a finite resource."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Choose a noise or trace layer",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                {
+                  "perkId": "calm-spirit",
+                  "whyItsHere": "Suppress Crows and screams while making Chest and Totem interactions silent, which supports quiet objective routing."
+                },
+                {
+                  "perkId": "iron-will",
+                  "whyItsHere": "Reduce injured Grunts of Pain while not Exhausted when the stealth plan must continue after a hit."
+                },
+                {
+                  "perkId": "light-footed",
+                  "whyItsHere": "Suppress running footsteps while healthy, then respect its Rushed Vault cooldown instead of treating it as permanent quiet movement."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Choose a productive job and a route that keeps a teammate's rescue or generator coverage visible. Stealth is successful when it prevents a chase while the team still advances, not when it only delays contact."
+      ],
+      "rows": [
+        {
+          "id": "protect-aura-window",
+          "situation": "You have Distortion tokens and are travelling through an area where an Aura read could start chase.",
+          "action": "Use the blocked-read window to reach the planned job or break line of sight. Count the token loss and do not linger as though the concealment will refresh without another chase condition.",
+          "why": "Distortion has limited tokens, suppresses Scratch Marks only for its brief effect and does not trigger while Dying.",
+          "enabledBy": ["perk:distortion"]
+        },
+        {
+          "id": "choose-noise-layer",
+          "situation": "You are choosing how to stay quiet while moving to an objective, Chest or Totem, or after taking a hit.",
+          "action": "Use Calm Spirit for quiet Crow, scream, Chest or Totem interactions; use Iron Will only while injured and not Exhausted; use Light-Footed only while healthy and off its Rushed Vault cooldown.",
+          "why": "These perks cover different noise and state conditions. None makes every movement or interaction invisible.",
+          "enabledBy": ["slot:stealth-avoidance-module#2"]
+        },
+        {
+          "id": "stay-productive",
+          "situation": "The Killer is elsewhere and a generator, rescue route or useful interaction can be completed without drawing attention.",
+          "action": "Take the productive action and pre-plan the exit before the Killer arrives. Do not crouch or detour solely to preserve an unused stealth state when the team needs progress.",
+          "why": "The strategy's payoff is staying productive while avoiding attention; avoidance without team value is only delayed pressure."
+        },
+        {
+          "id": "release-pressure",
+          "situation": "A teammate is in danger, the Killer has found your route or the stealth layer has gone inactive.",
+          "action": "Switch to the needed rescue, objective handoff or ordinary escape route. Call the change in a coordinated team and do not make teammates absorb the pressure silently.",
+          "why": "Teammate state and game state are canonical dependencies, so an individual stealth plan cannot outrank an uncovered team job."
+        },
+        {
+          "id": "stealth-fails",
+          "situation": "The Killer tracks through the selected layer or chase has already started.",
+          "action": "Stop trying to remain immersed and use the best available chase route. After the contact ends, resume productive stealth only from a safe position.",
+          "why": "C07 prevents chase from starting; once that boundary is missed it is not the same plan as a chase-reset package."
+        }
+      ],
+      "abortWhen": [
+        "Abort the stealth detour when an urgent rescue or generator is uncovered, even if the selected layer is still available.",
+        "Release the avoidance plan when the Killer has your position or the route has forced you into chase; transition to survival and team coverage."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Keep the nearest rescue and generator in view; no teammate can be assumed to understand why you are avoiding contact or to cover the pressure you leave behind."
+      ],
+      "coordinatedSwf": [
+        "Name the job you are quietly covering and the point where you will take or hand off pressure so stealth does not create a silent gap in team coverage."
+      ]
+    },
+    "strengths": [
+      "Stay productive while avoiding Killer attention when the route and team state support it."
+    ],
+    "weaknesses": [
+      "The Killer can track through the chosen stealth layer or force pressure onto teammates.",
+      "Health, Exhausted state, cooldowns and limited Distortion tokens can remove the layer at the moment it is expected."
+    ],
+    "killerCounterplay": [
+      "The Killer can use a different tracking method, change targets or pressure the team until avoiding chase costs more than taking the required action."
+    ],
+    "commonMistakes": [
+      "Treating one aura or noise layer as full invisibility across every health and game state.",
+      "Staying hidden while an urgent rescue or generator is uncovered and shifting pressure onto teammates.",
+      "Continuing the immersion plan after the Killer has found the route instead of switching to an ordinary escape."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C07#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C07@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C07@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C07@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C07#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C07#Perks and Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C07#Killer Counterplay" },
+    { "kind": "PUBLICATION", "ref": "C07#Common Mistakes" },
+    { "kind": "PERK", "ref": "distortion#/mechanics" },
+    { "kind": "PERK", "ref": "calm-spirit#/mechanics" },
+    { "kind": "PERK", "ref": "iron-will#/mechanics" },
+    { "kind": "PERK", "ref": "light-footed#/mechanics" }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-09",
+  "strategyId": "C09",
+  "snapshotId": "C09@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "off-the-record", "mechanicsRevision": 1 },
+    { "perkId": "resurgence", "mechanicsRevision": 1 },
+    { "perkId": "will-to-live", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Attach a small anti-tunnel and recovery module to the main build: choose post-unhook protection, keep the remaining slots open, and leave when the Killer denies the reset.",
+    "verdict": {
+      "recommendation": "Use the module to survive repeat targeting or buy a clean reset, not to justify taking a down for a protection effect.",
+      "soloQ": "After an unhook, choose the safe exit yourself; do not assume a teammate will understand or cover the protection window.",
+      "coordinatedSwf": "Call who owns the reset and who covers the next objective before the Killer can turn the package into a stalled group response.",
+      "mainWeakness": "The Killer can wait out the protection, slug or switch targets, leaving a specialized slot unused if no repeat targeting develops."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "EDITORIAL",
+          "id": "anti-tunnel-core",
+          "label": "Anti-tunnel core",
+          "environment": "BOTH",
+          "completeness": "MODULE",
+          "why": "This is a portable two-slot module; the remaining loadout stays open for the player's main build.",
+          "slots": [
+            {
+              "slot": 1,
+              "role": "Post-unhook protection",
+              "usage": "CORE",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "will-to-live", "whyItsHere": "Use the exact current Decisive Strike record when the post-unhook pickup window is available." },
+                { "perkId": "off-the-record", "whyItsHere": "Use the post-unhook protection and concealment window when the Killer keeps pressure on you." }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Recovery after the unhook",
+              "usage": "SUPPORT",
+              "choiceCount": 1,
+              "choices": [
+                { "perkId": "resurgence", "whyItsHere": "Turn the unhook into immediate healing progress when a safe reset is possible." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Treat the package as protection attached to another build; leave its unspecified slots for the actual objective or chase plan."
+      ],
+      "rows": [
+        {
+          "id": "post-unhook",
+          "situation": "You have just left a hook and the Killer is returning.",
+          "action": "Take the safe exit using the selected protection. Do not perform a conspicuous action or hold position for a protection effect that no longer applies.",
+          "why": "The module buys a response to repeat targeting; it does not make a down or heal obligation-free.",
+          "enabledBy": ["perk:will-to-live", "perk:off-the-record"]
+        },
+        {
+          "id": "recover-or-leave",
+          "situation": "The immediate pressure has moved and recovery is safe.",
+          "action": "Use the available recovery progress, then return to the main build's objective or rescue job.",
+          "why": "The package should repay its slot cost through a clean reset rather than idle protection.",
+          "enabledBy": ["perk:resurgence"]
+        }
+      ],
+      "abortWhen": [
+        "Leave the protection position when the Killer waits it out, switches targets or makes the pickup window unreachable.",
+        "Stop the recovery attempt when pressure makes returning to the objective the higher-value action."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Treat the protection as personal insurance and return to the uncovered job as soon as the immediate pickup threat is gone."
+      ],
+      "coordinatedSwf": [
+        "Call the post-unhook route and recovery handoff so one player takes the reset while the others keep objectives or rescue coverage moving."
+      ]
+    },
+    "strengths": [
+      "Punish or survive repeat targeting."
+    ],
+    "weaknesses": [
+      "Killer denial, missed timing and teammate uncertainty can turn protection into wasted commitment."
+    ],
+    "killerCounterplay": [
+      "The Killer can wait effects out, slug or switch targets rather than offer the expected pickup interaction."
+    ],
+    "commonMistakes": [
+      "Assuming the protection remains useful after its timing window or after a conspicuous action ends it.",
+      "Forcing a recovery while the Killer has already made the position unsafe.",
+      "Leaving all unspecified slots empty in practice instead of attaching this module to a real objective or chase plan."
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C09#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C09@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C09@10.2.0-r1#/dependencyTypes" },
+    { "kind": "PUBLICATION", "ref": "C09#How It Works" },
+    { "kind": "PUBLICATION", "ref": "C09#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C09#Killer Counterplay" },
+    { "kind": "PERK", "ref": "will-to-live#/mechanics" },
+    { "kind": "PERK", "ref": "off-the-record#/mechanics" },
+    { "kind": "PERK", "ref": "resurgence#/mechanics" }
+  ]
+}

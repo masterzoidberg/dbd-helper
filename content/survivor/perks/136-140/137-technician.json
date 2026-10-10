@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "136-140",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "technician",
+  "mechanics": {
+    "name": "Technician",
+    "alternateName": null,
+    "source": "Feng Min",
+    "status": "Live 10.2.0",
+    "currentEffect": "While repairing a Generator, reduces the audible range of all repair-related noises by 16 m. A failed Skill Check causes the Generator to lose 4/3/2% additional progress, but suppresses the Generator explosion and Loud Noise Notification normally triggered by that failed check.",
+    "activation": [
+      "Be repairing a Generator; the quieter-noise effect applies during repair.",
+      "Fail a Skill Check to suppress the explosion and notification while incurring the tiered extra progress loss.",
+      "Ends/deactivates when: The effects apply only while repairing a Generator."
+    ],
+    "patchNote": "Latest live balance change (10.1.0): Reduced repair noise range by 16 m instead of 8 m and reduced extra missed-check progress loss to 4/3/2% from 5/4/3%.",
+    "plainEnglishSummary": "Makes Generator repair quieter and hides failed Skill Check alerts, but increases the progress lost when a check is missed.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "A failed Skill Check still loses extra Generator progress even though its explosion and Loud Noise Notification are suppressed."
+    ],
+    "sourceCharacter": "Feng Min",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "technician",
+    "rank": 137,
+    "tier": "C",
+    "roles": [
+      "Objective",
+      "Stealth",
+      "Utility"
+    ],
+    "summary": "Generator repair noises are heard from 16 metres less far away; failed basic Skill Checks no longer explode or notify the Killer, but lose extra progress.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 1,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "pressure",
+      "solo-q"
+    ],
+    "useCases": [
+      "Repair more quietly behind walls or on indoor maps where the Killer listens for generators.",
+      "Prevent missed Skill Checks from broadcasting a Loud Noise notification.",
+      "Use as a beginner safety net while learning generator Skill Checks."
+    ],
+    "counters": [
+      "Failed Skill Checks lose extra progress.",
+      "Experienced players should not be missing many standard generator checks.",
+      "The reduced repair-noise radius does not hide the generator's visual progress or direct line of sight."
+    ],
+    "pros": [
+      "10.1 doubled the noise-distance reduction to 16 metres.",
+      "Completely hides the explosion notification from a miss.",
+      "Useful beginner accessibility."
+    ],
+    "cons": [
+      "Miss penalty still hurts the objective.",
+      "Provides no speed bonus.",
+      "Value falls as Skill Check consistency and map awareness improve."
+    ],
+    "analysis": [
+      "Technician ranks this position after its 10.1 buff because the quieter repair radius is now large enough to create real stealth value on indoor and line-of-sight-heavy maps. A Killer can pass much closer to a worked generator without receiving the normal audio cue.",
+      "The failed-check protection is beginner-friendly but should not be mistaken for efficiency. The explosion and Loud Noise notification disappear, yet the generator loses additional progress. A player who misses frequently is safer from detection while still costing the team time.",
+      "Experienced players get more value from the audio reduction than the miss protection. Finishing a risky generator behind walls can be easier when the Killer cannot hear the repair from the usual distance.",
+      "Technician remains C because it solves detection rather than repair speed and becomes less necessary with experience. It is a respectable teaching and stealth perk, not a long-term meta objective tool."
+    ],
+    "verdict": "A much better stealth-generator perk after 10.1, but still mainly a comfort pick. Technician hides mistakes from the Killer, not from the generator's progress bar.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Beginner"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      130,
+      150
+    ],
+    "rankConfidence": "Low",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Feng Min"
+    },
+    "synergyPerkIds": [
+      "deja-vu",
+      "hyperfocus",
+      "lightweight"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Déjà Vu",
+      "Hyperfocus",
+      "Lightweight"
+    ],
+    "antiSynergies": []
+  }
+}

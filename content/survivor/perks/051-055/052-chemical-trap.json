@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "051-055",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "chemical-trap",
+  "mechanics": {
+    "name": "Chemical Trap",
+    "alternateName": null,
+    "source": "Ellen Ripley",
+    "status": "Live 10.2.0",
+    "currentEffect": "After repairing Generators for a total of 20%, install a Trap on a dropped Pallet with the Active Ability button. It lasts 40/50/60 seconds. When the Killer breaks the trapped Pallet, they suffer 50% Hindered for 4 seconds and the Trap is consumed. All Survivors see the Pallet's yellow Aura.",
+    "activation": [
+      "Accumulate 20% total Generator repair progress.",
+      "Install the trap on a dropped Pallet.",
+      "Ends/deactivates when: Trap is consumed when triggered or expires after its tier duration."
+    ],
+    "patchNote": "Latest live balance change (8.2.0): Reduced the activation threshold to 20% total Generator repair progress and the trap duration to 40/50/60 seconds.",
+    "plainEnglishSummary": "After enough Generator repair, trap a dropped Pallet to slow the Killer if they break it.",
+    "cooldown": null,
+    "duration": [
+      "Trap duration: 40/50/60 seconds.",
+      "Killer Hindered: 4 seconds."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "One trap per activation; another requires qualifying progress and installation.",
+    "statusEffectsInvolved": [
+      "Hindered"
+    ],
+    "specialInteractions": [
+      "All Survivors see the trapped Pallet's Aura in yellow."
+    ],
+    "sourceCharacter": "Ellen Ripley",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "chemical-trap",
+    "rank": 52,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Pallet"
+    ],
+    "summary": "After enough generator repair, trap a dropped Pallet so breaking it inflicts a severe 50% Hindered effect on the Killer for 4 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "looping",
+      "pressure"
+    ],
+    "useCases": [
+      "Trap a strong dropped pallet that the Killer is likely to break before the 60-second timer expires.",
+      "Create enough post-break distance to reach another tile after the Killer commits to the pallet.",
+      "Signal the trapped pallet to teammates through its yellow Aura."
+    ],
+    "counters": [
+      "Requires 20% total generator repair before activation.",
+      "The trap expires if the Killer does not break the pallet during its timer.",
+      "The Killer can sometimes play around the pallet or leave it intact."
+    ],
+    "pros": [
+      "50% Hindered for 4 seconds is a very large chase swing.",
+      "Relatively low repair requirement to charge.",
+      "All Survivors can see the trapped pallet."
+    ],
+    "cons": [
+      "Needs a dropped pallet and a Killer willing to break it.",
+      "One trap may expire without ever triggering.",
+      "Does not help at tiles where the Killer can safely ignore the pallet."
+    ],
+    "analysis": [
+      "Chemical Trap is valuable here because its payoff is excellent but opportunity-dependent. A 50% Hindered effect for four seconds after a pallet break creates enormous separation and can turn a normally short post-break transition into a clean escape to another structure.",
+      "The repair requirement is no longer oppressive. Twenty percent total generator contribution is easy to earn during normal objective play, so the real question is whether the Survivor can place the trap on a pallet the Killer actually needs to break before the timer expires.",
+      "Strong placement is a skill. A weak pallet the Killer can ignore is a poor trap target, while a major resource that blocks the Killer's path is much more reliable. Any Means Necessary adds interesting synergy because the player already has pallet-state information and can interact with abandoned pallets.",
+      "The perk ranks below more reliable general-purpose perks because the Killer retains agency over the trigger. A trap that expires produces no chase value at all. When it detonates at the right tile, however, the slowdown is strong enough to justify a dedicated chase slot."
+    ],
+    "verdict": "A potent chase trap with an unreliable trigger. Chemical Trap's 50% Hindered effect is excellent, but only if you place it where the Killer truly has to break the pallet.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Hindered"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ellen Ripley"
+    },
+    "synergyPerkIds": [
+      "any-means-necessary",
+      "champion-of-light",
+      "lithe"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Any Means Necessary",
+      "Champion of Light",
+      "Lithe"
+    ],
+    "antiSynergies": []
+  }
+}

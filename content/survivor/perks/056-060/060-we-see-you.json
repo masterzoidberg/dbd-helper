@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "batch": "056-060",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "we-see-you",
+  "mechanics": {
+    "name": "We See You",
+    "alternateName": null,
+    "source": "Eleven",
+    "status": "Live 10.2.0",
+    "currentEffect": "Gain 1 Token when the Killer reveals your Aura. When you reach 4 Tokens, consume all 4 and reveal the Killer's Aura to you and all other Survivors for 10/12.5/15 seconds. There is a 10-second cooldown between token gains.",
+    "activation": [
+      "The Killer must reveal your Aura to earn tokens.",
+      "Four tokens are required to trigger the shared Killer Aura reveal.",
+      "Ends/deactivates when: The Killer Aura reveal ends after 10/12.5/15 seconds."
+    ],
+    "patchNote": "Latest live balance change (9.4.0): Introduced; no later material live balance change located in the official notes checked.",
+    "plainEnglishSummary": "When the Killer reveals your Aura, you build tokens toward a team-wide Killer Aura reveal.",
+    "cooldown": "10 seconds between token gains",
+    "duration": [
+      "Shared Killer Aura reveal: 10/12.5/15 seconds."
+    ],
+    "tokenOrStackBehavior": "Gain 1 token each time the Killer reveals your Aura, no more often than once per 10 seconds. At 4 tokens, all tokens are consumed to reveal the Killer's Aura to all Survivors.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Aura reveal is shared with all Survivors, not just the perk user."
+    ],
+    "sourceCharacter": "Eleven",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "we-see-you",
+    "rank": 60,
+    "tier": "B",
+    "roles": [
+      "Information"
+    ],
+    "summary": "Each time the Killer reveals your Aura, gain a Token; at 4 Tokens, reveal the Killer to the entire team for up to 15 seconds.",
+    "metaStatus": "Good",
+    "skillLevel": "Medium",
+    "soloQ": 2,
+    "swf": 4,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "swf"
+    ],
+    "useCases": [
+      "Punish Aura-heavy Killer builds with a long teamwide reveal.",
+      "Pair with Bound by Obsession to intentionally generate Aura interactions.",
+      "Use the 15-second Killer read to coordinate objectives, rescues, and chase routing."
+    ],
+    "counters": [
+      "Needs four Killer Aura reveals before paying out.",
+      "A ten-second cooldown limits token gain speed.",
+      "Aura-light Killers may never activate the payoff."
+    ],
+    "pros": [
+      "Fifteen seconds of teamwide Killer Aura is extremely strong.",
+      "Automatically reacts to Killer information perks.",
+      "Strong SWF planning tool once triggered."
+    ],
+    "cons": [
+      "Very matchup dependent.",
+      "Slow setup against occasional Aura reads.",
+      "Can be completely dead against certain builds."
+    ],
+    "analysis": [
+      "We See You takes this position because its payoff is far stronger than its setup reliability. Four Killer Aura reads are converted into a teamwide Killer Aura reveal lasting up to fifteen seconds, which is a huge information window.",
+      "Against Aura-heavy Killers, tokens can arrive naturally throughout the Trial. The perk becomes even more deliberate when paired with Bound by Obsession, which creates predictable Aura interactions while giving the user reciprocal information.",
+      "The problem is the floor. A Killer with little Aura reading may never feed four tokens, leaving the perk without its defining effect. That kind of matchup dependence prevents a higher placement.",
+      "When it triggers, however, the entire team can make informed decisions for a long stretch of the match. We See You is therefore a high-ceiling but conditional information perk."
+    ],
+    "verdict": "A powerful anti-Aura payoff trapped behind a matchup check. If the Killer repeatedly reads you, We See You can repay the favor with fifteen seconds of teamwide vision.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Aura Reading",
+      "Team Information",
+      "Counter-Intel"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Eleven"
+    },
+    "synergyPerkIds": [
+      "bound-by-obsession",
+      "distortion",
+      "open-handed",
+      "kindred"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Bound by Obsession",
+      "Distortion",
+      "Open-Handed",
+      "Kindred"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C01",
+  "snapshotId": "C01@10.2.0-r1",
+  "perkReviews": [
+    {
+      "perkId": "lithe",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "resilience",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "finesse",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "will-to-live",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "sprint-burst",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "dead-hard",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "five-moves-ahead",
+      "mechanicsRevision": 1
+    }
+  ],
+  "page": {
+    "kind": "STANDARD",
+    "summary": "Buy repair time by lasting in chase, then return to objectives when the Killer will not take the chase you want.",
+    "verdict": {
+      "recommendation": "Build for extending a chase, not for spending the whole Trial trying to attract one.",
+      "soloQ": "The Solo loadout keeps post-unhook protection alongside chase tools, since nobody can promise to cover you.",
+      "coordinatedSwf": "Agree where teammates are repairing and take pressure away from that work; a runner's time matters only if the team uses it.",
+      "mainWeakness": "The Killer can ignore you, and the usable resources on your route do not last forever."
+    },
+    "loadout": {
+      "plans": [
+        {
+          "provenance": "CANONICAL",
+          "buildId": "C01@10.2.0-r1:solo-representative",
+          "notes": [
+            {
+              "slot": 1,
+              "role": "Move between tiles",
+              "usage": "CORE",
+              "whyItsHere": "Use the vault exit to reach the next resource rather than exhausting one loop without a follow-up."
+            },
+            {
+              "slot": 2,
+              "role": "Injured chase",
+              "usage": "CORE",
+              "whyItsHere": "Help your route continue after a hit; the value is in surviving the next decision, not deliberately remaining in danger."
+            },
+            {
+              "slot": 3,
+              "role": "Healthy vault",
+              "usage": "CORE",
+              "whyItsHere": "Support the opening healthy part of a chase. Plan a different margin once you are injured or the perk is resting."
+            },
+            {
+              "slot": 4,
+              "role": "Post-unhook insurance",
+              "usage": "SUPPORT",
+              "whyItsHere": "Keep an answer to a repeat pickup after an unhook rather than investing every slot in a chase the Killer can refuse."
+            }
+          ]
+        },
+        {
+          "provenance": "CANONICAL",
+          "buildId": "C01@10.2.0-r1:swf-representative",
+          "notes": [
+            {
+              "slot": 1,
+              "role": "Choose a chase escape",
+              "usage": "CORE",
+              "whyItsHere": "Choose one tool whose availability fits your route and the team's plan.",
+              "optionReasons": [
+                {
+                  "perkId": "sprint-burst",
+                  "whyItsHere": "Choose this to start the escape toward a usable tile when pressure reaches your position; do not let saving it stop you doing objectives."
+                },
+                {
+                  "perkId": "dead-hard",
+                  "whyItsHere": "Choose this for a later injured chase after an unhook, when you can judge the incoming attack. It is not a substitute for an opening escape before you have been unhooked."
+                }
+              ]
+            },
+            {
+              "slot": 2,
+              "role": "Healthy vault",
+              "usage": "CORE",
+              "whyItsHere": "Support a healthy runner's fast-vault route while keeping its availability separate from injured chase tools."
+            },
+            {
+              "slot": 3,
+              "role": "Injured chase",
+              "usage": "CORE",
+              "whyItsHere": "Keep some vault and interaction value after the runner takes a hit, when the healthy-vault tool no longer covers the route."
+            },
+            {
+              "slot": 4,
+              "role": "Pallet routing",
+              "usage": "SUPPORT",
+              "whyItsHere": "Identify an available pallet route under pressure and leave decisively after a drop. Do not read this as window information or an always-available movement bonus."
+            }
+          ]
+        }
+      ]
+    },
+    "gameplay": {
+      "type": "DECISIONS",
+      "opening": [
+        "Identify a first resource and an onward route while doing objectives. With teammates on voice, check which generator area should stay clear of your chase."
+      ],
+      "rows": [
+        {
+          "id": "healthy-to-injured",
+          "situation": "You are approaching a fast vault while healthy, or have just taken a hit on that route.",
+          "action": "Check whether Finesse is available for the healthy vault. After a hit, reassess the next loop using your injured-state tools and remaining resources instead of repeating the same tight vault.",
+          "why": "Finesse and Resilience cover different health states; equipping both does not make every vault doubly protected.",
+          "enabledBy": [
+            "perk:finesse",
+            "perk:resilience"
+          ]
+        },
+        {
+          "id": "lithe-transition",
+          "situation": "You are using the Solo loadout and a rushed vault can lead to another usable tile.",
+          "action": "Commit to that onward route with Lithe available. If Exhausted, plan the transition without expecting the burst.",
+          "why": "A planned exit extends the chase more reliably than activating mobility with nowhere safe to run.",
+          "enabledBy": [
+            "perk:lithe"
+          ]
+        },
+        {
+          "id": "swf-escape-choice",
+          "situation": "Pressure reaches you while using the coordinated loadout.",
+          "action": "With Sprint Burst available, start the escape toward your chosen resource. With Dead Hard chosen, rely on normal routing until its post-unhook injured-chase conditions are met, then judge the attack rather than pressing it automatically.",
+          "why": "The two options solve different moments; choosing one does not give you the other one's opening.",
+          "enabledBy": [
+            "slot:C01@10.2.0-r1:swf-representative#1"
+          ]
+        },
+        {
+          "id": "pallet-follow-through",
+          "situation": "You are under pressure with Five Moves Ahead available.",
+          "action": "Pick a pallet that leads somewhere useful. After dropping it, use the exit to move on and remember the tool is now on cooldown.",
+          "why": "Pallet information supports a route; spending a pallet just to trigger the perk spends the route's future safety.",
+          "enabledBy": [
+            "perk:five-moves-ahead"
+          ]
+        },
+        {
+          "id": "repeat-pickup",
+          "situation": "You have been unhooked while using the Solo loadout and are being pursued again.",
+          "action": "Stay focused on escape and check Will to Live's availability before counting on a pickup opportunity. If you have resumed Conspicuous Actions or the gates are powered, route without that insurance.",
+          "why": "A conditional safety tool cannot justify taking a down for the sake of extending your assigned runner role.",
+          "enabledBy": [
+            "perk:will-to-live"
+          ]
+        },
+        {
+          "id": "refused-chase",
+          "situation": "The Killer leaves you or will not pursue you.",
+          "action": "Repair or cover the needed rescue instead of following the Killer to demand another chase. In a group, call the target switch so the next player can route early.",
+          "why": "Unused chase perks are a sunk cost; ordinary objective work still advances the Trial."
+        }
+      ],
+      "abortWhen": [
+        "If the next tile has no usable resource, stop repeating the old loop and take the best remaining route before the Killer closes it.",
+        "When teammates need a rescue more than another distraction, drop the runner assignment and cover the actual need."
+      ]
+    },
+    "environments": {
+      "soloQ": [
+        "Do not assume a long chase means teammates are repairing; once released, check which job is actually uncovered."
+      ],
+      "coordinatedSwf": [
+        "Call where you are taking chase and where pallets have been spent. Teammates should keep the agreed objectives moving instead of all shadowing the runner."
+      ]
+    },
+    "weaknesses": [
+      "Chase value depends on the resources and routes still available; a depleted area cannot be repaired by adding more chase perks."
+    ],
+    "killerCounterplay": [
+      "The Killer can refuse the runner, switch to a less prepared teammate or force resources out of the route before committing again."
+    ],
+    "commonMistakes": [
+      "Treating healthy and injured perk bonuses as though they apply at the same time.",
+      "Using a pallet for its perk payoff without planning the next tile.",
+      "Keeping the Killer's attention at the cost of bringing pressure directly onto the team's repair work."
+    ]
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "C01#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "C01@10.2.0-r1#/buildImplementations"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "C01@10.2.0-r1#/dependencyTypes"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "C01#How It Works"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "C01#Killer Counterplay"
+    },
+    {
+      "kind": "PERK",
+      "ref": "lithe#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "resilience#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "finesse#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "will-to-live#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "sprint-burst#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "dead-hard#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "five-moves-ahead#/mechanics"
+    }
+  ]
+}

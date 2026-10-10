@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "G06",
+  "snapshotId": "G06@10.2.0-r1",
+  "perkReviews": [
+    {
+      "perkId": "stake-out",
+      "mechanicsRevision": 1
+    },
+    {
+      "perkId": "hyperfocus",
+      "mechanicsRevision": 1
+    }
+  ],
+  "page": {
+    "kind": "LEGACY",
+    "summary": "The old automated consistency pairing is historical. Use the manual skill-check strategy if you want a current route to repair value.",
+    "whatItWas": [
+      "Players paired Stake Out with Hyperfocus so converted checks could help sustain the repair engine without demanding the same run of manually hit Great checks.",
+      "Its appeal was consistency: the supporting interaction reduced how much of the payoff depended on the player's own check accuracy."
+    ],
+    "whyNotCurrent": [
+      "The researched 10.2 change invalidated that interaction: the relevant special Skill Checks no longer activate other Skill Check perks. Equipping the familiar pair does not restore the old engine.",
+      "Treat an older recommendation of this pairing as historical advice. Stop building around automated consistency; assess whether you can execute the manual successor instead. Current perk links show current mechanics, not the former interaction."
+    ],
+    "successors": [
+      {
+        "strategyId": "G05",
+        "why": "Manual Skill-Check Generator keeps the repair goal but asks you to hit compatible basic Great checks yourself. Choose it for that execution challenge, not as a promise of the old consistency; if you cannot sustain the checks, do not keep investing in the invalidated pairing."
+      }
+    ],
+    "historicalPerks": [
+      {
+        "perkId": "stake-out",
+        "historicalUse": "Historically supplied converted checks that made the paired repair engine more forgiving. This explains the old recommendation; it is not a claim that current special checks feed the other perk."
+      },
+      {
+        "perkId": "hyperfocus",
+        "historicalUse": "Historically supplied the escalating skill-check payoff that players tried to sustain with the pairing. The current manual successor must earn that consistency through compatible checks."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "kind": "STRATEGY",
+      "ref": "G06#/conceptualMechanics"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "G06@10.2.0-r1#/analysis/legacyHistory"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "G06@10.2.0-r1#/analysis/replacementStrategyIds"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "G06#What Changed"
+    },
+    {
+      "kind": "PUBLICATION",
+      "ref": "G06#Why It Is Not Current"
+    },
+    {
+      "kind": "STRATEGY",
+      "ref": "G05#/generalStrategicDefinition"
+    },
+    {
+      "kind": "SNAPSHOT",
+      "ref": "G05@10.2.0-r1#/changeSummary"
+    },
+    {
+      "kind": "PERK",
+      "ref": "stake-out#/mechanics"
+    },
+    {
+      "kind": "PERK",
+      "ref": "hyperfocus#/mechanics"
+    }
+  ]
+}

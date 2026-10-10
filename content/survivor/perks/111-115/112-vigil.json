@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "batch": "111-115",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "vigil",
+  "mechanics": {
+    "name": "Vigil",
+    "alternateName": null,
+    "source": "Quentin Smith",
+    "status": "Live 10.2.0",
+    "currentEffect": "You and all Survivors within 16 metres recover from Exhausted 20/25/30% faster. The effect lingers for 15 seconds after leaving the area. A Survivor can only benefit from one Vigil effect at a time.",
+    "activation": [
+      "A Survivor must be within 16 metres of the perk user while recovering from Exhausted.",
+      "Ends/deactivates when: The aura of the effect ends 15 seconds after leaving the perk user's 16 m area."
+    ],
+    "patchNote": "Latest live balance change (10.1.2): Bug fix restricting Vigil to Exhausted only. Current 20/25/30% value was set in 10.1.1 (reduced from 30/35/40% in 10.1.0); 10.2.0 made no balance change to these values.",
+    "plainEnglishSummary": "Speeds Exhausted recovery by 20/25/30% for you and nearby teammates, with a 15-second linger after leaving range.",
+    "cooldown": null,
+    "duration": [
+      "Area effect lingers for 15 seconds after a Survivor leaves 16 m range."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": "A Survivor can benefit from only one Vigil effect at a time.",
+    "statusEffectsInvolved": [
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "Applies to the perk user and nearby Survivors; duplicate Vigil effects do not stack."
+    ],
+    "sourceCharacter": "Quentin Smith",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "vigil",
+    "rank": 112,
+    "tier": "C",
+    "roles": [
+      "Exhaustion",
+      "Team Support",
+      "Recovery"
+    ],
+    "summary": "You and nearby Survivors recover from Exhausted 20/25/30% faster, with a 15-second linger after leaving your range.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "exhausted",
+      "swf"
+    ],
+    "useCases": [
+      "Bring Sprint Burst, Lithe, Dead Hard, Dramaturgy, or another Exhaustion perk back online sooner between chases.",
+      "Accelerate teammate Exhaustion recovery while repairing or healing together.",
+      "Use the 15-second linger so allies keep the benefit after rotating away."
+    ],
+    "counters": [
+      "The current live version affects Exhausted only, not the broader status-effect list older versions covered.",
+      "It provides no value to Survivors who are not using an Exhaustion perk or have not recently triggered one.",
+      "Recovery still depends on the normal Exhaustion rules rather than instantly clearing the status."
+    ],
+    "pros": [
+      "Passive and easy to benefit from.",
+      "Can support several teammates from one perk slot.",
+      "Pairs with some of the strongest chase perks in the game."
+    ],
+    "cons": [
+      "Much narrower after the 10.1-era change to Exhausted-only recovery.",
+      "Does nothing until an Exhaustion perk has actually been used.",
+      "Less valuable in builds with no Exhaustion perk."
+    ],
+    "analysis": [
+      "Vigil lands at this position because Exhaustion perks remain among the strongest Survivor tools, and reducing their downtime is inherently valuable. The effect applies to the user and teammates within 16 metres, then lingers for 15 seconds, so one copy can support several strong chase perks during ordinary group interactions.",
+      "The key correction for the current patch is scope. Older versions and community memory often treat Vigil as a broad status-recovery perk. Our audited 10.2.0 mechanics correctly restrict the live effect to Exhausted. That is a meaningful loss of flexibility and the main reason we rank it lower than some current community lists.",
+      "Even with that narrower purpose, the synergy is excellent. Sprint Burst users can return to a ready state sooner, Dead Hard and Lithe users shorten the time between possible activations, and SWF teammates can intentionally recover near the Vigil user before splitting. The effect asks for no button press or special event beyond ordinary proximity.",
+      "Vigil is therefore a strong support multiplier rather than a standalone power perk. If nobody in the relevant area is Exhausted, it is invisible. If several players are cycling elite Exhaustion perks, its value compounds. That makes it a narrow support multiplier rather than a general-purpose power perk."
+    ],
+    "verdict": "Narrow Exhaustion support after the 10.1 reductions. Useful in proximity-heavy Exhaustion packages, but not a general-purpose default.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Support"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      100,
+      125
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Quentin Smith"
+    },
+    "synergyPerkIds": [
+      "sprint-burst",
+      "dead-hard",
+      "lithe",
+      "dramaturgy"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Sprint Burst",
+      "Dead Hard",
+      "Lithe",
+      "Dramaturgy"
+    ],
+    "antiSynergies": []
+  }
+}

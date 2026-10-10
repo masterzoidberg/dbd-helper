@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "batch": "066-070",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "overcome",
+  "mechanics": {
+    "name": "Overcome",
+    "alternateName": null,
+    "source": "Jonah Vasquez",
+    "status": "Live 10.2.0",
+    "currentEffect": "When you enter the Injured State from full health, Overcome extends the duration of the resulting On-hit Sprint boost by 2 seconds. It cannot be used while you are Exhausted, and it causes Exhausted for 60/50/40 seconds by tier.",
+    "activation": [
+      "Be at full health and enter the Injured State.",
+      "Not be Exhausted when the hit occurs.",
+      "Ends/deactivates when: The extension applies only to the On-hit Sprint from the qualifying health-state loss.",
+      "Ends/deactivates when: The perk cannot activate while Exhausted; the Exhausted status prevents its use until it expires or is removed."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified after the perk's introduction; later tracked entry is wording standardization, and the official 5.4.0 Dying-State change was a bug fix.",
+    "plainEnglishSummary": "Taking a hit from full health extends the resulting sprint burst by 2 seconds and causes tier-scaled Exhaustion.",
+    "cooldown": null,
+    "duration": [
+      "On-hit Sprint boost: extended by 2 seconds beyond its normal duration.",
+      "Exhausted: 60/50/40 seconds by tier."
+    ],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [
+      "Exhausted"
+    ],
+    "specialInteractions": [
+      "The trigger is specifically entering the Injured State from full health; the official 5.4.0 notes fixed a bug that had also allowed activation when entering the Dying State."
+    ],
+    "sourceCharacter": "Jonah Vasquez",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "overcome",
+    "rank": 70,
+    "tier": "B",
+    "roles": [
+      "Chase",
+      "Exhaustion",
+      "Mobility"
+    ],
+    "summary": "When a Healthy hit injures you, extend the normal on-hit sprint by 2 additional seconds, then become Exhausted.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "exhausted",
+      "haste",
+      "looping"
+    ],
+    "useCases": [
+      "Turn the first hit of a chase into enough distance to reach a much stronger tile.",
+      "Escape weak map areas after being caught away from resources.",
+      "Pair the long post-hit sprint with tracking denial so the Killer loses the follow-up chase."
+    ],
+    "counters": [
+      "It only triggers when going from Healthy to Injured.",
+      "Exposed downs, one-shot powers, and already being Injured prevent normal activation.",
+      "It cannot be used while Exhausted."
+    ],
+    "pros": [
+      "Very easy to activate in ordinary basic-hit chases.",
+      "Two extra sprint seconds create a large amount of raw distance.",
+      "Low mechanical burden compared with timing-based Exhaustion perks."
+    ],
+    "cons": [
+      "Requires entering chase Healthy.",
+      "Poor against Killers that frequently down without a normal Healthy-to-Injured hit.",
+      "Provides less tactical control than Sprint Burst or Lithe."
+    ],
+    "analysis": [
+      "Overcome takes this position because two extra seconds of on-hit sprint is a great deal of distance for almost no execution requirement. If a standard Killer lands the first hit, the Survivor can often leave a weak area entirely and reach a stronger structure before the chase resumes.",
+      "The perk is especially friendly to players who dislike managing Sprint Burst or landing Dead Hard timing. There is no button to press and no vault to find. The downside is equally simple: the correct health-state transition must occur. If you begin Injured or are downed in one hit, Overcome does nothing.",
+      "Tracking-denial pairings raise its ceiling. Lucky Break can erase the trail during the extended sprint, and Iron Will reduces sound afterward. The combination can transform raw distance into a complete chase loss if the Survivor reaches a strong line-of-sight break.",
+      "Overcome stays below the top Exhaustion perks because it gives the Killer control over the trigger and requires a Healthy state. Its ease of use and strong distance still make it a very respectable chase perk."
+    ],
+    "verdict": "One of the easiest ways to turn a first hit into major distance. Overcome is strong and forgiving, but health-state dependence makes it less universal than the best Exhaustion perks.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Jonah Vasquez"
+    },
+    "synergyPerkIds": [
+      "lucky-break",
+      "iron-will",
+      "botany-knowledge",
+      "resurgence"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Lucky Break",
+      "Iron Will",
+      "Botany Knowledge",
+      "Resurgence"
+    ],
+    "antiSynergies": []
+  }
+}

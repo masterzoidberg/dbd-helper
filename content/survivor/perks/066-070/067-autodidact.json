@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "batch": "066-070",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "autodidact",
+  "mechanics": {
+    "name": "Autodidact",
+    "alternateName": null,
+    "source": "Adam Francis",
+    "status": "Live 10.2.0",
+    "currentEffect": "While healing another Survivor without a Med-Kit, successful Healing Skill Checks grant 1 Token up to 3/4/5. Great Skill Checks cannot occur. Each Token improves Skill Check progression by 15 percentage points, starting at a 15% penalty with zero Tokens (then 0%, +15%, +30%, +45%, +60% as applicable).",
+    "activation": [
+      "Heal another Survivor without a Med-Kit.",
+      "Complete a Healing Skill Check to gain a Token.",
+      "Ends/deactivates when: Does not activate while healing with a Med-Kit."
+    ],
+    "patchNote": "Latest live balance change (8.1.0): Reduced the initial Healing Skill Check progression penalty to -15%.",
+    "plainEnglishSummary": "Healing Skill Checks build tokens that improve later check progress, while Great Skill Checks are suppressed.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Gain 1 Token per successful Healing Skill Check; tier caps are 3/4/5; Tokens persist for the Trial.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "Great Healing Skill Checks are suppressed."
+    ],
+    "sourceCharacter": "Adam Francis",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "autodidact",
+    "rank": 67,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Skill Check",
+      "Utility"
+    ],
+    "summary": "Healing Skill Checks build Tokens that turn later Good checks into enormous healing bursts, eventually reaching +60% progression at five Tokens.",
+    "metaStatus": "Good",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 3,
+    "unlockPriority": "Medium–High",
+    "glossaryKeys": [
+      "reset",
+      "health-state"
+    ],
+    "useCases": [
+      "Turn repeated teammate heals into increasingly explosive healing Skill Checks.",
+      "Recover a heavily injured team quickly once several Tokens have been earned.",
+      "Pair with effects that increase healing Skill Check frequency to reach the high-token state sooner."
+    ],
+    "counters": [
+      "The first Skill Check starts with a 15% progression penalty.",
+      "Token gain depends on actually receiving healing Skill Checks.",
+      "The perk is inactive when healing with a Med-Kit."
+    ],
+    "pros": [
+      "Very high healing ceiling at maximum Tokens.",
+      "Tokens persist and reward continued support play through the Trial.",
+      "Late-game Skill Checks can remove huge chunks of a heal instantly."
+    ],
+    "cons": [
+      "Unreliable early game and vulnerable to poor Skill Check RNG.",
+      "Initial penalty can actively slow the first heals.",
+      "Requires repeated teammate healing to reach its best state."
+    ],
+    "analysis": [
+      "Autodidact takes this position because few healing perks have such a dramatic gap between their opening and fully stacked states. At zero Tokens, a Skill Check actually loses 15% healing progress. At five Tokens, a successful check grants an enormous +60%, allowing one proc to erase most of the remaining heal.",
+      "The challenge is getting there. Tokens only arrive when healing Skill Checks occur, and the game does not promise them on demand. A fast early heal may complete before the perk generates meaningful stacks, leaving Autodidact worse than an empty perk slot for that interaction.",
+      "Once several Tokens are banked, the equation changes. Multi-injury situations become much easier to stabilize, and Empathy helps the user actively seek injured teammates to create more opportunities. One-Two-Three-Four! can also increase Skill Check frequency, making the stack-building phase less dependent on luck.",
+      "Autodidact sits in B rather than A because the first half of its progression is too inconsistent. A perk whose ceiling can be spectacular but whose floor can literally subtract healing progress needs that volatility reflected in the ranking."
+    ],
+    "verdict": "A volatile healing engine that starts badly and can end brilliantly. Autodidact rewards dedicated support play, but Skill Check RNG prevents it from being a dependable top-tier option.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "High Ceiling"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Adam Francis"
+    },
+    "synergyPerkIds": [
+      "empathy",
+      "one-two-three-four",
+      "botany-knowledge",
+      "solidarity"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Empathy",
+      "One-Two-Three-Four!",
+      "Botany Knowledge",
+      "Solidarity"
+    ],
+    "antiSynergies": []
+  }
+}

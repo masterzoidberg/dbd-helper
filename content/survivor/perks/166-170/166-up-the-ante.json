@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "batch": "166-170",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "up-the-ante",
+  "mechanics": {
+    "name": "Up the Ante",
+    "alternateName": null,
+    "source": "Ace Visconti",
+    "status": "Live 10.2.0",
+    "currentEffect": "Unlocks Self-Unhook attempts during the first Hook Stage for all Survivors. For every Survivor still in the Trial, gain 1 Token; each Token increases all Survivors' chance of succeeding at a Self-Unhook attempt by 1/2/3%, up to 3/6/9%.",
+    "activation": [
+      "Survivors must attempt a Self-Unhook during the first Hook Stage to use the added Luck.",
+      "Ends/deactivates when: The token count and Luck bonus fall as Survivors leave the Trial."
+    ],
+    "patchNote": "Latest live balance change (unknown): No material live balance change could be verified from available patch history.",
+    "plainEnglishSummary": "Lets everyone attempt a first-stage self-unhook and improves the whole team's success chance while more Survivors remain.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Gain 1 token for each Survivor still in the Trial, up to the perk's maximum 3 tokens. Each token gives all Survivors 1/2/3% more Self-Unhook success chance, for a maximum 3/6/9%.",
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Luck bonus applies to every Survivor, not only the perk user."
+    ],
+    "sourceCharacter": "Ace Visconti",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "up-the-ante",
+    "rank": 166,
+    "tier": "D",
+    "roles": [
+      "Utility",
+      "Rescue",
+      "Team Support"
+    ],
+    "summary": "Grant teamwide Luck based on how many other Survivors remain alive, primarily affecting self-unhook chance; its old Slippery Meat combo no longer exists.",
+    "metaStatus": "Weak",
+    "skillLevel": "Low–Medium",
+    "soloQ": 1,
+    "swf": 2,
+    "unlockPriority": "Low",
+    "glossaryKeys": [
+      "hook-state",
+      "swf"
+    ],
+    "useCases": [
+      "Give every Survivor access to first-stage self-unhook attempts without needing Deliverance.",
+      "Use in a coordinated team that wants to split pressure and reduce rescue obligations."
+    ],
+    "counters": [
+      "Luck has almost no meaningful purpose outside self-unhook chance.",
+      "One copy alone still leaves self-unhooks unreliable compared with deterministic rescue perks.",
+      "The perk loses Luck as Survivors die, exactly when the team is already under pressure."
+    ],
+    "pros": [
+      "Teamwide effect from one perk slot.",
+      "Unlocks a mechanic Survivors normally cannot rely on.",
+      "Scales brutally when multiple copies and Luck offerings are coordinated."
+    ],
+    "cons": [
+      "Weak as a casual standalone perk.",
+      "RNG can fail at the worst moment.",
+      "Full ceiling demands heavy SWF coordination and multiple loadout commitments."
+    ],
+    "analysis": [
+      "Up the Ante itself did not receive a 10.2 rework, but its practical ranking changed because Slippery Meat did. The old six-attempt Luck package that made coordinated self-unhook teams notorious is gone.",
+      "Teamwide Luck can still improve self-unhook odds and can still stack across a coordinated team, but it now has far less leverage without Slippery Meat multiplying the number of attempts.",
+      "That leaves an unusually narrow perk whose main outcome is still random. A safe normal rescue remains preferable whenever one is available.",
+      "The previous upper-B placement was built on an interaction that no longer exists and should be treated as invalid. Up the Ante now belongs in the independent reviewer’s lower-tier audit."
+    ],
+    "verdict": "Collateral damage from the Slippery Meat rework. Up the Ante still boosts team Luck, but the coordinated self-unhook package lost the perk that made the odds explode.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "indirect-10.2-impact",
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-explicit"
+    ],
+    "tags": [
+      "Luck",
+      "Self-Unhook",
+      "Team"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      160,
+      172
+    ],
+    "rankConfidence": "High",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Ace Visconti"
+    },
+    "synergyPerkIds": [
+      "resurgence",
+      "will-to-live"
+    ],
+    "synergyOther": [
+      "Luck Offerings"
+    ],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [
+      {
+        "archetype": "Coordinated Luck stack",
+        "grade": "C+/B-",
+        "requires": [],
+        "note": "Multiple copies plus Luck offerings can raise self-unhook odds, but the old Slippery Meat attempt-multiplication package is gone.",
+        "confidence": "Low"
+      }
+    ],
+    "synergies": [
+      "Resurgence",
+      "Will to Live",
+      "Luck Offerings"
+    ],
+    "antiSynergies": []
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "096-100",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "self-care",
+  "mechanics": {
+    "name": "Self-Care",
+    "alternateName": null,
+    "source": "Claudette Morel",
+    "status": "Live 10.2.0",
+    "currentEffect": "Unlocks the ability to self-heal without a Med-Kit at 25/30/35% of the regular Healing speed.",
+    "activation": [
+      "Be in a state that can be healed and use the self-heal ability.",
+      "Ends/deactivates when: Healing ends when interrupted or when the heal is complete."
+    ],
+    "patchNote": "Latest live balance change (6.1.0): Reduced self-healing speed to 25/30/35% and removed the Med-Kit efficiency bonus.",
+    "plainEnglishSummary": "Lets you heal yourself without a Med-Kit, but at a reduced rate.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": null,
+    "oncePerTrialOrOtherLimits": null,
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The perk's self-heal does not require a Med-Kit."
+    ],
+    "sourceCharacter": "Claudette Morel",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "self-care",
+    "rank": 100,
+    "tier": "B",
+    "roles": [
+      "Healing",
+      "Self-Sustain",
+      "Utility"
+    ],
+    "summary": "Unlock self-healing without a Med-Kit at 35% of normal healing speed at Tier III.",
+    "metaStatus": "Good",
+    "skillLevel": "Low",
+    "soloQ": 4,
+    "swf": 3,
+    "unlockPriority": "Medium",
+    "glossaryKeys": [
+      "reset",
+      "health-state",
+      "solo-q"
+    ],
+    "useCases": [
+      "Recover independently when no teammate or Med-Kit is available.",
+      "Finish a partial heal created by Resurgence or Reactive Healing without spending item charges.",
+      "Use in emergencies where being Healthy matters more than the very large time cost."
+    ],
+    "counters": [
+      "Tier III still heals at only 35% of normal speed.",
+      "A full heal consumes an enormous amount of objective time.",
+      "Anti-heal effects make the already-slow interaction even worse."
+    ],
+    "pros": [
+      "Complete independence from teammates and Items.",
+      "Always available while healable.",
+      "Can efficiently finish already-partial healing bars."
+    ],
+    "cons": [
+      "Extremely slow from zero progress.",
+      "One of the easiest perks to misuse strategically.",
+      "Can lose matches when used for unnecessary full self-heals."
+    ],
+    "analysis": [
+      "Self-Care ranks this position because independence has real value, but the current 35% speed is a severe tax. A full heal from zero is so slow that using the perk automatically after every injury can donate enormous generator tempo to the Killer.",
+      "The perk becomes much better when it is finishing partial progress. Resurgence, Reactive Healing, or an interrupted teammate heal can leave only a small portion remaining, and Self-Care lets you complete that remainder without searching for assistance.",
+      "Its popularity should not be confused with efficiency. The perk feels safe because it always offers an action, but Dead by Daylight often rewards staying injured and repairing instead of spending a long time restoring a Health State that may be lost again immediately.",
+      "That strategic trap keeps Self-Care low B. It is not useless, and in certain independent builds it is genuinely practical, but disciplined use matters more than the perk's mere availability."
+    ],
+    "verdict": "Independence at a painful price. Self-Care is best for finishing partial heals or true emergencies, not for disappearing into a corner after every hit.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Independence"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": [
+      92,
+      115
+    ],
+    "rankConfidence": "Medium",
+    "rankStatus": "stable",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Claudette Morel"
+    },
+    "synergyPerkIds": [
+      "botany-knowledge",
+      "desperate-measures",
+      "resurgence",
+      "reactive-healing"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "rank-review-applied",
+      "queue-rating:audit-partial-plus-normalized"
+    ],
+    "synergies": [
+      "Botany Knowledge",
+      "Desperate Measures",
+      "Resurgence",
+      "Reactive Healing"
+    ],
+    "antiSynergies": []
+  }
+}

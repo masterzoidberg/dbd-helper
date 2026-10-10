@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "perkBaseline": {
+    "patch": "10.2.0",
+    "verifiedDate": "2026-10-06",
+    "archiveSha256": "b4e6b982b4d69906c21eb3d0eeb0af0b88e1fa5640cca0a79468bc3af5fd98d0"
+  },
+  "reviewStatus": "PUBLISHED",
+  "reviewedDate": "2026-10-10",
+  "strategyId": "C13",
+  "snapshotId": "C13@10.2.0-r1",
+  "perkReviews": [
+    { "perkId": "slippery-meat", "mechanicsRevision": 1 }
+  ],
+  "page": {
+    "kind": "LEGACY",
+    "summary": "This is the preserved historical luck/Kobe self-unhook identity. It is not a current ranked strategy or a current four-perk build; use C12 — Deterministic Self-Unhook for the source-supported replacement family.",
+    "whatItWas": [
+      "Older guides and community terminology used the luck/Kobe identity for attempting to escape from a hook through probability, historically naming Slippery Meat with luck effects as the defining package.",
+      "Its value was the recognizable historical self-unhook plan, not a current evaluation that can be compared with today's Solo Q or Coordinated SWF rankings."
+    ],
+    "whyNotCurrent": [
+      "The current research record treats C13 as historical and not current in either queue. The 10.2.0 Slippery Meat record removed the former self-unhook attempt/chance bonuses and now describes faster teammate unhooks plus post-unhook Haste.",
+      "Do not treat the old name, current Slippery Meat page or a historical luck label as proof that the former engine still functions. Do not convert the historical identity into a current D-tier build or invent a current loadout."
+    ],
+    "successors": [
+      {
+        "strategyId": "C12",
+        "why": "Deterministic Self-Unhook is the exact source-supported successor family: it banks self-rescue through a prior safe altruistic action rather than relying on the invalidated luck interaction."
+      }
+    ],
+    "historicalPerks": [
+      {
+        "perkId": "slippery-meat",
+        "historicalUse": "Historically named as the defining self-unhook/luck perk in the old package. Its current live mechanics no longer improve self-unhook attempts, so this historical reference is not a current recommendation."
+      }
+    ]
+  },
+  "sources": [
+    { "kind": "STRATEGY", "ref": "C13#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C13@10.2.0-r1#/analysis/legacyHistory" },
+    { "kind": "SNAPSHOT", "ref": "C13@10.2.0-r1#/analysis/replacementStrategyIds" },
+    { "kind": "SNAPSHOT", "ref": "C13@10.2.0-r1#/perkEcosystem/typicalDefiningPerks" },
+    { "kind": "SNAPSHOT", "ref": "C13@10.2.0-r1#/itemEcosystem" },
+    { "kind": "SNAPSHOT", "ref": "C13@10.2.0-r1#/dependencyTypes" },
+    { "kind": "SNAPSHOT", "ref": "C13@10.2.0-r1#/counters" },
+    { "kind": "PUBLICATION", "ref": "C13#What It Was" },
+    { "kind": "PUBLICATION", "ref": "C13#What Changed" },
+    { "kind": "PUBLICATION", "ref": "C13#Why It Is Not Current" },
+    { "kind": "PUBLICATION", "ref": "C13#Perks and Historical Build Structure" },
+    { "kind": "PUBLICATION", "ref": "C13#Common Mistakes" },
+    { "kind": "PUBLICATION", "ref": "C13#Related Strategies" },
+    { "kind": "STRATEGY", "ref": "C12#/generalStrategicDefinition" },
+    { "kind": "SNAPSHOT", "ref": "C12@10.2.0-r1#/currentStatus" },
+    { "kind": "PERK", "ref": "slippery-meat#/mechanics" }
+  ]
+}

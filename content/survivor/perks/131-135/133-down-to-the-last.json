@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "batch": "131-135",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "down-to-the-last",
+  "mechanics": {
+    "name": "Down to the Last",
+    "alternateName": null,
+    "source": "General perk",
+    "status": "Live 10.2.0",
+    "currentEffect": "Whenever you are hooked or complete a Generator, gain 1 Token, up to 6. For each Token, other Survivors open Exit Gates 10% faster. When you are the last Survivor alive and have at least 3 Tokens, you can unlock the Hatch and, for each Token, the Killer cannot see your Aura for 6/8/10 seconds.",
+    "activation": [
+      "Be hooked or complete a Generator to gain 1 Token, up to 6.",
+      "Other Survivors receive the Exit Gate speed benefit for each Token you hold.",
+      "To unlock the Hatch and receive Aura protection, be the last Survivor alive with at least 3 Tokens.",
+      "Ends/deactivates when: The last-Survivor Aura protection expires after 6/8/10 seconds per Token."
+    ],
+    "patchNote": "Latest live balance change (10.2.0): Complete rework: Tokens now come from being hooked or completing Generators, speed other Survivors' Exit Gate opening, and enable Hatch unlocking plus Aura-reading protection for the last Survivor.",
+    "plainEnglishSummary": "Hooks and Generator completions build up to six tokens that speed teammates' Exit Gate opening and, if you become the last Survivor, can unlock the Hatch and block Killer Aura reading.",
+    "cooldown": null,
+    "duration": [
+      "Last-Survivor Aura protection: 6/8/10 seconds per Token."
+    ],
+    "tokenOrStackBehavior": "Gain 1 Token when hooked or when you complete a Generator, up to 6. Each Token grants other Survivors +10% Exit Gate-opening speed and, when you are the last Survivor with at least 3 Tokens, contributes 6/8/10 seconds of Aura protection.",
+    "oncePerTrialOrOtherLimits": "Maximum 6 Tokens; Hatch unlocking requires being the last Survivor with at least 3 Tokens.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The Hatch-unlock ability is available only while you are the last Survivor and have at least 3 Tokens."
+    ],
+    "sourceCharacter": "General",
+    "isGeneralPerk": true,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "down-to-the-last",
+    "rank": 133,
+    "tier": "C",
+    "roles": [
+      "Endgame",
+      "Team Support"
+    ],
+    "summary": "Build Tokens from hooks and Generator completions to speed teammates’ Exit Gates; with 3+ Tokens as last Survivor, unlock Hatch and block Killer Aura reading.",
+    "metaStatus": "Situational",
+    "skillLevel": "Low",
+    "soloQ": 2,
+    "swf": 3,
+    "unlockPriority": "Low–Medium",
+    "glossaryKeys": [
+      "aura-reading",
+      "hook-state"
+    ],
+    "useCases": [
+      "Accumulate Tokens naturally through Generator completions and your own hooks.",
+      "Give teammates faster Exit Gate opening in endgame.",
+      "Use the last-Survivor Hatch unlock and Aura denial as a fallback if the team collapses."
+    ],
+    "counters": [
+      "Most value is delayed until endgame.",
+      "Hatch unlock matters only when you are the last Survivor and have at least three Tokens.",
+      "A perk that plans for being alone may contribute little to preventing that outcome."
+    ],
+    "pros": [
+      "Team gate speed scales up to six Tokens.",
+      "Token generation comes from normal match events.",
+      "Last-Survivor clause can unlock a closed Hatch."
+    ],
+    "cons": [
+      "Back-loaded.",
+      "Part of the kit assumes the team is dead.",
+      "No direct chase or midgame repair bonus."
+    ],
+    "analysis": [
+      "Down to the Last was completely reworked in 10.2. The old “other Survivors die, you get stronger” structure was replaced with Tokens earned from your own hooks and Generator completions.",
+      "Each Token speeds other Survivors’ Exit Gate opening by 10%, giving the perk an actual team-facing endgame purpose instead of pure selfish survival. At high Token counts, that can be a large bonus.",
+      "If you do become the last Survivor with at least three Tokens, the perk adds a Hatch-unlock option and temporary Aura protection from the Killer, preserving a comeback identity without making it the whole perk.",
+      "The rework is healthier but still heavily back-loaded. It should be judged as an endgame team utility perk with a last-person fallback, not as a general match-impact perk."
+    ],
+    "verdict": "A healthier 10.2 redesign with team gate value before the selfish fallback. Still endgame-heavy, but no longer waits for everyone else to die before doing anything useful.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "reviewFlags": [
+      "10.2-live-change",
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "tags": [
+      "Team",
+      "Last Survivor"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "general",
+      "sourceCharacter": "General"
+    },
+    "synergyPerkIds": [
+      "wake-up",
+      "no-one-left-behind",
+      "hope",
+      "left-behind"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "synergies": [
+      "Wake Up!",
+      "No One Left Behind",
+      "Hope",
+      "Left Behind"
+    ],
+    "antiSynergies": []
+  }
+}

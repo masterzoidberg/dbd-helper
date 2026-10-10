@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "batch": "036-040",
+  "verifiedLivePatch": "10.2.0",
+  "verifiedDate": "2026-10-06",
+  "id": "flashbang",
+  "mechanics": {
+    "name": "Flashbang",
+    "alternateName": null,
+    "source": "Leon S. Kennedy",
+    "status": "Live 10.2.0",
+    "currentEffect": "After you contribute 50/45/40% total Generator repair progress, Flashbang activates. While hiding in a Locker, press the Active Ability button to craft a Flash Grenade; Flashbang deactivates after crafting. Further personal Generator repair progress charges it again, so it can be used multiple times in a Trial.",
+    "activation": [
+      "You must personally contribute the tier's total repair progress on Generators.",
+      "To craft the grenade, you must be hiding inside a Locker and press the Active Ability button.",
+      "Ends/deactivates when: Flashbang deactivates after the grenade is crafted."
+    ],
+    "patchNote": "Latest live balance change (8.2.0): Reduced the total Generator repair requirement to 50/45/40% from 70/60/50%.",
+    "plainEnglishSummary": "Your Generator repair progress charges a Flash Grenade that you craft from inside a Locker.",
+    "cooldown": null,
+    "duration": [],
+    "tokenOrStackBehavior": "Not token-based. After each crafting use, further personal Generator repair progress equal to the tier threshold charges another use.",
+    "oncePerTrialOrOtherLimits": "No once-per-Trial limit; one grenade is crafted per activation, with additional uses charged by further repair progress.",
+    "statusEffectsInvolved": [],
+    "specialInteractions": [
+      "The charge comes from your own Generator repair contribution, not repair progress contributed by teammates."
+    ],
+    "sourceCharacter": "Leon S. Kennedy",
+    "isGeneralPerk": false,
+    "currentLivePatchVerified": "10.2.0"
+  },
+  "editorial": {
+    "id": "flashbang",
+    "rank": 37,
+    "tier": "A",
+    "roles": [
+      "Team Support",
+      "Chase",
+      "Utility"
+    ],
+    "summary": "Personal generator repair progress charges a craftable Flash Grenade that can blind the Killer and enable repeated pickup saves.",
+    "metaStatus": "Strong",
+    "skillLevel": "High",
+    "soloQ": 3,
+    "swf": 5,
+    "unlockPriority": "High",
+    "glossaryKeys": [
+      "pressure",
+      "bodyblock"
+    ],
+    "useCases": [
+      "Create pickup saves without needing to bring a Flashlight into the Trial.",
+      "Use the grenade at pallets, windows, and confined paths to blind or disorient the Killer.",
+      "Recharge the perk through additional personal generator repair and craft multiple grenades in one Trial."
+    ],
+    "counters": [
+      "Requires 40% personal generator repair progress at Tier III before each craft.",
+      "Pickup saves demand precise timing, position, and knowledge of Killer facing.",
+      "Poorly placed grenades can waste the charge without producing meaningful distance."
+    ],
+    "pros": [
+      "Can be used multiple times when enough generator progress is earned.",
+      "Creates a save tool without consuming the Item slot.",
+      "High-skill users can turn one crafted grenade into a complete denial of a Killer pickup."
+    ],
+    "cons": [
+      "High execution requirement for consistent saves.",
+      "Requires personal repair progress before each activation cycle.",
+      "Can encourage low-percentage rescue attempts that cost generator pressure."
+    ],
+    "analysis": [
+      "Flashbang closes the top forty because its ceiling is much higher than its community tier label suggests, but that ceiling is execution-heavy. After enough personal generator progress, the Survivor can craft a grenade from a Locker and later use it to blind the Killer, including during pickup animations where a successful blind can erase a down entirely.",
+      "The perk's strongest trait is repeatability. Repairing more generators charges another craft, so a productive Survivor can generate several grenades during one Trial. Unlike a Flashlight, Flashbang also does not occupy the Item slot once crafted in the same way a dedicated carried tool shapes the loadout from the start.",
+      "Pickup saves are where the ranking becomes complicated. They require precise timing, good positioning, and often prediction about the Killer's facing and movement. Background Player helps solve the distance problem, while Head On and Quick & Quiet create additional Locker-centered play. In SWF, communication makes all of those save setups much easier to coordinate.",
+      "Flashbang stays at this position because many players will get less consistent value from it than from passive information or healing perks. A failed grenade does nothing, and chasing hero saves can harm team tempo. But a practiced player can turn generator participation into repeated opportunities to deny hooks, which is too impactful to rank as merely a novelty."
+    ],
+    "verdict": "A high-skill utility perk with genuine hook-denial potential. Flashbang is inconsistent in casual hands, but repeated successful pickup saves can swing matches hard.",
+    "editorialStatus": "complete",
+    "publicationStatus": "published",
+    "tags": [
+      "Save",
+      "Blind"
+    ],
+    "queueRatingStatus": "reviewed",
+    "rankRange": null,
+    "rankConfidence": "Not assessed",
+    "rankStatus": "inherited",
+    "evidenceStatus": "inherited",
+    "acquisition": {
+      "type": "character",
+      "sourceCharacter": "Leon S. Kennedy"
+    },
+    "synergyPerkIds": [
+      "background-player",
+      "head-on",
+      "quick-quiet",
+      "champion-of-light"
+    ],
+    "synergyOther": [],
+    "antiSynergyPerkIds": [],
+    "archetypeRatings": [],
+    "reviewFlags": [
+      "v15-schema-migrated",
+      "queue-rating:normalized-tier-plus-v14-specialization-signal"
+    ],
+    "synergies": [
+      "Background Player",
+      "Head On",
+      "Quick & Quiet",
+      "Champion of Light"
+    ],
+    "antiSynergies": []
+  }
+}
