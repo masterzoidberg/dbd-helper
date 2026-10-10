@@ -96,7 +96,8 @@
           "id": "spend-optional-item",
           "situation": "A Toolbox can close a meaningful amount of progress on the selected generator and the Killer cannot immediately deny the route.",
           "action": "Spend charges only on the target whose completion changes the rotation. If the item or target is denied, switch to ordinary repair or the uncovered rescue rather than preserving the old plan.",
-          "why": "The item is optional and finite; an item burst on the wrong generator does not solve the cluster."
+          "why": "The item is optional and finite; an item burst on the wrong generator does not solve the cluster.",
+          "enabledBy": ["item:toolbox"]
         },
         {
           "id": "release-the-target",

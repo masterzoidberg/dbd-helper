@@ -42,7 +42,7 @@
               "choices": [
                 {
                   "perkId": "blood-pact",
-                  "whyItsHere": "When you are not the Obsession and you or the Obsession is injured, complete the qualifying heal within 16 metres to give both Survivors 5/6/7% Haste while they remain near each other."
+                  "whyItsHere": "When you are not the Obsession and either of you is injured, finish healing the Obsession—or let the Obsession finish healing you—within 16 metres to give both Survivors 5/6/7% Haste while you remain within range."
                 },
                 {
                   "perkId": "made-for-this",
