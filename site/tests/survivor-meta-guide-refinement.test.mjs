@@ -19,6 +19,10 @@ function primary(html) {
   return html.slice(html.indexOf('<div data-guide-primary>'), html.indexOf('<details data-guide-research'));
 }
 
+function visibleText(html) {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+}
+
 test('hero exposes a compact primary queue verdict without research labels or duplicate queue advice', () => {
   const html = renderGuideBody(modelFor('X01'));
   const hero = html.slice(html.indexOf('<header class="guide-hero">'), html.indexOf('</header>') + '</header>'.length);
@@ -50,6 +54,7 @@ test('recommended build presents compact slots before canonical details and keep
   assert.match(build, /Why it.s here:/);
   assert.match(build, /Turn a usable vault into a route away/);
   assert.match(build, /Choose one:/);
+  assert.match(build, /<span class="guide-choice-separator">or<\/span>/);
   assert.match(build, /Kindred/);
   assert.match(build, /We.ll Make It/);
   assert.doesNotMatch(build, /Open flex|another context-appropriate/);
@@ -81,7 +86,7 @@ test('decision gameplay uses one semantic situation cell and labels perk relatio
   assert.doesNotMatch(decision, /Relevant when/);
 });
 
-test('How We Rated This is human-readable and the frozen article remains separately collapsed', () => {
+test('How We Rated This is the final human-readable section and the frozen article is not rendered', () => {
   const html = renderGuideBody(modelFor('X01'));
   const researchStart = html.indexOf('<details data-guide-research');
   const researchEnd = html.indexOf('</details>', researchStart) + '</details>'.length;
@@ -95,8 +100,8 @@ test('How We Rated This is human-readable and the frozen article remains separat
   assert.match(research, /What holds it back/);
   assert.match(research, /Evaluated for/);
   assert.doesNotMatch(research, /<pre\b|strategicDiagnostics|buildImplementations|sourceReceipts|snapshotId/);
-  assert.match(html, /<details data-guide-original-article[^>]*>[\s\S]*<summary[^>]*>Original Research Article<\/summary>/);
-  assert.match(html, /class="guide-article-body"/);
+  assert.doesNotMatch(html, /Original Research Article|guide-original-article|guide-article-body/);
+  assert.ok(html.trimEnd().endsWith('</details>'));
 });
 
 test('guide CSS keeps the mobile build compact and expands decisions into a desktop grid', () => {
@@ -104,4 +109,111 @@ test('guide CSS keeps the mobile build compact and expands decisions into a desk
   assert.match(css, /@media \(min-width: 1024px\)[\s\S]*?\.guide-decision[^}]*grid-template-columns:\s*repeat\(4/);
   assert.match(css, /\.guide-loadout-summary[^}]*min-width:\s*0/);
   assert.match(css, /\.guide-decision-cell[^}]*min-width:\s*0/);
+});
+
+test('guide CSS widens structured content while constraining readable prose', () => {
+  assert.match(css, /\.meta-article-page:has\(\[data-guide-primary\]\)[^{]*\{[^}]*max-width:\s*none/);
+  assert.match(css, /\[data-guide-primary\][^{]*\{[^}]*max-width:\s*1400px/);
+  assert.match(css, /\.guide-summary-copy[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-choice-detail p[^}]*max-width:\s*70ch/);
+  assert.doesNotMatch(css, /guide-original-article|guide-article-body/);
+});
+
+test('build slot hierarchy makes the role and perk name primary and enables scan-friendly enablers', () => {
+  const html = renderGuideBody(modelFor('X01'));
+  const firstSlot = html.indexOf('<div data-equipped-slot');
+  const nextSlot = html.indexOf('<div data-equipped-slot', firstSlot + 1);
+  const slot = html.slice(firstSlot, nextSlot);
+  assert.ok(slot.indexOf('guide-slot-job') < slot.indexOf('guide-slot-perk'));
+  assert.ok(slot.indexOf('guide-slot-perk') < slot.indexOf('guide-slot-usage'));
+  assert.match(html, /data-decision-field="enabled-by"[^>]*>[\s\S]*<span class="guide-decision-label">Enabled by<\/span>/);
+  assert.match(css, /\.guide-decision-cell\[data-decision-field="enabled-by"\][^{]*\{/);
+  assert.match(css, /\.guide-enabled-by[^{]*\{[^}]*border-left/);
+});
+
+test('player prose hides internal research vocabulary and strategy identifiers', () => {
+  for (const strategyId of guides.keys()) {
+    const text = visibleText(renderGuideBody(modelFor(strategyId)));
+    assert.doesNotMatch(text, /Stage\s*[23](?:A|B)?|BuildImplementations?|snapshotId|manifest|\b(?:A|C|G|I|P|R|X)\d{2}\b/i, strategyId);
+  }
+});
+
+test('slot Enabled by references resolve to canonical perk links', () => {
+  const html = renderGuideBody(modelFor('C10'));
+  const enabled = html.slice(html.indexOf('data-decision-field="enabled-by"'), html.indexOf('</article>', html.indexOf('data-decision-field="enabled-by"')));
+
+  assert.match(enabled, /href="survivor\/perks\/\?q=unbreakable"[^>]*>Unbreakable<\/a>/);
+  assert.match(enabled, /href="survivor\/perks\/\?q=plot-twist"[^>]*>Plot Twist<\/a>/);
+  assert.match(enabled, /<span class="guide-choice-separator">or<\/span>/);
+  assert.doesNotMatch(enabled, /aria-hidden="true"[^>]*>or<\/span>/);
+  assert.doesNotMatch(enabled, /selected loadout option/);
+});
+
+test('player prose sanitizes source-backed strategy IDs without hard-coded ID families', () => {
+  const model = structuredClone(modelFor('X01'));
+  model.page.summary = 'Compare ZX9 before committing to this approach.';
+  model.sourceStrategyIds = ['ZX9'];
+
+  const text = visibleText(renderGuideBody(model));
+  assert.doesNotMatch(text, /\bZX9\b/);
+  assert.match(text, /the related strategy/);
+});
+
+test('standard pages without a loadout omit the optional Recommended Build section', () => {
+  for (const strategyId of ['A06', 'P05']) {
+    const html = renderGuideBody(modelFor(strategyId));
+    assert.doesNotMatch(html, /Recommended Build|No required perks/, strategyId);
+  }
+});
+
+test('loadouts containing only an unavailable item omit the optional Recommended Build section', () => {
+  const model = structuredClone(modelFor('X01'));
+  model.page.loadout = { item: { status: 'NONE' } };
+
+  const html = renderGuideBody(model);
+  assert.doesNotMatch(html, /Recommended Build|No required perks/);
+});
+
+test('team roles without a loadout omit fabricated required-perk placeholders', () => {
+  const html = renderGuideBody(modelFor('X02'));
+
+  assert.doesNotMatch(html, /No required perks/);
+});
+
+test('plans without slots omit the optional Recommended Build section', () => {
+  const model = structuredClone(modelFor('X01'));
+  model.page.loadout = { plans: [{ slots: [] }] };
+
+  const html = renderGuideBody(model);
+  assert.doesNotMatch(html, /Recommended Build|No required perks/);
+});
+
+test('empty plans do not duplicate real loadout options', () => {
+  const model = structuredClone(modelFor('X01'));
+  const option = structuredClone(model.page.loadout.plans[0].slots[0].choices[0]);
+  const optionName = option.name;
+  model.page.loadout = {
+    plans: [{ slots: [] }],
+    options: [option]
+  };
+
+  const html = renderGuideBody(model);
+  const loadout = html.slice(
+    html.indexOf('<section class="guide-loadout">'),
+    html.indexOf('<section class="guide-gameplay">')
+  );
+  assert.equal(loadout.split(optionName).length - 1, 1);
+  assert.doesNotMatch(loadout, /Additional perk guidance/);
+});
+
+test('widened guide layout constrains all long-form structured prose', () => {
+  assert.match(css, /\.guide-plan > p[^\{]*\{[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-opening p[^\{]*\{[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-mechanics p[^\{]*\{[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-abort li[^\{]*\{[^}]*max-width:\s*70ch/);
+});
+
+test('Survivor Meta index keeps internal research stage terminology out of player copy', () => {
+  const index = fs.readFileSync(path.join(rootDir, 'site/survivor-meta/index.html'), 'utf8');
+  assert.doesNotMatch(visibleText(index), /Stage\s*3[AB]|BuildImplementations?|snapshotId|manifest/);
 });
