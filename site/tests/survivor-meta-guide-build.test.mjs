@@ -68,7 +68,7 @@ test('production gates editorial content, preview is isolated, and runtime stays
   assert.equal((draftPage.match(/<h1\b/g) || []).length, 1);
   assert.match(draftPage, /<details data-guide-research/);
   assert.doesNotMatch(draftPage.match(/<details data-guide-research[^>]*>/)[0], /\bopen(?:\s|=|>)/);
-  assert.match(draftPage, /Original Research Article/);
+  assert.doesNotMatch(draftPage, /Original Research Article|guide-original-article|guide-article-body/);
   assert.match(draftPage, /parts\.indexOf\('dbd-helper'\)/);
 
   const firstBytes = treeBytes(path.join(tempRoot, 'site'));
@@ -141,7 +141,7 @@ for (const reviewStatus of ['DRAFT', 'REVIEWED']) {
     const page = path.join(tempRoot, 'site/survivor-meta/flashbang-save/index.html');
     const production = fs.readFileSync(page, 'utf8');
     assert.ok(!production.includes(note), 'whole production HTML must exclude unpublished receipt notes');
-    assert.ok(production.includes('Original Research Article'));
+    assert.ok(!production.includes('Original Research Article'));
     const before = treeBytes(path.join(tempRoot, 'site'));
     const outside = fs.mkdtempSync(path.join(os.tmpdir(), 'survivor-meta-receipt-preview-'));
     t.after(() => fs.rmSync(outside, { recursive: true, force: true }));
@@ -224,7 +224,8 @@ test('late invalid guides and renderer failures never mutate generated output', 
     },
     root => {
       const file = path.join(root, 'content/survivor/meta/10.2.0-r1/stage3b/strategy-pages/R10-endgame-gate-escape-shell.md');
-      fs.appendFileSync(file, '\n```unsafe\n');
+      const article = fs.readFileSync(file, 'utf8');
+      fs.writeFileSync(file, article.replace('strategyId: "R10"', 'strategyId: "Z99"'));
     }
   ]) {
     const tempRoot = copyRoot(t);

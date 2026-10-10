@@ -75,7 +75,10 @@ test('long names and competing choices remain present in the compact summary', (
 test('native disclosures are closed, meaningful, and target content', () => {
   const html = renderGuideBody(modelFor('X01'));
   const renderedDetails = details(html);
-  assert.equal(renderedDetails.length, 3);
+  assert.equal(renderedDetails.length, 2);
+  assert.match(html, /<details\b[^>]*data-guide-perk-details[^>]*>[\s\S]*?Perk details/);
+  assert.match(html, /<details\b[^>]*data-guide-research[^>]*>[\s\S]*?How We Rated This/);
+  assert.doesNotMatch(html, /Original Research Article|guide-original-article|guide-article-body/);
 
   for (const disclosure of renderedDetails) {
     assert.doesNotMatch(disclosure.attributes, /\bopen(?:\s|=|>)/);

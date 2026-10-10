@@ -55,13 +55,12 @@ test('release checks all canonical routes and baseline pages under the supplied 
   assert.deepEqual(withoutSlash.failures, []);
 });
 
-test('missing, unpublished, choice-less, and article-less guides fail with exact URLs', async () => {
+test('missing, unpublished, choice-less, and rating-less guides fail with exact URLs', async () => {
   const cases = [
     ['survivor-meta/general-chase-looping/', null],
     ['survivor-meta/solo-q-generalist/', html => html.replace('Player Guide', 'Research View Only')],
     ['survivor-meta/solo-q-generalist/', html => html.replace('Choose one:', 'No choice:')],
-    ['survivor-meta/solo-q-generalist/', html => html.replace('Original Research Article', 'Missing article')],
-    ['survivor-meta/solo-q-generalist/', html => html.replace('class="guide-article-body"', 'class="missing-article-body"')],
+    ['survivor-meta/solo-q-generalist/', html => html.replace('How We Rated This', 'Missing rating')],
     ['survivor-meta/rescue-and-reset-support-family/', html => html.replace('Compare the approaches', 'No comparison')],
     ['survivor-meta/luck-based-self-unhook/', html => html.replace('What it was', 'No history')],
     ['survivor-meta/coordinated-swf-flex-generalist/', html => html.replace('No single four-perk loadout is implied', 'One fixed build')]

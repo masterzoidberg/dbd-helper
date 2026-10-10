@@ -75,8 +75,9 @@ test('X01 renders shared player landmarks, mechanics, choice semantics, and clos
   assert.match(html, /What it does/);
   assert.match(html, /Why it is here/);
   assert.match(html, /<details\b[^>]*data-guide-research[^>]*>/);
-  assert.match(html, /Original Research Article/);
   assert.doesNotMatch(html.match(/<details\b[^>]*data-guide-research[^>]*>/)[0], /\bopen(?:\s|=|>)/);
+  assert.doesNotMatch(html, /Original Research Article|guide-original-article|guide-article-body/);
+  assert.ok(html.trimEnd().endsWith('</details>'));
   assert.match(html, /data-guide-primary/);
   assert.match(html, /data-guide-summary/);
   assert.equal((html.match(/data-equipped-slot\b/g) || []).length, 4);
@@ -106,7 +107,7 @@ test('renderer covers every approved page kind and gameplay type without strateg
     assert.match(html, new RegExp(kind === 'FAMILY' ? 'Compare' : kind === 'LEGACY' ? 'What it was' : kind === 'TEAM' ? 'Roles' : 'How to Play'), strategyId);
     if (gameplay) assert.match(html, new RegExp(gameplay === 'DECISIONS' ? 'Situation' : gameplay === 'SEQUENCE' ? 'Step' : 'Priority'), strategyId);
     assert.match(html, /How We Rated This/, strategyId);
-    assert.match(html, /Original Research Article/, strategyId);
+    assert.doesNotMatch(html, /Original Research Article|guide-original-article|guide-article-body/, strategyId);
   }
 });
 
@@ -147,10 +148,9 @@ test('Task 13 source-faithful player cues render through generic components', ()
   assert.match(boonHtml, /setup|zone|snuff/i);
 });
 
-test('research appendix humanizes ranking fields and preserves the full frozen article', () => {
+test('research appendix humanizes ranking fields while the full frozen article remains internal', () => {
   const model = modelFor('X01');
   const html = renderGuideBody(model);
-  const articleHtml = renderArticleMarkdown(model.research.article, { headingOffset: 1 });
   assert.match(html, /Meta Stability/);
   assert.match(html, /Trend/);
   assert.match(html, /Ranking Status/);
@@ -160,9 +160,11 @@ test('research appendix humanizes ranking fields and preserves the full frozen a
   assert.match(html, /Ranking factors/);
   assert.match(html, /Evaluated for/);
   assert.doesNotMatch(html, /<pre\b|Complete canonical research record|sourceReceipts|strategicDiagnostics/);
-  assert.match(html, /Original Research Article/);
-  assert.ok(html.includes(articleHtml));
+  assert.doesNotMatch(html, /Original Research Article|guide-original-article|guide-article-body/);
+  assert.ok(model.research.article.includes('X01 — Solo-Q Generalist'));
+  assert.ok(!html.includes(model.research.article));
   assert.equal((html.match(/<h1>/g) || []).length, 1);
+  assert.ok(html.trimEnd().endsWith('</details>'));
 });
 
 test('hero renders all supported verdict copy with player-safe status language', () => {
@@ -189,7 +191,7 @@ test('hero renders all supported verdict copy with player-safe status language',
   assert.match(primary, /Not ideal for/);
   assert.match(primary, /one narrow specialist job/);
   assert.doesNotMatch(primary, /\bEstablished\b|\bESTABLISHED\b|\bRANKED\b|\bPROVISIONAL\b/);
-  assert.match(html.slice(html.indexOf('<details data-guide-research')), /ESTABLISHED/);
+  assert.match(html.slice(html.indexOf('<details data-guide-research')), /Established/);
 });
 
 test('gameplay renders schema cue fields and ignores nonexistent handoff content', () => {
@@ -300,5 +302,5 @@ test('data-guide-primary contains hero and all player-facing content', () => {
   assert.ok(primaryStart >= 0 && heroStart > primaryStart);
   assert.ok(researchStart > heroStart);
   assert.ok(html.slice(primaryStart, researchStart).includes('<h1>'));
-  assert.ok(html.slice(researchStart).includes('ESTABLISHED'));
+  assert.ok(html.slice(researchStart).includes('Established'));
 });

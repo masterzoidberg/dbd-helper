@@ -81,7 +81,7 @@ test('decision gameplay uses one semantic situation cell and labels perk relatio
   assert.doesNotMatch(decision, /Relevant when/);
 });
 
-test('How We Rated This is human-readable and the frozen article remains separately collapsed', () => {
+test('How We Rated This is the final human-readable section and the frozen article is not rendered', () => {
   const html = renderGuideBody(modelFor('X01'));
   const researchStart = html.indexOf('<details data-guide-research');
   const researchEnd = html.indexOf('</details>', researchStart) + '</details>'.length;
@@ -95,8 +95,8 @@ test('How We Rated This is human-readable and the frozen article remains separat
   assert.match(research, /What holds it back/);
   assert.match(research, /Evaluated for/);
   assert.doesNotMatch(research, /<pre\b|strategicDiagnostics|buildImplementations|sourceReceipts|snapshotId/);
-  assert.match(html, /<details data-guide-original-article[^>]*>[\s\S]*<summary[^>]*>Original Research Article<\/summary>/);
-  assert.match(html, /class="guide-article-body"/);
+  assert.doesNotMatch(html, /Original Research Article|guide-original-article|guide-article-body/);
+  assert.ok(html.trimEnd().endsWith('</details>'));
 });
 
 test('guide CSS keeps the mobile build compact and expands decisions into a desktop grid', () => {
@@ -104,4 +104,24 @@ test('guide CSS keeps the mobile build compact and expands decisions into a desk
   assert.match(css, /@media \(min-width: 1024px\)[\s\S]*?\.guide-decision[^}]*grid-template-columns:\s*repeat\(4/);
   assert.match(css, /\.guide-loadout-summary[^}]*min-width:\s*0/);
   assert.match(css, /\.guide-decision-cell[^}]*min-width:\s*0/);
+});
+
+test('guide CSS widens structured content while constraining readable prose', () => {
+  assert.match(css, /\.meta-article-page:has\(\[data-guide-primary\]\)[^{]*\{[^}]*max-width:\s*none/);
+  assert.match(css, /\[data-guide-primary\][^{]*\{[^}]*max-width:\s*1400px/);
+  assert.match(css, /\.guide-summary-copy[^}]*max-width:\s*70ch/);
+  assert.match(css, /\.guide-choice-detail p[^}]*max-width:\s*70ch/);
+  assert.doesNotMatch(css, /guide-original-article|guide-article-body/);
+});
+
+test('build slot hierarchy makes the role and perk name primary and enables scan-friendly enablers', () => {
+  const html = renderGuideBody(modelFor('X01'));
+  const firstSlot = html.indexOf('<div data-equipped-slot');
+  const nextSlot = html.indexOf('<div data-equipped-slot', firstSlot + 1);
+  const slot = html.slice(firstSlot, nextSlot);
+  assert.ok(slot.indexOf('guide-slot-job') < slot.indexOf('guide-slot-perk'));
+  assert.ok(slot.indexOf('guide-slot-perk') < slot.indexOf('guide-slot-usage'));
+  assert.match(html, /data-decision-field="enabled-by"[^>]*>[\s\S]*<span class="guide-decision-label">Enabled by<\/span>/);
+  assert.match(css, /\.guide-decision-cell\[data-decision-field="enabled-by"\][^{]*\{/);
+  assert.match(css, /\.guide-enabled-by[^{]*\{[^}]*border-left/);
 });

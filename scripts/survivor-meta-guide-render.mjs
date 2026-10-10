@@ -1,5 +1,3 @@
-import { renderArticleMarkdown } from './build-survivor-meta.mjs';
-
 const PROVENANCE_LABELS = {
   CANONICAL: 'Research-backed build',
   EDITORIAL: 'Field Guide recommendation',
@@ -241,7 +239,7 @@ function renderSlot(slot, model) {
     : choices.length === 1 ? perkLink(choices[0], model) : 'No reviewed choice';
   const detail = slot.role ? `<span class="guide-slot-job">${escapeHtml(slot.role)}</span>` : '';
   const usage = slot.usage ? `<span class="guide-slot-usage">${escapeHtml(usageLabel(slot.usage))}</span>` : '';
-  return `<div data-equipped-slot class="guide-slot" role="group" aria-label="Slot ${escapeHtml(slot.slot)}"><span class="guide-slot-number">Slot ${escapeHtml(slot.slot)}</span>${detail}${usage}<div class="guide-slot-perk">${choiceText}</div></div>`;
+  return `<div data-equipped-slot class="guide-slot" role="group" aria-label="Slot ${escapeHtml(slot.slot)}"><span class="guide-slot-number">Slot ${escapeHtml(slot.slot)}</span>${detail}<div class="guide-slot-perk">${choiceText}</div>${usage}</div>`;
 }
 
 function canonicalEffectSummary(facts) {
@@ -455,8 +453,7 @@ function renderRankingFactors(snapshot) {
 }
 
 function renderResearch(model, parts) {
-  const { canonical, research, snapshot } = parts;
-  const article = research.article || model.articleMarkdown || '';
+  const { canonical, snapshot } = parts;
   const evaluations = canonical.evaluations || {};
   const why = [
     snapshot.analysis?.whyPlayersRunIt,
@@ -473,9 +470,7 @@ function renderResearch(model, parts) {
   const evaluatedFor = snapshot.patchBaseline || revision || snapshot.researchDate
     ? `<p class="guide-evaluated-for"><strong>Evaluated for</strong>${snapshot.patchBaseline ? ` · Patch ${escapeHtml(snapshot.patchBaseline)}` : ''}${revision ? ` · Research revision ${escapeHtml(revision)}` : ''}${snapshot.researchDate ? ` · Reviewed ${escapeHtml(snapshot.researchDate)}` : ''}</p>`
     : '';
-  const ranking = `<details data-guide-research id="guide-research" class="guide-research"><summary aria-controls="guide-research-content">How We Rated This</summary><div id="guide-research-content"><section class="guide-ranking-summary"><div class="guide-ranking-grid">${renderRankingEvaluation('Solo Q', evaluations.soloQ)}${renderRankingEvaluation('Coordinated SWF', evaluations.coordinatedSwf)}</div>${renderResearchFacts(snapshot)}</section>${renderResearchList('Why it scores well', why)}${renderResearchList('What holds it back', holdsBack)}${renderRankingFactors(snapshot)}${evaluatedFor}</div></details>`;
-  const original = article ? `<details data-guide-original-article id="guide-original-article" class="guide-original-article"><summary aria-controls="guide-original-article-content">Original Research Article</summary><div id="guide-original-article-content" class="guide-article-body">${renderArticleMarkdown(article, { headingOffset: 1 })}</div></details>` : '';
-  return `${ranking}${original}`;
+  return `<details data-guide-research id="guide-research" class="guide-research"><summary aria-controls="guide-research-content">How We Rated This</summary><div id="guide-research-content"><section class="guide-ranking-summary"><div class="guide-ranking-grid">${renderRankingEvaluation('Solo Q', evaluations.soloQ)}${renderRankingEvaluation('Coordinated SWF', evaluations.coordinatedSwf)}</div>${renderResearchFacts(snapshot)}</section>${renderResearchList('Why it scores well', why)}${renderResearchList('What holds it back', holdsBack)}${renderRankingFactors(snapshot)}${evaluatedFor}</div></details>`;
 }
 
 function renderStandard(page, model) {
